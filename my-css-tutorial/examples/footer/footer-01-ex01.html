@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+    <title>Form example</title>
+
+    <style>
+        *,
+        *::after,
+        *::before {
+            margin: 0;
+            padding: 0;
+            box-sizing: inherit;
+        }
+        
+        html {
+            font-size: 62.5%;
+        }
+        
+        body {
+            box-sizing: border-box;
+            padding: 3rem;
+            font-family: "Lato", sans-serif;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 1.7;
+            color: #777;
+        }
+        
+        .row {
+            max-width: 114rem;
+            margin: 0 auto;
+        }
+        
+        .row:not(:last-child) {
+            margin-bottom: 8rem;
+        }
+        
+        .row::after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+        
+        .row [class^="col-"] {
+            float: left;
+        }
+        
+        .row [class^="col-"]:not(:last-child) {
+            margin-right: 6rem;
+        }
+    </style>
+
+    <body>
+
+
+
+
+
+
+
+
+
+
+        <footer class="footer">
+
+            <div class="footer__logo-box">
+
+                <picture class="footer__logo">
+                    <!-- at least 1 image, but you can use more than 1 source -->
+                    <!-- srcset in the <source> tag is the default image -->
+                    <!-- media= sets the media query for this image -->
+                    <source srcset="logo-green-small-1x.png 1x, logo-green-small-2x.png 2x" media="(max-width: 37.5em)" src="logo-green-small-1x.png">
+
+                    <img srcset="logo-green-1x.png 1x, logo-green-2x.png 2x" alt="Full logo" class="footer__logo">
+                    </source>
+                </picture>
+
+            </div>
+
+
+        </footer>
+
+
+    </body>
+
+</html>

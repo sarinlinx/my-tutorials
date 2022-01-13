@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="../../_css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../../_css/style.css">
+
+    <title>Arrays</title>
+</head>
+
+<body>
+    <a href="../../index.html">Home page</a>
+
+
+
+    <section class="container">
+        <h1>Overview</h1>
+
+        <div class="row">
+            <div class="col">
+                <p>An array is a special variable, which can hold more than one value at a time.</p>
+                <p>This is different from arrays in some languages which represent a contiguous segment of memory, and also different from queue/stack structures based on linked-lists.</p>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+    <section class="container">
+
+        <h1>Array Syntax</h1>
+        <div class="row">
+            <div class="col-6">
+                <p>There are two ways to create an Array.</p>
+                <ul>
+                    <li>Using the 'new' keyword' or not.</li>
+                </ul>
+                <p>For simplicity do not use the 'new' word.</p>
+            </div>
+            <div class="col-6">
+                <pre class="example">Using the 'new' keyword
+<span class="code-js">const cars = new Array("Saab", "Volvo", "BMW");</span>
+Not using the 'new' keyword
+<span class="code-js">const myarray = ["keys", "stuff", "things"]</span></pre>
+            </div>
+        </div>
+
+    </section>
+
+
+
+
+    <section class="container">
+
+        <h1>The length Property</h1>
+        <div class="row">
+            <div class="col-6">
+                <p>The length property of an array returns the length of an array (the number of array elements).</p>
+                <p>This returns 4</p>
+            </div>
+            <div class="col-6">
+                <pre class="example"><span class="code-js">const fruits = ["Banana", "Orange", "Apple", "Mango"];
+alert(fruits.length);</span></pre>
+            </div>
+        </div>
+
+    </section>
+
+
+
+
+
+    <section class="container">
+
+        <h1>Viewing Array contents</h1>
+
+        <h3>Viewing the full Array contents</h3>
+        <div class="row">
+            <div class="col-6">
+                <p>Output to console.log</p>
+                <p>This displays the following:</p>
+                <ul>
+                    <li>Array(4) [ "red", "blue", "green", "orange" ]</li>
+
+                </ul>
+            </div>
+            <div class="col-6">
+                <pre class="example"><span class="code-js">const pens = ["red", "blue", "green", "orange"];
+console.log(pens);</span></pre>
+            </div>
+        </div>
+
+
+        <h3>Access single element</h3>
+        <div class="row">
+            <div class="col-6">
+                <p>You can also access a single index.</p>
+                <p>This outputs: Saab</p>
+            </div>
+            <div class="col-6">
+                <pre class="example"><span class="code-js">const cars = ["Saab", "Volvo", "BMW"];
+console.log(cars[0]);</span></pre>
+            </div>
+        </div>
+
+
+        <h3>Access the last element</h3>
+        <div class="row">
+            <div class="col-6">
+                <p>Use the length property and add -1.</p>
+                <p>This prints 'Mango'.</p>
+            </div>
+            <div class="col-6">
+                <pre class="example"><span class="code-js">fruits = ["Banana", "Orange", "Apple", "Mango"];
+const last = fruits[fruits.length - 1];
+console.log(last);</span></pre>
+            </div>
+        </div>
+
+    </section>
+
+
+
+
+
+
+
+
+    <section class="container">
+        <h1>Changing an Array Element</h1>
+        <div class="row">
+            <div class="col-6">
+                <p>You can change an Array element by directly assigning it.</p>
+                <p>This outputs: Opel,Volvo,BMW</p>
+            </div>
+            <div class="col-6">
+                <pre class="example"><span class="code-js">const cars = ["Saab",
+            "Volvo",
+            "BMW"];
+cars[0] = "Opel";</span></pre>
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <section class="container">
+        <h1>Different types of Array elements</h1>
+        <div class="row">
+            <div class="col">
+                <p>You can have objects in an Array. You can have functions in an Array. You can have arrays in an Array.</p>
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <section class="container">
+        <h1>Difference Between Arrays and Objects</h1>
+        <div class="row">
+            <div class="col">
+                <p>Arrays are a special kind of objects, with numbered indexes.</p>
+                <p>In JavaScript, arrays use numbered indexes.</p>
+                <p>In JavaScript, objects use named indexes.</p>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="container">
+        <h1>Check if a variable is an Array</h1>
+        <h3>Option 1 - Array.isArray()</h3>
+        <div class="row">
+            <div class="col-6">
+                <p>typeof will return Object since Arrays are Objects.</p>
+                <p>ECMAScript 5 defines a new method Array.isArray(). This returns 'true' if it's an Array.</p>
+            </div>
+            <div class="col-6">
+                <pre class="example"><span class="code-js">const cars = ["Saab","Volvo","BMW"];
+console.log(Array.isArray(cars));</span></pre>
+            </div>
+        </div>
+
+        <h3>Option 2 - Create your own function</h3>
+        <div class="row">
+            <div class="col-6">
+                <p>The function always returns true if the argument is an array.</p>
+                <p>Or more precisely: it returns true if the object prototype contains the word "Array"</p>
+            </div>
+            <div class="col-6">
+                <pre class="example"><span class="code-js">const cars = ["Saab","Volvo","BMW"];
+
+function isArray(myArray) {
+    return myArray.constructor.toString().indexOf("Array") > -1;
+}
+
+console.log(isArray(cars));</span></pre>
+            </div>
+        </div>
+
+
+        <h3>Option 3 - instanceof operator</h3>
+        <div class="row">
+            <div class="col-6">
+                <p>The instanceof operator returns true if an object is created by a given constructor.</p>
+            </div>
+            <div class="col-6">
+                <pre class="example"><span class="code-js">const cars = ["Saab","Volvo","BMW"];
+
+console.log(cars instanceof Array);</span></pre>
+            </div>
+        </div>
+
+
+
+
+    </section>
+
+
+
+
+
+</body>
+
+</html>

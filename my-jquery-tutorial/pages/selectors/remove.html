@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="../../_css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../../_css/style.css">
+
+    <style>
+        #big {
+            font-size: 2em;
+            font-weight: bold
+        }
+
+        #small {
+            font-size: 1em;
+        }
+
+        .pretty {
+            color: pink;
+            font-style: italic;
+        }
+
+        .border {
+            border-style: dashed;
+            border-color: green;
+        }
+    </style>
+    <title>remove()</title>
+</head>
+
+<body>
+    <section class="container">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb breadcrumb-container">
+                <li class="breadcrumb-item"><a class="breadcrumb-link" href="../../index.html">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">remove()</li>
+            </ol>
+        </nav>
+
+
+
+                <h1>Remove element using remove()</h1>
+                <p>Target with attr(), then add the second class in the same parenthesis.</p>
+
+                <pre class="example"><span class="code-html">&lt;p id="title"&gt;Click once to add CSS. Double click to remove&lt;/p&gt;
+
+        <span class="code-js">$("p#title").on("click", function() {
+              $(this).attr("class", "pretty border");
+          });
+
+          $("p#remove_css").on("dblclick", function(){
+            $(this).remove();
+        });</pre>
+
+                <h3>Example</h3>
+                <p id="title2">Remove CSS on double click</p>
+
+
+
+
+
+
+
+          <h1>Remove attribute using removeAttr()</h1>
+                <p>You can also remove a specific attribute using removeAttr()</p>
+                <p>Double Click to remove the src attribute.</p>
+
+        <pre class="example"><span class="code-html">&lt;img id="the_img"  src="img/man_changing_tire.jpg" width="20%" height="20%"&gt;
+
+        <span class="code-js">$('img#the_img').on('dblclick', function(){
+          $(this).removeAttr("src");
+        });</pre>
+
+                <img id="the_img2" src="../../_img/man_changing_tire.jpg" width="20%" height="20%" />
+
+            </section>
+
+
+            <script src="../../_js/jquery-3.4.1.min.js"></script>
+
+            <script>
+                //Select multiple attributes in the same call
+                $('p.instruct_title1, div#closing_statement1').css('color', 'green');
+
+                $("p.instruct_title2").add("div#closing_statement2").css("color", "green");
+
+
+                $("li.important").on("mouseover", function() {
+                    $(this).attr("id", "big");
+                    $(this).on("mouseleave", function() {
+                        $(this).attr("id", "small");
+                    });
+                });
+
+                $("p#title").on("click", function() {
+                    $(this).attr("class", "pretty border");
+                });
+
+                $("#the_img").on("click", function() {
+                    $(this).attr({
+                        "width": "40%",
+                        "length": "40%"
+                    });
+                });
+
+                $("p#title2").on("click", function() {
+                    $(this).attr("class", "pretty border");
+                });
+
+                $("p#title2").on("dblclick", function() {
+                    $(this).attr("class", "pretty border");
+                    $(this).remove();
+                });
+
+                $('img#the_img2').on('dblclick', function(){
+                            $(this).removeAttr("src");
+                          });
+            </script>
+
+
+</body>
+
+</html>

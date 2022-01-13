@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="../../_css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../../_css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <title>Selectors overview</title>
+</head>
+
+<body>
+
+    <nav  aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+                <a href="../../index.html">Home</a>
+            </li>
+            <li class="breadcrumb-item active" aria-current="page">CSS Selectors</li>
+        </ol>
+    </nav>
+
+
+
+    <section class="container">
+        <div class="row">
+            <div class="col">
+                <h1>CSS selectors</h1>
+                <p>This page explains what CSS selectors are and how to use them.</p>
+                <p>A CSS selector locates and HTML element and adds styles to it.</p>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="container">
+
+
+        <div class="row">
+            <div class="col">
+                <h1>Syntax</h1>
+
+
+                <p>The basic syntax is:
+                    <strong>SELECTOR { PROPERTY: VALUE }</strong>
+                </p>
+                <img src="../../_img/css-syntax.png" />
+
+                <p>CSS can locate HTML elements based on their:
+                    <ul>
+                        <li>element name</li>
+                        <li>id</li>
+                        <li>class</li>
+                        <li>attribute</li>
+                    </ul>
+            </div>
+        </div>
+    </section>
+
+
+
+    <section class="container">
+
+        <div class="row">
+            <div class="col">
+                <h1>The 'Element' selector</h1>
+
+                <p>The 'Element' selector locates an HTML element based on the element name. Examples include:</p>
+
+                <ul>
+                    <li>body</li>
+                    <li>h1</li>
+                    <li>p</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-6">
+                <p>This paragraph selector would locate all paragraphs in the document.</p>
+            </div>
+            <div class="col-6">
+                <pre class="example"><span class="code-css">p {
+  color: blue;
+}</span>
+</pre>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+    <section class="container">
+
+        <div class="row">
+            <div class="col">
+                <h1>The 'id' selector</h1>
+                <p>The <span class="text-highlight">id</span> selector locates an HTML element based on a specific ID value given to that element. For example:</p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-6">
+                <p>Assign a paragraph the <span class="text-highlight">id</span> of <span class="text-highlight">intro</span>.</p>
+            </div>
+            <div class="col-6">
+                <pre class="example"><span class="code-html">&lt;p id="intro"&gt;words words words&lt;/p&gt;</span></pre>
+            </div>
+        </div>
+
+        <!--end row-->
+        <div class="row">
+            <div class="col-6">
+                <p>You can then target it in your CSS file with a <span class="text-highlight">#</span>.</p>
+            </div>
+            <div class="col-6">
+                <pre class="example"><span class="code-css">#intro {
+  background-color: blue;
+}    </span></pre>
+            </div>
+        </div>
+
+        <div class="alert alert-note">
+            <div class="alert-icon">
+                <img src="../../_img/note-icon.png" width="60" height="60">
+            </div>
+            <div class="alert-content">
+                <p>You can either use single quotes or double quotes around the 'id' name.</p>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
+    <section class="container">
+        <div class="row">
+
+            <div class="col">
+            <h1>The 'class' selector</h1>
+                  <p>The <span class="text-highlight">class</span> selector locates an HTML element based on a specific Class name value given to that element. For example:</p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-6">
+                <p>Assign a paragraph the <span class="text-highlight">class</span> of <span class="text-highlight">center</span>.</p>
+            </div>
+            <div class="col-6">
+                <pre class="example"><span class="code-html">&lt;p class="center"&gt;words words words&lt;/p&gt;</span></pre>
+            </div>
+        </div>
+        <!--end row-->
+
+
+        <div class="row">
+            <div class="col-6">
+                <p>You can then target it in your CSS file with a period.</p>
+            </div>
+            <div class="col-6">
+                <pre class="example"><span class="code-css">.center {
+  background-color: blue;
+}    </span></pre>
+            </div>
+        </div>
+
+        <div class="alert alert-note">
+            <div class="alert-icon">
+                <img src="../../_img/note-icon.png" width="60" height="60">
+            </div>
+            <div class="alert-content">
+                <p>You can either use single quotes or double quotes around the <span class="text-highlight">class</span> name.</p>
+            </div>
+        </div>
+
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script src="../../_js/jquery.js"></script>
+    <script src="../../_js/bootstrap.bundle.js"></script>
+</body>
+
+</html>

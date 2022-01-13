@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="../../_css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../../_css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <title>Text colors</title>
+</head>
+
+<body>
+    <a href="../../index.html">Home page</a>
+
+
+
+        <section class="container">
+            <h2>text-overflow</h2>
+            <div class="row">
+                <div class="col">
+                    <p>text-overflow specifies how overflowed content (that is not displayed), should be notified to the user.</p>
+                    <p>Both of the following properties are required for text-overflow:</p>
+                    <ul>
+                        <li>white-space: nowrap;</li>
+                        <li>overflow: hidden;</li>
+                    </ul>
+
+                    <p>Possible values are:</p>
+                    <ul>
+                        <li>clip - Default. The text is clipped and not accessible.</li>
+                        <li>ellipsis - Render an ellipsis ("...") to represent the clipped text.</li>
+                        <li>string - Render the given string to represent the clipped text.</li>
+                    </ul>
+                    <div class="alert alert-note">
+                        <div class="alert-icon">
+                            <img src="../../_img/note-icon.png" width="60" height="60">
+                        </div>
+                        <div class="alert-content">
+                            <p>This does not work on inline elements like a span tag.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="container">
+            <h3>clip</h3>
+            <div class="row">
+                <div class="col-6">
+                    <p>clip</p>
+                </div>
+                <div class="col-6">
+                    <pre class="example"><span class="code-html">&lt;div&gt;Text that won't fit in the box is clipped and not shown.&lt;/p&gt;</span>
+
+    <span class="code-css">div {
+      text-overflow: clip;
+      white-space: nowrap;
+      overflow: hidden;
+      width: 335px;
+      border: 1px solid #000000;
+      color: white;
+    }</span>
+        </pre>
+                </div>
+              </div>
+
+                <div class="row">
+                    <div class="col-6">
+                        <p>Example of clip.</p>
+                    </div>
+                    <div class="col-6">
+                        <p class="text-overflow-clip">Text that won't fit in the box is clipped and not shown.</p>
+                    </div>
+                </div>
+        </section>
+
+    <section class="container">
+        <h3>ellipsis</h3>
+        <div class="row">
+            <div class="col-6">
+                <p>ellipsis</p>
+            </div>
+      <div class="col-6">
+            <pre class="example"><span class="code-html">&lt;div&gt;Text that won't fit in the box is shown as an ellipsis.&lt;/p&gt;</span>
+
+    <span class="code-css">div {
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+      width: 335px;
+      border: 1px solid #000000;
+      color: white;
+    }</span>
+        </pre>
+        </div>
+    </div>
+
+        <div class="row">
+            <div class="col-6">
+                <p>Example of ellipsis.</p>
+            </div>
+      <div class="col-6">
+                <p class="text-overflow-ellipsis">Text that won't fit in the box is clipped and not shown.</p>
+        </div>
+    </div>
+    </section>
+
+
+    <section class="container">
+        <h3>string</h3>
+        <span class="red">find an example</span>
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+        <script src="../../_js/jquery.js"></script>
+        <script src="../../_js/bootstrap.bundle.js"></script>
+    </body>
+
+    </html>

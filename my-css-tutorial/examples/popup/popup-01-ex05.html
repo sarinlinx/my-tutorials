@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+    <title>Navigation example</title>
+
+    <style>
+        *,
+        *::after,
+        *::before {
+            margin: 0;
+            padding: 0;
+            box-sizing: inherit;
+        }
+        
+        html {
+            font-size: 62.5%;
+        }
+        
+        body {
+            box-sizing: border-box;
+            padding: 3rem;
+            font-family: "Lato", sans-serif;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 1.7;
+            color: #777;
+        }
+        
+        .row {
+            max-width: 114rem;
+            margin: 0 auto;
+        }
+        
+        .row:not(:last-child) {
+            margin-bottom: 8rem;
+        }
+        
+        .row::after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+        
+        .row [class^="col-"] {
+            float: left;
+        }
+        
+        .row [class^="col-"]:not(:last-child) {
+            margin-right: 6rem;
+        }
+        
+        .popup {
+            /* cover entire page in dark background */
+            height: 100vh;
+            /* not really necessary */
+            width: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: rgba(0, 0, 0, 0.8);
+            z-index: 9999;
+            /* hide popup so it can be animated */
+            /* opacity: 0; */
+            /* visibility: hidden; */
+            /* transition: all .3s */
+        }
+        
+        @supports (-webkit-backdrop-filter: blur(10px)) or (backdrop-filter: blur(10px)) {
+            .popup {
+                -webkit-backdrop-filter: blur(10px);
+                backdrop-filter: blur(10px);
+                background-color: rgba(255, 255, 255, 0.3)
+            }
+        }
+        
+        .popup__content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 75%;
+            background-color: #fff;
+            box-shadow: 0 2rem 4rem rgab(#000, 0.2);
+            border-radius: 3px;
+            /* used to make left and right sides have same height */
+            display: table;
+            overflow: hidden;
+            /* initial state of content should be scaled down and invisible */
+            /* opacity: 0; */
+            /* there is already a transform in the @include, so you cannot add a 2nd in the same declaration 
+               to fix add the original from the @include and the new one in the same declaration */
+            /* transform: translate(-50%, -50%) scale(0.5); */
+            /* transition: all .4s .2s */
+        }
+        
+        .popup__img {
+            display: block;
+            /* 100% of parent container's width */
+            width: 100%
+        }
+        
+        .popup__left {
+            width: 33.33333%;
+            /* used to make left and right sides have same height */
+            display: table-cell;
+        }
+        
+        .popup__right {
+            width: 66.66666%;
+            /* used to make left and right sides have same height */
+            display: table-cell;
+            /* align vertically */
+            vertical-align: middle;
+            padding: 3rem 5rem
+        }
+        
+        .popup__text {
+            font-size: 1.4rem;
+            margin-bottom: 4rem;
+            /* colomn layout */
+            -moz-column-count: 2;
+            /* space between colums */
+            -moz-column-gap: 4rem;
+            -moz-column-rule: 1px solid #eee;
+            /* auto hypenation
+            then only works if HTML has language att set <html lang="en"> */
+            column-count: 2;
+            column-gap: 4rem;
+            /* border between the columns */
+            column-rule: 1px solid #eee;
+            /* hyphens */
+            -ms-hyphens: auto;
+            -webkit-hyphens: auto;
+            hyphens: auto
+        }
+    </style>
+
+    <body>
+
+
+
+        <!-- <div class="row"> -->
+        <div class="popup" id="popup">
+            <div class="popup__content">
+
+                <div class="popup__left">
+                    <img src="nat-8.jpg" alt="Tour photo" class="popup__img">
+                    <img src="nat-9.jpg" alt="Tour photo" class="popup__img">
+                </div>
+
+                <div class="popup__right">
+                    <!-- Close button takes you back to #section-tours -->
+                    <a href="#section-tours" class="popup__close">×</a>
+
+                    <h2 class="heading-secondary u-margin-bottom-small">Start booking now</h2>
+                    <h3 class="heading-tertiary u-margin-bottom-small">Important – Please read these terms before booking
+                    </h3>
+                    <p class="popup__text">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sed sed risus pretium quam. Aliquam sem et tortor consequat id. Volutpat odio facilisis mauris sit amet massa vitae. Mi bibendum
+                        neque egestas congue. Placerat orci nulla pellentesque dignissim enim sit. Vitae semper quis lectus nulla at volutpat diam ut venenatis. Malesuada pellentesque elit eget gravida cum sociis natoque penatibus et. Proin fermentum
+                        leo vel orci porta non pulvinar neque laoreet. Gravida neque convallis a cras semper. Molestie at elementum eu facilisis sed odio morbi quis. Faucibus vitae aliquet nec ullamcorper sit amet risus nullam eget. Nam libero justo laoreet
+                        sit. Amet massa vitae tortor condimentum lacinia quis vel eros donec. Sit amet facilisis magna etiam. Imperdiet sed euismod nisi porta.
+                    </p>
+                    <a href="#" class="btn btn--green">Book now</a>
+                </div>
+
+
+            </div>
+        </div>
+        <!-- </div> -->
+
+
+
+
+
+
+    </body>
+
+</html>

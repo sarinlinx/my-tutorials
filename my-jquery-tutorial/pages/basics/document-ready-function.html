@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="../../_css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../../_css/style.css">
+
+    <title>Document Ready Function</title>
+</head>
+
+<body>
+    <section class="container">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb breadcrumb-container">
+                <li class="breadcrumb-item"><a class="breadcrumb-link" href="../../index.html">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Document Ready Function</li>
+            </ol>
+        </nav>
+
+
+
+        <h1>Document Ready Function</h1>
+<p>You should put your calls to jQuery at the bottom of your HTML. However, if you don't you can still use the Document Ready Function to only run it once the document has loaded.</p>
+
+        <p>Wrapping your jquery code in the Document Ready Function makes sure that jQuery is loaded before any of your code runs.</p>
+        <p>Target the document</p>
+        <p>Call the ready() function on it</p>
+        <p>Then pass in the function</p>
+
+<h3>Long version</h3>
+        <pre class="example"><span class="code-js">$(document).ready(function(){
+  <span class="code-comment">//any code in here runs after the document has been completely loaded</span>
+
+});</pre>
+
+
+<h3>Short version</h3>
+        <pre class="example"><span class="code-js">$(function(){
+  <span class="code-comment">//any code in here runs after the document has been completely loaded</span>
+
+});</pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </section>
+
+
+    <script src="../../_js/jquery-3.4.1.min.js"></script>
+
+    <script>
+    </script>
+
+</body>
+
+</html>

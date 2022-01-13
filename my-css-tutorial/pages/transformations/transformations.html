@@ -1,0 +1,578 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="../../_css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../../_css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <title>Transformations</title>
+</head>
+
+<body>
+    <a href="../../index.html">Home page</a>
+
+
+
+    <section class="container">
+        <h1>Transformations</h1>
+        <div class="row">
+            <div class="col">
+                <p>Transformation is a property that alters the appearance of a page element by changing its size, moving it to another location on the page, or rotating it, sometimes doing all three at once.</p>
+                <p><strong>Syntax</strong>: transform: effect(parameters);</p>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+    <section class="container">
+        <h2>Transformation effects</h2>
+        <div class="row">
+            <div class="col">
+                <p>The following lists different 2D transformations:</p>
+            </div>
+        </div>
+
+        <h4>Original state of image</h4>
+        <div class="row">
+            <div class="col-6">
+                <p>This shows the position of the image without any CSS added to adjust it.</p>
+            </div>
+            <div class="col-6">
+                <div class="example"><img class="fluid" src="../../_img/airplane.png"></div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="container">
+        <h4>translate</h4>
+        <div class="row">
+            <div class="col-6">
+                <h5>translateX</h5> - moves horizontally. Ex: <span class="green">transform: translateX(55px);</span></p>
+            </div>
+            <div class="col-6">
+                <pre class="example"><span class="code-html">&lt;img src="../../_img/airplane.png"&gt;&lt;/img&gt;
+
+<span class="code-css">img {
+  transform: translateX(55px);
+}</span></pre>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-6">
+                <p>Example: This moves the image horizontally to the right.</p>
+                <p>Positive values shift to the right.</p>
+            </div>
+
+
+            <div class="col-6">
+                <pre class="example"><img class="fluid transform-translateX" src="../../_img/airplane.png"></div>
+
+        </div>
+      </section>
+
+
+      <section class="container">
+              <div class="row">
+              <div class="col-6">
+                  <h5>translateY</h5> - moves vertically. Ex: <span class="green">transform: translateY(55px);</span></p>
+              </div>
+              <div class="col-6">
+                  <pre class="example"><span class="code-html">&lt;img src="../../_img/airplane.png"&gt;&lt;/img&gt;
+
+<span class="code-css">img {
+  transform: translateY(55px);
+}</span></pre>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-6">
+                <p>Example: This moves the image vertically down.</p>
+                <p>Positive values shift down.</p>
+            </div>
+
+            <div class="col-6">
+                <pre class="example"><img class="fluid transform-translateY" src="../../_img/airplane.png"></pre>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="container">
+        <div class="row">
+            <div class="col-6">
+                <h5>translate</h5> - moves both horizontally and vertically. Ex: <span class="green">transform: translate(55px, 25px);</span></p>
+            </div>
+            <div class="col-6">
+                <pre class="example"><span class="code-html">&lt;img src="../../_img/airplane.png"&gt;&lt;/img&gt;
+
+<span class="code-css">img {
+  transform: translate(50px, 50px);
+}</span></pre>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-6">
+                <p>Example: This moves the image horizontally right and vertically down.</p>
+            </div>
+
+            <div class="col-6">
+                <pre class="example"><img class="fluid transform-translate" src="../../_img/airplane.png"></pre>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="container">
+        <h4>Scale</h4>
+
+
+
+        <div class="row">
+            <div class="col-6">
+                <h5>scaleX</h5> - increase the size horizontally (width). Negative values create a mirror image. Ex: <span class="green">transform: scaleX(1.5);</span></p>
+            </div>
+            <div class="col-6">
+                <pre class="example"><span class="code-html">&lt;img src="../../_img/airplane.png"&gt;&lt;/img&gt;
+
+<span class="code-css">img {
+  transform: scaleX(1.5);
+}</span></pre>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-6">
+                <p>Example: This increases the size horizontally by 1.5 times.</p>
+            </div>
+
+            <div class="col-6">
+                <pre class="example"><img class="fluid transform-scaleX" src="../../_img/airplane.png"></pre>
+            </div>
+        </div>
+    </section>
+
+
+<section class="container">
+
+  <div class="row">
+      <div class="col-6">
+          <h5>scaleY</h5> - increase the size vertically (height). Negative values create a mirror image. <span class="green">transform: scaleY(-1.5);</span></p>
+      </div>
+      <div class="col-6">
+          <pre class="example"><span class="code-html">&lt;img src="../../_img/airplane.png"&gt;&lt;/img&gt;
+
+<span class="code-css">img {
+transform: scaleY(-1.5);
+}</span></pre>
+      </div>
+  </div>
+
+  <div class="row">
+      <div class="col-6">
+          <p>Example: This increases the height 1.5 times.</p>
+      </div>
+
+      <div class="col-6">
+          <pre class="example"><img class="fluid transform-scaleY" src="../../_img/airplane.png"></pre>
+      </div>
+  </div>
+</section>
+
+
+
+<section class="container">
+
+  <div class="row">
+      <div class="col-6">
+          <h5>scale</h5> - scales both on the X and Y axis. <span class="green">transform: scale(1.5, -0.3);</span></p>
+      </div>
+      <div class="col-6">
+          <pre class="example"><span class="code-html">&lt;img src="../../_img/airplane.png"&gt;&lt;/img&gt;
+
+<span class="code-css">img {
+transform: scale(1.5, 0.3);
+}</span></pre>
+      </div>
+  </div>
+
+  <div class="row">
+      <div class="col-6">
+          <p>Example: This scales it 1.5 wide and 1.5 times reversed height.</p>
+      </div>
+
+      <div class="col-6">
+          <pre class="example"><img class="fluid transform-scale" src="../../_img/airplane.png"></pre>
+      </div>
+  </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <section class="container">
+        <h4>skew</h4>
+
+              <div class="row">
+                  <div class="col-6">
+                      <h5>skewX</h5> - slants the object on the horizontal axis. <span class="green">transform: skewX(20deg);</span></p>
+                  </div>
+                  <div class="col-6">
+                      <pre class="example"><span class="code-html">&lt;img src="../../_img/airplane.png"&gt;&lt;/img&gt;
+
+            <span class="code-css">img {
+            transform: skewX(20deg);
+            }</span></pre>
+                  </div>
+              </div>
+
+              <div class="row">
+                  <div class="col-6">
+                      <p>Example: This skews the image horizontally right at 25 degress.</p>
+                      <p>A negative value would skew it to the left.</p>
+                  </div>
+
+                  <div class="col-6">
+                      <pre class="example"><img class="fluid transform-skewX" src="../../_img/airplane.png"></pre>
+                  </div>
+              </div>
+            </section>
+
+
+
+
+
+  <section class="container">
+            <div class="row">
+                <div class="col-6">
+                    <h5>skewY</h5> - slants the object on the vertical axis. <span class="green">transform: skewY(-10deg);</span></p>
+                </div>
+                <div class="col-6">
+                    <pre class="example"><span class="code-html">&lt;img src="../../_img/airplane.png"&gt;&lt;/img&gt;
+
+<span class="code-css">img {
+  transform: skewY(20deg);
+}</span></pre>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-6">
+                    <p>Example: This skews the image vertically down right at 25 degress.</p>
+                    <p>A negative value would skew it to the up to the right.</p>
+                </div>
+
+                <div class="col-6">
+                    <pre class="example"><img class="fluid transform-skewY" src="../../_img/airplane.png"></pre>
+                </div>
+            </div>
+          </section>
+
+
+
+
+
+          <section class="container">
+                    <div class="row">
+                        <div class="col-6">
+                            <h5>skew</h5> - slants both on the X and Y axis. <span class="green">transform: skew(20deg, 15deg);</span></p>
+                        </div>
+                        <div class="col-6">
+                            <pre class="example"><span class="code-html">&lt;img src="../../_img/airplane.png"&gt;&lt;/img&gt;
+
+<span class="code-css">img {
+  transform: skew(20deg, 20deg);
+}</span></pre>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-6">
+                            <p>Example: </p>
+                        </div>
+
+                        <div class="col-6">
+                            <pre class="example"><img class="fluid transform-skew" src="../../_img/airplane.png"></pre>
+                        </div>
+                    </div>
+                  </section>
+
+
+
+
+
+                  <section class="container">
+                            <div class="row">
+                                <div class="col-6">
+                                    <h5>rotate</h5> - rotates the object clockwise or counter-clockwise (with negative values). <span class="green">transform: rotate(120deg);</span></p>
+                                </div>
+                                <div class="col-6">
+                                    <pre class="example"><span class="code-html">&lt;img src="../../_img/airplane.png"&gt;&lt;/img&gt;
+
+<span class="code-css">img {
+  transform: rotate(45deg);
+}</span></pre>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-6">
+                                    <p>Example: This image is rotated clockwise 45 degrees.</p>
+                                </div>
+
+                                <div class="col-6">
+                                    <pre class="example"><img class="fluid transform-rotate" src="../../_img/airplane.png"></pre>
+                                </div>
+                            </div>
+                          </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <section class="container">
+        <h2>Transform Origin</h2>
+        <div class="row">
+            <div class="col">
+                <p>
+                    <p>All of the transformations above are done relative to the object's center.</p>
+                    <p>You can also change the origin of the transformation using the 'origin' property.</p>
+                    <p><strong>syntax: transform-origin: center center;</strong></p>
+                    <p>If you want the origin to be on the right bottom, you'd use: <span class="green">transform-origin: right bottom;</span>
+                        <p>For example, you can rotate around the right bottom of an image by using both properties:</p>
+                        <p><span class="green">transform: rotate(230deg);</span></p>
+                        <p><span class="green">transform-origin: right bottom;</span></p>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+    <section class="container">
+        <h2>Multiple Transformations</h2>
+        <div class="row">
+            <div class="col">
+                <p>
+                    <p>When using multiple transformations, order is important. This is because each transformation will be based on the transformaiton that came before it.</p>
+                    <p>For example, if you rotate an image first, then translate it, the image will be translated on the axis that it's already been rotated on first.</p>
+                    <p><span class="green">transform: rotate(330deg) translateY(-100);</span></p>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+    <section class="container">
+        <h2>Matrix Transformations</h2>
+        <div class="row">
+            <div class="col">
+
+                <p>One of the reasons that matrices are used for creating visual effects is that they enable us to apply mathematical operations to a whole array of numbers.</p>
+                <img src="../../_img/matrix-transformation.png">
+                <p>To multiply two matrices, we calculate the sum of the products from each <strong>row</strong> in the first matrix by each <strong>column</strong> in the second. Thus multiplying the two three-by-three matrices shown here results in another
+                    three-by-three matrix that contains all the product sums of every row and column combination.</p>
+                <img src="../../_img/matrix-transformation_02.png">
+                <p>CSS allows you to write the transformation matrix directly using the matrix function shown here. The values from the matrix function are laid out with the first two numbers representing the first two numbers from the first column of the
+                    transformation matrix, the next two numbers containing the values from the second column, and the last two numbers containing the values from the third column.</p>
+                <p>You might wonder why the matrix function doesn't include any numbers from the last row. We don't need to include those numbers, because they're always zero, zero, one by definition. The last row is only there to make the matrix multiplication
+                    work.
+                </p>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
+
+    <section class="container">
+        <h1>3D Transformations</h1>
+        <div class="row">
+            <div class="col">
+                <p>In a pseudo 3D space that's projected onto a webpage we define positions in terms of length, width, and height. These directions are labeled with a X axis, a Y axis, and a Z axis.</p>
+                <img src="../../_img/3d-space.png">
+                <p>A page object, by default, is placed within the XY plane at the center of the Z axis which you view directly through the Z axis, but with CSS transformation styles we can change our angle of view so that we can observe this object from
+                    below, above, or behind. Rotating the object around either the Y axis, or the X axis, or the Z axis.</p>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="container">
+        <h1>3D Perspective</h1>
+        <div class="row">
+            <div class="col">
+                <p>Another aspect of generating a 3D space in CSS is setting the perspective of the space. Perspective is a representation of the objects within the 3D virtual space so that objects which are further away appear smaller while objects which
+                    are nearer appear larger. In addition, objects which are further away appear to converge at a location called the vanishing point.</p>
+                <img src="../../_img/3d-perspective.png">
+                <p> With small perspective values objects which are placed closer to the user along the Z axis appear larger while objects which are farther away appear to recede.</p>
+                <h3>Perspective</h3>
+                <p>Every 3D transformation needs to have a perspective value, because, without perspective, there's no space for which the object to reside in.</p>
+                <h3>Origin</h3>
+                <p>You can also change the origin from which the object is transformed.
+            </div>
+        </div>
+    </section>
+
+    <section class="container">
+        <h2>Rotations in 3D</h2>
+        <div class="row">
+            <div class="col">
+
+                <p>There are 4 rotation functions:</p>
+                <ul>
+                    <li>rotateX - rotates around X axis Ex: <span class="green">transform: perspective(800px) rotateX(10deg);</span></li>
+                    <li>rotateY - rotates around Y axis Ex: <span class="green">transform: perspective(800px) rotateY(10deg);</span></li>
+                    <li>rotateZ - rotates around Z axis Ex: <span class="green">transform: perspective(800px) rotateZ(10deg);</span></li>
+                    <li>rotate3d - rotates around any axis Ex: <span class="green">transform: perspective(800px) rotate3d(1, 1, 0, -160deg);</span></li>
+                </ul>
+
+                <p>There are 4 translation functions:</p>
+                <ul>
+                    <li>translateX - translates around X axis Ex: <span class="green">transform: perspective(800px) translateX(10px);</span></li>
+                    <li>translateY - translates around Y axis Ex: <span class="green">transform: perspective(800px) translateY(10px);</span></li>
+                    <li>translateZ - translates around Z axis Ex: <span class="green">transform: perspective(800px) translateZ(10px);</span></li>
+                    <li>translate3d - translates to any position Ex: <span class="green">transform: perspective(800px) translate3d(10px, 100px, 5px);</span></li>
+                </ul>
+
+                <p>There are 4 scaling functions:</p>
+                <ul>
+                    <li>scaleX - Scales around X axis Ex: <span class="green">transform: perspective(800px) scaleX(0.3);</span></li>
+                    <li>scaleY - Scales around Y axis Ex: <span class="green">transform: perspective(800px) scaleY(0.3);</span></li>
+                    <li>scaleZ - Scales around Z axis Ex: <span class="green">transform: perspective(800px) scaleZ(0.3);</span></li>
+                    <li>scale3d - Scales in any direction Ex: <span class="green">asdf</span></li>
+                </ul>
+
+
+            </div>
+        </div>
+    </section>
+
+    <section class="container">
+        <h2>Multiple Transformations</h2>
+        <div class="row">
+            <div class="col">
+                <p>
+                    <p>When using multiple transformations, order is important. This is because each transformation will be based on the transformaiton that came before it.</p>
+                    <p>For example, if you rotate an image first, then translate it, the image will be translated on the axis that it's already been rotated on first.</p>
+                    <p><span class="green">transform: perspective(1200px) translateX(190px) translateY(-40px) rotateX(50deg);</span></p>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+    <section class="container">
+        <h2>Perspective in 3D space</h2>
+        <div class="row">
+            <div class="col">
+                <p class="red">Continue here</p>
+                <p><a href="https://www.lynda.com/CSS-tutorials/Perspective-3D-space/674608/739923-4.html?autoplay=true">Lynda link</a></p>
+                <p>The following are a few examples of how an object's perspective changes in 3D space.</p>
+            </div>
+        </div>
+    </section>
+
+
+
+    <section class="container">
+        <h3>Code</h3>
+        <div class="row">
+
+            <div class="col-6">
+                <p>asdf</p>
+            </div>
+
+            <div class="col-6">
+                <pre class="example"><span class="code-html">&lt;div id="img-container"&gt;
+  &lt;img src="../../_img/airplane.png"&gt;
+&lt;/div&gt;</pre>
+
+            </div>
+        </div>
+    </section>
+
+
+    <section class="container">
+        <h3>Example</h3>
+        <div class="row">
+            <div class="col-6">
+                <p>asdf</p>
+            </div>
+
+            <div class="col-6">
+                <div id="img-container">
+                    <img class="fluid" src="../../_img/airplane.png">
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+
+
+
+
+
+
+    <script src="../../_js/jquery.js"></script>
+    <script src="../../_js/bootstrap.bundle.js"></script>
+</body>
+
+</html>

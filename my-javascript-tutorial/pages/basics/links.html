@@ -1,0 +1,466 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="../../_css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../../_css/style.css">
+
+    <title>Linking JS to your page</title>
+</head>
+
+<body>
+    <a href="../../index.html">Home page</a>
+    <section class="container">
+
+
+
+
+        <div class="row">
+            <div class="col">
+                <h1>Terminology</h1>
+            </div>
+        </div>
+
+        <table class="table table-dark">
+            <thead>
+                <tr>
+                    <th scope="col">Term</th>
+                    <th scope="col">Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>ECMAScript 5.1</td>
+                    <td>Created in 2011 and is the current standard, but it's outdated.</td>
+                </tr>
+                <tr>
+                    <td>ECMAScript 2015</td>
+                    <td>ES6. This is the emerging standard. Spotty support, needs a transpiler like Babel to work.</td>
+                </tr>
+
+                <tr>
+                    <td>Quirks mode and Standards mode</td>
+                    <td>
+                        <h5>Quirks Mode (old code for old browsers)</h5>
+                        <ul>
+                            <li>emulates nonstandard behavior in Navigator 4 and Internet Explorer 5. This is essential in order to support websites that were built before the widespread adoption of web standards</li>
+                            <li>Quirks mode allows for backwards compatability</li>
+                        </ul>
+                        <h5>Standards Mode (modern)</h5>
+                        <ul>
+                            <li>the behavior is (hopefully) the behavior described by the HTML and CSS specifications</li>
+                            <li>Standards mode is rendered according to the HTML and CSS specifications</li>
+                            <li>This DOCTYPE make modern browsers render in Standards Mode and older ones in Almost Standards Mode (which is the maximum they can do).</li>
+                        </ul>
+                        NOTE: There are JavaScript properties which also depend on the rendering mode, especially CSS-box and positioning-related.
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+
+
+
+
+
+
+
+
+
+
+        <div class="row">
+            <div class="col">
+                <h1>Tools</h1>
+            </div>
+        </div>
+
+        <table class="table table-dark">
+            <thead>
+                <tr>
+                    <th scope="col">Site</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">URL</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>JavaScript variable name validator</td>
+                    <td>Tests JS variables</td>
+                    <td><a href="https://mothereff.in/js-variables" target="_blank">JS variable name validator</a></td>
+                </tr>
+
+
+            </tbody>
+        </table>
+
+
+
+
+        <div class="row">
+            <div class="col">
+                <h1>Browser info</h1>
+
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <h3>Engines</h3>
+            </div>
+        </div>
+
+        <table class="table table-dark">
+            <thead>
+                <tr>
+                    <th scope="col">Site</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">URL</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Firefox</td>
+                    <td>Uses an open-source engine called Gecko.</td>
+                    <td></td>
+                </tr>
+
+                <tr>
+                    <td>Safari/Chrome</td>
+                    <td>Uses an open-source rendering engine called Webkit, but different JavaScript implementations. Chrome uses Google V8. Safari uses it’s own closed-source JavaScript engine.</td>
+                    <td></td>
+                </tr>
+
+                <tr>
+                    <td>Opera</td>
+                    <td>Uses it’s closed source engine called Presto.</td>
+                    <td></td>
+                </tr>
+
+                <tr>
+                    <td>IE</td>
+                    <td>Uses the closed-source engine called Trident.</td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+
+
+
+
+
+
+        <div class="row">
+            <div class="col">
+                <h1>Compatibility tests</h1>
+
+            </div>
+        </div>
+
+
+        <table class="table table-dark">
+            <thead>
+                <tr>
+                    <th scope="col">Site</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">URL</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Quirksmode</td>
+                    <td>Contains information about lots of incompatibilities. Also, there is a combo to search it. Try entering ”quirksmode onkeypress” in google for instance.</td>
+                    <td><a href="https://www.quirksmode.org/compatibility.html" target="_blank">Quirksmode</a></td>
+                </tr>
+            </tbody>
+        </table>
+
+
+
+        <div class="row">
+            <div class="col">
+                <h1>Help manuals</h1>
+            </div>
+        </div>
+
+        <table class="table table-dark">
+            <thead>
+                <tr>
+                    <th scope="col">Site</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">URL</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Mozilla dev network (MDN)</td>
+                    <td>MDN is usually good for general and firefox-specific information.</td>
+                    <td><a href="https://developer.mozilla.org/en-US/" target="_blank">Mozilla dev network (MDN)</a></td>
+                </tr>
+
+                <tr>
+                    <td>Miscrosoft Development Network (MSDN)</td>
+                    <td>Good for IE info.</td>
+                    <td><a href="https://msdn.microsoft.com/en-us/default.aspx" target="_blank">Miscrosoft Development Network
+              (MSDN)</a></td>
+                </tr>
+
+                <tr>
+                    <td>'window' object properties and methods</td>
+                    <td>Properties and Methods used to interact with the 'window' object.</td>
+                    <td><a href="https://developer.mozilla.org/en-US/docs/Web/API/Window" target="_blank">Properties and Methods
+              for the 'window' object</a></td>
+                </tr>
+
+                <tr>
+                    <td>Document object properties and methods</td>
+                    <td>Properties and Methods used to interact with the Document object.</td>
+                    <td><a href="https://developer.mozilla.org/en-US/docs/Web/API/document" target="_blank">Properties and Methods
+              of the Document</a></td>
+                </tr>
+
+                <tr>
+                    <td>querySelector</td>
+                    <td>Properties and Methods used to interact with the Document object.</td>
+                    <td><a href="https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelector" target="_blank">querySelector</a></td>
+                </tr>
+
+                <tr>
+                    <td>querySelectorAll</td>
+                    <td>Properties and Methods used to interact with the Document object.</td>
+                    <td><a href="https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelectorAll" target="_blank">querySelectorAll</a></td>
+                </tr>
+
+                <tr>
+                    <td>Read-Only Properties</td>
+                    <td>List of read-only properties.</td>
+                    <td><a href="https://developer.mozilla.org/en-US/docs/Web/API/Element" target="_blank">Read only
+              properties</a></td>
+                </tr>
+
+
+            </tbody>
+        </table>
+
+
+
+
+
+
+        <div class="row">
+            <div class="col">
+                <h1>Tutorials</h1>
+            </div>
+        </div>
+
+        <table class="table table-dark">
+            <thead>
+                <tr>
+                    <th scope="col">Site</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">URL</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>JavaScript tutorial</td>
+                    <td>Lots of examples.</td>
+                    <td><a href="http://javascript.info/" target="_blank">javascript.info</a></td>
+                </tr>
+                <tr>
+                    <td>JavaScript tutorial</td>
+                    <td>Lots of examples.</td>
+                    <td><a href="http://www.tutorialspoint.com/javascript/javascript_overview.htm" target="_blank">TutorialsPoint
+              JavaScript Tutorial</a></td>
+                </tr>
+                <tr>
+                    <td>JavaScript tutorial</td>
+                    <td>Lots of examples.</td>
+                    <td><a href="http://www.w3schools.com/js/" target="_blank">W3Schools</a></td>
+                </tr>
+
+
+            </tbody>
+        </table>
+
+
+
+
+
+
+
+        <div class="row">
+            <div class="col">
+                <h1>Development Tools</h1>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <h3>Editors</h3>
+                <a href="http://javascript.info/code-editors">http://javascript.info/code-editors</a>
+            </div>
+        </div>
+        <table class="table table-dark">
+            <thead>
+                <tr>
+                    <th scope="col">Site</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">URL</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Atom</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Visual Studio Code</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Sublime Text</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+
+            </tbody>
+        </table>
+
+
+
+
+
+        <div class="row">
+            <div class="col">
+                <h3>IDEs</h3>
+            </div>
+        </div>
+        <table class="table table-dark">
+            <thead>
+                <tr>
+                    <th scope="col">Site</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">URL</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>NetBeans</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Aptana Studio</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Eclipse</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+
+            </tbody>
+        </table>
+
+
+
+
+        <div class="row">
+            <div class="col">
+                <h3>Other</h3>
+            </div>
+        </div>
+        <table class="table table-dark">
+            <thead>
+                <tr>
+                    <th scope="col">Site</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">URL</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>BabelJS</td>
+                    <td>Transpiler for JS. Converts ES6 to old versions of JS.</td>
+                    <td><a href="http://babeljs.io/" target="_blank">bablejs.io</a></td>
+                </tr>
+
+            </tbody>
+        </table>
+
+
+
+        <div class="row">
+            <div class="col">
+                <h1>Learning Tools</h1>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <ul>
+                    <li> <a href="https://www.codewars.com/">Coding Wars - coding challenges to help you learn
+          </li>
+        </ul>
+      </div>
+    </div>
+
+
+
+
+
+
+
+    <div class="row">
+      <div class="col">
+        <h1>People</h1>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col">
+        <ul>
+          <li> <a href="https://www.pluralsight.com/authors/kyle-simpson">Kyle Simpson - Top developer</li>
+          <li> <a
+              href=" https://levelup.gitconnected.com/kyle-simpson-ive-forgotten-more-javascript-than-most-people-ever-learn-3bddc6c13e93">Kyle
+              Simpson - Top developer</li>
+
+
+          </li>
+        </ul>
+      </div>
+    </div>
+
+
+
+
+
+  </section>
+
+
+
+
+
+
+
+  <script src="../../_js/jquery.js"></script>
+  <script src="../../_js/bootstrap.bundle.js"></script>
+</body>
+
+</html>

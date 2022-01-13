@@ -1,0 +1,46 @@
+.feature-box {
+    background-color: rgba($color-white, .8);
+    font-size: 1.5rem;
+    padding: 2.5rem;
+    text-align: center;
+    border-radius: 3px;
+    box-shadow: 0 1.5rem 4rem rgba($color-black, .15);
+
+    // transition for hover css
+    transition: transform .3s;
+
+
+    @include respond(tab-port) {
+        padding: 2rem;
+    }
+
+
+
+
+    // The icons above the boxes
+    &__icon {
+        font-size: 6rem;
+        margin-bottom: .5rem;
+
+        // Gradient for icon
+        display: inline-block;
+        // first set background color of block
+        background-image: linear-gradient(to right, $color-primary-light, $color-primary-dark);
+        //background clipped to where text is
+        -webkit-background-clip: text;
+        //You cannot see the gradient yet because the text now sits on top of background so it's gray
+        //make text transparent so you can see background color
+        color: transparent;
+
+        @include respond(tab-port) {
+            margin-bottom: 0;
+        }
+    }
+
+    //box change on hover
+    &:hover {
+        transform: translateY(-1.5rem) scale(1.03);
+    }
+
+
+}

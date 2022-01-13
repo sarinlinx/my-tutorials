@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" type="text/css" href="../../_css/styles.css">
+
+  <title>Express</title>
+</head>
+
+<body>
+
+
+  <nav class="navbar">
+    <a href="../../index.html">Back to homepage</a>
+    <a class="nav-page nav-active">Express</a>
+  </nav>
+
+
+  <h1>Express</h1>
+
+  <div class="text-section">
+    <p>Express is a minimal node.js framework.</p>
+    <p>Many features included which allows you to write apps much faster.</p>
+    <img src="../../_img/express.png" width="450px">
+  </div>
+
+
+
+
+
+  <h2>Postman</h2>
+  <div class="text-section">
+    <p>Postman allows you to develop and test APIs.</p>
+    <p>Download the app to your computer.</p>
+    <ul>
+      <li><a href="https://www.postman.com/downloads/">Postman</a></li>
+    </ul>
+  </div>
+
+
+
+
+
+  <h2>Install Express and add to script</h2>
+  <section class="code-section-container">
+    <div class="code-text-section">
+      <p>Install Express</p>
+    </div>
+
+    <div class="code-block-section-w60">
+      <pre class="example"><span class="code-nodejs">npm install express</span></pre>
+    </div>
+  </section>
+
+  <section class="code-section-container">
+    <div class="code-text-section">
+      <p>Add to script.</p>
+    </div>
+    <div class="code-block-section-w60">
+      <pre class="example"><span class="code-nodejs">const express = require('express');</span></pre>
+    </div>
+  </section>
+
+
+
+
+  <h2>Create app variable to store Express</h2>
+  <section class="code-section-container">
+    <div class="code-text-section">
+      <p>Store the Express module in a variable named <span class="code">app</span>.</p>
+    </div>
+    <div class="code-block-section-w60">
+      <pre class="example"><span class="code-nodejs">const app = express();</span></pre>
+    </div>
+  </section>
+
+
+
+
+  <h2>Use 'listen' method to start a server</h2>
+  <section class="code-section-container">
+    <div class="code-text-section">
+      <p>Use the <span class="code">listen</span> method to start a server.</p>
+      <p>This method takes in the args:</p>
+      <ul>
+        <li>port#</li>
+        <li>a callback function</li>
+      </ul>
+    </div>
+    <div class="code-block-section-w60">
+      <pre class="example"><span class="code-nodejs">const express = require('express');
+const app = express();
+
+const port = 3000;
+
+<span class="code-comment">// pass in port and callback function </span>
+<span class="code-highlight">app.listen(port, () => { </span>
+  console.log('App running');
+});</span></pre>
+    </div>
+  </section>
+
+
+
+  <h2>Create a route</h2>
+  <section class="code-section-container">
+    <div class="code-text-section">
+      <p>Create a route for the default home URL.</p>
+      <p>Type <span class="code">app</span> followed by the HTTP method to respond to. In this case, <span
+          class="code">get()</span>.</p>
+      <p><span class="code">get()</span> takes the args:</p>
+      <ul>
+        <li>URL</li>
+        <li>callback function</li>
+      </ul>
+      <p>Use the response Object to send back data.</p>
+      <p>You can set the status using the <span class="code">status()</span> method and data to send using the <span
+          class="code">send()</span> method.</p>
+    </div>
+    <div class="code-block-section-w60">
+      <pre class="example"><span class="code-nodejs">const express = require('express');
+const app = express();
+
+<span class="code-comment">// Routing </span>
+<span class="code-highlight">app.get('/', (req, res) =&gt; {
+  res.status(200).send('Hello from the server');
+});</span>
+
+const port = 3000;
+
+app.listen(port, () =&gt; {
+  console.log('App running');
+});        
+</span></pre>
+    </div>
+  </section>
+
+  <h3>View results in Postman</h3>
+  <div class="text-section">
+    <p>Open Postman and create a <span class="code">GET</span> request to <span
+        class="text-object">127.0.0.1:3000/</span> to view the result.</p>
+  </div>
+
+
+
+
+
+
+
+  <h2>Send JSON back to client</h2>
+
+  <section class="code-section-container">
+    <div class="code-text-section">
+      <p>Instead of using the <span class="code">send()</span> method, use <span class="code">json()</span> and send
+        back an Object.</p>
+    </div>
+    <div class="code-block-section-w60">
+      <pre class="example"><span class="code-nodejs">const express = require('express');
+const app = express();
+
+<span class="code-comment">// Routing </span>
+app.get('/', (req, res) =&gt; {
+  res.status(200).<span class="code-highlight">json({ message: 'Hello from the server', app: 'Natours' });</span>
+});
+
+const port = 3000;
+
+app.listen(port, () =&gt; {
+  console.log('App running');
+});        
+</span></pre>
+    </div>
+  </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>

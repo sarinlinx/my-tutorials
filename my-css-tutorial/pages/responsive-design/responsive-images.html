@@ -1,0 +1,379 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="../../_css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../../_css/style.css">
+
+    <title>Responsive Images</title>
+</head>
+
+<body>
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="../../index.html">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Responsive Images</li>
+        </ol>
+    </nav>
+
+
+
+    <section class="container">
+
+
+        <h1>3 ways to use responsive images</h1>
+        <img src="../../_img/responsive-images.png" width="900px">
+
+        <p>There are more options for responsive imags in HTML than CSS.</p>
+        <h2>Resolution switching</h2>
+        <div class="row">
+            <div class="col">
+
+                <p>Server a different image size for different screen sizes.</p>
+            </div>
+        </div>
+
+
+        <h2>Density switching</h2>
+        <div class="row">
+            <div class="col">
+                <p>Choosing an image based off the pixel density of the screen.</p>
+            </div>
+        </div>
+
+
+        <h2>Art Direction</h2>
+        <div class="row">
+            <div class="col">
+                <p>Choosing a different image for different screen sizes.</p>
+                <p>Or keep the image, but remove parts of it.</p>
+            </div>
+        </div>
+
+
+
+
+        <h1>Density Switching</h1>
+        <div class="row">
+            <div class="col">
+
+                <p>Syntax: <strong>srcset</strong> - <strong>img</strong> - <strong>density descriptor</strong>
+                    <p>Change src attribute to srcset</p>
+                    <p>Add image</p>
+                    <p>Add a density descriptor (1x or 2x)</p>
+                    <p>The following will allow the browser to use a different image depending on the screen density.</p>
+
+
+                    <pre class="example"><span class="code-html">&lt;img srcset="logo-green-1x.png 1x, logo-green-2x.png 2x" alt=""&gt;</span></pre>
+
+                    <h4>Example</h4>
+                    <img srcset="logo-green-1x.png 1x, logo-green-2x.png 2x" alt="">
+            </div>
+        </div>
+
+
+
+        <h1>Art Direction (with Density Switching inside)</h1>
+        <div class="row">
+            <div class="col">
+                <p>Use the picture element to switch between images based off the screen size.</p>
+                <p>Inside add a source tag with a srcset and media attribute.</p>
+                <p>In the srcset add the first image</p>
+                <p>In the media attribute create a CSS media query.</p>
+                <p>in this example, if the screen is smaller than 37.5em, the first images are used (depending on the screen desntiy).</p>
+                <p>If the screen is larger than 37.5em, the second srcset is used.</p>
+
+
+
+
+                <pre class="example"><span class="code-html">&lt;picture>
+  &lt;source srcset="logo-green-small-1x.png 1x, logo-green-small-2x.png 2x" alt="" media="(max-width: 37.5em)">
+  &lt;img srcset="logo-green-1x.png 1x, logo-green-2x.png 2x" alt="">
+
+  &lt;/source>
+&lt;/picture&gt;</span></pre>
+
+                <h4>Example</h4>
+
+                <picture>
+                    <source srcset="logo-green-small-1x.png 1x, logo-green-small-2x.png 2x" alt="" media="(max-width: 37.5em)">
+                    <img srcset="logo-green-1x.png 1x, logo-green-2x.png 2x" alt="">
+
+                    </source>
+                </picture>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+        <h1>Resolution Switching</h1>
+        <h3>Enable Device Pixel Ratio in Dev Tools.</h3>
+        <p>This may not always be accurate</p>
+        <div class="row">
+            <div class="col">
+                <ol>
+                    <li>Open Chrome's Dev Tools
+                        <dl>
+                            <dd>
+                                <img src="../../_img/dev-tools-mobile-icon.png">
+                            </dd>
+                        </dl>
+                    </li>
+                    <li>Click the icon to enable Mobile viewing.
+                        <dl>
+                            <dd><img src="../../_img/dev-tools-device-pixel-ratio.png"></dd>
+                        </dl>
+                    </li>
+                    <li>On the mobile screen, click the 3 dot icon on the top right</li>
+                    <li>Choose 'Add device pixel ratio'
+                        <dl>
+                            <dd><img src="../../_img/dev-tools-device-pixel-ratio-added.png"></dd>
+                        </dl>
+                    </li>
+                    <li>You'll now see it's been added as an option to the top mobile toolbar
+                        <dl>
+                            <dd> <img src="../../_img/dev-tools-device-pixel-ratio-dropdown.png"></dd>
+                        </dl>
+                    </li>
+                    <li>Select a density from the dropdown (1, 2, or 3)
+                        <dl>
+                            <dd> <img src="../../_img/dev-tools-device-pixel-ratio-confirm.png"></dd>
+                        </dl>
+                    </li>
+                    <li>Reload the page</li>
+                    <li>Inspect an image</li>
+                    <li>On the right of Dev Tools click the Properties tab</li>
+                    <li>Select img and you can confirm which image is being used
+                        <dl>
+                            <dd><img src="../../_img/dev-tools-device-pixel-ratio-confirm-current-source.png"></dd>
+                        </dl>
+                    </li>
+                    <li>Scroll down to currentSrc to view which image is being used</li>
+                </ol>
+
+            </div>
+        </div>
+
+
+
+
+
+        <h4>How to write out the HTML</h4>
+        <div class="row">
+            <div class="col">
+                <p>####</p>
+
+                <pre class="example"><span class="code-html"><span class="code-comment">&lt;!-- Resolution switching --&gt;
+&lt;!-- Set width descriptor (by # of pixels) of each image --&gt;
+&lt;!-- This informs the browser about the images without having to download them --&gt;
+&lt;!-- sizes attribute informs browser of width of image at different viewport widths --&gt;
+&lt;!-- the browser then decides which is the best image to use based off of viewport width and display resolution --&gt;
+&lt;!-- Divide small image width by breakpoint width. --&gt;
+&lt;!-- If image is 700px and breakpoint is 900px,  701/900 = .19 which is almost 20%. --&gt;
+&lt;!-- You then use this to get the viewport width and add that to the right as 20vw --&gt;
+&lt;!-- 171/600 breakpoint = 30% --&gt;
+&lt;!-- add default size (300px) if no conditions apply set width to what's default in CSS for this element--&gt;
+&lt;!-- finally include src in case user is using older browser that doesn't support srcset --&gt;</span>
+&lt;img srcset="img/nat-1.jpg 300w, img/nat-1-large.jpg 1000w" 
+sizes="(max-width: 56.25em) 20vw, (max-width: 37.5em) 30vw, 300px" 
+alt="photo 1" src="img/nat-1-large.jpg"&gt;</span></pre>
+
+
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+        <h1>Responsive Images in CSS</h1>
+
+        <h2>Target 2x screens</h2>
+        <div class="row">
+            <div class="col-4">
+                <p>You can target on viewport width or device resolution</p>
+                <p>Use a media-query with a min-resolution of 192dpi.</p>
+                <p>192dpi is the resolution of Apple's Retina screen.</p>
+            </div>
+            <div class="col-8">
+                <pre class="example"><span class="code-css">.header {
+  height: 85vh;
+  background-image: linear-gradient(to right bottom, 
+  rgba(126, 213, 111, 0.8), 
+  rgba(40, 180, 133, 0.8)), 
+  url(../img/hero-small.jpg);
+  background-size: cover;
+  background-position: top;
+  position: relative
+}
+
+<span class="code-highlight">@media (min-resolution: 192dpi) {
+.header {
+  background-image: linear-gradient(to right bottom, 
+  rgba(255, 185, 0, 0.8), 
+  rgba(255, 119, 48, 0.8)), 
+  url(../img/hero.jpg)
+  }
+}</span></div>
+        </div>
+
+
+
+
+
+
+<h2>Checking both resolution and screen size</h2>
+<div class="row">
+  <div class="col-4">
+      <p>When resolution is larger than 192dpi AND width is larger than 600px</p>
+      <p>This means the image will be used if the screen resolution is 192dpi or above (2x), or the width of the screen is above 600px</p>
+  </div>
+  <div class="col-8">
+      <pre class="example"><span class="code-css">.header {
+height: 85vh;
+background-image: linear-gradient(to right bottom, 
+rgba(126, 213, 111, 0.8), 
+rgba(40, 180, 133, 0.8)), 
+url(../img/hero-small.jpg);
+background-size: cover;
+background-position: top;
+position: relative
+}
+
+<span class="code-highlight">@media only screen and (min-width: 600px) {
+  .header {
+     background-image: linear-gradient(to right bottom, 
+     rgba(255, 185, 0, 0.8), 
+     rgba(255, 119, 48, 0.8)), 
+     url(../img/hero.jpg)
+  }
+}
+</span></div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2>Show image if one or another rule is true</h2>
+<div class="row">
+  <div class="col-4">
+      <p>This adds another rule for screens above 2000px</p>
+      <p>So the image will be applied in either case.</p>
+  </div>
+  <div class="col-8">
+      <pre class="example"><span class="code-css">.header {
+height: 85vh;
+background-image: linear-gradient(to right bottom, 
+rgba(126, 213, 111, 0.8), 
+rgba(40, 180, 133, 0.8)), 
+url(../img/hero-small.jpg);
+background-size: cover;
+background-position: top;
+position: relative
+}
+
+@media only screen and (min-width: 600px),
+<span class="code-highlight">(min-width: 2000px)</span> {
+  .header {
+     background-image: linear-gradient(to right bottom, 
+     rgba(255, 185, 0, 0.8), 
+     rgba(255, 119, 48, 0.8)), 
+     url(../img/hero.jpg)
+  }
+}</span></div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<h2>Add Safari support</h2>
+<div class="row">
+  <div class="col-4">
+      <p>This adds another rule for screens above 2000px</p>
+      <p>So the image will be applied in either case.</p>
+  </div>
+  <div class="col-8">
+      <pre class="example"><span class="code-css">.header {
+height: 85vh;
+background-image: linear-gradient(to right bottom, 
+rgba(126, 213, 111, 0.8), 
+rgba(40, 180, 133, 0.8)), 
+url(../img/hero-small.jpg);
+background-size: cover;
+background-position: top;
+position: relative
+}
+
+<span class="code-comment">/* This combines the two queries above with a comma
+Add extra line because safari doesn't support min-resolution
+-webkit-min-device-pixel-ratio should be at least 2 which is 2x */</span>
+@media only screen and (min-resolution: 192dpi) and (min-width: 600px),
+<span class="code-highlight">only screen and (-webkit-min-device-pixel-ratio: 2) and (min-width: 600px),</span>
+only screen and (min-width: 2000px) {
+  background-image: linear-gradient(to right bottom, 
+  rgba($color-secondary-light, 0.8), 
+  rgba($color-secondary-dark, 0.8)), 
+  url(../img/hero.jpg);
+}</span></div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </section>
+
+
+
+
+
+
+</body>
+
+</html>

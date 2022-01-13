@@ -1,0 +1,355 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="../../_css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../../_css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <style>
+        .box1 {
+            color: black;
+            float: left;
+            width: 25%;
+        }
+        
+        .box2 {
+            color: black;
+            float: left;
+            width: 25%;
+            padding: 50px;
+        }
+        
+        #letter {
+            float: left;
+            width: 0.7em;
+            font-size: 400%;
+            font-family: algerian, courier;
+            line-height: 80%;
+        }
+    </style>
+
+
+    <title>float examples</title>
+</head>
+
+<body>
+    <a href="../../index.html">Home page</a>
+
+
+
+
+
+
+    <section class="container">
+        <div class="row">
+            <div class="col">
+                <h1>Equal width grid boxes</h1>
+                <h2>Without padding or borders</h2>
+
+            </div>
+        </div>
+
+
+
+        <div class="row">
+            <div class="col-4">
+                <p>This creates 3 equal sized boxes side by side.</p>
+            </div>
+
+
+            <div class="col-8">
+                <pre class="example"><span class="code-css">.box1 {
+  float: left;
+  width: 25%;
+}</span>
+ 
+<span class="code-html">&lt;div class="box1" style="background-color:#bbb"&gt;
+  &lt;p&gt;Some text inside the box.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class="box1" style="background-color:#ccc"&gt;
+  &lt;p&gt;Some text inside the box.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class="box1" style="background-color:#ddd"&gt;
+  &lt;p&gt;Some text inside the box.&lt;/p&gt;
+&lt;/div&gt;</span></pre>
+            </div>
+        </div>
+
+
+
+        <div class="row">
+            <div class="col">
+                <h4>Example</h4>
+
+                <ul>
+                    <li><a href="float-examples/float-example-01.html">Floating 3 grid boxes without padding</a></li>
+                </ul>
+
+
+            </div>
+        </div>
+
+
+
+
+    </section>
+
+
+
+
+
+
+    <section class="container">
+        <div class="row">
+            <div class="col">
+                <h2>Adding padding or borders breaks the float</h2>
+
+            </div>
+        </div>
+
+
+
+        <div class="row">
+            <div class="col-4">
+                <p>This creates 3 equal sized boxes side by side.</p>
+                <p>But the padding breaks the float.</p>
+            </div>
+
+
+            <div class="col-8">
+                <pre class="example"><span class="code-css">.box1 {
+float: left;
+width: 25%;
+padding: 50px;
+}</span>
+
+<span class="code-html">&lt;div class="box1" style="background-color:#bbb"&gt;
+&lt;p&gt;Some text inside the box.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class="box1" style="background-color:#ccc"&gt;
+&lt;p&gt;Some text inside the box.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class="box1" style="background-color:#ddd"&gt;
+&lt;p&gt;Some text inside the box.&lt;/p&gt;
+&lt;/div&gt;</span></pre>
+            </div>
+        </div>
+
+
+
+        <div class="row">
+            <div class="col">
+                <h4>Example</h4>
+
+                <ul>
+                    <li><a href="float-examples/float-example-02.html">Floating 3 grid boxes with padding</a></li>
+                </ul>
+
+
+            </div>
+        </div>
+
+
+
+
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <section class="container">
+        <div class="row">
+            <div class="col">
+                <h2>Adding border-box property to fix the broken float caused by adding padding.</h2>
+
+            </div>
+        </div>
+
+
+
+        <div class="row">
+            <div class="col-4">
+                <p>This creates 3 equal sized boxes side by side.</p>
+                <p>But the padding breaks the float.</p>
+                <p>Adding border-box fixes it.</p>
+                <p>Add the clearfix hack to take care of the page flow.</p>
+            </div>
+
+
+            <div class="col-8">
+                <pre class="example"><span class="code-css">
+* {
+  box-sizing: border-box;
+}
+
+.box1 {
+float: left;
+width: 25%;
+padding: 50px;
+}
+
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}</span>
+
+<span class="code-html">&lt;div class="clearfix"&gt;
+  &lt;div class="box1" style="background-color:#bbb"&gt;
+  &lt;p&gt;Some text inside the box.&lt;/p&gt;
+  &lt;/div&gt;
+
+  &lt;div class="box1" style="background-color:#ccc"&gt;
+  &lt;p&gt;Some text inside the box.&lt;/p&gt;
+  &lt;/div&gt;
+
+  &lt;div class="box1" style="background-color:#ddd"&gt;
+  &lt;p&gt;Some text inside the box.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</span></pre>
+            </div>
+        </div>
+
+
+
+        <div class="row">
+            <div class="col">
+                <h4>Example</h4>
+
+                <ul>
+                    <li><a href="float-examples/float-example-03.html">Add border-box to fix broken float due to padding</a></li>
+                </ul>
+
+
+            </div>
+        </div>
+
+
+
+
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+    <section class="container">
+        <div class="row">
+            <div class="col">
+                <h1>Equal height grid boxes</h1>
+            </div>
+        </div>
+
+
+
+        <div class="row">
+            <div class="col-4">
+                <p>If you want to used float with equal height boxes, you must set a fixed height for them.</p>
+                <p>This is not flexible as the text will overflow the container when the page size is adjusted.</p>
+                <p>The better option is to use <span class="code-highlight">flex-wrap: nowrap;</span></p>
+            </div>
+
+
+            <div class="col-8">
+                <pre class="example"><span class="code-css">.box {
+  float: left;
+  width: 50%;
+  padding: 50px;
+  height: 300px;
+}</span></pre>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
+    <section class="container">
+        <div class="row">
+            <div class="col">
+                <h1>Float first letter of paragraph</h1>
+            </div>
+        </div>
+
+
+
+        <div class="row">
+            <div class="col-4">
+                <p>Add a CSS span tag to the first letter. Then use float: left; to make it stand out.</p>
+            </div>
+
+
+            <div class="col-8">
+                <pre class="example"><span class="code-css">#letter {
+  float: left;
+  width: 0.7em;
+  font-size: 400%;
+  font-family: algerian, courier;
+  line-height: 80%;
+}</span></pre>
+            </div>
+        </div>
+
+
+
+        <div class="row">
+            <div class="col-6">
+                <h4>Example</h4>
+                <p>
+                    <span id="letter">T</span>his is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text.
+                    This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text.
+                </p>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>

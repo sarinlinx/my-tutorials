@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="../../_css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../../_css/style.css">
+
+    <title>The html() method</title>
+</head>
+
+<body>
+    <section class="container">
+      <nav aria-label="breadcrumb">
+          <ol class="breadcrumb breadcrumb-container">
+              <li class="breadcrumb-item"><a class="breadcrumb-link" href="../../index.html">Home</a></li>
+              <li class="breadcrumb-item active" aria-current="page">The html() method</li>
+          </ol>
+      </nav>
+
+
+
+      <h1>Retrieve HTML of an element</h1>
+<pre class="example"><span class="code-html">&lt;p id="test"&gt;This is some &lt;b&gt;bold&lt;/b&gt; text in a paragraph.&lt;/p&gt;
+&lt;button id="btn2"&gt;Show HTML&lt;/button&gt;</span>
+
+<span class="code-js">$("#btn2").click(function(){
+  alert("HTML: " + $("#test").html());
+});</span></pre>
+
+
+          <h3>Example</h3>
+          <p id="test">This is some <b>bold</b> text in a paragraph.</p>
+        <button id="btn2">Show HTML</button>
+
+
+
+
+        <h1>Set HTML of an element</h1>
+<pre class="example"><span class="code-html">&lt;p id="test2"&gt;This is another paragraph.&lt;/p&gt;
+&lt;button id="btn2"&gt;Set HTML&lt;/button&gt;</span>
+
+  <span class="code-js">$("#btn2").click(function(){
+    $("#test2").html("<b>Hello world!</b>");
+  });</span></pre>
+
+
+            <h3>Example</h3>
+        <p id="testset2">This is another paragraph.</p>
+<button id="btnset2">Set HTML</button>
+
+
+
+
+
+
+
+
+<h1>Changing HTML using the html() method</h1>
+
+    <p>The html() method changes the HTML of a specified element</p>
+    <p>It also adds a CSS class to the element.</p>
+
+<pre class="example">
+<span class="code-html">&lt;p class="dope"&gt; You'll learn how to replace me&lt;/p&gt;
+&lt;input type="button" value="Replace" id="btn_main" /&gt;</span>
+
+<span class="code-js">$('#btn_main').on('click', function() {
+  $('.dope').html('&lt;strong class="html-change-class"&gtl; HI! The HTML just changed. &lt;/strong&gt;');
+});</span></pre>
+
+
+    <h3>Example</h3>
+    <p class="dope"> You'll learn how to replace me </p>
+    <input type="button" value="Replace" id="btn_main" />
+
+
+
+
+
+
+        <h1>A Callback Function for html()</h1>
+            <p>html() also comes with a callback function. The callback function has two parameters:</p>
+            <ul>
+              <li>the index of the current element in the list of elements selected</li>
+              <li>and the original (old) value</li>
+            </ul>
+            <p>You then return the string you wish to use as the new value from the function.</p>
+
+    <pre class="example"><span class="code-html">&lt;p id="testcallback2"&gt;This is another &lt;b&gt;bold&lt;/b&gt; paragraph.&lt;/p&gt;
+    &lt;button id="btncallback2"&gt;Show Old/New HTML&lt;/button&gt;</span>
+
+    <span class="code-js">$("#btncallback2").click(function(){
+       $("#testcallback2").html(function(i, origText){
+         return "Old html: " + origText + " New html: Hello <b>world!</b> (index: " + i + ")";
+       });
+     });</span></pre>
+
+
+            <h3>Example</h3>
+          <p id="testcallback2">This is another <b>bold</b> paragraph.</p>
+      <button id="btncallback2">Show Old/New HTML</button>
+
+    </section>
+
+
+
+
+
+
+
+    <script src="../../_js/jquery-3.4.1.min.js"></script>
+
+    <script>
+
+$('#btn_main').on('click', function(){
+  $('.dope').html('<strong class="html-change-class"> HI! The HTML just changed. </strong>');
+});
+
+$("#btn2").click(function(){
+  alert("HTML: " + $("#test").html());
+});
+
+$("#btnset2").click(function(){
+  $("#testset2").html("<b>Hello world!</b>");
+});
+
+
+$("#btncallback2").click(function(){
+   $("#testcallback2").html(function(i, origText){
+     return "Old html: " + origText + " New html: Hello <b>world!</b> (index: " + i + ")";
+   });
+ });
+    </script>
+
+</body>
+
+</html>

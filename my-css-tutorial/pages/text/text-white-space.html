@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="../../_css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../../_css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <title>Text colors</title>
+</head>
+
+<body>
+    <a href="../../index.html">Home page</a>
+
+
+
+
+        <section>
+            <h2 class="heading-emphasis">white-space</h2>
+            <div class="row">
+                <div class="col">
+                    <p>white-space specifies how white-space is handled inside an element. Value are:</p>
+                    <ul>
+                        <li><strong>normal</strong> - This is default</li>
+                        <li><strong>nowrap</strong> - Text will never wrap to the next line. The text continues on the same line until a &lt;br&gt; tag is encountered.</li>
+                        <li><strong>pre</strong> - Text will never wrap to the next line. Acts like the &lt;pre&gt; tag in HTML. Text will only wrap if the HTML is formatted that way, or if you use a &lt;br&gt; tag. Text will also indent according to how the
+                            HTML is formatted.
+                        </li>
+                        <li><strong>pre-line</strong> - Same as &lt;pre&gt; in that text will wrap how HTML is formatted, or if you use a &lt;br&gt; tag. But it's different in that text will still wrap when necessary, for example, if the browser window can't
+                            view it all, it will automatically wrap. Also, HTML formatting is ignored for indented text. Only line breaks are recognized in HTML.</li>
+                        <li><strong>pre-wrap</strong> - This is the same as pre-line, except that indented text is recognized, just like 'pre'. The difference from 'pre' is that the text eventually wraps.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="container">
+            <div class="row">
+                <div class="col-6">
+                    <p>Example: nowrap</p>
+                    <p>Ignore the scrollbar. Text will be cut off and never move down to the next line.</p>
+                </div>
+                <div class="col-6">
+                    <pre class="example"><span class="code-css">p {
+      white-space: nowrap;
+    }</span>
+    <span class="white-space-no-wrap">This is a very long line that by default, should break to the next line of text so the reader can view all text.</span>
+        </pre>
+                </div>
+            </div>
+
+
+            <div class="row">
+                <div class="col-6">
+                    <p>Example: pre</p>
+                    <p>Text will be cut off and never move down to the next line. Text will indent or wrap if HTML is formatted that way. Text will wrap if a &lt;br&gt; tag is used.</p>
+                </div>
+                <div class="col-6">
+                    <pre class="example"><span class="code-html">&lt;p&gt;This line breaks here
+    since the HTML code is formatted that way.&lt;/p&gt;
+        This line is indented since HTML is formatted this way. But this will be cut off since pre doesn't wrap text. asdfasdfasdfasdfasdfasdfasdf</span>
+
+    <span class="code-css">p {
+      white-space: pre;
+    }</span>
+
+    <span class="white-space-pre">This line breaks here
+    since the HTML code is formatted that way.
+        This line is indented since HTML is formatted this way. But this will be cut off since pre doesn't wrap text. asdfasdfasdfasdfasdfasdfasdf</span></pre>
+                </div>
+            </div>
+
+
+
+            <div class="row">
+                <div class="col-6">
+                    <p>Example: pre-line</p>
+                    <p>Different from 'pre' in that text will wrap and HTML indented text is not recognized.</p>
+                    <p>It's the same as 'pre' in that line breaks in HTML are recognized and &lt;br&gt; tags are recognized.</p>
+                </div>
+                <div class="col-6">
+                    <pre class="example"><span class="code-html">&lt;p&gt;This line breaks here
+    since the HTML code is formatted that way.
+    This line is indented in  HTML, but is not recognized.
+    If the HTML was on one line, this would eventually wrap to the next line at the end of the browser window.&lt;/p&gt;</span>
+
+    <span class="code-css">p {
+      white-space: pre-line;
+    }</span>
+
+    <span class="white-space-pre-line">This line breaks here
+    since the HTML code is formatted that way.
+    This line is indented in  HTML, but is not recognized.
+    If the HTML was on one line, this would eventually wrap to the next line at the end of the browser window.</span>
+    </pre>
+                </div>
+            </div>
+
+
+
+            <div class="row">
+                <div class="col-6">
+                    <p>Example: pre-wrap</p>
+                    <p>Text will wrap when needed. Otherwise it's the same as 'pre'</p>
+                </div>
+                <div class="col-6">
+                    <pre class="example"><span class="code-html">&lt;p&gt;This line breaks here
+        since the HTML code is formatted that way.
+          This line is indented in HTML and IS recognized.
+        If the HTML was on one line, this would eventually wrap to the next line at the end of the browser window.&lt;/p&gt;</span>
+
+    <span class="code-css">p {
+      white-space: pre-wrap;
+    }</span>
+
+    <span class="white-space-pre-wrap">This line breaks here
+    since the HTML code is formatted that way.
+      This line is indented in HTML and IS recognized.
+    If the HTML was on one line, this would eventually wrap to the next line at the end of the browser window.</span>
+    </pre>
+                </div>
+            </div>
+        </section>
+
+
+
+
+
+
+
+        <script src="../../_js/jquery.js"></script>
+        <script src="../../_js/bootstrap.bundle.js"></script>
+    </body>
+
+    </html>

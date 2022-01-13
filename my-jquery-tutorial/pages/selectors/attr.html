@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="../../_css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../../_css/style.css">
+
+    <style>
+        #big {
+            font-size: 2em;
+            font-weight: bold
+        }
+
+        #small {
+            font-size: 1em;
+        }
+
+        .pretty {
+            color: pink;
+            font-style: italic;
+        }
+
+        .border {
+            border-style: dashed;
+            border-color: green;
+        }
+    </style>
+    <title>attr()</title>
+</head>
+
+<body>
+    <section class="container">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb breadcrumb-container">
+                <li class="breadcrumb-item"><a class="breadcrumb-link" href="../../index.html">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">attr()</li>
+            </ol>
+        </nav>
+
+
+
+
+
+
+
+
+
+<h1>retrieve an attribute</h1>
+<p>this gets the link</p>
+
+<pre class="example"><span class="code-html">&lt;p&gt;&lt;a href="https://www.w3schools.com" id="w3s"&gt;W3Schools.com&lt;/a&gt;&lt;/p&gt;
+&lt;button id="btn1"&gt;Show href Value&lt;/button&gt;</span>
+
+<span class="code-js">$("button").click(function(){
+  alert($("#w3s").attr("href"));
+});</span></pre>
+
+<h3>Example</h3>
+<p><a href="https://www.w3schools.com" id="w3s">W3Schools.com</a></p>
+<button id="btn1">Show href Value</button>
+
+
+
+
+<h1>Change a link attribute</h1>
+<p>this changes the link URL</p>
+<p>It is originally w3schools.com. When you click the button, it changes to w3schools.com/jquery</p>
+
+<pre class="example"><span class="code-html">&lt;p&gt;&lt;a href="https://www.w3schools.com" id="w3schangeurl"&gt;W3Schools.com&lt;/a&gt;&lt;/p&gt;
+&lt;button id="changeurl"&gt;Change href Value&lt;/button&gt;
+&lt;p&gt;Mouse over the link (or click on it) to see that the value of the href attribute has changed.&lt;/p&gt;
+</span>
+
+<span class="code-js">$("button#changeurl").click(function(){
+    $("#w3schangeurl").attr("href", "https://www.w3schools.com/jquery/");
+  });</span></pre>
+
+<h3>Example</h3>
+<p><a href="https://www.w3schools.com" id="w3schangeurl">W3Schools.com</a></p>
+<button id="changeurl">Change href Value</button>
+<p>Mouse over the link (or click on it) to see that the value of the href attribute has changed.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <h1>Assign attribute/value pair using attr()</h1>
+        <p>Use the attr() method to assign new attribute/value pairs to an element.</p>
+        <p>Hover over the list items with a class of 'important' to assign them the id=big.</p>
+        <p>Hover your mouse away to remove the class.</p>
+
+
+        <pre class="example">
+<span class="code-html">
+&lt;ul id="steps"&gt;
+    &lt;li class="important"&gt;Park Vehicle Safely&lt;/li&gt;
+    &lt;li&gt;Retrieve Jack and attach to vehicle frame&lt;/li&gt;
+    &lt;li&gt;untighten tire bolts&lt;/li&gt;
+    &lt;li class="important"&gt;Raise Vehicle by cranking jack&lt;/li&gt;
+    &lt;li&gt;Unscrew Bolts and Attach Replacement tire&lt;/li&gt;
+    &lt;li class="important"&gt;Tighten the bolts&lt;/li&gt;
+    &lt;li&gt;Lower vehicle and tighten bolts completely&lt;/li&gt;
+&lt;/ul&gt;
+
+<span class="code-js">$("li.important").on("mouseover", function(){
+    $(this).attr("id", "big");
+
+    $(this).on("mouseleave", function(){
+        $(this).attr("id", "small");
+    });
+});</pre>
+
+
+        <h3>Example</h3>
+        <ul id="steps">
+            <li class="important">Park Vehicle Safely</li>
+            <li>Retrieve Jack and attach to vehicle frame</li>
+            <li>untighten tire bolts</li>
+            <li class="important">Raise Vehicle by cranking jack</li>
+            <li>Unscrew Bolts and Attach Replacement tire</li>
+            <li class="important">Tighten the bolts</li>
+            <li>Lower vehicle and tighten bolts completely</li>
+        </ul>
+
+
+
+
+
+
+
+
+
+
+        <h1>Add 2 classes to an element</h1>
+        <p>Target with attr(), then add the second class in the same parenthesis.</p>
+
+        <pre class="example">
+<span class="code-html">&lt;p id="title"&gt;Add 2 classes to me when clicked&lt;/p&gt;
+
+<span class="code-js">$("h1#title").on("click", function(){
+    $(this).attr("class", "pretty border");
+});</pre>
+
+        <h3>Example</h3>
+        <p id="title">Add 2 classes to me when clicked</p>
+
+
+
+
+
+
+
+
+        <h1>Assign CSS attributes in JS</h1>
+        <p>This assigns CSS key values within the jQuery directly.</p>
+        <p>The multiple CSS values are chained together into a single attr() call.</p>
+        <div class="alert alert-note">
+            <div class="alert-icon">
+                <img src="../../_img/icons/note-icon.png" width="60" height="60">
+            </div>
+            <div class="alert-content">
+                <p>NOTE: This only works on an image. Why?</p>
+            </div>
+        </div>
+
+        <pre class="example"><span class="code-html">&lt;img id="the_img"  src="img/man_changing_tire.jpg" width="20%" height="20%"&gt;
+
+<span class="code-js">$("img#the_img").on("click", function(){
+    $(this).attr({"width": "40%",
+                  "length": "40%"
+                });
+});</pre>
+
+        <h3>Example</h3>
+
+        <img id="the_img" src="../../_img/man_changing_tire.jpg" width="20%" height="20%" />
+
+
+
+
+
+
+    </section>
+
+
+    <script src="../../_js/jquery-3.4.1.min.js"></script>
+
+    <script>
+        //Select multiple attributes in the same call
+        $('p.instruct_title1, div#closing_statement1').css('color', 'green');
+
+        $("p.instruct_title2").add("div#closing_statement2").css("color", "green");
+
+
+        $("li.important").on("mouseover", function() {
+            $(this).attr("id", "big");
+            $(this).on("mouseleave", function() {
+                $(this).attr("id", "small");
+            });
+        });
+
+        $("p#title").on("click", function() {
+            $(this).attr("class", "pretty border");
+        });
+
+        $("#the_img").on("click", function() {
+            $(this).attr({
+                "width": "40%",
+                "length": "40%"
+            });
+        });
+
+        $("p#title2").on("click", function() {
+            $(this).attr("class", "pretty border");
+        });
+
+        $("p#title2").on("dblclick", function() {
+            $(this).attr("class", "pretty border");
+            $(this).remove();
+        });
+
+        $('img#the_img2').on('dblclick', function(){
+                    $(this).removeAttr("src");
+                  });
+
+                  $("button#btn1").click(function(){
+  alert($("#w3s").attr("href"));
+});
+
+
+$("button#changeurl").click(function(){
+    $("#w3schangeurl").attr("href", "https://www.w3schools.com/jquery/");
+  });
+    </script>
+
+</body>
+
+</html>

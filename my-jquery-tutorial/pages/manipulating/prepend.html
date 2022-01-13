@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="../../_css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../../_css/style.css">
+    <title>prepend()</title>
+</head>
+
+<body>
+    <section class="container">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb breadcrumb-container">
+                <li class="breadcrumb-item"><a class="breadcrumb-link" href="../../index.html">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">prepend()</li>
+            </ol>
+        </nav>
+
+<h1>prepend()</h1>
+<p>This prepends (adds before) text to the beginning of an existing paragraph</p>
+
+<pre class="example"><span class="code-html">&lt;p&gt;This is a paragraph.&lt;/p&gt;
+&lt;button id="btn1"&gt;Prepend text&lt;/button&gt;</span>
+
+<span class="code-js">$("#btn1").click(function(){
+  $("p#p1").prepend("&lt;b&gt;Prepended text&lt;/b&gt;. ");
+});</span></pre>
+
+    <h3>Example</h3>
+    <p id="p1">This is a paragraph.</p>
+    <button id="btn1">Prepend text</button>
+
+
+
+
+
+
+    <h1>prepend()</h1>
+    <p>This prepends a list item to the beginning of a list</p>
+
+<pre class="example"><span class="code-html">&lt;ol id="ol1"&gt;
+  &lt;li&gt;List item 1&lt;/li&gt;
+  &lt;li&gt;List item 2&lt;/li&gt;
+  &lt;li&gt;List item 3&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;button id="btn2"&gt;Prepend list item&lt;/button&gt;</span>
+
+<span class="code-js">$("#btn2").click(function(){
+  $("ol#ol1").prepend("&lt;li&gt;Prepended item&lt;/li&gt;");
+});</span></pre>
+
+        <h3>Example</h3>
+        <ol id="ol1">
+          <li>List item 1</li>
+          <li>List item 2</li>
+          <li>List item 3</li>
+        </ol>
+        <button id="btn2">Prepend list item</button>
+
+
+
+
+    </section>
+    <script src="../../_js/jquery-3.4.1.min.js"></script>
+    <script>
+    $("#btn1").click(function(){
+      $("p#p1").prepend("<b>Prepended text</b>. ");
+    });
+
+    $("#btn2").click(function(){
+      $("ol#ol1").prepend("<li>Prepended item</li>");
+    });
+    </script>
+</body>
+
+</html>

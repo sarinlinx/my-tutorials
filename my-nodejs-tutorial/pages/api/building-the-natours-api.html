@@ -1,0 +1,511 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" type="text/css" href="../../_css/styles.css">
+
+  <title>Natours API</title>
+</head>
+
+<body>
+
+
+  <nav class="navbar">
+    <a href="../../index.html">Back to homepage</a>
+    <a class="nav-page nav-active">Natours API</a>
+  </nav>
+
+  <h1>View the API in Postman</h1>
+
+  <div class="text-section">
+    <p>You can view the Natours API in Postman by sending a <span class="code">GET</span> request to <span
+        class="text-object">https://www.natours.dev/api/v1/tours</span>.</p>
+  </div>
+
+
+
+  <h1>Create a GET call to the API</h1>
+
+  <section class="code-section-container">
+    <div class="code-text-section">
+      <p>Create a variable outside the server named <span class="code">tours</span>. This will store the data in the
+        file <span class="text-object">tours-simple.json</span>.</p>
+      <p>Use <span class="code">JSON.parse</span> to convert the data into an Array of Objects.</p>
+      <p>Create a <span class="code">get()</span> request to the API.</p>
+      <p>Use <span class="code">JSend</span> formatting to send back data. This adds <span class="code">status</span>
+        and <span class="code">data</span>.</p>
+      <div class="notebox-note">
+        <p>An additional property named <span class="code">results</span> is added to track the length of the data.</p>
+        <p>This helps to keep track of things when you have multiple Objects.</p>
+      </div>
+      <p>The property in the data sent back is named <span class="code">tours</span>. Its value is also named <span
+          class="code">tours</span> because this is what the const value above was named.</p>
+      <p>In Postman, create a <span class="code">GET</span> request to <span
+          class="text-object">127.0.0.1:3000/api/v1/tours</span> to view the returned data.</p>
+
+    </div>
+    <div class="code-block-section-w60">
+      <pre class="example"><span class="code-nodejs">const fs = require('fs');
+const express = require('express');
+const app = express();
+
+<span class="code-comment">// read tours data</span>
+<span class="code-highlight">const tours = JSON.parse(
+  fs.readFileSync(`${__dirname}/dev-data/data/tours-simple.json`)
+);
+
+app.get('/api/v1/tours', (req, res) =&gt; {</span>
+  <span class="code-comment">// send data back using JSend formatting</span>
+  <span class="code-highlight">res.status(200).json({
+    status: 'success',
+    results: tours.length,
+    data: {
+      tours: tours
+    }
+  }); </span>
+}); 
+
+const port = 3000;
+
+app.listen(port, () =&gt; {
+  console.log('App running');
+});
+</span></pre>
+    </div>
+  </section>
+
+
+  <section class="output-section-container">
+    <h5>Output</h5>
+    <div class="text-section">
+      <p>
+      <p>This is the first part of the returned data in Postman.</p>
+    </div>
+
+    <div class="code-block-section-w60">
+      <pre class="example"><span class="code-output">{
+"status": "success",
+"results": 12,
+"data": {
+  "tours": [
+      {
+          "id": 0,
+          "name": "The Forest Hiker",
+          "duration": 5,
+          "maxGroupSize": 25,
+          "difficulty": "easy",
+          "ratingsAverage": 4.7,
+          "ratingsQuantity": 37,
+          "price": 397,
+          "summary": "Breathtaking hike through the Canadian Banff National Park",
+          "description": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.\nLorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+          "imageCover": "tour-1-cover.jpg",
+          "images": [
+              "tour-1-1.jpg",
+              "tour-1-2.jpg",
+              "tour-1-3.jpg"
+          ],
+          "startDates": [
+              "2021-04-25,10:00",
+              "2021-07-20,10:00",
+              "2021-10-05,10:00"
+          ]
+      },</span></pre>
+    </div>
+  </section>
+
+  <h1>Handling POST Requests</h1>
+
+  <h2>Add code to POST data</h2>
+
+  <section class="code-section-container">
+    <div class="code-text-section">
+      <p>First, you will need to add Middleware in order for Express to send POST data.</p>
+      <p>Add the Middleware at the top of the file using <span class="code">app.use(express.json())</span>.</p>
+      <p>Use <span class="code">app.post()</span> to send data.</p>
+      <p>
+
+
+
+
+
+    </div>
+    <div class="code-block-section-w60">
+      <pre class="example"><span class="code-nodejs">const fs = require('fs');
+const express = require('express');
+const app = express();
+
+<span class="code-comment">// Middleware: This stands in the MIDDLE of the request and response</span>
+<span class="code-highlight">app.use(express.json()); </span>
+
+const tours = JSON.parse(
+  fs.readFileSync(`${__dirname}/dev-data/data/tours-simple.json`)
+);
+
+app.get('/api/v1/tours', (req, res) =&gt; {
+  res.status(200).json({
+    status: 'success',
+    results: tours.length,
+    data: {
+      tours: tours
+    }
+  });
+});
+
+<span class="code-comment">// POST request</span>
+<span class="code-highlight">app.post('/api/v1/tours', (req, res) =&gt; { </span>
+  <span class="code-comment">// The req Object holds all the data about the request. If data is sent, it should be on this Object
+  // But Express does put the data on the req by default
+  // You must use Middleware to do this to modify the incoming request data </span>
+  <span class="code-highlight">console.log(req.body); </span>
+  <span class="code-comment">// You must alwasy send something to end the request/response cycle </span>
+  <span class="code-highlight">res.send('DONE'); 
+}); </span>
+
+const port = 3000;
+
+app.listen(port, () =&gt; {
+  console.log('App running');
+});
+</span></pre>
+    </div>
+  </section>
+
+
+  <h2>Create a POST in Postman</h2>
+  <div class="text-section">
+    <p>Set the type to <span class="code">POST</span></p>
+    <p>Add JSON to the body.</p>
+    <p>Select <span class="text-object">raw</span> from the dropdown.</p>
+    <p>Select <span class="text-object">JSON</span> as the type.</p>
+    <img src="../../_img/postman-post.png">
+    <p>Click the <span class="text-object">SEND</span> button, then check your running console and you'll see the JSON
+      appear.</p>
+  </div>
+
+
+  <h2>Write POST data to a file</h2>
+
+  <section class="code-section-container">
+    <div class="code-text-section">
+      <p>Since there is no databsae being used, this writes the POST data to the file being read.</p>
+      <p>Create a new variable named <span class="code">newId</span> to store the ID# of the last Object in the file.
+        This then adds 1 to it.</p>
+      <p>Create another variable named <span class="code">newTour</span>. This will use <span
+          class="code">Object.assign()</span> to combine the <span class="code">newId</span> # you just calcualted, and
+        the request body that was sent using POST.</p>
+      <p>Push the <span class="code">newTour</span> data into the <span class="code">tours</span> Array.</p>
+      <p>Finally, use <span class="code">writeFile()</span> to write to the file since it runs inside the Event Loop and
+        it must be asynchronous. This must be used instead of <span class="code">writeFileSync()</span> which is
+        synchronous.</p>
+      <p>The final <span class="code">res.send()</span> must be removed since you can only send data once.</p>
+      <p>POST new data in Postman. Adjust the body as you like. The server automatically restarts and writes to the
+        file.</p>
+
+
+
+
+
+
+
+
+    </div>
+    <div class="code-block-section-w60">
+      <pre class="example"><span class="code-nodejs">const fs = require('fs');
+const express = require('express');
+const app = express();
+
+app.use(express.json());
+
+const tours = JSON.parse(
+  fs.readFileSync(`${__dirname}/dev-data/data/tours-simple.json`)
+);
+
+app.get('/api/v1/tours', (req, res) =&gt; {
+  res.status(200).json({
+    status: 'success',
+    results: tours.length,
+    data: {
+      tours: tours
+    }
+  });
+});
+
+<span class="code-comment">// POST request </span>
+app.post('/api/v1/tours', (req, res) =&gt; {
+  <span class="code-comment">// Since we're not using a database, take the ID# of the last Object and add 1
+  // tours is an Array, so you can get its length </span>
+  <span class="code-highlight">const newId = tours[tours.length - 1].id + 1; </span>
+  <span class="code-comment">// the newTour will be the body that was sent and the new ID#
+  // Object.assign() creates a new Object my merging 2 existing Objects </span>
+  <span class="code-highlight">const newTour = Object.assign({ id: newId }, req.body); </span>
+
+  <span class="code-comment">//push into tour Array </span>
+  <span class="code-highlight">tours.push(newTour); </span>
+  <span class="code-comment">// This function will run in the Event Loop which you CANNOT BLOCK
+  // So you must use writeFile, NOT the synchronous version
+  // arg are: file to write to, stringified data to write, callback function </span>
+  <span class="code-highlight">fs.writeFile(
+    `${__dirname}/dev-data/data/tours-simple.json`,
+    JSON.stringify(tours),
+    err =&gt; { </span>
+      <span class="code-comment">// send newly created Object as the response
+      // 201 means created </span>
+      <span class="code-highlight">res.status(201).json({
+        status: 'success',
+        data: {
+          tour: newTour
+        }
+      });
+    }
+  ); </span>
+  <span class="code-comment">// must remove, you can only send once
+  // res.send('DONE'); </span>
+});
+
+const port = 3000;
+
+app.listen(port, () =&gt; {
+  console.log('App running');
+});</span></pre>
+    </div>
+  </section>
+
+
+
+
+
+
+
+
+
+  <h1>Respond to URL parameters</h1>
+  <h2>Retrieve a specific page of data</h2>
+
+  <div class="text-section">
+    <p>This retrieves a specific Object in the <span class="code">tours</spaN> Array when a request is made to a
+      specific page ID#.</p>
+  </div>
+
+  <section class="code-section-container">
+    <div class="code-text-section">
+      <ol>
+        <li>Create a new <span class="code">get()</span> section that will respond to a URL with an ID#.</li>
+        <li>Add <span class="code">/:id</span> to the request URL as an argument.</li>
+        <li>The variable argument is a string at first. Convert it to a number by multiplying by 1.</li>
+        <li>Create a variable named <span class="code">tour</span>. This will be a new Array created by <span
+            class="code">tours.find()</span>. If the ID# matches the Object within the <span class="code">tours</span>
+          Array, it is <span class="code">true</span> and saved.</li>
+        <li>Add an if statement to check if the ID# exists. If it's too high, a 404 error is returned.</li>
+        <li>Send the response.</li>
+      </ol>
+      <p>In Postman, open the URL <span class="text-object">127.0.0.1:3000/api/v1/tours/2</span> to see the returned
+        Object with an ID# of 2.</p>
+
+
+    </div>
+
+
+
+
+    <div class="code-block-section-w60">
+      <pre class="example"><span class="code-nodejs">const fs = require('fs');
+const express = require('express');
+const app = express();
+
+app.use(express.json());
+
+const tours = JSON.parse(
+  fs.readFileSync(`${__dirname}/dev-data/data/tours-simple.json`)
+);
+
+app.get('/api/v1/tours', (req, res) =&gt; {
+  res.status(200).json({
+    status: 'success',
+    results: tours.length,
+    data: {
+      tours: tours
+    }
+  });
+});
+
+<span class="code-comment">// Respond to specific page
+// add :id to the URL
+// Whatever the user enters into the URL here is set as the ID# </span>
+<span class="code-highlight">app.get('/api/v1/tours/:id', (req, res) =&gt; { </span>
+  <span class="code-comment">// first, convert the string to a number so you can work with it
+  // It automatically converts when you multiply it by 1 </span>
+  <span class="code-highlight">const id = req.params.id * 1; </span>
+  
+  <span class="code-comment">// find() loops through Array. Each iteration you have access to the current element.
+  // find() takes a callback function
+  // It then creates a new Array with only elements that are true
+  // This checks if the id# matches the parameter sent </span>
+  <span class="code-highlight">const tour = tours.find(el =&gt; el.id === id);</span>
+  
+  <span class="code-comment">// Check if ID# entered does not exist in the Array </span>
+  <span class="code-highlight">if (!tours) {
+    // immediately return a 404
+    return res.status(404).json({
+      status: 'fail',
+      message: 'Invalid ID'
+    });
+  }</span>
+
+  <span class="code-comment">// send response</span>
+  <span class="code-highlight">res.status(200).json({
+    status: 'success',
+    data: {
+      tour: tour
+    } 
+  });</span>
+});
+
+app.post('/api/v1/tours', (req, res) =&gt; {
+  const newId = tours[tours.length - 1].id + 1;
+  const newTour = Object.assign({ id: newId }, req.body);
+
+  tours.push(newTour);
+  fs.writeFile(
+    `${__dirname}/dev-data/data/tours-simple.json`,
+    JSON.stringify(tours),
+    err =&gt; {
+      res.status(201).json({
+        status: 'success',
+        data: {
+          tour: newTour
+        }
+      });
+    }
+  );
+});
+
+const port = 3000;
+
+app.listen(port, () =&gt; {
+  console.log('App running');
+});
+</span></pre>
+    </div>
+  </section>
+
+
+
+
+
+
+
+
+
+
+  <h1>Handling PATCH request</h1>
+  <div class="text-section">
+    <p>Then sends a <span class="code">PATCH</span> request.</p>
+    <p>This would update a specific property in the data Array Object.</p>
+    <p>This example only shows how it would be created. It does not actually write to anything.</p>
+  </div>
+
+  <section class="code-section-container">
+    <div class="code-text-section">
+      <p>Add this section under the current <span class="code">POST</span> request block.</p>
+      <ol>
+        <li>Use <span class="code">app.path()</span> to create a <span class="code">PATCH</span> request.</li>
+        <li>This takes an <span class="code">:id</span> variable to the URL.</li>
+        <li>Multiply the param value by 1 to convert to a number. Then check if that number is greater than the length
+          of the Array.</li>
+        <li>If so, return a 404 error.</li>
+        <li>If not, send the request.</li>
+      </ol>
+      <p>Finally, make a request in Postman.</p>
+      <img src="../../_img/postman-patch.png" width="550px">
+    </div>
+    <div class="code-block-section-w60">
+      <pre class="example"><span class="code-nodejs"><span class="code-comment">// PATCH </span>
+<span class="code-highlight">app.patch('/api/v1/tours/:id', (req, res) => {</span>
+
+  <span class="code-comment">// immediately return a 404 if ID# invalid</span>
+  <span class="code-highlight">if (req.params.id * 1 > tours.length) { 
+      return res.status(404).json({
+      status: 'fail',
+      message: 'Invalid ID'
+    });
+  }
+
+  res.status(200).json({
+    status: 'success',
+    data: {
+      tour: '<Updated tour here...>'
+    }
+  });
+});</span></span></pre>
+    </div>
+  </section>
+
+
+
+
+
+  <h1>Delete</h1>
+
+  <section class="code-section-container">
+    <div class="code-text-section">
+      <p>This is similar to <span class="code">PATCH</span> with the following changes.</p>
+      <ol>
+        <li><span class="code">app.delete()</span> is used.</li>
+        <li>A 204 status is returned.</li>
+        <li>The data sent is <span class="code">null</span>.</li>
+      </ol>
+    </div>
+    <div class="code-block-section-w60">
+      <pre class="example"><span class="code-nodejs"><span class="code-comment">// DELETE </span>
+app.<span class="code-highlight">delete</span>('/api/v1/tours/:id', (req, res) => {
+
+  <span class="code-comment">// immediately return a 404 if ID# invalid</span>
+  if (req.params.id * 1 > tours.length) {    
+    return res.status(404).json({
+      status: 'success',
+      message: 'Invalid ID'
+    });
+  }
+
+  <span class="code-comment">// 204 means NO CONTENT </span>
+  res.status(<span class="code-highlight">204</span>).json({
+    status: 'success',
+    data: <span class="code-highlight">null</span>
+  });
+});</span></pre>
+    </div>
+  </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>

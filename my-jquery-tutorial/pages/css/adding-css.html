@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="../../_css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../../_css/style.css">
+
+    <style>
+        .beautify {
+            background-color: yellow;
+            font-weight: bold;
+            color: green;
+            padding-left: 120px;
+        }
+
+        .blue_border {
+            border-style: dashed;
+            border-color: blue;
+            padding-top: 10px;
+            padding-left: 10px;
+            padding-bottom: 10px;
+        }
+
+        .important {
+            color: red;
+            font-weight: bold;
+            font-size: 15px;
+        }
+
+        #super {
+            border-style: dotted;
+            border-color: red;
+            padding-top: 50px;
+            padding-left: 50px;
+            padding-bottom: 50px;
+        }
+    </style>
+
+    <title>Changing CSS</title>
+</head>
+
+<body>
+    <section class="container">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb breadcrumb-container">
+                <li class="breadcrumb-item"><a class="breadcrumb-link" href="../../index.html">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Forms</li>
+            </ol>
+        </nav>
+
+<h1>Using css() to add CSS styles</h1>
+
+        <h1>Adding inline styles to a single element</h1>
+        <p>This changes the text in a paragraph to red.</p>
+
+
+        <pre class="example">
+<span class="code-html">&lt;p class="boot"&gt; Computers are cool &lt;/p&gt;
+
+<span class="code-js">$('p.boot').css('color', 'red');</span></pre>
+
+
+        <h3>Example</h3>
+        <p class="beautify">
+                  <p class="boot"> Computers are cool </p>
+
+
+
+
+        <h1>Adding inline styles to a single element</h1>
+        <p>This changes multiple CSS valaues use a map of key value pairs.</p>
+
+
+        <pre class="example">
+<span class="code-html">&lt;p class="boot"&gt; Computers are cool &lt;/p&gt;
+
+<span class="code-js">$('p.boot2').css({
+    'color': 'white',
+    'background-color': 'grey',
+    'font-family': 'arial, helvetica, sans-serif'
+});</span></pre>
+
+
+        <h3>Example</h3>
+        <p class="boot2"> Computers are cool </p>
+    </section>
+
+
+    <script src="../../_js/jquery-3.4.1.min.js"></script>
+
+    <script>
+        //Single change
+        //inline styling
+        //changes the text color to red for this element
+        $('p.boot').css('color', 'red');
+
+        //Multiple changes
+        //passing in a map of keys and values to change
+        //the key is the attribute
+        $('p.boot2').css({
+            'color': 'white',
+            'background-color': 'grey',
+            'font-family': 'arial, helvetica, sans-serif'
+        });
+    </script>
+
+</body>
+
+</html>

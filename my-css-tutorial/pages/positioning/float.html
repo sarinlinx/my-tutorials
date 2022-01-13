@@ -1,0 +1,821 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="../../_css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../../_css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <style>
+        #float-right {
+            float: right;
+        }
+        
+        #float-left {
+            float: left;
+        }
+        
+        .div-class {
+            float: left;
+            padding: 15px;
+        }
+        
+        #div1 {
+            background: red;
+        }
+        
+        #div2 {
+            background: yellow;
+        }
+        
+        #div3 {
+            background: green;
+        }
+        
+        #div1-clear {
+            float: left;
+            width: 100px;
+            height: 50px;
+            margin: 10px;
+            border: 3px solid #73AD21;
+        }
+        
+        #div2-clear {
+            border: 1px solid red;
+        }
+        
+        #div3-clear {
+            float: left;
+            width: 100px;
+            height: 50px;
+            margin: 10px;
+            border: 3px solid #73AD21;
+        }
+        
+        #div4-clear {
+            border: 1px solid red;
+            clear: left;
+        }
+        
+        .div-clearfix {
+            border: 3px solid #4CAF50;
+            padding: 5px;
+        }
+        
+        #img1-clearfix {
+            float: right;
+        }
+        
+        #img3-clearfix {
+            float: right;
+        }
+        
+        .clearfix {
+            overflow: auto;
+        }
+        
+        #img2-clearfix {
+            float: right;
+        }
+        
+        #img4-clearfix {
+            float: right;
+        }
+        
+        .clearfix-new::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+    </style>
+
+
+    <title>float</title>
+</head>
+
+<body>
+    <a href="../../index.html">Home page</a>
+
+
+
+
+
+    <section class="container">
+
+
+        <div class="row">
+            <div class="col">
+                <h1>Float</h1>
+
+                <p>The float property positions content in a container.</p>
+                <p>It can be used to wrap text around images.</p>
+                <p>You can float to the left or right.</p>
+            </div>
+        </div>
+
+
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+    <section class="container">
+        <div class="row">
+            <div class="col">
+                <h2>Float right</h2>
+            </div>
+        </div>
+
+
+
+
+
+        <div class="row">
+            <div class="col-4">
+                <p>The image will float to the right in the paragraph, and the text in the paragraph will wrap around the image.</p>
+            </div>
+
+
+            <div class="col-8">
+                <pre class="example"><span class="code-css">#float-right {
+  float: right;
+}</span>
+ 
+<span class="code-html">&lt;p&gt;&lt;img id="float-right" src="../../_img/redsquare.png" alt="redsquare" style="width:50px;"&gt; Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum interdum, nisi lorem egestas odio, vitae scelerisque
+  enim ligula venenatis dolor. Maecenas nisl est, ultrices nec congue eget, auctor vitae massa. Fusce luctus vestibulum augue ut aliquet. Mauris ante ligula, facilisis sed ornare eu, lobortis in odio. Praesent convallis urna a lacus
+  interdum ut hendrerit risus congue. Nunc sagittis dictum nisi, sed ullamcorper ipsum dignissim ac. In at libero sed nunc venenatis imperdiet sed ornare turpis.&lt;/p&gt;</span></pre>
+            </div>
+        </div>
+
+
+
+        <div class="row">
+            <div class="col">
+                <h4>Example</h4>
+
+
+                <p><img id="float-right" src="../../_img/redsquare.png" alt="redsquare" style="width:50px;"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum interdum, nisi lorem egestas odio, vitae scelerisque
+                    enim ligula venenatis dolor. Maecenas nisl est, ultrices nec congue eget, auctor vitae massa. Fusce luctus vestibulum augue ut aliquet. Mauris ante ligula, facilisis sed ornare eu, lobortis in odio. Praesent convallis urna a lacus
+                    interdum ut hendrerit risus congue. Nunc sagittis dictum nisi, sed ullamcorper ipsum dignissim ac. In at libero sed nunc venenatis imperdiet sed ornare turpis.</p>
+
+
+            </div>
+        </div>
+
+
+
+
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <section class="container">
+        <div class="row">
+            <div class="col">
+                <h2>Float left</h2>
+            </div>
+        </div>
+
+
+
+
+
+        <div class="row">
+            <div class="col-4">
+                <p>The image will float to the left in the paragraph, and the text in the paragraph will wrap around the image.</p>
+            </div>
+
+
+            <div class="col-8">
+                <pre class="example"><span class="code-css">#float-left {
+float: right;
+}</span>
+
+<span class="code-html">&lt;p&gt;&lt;img id="float-left" src="../../_img/redsquare.png" alt="redsquare" style="width:50px;"&gt; Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum interdum, nisi lorem egestas odio, vitae scelerisque
+enim ligula venenatis dolor. Maecenas nisl est, ultrices nec congue eget, auctor vitae massa. Fusce luctus vestibulum augue ut aliquet. Mauris ante ligula, facilisis sed ornare eu, lobortis in odio. Praesent convallis urna a lacus
+interdum ut hendrerit risus congue. Nunc sagittis dictum nisi, sed ullamcorper ipsum dignissim ac. In at libero sed nunc venenatis imperdiet sed ornare turpis.&lt;/p&gt;</span></pre>
+            </div>
+        </div>
+
+
+
+        <div class="row">
+            <div class="col">
+                <h4>Example</h4>
+
+
+
+                <p><img id="float-left" src="../../_img/redsquare.png" alt="redsquare" style="width:50px;"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum interdum, nisi lorem egestas odio, vitae scelerisque
+                    enim ligula venenatis dolor. Maecenas nisl est, ultrices nec congue eget, auctor vitae massa. Fusce luctus vestibulum augue ut aliquet. Mauris ante ligula, facilisis sed ornare eu, lobortis in odio. Praesent convallis urna a lacus
+
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <section class="container">
+        <div class="row">
+            <div class="col">
+                <h2>Float divs</h2>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-4">
+                <p>Normally div elements will be displayed on top of each other. However, if we use float: left we can let elements float next to each other:</p>
+            </div>
+
+
+            <div class="col-8">
+                <pre class="example"><span class="code-css">.div-class {
+  float: left;
+  padding: 15px;
+}
+
+#div1 {
+  background: red;
+}
+
+#div2 {
+  background: yellow;
+}
+
+#div3 {
+  background: green;
+}</span>
+
+<span class="code-html">&lt;div class="div-class" id="div1"&gt;Div 1&lt;/div&gt;
+&lt;div class="div-class" id="div2"&gt;Div 2&lt;/div&gt;
+&lt;div class="div-class" id="div3"&gt;Div 3&lt;/div&gt;</span></pre>
+            </div>
+        </div>
+
+
+
+        <div class="row">
+            <div class="col">
+                <h4>Example</h4>
+
+                <div class="div-class" id="div1">Div 1</div>
+                <div class="div-class" id="div2">Div 2</div>
+                <div class="div-class" id="div3">Div 3</div>
+
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <section class="container">
+        <div class="row">
+            <div class="col">
+                <h1>clear</h1>
+                <p>The clear property specifies what elements can float beside the cleared element and on which side.</p>
+
+                <p>The clear property can have one of the following values:</p>
+
+                <ul>
+                    <li>
+                        none - Allows floating elements on both sides. This is default</li>
+                    <li>left - No floating elements allowed on the left side</li>
+                    <li>right- No floating elements allowed on the right side</li>
+                    <li>both - No floating elements allowed on either the left or the right side</li>
+                    <li>inherit - The element inherits the clear value of its parent</li>
+                </ul>
+
+                <p>When clearing floats, you should match the clear to the float</p>
+                <p>If an element is floated to the left, you should clear to the left. Your floated element will continue to float, but the cleared element will appear below it on the web page.</p>
+
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col">
+                <h2>Example</h2>
+                <h3>Without clear</h3>
+
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-6">
+                <p>The following example clears the float to the left. Means that no floating elements are allowed on the left side (of the div)</p>
+            </div>
+
+            <div class="col-6">
+                <pre class="example"><span class="code-css">#div1-clear {
+  float: left;
+  width: 100px;
+  height: 50px;
+  margin: 10px;
+  border: 3px solid #73AD21;
+}
+
+#div2-clear {
+  border: 1px solid red;
+}</span>
+
+<span class="code-html">&lt;div id="div1-clear"&gt;div1&lt;/div&gt;
+&lt;div id="div2-clear"&gt;div2 - div2 is after div1 in the HTML code. However, since div1 floats to the left, the text in div2 flows around div1.&lt;/div&gt;</span></pre>
+            </div>
+        </div>
+
+
+
+        <div class="row">
+            <div class="col-6">
+                <h4>Example</h4>
+            </div>
+
+            <div class="col-6">
+                <div id="div1-clear">div1</div>
+                <div id="div2-clear">div2 - div2 is after div1 in the HTML code. However, since div1 floats to the left, the text in div2 flows around div1.</div>
+            </div>
+
+        </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+        <div class="row">
+            <div class="col">
+                <h2>Example</h2>
+                <h3>With clear</h3>
+
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-6">
+                <p>The following example clears the float to the left. Means that no floating elements are allowed on the left side (of the div)</p>
+            </div>
+
+            <div class="col-6">
+                <pre class="example"><span class="code-css">.div3 {
+  float: left;
+  width: 100px;
+  height: 50px;
+  margin: 10px;
+  border: 3px solid #73AD21;
+}
+
+.div4 {
+  border: 1px solid red;
+  <span class="code-highlight">clear: left;</span>
+}</span>
+
+<span class="code-html">&lt;div class="div3"&gt;div3&lt;/div&gt;
+&lt;div class="div4"&gt;div4 - Here, clear: left; moves div4 down below the floating div3. The value "left" clears elements floated to the left. You can also clear "right" and "both".&lt;/div&gt;</span></pre>
+            </div>
+        </div>
+
+
+
+        <div class="row">
+            <div class="col-6">
+                <h4>Example</h4>
+            </div>
+
+            <div class="col-6">
+                <div id="div3-clear">div3</div>
+                <div id="div4-clear">div4 - <span class="code-highlight">clear: left;</span> moves div4 down below the floating div3. The value "left" clears elements floated to the left. You can also clear "right" and "both".</div>
+            </div>
+
+        </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <section class="container">
+
+        <div class="row">
+            <div class="col">
+                <h1>The clearfix hack</h1>
+                <p>If an element is taller than the element containing it, and it is floated, it will "overflow" outside of its container:</p>
+
+            </div>
+        </div>
+
+
+
+
+
+
+        <div class="row">
+            <div class="col">
+                <h2>Old clearfix hack</h2>
+                <p>add overflow: auto; to the containing element to fix this problem:</p>
+                <h3>Without clearfix</h3>
+            </div>
+        </div>
+
+
+
+        <div class="row">
+            <div class="col-6">
+
+                <p>The image is taller than the element containing it, and it is floated, so it overflows outside of its container:</p>
+            </div>
+
+            <div class="col-6">
+                <pre class="example"><span class="code-css">.div-clearfix {
+  border: 3px solid #4CAF50;
+  padding: 5px;
+}
+
+#img1-clearfix {
+  float: right;
+}
+
+#img2-clearfix {
+  float: right;
+}</span>
+
+<span class="code-html">&lt;div class="div-clearfix"&gt;
+  &lt;img id="img1-clearfix" src="../../_img/redsquare.png" alt="redsquare" width="170" height="170"&gt; Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+  Phasellus imperdiet, nulla et dictum interdum...
+&lt;/div&gt;</span></pre>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-6">
+                <h4>Example</h4>
+
+            </div>
+
+            <div class="col-6">
+                <div>
+                    <div class="div-clearfix">
+                        <img id="img1-clearfix" src="../../_img/redsquare.png" alt="redsquare" width="170" height="170"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum interdum...
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <div class="row">
+            <div class="col">
+                <h3>With clearfix</h3>
+
+            </div>
+        </div>
+
+
+
+        <div class="row">
+            <div class="col-6">
+
+                <p>Add a clearfix class with overflow: auto; to the containing element, to fix this problem:</p>
+            </div>
+
+            <div class="col-6">
+                <pre class="example"><span class="code-css">.div-clearfix {
+  border: 3px solid #4CAF50;
+  padding: 5px;
+}
+
+#img1-clearfix {
+  float: right;
+}
+
+<span class="code-highlight">.clearfix {
+  overflow: auto;
+}</span>
+
+#img2-clearfix {
+  float: right;
+}</span>
+
+<span class="code-html">&lt;div class="div-clearfix clearfix"&gt;
+&lt;img id="img1-clearfix" src="../../_img/redsquare.png" alt="redsquare" width="170" height="170"&gt; Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+Phasellus imperdiet, nulla et dictum interdum...
+&lt;/div&gt;</span></pre>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-6">
+                <h4>Example</h4>
+
+            </div>
+
+            <div class="col-6">
+                <div>
+                    <div class="div-clearfix clearfix">
+                        <img id="img2-clearfix" src="../../_img/redsquare.png" alt="redsquare" width="170" height="170"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum interdum...
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <div class="row">
+            <div class="col">
+                <h2>Modern clearfix hack</h2>
+                <p>The overflow: auto clearfix works well as long as you are able to keep control of your margins and padding (else you might see scrollbars).</p>
+                <p>The new, modern clearfix hack however, is safer to use, and the following code is used for most webpages:</p>
+
+            </div>
+        </div>
+
+
+
+        <div class="row">
+            <div class="col">
+                <h3>Without clearfix</h3>
+            </div>
+        </div>
+
+
+
+        <div class="row">
+            <div class="col-6">
+                <p>The image is taller than the element containing it, and it is floated, so it overflows outside of its container:</p>
+            </div>
+
+            <div class="col-6">
+                <pre class="example"><span class="code-css">.div-clearfix {
+border: 3px solid #4CAF50;
+padding: 5px;
+}
+
+#img1-clearfix {
+float: right;
+}
+
+#img2-clearfix {
+float: right;
+}</span>
+
+<span class="code-html">&lt;div class="div-clearfix"&gt;
+&lt;img id="img1-clearfix" src="../../_img/redsquare.png" alt="redsquare" width="170" height="170"&gt; Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+Phasellus imperdiet, nulla et dictum interdum...
+&lt;/div&gt;</span></pre>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-6">
+                <h4>Example</h4>
+
+            </div>
+
+            <div class="col-6">
+                <div>
+                    <div class="div-clearfix">
+                        <img id="img3-clearfix" src="../../_img/redsquare.png" alt="redsquare" width="170" height="170"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum interdum...
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <div class="row">
+            <div class="col">
+                <h3>With modern clearfix</h3>
+
+            </div>
+        </div>
+
+
+
+        <div class="row">
+            <div class="col-6">
+
+                <p>Add a clearfix class with overflow: auto; to the containing element, to fix this problem:</p>
+            </div>
+
+            <div class="col-6">
+                <pre class="example"><span class="code-css">.div-clearfix {
+border: 3px solid #4CAF50;
+padding: 5px;
+}
+
+#img1-clearfix {
+float: right;
+}
+
+<span class="code-highlight">.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}</span>
+
+#img2-clearfix {
+float: right;
+}</span>
+
+<span class="code-html">&lt;div class="div-clearfix clearfix"&gt;
+&lt;img id="img1-clearfix" src="../../_img/redsquare.png" alt="redsquare" width="170" height="170"&gt; Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+Phasellus imperdiet, nulla et dictum interdum...
+&lt;/div&gt;</span></pre>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-6">
+                <h4>Example</h4>
+
+            </div>
+
+            <div class="col-6">
+                <div>
+                    <div class="div-clearfix clearfix-new">
+                        <img id="img4-clearfix" src="../../_img/redsquare.png" alt="redsquare" width="170" height="170"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum interdum...
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>

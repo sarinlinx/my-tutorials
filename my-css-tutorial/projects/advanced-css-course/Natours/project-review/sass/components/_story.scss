@@ -1,0 +1,118 @@
+.story {
+    width: 75%;
+    margin: 0 auto;
+    box-shadow: 0 3rem 6rem rgba($color-black, .1);
+    background-color: rgba($color-white, .6);
+    border-radius: 3px;
+    padding: 6rem;
+    padding-left: 9rem;
+    font-size: $default-font-size;
+    // skew section
+    transform: skewX(-12deg);
+
+
+
+
+    @include respond(tab-port) {
+        width: 100%;
+        padding: 5rem;
+        padding-left: 7rem;
+    }
+
+    @include respond (phone) {
+        transform: skewX(0);
+    }
+
+
+
+
+    &__shape {
+        width: 15rem;
+        height: 15rem;
+        float: left;
+
+        // make text float around shape (whatever the shape may be)
+        //element must be floated and have width and height
+        -webkit-shape-outside: circle(50% at 50% 50%);
+        shape-outside: circle(50% at 50% 50%);
+
+
+        // skew back 12deg since section is skewed -12deg
+        transform: translateX(-3rem) skewX(12deg);
+        position: relative;
+        // cuts out overflowed image
+        overflow: hidden;
+
+        //If clip-path is supported run this code
+        @supports (clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0 0)) {
+            // use clip-path to make element look like a circle
+            -webkit-clip-path: circle(50% at 50% 50%);
+            clip-path: circle(50% at 50% 50%);
+        }
+
+
+        @include respond (phone) {
+            transform: skewX(0);
+        }
+
+
+    }
+
+    &__img {
+        //must give it a height of 100% of parent so it is scaled and stays within the parent
+        height: 100%;
+        //This moves the image to the left a little
+        //scale makes it bigger at first. You can then set it back to 1 when hovered
+        transform: translateX(-4rem) scale(1.4);
+        //This fixes shape of image if it was change when transform: translateX(-4rem) was added
+        //Doesn't occur in chrome though
+        backface-visibility: hidden;
+        transition: all .5s;
+
+    }
+
+    &__text {
+        //this only skews the text
+        // the __shape already has a transform used
+        transform: skewX(12deg);
+
+
+
+        @include respond (phone) {
+            transform: skewX(0);
+        }
+
+    }
+
+    &__caption {
+        //center caption
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        //text is set to 20% which is low. When hovered it will go to -50% which raises it up
+        transform: translate(-50%, 20%);
+        color: $color-white;
+        text-transform: uppercase;
+        font-size: 1.7rem;
+        text-align: center;
+        opacity: 0;
+        transition: all .5s;
+        //fixes glitch when text is hovered and shakes slightly at end
+        backface-visibility: hidden;
+    }
+
+    //change caption when hovered
+    &:hover &__caption {
+        opacity: 1;
+        //-50% raises it from 20% above
+        transform: translate(-50%, -50%);
+    }
+
+    &:hover &__img {
+        //scales img back to 1 from 1.4
+        // transform: translateX(-4rem) scale(1);
+        // change image
+        //80% makes it darker from 100%
+        // filter: blur(3px) brightness(80%)
+    }
+}

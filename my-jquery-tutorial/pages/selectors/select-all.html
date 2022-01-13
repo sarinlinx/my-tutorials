@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="../../_css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../../_css/style.css">
+
+    <title>Select all elements</title>
+</head>
+
+<body>
+    <section class="container">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb breadcrumb-container">
+                <li class="breadcrumb-item"><a class="breadcrumb-link" href="../../index.html">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Select all elements</li>
+            </ol>
+        </nav>
+
+
+
+
+
+
+
+
+        <h1>The * symbol selects all elements on a page</h1>
+        <p>The * symbol selects all elements on page.</p>
+        <p>If you use it to hide elements, the page goes to a blank white page.</p>
+
+
+        <pre class="example"><span class="code-html">&lt;h3&gt;Example&lt;/h3&gt;
+
+&lt;h2&gt;This is a heading&lt;/h2&gt;
+
+&lt;p&gt;This is a paragraph.&lt;/p&gt;
+&lt;p&gt;This is another paragraph.&lt;/p&gt;
+
+&lt;button&gt;Click me&lt;/button&gt;</span>
+
+<span class="code-js">$("button").click(function(){
+  $("*").hide();
+});</span></pre>
+
+        <h3>Example</h3>
+
+        <h2>This is a heading</h2>
+
+        <p>This is a paragraph.</p>
+        <p>This is another paragraph.</p>
+
+        <button>Click me</button>
+
+
+
+
+    </section>
+    <script src="../../_js/jquery-3.4.1.min.js"></script>
+    <script>
+
+      $("button").click(function(){
+        $("*").hide();
+      });
+
+    </script>
+
+</body>
+
+</html>

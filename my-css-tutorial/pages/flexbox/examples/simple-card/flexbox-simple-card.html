@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="../../../../_css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../../../../_css/style.css">
+
+    <title>Flexbox</title>
+</head>
+
+<body>
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li  class="breadcrumb-item"><a href="../../../../index.html">Home</a></li>
+      <li  class="breadcrumb-item active" aria-current="page">Flexbox - Simple Card</li>
+    </ol>
+  </nav>
+
+
+
+    <section class="container">
+        <h2 class="heading-emphasis">Overview</h2>
+
+        <div class="row">
+            <div class="col">
+                <p>This code creates a simple card icon with and image and a graident background.</p>
+
+                <p>Go through this code and add comments to clarify what's happening</p>
+
+            </div>
+
+        </div>
+
+
+<h3>Example</h3>
+
+<div class="row">
+
+    <div class="col-4">
+        <p>###############</p>
+    </div>
+
+    <div class="col-8">
+        <pre class="example"><span class="code-html">&lt;figure class="pizza"&gt;
+  &lt;div class="pizza__hero"&gt;
+    &lt;img src="https://images.unsplash.com/photo-1474600056930-615c3d706456?ixlib=rb-0.3.5&s=dc82336ad3e3873b0a81e9389d346916&auto=format&fit=crop&w=1952&q=80" alt="Pizza" class="pizza__img"&gt;
+  &lt;/div&gt;
+  &lt;div class="pizza__content"&gt;
+    &lt;div class="pizza__title"&gt;
+      &lt;h1 class="pizza__heading"&gt;Pizza Vegetale 👌&lt;/h1&gt;
+      &lt;div class="pizza__tag pizza__tag--1"&gt;#vegetarian&lt;/div&gt;
+      &lt;div class="pizza__tag pizza__tag--2"&gt;#italian&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;p class="pizza__description"&gt;Yummy veggie pizza with tasty olives, crisp peppers, fresh arugula and original italian tomato sauce.&lt;/p&gt;
+    &lt;div class="pizza__details"&gt;
+      &lt;p class="pizza__detail"&gt;&lt;span class="emoji"&gt;🍕&lt;/span&gt;850 kcal&lt;/p&gt;
+      &lt;p class="pizza__detail"&gt;&lt;span class="emoji"&gt;⏱&lt;/span&gt;30 min&lt;/p&gt;
+      &lt;p class="pizza__detail"&gt;&lt;span class="emoji"&gt;⭐️&lt;/span&gt;4.7 / 5&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="pizza__price"&gt;$11.99&lt;/div&gt;
+&lt;/figure&gt;</span>
+</span></pre>
+    </div>
+</div>
+
+
+
+
+
+
+
+<div class="row">
+
+    <div class="col-4">
+        <p>###############</p>
+    </div>
+
+    <div class="col-8">
+        <pre class="example"><span class="code-css">@import url('https://fonts.googleapis.com/css?family=Roboto');
+/*
+Green: #67b26f
+Blue: #4ca2cd
+Mid: #5aaa9d
+*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  color: #444;
+  font-family: Roboto;
+  padding: 50px;
+  background: linear-gradient(to bottom right, #67b26f, #4ca2cd);
+  height: 100vh;
+
+  display: flex;
+  align-items: center; // CROSS AXIS
+  justify-content: center; // MAIN AXIS
+}
+
+.pizza {
+  max-width: 800px;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 30px 80px 10px rgba(0,0,0,.2);
+
+  display: flex;
+  align-items: stretch;
+}
+
+.pizza__hero {
+  flex: 0 0 45%;
+}
+
+.pizza__img {
+  width: 100%;
+  display: block;
+}
+
+.pizza__content {
+  flex: 1;
+  background: white;
+  padding: 35px 30px;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.pizza__price {
+  flex: 0 0 50px;
+  background: linear-gradient(to bottom, #67b26f, #4ca2cd);
+  writing-mode: vertical-rl;
+  color: white;
+  font-size: 18px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pizza__title {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.pizza__heading {
+  font-size: 20px;
+  margin-right: auto;
+}
+
+.pizza__tag {
+  font-size: 10px;
+  text-transform: uppercase;
+  color: white;
+  padding: 2px 7px;
+  border-radius: 100px;
+  margin-left: 7px;
+}
+
+.pizza__tag--1 { background-color: #67b26f; }
+.pizza__tag--2 { background-color: #4ca2cd; }
+
+.pizza__description {
+  font-size: 14px;
+}
+
+.pizza__details {
+  display: flex;
+  margin-top: auto;
+}
+
+.pizza__detail {
+  font-size: 15px;
+  text-transform: uppercase;
+  margin-right: 20px;
+  font-weight: 700;
+
+  display: flex;
+  align-items: center;
+}
+
+.emoji {
+  font-size: 20px;
+  margin-right: 3px;
+}</span></pre></div></div>
+
+
+
+<h3>Example</h3>
+<p><a href="example-simple-card.html" target="_blank">Simple Card Example</a></p>
+
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+    <script src="../../_js/jquery.js"></script>
+    <script src="../../_js/bootstrap.bundle.js"></script>
+</body>
+
+</html>

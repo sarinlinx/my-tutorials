@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="../../_css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../../_css/style.css">
+    <title>Filters</title>
+</head>
+
+<body>
+    <section class="container">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb breadcrumb-container">
+                <li class="breadcrumb-item"><a class="breadcrumb-link" href="../../index.html">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Filters</li>
+            </ol>
+        </nav>
+
+
+        <h1>:header</h1>
+        <p>Target all headers on the page</p>
+
+<pre class="example"><span class="code-html">&lt;h1&gt;Header 1&lt;/h1&gt;
+&lt;h2&gt;Header 2&lt;/h2&gt;
+&lt;h3&gt;Header 3&lt;/h3&gt;
+&lt;p&gt;Paragraph&lt;/p&gt;
+&lt;h4&gt;Header 4&lt;/h4&gt;</span>
+
+<span class="code-js">$("#btn1").click(function() {
+  $(":header").css({
+    'border': '1px solid red'
+  });
+});</span></pre>
+
+        <h3>Example</h3>
+<div>
+<h1>Header 1</h1>
+<h2>Header 2</h2>
+<h3>Header 3</h3>
+<p>Paragraph</p>
+<h4>Header 4</h4>
+<button id="btn1">Click me</button>
+
+
+
+
+
+
+
+
+<h1>:has(:header)</h1>
+<p>Target only divs with a class of myDiv that contain a header</p>
+
+<pre class="example"><span class="code-html">&lt;h1&gt;Header 1&lt;/h1&gt;
+&lt;div class="myDiv"&gt;
+  &lt;h2&gt;Header 2&lt;/h2&gt;
+  &lt;h3&gt;Header 3&lt;/h3&gt;
+&lt;/div&gt;
+&lt;p&gt;Paragraph&lt;/p&gt;
+&lt;h4&gt;Header 4&lt;/h4&gt;</span>
+
+<span class="code-js">$("#btn1").click(function() {
+$("div.myDiv:has(:header)").css({
+'border': '1px solid red'
+});
+});</span></pre>
+
+<h3>Example</h3>
+
+<h1>Header 1</h1>
+<div class="myDiv">
+  <h2>Header 2</h2>
+  <h3>Header 3</h3>
+</div>
+<p>Paragraph</p>
+<h4>Header 4</h4>
+<button id="btn2">Click me</button>
+
+
+
+    </section>
+    <script src="../../_js/jquery-3.4.1.min.js"></script>
+    <script>
+
+    $("#btn1").click(function() {
+        $(":header").css({
+            'border': '1px solid red'
+        });
+    });
+
+    $("#btn2").click(function() {
+        $("div.myDiv:has(:header)").css({
+            'border': '1px solid red'
+        });
+    });
+
+    </script>
+</body>
+
+</html>

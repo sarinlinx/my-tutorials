@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="../../_css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../../_css/style.css">
+    <style>
+        .test-2-bg-images {
+            background-image: url("../../_img/backgrounds/examples/purple-dot.jpg"), url("../../_img/backgrounds/examples/white-bg.jpg");
+            background-repeat: no-repeat, repeat;
+        }
+    </style>
+    <title>Background Images</title>
+</head>
+
+<body>
+    <a href="../../index.html">Home page</a>
+
+
+
+
+
+
+    <section class="container">
+        <h1>Setting a background image</h1>
+        <div class="row">
+            <div class="col-6">
+                <p>Add a background image.</p>
+                <p><strong>NOTE: Double quotes are needed. Single quotes do not work.</strong></p>
+            </div>
+
+            <div class="col-6">
+                <pre class="example"><span class="code-css">body {
+  background-image: url("paper.gif");
+}</pre>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-6">
+                <p>To specify multiple images, separate the URLs with a comma.</p>
+                <p>This could be used to layer a small image over a wallpaper background image</p>
+            </div>
+
+            <div class="col-6">
+                <pre class="example"><span class="code-css">body {
+  background-image: url("image1.png"),
+  url("image2.png");
+  background-repeat: no-repeat, repeat;
+}</pre>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-6">
+                <p>Example of 2 images</p>
+                <p>The first image only displays once.</p>
+            </div>
+
+            <div class="col-6">
+                <div class="test-2-bg-images">
+                    <p>&nbsp;</p>
+                    <p>&nbsp;</p>
+                    <p>&nbsp;</p>
+                    <p>&nbsp;</p>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+
+
+
+
+    <section class="container">
+        <h1>Different background images for different displays</h1>
+        <div class="row">
+            <div class="col">
+                <p>If you have a high resolution display (retina) you may want to display a different image than a smaller screen with less resolution.</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6">
+                <p>Use a media query.</p>
+            </div>
+            <div class="col-6">
+                <pre class="example"><span class="code-css">header {
+  background: url(image.jpg);
+}
+
+@media (min-resolution: 192dpi) {
+  header {
+  /* Using a larger image for retina screens */
+  background: url(image@2x.jpg);
+  }
+}<pre></div></div>
+                </div>
+
+            </section>
+
+
+
+
+
+
+
+
+
+
+
+    <section class="container">
+        <h1>Shorthand</h1>
+        <div class="row">
+            <div class="col">
+                <p>You can use shorthand to list all background CSS properites in a single declaration.</p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-6">
+                <p>When using the shorthand property, the recommended order of the property values is:</p>
+                <ul class="no-style">
+                    <li>background-color</li>
+                    <li>background-image</li>
+                    <li>background-repeat</li>
+                    <li>background-attachment</li>
+                    <li>background-position</li>
+                </ul>
+                <p>But the order doesn't matter.</p>
+                <p><strong>If you mix shortland with full declarations, shorthand will override.</strong></p>
+            </div>
+
+
+            <div class="col-6">
+                <pre class="example"><span class="code-css">body {
+  background: #ffffff url("img_tree.png") no-repeat scroll right top;
+}</pre></div>
+        </div>
+
+        <div class="row">
+            <div class="col-6">
+                <p>If you include background-size, it MUST be after background-position and separated with /.</p>
+            </div>
+
+            <div class="col-6">
+                <pre class="example"><span class="code-css">body {
+  background: url(image.png) no-repeat fixed 0px 0px / cover;
+}</span></pre></div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+    <section class="container">
+        <h1>Shorthand for multiple images</h1>
+        <div class="row">
+            <div class="col-6">
+                <p>Longhand for multiple image styles.</p>
+            </div>
+
+
+            <div class="col-6">
+                <pre class="example"><span class="code-css">body {
+  background-image: url(image1.png), url(image2.png);
+  background-repeat: no-repeat, no-repeat;
+  background-position: top right, bottom left;
+}</pre></div>
+        </div>
+
+        <div class="row">
+            <div class="col-6">
+                <p>Shorthand for multiple image styles.</p>
+            </div>
+
+            <div class="col-6">
+                <pre class="example"><span class="code-css">body {
+  background: url(image1.png) no-repeat top right,
+              url(image2.png) no-repeat bottom left;
+}</pre></div>
+        </div>
+    </section>
+
+
+
+
+</body>
+
+</html>

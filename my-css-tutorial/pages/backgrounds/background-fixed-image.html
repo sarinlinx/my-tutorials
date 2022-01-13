@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="../../_css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../../_css/style.css">
+
+    <title>Background Fixed Image</title>
+</head>
+
+<body>
+    <a href="../../index.html">Home page</a>
+
+
+
+
+
+    <section class="container">
+        <h1>Background attachement</h1>
+        <div class="row">
+            <div class="col">
+                <p>The background-attachment property specifies whether the background image should scroll or be fixed
+                    (will not scroll with the rest of the page):</p>
+            </div>
+        </div>
+
+        <div class="alert alert-note">
+            <div class="alert-icon">
+                <img src="../../_img/note-icon.png" width="60" height="60">
+            </div>
+            <div class="alert-content">
+                <p>This only works on the body element. If you used 'fixed' for any other element, the image will
+                    disappear. This is because 'fixed' is relative to the viewport, not the element you're adding
+                    the code to.</p>
+                <p>View the following example:</p>
+                <ul>
+                    <li><a href="../../examples/images/fixed-image/example-fixed-image.html" target="_blank">Fixed image eample</a></li>
+                </ul>
+            </div>
+
+        </div>    </section>
+
+
+    <section class="container">
+        <h2>fixed — Fix the image to the page as you scroll</h2>
+        <div class="row">
+            <div class="col-6">
+                <p>This causes the image to be fixed to the top left of the page. As the user scrolls, the image always
+                    remains on the top left and never goes out of sight.</p>
+            </div>
+
+            <div class="col-6">
+                <pre class="example"><span class="code-css">body {
+  background: url("../img/purple-dot.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}</pre>
+            </div>
+            
+        </div>
+    </section>
+
+
+    <section class="container">
+        <h2>scroll — Allow the image to scroll with the page</h2>
+        <div class="row">
+            <div class="col-6">
+                <p>This causes the image to scroll with the page. As the user scrolls, the image scrolls also. This is
+                    the default behavior.</p>
+            </div>
+            <div class="col-6">
+                <pre class="example"><span class="code-css">body {
+  background: url("../img/purple-dot.jpg");
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+}</pre>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-6">
+                <p>This causes the image to scroll with the page. As the user scrolls, the image scrolls also. This is
+                    the default behavior.</p>
+            </div>
+            <div class="col-6">
+                <pre class="codebox-fixed-height"><div class="image-bg-scroll"><span class="white">Testing Testing Testing
+Testing Testing Testing
+Testing Testing Testing
+Testing Testing Testing
+Testing Testing Testing
+Testing Testing Testing
+Testing Testing Testing
+Testing Testing Testing</span></div>
+</pre>
+            </div>
+        </div>
+
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script src="../../_js/jquery.js"></script>
+    <script src="../../_js/bootstrap.bundle.js"></script>
+</body>
+
+</html>

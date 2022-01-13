@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="../../_css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../../_css/style.css">
+
+    <title>The text() method</title>
+</head>
+
+<body>
+    <section class="container">
+      <nav aria-label="breadcrumb">
+          <ol class="breadcrumb breadcrumb-container">
+              <li class="breadcrumb-item"><a class="breadcrumb-link" href="../../index.html">Home</a></li>
+              <li class="breadcrumb-item active" aria-current="page">The text() method</li>
+          </ol>
+      </nav>
+
+
+<h1>Retrieve the text of an element</h1>
+<p>This retrieves the text of a paragraph</p>
+
+<pre class="example">
+<span class="code-html">&lt;p id="test"&gt;This is some &lt;b&gt;bold&lt;/b&gt; text in a paragraph.&lt;/p&gt;
+&lt;button id="btn1"&gt;Show Text&lt;/button&gt;</span>
+
+<span class="code-js">$("#btn1").click(function(){
+  alert("Text: " + $("#test").text());
+});</span></pre>
+
+<h3>Example</h3>
+<p id="test">This is some <b>bold</b> text in a paragraph.</p>
+<button id="btn1">Show Text</button>
+
+
+
+
+
+
+
+
+<h1>Set the text of an element</h1>
+<p>This sets the text of a paragraph</p>
+
+<pre class="example">
+<span class="code-html">&lt;p id="testset1"&gt;This is a paragraph.&lt;/p&gt;
+&lt;button id="btnset1"&gt;Set Text&lt;/button&gt;</span>
+
+<span class="code-js">$("#btnset1").click(function(){
+  $("#testset1").text("Hello world!");
+});</span></pre>
+
+<h3>Example</h3>
+<p id="testset1">This is a paragraph.</p>
+<button id="btnset1">Set Text</button>
+
+
+
+
+
+
+
+
+<h1>Replacing text using the text() method</h1>
+    <p>The text() method changes the text of a specified element</p>
+
+<pre class="example">
+<span class="code-html">&lt;h2 class="dope"&gt; You'll learn how to replace me</h2>
+&lt;input type="button" value="Replace" id="btn_main" /&gt;</span>
+
+<span class="code-js">$('#btn_main').on('click', function() {
+  <span class="code-comment">//use the text() method to replace the existing text</span>
+  $('.dope').text('This is new text.')
+});</span></pre>
+
+
+    <h3>Example</h3>
+    <h2 class="dope"> You'll learn how to replace me </h2>
+    <input type="button" value="Replace" id="btn_main" />
+
+
+
+
+
+
+
+
+
+
+
+    <h1>A Callback Function for text()</h1>
+        <p>text() also comes with a callback function. The callback function has two parameters:</p>
+        <ul>
+          <li>the index of the current element in the list of elements selected</li>
+          <li>and the original (old) value</li>
+        </ul>
+        <p>You then return the string you wish to use as the new value from the function.</p>
+
+<pre class="example"><span class="code-html">&lt;p id="testcallback1"&gt;This is a &lt;b&gt;bold&lt;/b&gt; paragraph.&lt;/p&gt;
+&lt;button id="btncallback1"&gt;Show Old/New Text&lt;/button&gt;</span>
+
+<span class="code-js">$("#btncallback1").click(function(){
+  $("#testcallback1").text(function(i, origText){
+    return "Old text: " + origText + " New text: Hello world! (index: " + i + ")";
+  });
+});</span></pre>
+
+
+        <h3>Example</h3>
+      <p id="testcallback1">This is a <b>bold</b> paragraph.</p>
+      <button id="btncallback1">Show Old/New Text</button>
+
+
+
+
+
+
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+    <script src="../../_js/jquery-3.4.1.min.js"></script>
+
+    <script>
+    $("#btn1").click(function(){
+      alert("Text: " + $("#test").text());
+    });
+
+
+$('#btn_main').on('click', function(){
+  //use the text() method to replace the existing text
+  $('.dope').text('This is new text.');
+});
+
+$("#btnset1").click(function(){
+  $("#testset1").text("Hello world!");
+});
+
+
+$("#btncallback1").click(function(){
+  $("#testcallback1").text(function(i, origText){
+    return "Old text: " + origText + " New text: Hello world! (index: " + i + ")";
+  });
+});
+    </script>
+
+</body>
+
+</html>

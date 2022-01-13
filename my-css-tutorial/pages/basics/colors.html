@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="../../_css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../../_css/style.css">
+
+    <title>Colors</title>
+</head>
+
+<body>
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+                <a href="../../index.html">Home</a>
+            </li>
+            <li class="breadcrumb-item active" aria-current="page">Colors</li>
+        </ol>
+    </nav>
+
+
+
+
+
+    <section class="container">
+        <div class="row">
+            <div class="col">
+                <h2 class="heading-emphasis">Color codes</h2>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-5">
+                <p>You can type in the name of the color, or use a HEX code. All major browsers support 140 colors.
+                    <ul>
+                        <li>
+                            <a href="https://www.w3schools.com/colors/colors_names.asp" target="_blank">140 colors supported in all browsers</a>
+                        </li>
+                    </ul>
+                </p>
+            </div>
+            <div class="col-7">
+                <pre class="example"><span class="code-css">p {
+  background-color: color: white;
+  background-color: color: #ffffff;
+}</pre>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+    <section class="container">
+        <div class="row">
+            <div class="col">
+                <h2 class="heading-emphasis">rgb colors</h2>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-5">
+                <p>rgb color values specify Red, Green, and Blue.</p>
+            </div>
+            <div class="col-7">
+                <pre class="example"><span class="code-css">{
+  background-color: rgb(255, 0, 0); <span class="code-comment">/*red*/</span>
+}</pre>
+            </div>
+    </section>
+
+
+
+
+    <section class="container">
+        <div class="row">
+            <div class="col">
+                <h2 class="heading-emphasis">rgba colors</h2>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-5">
+                <p>rgba color values specify an opacity value. The 'a' stands of 'Alpha Channel'.</p>
+                <p>The opacity parameter is specified as a number between 0 (transparent) and 1 (opaque).</p>
+            </div>
+            <div class="col-7">
+                <pre class="example"><span class="code-css">{
+  background-color: rgba(255, 0, 0, 0.3); <span class="code-comment">/*red with opacity */</span>
+}</pre>
+            </div>
+    </section>
+
+
+
+
+
+    <section class="container">
+        <div class="row">
+            <div class="col">
+                <h2 class="heading-emphasis">HSL colors</h2>
+                <p>HSL stands for hue, saturation, and lightness. These values represent a cylindrical-coordinate representation of colors.</p>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-5">
+
+
+                <h3>Hue</h3>
+                <p>On a circular color wheel, 0 and 360 would represent red.</p>
+                <p>120 is green</p>
+                <p>240 is blue</p>
+                <h3>Saturation</h3>
+                <p>Saturation is a % value. 0% is a shade of gray. 100% is full color.</p>
+                <h3>Lightness</h3>
+                <p>Lightness is a % value. 0% is black. 100% is white. 50% is the normal color.</p>
+            </div>
+
+            <div class="col-7">
+                <pre class="example"><span class="code-comment">/* green: 50% is normal color */</span>
+<span class="code-css">.p1 {background-color: hsl(120, 100%, 50%);}</span>
+<p class="hsl-colors-p1">Green</p>
+
+<span class="code-comment">/* light green: 75% makes it lighter */</span>
+<span class="code-css">.p2 {background-color: hsl(120, 100%, 75%);}</span>
+<p class="hsl-colors-p2">Light Green</p>
+
+<span class="code-comment">/* dark green: 25% makes it darker */</span>
+<span class="code-css">.p3 {background-color: hsl(120, 100%, 25%);}</span>
+<p class="hsl-colors-p3">Dark Green</p>
+
+<span class="code-comment">/* pastel green: 60% gives it a gray shade, 70% lightens it */</span>
+<span class="code-css">.p4 {background-color: hsl(120, 60%, 70%);}</span>
+<p class="hsl-colors-p4">Pastel Green</p></pre></div></section>
+
+
+
+
+    <section class="container">
+      <div class="row">
+           <div class="col">
+        <h2 class="heading-emphasis">HSLA colors</h2>
+      </div></div>
+
+
+        <div class="row">
+            <div class="col-5">
+                <p>HSLA colors add an opacity value (Alpha Channel), just like rgba colors.</p>
+            </div>
+
+            <div class="col-7">
+                <pre class="example"><p class="hsla-colors-p1">Green</p>
+<span class="code-comment">/* green with .3 opacity */</span>
+<span class="code-css">.p1 {background-color: hsla(120, 100%, 50%, 0.3);}</span>
+<p class="hsla-colors-p2">Light Green</p>
+<span class="code-comment">/* light green: 75% lightens with .3 opacity */</span>
+<span class="code-css">.p2 {background-color: hsla(120, 100%, 75%, 0.3);}</span>
+<p class="hsla-colors-p3">Dark Green</p>
+<span class="code-comment">/* dark green: 25% darkens with .3 opacity */</span>
+<span class="code-css">.p3 {background-color: hsla(120, 100%, 25%, 0.3);}</span>
+<p class="hsla-colors-p4">Pastel Green</p>
+<span class="code-comment">/* pastel green: 60% gives it gray shade, 70% of lightens it, with .3 opacity */</span>
+<span class="code-css">.p4 {background-color: hsla(120, 60%, 70%, 0.3);}</span></pre>
+            </div>
+    </section>
+
+
+
+
+
+
+
+
+
+    <script src="../../_js/jquery.js"></script>
+    <script src="../../_js/bootstrap.bundle.js"></script>
+</body>
+
+</html>

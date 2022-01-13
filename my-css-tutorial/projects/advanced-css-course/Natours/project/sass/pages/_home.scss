@@ -1,0 +1,145 @@
+.section-about {
+  background-color: $color-grey-light-1;
+  padding: 25rem 0;
+  // move up to fill empty space in header where image is clipped
+  margin-top: -20vh;
+
+
+  @include respond(tab-port) {
+    padding: 20rem 0;
+  }
+
+}
+
+.section-features {
+  padding: 20rem 0;
+  background-image: linear-gradient(to right bottom,
+      rgba($color-primary-light, 0.8),
+      rgba($color-primary-dark, 0.8)),
+    url(../../img/nat-4.jpg);
+  background-size: cover;
+
+  // Move section up to cover empty space since the background image is skewed
+  margin-top: -13rem;
+
+  // skews entire section and everything within it
+  transform: skewY(-7deg);
+
+  // use direct child selector to skew children back to horizontal
+  //.section-features > *
+  &>* {
+    transform: skewY(7deg);
+  }
+
+  @include respond(tab-port) {
+    padding: 10rem 0;
+  }
+
+}
+
+
+
+.section-tours {
+  background-color: $color-grey-light-1;
+  padding: 25rem 0 15rem 0;
+  margin-top: -12rem;
+
+
+  @include respond(tab-port) {
+    padding: 20rem 0 10rem 0;
+  }
+}
+
+.section-stories {
+  //position relative so video background can lay under this section
+  position: relative;
+  padding: 15rem 0;
+
+  @include respond(tab-port) {
+    padding: 10rem 0;
+  }
+}
+
+.section-book {
+  padding: 15rem 0;
+  background-image: linear-gradient(to right bottom, $color-primary-light, $color-primary-dark);
+
+  @include respond(tab-port) {
+    padding: 10rem 0;
+  }
+}
+
+
+
+
+
+
+
+
+.book {
+  // add background image behind gradient
+  background-image: linear-gradient(105deg,
+      rgba($color-white, .9) 0%,
+      rgba($color-white, .9) 50%,
+      /* this causes the split in the gradient at 50%*/
+      transparent 50%),
+    url(../img/nat-10.jpg);
+
+  // fits container in x direction
+  background-size: 100%;
+  border-radius: 3px;
+  box-shadow: 0 1.5rem 4rem rgba($color-black, .25);
+
+
+
+
+
+  @include respond(tab-land) {
+    background-image: linear-gradient(105deg,
+        rgba($color-white, .9) 0%,
+        rgba($color-white, .9) 65%,
+        /* this causes the split in the gradient at 50%*/
+        transparent 65%),
+      url(../img/nat-10.jpg);
+
+    background-size: cover;
+  }
+
+
+
+  @include respond(tab-port) {
+    //cover in white
+    background-image: linear-gradient(to right,
+        rgba($color-white, .9) 0%,
+        rgba($color-white, .9) 100%),
+      url(../img/nat-10.jpg);
+  }
+
+
+
+  &__form {
+    width: 50%;
+    padding: 6rem;
+
+
+    @include respond(tab-land) {
+      width: 65%;
+    }
+
+    @include respond(tab-port) {
+      width: 100%;
+    }
+
+
+  }
+
+
+
+
+
+
+
+
+
+
+}

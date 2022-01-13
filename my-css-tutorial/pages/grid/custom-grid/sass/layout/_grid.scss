@@ -1,0 +1,60 @@
+.row {
+  /* 1140px / 10 = 114 rem */
+  max-width: $grid-width;
+  background-color: #eee;
+  /* center block element inside another block element */
+  margin: 0 auto;
+  /* remove margin from last row using not pseudo class */
+  /*  The not pseudo class selects everything except the last child */
+  //This is equivalent to .row:last-child()
+  &:not(:last-child) {
+    margin-bottom: $gutter-vertical;
+  }
+
+  @include clearfix;
+
+  //using attribute selector so the code does not repeat itself
+  //select classes that begin ^ with col-
+  [class^="col-"] {
+    background-color: orangered;
+    //This collapses height of child elements. User clearfix to resolve
+    float: left;
+    /*since gutter is only applied to the right of an element the
+    you must remove the gutter from the element all the way on the right */
+    &:not(:last-child) {
+      margin-right: $gutter-horizontal;
+    }
+  }
+
+  .col-1-of-2 {
+    //100% of width subtract gutter. Must use {} for var
+    width: calc((100% - #{$gutter-horizontal}) / 2);
+  }
+
+  .col-1-of-3 {
+    //2 times the horizontal gutter because there are 2 gutters
+    //divide by 3 since there are 3 col
+    width: calc((100% - 2 * #{$gutter-horizontal}) / 3);
+  }
+
+  .col-1-of-4 {
+    //3 gutters
+    //divide by 4 since there are 4 col
+    width: calc((100% - 3 * #{$gutter-horizontal}) / 4);
+  }
+
+  .col-2-of-3 {
+//width is 2 (1-of-3) cols plus a single gutter
+    width: calc((2 * (100% - 2 * #{$gutter-horizontal}) / 3) + #{$gutter-horizontal});
+  }
+
+  .col-2-of-4 {
+    //width is 2 (1-of-4) cols plus a single gutter
+    width: calc((2 * (100% - 3 * #{$gutter-horizontal}) / 4) + #{$gutter-horizontal});
+  }
+
+  .col-3-of-4 {
+    //width is 3 (1-of-4) cols plus a two gutters
+    width: calc((3 * (100% - 3 * #{$gutter-horizontal}) / 4) + 2 * #{$gutter-horizontal});
+  }
+}

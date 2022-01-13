@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="flex-styles.css">
+
+    <title>All Flexbox Items</title>
+</head>
+
+<body>
+
+    <h1>Container height</h1>
+    <p>NOTE: The container must have a height larger than it's items. If not, these settings will not function as they will inhabit the full container.</p>
+
+
+
+
+
+    <h1>align-self</h1>
+    <p>Similar to align-items for the container, but only for a single item</p>
+    <p>This overrides the flexible container's align-items property.</p>
+
+
+    <h2>align-self: auto</h2>
+    <p>Default. The element inherits its parent container's align-items property, or "stretch" if it has no parent container
+    </p>
+    <p>The container sets: align-items: center, so align-self inherits this and becomes align-self: center.
+        <p>
+            <section class="flex-items-container-center">
+                <div class="items-height">1</div>
+                <div class="items-height">2</div>
+                <div class="items-height align-self-auto">3</div>
+                <div class="items-height">4</div>
+                <div class="items-height">5</div>
+            </section>
+
+            <h2>align-self: stretch</h2>
+            <p>The container sets: align-items: center</p>
+            <p>align-self: stretch will not work if the item has a height. The item's height will override align-items and align-self: stretch.</p>
+            <p><a href="https://stackoverflow.com/questions/44878379/why-does-width-and-height-of-a-flex-item-affect-how-a-flex-item-is-rendered/44937417#44937417">Explanation</a>
+            </p>
+            <section class="flex-items-container-center">
+                <div class="item">1</div>
+                <div class="item">2</div>
+                <div class="item align-self-stretch">3</div>
+                <div class="item">4</div>
+                <div class="item">5</div>
+            </section>
+
+
+            <h2>align-self: flex-start</h2>
+            <p>The container sets: align-items: center</p>
+            <section class="flex-items-container-center">
+                <div class="item">1</div>
+                <div class="item">2</div>
+                <div class="item align-self-flex-start">3</div>
+                <div class="item">4</div>
+                <div class="item">5</div>
+            </section>
+
+
+            <h2>align-self: flex-end</h2>
+            <p>The container sets: align-items: center</p>
+            <section class="flex-items-container-center">
+                <div class="item">1</div>
+                <div class="item">2</div>
+                <div class="item align-self-flex-end">3</div>
+                <div class="item">4</div>
+                <div class="item">5</div>
+            </section>
+
+            <h2>align-self: center</h2>
+            <section class="flex-items-container">
+                <div class="items-height">1</div>
+                <div class="items-height">2</div>
+                <div class="items-height align-self-center">3</div>
+                <div class="items-height">4</div>
+                <div class="items-height">5</div>
+            </section>
+
+            <h2>align-self: baseline</h2>
+            <p>The container sets: align-items: center</p>
+            <p>Review how this works: <a href="https://stackoverflow.com/questions/40727657/flexbox-align-items-baseline-works-but-align-self-baseline-doesnt-why">align-self:
+            baseline</a></p>
+            <section class="flex-items-container-center">
+                <div class="items-height">1</div>
+                <div class="items-height">2</div>
+                <div class="items-height align-self-baseline">3</div>
+                <div class="items-height">4</div>
+                <div class="items-height">5</div>
+            </section>
+
+
+
+
+            <h1>order</h1>
+            <p>Order a single item should appear within the container.</p>
+            <p>The order # changes the items position. All items have order value of zero.</p>
+
+
+            <h2>order: -1</h2>
+            <p>Setting order: -1 places the item at the beginning.</p>
+            <p>This sets order: -1 on item 3.</p>
+
+            <section class="flex-items-container">
+                <div class="items-height">1</div>
+                <div class="items-height">2</div>
+                <div class="items-height order-negative-one">3</div>
+                <div class="items-height">4</div>
+                <div class="items-height">5</div>
+            </section>
+
+            <h2>order: 1</h2>
+            <p>Setting order: 1 places the item at the end since all values are zero by default.</p>
+            <p>This sets order: 1 on item 3.</p>
+
+            <section class="flex-items-container">
+                <div class="items-height">1</div>
+                <div class="items-height">2</div>
+                <div class="items-height order-one">3</div>
+                <div class="items-height">4</div>
+                <div class="items-height">5</div>
+            </section>
+
+            <h2>order: 1</h2>
+            <p>This sets:</p>
+            <ul>
+                <li>item 1: order 1</li>
+                <li>item 2: order 3</li>
+                <li>item 3: order 4</li>
+                <li>item 4: order 2</li>
+                <li>item 5: order 0</li>
+            </ul>
+
+            <section class="flex-items-container">
+                <div class="items-height order-one">1</div>
+                <div class="items-height order-three">2</div>
+                <div class="items-height order-four">3</div>
+                <div class="items-height order-two">4</div>
+                <div class="items-height order-zero">5</div>
+            </section>
+
+
+            <h1>3 Width Properties</h1>
+            <hr>
+
+
+
+            <h2>flex-grow</h2>
+            <p>defines how much an item can grow</p>
+            <p>Specify # to grow item.</p>
+            <p> Add flex-grow: 1; to all items so items grow to as much as they can.</p>
+            <p>The # is in relation to other elements.</p>
+            <p> So, if you set flex-grow: 1; on all items, and then add flex-grow: 2; to a specific item, that item will grows 2x the size of the other items.</p>
+            <p> NOTE: The items CSS section must come before the specific item flex-grow property. If not, it will not be read.
+            </p>
+
+            <h3>No flex-grow property</h3>
+
+            <section class="flex-items-container">
+                <div class="items-height">1</div>
+            </section>
+
+            <h3>flex-grow: 1</h3>
+            <section class="flex-items-container">
+                <!-- <div class="items-height">1</div>
+                <div class="items-height">2</div> -->
+                <div class="items-height flex-grow-1">1</div>
+                <!-- <div class="items-height">4</div>
+                <div class="items-height">5</div> -->
+            </section>
+
+            <h3>flex-grow: multiple</h3>
+            <p>first item is flex-grow 1</p>
+            <p>next is flex grow 2</p>
+            <section class="flex-items-container">
+
+                <div class="items-height flex-grow-1">1</div>
+                <div class="items-height flex-grow-2">2</div>
+
+            </section>
+
+
+
+
+
+
+            <h2>flex-shrink</h2>
+            <p>defines how much an item can shrink</p>
+            <p>Initial value is 1 which means it's allowed to shrink.</p>
+            <p> Set it to zero so it's NOT allowed to shrink.</p>
+
+
+            <h3>flex-shrink: 0</h3>
+            <p>Each item has a 100px width.</p>
+            <p>The container is 150px.</p>
+            <p>Since item 2 is set to flex-shrink: 0, it's size does NOT shrink.</p>
+            <section class="flex-items-container-150w">
+
+                <div class="items-height">1</div>
+                <div class="items-height flex-shrink-0">2</div>
+
+            </section>
+
+            <h3>flex-shrink: 1</h3>
+            <p>Each item has a 100px width.</p>
+            <p>The container is 150px.</p>
+            <p>Since item 2 is set to flex-shrink: 1, it's size shrinks.</p>
+            <section class="flex-items-container-150w">
+
+                <div class="items-height">1</div>
+                <div class="items-height flex-shrink-1">2</div>
+
+            </section>
+
+
+
+
+
+            <h2>flex-basis</h2>
+            <p>flex-basis allows you to set the width of a flex item.</p>
+            <p> Initial value is 'auto'.</p>
+            <p>You can set a % value.</p>
+            <p>This sets item 2 to flex-basis: 20%</p>
+            <section class="flex-items-container-150w">
+
+                <div class="items-height">1</div>
+                <div class="items-height flex-basis-20">2</div>
+
+            </section>
+
+
+
+
+
+
+
+
+</body>
+
+</html>

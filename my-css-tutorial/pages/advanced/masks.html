@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="../../_css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../../_css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <title>Masks</title>
+</head>
+
+<body>
+    <a href="../../index.html">Home page</a>
+
+
+
+    <section class="container">
+        <h1>Masks</h1>
+        <div class="row">
+            <div class="col">
+                <p>Defines an areas where you can look through an element and see what's behind it.</p>
+            </div>
+        </div>
+
+
+
+
+        <h1>Mask with background color</h1>
+        <h2>This example is for older browsers</h2>
+        <p>This example adds icons, but you are not able to change their color since they were added as a background-image.</p>
+
+        <div class="row">
+            <div class="col-4">
+
+                <p><a href="../flexbox/examples/flexbox-list-svg-mask.html" target="_blank">Flexbox mask example</a></p>
+                <p>On the list, use flex-wrap: wrap; to break items onto next line.</p>
+                <p>On the list items, use flex: 0 0 50%; so the line splits into two columns both 50% wide.</p>
+                <p>Use the ::before pseudo element to add the SVG</p>
+            </div>
+            <div class="col-8">
+                <pre class="example"><span class="code-css"> body {
+  background-color: rgb(126, 126, 126);
+}
+
+.container {
+  color: rgb(53, 53, 53);
+  background-color: rgb(233, 233, 233);
+  padding: 3rem;
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 60%;
+  flex: 0 0 60%;
+  margin-right: 4.5rem;
+}
+
+.list {
+  list-style: none;
+  margin: 3rem 0;
+  padding: 3rem 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.list__item {
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 50%;
+  /* 50% so elements are side by side */
+  flex: 0 0 50%;
+  margin-bottom: .7rem;
+}
+
+.list__item::before {
+  content: "";
+  display: inline-block;
+  height: 1rem;
+  width: 1rem;
+  margin-right: .7rem;
+  /* older browsers  */
+  background-image: url(img/chevron-thin-right.svg);
+  background-size: cover;
+}</span>
+
+
+<span class="code-html">&lt;div class="container"&gt;
+  &lt;ul class="list"&gt;
+      &lt;li class="list__item"&gt;Close to the beach&lt;/li&gt;
+      &lt;li class="list__item"&gt;Breakfast included&lt;/li&gt;
+      &lt;li class="list__item"&gt;Free airport shuttle&lt;/li&gt;
+      &lt;li class="list__item"&gt;Free wifi in all rooms&lt;/li&gt;
+      &lt;li class="list__item"&gt;Air conditioning and heating&lt;/li&gt;
+      &lt;li class="list__item"&gt;Pets allowed&lt;/li&gt;
+      &lt;li class="list__item"&gt;We speak all languages&lt;/li&gt;
+      &lt;li class="list__item"&gt;Perfect for families&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;</span></pre>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+        <h2>This example is for newer browsers</h2>
+        <p>This example adds a background color. A mask is then used for the SVG to see through to the background color.</p>
+
+        <div class="row">
+            <div class="col-4">
+
+                <p><a href="../flexbox/examples/flexbox-list-svg-mask.html" target="_blank">Flexbox mask example</a></p>
+                <p>This uses mask-image and mask-size to see through the SVG to the background color.</p>
+            </div>
+            <div class="col-8">
+                <pre class="example"><span class="code-css">.list__item2::before {
+  content: "";
+  display: inline-block;
+  height: 1rem;
+  width: 1rem;
+  margin-right: .7rem;
+  <span class="code-highlight">background-color: rgb(255, 76, 22);
+  -webkit-mask-image: url(img/chevron-thin-right.svg);
+  <span class="code-comment">/* so icon covers entire element */</span>
+  -webkit-mask-size: cover;
+  mask-image: url(img/chevron-thin-right.svg);
+  mask-size: cover;
+  background-image: none;
+}</span></span></pre>
+            </div>
+        </div>
+
+
+
+        <p>You can also add both and use @supports to check if the browser supports the newer code.</p>
+        <p>Must set background-image to none for the @supports to work.</p>
+
+        <pre class="example"><span class="code-css">
+.list__item {
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 50%;
+  flex: 0 0 50%;
+  margin-bottom: .7rem;
+}
+
+.list__item::before {
+  content: "";
+  display: inline-block;
+  height: 1rem;
+  width: 1rem;
+  margin-right: .7rem;
+  background-image: url(../img/chevron-thin-right.svg);
+  background-size: cover;
+}
+
+@supports ((-webkit-mask-image: url()) or (mask-image: url())) {
+  .list__item::before {
+    background-color: var(--color-primary);
+    -webkit-mask-image: url(../img/chevron-thin-right.svg);
+    -webkit-mask-size: cover;
+    mask-image: url(../img/chevron-thin-right.svg);
+    mask-size: cover;
+    background-image: none;
+  }
+}</span></pre>
+
+
+    </section>
+
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+<p>This example creates a mask over a background color.</p>
+<p>You can then look through the mask to see the background color.</p>

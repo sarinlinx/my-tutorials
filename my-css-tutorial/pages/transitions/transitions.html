@@ -1,0 +1,787 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="../../_css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../../_css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <title>Transitions</title>
+</head>
+
+<body>
+    <a href="../../index.html">Home page</a>
+    <section class="container">
+        <h1>Transitions</h1>
+        <div class="row">
+            <div class="col">
+                <p>Transition styles have two properties:</p>
+                <ul>
+                    <li>The first property defines which of the many CSS styles are part of the transition.</li>
+                    <li>The second property or parameter defines the duration of the transition in ms or sec.</li>
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6">
+                <p>These can be written shorthand like this:</p>
+            </div>
+            <div class="col-6">
+                <pre class="example"><span class="code-css">.classname {
+  background-color: green;
+  left: 0px
+  width: 50px;
+  height: 50px;
+  border-radius: 0%;
+
+  transition: background-color 3s;
+}</pre>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-6">
+                <p>You could also write these longhand with two style rules:</p>
+            </div>
+            <div class="col-6">
+                <pre class="example"><span class="code-css">.classname {
+  background-color: green;
+  left: 0px
+  width: 50px;
+  height: 50px;
+  border-radius: 0%;
+
+  transition-property: background-color;
+  transition-duration: 3s;
+}</pre>
+            </div>
+        </div>
+
+        <h3>Example</h3>
+        <div class="row">
+            <div class="col-6">
+                <p>Example code</p>
+            </div>
+            <div class="col-6">
+                <pre class="example"><span class="code-html">&lt;div&gt;&lt;/div&gt;</span>
+
+<span class="code-css">div {
+  width: 100px;
+  height: 100px;
+  background: red;
+  transition: width 2s;
+}
+
+div:hover {
+    width: 300px;
+}</span></pre>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-6">
+                <p>Hover over the red block.</p>
+            </div>
+            <div class="col-6">
+                <pre class="example"><div class="trans-ex-01"></div></pre>
+            </div>
+        </div>
+
+
+
+
+
+        <h2>Multiple values</h2>
+        <div class="row">
+
+            <div class="col-6">
+                <p>You could also specify multiple values to change in one declaration.</p>
+            </div>
+            <div class="col-6">
+                <pre class="example"><span class="code-css">.classname {
+  background-color: green;
+  left: 0px
+  width: 50px;
+  height: 50px;
+  border-radius: 0%;
+
+  transition: background-color 2s,
+              left 3s,
+              width 3s,
+              height 3s,
+              border-radius 3s;
+}</pre>
+
+            </div>
+            <div class="alert alert-note">
+                <div class="alert-icon">
+                    <img src="../../_img/note-icon.png" width="60" height="60">
+                </div>
+                <div class="alert-content">
+                    <p>If a property doesn't have a time value, it changes immediately.</p>
+                </div>
+            </div>
+        </div>
+
+
+
+
+        <h3>Example</h3>
+        <div class="row">
+            <div class="col-6">
+                <p>Example code</p>
+            </div>
+            <div class="col-6">
+                <pre class="example"><span class="code-html">&lt;div&gt;&lt;/div&gt;</span>
+
+<span class="code-css">div {
+  background-color: green;
+  left: 0px
+  width: 50px;
+  height: 50px;
+  border-radius: 0%;
+
+  transition: background-color 2s,
+              width 3s,
+              height 3s,
+              border-radius 3s;
+}
+
+div:hover {
+  background-color: blue;
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+}</span></pre>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-6">
+                <p>Hover over the red block.</p>
+            </div>
+            <div class="col-6">
+                <pre class="example"><div class="trans-ex-multi-value"></div></pre>
+            </div>
+        </div>
+
+
+
+
+
+
+    </section>
+
+    <section class="container">
+        <h2>Animatable Properties</h2>
+        <div class="row">
+            <div class="col">
+                <p>Only certain properties can be animated. Essentially, any CSS style that can be expressed in terms of numbers is animatable because a browser can calculate values between the initial and end states.</p>
+                <ul>
+                    <li>border-width</li>
+                    <li>Height</li>
+                    <li>bottom</li>
+                    <li>opacity</li>
+                    <li>left</li>
+                    <li>width</li>
+                    <li>colorsfont-size</li>
+                    <li>background-color</li>
+                </ul>
+                <p>Properties you cannot animate.</p>
+                <ul>
+                    <li>display</li>
+                    <li>font-family</li>
+                    <li>position</li>
+                    <li>background-image</li>
+                    <li>border-style</li>
+                    <li>white-space</li>
+                    <li>column-span</li>
+                    <li>table-layout</li>
+                </ul>
+
+            </div>
+        </div>
+    </section>
+
+
+    <section class="container">
+        <h1>Timing</h1>
+    </section>
+
+    <section class="container">
+        <h2>Managing timing</h2>
+
+        <div class="row">
+            <div class="col-6">
+                <p>You can add timing with a timing property after the duration.</p>
+                <p>This specifies the rate at which the transition progresses.</p>
+            </div>
+            <div class="col-6">
+                <pre class="example">transition: background-color 2s timing;</pre>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-6">
+                <p>You could also write them longhand like this.</p>
+            </div>
+            <div class="col-6">
+                <pre class="example">transition-property: property;
+transition-duration: duration;
+transition-timing-function: timing;</pre>
+            </div>
+        </div>
+
+        <section class="container">
+            <h2>Timing keywords</h2>
+            <div class="row">
+                <div class="col">
+                    <p>Timing has 5 keywords</p>
+                    <ul>
+                        <li><strong>ease</strong> - the style changes slowly, speeds up in the middle, and then ends slowly. This is the default timing</li>
+                        <li><strong>linear</strong> - maintains a constant rate of change throughout the duration.</li>
+
+                        <li><strong>ease-in</strong> - starts slow and then speeds up to the end.</li>
+
+                        <li><strong>ease-out</strong> - starts fast and then slows down to the end.</li>
+
+                        <li><strong>ease-in-out</strong> - starts slower than ease timing, speeds up, and then slows down toward the end.</li>
+                    </ul>
+                </div>
+            </div>
+
+
+            <h3>Examples of the 5 keywords</h3>
+
+            <div class="row">
+                <div class="col-6">
+                    <h4>ease</h4>
+                    <p>the style changes slowly, speeds up in the middle, and then ends slowly. This is the default timing.</p>
+                </div>
+                <div class="col-6">
+                    <pre class="example"><span class="code-html">&lt;div&gt;&lt;/div&gt;</span>
+
+<span class="code-css">div {
+  width: 100px;
+  height: 100px;
+  background: red;
+  transition: width 2s ease;
+}
+
+div:hover {
+    width: 300px;
+}</span></pre>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-6">
+                    <p>Example of 'ease'.</p>
+                </div>
+                <div class="col-6">
+                    <pre class="example"><div class="trans-ex-ease"></div></pre>
+                </div>
+            </div>
+
+
+
+
+
+            <div class="row">
+                <div class="col-6">
+                    <h4>linear</h4>
+                    <p>maintains a constant rate of change throughout the duration.</p>
+                </div>
+                <div class="col-6">
+                    <pre class="example"><span class="code-html">&lt;div&gt;&lt;/div&gt;</span>
+
+<span class="code-css">div {
+  width: 100px;
+  height: 100px;
+  background: red;
+  transition: width 2s linear;
+}
+
+div:hover {
+    width: 300px;
+}</span></pre>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-6">
+                    <p>Example of 'linear'.</p>
+                </div>
+                <div class="col-6">
+                    <pre class="example"><div class="trans-ex-linear"></div></pre>
+                </div>
+            </div>
+
+
+
+
+
+
+
+            <div class="row">
+                <div class="col-6">
+                    <h4>ease-in</h4>
+                    <p>starts slow and then speeds up to the end.</p>
+                </div>
+                <div class="col-6">
+                    <pre class="example"><span class="code-html">&lt;div&gt;&lt;/div&gt;</span>
+
+<span class="code-css">div {
+  width: 100px;
+  height: 100px;
+  background: red;
+  transition: width 2s ease-in;
+}
+
+div:hover {
+  width: 300px;
+}</span></pre>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-6">
+                    <p>Example of 'ease-in'.</p>
+                </div>
+                <div class="col-6">
+                    <pre class="example"><div class="trans-ex-ease-in"></div></pre>
+                </div>
+            </div>
+
+
+
+
+
+
+
+
+            <div class="row">
+                <div class="col-6">
+                    <h4>ease-out</h4>
+                    <p>starts fast and then slows down to the end.</p>
+                </div>
+                <div class="col-6">
+                    <pre class="example"><span class="code-html">&lt;div&gt;&lt;/div&gt;</span>
+
+<span class="code-css">div {
+  width: 100px;
+  height: 100px;
+  background: red;
+  transition: width 2s ease-out;
+  }
+
+  div:hover {
+  width: 300px;
+}</span></pre>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-6">
+                    <p>Example of 'ease-out'.</p>
+                </div>
+                <div class="col-6">
+                    <pre class="example"><div class="trans-ex-ease-out"></div></pre>
+                </div>
+            </div>
+
+
+
+
+
+
+
+
+
+            <div class="row">
+                <div class="col-6">
+                    <h4>ease-in-out</h4>
+                    <p>Starts slower than ease timing, speeds up, and then slows down toward the end.</p>
+                </div>
+                <div class="col-6">
+                    <pre class="example"><span class="code-html">&lt;div&gt;&lt;/div&gt;</span>
+
+<span class="code-css">div {
+  width: 100px;
+  height: 100px;
+  background: red;
+  transition: width 2s ease-in-out;
+  }
+
+  div:hover {
+  width: 300px;
+}</span></pre>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-6">
+                    <p>Example of 'ease-in-out'.</p>
+                </div>
+                <div class="col-6">
+                    <pre class="example"><div class="trans-ex-ease-in-out"></div></pre>
+                </div>
+            </div>
+
+
+        </section>
+
+
+
+        <section class="container">
+            <h2>Creating your own timing</h2>
+            <div class="row">
+                <div class="col">
+                    <p>You are not limited to the 5 keyword timing options. You can create your own using a cubic-bezier function.</p>
+                    <p>This function plots a graph that the time will follow.</p>
+                    <p>It's syntax is: <strong>transition: property duration cubic-bezier(x1, y1, x2, y2)</strong></p>
+                    <img src="../../_img/cubic-bezier.png">
+                </div>
+            </div>
+
+
+
+
+            <h3>example</h3>
+            <div class="row">
+                <div class="col-6">
+                    <p>This examples shows it longhand. You could also write it short like this.</p>
+                    <p>transition: width 2s cubic-bezier(0.1, 0.7, 1.0, 0.1)</p>
+                </div>
+                <div class="col-6">
+                    <pre class="example"><span class="code-html">&lt;div&gt;&lt;/div&gt;</span>
+
+<span class="code-css">div {
+  width: 100px;
+  height: 100px;
+  background: red;
+  transition: width 2s;
+  transition-timing-function: cubic-bezier(0.1, 0.7, 1.0, 0.1);
+  }
+
+  div:hover {
+  width:300px;
+}</pre>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-6">
+                    <p>Example of 'cubic-bezier'.</p>
+                </div>
+                <div class="col-6">
+                    <pre class="example"><div class="cubic-bezier"></div></pre>
+                </div>
+            </div>
+        </section>
+
+
+
+
+        <section class="container">
+            <h1>Step transitions</h1>
+            <div class="row">
+                <div class="col">
+                    <p>Transitions are incremental steps by default. This allows the transition to appear like it's moving.</p>
+                    <p>You can also manually set the steps of the transition.
+
+                        <p>There are 4 options</p>
+                        <ul>
+                            <li><strong>step-start</strong> - stays in the end state throughout the entire duration of the transition</li>
+                            <li><strong>step-end</strong> - transition stays in the initial state for the entire duration.</li>
+
+                            <li><strong>steps(n, start)</strong> - steps function which breaks the transition into a series of steps, so the transition jumps between the different steps and is not gradual. With the keyword start, the first step occurs at
+                                the start of the transition.</li>
+
+                            <li><strong>steps(n, end)</strong> - with the keyword end, the last step occurs at the end of the transition.</li>
+
+                        </ul>
+                        <img src="../../_img/step-transitions.png">
+                </div>
+            </div>
+
+
+
+            <h3>example</h3>
+            <div class="row">
+                <div class="col-6">
+                    <h4>step-start</h4>
+                </div>
+                <div class="col-6">
+                    <pre class="example"><span class="code-html">&lt;div&gt;&lt;/div&gt;</span>
+
+<span class="code-css">div {
+  width: 100px;
+  height: 100px;
+  background: red;
+  transition: width 2s step-start;
+  }
+
+  div:hover {
+  width:300px;
+}</pre>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-6">
+                    <p>Example of 'step-start'.</p>
+                </div>
+                <div class="col-6">
+                    <pre class="example"><div class="trans-step-start"></div></pre>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-6">
+                    <h4>step-end</h4>
+                </div>
+                <div class="col-6">
+                    <pre class="example"><span class="code-html">&lt;div&gt;&lt;/div&gt;</span>
+
+<span class="code-css">div {
+  width: 100px;
+  height: 100px;
+  background: red;
+  transition: width 2s step-end;
+  }
+
+  div:hover {
+  width:300px;
+}</pre>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-6">
+                    <p>Example of 'step-end'.</p>
+                </div>
+                <div class="col-6">
+                    <pre class="example"><div class="trans-step-end"></div></pre>
+                </div>
+            </div>
+
+
+            <div class="row">
+                <div class="col-6">
+                    <h4>steps(6, start)</h4>
+                </div>
+                <div class="col-6">
+                    <pre class="example"><span class="code-html">&lt;div&gt;&lt;/div&gt;</span>
+
+<span class="code-css">div {
+  width: 100px;
+  height: 100px;
+  background: red;
+  transition: width 2s steps(6, start);
+  }
+
+  div:hover {
+  width:300px;
+}</pre>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-6">
+                    <p>Example of 'steps(6, start)'.</p>
+                </div>
+                <div class="col-6">
+                    <pre class="example"><div class="trans-steps-6-start"></div></pre>
+                </div>
+            </div>
+
+
+
+
+
+
+
+            <div class="row">
+                <div class="col-6">
+                    <h4>steps(6, end)</h4>
+                </div>
+                <div class="col-6">
+                    <pre class="example"><span class="code-html">&lt;div&gt;&lt;/div&gt;</span>
+
+<span class="code-css">div {
+  width: 100px;
+  height: 100px;
+  background: red;
+  transition: width 2s steps(6, end);
+}
+
+div:hover {
+  width:300px;
+}</pre>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-6">
+                    <p>Example of 'steps(6, end)'.</p>
+                </div>
+                <div class="col-6">
+                    <pre class="example"><div class="trans-steps-6-end"></div></pre>
+                </div>
+            </div>
+        </section>
+
+
+
+
+
+
+
+
+
+
+        <section class="container">
+            <h1>Delay</h1>
+            <div class="row">
+                <div class="col">
+                    <p>The delay value delays the start of the transition.</p>
+                    <p>Why would you want to delay a transition? This is when there are several styles which are changing and you want them to be applied in sequential order.</p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-6">
+                    <h4>Example</h4>
+
+                </div>
+                <div class="col-6">
+                    <pre class="example"><span class="code-html">&lt;div&gt;&lt;/div&gt;</span>
+
+<span class="code-css">div {
+  width: 100px;
+  height: 100px;
+  background: red;
+
+  transition: width 1s ease 0s,
+              height 1s ease 1s,
+              background 1s ease 2s;
+}
+
+.div:hover {
+  width: 300px;
+  height: 150px;
+  background: blue;
+}</pre>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-6">
+                    <p>These values change at different times due to the delay value.</p>
+                </div>
+                <div class="col-6">
+                    <pre class="example"><div class="trans-delay"></div></pre>
+                </div>
+            </div>
+
+
+
+        </section>
+
+
+
+
+
+
+
+
+
+
+        <section class="container">
+            <h1>Asymmetric transitions</h1>
+            <div class="row">
+                <div class="col">
+                    <p>Symmetric transitions are when the transition goes forward to the end state, then reverses itself as the object returns to its initial state</p>
+                    <p>Asymmetric transitions are when the transition going forward is different than the transition coming back.</p>
+                    <p>To acommplish this, you need to create a transition style for both the initial and end states.</p>
+                </div>
+            </div>
+
+
+            <div class="row">
+                <div class="col-6">
+                    <h4>Example</h4>
+                    <p>This shows transition styles for the initial state and end state of the object.</p>
+                    <p>Note how transitions are applied 'towards' a state. This means the following:</p>
+                    <ul>
+                        <li>The effect of the end transition is applied first when the object is changing TO the end state.</li>
+
+                        <li>The effect of the initial transition is applied when the object is changing back to the initial state.</li>
+                    </ul>
+                </div>
+
+                <div class="col-6">
+                    <pre class="example"><span class="code-html">&lt;div&gt;&lt;/div&gt;</span>
+
+<span class="code-css">/* default initial state with transition
+  this is applied only when the original end state is over
+  and the transition is coming back to the initial state */
+
+div {
+  width: 100px;
+  height: 100px;
+  background: red;
+
+  transition: width 1s ease 0s,
+              height 1s ease 0s,
+              background 1s ease 3s;
+}
+
+/* add transition to end state that's different from initial state
+   this allows the transition back to be different
+   this transition is applied first when hovered */
+   
+.div:hover {
+  width: 300px;
+  height: 150px;
+  background: blue;
+  border-radius: 25%;
+
+  transition: border-radius 1s ease-in 0s,
+              width 1s ease-out 1s,
+              height 1s ease-out 2s,
+              background 1s ease-in-out 3s;
+}</pre>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-6">
+                    <p>These values change at different times due to the delay value.</p>
+                </div>
+                <div class="col-6">
+                    <pre class="example"><div class="trans-asymmetric"></div></pre>
+                </div>
+            </div>
+        </section>
+
+
+
+
+
+
+
+
+
+
+        <script src="../../_js/jquery.js"></script>
+        <script src="../../_js/bootstrap.bundle.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,66 @@
+1. Title
+
+
+2. Nav
+
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item">
+      <a href="../../index.html">Home</a>
+    </li>
+    <li class="breadcrumb-item active" aria-current="page">Colors</li>
+  </ol>
+</nav>
+
+
+3. Section H2 title by itself
+
+<div class="row">
+  <div class="col">
+    <h2 class="heading-emphasis">Internal style sheet</h2>
+  </div>
+</div>
+
+
+4. Columns
+
+5 x 7
+
+
+
+6. All external links should use target="_blank"
+
+
+7. CSS class
+
+For text
+<span class="text-highlight">
+
+For code
+<span class="code-standout">
+
+
+8. Examples
+
+<div class="row">
+    <div class="col-5">
+        <h5>Result</h5>
+    </div>
+
+    <div class="col-7">
+        <div class="example-container">
+
+                Text code here
+
+        </div>
+    </div>
+</div>
+
+
+
+SECTION EXAMPLE
+
+H2 for title
+
+H4 For Example title section.
+H5 For result of example

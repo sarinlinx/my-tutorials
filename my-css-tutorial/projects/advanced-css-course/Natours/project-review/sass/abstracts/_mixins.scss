@@ -1,0 +1,78 @@
+//appends a pseudo element after element to clear the float
+//equivalent to .class:after
+@mixin clearfix {
+  &::after {
+    //specify content property so it appears on page
+    //leave empty so it does not display
+    content: "";
+    display: table;
+    //clears float left and right
+    clear: both;
+  }
+}
+
+@mixin absCenter {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
+//Media Query Manager
+/*
+0 - 600px Phone
+600px - 900px Tablet portrait
+900px - 1200px Table Landscape
+1200px - 1800px (Normal desktop styles)
+1800px + Big desktop
+*/
+
+/*
+$breakpoint argument choices:
+- phone
+- tab-port
+- tab-land
+- big-desktop
+*/
+
+//This passes a breakpoint into the mixin
+@mixin respond($breakpoint) {
+
+  /*
+  If the breakpoint is called phone, the following media query is used
+   @content allows you to pass blocks of code from other CSS pages into this mixin
+   Use relative unit for media query-not pixels
+   ems and rems not affected by html: font-size setting
+   1 rem or em is equal to default of the browser, so if a user changes the browser default, it changes the media query
+
+   ems if the best option sinces rems don't work in all browsers
+   1em = 16px;
+   
+   1800/16 = 112.5
+   1200/16 = 75
+   900/16 = 56.25
+   600/16 = 37.5
+   
+   These values will be adapated to font size user sets for the browser
+
+   ORDER to put code in:
+   Base + Typography > general layout + grid > page layouts > components
+   */
+
+  @if $breakpoint==big-desktop {
+    @media only screen and (min-width: 112.5em) { @content }; //1800px
+  }
+
+  @if $breakpoint==tab-land {
+    @media only screen and (max-width: 75em) { @content }; //1200px
+  }
+
+  @if $breakpoint==tab-port {
+    @media only screen and (max-width: 56.25em) { @content }; //900px
+  }
+
+  @if $breakpoint==phone {
+    @media only screen  and (max-width: 37.5em) { @content }; //600px
+  }
+}

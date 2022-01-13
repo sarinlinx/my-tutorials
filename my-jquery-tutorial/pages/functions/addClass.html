@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="../../_css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../../_css/style.css">
+
+    <style>
+        .timestwo {
+            font-size: 2em;
+        }
+
+        .colorful {
+            color: cyan;
+        }
+
+        .important {
+            font-weight: bold;
+            font-size: xx-large;
+        }
+
+        .blue {
+            color: blue;
+        }
+    </style>
+
+    <title>addClass()</title>
+</head>
+
+<body>
+    <section class="container">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb breadcrumb-container">
+                <li class="breadcrumb-item"><a class="breadcrumb-link" href="../../index.html">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">addClass()</li>
+            </ol>
+        </nav>
+
+
+
+        <h1>addClass()</h1>
+
+
+        <p>The addClass function adds a CSS class to an element.</p>
+        <p>This targets all paragraph tags.</p>
+        <p>It then assigns those tags the action of addClass().</p>
+        <p>Finally, specify the CSS class name you want to add. This example adds 2 classes.</p>
+
+        <pre class="example">
+<span class="code-css">.timestwo {
+  font-size: 2em;
+}
+
+.colorful {
+  color: cyan;
+}</span>
+
+<span class="code-html">&lt;div&gt;
+  &lt;p&gt;This is a sentence&lt;/p&gt;
+  &lt;p&gt;Here's another one &lt;/p&gt;
+  &lt;h4&gt; h4 tag not changed &lt;/h4&gt;
+&lt;/div&gt;</span>
+
+<span class="code-js">&lt;script src="js/jquery-3.1.1.min.js"&gt;&lt;/script&gt;
+
+&lt;script&gt;
+  $("p").addClass("colorful timestwo");
+&lt;/script&gt;</span></pre>
+
+        <h3>Example</h3>
+        <div>
+            <p id="ex" class="cyan">This is a sentence</p>
+            <p id="ex" class="cyan"> Here's another one </p>
+            <p class="white"> h4 tag not changed </p>
+        </div>
+
+
+
+
+
+
+
+
+
+        <h1>Click button to add a class</h1>
+
+        <pre class="example"><span class="code-css">.important {
+  font-weight: bold;
+  font-size: xx-large;
+}
+
+.blue {
+  color: blue;
+}</span>
+
+<span class="code-html">&lt;p class="p2"&gt;This is a paragraph.&lt;/p&gt;
+&lt;p class="p2"&gt;This is another paragraph.&lt;/p&gt;
+&lt;div class="div2"&gt;This is some important text!&lt;/div&gt;
+&lt;button id="btn2"&gt;Add classes to elements&lt;/button&gt;</span>
+
+<span class="code-js">$("button#btn2").click(function() {
+  $("p.p2").addClass("blue");
+  $("div.div2").addClass("important");
+});</span></pre>
+
+
+        <h3>Example</h3>
+        <p class="p2">This is a paragraph.</p>
+        <p class="p2">This is another paragraph.</p>
+        <div class="div2">This is some important text!</div>
+        <button id="btn2">Add classes to elements</button>
+
+
+
+    </section>
+    <script src="../../_js/jquery-3.4.1.min.js"></script>
+    <script>
+        $("p#ex").addClass("colorful timestwo");
+
+        $("button#btn2").click(function() {
+            $("p.p2").addClass("blue");
+            $("div.div2").addClass("important");
+        });
+    </script>
+</body>
+
+</html>

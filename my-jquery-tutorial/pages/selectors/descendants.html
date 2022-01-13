@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="../../_css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../../_css/style.css">
+    <title>Descendants</title>
+</head>
+
+<body>
+    <section class="container">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb breadcrumb-container">
+                <li class="breadcrumb-item"><a class="breadcrumb-link" href="../../index.html">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Descendants</li>
+            </ol>
+        </nav>
+
+
+        <h1>Descendants</h1>
+        <p> A descendant is a child, grandchild, great-grandchild, and so on.</p>
+        <p>
+            Two useful jQuery methods for traversing down the DOM tree are:</p>
+        <ul>
+            <li> children()</li>
+            <li>find()</li>
+        </ul>
+
+
+
+
+
+
+
+
+        <h1>children()</h1>
+        <h2>children()</h2>
+        <p>The children() method returns all direct children of the selected element.</p>
+        <p>This method only traverses a single level down the DOM tree.</p>
+        <p>The following example returns all paragraphs that are direct children of each the div element with an ID of children1:</p>
+
+        <pre class="example"><span class="code-html">&lt;div id="children1" style="width:500px;"&gt;&lt;div&gt; (current element)
+  &lt;p&gt; (child)
+    &lt;span&gt;(grandchild)&lt;/span&gt;
+  &lt;/p&gt;
+  &lt;p&gt; (child)
+    &lt;span&gt; (grandchild)&lt;/span&gt;
+  &lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt; Outside the div&lt;/p&gt;</span>
+
+<span class="code-js"> $("#children1").children().css({"color": "red", "border": "2px solid red"});</span></pre>
+
+        <h3>Example</h3>
+        <div id="children1" style="width:500px;">&lt;div&gt; (current element)
+            <p>&lt;p&gt; (child)
+                <span>&lt;span&gt; (grandchild)</span>
+            </p>
+            <p>&lt;p&gt; (child)
+                <span>&lt;span&gt; (grandchild)</span>
+            </p>
+        </div>
+        <p>&lt;p&gt; Outside the div</p>
+
+
+
+        <h2>children(param)</h2>
+        <p>You can also use an optional parameter to filter the search for children.</p>
+        <p>The following example returns all p elements with the class name "first", that are direct children of div:</p>
+
+        <pre class="example"><span class="code-html">&lt;div id="children2" style="width:500px;"&gt;div (current element)
+&lt;p class="first"&gt;p (child)
+  &lt;span&gt;span (grandchild)&lt;/span&gt;
+&lt;/p&gt;
+&lt;p class="second"&gt;p (child)
+  &lt;span&gt;span (grandchild)&lt;/span&gt;
+&lt;/p&gt;
+&lt;p class="first"&gt;p (child)
+  &lt;span&gt;span (grandchild)&lt;/span&gt;
+&lt;/p&gt;
+&lt;/div&gt;</span>
+
+<span class="code-js">$("#children2").children("p.first").css({"color": "red", "border": "2px solid red"});</span></pre>
+
+        <h3>Example</h3>
+        <div id="children2" style="width:500px;">div (current element)
+            <p class="first">p (child)
+                <span>span (grandchild)</span>
+            </p>
+            <p class="second">p (child)
+                <span>span (grandchild)</span>
+            </p>
+            <p class="first">p (child)
+                <span>span (grandchild)</span>
+            </p>
+        </div>
+
+
+
+
+        <h2>find()</h2>
+        <p>The find() method returns descendant elements of the selected element, all the way down to the last descendant.</p>
+        <p>The following example returns all span elements that are descendants of an element with the ID of 'children3'</p>
+
+        <pre class="example"><span class="code-html">&lt;div id="children3" style="width:500px;"&gt;div (current element)
+  &lt;p&gt;p (child)
+    &lt;span&gt;span (grandchild)&lt;/span&gt;
+  &lt;/p&gt;
+  &lt;p&gt;p (child)
+    &lt;span&gt;span (grandchild)&lt;/span&gt;
+  &lt;/p&gt;
+&lt;/div&gt;
+
+&lt;span&gt;outside of div&lt;/span&gt;</span>
+
+<span class="code-js">$("#children3").find("span").css({"color": "red", "border": "2px solid red"});</span></pre>
+
+        <h3>Example</h3>
+        <div id="children3" style="width:500px;">div (current element)
+            <p>p (child)
+                <span>span (grandchild)</span>
+            </p>
+            <p>p (child)
+                <span>span (grandchild)</span>
+            </p>
+        </div>
+        <span>outside of div</span>
+
+
+
+
+
+
+
+
+        <h1>Target a nested list (direct descendants)</h1>
+        <p>Target the direct descendents using the &gt; sign.</p>
+        <p>This ensures only the immediate descendants of the element with an ID of steps are targeted.</p>
+
+        <pre class="example"><span class="code-html">&lt;ul id="steps"&gt;
+    &lt;li&gt;Step 1&lt;/li&gt;
+    &lt;li&gt;Step 2&lt;/li&gt;
+      &lt;ul id="nested_steps"&gt;
+        &lt;li&gt;nested item 1&lt;/li&gt;
+        &lt;li&gt;nested item 1&lt;/li&gt;
+      &lt;/ul&gt;
+&lt;/ul&gt;</span>
+
+<span class="code-js">$('#steps > li').css('color', 'yellow');</span></pre>
+
+        <h3>Example</h3>
+        <ul id="steps2">
+            <li>Step 1</li>
+            <li>Step 2</li>
+            <ul id="nested_steps">
+                <li>nested item 1</li>
+                <li>nested item 1</li>
+            </ul>
+        </ul>
+
+
+
+
+
+    </section>
+    <script src="../../_js/jquery-3.4.1.min.js"></script>
+    <script>
+        $('#steps2 > li').css('color', 'yellow');
+
+        $("#children1").children().css({
+            "color": "red",
+            "border": "2px solid red"
+        });
+
+        $("#children2").children("p.first").css({
+            "color": "red",
+            "border": "2px solid red"
+        });
+        $("#children3").find("span").css({
+            "color": "red",
+            "border": "2px solid red"
+        });
+    </script>
+</body>
+
+</html>

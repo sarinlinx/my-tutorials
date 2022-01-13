@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="../../_css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../../_css/style.css">
+    <title>The :not filter</title>
+</head>
+
+<body>
+    <section class="container">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb breadcrumb-container">
+                <li class="breadcrumb-item"><a class="breadcrumb-link" href="../../index.html">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">The :not filter</li>
+            </ol>
+        </nav>
+
+
+
+
+<h1>:not filter</h1>
+<p>This negates anything inside the selector.</p>
+<p>This example targets the list items that do NOT have a class of 'important'.</p>
+
+<pre class="example"><span class="code-html">&lt;ul&gt;
+&lt;li class="important"&gt;has a class&lt;/li&gt;
+&lt;li&gt;Does not have a class&lt;/li&gt;
+&lt;/ul&gt;
+&lt;button id="btn1"&gt;Click me&lt;/button&gt;</span>
+
+<span class="code-js">$("#btn1").click(function() {
+  $("li:not(.important)").css({
+    'border': '1px solid red'
+  });
+});</span></pre>
+
+<h3>Example</h3>
+
+<ul>
+<li class="important">has a class</li>
+<li>Does not have a class</li>
+</ul>
+<button id="btn1">Click me</button>
+
+
+
+
+
+
+
+<h1>Target divs that do not contain a header</h1>
+<p>This reads as: target the divs that do not have a header</p>
+
+<pre class="example"><span class="code-html">&lt;div&gt;
+  &lt;h4&gt;h4 tag here&lt;/h4&gt;
+  &lt;p&gt;paragraph&lt;/p&gt;
+&lt;/div&gt;
+&lt;div&gt;
+  &lt;p&gt;No headers&lt;/p&gt;
+&lt;/div&gt;
+&lt;button id="btn2"&gt;Click me&lt;/button&gt;</span>
+
+<span class="code-js">$("#btn2").click(function() {
+  $("div:not(:has(:header))").css({
+    'border': '1px solid red'
+  });
+});</span></pre>
+
+<h3>Example</h3>
+
+<div>
+  <h4>h4 tag here</h4>
+  <p>paragraph</p>
+</div>
+<div>
+  <p>No headers</p>
+</div>
+<button id="btn2">Click me</button>
+
+
+    </section>
+    <script src="../../_js/jquery-3.4.1.min.js"></script>
+    <script>
+
+    $("#btn1").click(function() {
+        $("li:not(.important)").css({
+            'border': '1px solid red'
+        });
+    });
+
+    $("#btn2").click(function() {
+        $("div:not(:has(:header))").css({
+            'border': '1px solid red'
+        });
+    });
+
+    </script>
+</body>
+
+</html>

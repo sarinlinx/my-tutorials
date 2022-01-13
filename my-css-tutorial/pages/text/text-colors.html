@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="../../_css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../../_css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <title>Text colors</title>
+
+    <style>
+         ::selection {
+            background-color: #fff;
+            color: #000;
+        }
+    </style>
+</head>
+
+<body>
+    <a href="../../index.html">Home page</a>
+    <section class="container">
+
+
+        <h2>Text color</h2>
+        <div class="row">
+            <div class="col-6">
+                <p>With CSS, a color is most often specified by:</p>
+                <ul>
+                    <li>A color name like "red"</li>
+                    <li>A HEX value like "#ff0000"</li>
+                    <li>An rgb value like "rgb(255, 0, 0)"</li>
+                </ul>
+            </div>
+            <div class="col-6">
+                <pre class="example"><span class="code-css">p {
+  color: red;
+  color: #ff0000;
+  color: rgb(255, 0, 0);
+}</span></pre>
+            </div>
+            <div class="alert alert-note">
+                <div class="alert-icon">
+                    <img src="../../_img/note-icon.png" width="60" height="60">
+                </div>
+                <div class="alert-content">
+                    <p>For W3C compliant CSS: If you define the color property, you must also define the background-color.</p>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+
+        <h2>Change background color when dragging mouse over text</h2>
+        <div class="row">
+            <div class="col-6">
+                <p>This changes the background color when you drag your mouse over text.</p>
+                <p>Do not add anything in front of ::selection</p>
+
+            </div>
+            <div class="col-6">
+                <pre class="example"><span class="code-css">::selection {
+  background-color: #fff;
+  color: #000;
+}</span></pre>
+            </div>
+            <div class="alert alert-note">
+                <div class="alert-icon">
+                    <img src="../../_img/note-icon.png" width="60" height="60">
+                </div>
+                <div class="alert-content">
+                    <p>For W3C compliant CSS: If you define the color property, you must also define the background-color.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+    <script src="../../_js/jquery.js"></script>
+    <script src="../../_js/bootstrap.bundle.js"></script>
+</body>
+
+</html>

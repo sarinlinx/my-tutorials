@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- Needed for responsive web design. Says website should be rendered with width of device -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900" rel="stylesheet">
+
+    <!-- <link rel="stylesheet" href="css/icon-font.css"> -->
+    <!-- <link rel="stylesheet" href="css/style.css"> -->
+    <link rel="shortcut icon" type="image/png" href="img/favicon.png">
+
+    <title>Natours | Exciting tours for adventurous people</title>
+    <style>
+        *,
+        *::after,
+        *::before {
+            margin: 0;
+            padding: 0;
+            box-sizing: inherit;
+        }
+        
+        html {
+            font-size: 62.5%;
+        }
+        
+        body {
+            box-sizing: border-box;
+            padding: 3rem;
+            font-family: "Lato", sans-serif;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 1.7;
+            color: #777;
+            background-image: linear-gradient(to right, #7ed56f, #28b485);
+        }
+        
+        .heading-secondary {
+            font-size: 3.5rem;
+            text-transform: uppercase;
+            font-weight: 700;
+            display: inline-block;
+            background-image: linear-gradient(to right, #7ed56f, #28b485);
+            -webkit-background-clip: text;
+            color: transparent;
+            letter-spacing: 2px;
+            transition: all .2s
+        }
+        
+        @media only screen and (max-width: 56.25em) {
+            .heading-secondary {
+                font-size: 3rem
+            }
+        }
+        
+        @media only screen and (max-width: 37.5em) {
+            .heading-secondary {
+                font-size: 2.5rem
+            }
+        }
+        
+        .heading-secondary:hover {
+            transform: skewY(2deg) skewX(15deg) scale(1.1);
+            text-shadow: 0.5rem 1rem 2rem rgba(0, 0, 0, 0.2)
+        }
+        
+        .u-margin-bottom-medium {
+            margin-bottom: 4rem !important
+        }
+        
+        @media only screen and (max-width: 56.25em) {
+            .u-margin-bottom-medium {
+                margin-bottom: 3rem !important
+            }
+        }
+        
+        .row {
+            max-width: 114rem;
+            margin: 0 auto;
+        }
+        
+        .row:not(:last-child) {
+            margin-bottom: 8rem;
+        }
+        
+        .row::after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+        
+        .row [class^="col-"] {
+            float: left;
+        }
+        
+        .row [class^="col-"]:not(:last-child) {
+            margin-right: 6rem;
+        }
+        
+        .popup {
+            height: 100vh;
+            width: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: rgba(0, 0, 0, 0.8);
+            z-index: 9999;
+            opacity: 0;
+            visibility: hidden;
+            transition: all .3s
+        }
+        
+        @supports (-webkit-backdrop-filter: blur(10px)) or (backdrop-filter: blur(10px)) {
+            .popup {
+                -webkit-backdrop-filter: blur(10px);
+                backdrop-filter: blur(10px);
+                background-color: rgba(255, 255, 255, 0.3)
+            }
+        }
+        
+        .popup__content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 75%;
+            background-color: #fff;
+            box-shadow: 0 2rem 4rem rgab(#000, 0.2);
+            border-radius: 3px;
+            display: table;
+            overflow: hidden;
+            opacity: 0;
+            transform: translate(-50%, -50%) scale(0.5);
+            transition: all .4s .2s
+        }
+        
+        .popup__left {
+            width: 33.33333%;
+            display: table-cell
+        }
+        
+        .popup__right {
+            width: 66.66666%;
+            display: table-cell;
+            vertical-align: middle;
+            padding: 3rem 5rem
+        }
+        
+        .popup__img {
+            display: block;
+            width: 100%
+        }
+        
+        .popup__text {
+            font-size: 1.4rem;
+            margin-bottom: 4rem;
+            -moz-column-count: 2;
+            -moz-column-gap: 4rem;
+            -moz-column-rule: 1px solid #eee;
+            column-count: 2;
+            column-gap: 4rem;
+            column-rule: 1px solid #eee;
+            -ms-hyphens: auto;
+            -webkit-hyphens: auto;
+            hyphens: auto
+        }
+        
+        .popup:target {
+            opacity: 1;
+            visibility: visible
+        }
+        
+        .popup:target .popup__content {
+            opacity: 1;
+            transform: translate(-50%, -50%) scale(1)
+        }
+        
+        .popup__close:link,
+        .popup__close:visited {
+            color: #777;
+            position: absolute;
+            top: 2.5rem;
+            right: 2.5rem;
+            font-size: 3rem;
+            text-decoration: none;
+            display: inline-block;
+            transition: all .2s;
+            line-height: 1
+        }
+        
+        .popup__close:hover {
+            color: #55c57a
+        }
+        
+        .btn,
+        .btn:link,
+        .btn:visited {
+            text-transform: uppercase;
+            text-decoration: none;
+            padding: 1.5rem 4rem;
+            display: inline-block;
+            border-radius: 10rem;
+            transition: all 0.2s;
+            position: relative;
+            font-size: 1.6rem;
+            border: none;
+            cursor: pointer
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2)
+        }
+        
+        .btn:hover::after {
+            transform: scaleX(1.4) scaleY(1.6);
+            opacity: 0
+        }
+        
+        .btn:active,
+        .btn .btn:focus {
+            outline: none;
+            transform: translateY(-1px);
+            box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2)
+        }
+        
+        .btn--white {
+            background-color: #fff;
+            color: #777
+        }
+        
+        .btn--white::after {
+            background-color: #fff
+        }
+        
+        .u-margin-bottom-small {
+            margin-bottom: 1.5rem !important
+        }
+        
+        .heading-tertiary {
+            font-size: 1.6rem;
+            font-weight: 700;
+            text-transform: uppercase
+        }
+        
+        .btn--green {
+            background-color: #55c57a;
+            color: #fff
+        }
+        
+        .btn--green::after {
+            background-color: #55c57a
+        }
+        
+        .btn::after {
+            content: "";
+            display: inline-block;
+            height: 100%;
+            width: 100%;
+            border-radius: 10rem;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            transition: all 0.4s
+        }
+        
+        .btn--animated {
+            -webkit-animation: moveInBottom 0.5s ease-out 0.75s;
+            animation: moveInBottom 0.5s ease-out 0.75s;
+            -webkit-animation-fill-mode: backwards;
+            animation-fill-mode: backwards
+        }
+        
+        .btn-text:link {
+            font-size: 1.6rem;
+            color: #55c57a;
+            display: inline-block;
+            text-decoration: none;
+            border-bottom: 1px solid #55c57a;
+            padding: 3px;
+            transition: all 0.2s
+        }
+        
+        .btn-text:visited {
+            font-size: 1.6rem;
+            color: #55c57a;
+            display: inline-block;
+            text-decoration: none;
+            border-bottom: 1px solid #55c57a;
+            padding: 3px;
+            transition: all 0.2s
+        }
+        
+        .btn-text:hover {
+            background-color: #55c57a;
+            color: #fff;
+            box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.15);
+            transform: translateY(-2px)
+        }
+        
+        .btn-text.active {
+            box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+            transform: translateY(0)
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <a href="#popup" class="btn btn--white">Book now!</a>
+
+
+
+
+    <div class="row">
+        <div class="popup" id="popup">
+            <div class="popup__content">
+
+                <div class="popup__left">
+                    <img src="img/nat-8.jpg" alt="Tour photo" class="popup__img">
+                    <img src="img/nat-9.jpg" alt="Tour photo" class="popup__img">
+                </div>
+
+                <div class="popup__right">
+                    <!-- Close button takes you back to #section-tours -->
+                    <a href="#section-tours" class="popup__close">&times;</a>
+
+                    <h2 class="heading-secondary u-margin-bottom-small">Start booking now</h2>
+                    <h3 class="heading-tertiary u-margin-bottom-small">Important &ndash; Please read these terms before booking
+                    </h3>
+                    <p class="popup__text">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sed sed risus pretium quam. Aliquam sem et tortor consequat id. Volutpat odio facilisis mauris sit amet massa vitae. Mi bibendum
+                        neque egestas congue. Placerat orci nulla pellentesque dignissim enim sit. Vitae semper quis lectus nulla at volutpat diam ut venenatis. Malesuada pellentesque elit eget gravida cum sociis natoque penatibus et. Proin fermentum
+                        leo vel orci porta non pulvinar neque laoreet. Gravida neque convallis a cras semper. Molestie at elementum eu facilisis sed odio morbi quis. Faucibus vitae aliquet nec ullamcorper sit amet risus nullam eget. Nam libero justo laoreet
+                        sit. Amet massa vitae tortor condimentum lacinia quis vel eros donec. Sit amet facilisis magna etiam. Imperdiet sed euismod nisi porta.
+                    </p>
+                    <a href="#" class="btn btn--green">Book now</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="../../../_css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../../../_css/style.css">
+
+    <title>Background Video</title>
+</head>
+
+<body>
+    <a href="../../../index.html">Home page</a>
+
+    <section class="container">
+
+
+
+        <div class="row">
+            <div class="col">
+                <h1>Background Video</h1>
+                <p>This example shows how to add a background video to the page.</p>
+                <p>A gradient is then laid overtop.</p>
+                <ul>
+                    <li><a href="background-video-example-01.html" target="_blank">Background video</a></li>
+                </ul>
+
+            </div>
+        </div>
+
+
+
+
+        <h2>Step #1 - Add HTML</h2>
+        <div class="row">
+
+            <div class="col-4">
+                <p>Add a &lt;div&gt; with a class.</p>
+                <p>Inside, add a &lt;video&gt; tag. Make sure to set it to <strong>autoplay, muted, and loop</strong></p>
+                <p>In that, add the &lt;source&gt; attributes.</p>
+            </div>
+
+            <div class="col-8">
+                <pre class="example"><span class="code-html">&lt;section class="section-stories"&gt;
+
+<span class="code-comment">&lt;!-- video background --&gt;</span>
+&lt;div class="bg-video"&gt;
+
+  &lt;video class="bg-video__content" autoplay muted loop&gt;
+    <span class="code-comment">&lt;!-- dont' use src in the video tag. Use &lt;source&gt; tag instead--&gt;</span>
+    &lt;source src="img/video.mp4" type="video/mp4"&gt;
+    &lt;source src="img/video.webm" type="video/mp4"&gt;
+    Your browser is not supported!
+  &lt;/video&gt;
+
+&lt;/div&gt;
+
+<span class="code-comment">&lt;!-- Text block --&gt;</span>
+&lt;div class="row"&gt;
+  &lt;div class="story"&gt;
+    &lt;div class="story__text"&gt;
+      &lt;h3&gt;Set Opacity on parent&lt;/h3&gt;
+        &lt;p&gt;If you want to add a background to a text area that is darker than the video background, 
+        you must set that opacity on the parent of the text block.&lt;/p&gt;
+        &lt;p&gt;This block sets the parent div to background-color: rgba(255, 255, 255, 0.6);&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/section&gt;
+</span></pre>
+            </div>
+        </div>
+
+
+
+
+        <h2>Step #2 - Add CSS to container</h2>
+        <div class="row">
+
+            <div class="col-4">
+                <p>Set the container section to relative so you can position the image.</p>
+            </div>
+
+            <div class="col-8">
+                <pre class="example"><span class="code-css">.section-stories {
+  position: relative;
+  padding: 15rem 0
+}</span></pre>
+            </div>
+        </div>
+
+
+
+
+
+
+        <h2>Step #3 - Add CSS to Video section</h2>
+        <div class="row">
+
+            <div class="col-4">
+                <p>Position the video section absolute.</p>
+                <p>Set z-index below everything else.</p>
+                <p>Add overflow: hidden so the large video doesn't spill out of the parent container.</p>
+            </div>
+
+            <div class="col-8">
+                <pre class="example"><span class="code-css">.bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  <span class="code-comment">/* height and width of parent */</span>
+  height: 100%;
+  width: 100%;
+  opacity: .15;
+  <span class="code-comment">/* set z-index so all elements are above this layer */</span>
+  z-index: -1;
+  <span class="code-comment">/* prevent video size from overflowing parent */</span>
+  overflow: hidden
+}</span></pre>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <h2>Step #4 - Add CSS to video itself</h2>
+        <div class="row">
+
+            <div class="col-4">
+                <p>Add a height and width to ensure it covers the entire section it's in. Otherwise, parts of the section will not contain the video.</p>
+                <p>Add object-fit to resize it within its container.</p>
+            </div>
+
+            <div class="col-8">
+                <pre class="example"><span class="code-css">.bg-video__content {
+  <span class="code-comment">/* prevent video overflowing section */</span>
+  height: 100%;
+  width: 100%;
+  <span class="code-comment">/* allows vide to fill parent while maintaining aspect ratio */</span>
+  -o-object-fit: cover;
+  object-fit: cover
+}</span></pre>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+        <h2>Step #5 - Additional CSS for text section opacity</h2>
+        <div class="row">
+
+            <div class="col-4">
+                <p>This code creates a text section with a background opacity.</p>
+                <p>The opacity is set on the parent, otherwise it would be the same opacity as the video background.</p>
+            </div>
+
+            <div class="col-8">
+                <pre class="example"><span class="code-css">.story {
+  width: 75%;
+  margin: 0 auto;
+  box-shadow: 0 3rem 6rem rgba(0, 0, 0, 0.1);
+  <span class="code-highlight">background-color: rgba(255, 255, 255, 0.6);</span>
+  border-radius: 3px;
+  padding: 6rem;
+  padding-left: 9rem;
+  font-size: 1.6rem;
+  transform: skewX(-12deg)
+}
+
+.story__text {
+  transform: skewX(12deg);
+}</span></pre>
+            </div>
+        </div>
+
+
+
+
+    </section>
+
+
+</body>
+
+</html>

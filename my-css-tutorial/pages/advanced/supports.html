@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="../../_css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../../_css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <title>Supports</title>
+</head>
+
+<body>
+    <a href="../../index.html">Home page</a>
+
+
+
+    <section class="container">
+        <h1>Graceful Degradation</h1>
+        <div class="row">
+            <div class="col">
+                <p>It's important to check if the newer CSS you're using will work on older browsers.</p>
+                <p>Start by checking <a href="https://caniuse.com/">caniuse.com</a></p>
+                <p>If a browser doesn't support the newer CSS, you can apply older CSS for older browsers. This is called 'Graceful Degradation'.</p>
+            </div>
+        </div>
+
+
+
+
+        <h1>The @supports rule</h1>
+
+        <div class="row">
+            <div class="col-4">
+                <p>This example uses @supports to check if the browser supports the backdrop-filter property.</p>
+            </div>
+            <div class="col-8">
+                <pre class="example"><span class="code-css">.popup {
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 9999;
+  opacity: 0;
+  visibility: hidden;
+  transition: all .3s
+}
+              
+<span class="code-comment">/* feature query. Exclude from a different browser that doesn't support it
+This says what to do IF the propert is supported */</span>
+<span class="code-highlight">@supports (-webkit-backdrop-filter: blur(10px)) or (backdrop-filter: blur(10px)) {
+  .popup {
+      -webkit-backdrop-filter: blur(10px);
+      backdrop-filter: blur(10px);
+      background-color: rgba(255, 255, 255, 0.3)
+  }
+}</span></span></pre>
+            </div>
+        </div>
+
+
+
+
+    </section>
+
+</body>
+
+</html>

@@ -1,0 +1,342 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="../../_css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../../_css/style.css">
+    <title>Ajax</title>
+
+    <style>
+        .div_next,
+        .div_next2 {
+            display: inline-block;
+            border-style: solid;
+            padding-top: 50px;
+            padding-left: 30px;
+            padding-right: 30px;
+            padding-bottom: 30px;
+
+        }
+
+        .title,
+        .title2 {
+            color: blue;
+        }
+
+        .book,
+        .book2 {
+            border-style: solid;
+            border-color: green;
+            padding-top: 10px;
+            padding-left: 10px;
+            padding-right: 10px;
+            padding-bottom: 10px;
+
+        }
+
+        button {
+            background-color: grey;
+            color: #FFFFFF;
+            width: 90px;
+            height: 60px;
+        }
+    </style>
+</head>
+
+<body>
+    <section class="container">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb breadcrumb-container">
+                <li class="breadcrumb-item"><a class="breadcrumb-link" href="../../index.html">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Ajax</li>
+            </ol>
+        </nav>
+
+
+        <h1>A note on capturing and bubbling</h1>
+        <p>JavaScript can respond to the capturing phase (going down the DOM) as well as the bubbling phase (coming back out of the DOM)</p>
+        <p>jQuery only responds to the bubling phase</p>
+
+
+
+
+        <h1>Ajax (stop bubbling)</h1>
+        <p>Each div contains data tags. When the button is clicked, the data within those tags is displayed.</p>
+
+
+        <pre class="example"><span class="code-html">&lt;div id="books_div" class="div_next"&gt;
+    &lt;h2&gt; Top Books to Read &lt;/h2&gt;
+
+    &lt;div class="book" data-price="22.00" data-author="Paulo Coelho"&gt;
+        &lt;h3 class="title"&gt; The Alchemist &lt;/h3&gt;
+        &lt;button&gt; See Details &lt;/button&gt;
+    &lt;/div&gt;
+
+    &lt;div class="book" data-price="18.00" data-author="Paulo Coelho"&gt;
+        &lt;h3 class="title"&gt; Warrior of The Light &lt;/h3&gt;
+        &lt;button&gt; See Details &lt;/button&gt;
+    &lt;/div&gt;
+
+    &lt;div class="book" data-price="12.00" data-author="Jon Gordon"&gt;
+        &lt;h3 class="title"&gt; The Energy Bus &lt;/h3&gt;
+        &lt;button&gt; See Details &lt;/button&gt;
+    &lt;/div&gt;
+
+&lt;/div&gt;
+
+</span>
+
+<span class="code-js">$("button").on("click", function() {
+<span class="code-comment">//search for the closest .book class to the button that was clicked
+//then use the .data() method using its parameter name</span>
+var price = $(this).closest(".book").data("price");
+var author = $(this).closest(".book").data("author");
+var details = $("<p> price:  " + price + "<br> Author: <b>" + author + "</b></p>");
+<span class="code-comment">//add content after button</span>
+$(this).after(details);
+$(this).closest(".book").css({
+    "background-color": "yellow"
+});
+$(this).remove();
+
+<span class="code-comment">//Add stopPropagation() so you can click the button without the alert box showing
+//This prevents the div.book taking place, therefore nothing can bubble back up</span>
+<span class="standout">event.stopPropagation();</span>
+
+<span class="code-comment">//add code so if someone clicks inside the div, but NOT on the button, they get an alert box
+//The problem is that even when the button is clicked, the alert box shows</span>
+$("div.book").on("click", function() {
+  alert("click on the see details button to se the price of the book");
+});</span></pre>
+
+        <h3>Example</h3>
+        <div id="books_div" class="div_next">
+            <h2> Top Books to Read </h2>
+
+            <div class="book" data-price="22.00" data-author="Paulo Coelho">
+                <h3 class="title"> The Alchemist </h3>
+                <button class="btn1"> See Details </button>
+            </div>
+
+            <div class="book" data-price="18.00" data-author="Paulo Coelho">
+                <h3 class="title"> Warrior of The Light </h3>
+                <button  class="btn1"> See Details </button>
+            </div>
+
+            <div class="book" data-price="12.00" data-author="Jon Gordon">
+                <h3 class="title"> The Energy Bus </h3>
+                <button class="btn1"> See Details </button>
+            </div>
+
+        </div>
+
+        <!--  UNCOMMENT THE BELOW ONCE WE GET TO THE PART IN THE VIDEO
+
+        <div id="books_completed" class="div_next">
+             <h2> Already Completed Books </h2>
+
+             <div class="book" data-purchased="Jan 12, 2016" data-author="Samuel Clason" data-myRating="5 star">
+                 <h3 class="title"> The Richest Man in Babylon </h3>
+                 <button> See Details </button>
+             </div>
+        </div>
+
+    -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <h1>Event delegation</h1>
+        <p>Target only the books within the first div</p>
+
+
+        <pre class="example"><span class="code-html">&lt;div id="books_div2" class="div_next2"&gt;
+    &lt;h2&gt; Top Books to Read &lt;/h2&gt;
+
+    &lt;div class="book2" data-price2="22.00" data-author2="Paulo Coelho"&gt;
+        &lt;h3 class="title2"&gt; The Alchemist &lt;/h3&gt;
+        &lt;button&gt; See Details &lt;/button&gt;
+    &lt;/div&gt;
+
+    &lt;div class="book2" data-price2="18.00" data-author2="Paulo Coelho"&gt;
+        &lt;h3 class="title2"&gt; Warrior of The Light &lt;/h3&gt;
+        &lt;button&gt; See Details &lt;/button&gt;
+    &lt;/div&gt;
+
+    &lt;div class="book2" data-price2="12.00" data-author2="Jon Gordon"&gt;
+        &lt;h3 class="title2"&gt; The Energy Bus &lt;/h3&gt;
+        &lt;button&gt; See Details &lt;/button&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+
+&lt;div id="books_completed2" class="div_next2"&gt;
+    &lt;h2&gt; Already Completed Books &lt;/h2&gt;
+
+    &lt;div class="book2" data-purchased2="Jan 12, 2016" data-author2="Samuel Clason" data-myrating2="5 star"&gt;
+        &lt;h3 class="title2"&gt; The Richest Man in Babylon &lt;/h3&gt;
+        &lt;button&gt; See Details &lt;/button&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</span>
+
+<span class="code-js"><span class="code-comment"> //event delegation
+//target div with an id and all classes in it named book2
+//add the button click event so the code only runs when a button is clicked</span>
+$("#books_div2 > .book2").on("click", "button", function(event) {
+  <span class="code-comment">  //search for the closest .book class to the button that was clicked
+    //then use the .data() method using its parameter name</span>
+    var price = $(this).closest(".book2").data("price2");
+    var author = $(this).closest(".book2").data("author2");
+    var details = $("<p> price:  " + price + "<br> Author: <b>" + author + "</b></p>");
+  <span class="code-comment">  //add content after button</span>
+    $(this).after(details);
+    $(this).closest(".book2").css({
+        "background-color": "yellow"
+    });
+    $(this).remove();
+<span class="code-comment">    //Add stopPropagation() so you can click the button without the alert box showing
+    //This prevents the div.book taking place, therefore nothing can bubble back up</span>
+    event.stopPropagation();
+});
+
+<span class="code-comment">//add code so clicking the 2nd div displays different info</span>
+$("div.book2").on("click", function() {
+    alert("click on the see details button to se the price of the book");
+});
+
+$("#books_completed2 &gt; .book2").on("click", "button", function(e) {
+    var date = $(this).closest(".book2").data("purchased2");
+    var author = $(this).closest(".book2").data("author2");
+    var rating = $(this).closest(".book2").data("myrating2");
+    var details = $("&lt;p&gt; Purchased date:  " + date + "&lt;br&gt; Author: &lt;b&gt;" + author + "&lt;/b&gt;" + rating + "&lt;/p&gt;");
+    $(this).closest(".book2").append(details);
+    $(this).closest(".book2").css({
+        "background-color": "yellow"
+    });
+    $(this).remove();
+    e.stopPropagation();
+});</span></pre>
+
+        <h3>Example</h3>
+        <div id="books_div2" class="div_next2">
+            <h2> Top Books to Read </h2>
+
+            <div class="book2" data-price2="22.00" data-author2="Paulo Coelho">
+                <h3 class="title2"> The Alchemist </h3>
+                <button> See Details </button>
+            </div>
+
+            <div class="book2" data-price2="18.00" data-author2="Paulo Coelho">
+                <h3 class="title2"> Warrior of The Light </h3>
+                <button> See Details </button>
+            </div>
+
+            <div class="book2" data-price2="12.00" data-author2="Jon Gordon">
+                <h3 class="title2"> The Energy Bus </h3>
+                <button> See Details </button>
+            </div>
+        </div>
+
+
+        <div id="books_completed2" class="div_next2">
+            <h2> Already Completed Books </h2>
+
+            <div class="book2" data-purchased2="Jan 12, 2016" data-author2="Samuel Clason" data-myrating2="5 star">
+                <h3 class="title2"> The Richest Man in Babylon </h3>
+                <button> See Details </button>
+            </div>
+        </div>
+
+
+
+    </section>
+    <script src="../../_js/jquery-3.4.1.min.js"></script>
+    <script>
+        $("button.btn1").on("click", function(event) {
+            //search for the closest .book class to the button that was clicked
+            //then use the .data() method using its parameter name
+            var price = $(this).closest(".book").data("price");
+            var author = $(this).closest(".book").data("author");
+            var details = $("<p> price:  " + price + "<br> Author: <b>" + author + "</b></p>");
+            //add content after button
+            $(this).after(details);
+            $(this).closest(".book").css({
+                "background-color": "yellow"
+            });
+            $(this).remove();
+            //Add stopPropagation() so you can click the button without the alert box showing
+            //This prevents the div.book taking place, therefore nothing can bubble back up
+            event.stopPropagation();
+        });
+
+        //add code so if someone clicks inside the div, they get an alert box
+        //The problem is that even when the button is clicked, the alert box shows
+        $("div.book").on("click", function() {
+            alert("click on the see details button to se the price of the book");
+        });
+
+
+
+
+
+
+
+
+
+        //event delegation
+        //target div with an id and all classes in it named book2
+        //add the button click event so the code only runs when a button is clicked
+        $("#books_div2 > .book2").on("click", "button", function(event) {
+            //search for the closest .book class to the button that was clicked
+            //then use the .data() method using its parameter name
+            var price = $(this).closest(".book2").data("price2");
+            var author = $(this).closest(".book2").data("author2");
+            var details = $("<p> price:  " + price + "<br> Author: <b>" + author + "</b></p>");
+            //add content after button
+            $(this).after(details);
+            $(this).closest(".book2").css({
+                "background-color": "yellow"
+            });
+            $(this).remove();
+            //Add stopPropagation() so you can click the button without the alert box showing
+            //This prevents the div.book taking place, therefore nothing can bubble back up
+            event.stopPropagation();
+        });
+
+        //add code so if someone clicks inside the div, they get an alert box
+        //The problem is that even when the button is clicked, the alert box shows
+        $("div.book2").on("click", function() {
+            alert("click on the see details button to se the price of the book");
+        });
+
+        $("#books_completed2 > .book2").on("click", "button", function(e) {
+            var date = $(this).closest(".book2").data("purchased2");
+            var author = $(this).closest(".book2").data("author2");
+            var rating = $(this).closest(".book2").data("myrating2");
+            var details = $("<p> Purchased date:  " + date + "<br> Author: <b>" + author + "</b>" + rating + "</p>");
+            $(this).closest(".book2").append(details);
+            $(this).closest(".book2").css({
+                "background-color": "yellow"
+            });
+            $(this).remove();
+            e.stopPropagation();
+        });
+    </script>
+</body>
+
+</html>

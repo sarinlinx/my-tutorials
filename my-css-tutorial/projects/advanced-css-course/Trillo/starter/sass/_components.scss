@@ -1,0 +1,634 @@
+////////////////////////////////////////
+// LOGO
+.logo {
+    height: 3.25rem;
+    margin-left: 2rem;
+}
+
+
+////////////////////////////////////////
+// SEARCH
+.search {
+    flex: 0 0 40%; //occupies 40% of header
+
+    //nested flexbox container
+    display: flex;
+    align-items: center; //vertically centers logo, search, user nav
+    justify-content: center;
+
+    @media only screen and (max-width: $bp-smallest) {
+        order: 1; // moves search bar to last in section since 0 is the default value for all itmes
+        flex: 0 0 100%; // shouldn't grow or shrink, this allows it to move to next line sooner since header is using flex: wrap
+        background-color: var(--color-grey-light-2);
+    }
+
+    &__input {
+        font-family: inherit; ///because input elements do not automatically inherit fonts from parent
+        font-size: inherit; ///because input elements do not automatically inherit fonts from parent
+        color: inherit; ///because input elements do not automatically inherit color from parent
+        background-color: var(--color-grey-light-2);
+        border: none;
+        padding: .7rem 2rem;
+        border-radius: 100px;
+        width: 90%; //so it has room to expand when foxused
+        transition: all .2s;
+        margin-right: -3.25rem; // so button moves on top of input
+
+        &:focus {
+            outline: none; //remove focus outline
+            width: 100%; //100% when focused from 90% above
+            background-color: var(--color-grey-light-3);
+        }
+
+        &::-webkit-input-placeholder {
+            font-weight: 100;
+            color: var(--color-grey-light-4);
+        }
+    }
+
+    &__input:focus+&__button {
+        // when input is focused magnifying icon becomes lighter
+        background-color: var(--color-grey-light-3);
+    }
+
+    &__button {
+        border: none;
+        background-color: var(--color-grey-light-2);
+
+        &:focus {
+            outline: none;
+        }
+
+        &:active {
+            transform: translateY(2px); //move down when clicked
+        }
+    }
+
+    &__icon {
+        height: 2rem;
+        width: 2rem;
+        //Changes color of SVG icon
+        fill: var(--color-grey-dark-3);
+    }
+}
+
+
+
+
+
+
+////////////////////////////////////////
+// USER NAVIGATION
+.user-nav {
+    align-self: stretch; // these should not be vertically centered as configured in the header. This overrides the .header section by stretching these vertically to their full container
+
+    display: flex;
+    align-items: center; //algins items vertically
+
+    &>* {
+        //user nav and all direct children
+        padding: 0 2rem;
+        cursor: pointer;
+        height: 100%; //this allows hover effect to cover 100% of align-self items
+
+        display: flex; //these two lines allow icons to be centered vertically in user nav
+        align-items: center;
+    }
+
+    &>*:hover {
+        background-color: var(--color-grey-light-2);
+    }
+
+    &__icon-box {
+        //so notification can be positioned using relative
+        //put it here since it's the container, not the svg tag
+        position: relative;
+    }
+
+    &__icon {
+        height: 2.25rem;
+        width: 2.25rem;
+        fill: var(--color-grey-dark-2); //colors svg icon
+    }
+
+    //pink notificaion # on top of svg icon
+    &__notification {
+        font-size: .8rem;
+        height: 1.75rem;
+        width: 1.75rem;
+        border-radius: 50%;
+        background-color: var(--color-primary);
+        color: #fff;
+        //position notification over svg
+        position: absolute;
+        top: 1.5rem;
+        right: 1.1rem;
+
+        //center numbers in notification
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__user-photo {
+        height: 3.75rem;
+        border-radius: 50%;
+        margin-right: 1rem;
+    }
+
+}
+
+
+
+
+
+
+////////////////////////////////////////
+// SIDE NAVIGATION
+.side-nav {
+    font-size: 1.4rem;
+    list-style: none;
+    margin-top: 3.5rem;
+
+    @media only screen and (max-width: $bp-medium) {
+        display: flex; // causes menu to become horizontal
+        margin: 0;
+    }
+
+    &__item {
+        position: relative; // so item::before can be position: absolute
+
+        // Adds margin to all but last one
+        &:not(:last-child) {
+            margin-bottom: .5rem;
+
+            @media only screen and (max-width: $bp-medium) {
+                margin: 0;
+            }
+        }
+
+        @media only screen and (max-width: $bp-medium) {
+            flex: 1; // menu items grow as much as possible, so they occupy entire menu bar
+        }
+    }
+
+    // small line the becomes visible and then expands to the right
+    &__item::before {
+        content: ""; //specify content so it shows in browser
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%; // same height as list item
+        width: 3px;
+        background-color: var(--color-primary);
+        transform: scaleY(0); // scales vertical bar before text to zero
+        //transform-origin: bottom; // you could set this so the effect starts at the bottom of the element. Default is center
+        transition: transform .2s,
+            width .4s cubic-bezier(1, 0, 0, 1) .2s,
+            background-color .1s;
+    }
+
+    &__item:hover::before,
+    &__item--active::before {
+        // this sets the first items as active and hovered
+        transform: scaleY(1); // the ::before effect expands to 100%
+        width: 100%;
+    }
+
+    &__item:active::before {
+        background-color: var(--color-primary-light); // lighter color when menu item clicked
+    }
+
+    &__link:link,
+    &__link:visited {
+        color: var(--color-grey-light-1);
+        text-decoration: none;
+        text-transform: uppercase;
+        display: block;
+        padding: 1.5rem 3rem;
+        position: relative; // so z-index works
+        z-index: 10; // set text above ::before effect
+
+        display: flex;
+        align-items: center; // centers vertically
+
+        @media only screen and (max-width: $bp-medium) {
+            justify-content: center; // horizontally aligns menu items
+            padding: 2rem;
+        }
+
+        @media only screen and (max-width: $bp-small) {
+            flex-direction: column; // stacks menu icon on top of text
+            padding: 1.5rem .5rem;
+        }
+    }
+
+    &__icon {
+        width: 1.75rem;
+        height: 1.75rem;
+        margin-right: 2rem;
+        fill: currentColor; // color of this element or parent element
+
+        @media only screen and (max-width: $bp-small) {
+            margin-right: 0; // centers icons
+            margin-bottom: .7rem;
+            width: 1.5rem;
+            height: 1.5rem;
+        }
+    }
+}
+
+
+
+
+
+
+////////////////////////////////////////
+// LEGAL TEXT
+.legal {
+    font-size: 1.2rem;
+    color: var(--color-grey-light-4);
+    text-align: center;
+    padding: 2.5rem;
+
+    @media only screen and (max-width: $bp-medium) {
+        display: none;
+    }
+}
+
+
+////////////////////////////////////////
+// GALLERY
+.gallery {
+    display: flex; // so all figure elements are side by side
+
+    &__photo {
+        width: 100%;
+        display: block; // eliminates small small under the element you'd get from inline-block
+    }
+}
+
+
+////////////////////////////////////////
+// HOTEL OVERVIEW
+.overview {
+    display: flex;
+    align-items: center; // puts items side by side
+    border-bottom: var(--line);
+
+    &__heading {
+        font-size: 2.25rem;
+        font-weight: 300;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        padding: 1.5rem 3rem;
+
+        @media only screen and (max-width: $bp-small) {
+            font-size: 1.8rem;
+            padding: 1.25rem 2rem;
+        }
+    }
+
+    &__stars {
+        margin-right: auto; //TRICK: element only occupies its content space
+        display: flex; // This turns these star icons into flex items. This is necessary because SVG icons act like inline text which means there is a little space below the element. This removes that space.
+    }
+
+    &__icon-star,
+    &__icon-location {
+        width: 1.75rem;
+        height: 1.75rem;
+        fill: var(--color-primary);
+    }
+
+    &__location {
+        font-size: 1.2rem;
+        display: flex; // this flex item will grow to occupy entire space
+        // vertical-align: center; // video says to change this to align-items
+        align-items: center;
+
+    }
+
+    &__icon-location {
+        margin-right: .5rem;
+    }
+
+    &__rating {
+        background-color: var(--color-primary);
+        color: #fff;
+        margin-left: 3rem;
+        padding: 0 2.25rem;
+        align-self: stretch; // This occupies all space available. It overrides align-items: center for this section
+
+        display: flex;
+        flex-direction: column; // stacks items
+        align-items: center;
+        justify-content: center;
+
+        @media only screen and (max-width: $bp-small) {
+            padding: 0 1.5rem;
+        }
+    }
+
+    &__rating-average {
+        font-size: 2.25rem;
+        font-weight: 300;
+        margin-bottom: -3px; // decreases vertical space between rating and vote count
+
+        @media only screen and (max-width: $bp-small) {
+            font-size: 1.8rem;
+        }
+    }
+
+    &__rating-count {
+        font-size: .8rem;
+        text-transform: uppercase;
+
+        @media only screen and (max-width: $bp-small) {
+            font-size: .5rem;
+        }
+    }
+}
+
+
+
+////////////////////////////////////////
+// BUTTON INLINE
+.btn-inline {
+    border: none;
+    color: var(--color-primary);
+    font-size: inherit;
+    border-bottom: 1px solid currentColor;
+    padding-bottom: 2px;
+    display: inline-block;
+    background-color: transparent; // good for different backgrounds in different sections of page
+    cursor: pointer;
+    transition: all .2s;
+
+    & span {
+        margin-left: 3px;
+        transition: margin-left .2s;
+    }
+
+    &:hover {
+        color: var(--color-grey-dark-1);
+
+        span {
+            margin-left: 8px;
+        }
+    }
+
+    &:focus {
+        outline: none;
+        animation: pulsate 1s infinite;
+    }
+}
+
+// button text background pulsates when clicked
+@keyframes pulsate {
+    0% {
+        transform: scale(1);
+        box-shadow: none;
+    }
+
+    50% {
+        transform: scale(1.05);
+        box-shadow: 0 1rem 4rem rgba(0, 0, 0, .25);
+    }
+
+    100% {
+        transform: scale(1);
+        box-shadow: none;
+    }
+}
+
+////////////////////////////////////////
+// PARAGRAPH
+.paragraph:not(:last-of-type) {
+    margin-bottom: 2rem; // margin except last one
+}
+
+
+
+////////////////////////////////////////
+// LIST
+.list {
+    list-style: none;
+    margin: 3rem 0;
+    padding: 3rem 0;
+    border-top: var(--line);
+    border-bottom: var(--line);
+
+    display: flex;
+    flex-wrap: wrap; // wraps multiple items within a container
+
+    &__item {
+        // there is not space between items
+        // this adds spacing
+        flex: 0 0 50%; // don't grow, don't shrink, 50% creates 2 columns
+        margin-bottom: .7rem;
+    }
+
+    // Adds SVG before HTML element
+    &__item::before {
+        // so SVG displays
+        content: "";
+        display: inline-block;
+        height: 1rem;
+        width: 1rem;
+        margin-right: .7rem;
+
+        // Older browsers
+        background-image: url(../img/chevron-thin-right.svg); // doesn't allow you to change color
+        background-size: cover;
+
+        //Newer browsers - masks
+        // Masks defines area you can look through the element and see what's behind it
+        @supports (-webkit-mask-image: url()) or (mask-image: url()) {
+            // set background color of element to solid color
+            background-color: var(--color-primary);
+
+            // set icon as mask over top which you look through to see background
+            -webkit-mask-image: url(../img/chevron-thin-right.svg);
+            -webkit-mask-size: cover;
+
+            mask-image: url(../img/chevron-thin-right.svg);
+            mask-size: cover;
+
+            background-image: none;
+        }
+
+    }
+}
+
+
+
+////////////////////////////////////////
+// RECOMMEND
+.recommend {
+    font-size: 1.3rem;
+    color: var(--color-grey-dark-3);
+
+    display: flex;
+    align-items: center;
+
+    &__count {
+        margin-right: auto; // TRICK: Adds margin to right of text to push images to right
+    }
+
+    &__friends {
+        display: flex; // always side by side
+    }
+
+    &__photo {
+        box-sizing: content-box; // add border on top of height and width (default)
+        height: 4rem;
+        width: 4rem;
+        border-radius: 50%;
+        border: 3px solid #fff;
+
+        &:not(:last-child) {
+            margin-right: -2rem; // so images overlap
+        }
+    }
+}
+
+
+////////////////////////////////////////
+// REVIEWS
+.review {
+    background-color: #fff;
+    box-shadow: var(--shadow-light);
+    padding: 3rem;
+    margin-bottom: 3.5rem;
+    position: relative;
+    overflow: hidden;
+
+    @media only screen and (max-width: $bp-medium) {
+        padding: 2rem;
+        margin-bottom: 3rem;
+    }
+
+    &__text {
+        margin-bottom: 2rem;
+        z-index: 10;
+        position: relative;
+    }
+
+    &__user {
+        display: flex;
+        align-items: center;
+    }
+
+    &__photo {
+        height: 4.5rem;
+        width: 4.5rem;
+        border-radius: 50%;
+        margin-right: 1.5rem;
+    }
+
+    &__user-box {
+        margin-right: auto;
+    }
+
+    &__user-name {
+        font-size: 1.1rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        margin-bottom: .4rem;
+    }
+
+    &__user-date {
+        font-size: 1rem;
+        color: var(--color-grey-dark-3);
+    }
+
+    &__rating {
+        color: var(--color-primary);
+        font-size: 2.2rem;
+        font-weight: 300;
+    }
+
+    &::before {
+        content: "\201C";
+        position: absolute;
+        top: -2.75rem;
+        left: -1rem;
+        line-height: 1;
+        font-size: 20rem;
+        color: var(--color-grey-light-2);
+        font-family: sans-serif;
+        z-index: 1;
+    }
+}
+
+
+////////////////////////////////////////
+// CALL TO ACTION
+.cta {
+    padding: 3.5rem 0;
+    text-align: center;
+
+    @media only screen and (max-width: $bp-medium) {
+        padding: 2.5rem 0;
+    }
+
+    &__book-now {
+        font-size: 2rem;
+        font-weight: 300;
+        text-transform: uppercase;
+        margin-bottom: 2.5rem;
+    }
+}
+
+
+////////////////////////////////////////
+// CALL TO ACTION
+.btn {
+    font-size: 1.5rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    border-radius: 100px;
+    border: none;
+    background-image: linear-gradient(to right, var(--color-primary-light), var(--color-primary-dark));
+    color: #fff;
+    position: relative;
+    overflow: hidden; // hides invisible button text
+    cursor: pointer;
+
+    // repeated code
+    &>* {
+        display: inline-block; // so you can use padding
+        height: 100%; // height and width of parent element
+        width: 100%;
+        transition: all .2s;
+    }
+
+    &__visible {
+        padding: 2rem 7.5rem;
+    }
+
+    &__invisible {
+        position: absolute; // so you can position it outside of button
+        padding: 2rem 0;
+        left: 0;
+        top: -100%; // this moves up 100% of element
+    }
+
+    &:hover {
+        background-image: linear-gradient(to left, var(--color-primary-light), var(--color-primary-dark));
+    }
+
+    &:hover &__visible {
+        transform: translateY(100%);
+    }
+
+    &:hover &__invisible {
+        top: 0; // moves into center of button
+    }
+
+    &:focus {
+        outline: none;
+        animation: pulsate 1s infinite;
+    }
+}

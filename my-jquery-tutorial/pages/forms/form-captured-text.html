@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="../../_css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../../_css/style.css">
+
+    <title>Forms</title>
+</head>
+
+<body>
+    <section class="container">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb breadcrumb-container">
+                <li class="breadcrumb-item"><a class="breadcrumb-link" href="../../index.html">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Forms</li>
+            </ol>
+        </nav>
+
+
+        <h1>Forms - Capturing text</h1>
+        <p>This example uses the val() function to capture the text entered into the form.</p>
+        <p>It's then displayed on the 'Submit' event in an alert box.</p>
+
+
+        <pre class="example">
+<span class="code-html">&lt;form method="post"&gt;
+  Enter any word:
+  &lt;br&gt;
+  &lt;input type="text" id="entered_word"&gt;
+  &lt;br&gt;
+  &lt;input type="submit"&gt;
+&lt;/form&gt;</span>
+
+<span class="code-js">$('form').on('submit', function(){
+  <span class="code-comment">//capture text that's entered into form</span>
+  var enteredWord = $('input#entered_word').val();
+  alert(enteredWord);
+});</span></pre>
+
+
+
+        <h3>Example</h3>
+
+        <h4>Form #1</h4>
+        <form method="post">
+            Enter any word:
+            <br>
+            <input type="text" id="entered_word">
+            <br>
+            <input type="submit">
+        </form>
+
+    </section>
+
+
+
+    <script src="../../_js/jquery-3.4.1.min.js"></script>
+
+    <script>
+    //form #1
+$('form').on('submit', function(){
+  //display what's entered into the text box
+  // alert($('input#entered_word').val());
+
+  //capture text that's entered into form
+  var enteredWord = $('input#entered_word').val();
+  alert(enteredWord);
+});
+
+
+
+    </script>
+
+</body>
+
+</html>

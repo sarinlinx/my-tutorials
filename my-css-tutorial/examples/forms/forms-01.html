@@ -1,0 +1,785 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="../../_css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../../_css/style.css">
+
+    <title>Form with background and field checking</title>
+</head>
+
+<style>
+
+</style>
+
+<body>
+    <a href="../../index.html">Home page</a>
+
+    <section class="container">
+
+        <p>This example creates a form that appears on the left half of the section.</p>
+        <p>The right half is an image.</p>
+
+
+
+        <h2>Step #1 - Create section containers</h2>
+        <div class="row">
+
+            <div class="col-4">
+                <p>Create a section to contain the form.</p>
+                <p>Create a row for the form.</p>
+                <p>Add interior container with background image.</p>Give it padding an a gradient background.</p>
+                <p>NOTE: height will not be added to the .book container. It's only used here so you can see the background image. The content will set the height.</p>
+            </div>
+
+            <div class="col-8">
+                <pre class="example"><span class="code-css">.section-book {
+  padding: 15rem 0;
+  background-image: linear-gradient(to right bottom, #7ed56f, #28b485);
+}        
+
+@media only screen and (max-width: 56.25em) {
+  .section-book {
+      padding: 10rem 0
+  }
+}
+
+.book {
+  <span class="code-comment">/* Do not add height. The content should set the height */</span>
+  height: 50rem;
+  <span class="code-comment">/* Add gradient over background image */
+  /* Use % to set where gradient should appear */
+  /* At 0% to 50% it's white. After 50% it's transparent */</span>
+  background-image: linear-gradient(105deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.9) 50%, transparent 50%), url(nat-10.jpg);
+  <span class="code-comment">/*  fits container in x direction, 100% is the same as cover. If it was a lower % it would start to repeat */</span>
+  background-size: 100%;
+  border-radius: 3px;
+  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.25);
+}
+
+@media only screen and (max-width: 75em) {
+  .book {
+      background-image: linear-gradient(105deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.9) 65%, transparent 65%), url(../img/nat-10.jpg);
+      background-size: cover
+  }
+}
+
+@media only screen and (max-width: 56.25em) {
+  .book {
+      background-image: linear-gradient(to right, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.9) 100%), url(../img/nat-10.jpg)
+  }
+}
+
+<span class="code-html">&lt;section class="section-book">
+  &lt;div class="row"&gt;
+    &lt;div class="book"&gt;
+  
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/section&gt;</span></pre>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col">
+                <h4>Example</h4>
+                <ul>
+                    <li><a href="forms-01-ex01.html" target="_blank">Example</a></li>
+                </ul>
+
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <h2>Step #2 - Create section for form on the left side of the container.</h2>
+        <div class="row">
+
+            <div class="col-4">
+                <p>This example divides the container in 2 and places the form only on the left side.</p>
+                <p>Create a container for the left side.</p>
+                <p>Add a form element inside it.</p>
+                <p>Add 2 input fields.</p>
+                <p>Create a utility class with !important since this should override anything else.</p>
+            </div>
+
+            <div class="col-8">
+                <pre class="example"><span class="code-css">.book__form {
+  width: 50%;
+  padding: 6rem;
+}
+
+
+@media only screen and (max-width: 75em) {
+  .book__form {
+      width: 65%
+  }
+}
+
+@media only screen and (max-width: 56.25em) {
+  .book__form {
+      width: 100%
+  }
+}
+
+.u-margin-bottom-medium {
+  margin-bottom: 4rem !important
+}</span>
+                  
+<span class="code-html">&lt;section class="section-book"&gt;
+  &lt;div class="row"&gt;
+      &lt;div class="book"&gt;
+
+      <span class="code-comment">&lt;!-- Left side container of the form  --&gt;</span>
+          <span class="code-highlight">&lt;div class="book__form"&gt;
+
+              &lt;form action="" class="form"&gt;
+
+                  &lt;div class="u-margin-bottom-medium"&gt;
+                      &lt;h2 class="heading-secondary"&gt;Start booking now&lt;/h2&gt;
+                  &lt;/div&gt;
+
+
+                  &lt;div class="form__group"&gt;
+                      &lt;input id="name" type="text" class="form__input" placeholder="Full Name" required&gt;
+                      &lt;label for="name" class="form__label"&gt;Full name&lt;/label&gt;
+                  &lt;/div&gt;
+
+                  &lt;div class="form__group"&gt;
+                      &lt;input id="email" type="email" class="form__input" placeholder="Email Address" required&gt;
+                      &lt;label for="email" class="form__label"&gt;Email address&lt;/label&gt;
+                  &lt;/div&gt;
+
+
+              &lt;/form&gt;
+          &lt;/div&gt;</span>
+
+      &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/section&gt;</span></pre>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col">
+                <h4>Example</h4>
+                <ul>
+                    <li><a href="forms-01-ex02.html" target="_blank">Example</a></li>
+                </ul>
+
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <h2>Step 3 - Add CSS to the form container and elements.</h2>
+        <div class="row">
+
+            <div class="col-4">
+                <p>Add style to format form__group except last child</p>
+                <p>Style input element.</p>
+                <p>Remove default form focus and customize.</p>
+                <p>Add text validation to the fields.</p>
+                <p>Style placeholder text. (Safari and Chrome only)</p>
+            </div>
+
+            <div class="col-8">
+                <pre class="example"><span class="code-css">.form__group:not(:last-child) {
+  margin-bottom: 2rem;
+}
+
+.form__input {
+<span class="code-comment">/* input elements do not inherit fonts and color by default
+change default browser font for forms to font-family of page */</span>
+  font-family: inherit;
+  color: inherit;
+  font-size: 1.5rem;
+  <span class="code-comment">/* Looks better when more padding is on sides */</span>
+  padding: 1.5rem 2rem;
+  border-radius: 2px;
+  background-color: rgba(255, 255, 255, 0.5);
+  border: none;
+  <span class="code-comment">/*set initial border to transparent
+this prevents the 3px (from .form__input:focus) from pushing down the fields below the first box */</span>
+  border-bottom: 3px solid transparent;
+  width: 90%;
+  display: block;
+}
+
+.form__input:focus {
+  <span class="code-comment">/* remove browser default outline */</span>
+  outline: none;
+  <span class="code-comment">/* add box shadow for users not using a mouse so they can see what field is focused */</span>
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
+  <span class="code-comment">/* This 3px will cause the field to shift down when focused
+  To fix, add border-bottom: 3px solid transparent; to the primary input selector */</span>
+  border-bottom: 3px solid #55c57a;
+}
+
+.form__input:focus:invalid {
+  <span class="code-comment">/* invalid reference is built into the browser */
+  /* if form field text is invalid when focused*/</span>
+  border-bottom: 3px solid #ff7730;
+}
+
+.form__input::-webkit-input-placeholder {
+  <span class="code-comment">/* Changes color of text when you type into field (safari and chrome)*/</span>
+  color: #999;
+}</span></pre>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col">
+                <h4>Example</h4>
+                <ul>
+                    <li><a href="forms-01-ex03.html" target="_blank">Example</a></li>
+                </ul>
+
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <h2>Step 4 - Add CSS so the placeholder text drops down</h2>
+        <div class="row">
+
+            <div class="col-4">
+
+                <p>This CSS causes the placeholder text to drop down when the user types into the input field.</p>
+                <ol>
+                    <li>Style label</li>
+                    <li>Style placeholder so it drops down when user types into input field.</li>
+                    <li>Add a transition to the form input</li>
+                </ol>
+            </div>
+
+            <div class="col-8">
+                <pre class="example"><span class="code-css"><span class="code-comment">/* This label text is an extra effect
+It is placed below the text field
+It ony shows AFTER text is entered into field */</span>
+.form__label {
+  font-size: 1.2rem;
+  font-weight: 700;
+  display: block;
+  margin-left: 2rem;
+  margin-top: .7rem;
+  transition: all .3s;
+}
+
+<span class="code-comment">/* This label text is an extra effect
+It is placed below the text field
+It ony shows AFTER text is entered into field */</span>
+.form__label {
+  font-size: 1.2rem;
+  font-weight: 700;
+  display: block;
+  margin-left: 2rem;
+  margin-top: .7rem;
+  transition: all .3s;
+}
+
+<span class="code-comment">/* placeholder-shown is built into browser
+when it is shown (meaning nothing has been typed yet), hide label 
+You must select the label since that is what you want to style
+Use adjacent sibling selector + 
+The label must also be after the input for this to work because that's how the HTML is written*/</span>
+.form__input:placeholder-shown+.form__label {
+  <span class="code-comment">/* hide label */</span>
+  opacity: 0;
+  <span class="code-comment">/* this removes it from the page, not just hides it. opacity is also used because you cannot animate visibility */</span>
+  visibility: hidden;
+  <span class="code-comment">/* set initial state so it will move when focused */</span>
+  transform: tra
+  
+ .form__input:-ms-input-placeholder+.form__label {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-4rem)
+}
+
+.form__input {
+    font-family: inherit;
+    color: inherit;
+    font-size: 1.5rem;
+    padding: 1.5rem 2rem;
+    border-radius: 2px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border: none;    
+    border-bottom: 3px solid transparent;
+    width: 90%;
+    display: block;
+    <span class="code-highlight">transition: all .3s;</span>
+  }</span></pre>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col">
+                <h4>Example</h4>
+                <ul>
+                    <li><a href="forms-01-ex04.html" target="_blank">Example</a></li>
+                </ul>
+
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <h2>Step 5 - Add Radio Buttons</h2>
+        <div class="row">
+
+            <div class="col-4">
+
+                <p>Create another form__group div container</p>
+                <p>Inside add radio buttons</p>
+                <p>Create a span class to style the radio button. (since you can't do this in CSS)</p>
+            </div>
+
+            <div class="col-8">
+                <pre class="example"><span class="code-css">.form__radio-group {
+  <span class="code-comment">/* width 49% so they are side by side. 50% would split the lines in the container */</span>
+  width: 49%;
+  display: inline-block
+}
+
+.form__radio-label {
+  font-size: 1.6rem;
+  cursor: pointer;
+  position: relative;
+  padding-left: 5rem
+}
+
+<span class="code-comment">/* Create circle radio button */</span>
+.form__radio-button {
+  height: 3rem;
+  width: 3rem;
+  display: inline-block;
+  border: 5px solid #55c57a;
+  border-radius: 50%;
+  position: absolute;
+  top: -.4rem;
+  left: 0
+}
+
+<span class="code-comment">/* Create ::after pseudo element for circle inside of hollow circle radio button */</span>
+.form__radio-button::after {
+  content: "";
+  display: block;
+  height: 1.3rem;
+  width: 1.3rem;
+  border-radius: 50%;
+  <span class="code-comment">/* center in HTML */</span>
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  <span class="code-comment">/* center in visual position */</span>
+  transform: translate(-50%, -50%);
+  background-color: #55c57a;
+  opacity: 0;
+}</span>
+                
+                
+<span class="code-html"><span class="code-comment">&lt;!-- Add just below last input element --&gt;
+  &lt;!-- Radio buttons --&gt;</span>
+  &lt;div class="form__group"&gt;
+  <span class="code-comment">&lt;!-- Inputs must have same 'name' attribute so only one can be selected --&gt;
+    &lt;!-- Cannot style radio buttons in CSS. Must create span that will be selected when label is clicked, instead of input which will be hidden--&gt;</span>
+    &lt;div class="form__radio-group u-margin-bottom-medium"&gt;
+        &lt;input type="radio" class="form__radio-input" id="small" name="size"&gt;
+        &lt;label for="small" class="form__radio-label"&gt;
+        <span class="code-comment">&lt;!--Add span class to you can style since you cannot style radio buttons in CSS--&gt;</span>
+&lt;span class="form__radio-button"&gt;&lt;/span&gt;
+Small tour group&lt;/label&gt;
+    &lt;/div&gt;
+  
+      &lt;div class="form__radio-group u-margin-bottom-medium"&gt;
+          &lt;input type="radio" class="form__radio-input" id="large" name="size"&gt;
+          &lt;label for="large" class="form__radio-label"&gt;
+  &lt;span class="form__radio-button"&gt;&lt;/span&gt;Large tour group&lt;/label&gt;
+      &lt;/div&gt;
+  &lt;/div&gt;</span></pre>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col">
+                <h4>Example</h4>
+                <ul>
+                    <li><a href="forms-01-ex05.html" target="_blank">Example</a></li>
+                </ul>
+
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <h2>Step 6 - Style the radio button</h2>
+        <div class="row">
+
+            <div class="col-4">
+
+                <p>Add a 'checked' pseudo selector to the radio button.</p>
+                <p>When it's clicked, the sibling's child will display.</p>
+                <p>Add a transition on the radiou button::after so it fades in</p>
+                <p>Hide original radio input</p>
+            </div>
+
+            <div class="col-8">
+                <pre class="example"><span class="code-css">.form__radio-button::after {
+  content: "";
+  display: block;
+  height: 1.3rem;
+  width: 1.3rem;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #55c57a;
+  opacity: 0;
+  <span class="code-highlight">transition: opacity .2s</span>
+}
+
+<span class="code-comment">/* Check all radio buttons
+that are siblings of radio-input, then select radio-label, then select child element of it */
+/* when you click the radio button, the input becomes CHECKED using the checked pseudo class
+then select its sibling, and then its child since this is what is changed*/</span>
+  
+ form__radio-input:checked~.form__radio-label .form__radio-button::after {
+  opacity: 1
+}
+
+.form__radio-input {
+  display: none
+}</span></pre>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col">
+                <h4>Example</h4>
+                <ul>
+                    <li><a href="forms-01-ex06.html" target="_blank">Example</a></li>
+                </ul>
+
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <h2>Step 7 - Add final button</h2>
+        <div class="row">
+
+            <div class="col-4">
+
+                <p>Add CSS for btn link</p>
+                <p>Make active look like hover.</p>
+            </div>
+
+            <div class="col-8">
+                <pre class="example"><span class="code-css">.btn,
+.btn:link,
+.btn:visited {
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 1.5rem 4rem;
+  display: inline-block;
+  border-radius: 10rem;
+  transition: all 0.2s;
+  position: relative;
+  font-size: 1.6rem;
+  border: none;
+  cursor: pointer
+}
+
+.btn:active,
+.btn .btn:focus {
+  outline: none;
+  transform: translateY(-1px);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2)
+}</span>
+
+<span class="code-html">
+&lt;div class="form__group"&gt;
+  &lt;button class="btn btn--green"&gt;Next step &rarr;&lt;/button&gt;
+&lt;/div&gt;</span></pre>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col">
+                <h4>Example</h4>
+                <ul>
+                    <li><a href="forms-01-ex07.html" target="_blank">Example</a></li>
+                </ul>
+
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <h2>Step 8 - Extra styles for button</h2>
+        <div class="row">
+
+            <div class="col-4">
+
+                <p>Add extra styles for button.</p>
+            </div>
+
+            <div class="col-8">
+                <pre class="example"><span class="code-css">   
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2)
+}
+
+.btn:hover::after {
+    transform: scaleX(1.4) scaleY(1.6);
+    opacity: 0
+}
+
+
+
+.btn--white {
+    background-color: #fff;
+    color: #777
+}
+
+.btn--white::after {
+    background-color: #fff
+}
+
+.btn--green {
+    background-color: #55c57a;
+    color: #fff
+}
+
+.btn--green::after {
+    background-color: #55c57a
+}
+
+.btn::after {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 10rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all 0.4s
+}
+
+.btn--green {
+    background-color: #55c57a;
+    color: #fff
+}
+
+.btn--green::after {
+    background-color: #55c57a
+}</span></pre>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col">
+                <h4>Example</h4>
+                <ul>
+                    <li><a href="forms-01-ex08.html" target="_blank">Example</a></li>
+                </ul>
+
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </section>
+</body>
+
+</html>

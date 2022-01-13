@@ -1,0 +1,498 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="../../_css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../../_css/style.css">
+
+    <style>
+        .bg-opacity-0 {
+            background-color: green;
+        }
+        
+        .bg-opacity-1 {
+            background-color: green;
+            opacity: 0.1;
+        }
+        
+        .bg-opacity-3 {
+            background-color: green;
+            opacity: 0.3;
+        }
+        
+        .bg-opacity-6 {
+            background-color: green;
+            opacity: 0.6;
+        }
+        
+        #linear-gradient-to-right {
+            height: 100px;
+            background-image: linear-gradient(to right, red, blue);
+        }
+        
+        #linear-gradient-to-bottom-right {
+            height: 100px;
+            background-image: linear-gradient(to bottom right, red, blue);
+        }
+        
+        #deg-0 {
+            height: 100px;
+            background-image: linear-gradient(0deg, red, blue);
+        }
+        
+        #deg-90 {
+            height: 100px;
+            background-image: linear-gradient(90deg, red, blue);
+        }
+        
+        #deg-180 {
+            height: 100px;
+            background-image: linear-gradient(180deg, red, blue);
+        }
+        
+        #deg--90 {
+            height: 100px;
+            background-image: linear-gradient(-90deg, red, blue);
+        }
+        
+        #transparent-gradient-1 {
+            height: 100px;
+            background-image: linear-gradient(to right, rgba(255, 0, 0, 0), rgba(255, 0, 0, 1));
+        }
+    </style>
+
+
+    <title>Background Gradients</title>
+</head>
+
+<body>
+    <a href="../../index.html">Home page</a>
+
+
+
+
+    <section class="container">
+
+        <div class="row">
+            <div class="col">
+                <h1>Linear gradients</h1>
+
+
+                <h2>Syntax</h2>
+                <pre class="example">background-image: linear-gradient(direction, color-stop1, color-stop2, ...);</pre>
+
+                <p><strong>direction</strong>: Default is top down. You can also specify different directions it should move in. For example:</p>
+                <ul>
+                    <li>to right </li>
+                    <li>to bottom</li>
+                    <li>to bottom right</li>
+                    <li>180deg</li>
+                </ul>
+                <p><strong>Stops</strong>: To create a linear gradient you must define at least two color stops. Color stops are the colors you want to render smooth transitions among. This value consists of a color value, followed by an optional stop position
+                    (a percentage between 0% and 100% or a length along the gradient axis)</p>
+
+            </div>
+        </div>
+
+
+
+        <div class="row">
+            <div class="col">
+                <h1>Word direction</h1>
+            </div>
+        </div>
+
+        <section class="container">
+            <h2>Top down</h2>
+            <div class="row">
+                <div class="col-6">
+                    <p>This shows how to add a background of 2 colors that blend into each other.</p>
+                    <p>This linear gradient starts at the top and move down.</p>
+                </div>
+
+                <div class="col-6">
+                    <pre class="example"><span class="code-html">&lt;p class="linear-gradient"&gt;Testing to see how the linear gradient works.&lt;/p&gt;</span>
+
+<span class="code-css">.linear-gradient {
+  background: linear-gradient(red, green)
+}</span></pre>
+                </div>
+            </div>
+
+
+
+            <div class="row">
+                <div class="col-6">
+                    <p>The result will be a transparent layer over top the current background.</p>
+                </div>
+
+                <div class="col-6">
+                    <pre class="example"><p class="linear-gradient">Testing to see how the linear gradient works.</p></pre>
+                </div>
+            </div>
+
+
+
+
+            <div class="row">
+                <div class="col-6">
+                    <p>You can also add a 3rd color.</p>
+                </div>
+
+                <div class="col-6">
+                    <pre class="example"><span class="code-html"><span class="code-html">&lt;p class="linear-gradient-3colors"&gt;Testing to see how the linear gradient works.&lt;/p&gt;
+        </span>
+
+<span class="code-css">.linear-gradient-3colors {
+  background: linear-gradient-3colors(red, yellow, green),
+}</span></pre>
+
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-6">
+                    <p>The result will be a transparent layer over top the current background.</p>
+                </div>
+
+                <div class="col-6">
+                    <pre class="example"><p class="linear-gradient-3colors">Testing to see how the linear gradient works.</p></pre>
+                </div>
+            </div>
+        </section>
+
+
+
+
+
+
+        <section class="container">
+            <h2>to right</h2>
+            <div class="row">
+                <div class="col-6">
+                    <p>This moves the gradient from left to right.</p>
+                </div>
+
+                <div class="col-6">
+                    <pre class="example"><span class="code-html">&lt;p class="linear-gradient"&gt;Testing to see how the linear gradient works.&lt;/p&gt;</span>
+
+<span class="code-css">.linear-gradient {
+  background-image: linear-gradient(to right, red , blue);
+}</span></pre>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-6">
+                    <p>The result will be a transparent layer over top the current background.</p>
+                </div>
+
+                <div class="col-6">
+
+                    <div id="linear-gradient-to-right">
+                        <p>Testing to see how the linear gradient works.</p>
+                        <p>This moves to the right</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+
+
+        <section class="container">
+            <h2>to bottom right</h2>
+            <div class="row">
+                <div class="col-6">
+                    <p>This moves the gradient to the bottom right.</p>
+                </div>
+
+                <div class="col-6">
+                    <pre class="example"><span class="code-html">&lt;p class="linear-gradient"&gt;Testing to see how the linear gradient works.&lt;/p&gt;</span>
+
+<span class="code-css">.linear-gradient {
+  background-image: linear-gradient(to bottom right, red , blue);
+}</span></pre>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-6">
+                    <p>The result will be a transparent layer over top the current background.</p>
+                </div>
+
+                <div class="col-6">
+                    <div id="linear-gradient-to-bottom-right">
+                        <p>Testing to see how the linear gradient works.</p>
+                        <p>This moves to the bottom right</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+
+
+
+
+
+
+        <div class="row">
+            <div class="col">
+                <h1>Degree direction</h1>
+                <p>This uses degrees to point the gradient.</p>
+            </div>
+        </div>
+
+
+
+
+        <section class="container">
+            <h2>0 degrees</h2>
+            <div class="row">
+                <div class="col-6">
+                    <p>This moves the gradient zero degrees.</p>
+                    <p>This is the same as "to top".</p>
+                </div>
+
+                <div class="col-6">
+                    <pre class="example"><span class="code-html">&lt;p class="linear-gradient"&gt;Testing to see how the linear gradient works.&lt;/p&gt;</span>
+    
+<span class="code-css">.linear-gradient {
+  background-image: linear-gradient(0deg, red, blue);
+}</span></pre>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-6">
+                    <p>Ex:</p>
+                </div>
+
+                <div class="col-6">
+                    <div id="deg-0">
+                        <p>Testing to see how the linear gradient works.</p>
+                        <p>This moves to the bottom right</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+        <section class="container">
+            <h2>90 degrees</h2>
+            <div class="row">
+                <div class="col-6">
+                    <p>This moves the gradient 90 degrees.</p>
+                    <p>This is the same as "to right".</p>
+                </div>
+
+                <div class="col-6">
+                    <pre class="example"><span class="code-html">&lt;p class="linear-gradient"&gt;Testing to see how the linear gradient works.&lt;/p&gt;</span>
+    
+<span class="code-css">.linear-gradient {
+  background-image: linear-gradient(90deg, red, blue);
+}</span></pre>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-6">
+                    <p>Ex:</p>
+                </div>
+
+                <div class="col-6">
+                    <div id="deg-90">
+                        <p>Testing to see how the linear gradient works.</p>
+                        <p>This moves to the bottom right</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+        <section class="container">
+            <h2>180 degrees</h2>
+            <div class="row">
+                <div class="col-6">
+                    <p>This moves the gradient 180 degrees.</p>
+                    <p>This is the same as "to bottom".</p>
+                </div>
+
+                <div class="col-6">
+                    <pre class="example"><span class="code-html">&lt;p class="linear-gradient"&gt;Testing to see how the linear gradient works.&lt;/p&gt;</span>
+    
+<span class="code-css">.linear-gradient {
+  background-image: linear-gradient(180deg, red, blue);
+}</span></pre>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-6">
+                    <p>Ex:</p>
+                </div>
+
+                <div class="col-6">
+                    <div id="deg-180">
+                        <p>Testing to see how the linear gradient works.</p>
+                        <p>This moves to the bottom right</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+
+        <section class="container">
+            <h2>-90 degrees</h2>
+            <div class="row">
+                <div class="col-6">
+                    <p>This moves the gradient -90 degrees.</p>
+                    <p>This is the same as "to left".</p>
+                </div>
+
+                <div class="col-6">
+                    <pre class="example"><span class="code-html">&lt;p class="linear-gradient"&gt;Testing to see how the linear gradient works.&lt;/p&gt;</span>
+    
+<span class="code-css">.linear-gradient {
+  background-image: linear-gradient(-90deg, red, blue);
+}</span></pre>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-6">
+                    <p>Ex:</p>
+                </div>
+
+                <div class="col-6">
+                    <div id="deg--90">
+                        <p>Testing to see how the linear gradient works.</p>
+                        <p>This moves to the bottom right</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <div class="row">
+            <div class="col">
+                <h1>Transparent Gradients</h1>
+                <p>This uses rgba colors with an opacity value.</p>
+            </div>
+        </div>
+
+
+
+
+
+        <section class="container">
+            <h2>-90 degrees</h2>
+            <div class="row">
+                <div class="col-6">
+                    <p>This moves the gradient -90 degrees.</p>
+                </div>
+
+                <div class="col-6">
+                    <pre class="example"><span class="code-html">&lt;p class="linear-gradient"&gt;Testing to see how the linear gradient works.&lt;/p&gt;</span>
+    
+<span class="code-css">.linear-gradient {
+  background-image: linear-gradient(to right, rgba(255,0,0,0), rgba(255,0,0,1));
+}</span></pre>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-6">
+                    <p>Ex:</p>
+                </div>
+
+                <div class="col-6">
+                    <div id="transparent-gradient-1">
+                        <p>Testing to see how the linear gradient works.</p>
+                        <p>This moves to the bottom right</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+
+
+
+
+
+
+
+        <section class="container">
+            <h2>Transparent linear gradient over a background image</h2>
+            <div class="row">
+                <div class="col-6">
+                    <p>This shows how to add a transparent linear gradient of 3 colors over a background image.</p>
+                    <p><strong>The linear-gradient values must come first.</strong></p>
+                </div>
+                <div class="col-6">
+                    <pre class="example"><span class="code-html">&lt;div class="image-bg"&gt;
+  &lt;p class="transparent-linear-gradient"&gt;Transparent linear gradient over an background image.&lt;/p&gt;
+&lt;div&gt;
+</span>
+
+<span class="code-css">.transparent-linear-gradient {
+  height: 40px;
+  background: linear-gradient(rgba(255, 0, 0, 0.35),  /*red*/
+  rgba(255, 255, 0, 0.35), /*yellow*/
+  rgba(0, 0, 255, 0.35)),  /*blue*/
+  url("images/backgrounds/examples/white-bg.jpg");
+}</span></pre>
+                </div>
+            </div>
+
+
+            <div class="row">
+                <div class="col-6">
+                    <p>The result will be a transparent gradient over a background image.</p>
+                </div>
+
+                <div class="col-6">
+                    <pre class="example"><div class="image-bg">
+          <p class="transparent-linear-gradient">Transparent linear gradient over an background image.</p>
+        </div></pre>
+                </div>
+            </div>
+        </section>
+
+
+
+</body>
+
+</html>

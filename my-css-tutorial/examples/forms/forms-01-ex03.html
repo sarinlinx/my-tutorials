@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+    <title>Form example</title>
+
+    <style>
+        *,
+        *::after,
+        *::before {
+            margin: 0;
+            padding: 0;
+            box-sizing: inherit;
+        }
+        
+        html {
+            font-size: 62.5%;
+        }
+        
+        body {
+            box-sizing: border-box;
+            padding: 3rem;
+            font-family: "Lato", sans-serif;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 1.7;
+            color: #777;
+        }
+        
+        .row {
+            max-width: 114rem;
+            margin: 0 auto;
+        }
+        
+        .row:not(:last-child) {
+            margin-bottom: 8rem;
+        }
+        
+        .row::after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+        
+        .row [class^="col-"] {
+            float: left;
+        }
+        
+        .row [class^="col-"]:not(:last-child) {
+            margin-right: 6rem;
+        }
+        
+        .section-book {
+            padding: 15rem 0;
+            background-image: linear-gradient(to right bottom, #7ed56f, #28b485);
+        }
+        
+        @media only screen and (max-width: 56.25em) {
+            .section-book {
+                padding: 10rem 0
+            }
+        }
+        
+        .book {
+            /* Do not add height. The content should set the height */
+            height: 50rem;
+            /* Add gradient over background image */
+            /* Use % to set where gradient should appear */
+            /* At 0% to 50% it's white. After 50% it's transparent */
+            background-image: linear-gradient(105deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.9) 50%, transparent 50%), url(nat-10.jpg);
+            /*  fits container in x direction, 100% is the same as cover. If it was a lower % it would start to repeat */
+            background-size: 100%;
+            border-radius: 3px;
+            box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.25);
+        }
+        
+        @media only screen and (max-width: 75em) {
+            .book {
+                background-image: linear-gradient(105deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.9) 65%, transparent 65%), url(nat-10.jpg);
+                background-size: cover
+            }
+        }
+        
+        @media only screen and (max-width: 56.25em) {
+            .book {
+                background-image: linear-gradient(to right, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.9) 100%), url(nat-10.jpg)
+            }
+        }
+        
+        .heading-secondary {
+            font-size: 3.5rem;
+            text-transform: uppercase;
+            font-weight: 700;
+            display: inline-block;
+            background-image: linear-gradient(to right, #7ed56f, #28b485);
+            -webkit-background-clip: text;
+            color: transparent;
+            letter-spacing: 2px;
+            transition: all .2s
+        }
+        
+        .u-margin-bottom-medium {
+            margin-bottom: 4rem !important
+        }
+        
+        .book__form {
+            width: 50%;
+            padding: 6rem;
+        }
+        
+        @media only screen and (max-width: 75em) {
+            .book__form {
+                width: 65%
+            }
+        }
+        
+        @media only screen and (max-width: 56.25em) {
+            .book__form {
+                width: 100%
+            }
+        }
+        /* Remove margin from last group element */
+        
+        .form__group:not(:last-child) {
+            margin-bottom: 2rem;
+        }
+        
+        .form__input {
+            /* input elements do not inherit fonts and color by default
+        change default browser font for forms to font-family of page */
+            font-family: inherit;
+            color: inherit;
+            font-size: 1.5rem;
+            /* Looks better when more padding is on sides */
+            padding: 1.5rem 2rem;
+            border-radius: 2px;
+            background-color: rgba(255, 255, 255, 0.5);
+            border: none;
+            /*set initial border to transparent 
+        this prevents the 3px (from .form__input:focus) from pushing down the fields below the first box */
+            border-bottom: 3px solid transparent;
+            width: 90%;
+            display: block;
+            /* transition: all .3s; */
+        }
+        
+        .form__input:focus {
+            /* remove browser default outline */
+            outline: none;
+            /* add box shadow for users not using a mouse so they can see what field is focused */
+            box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
+            /* This 3px will cause the field to shift down when focused
+            To fix, add border-bottom: 3px solid transparent; to the primary input selector */
+            border-bottom: 3px solid #55c57a;
+        }
+        
+        .form__input:focus:invalid {
+            /* invalid reference is built into the browser */
+            /* if form field text is invalid when focused*/
+            border-bottom: 3px solid #ff7730;
+        }
+        
+        .form__input::-webkit-input-placeholder {
+            /* Changes color of text when you type into field (safari and chrome)*/
+            color: #999;
+        }
+    </style>
+
+    <body>
+
+        <section class="section-book">
+            <div class="row">
+                <div class="book">
+                    <!-- Left side container of the form  -->
+                    <div class="book__form">
+
+
+                        <form action="" class="form">
+
+                            <div class="u-margin-bottom-medium">
+                                <h2 class="heading-secondary">Start booking now</h2>
+                            </div>
+
+
+                            <div class="form__group">
+                                <input id="name" type="text" class="form__input" placeholder="Full Name" required>
+                                <label for="name" class="form__label">Full name</label>
+                            </div>
+
+                            <div class="form__group">
+                                <input id="email" type="email" class="form__input" placeholder="Email Address" required>
+                                <label for="email" class="form__label">Email address</label>
+                            </div>
+
+
+                        </form>
+
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </body>
+
+</html>

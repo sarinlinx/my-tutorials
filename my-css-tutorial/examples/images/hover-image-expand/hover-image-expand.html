@@ -1,0 +1,348 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="../../_css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../../_css/style.css">
+<style>
+
+.meals-showcase {
+  list-style: none;
+  width: 100%;
+}
+
+.meals-showcase li {
+  display: block;
+  float: left;
+  width: 25%;
+}
+
+.meal-photo1 {
+  /* this means it has the width of its parent */
+  width: 100%;
+  margin: 0;
+  overflow: hidden;
+  background-color: #000;
+}
+
+.meal-photo2 {
+  /* this means it has the width of its parent */
+  width: 100%;
+  margin: 0;
+  overflow: hidden;
+  background-color: #000;
+}
+
+/* adds opacity/transform/transition */
+.meal-photo2 img {
+  /* opacity color is based off the background-color of container */
+  opacity: 0.7;
+  width: 100%;
+  height: auto;
+
+  -webkit-transform: scale(1.15);
+  -ms-transform: scale(1.15);
+  transform: scale(1.15);
+
+  -webkit-transition: -webkit-transform 0.5s, opacity 0.5s;
+  transition: transform 0.5s, opacity 0.5s;
+}
+
+
+.meal-photo3 {
+  /* this means it has the width of its parent */
+  width: 100%;
+  margin: 0;
+  overflow: hidden;
+  background-color: #000;
+}
+
+/* adds opacity/transform/transition */
+.meal-photo3 img {
+  /* opacity color is based off the background-color of container */
+  opacity: 0.7;
+  width: 100%;
+  height: auto;
+
+  -webkit-transform: scale(1.15);
+  -ms-transform: scale(1.15);
+  transform: scale(1.15);
+
+  -webkit-transition: -webkit-transform 0.5s, opacity 0.5s;
+  transition: transform 0.5s, opacity 0.5s;
+}
+
+.meal-photo3 img:hover {
+  opacity: 1;
+
+  /* scaling to 1 will leave blank space. Add .03 to fill */
+  -webkit-transform: scale(1.03);
+  -ms-transform: scale(1.03);
+  transform: scale(1.03);
+}
+</style>
+    <title>Hover over image to expand and change opacity</title>
+</head>
+
+<body>
+    <a href="../../index.html">Home page</a>
+
+    <section class="container">
+
+
+
+        <div class="row">
+            <div class="col">
+                <h1>Hover over image to exand and change opacity</h1>
+                <p>This example explains the following.</p>
+                <ul>
+                    <li>Set opacity of images.</li>
+                    <li>Hover effect to enlarge them.</li>
+                    <li>Opacity changes on hover.</li>
+                </ul>
+            </div>
+        </div>
+
+
+
+
+        <h2>#1: Add images</h2>
+        <div class="row">
+
+            <div class="col-4">
+                <p>Add 4 images as a horizontal list.</p>
+            </div>
+
+            <div class="col-8">
+                <pre class="example"><span class="code-css">.meals-showcase {
+  list-style: none;
+  width: 100%;
+}
+
+.meals-showcase li {
+  display: block;
+  float: left;
+  width: 25%;
+}
+
+.meal-photo {
+  /* this means it has the width of its parent */
+  width: 100%;
+  margin: 0;
+  /* cuts off excess */
+  overflow: hidden;
+  background-color: #000;
+}</pre>
+                <pre class="example"><span class="code-html">&lt;section class="section-meals"&gt;
+    &lt;ul class="meals-showcase clearfix"&gt;
+        &lt;li&gt;
+            &lt;figure class="meal-photo"&gt;
+                &lt;img src="1.jpg" alt="Korean bibimbap with egg and vegetables"&gt;
+            &lt;/figure&gt;
+        &lt;/li&gt;
+        &lt;li&gt;
+            &lt;figure class="meal-photo"&gt;
+                &lt;img src="2.jpg" alt="Simple italian pizza with cherry tomatoes"&gt;
+            &lt;/figure&gt;
+        &lt;/li&gt;
+        &lt;li&gt;
+            &lt;figure class="meal-photo"&gt;
+                &lt;img src="3.jpg" alt="Chicken breast steak with vegetables"&gt;
+            &lt;/figure&gt;
+        &lt;/li&gt;
+        &lt;li&gt;
+            &lt;figure class="meal-photo"&gt;
+                &lt;img src="4.jpg" alt="Autumn pumpkin soup"&gt;
+            &lt;/figure&gt;
+        &lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/section&gt;</pre>
+            </div>
+        </div>
+
+
+<h3>Example</h3>
+<div class="row">
+
+  <section class="section-meals">
+      <ul class="meals-showcase clearfix">
+          <li>
+              <figure class="meal-photo1">
+                  <img src="1.jpg" alt="Korean bibimbap with egg and vegetables">
+              </figure>
+          </li>
+          <li>
+              <figure class="meal-photo1">
+                  <img src="2.jpg" alt="Simple italian pizza with cherry tomatoes">
+              </figure>
+          </li>
+          <li>
+              <figure class="meal-photo1">
+                  <img src="3.jpg" alt="Chicken breast steak with vegetables">
+              </figure>
+          </li>
+          <li>
+              <figure class="meal-photo1">
+                  <img src="4.jpg" alt="Autumn pumpkin soup">
+              </figure>
+          </li>
+      </ul>
+  </section>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <h2>#2: Add CSSimages</h2>
+            <div class="row">
+
+                <div class="col-4">
+                    <p>Set opacity, width and height.</p>
+                    <p>Scale to expand size of images.</p>
+                    <p>Set a transition property to transition time.</p>
+                </div>
+
+                <div class="col-8">
+<pre class="example"><span class="code-css">/* adds opacity/transform/transition */
+.meal-photo img {
+  /* opacity color is based off the background-color of container */
+  opacity: 0.7;
+  width: 100%;
+  height: auto;
+
+  -webkit-transform: scale(1.15);
+  -ms-transform: scale(1.15);
+  transform: scale(1.15);
+
+  -webkit-transition: -webkit-transform 0.5s, opacity 0.5s;
+  transition: transform 0.5s, opacity 0.5s;
+}</pre>
+
+                </div>
+            </div>
+
+
+    <h3>Example</h3>
+    <div class="row">
+
+          <section class="section-meals">
+              <ul class="meals-showcase clearfix">
+                  <li>
+                      <figure class="meal-photo2">
+                          <img src="1.jpg" alt="Korean bibimbap with egg and vegetables">
+                      </figure>
+                  </li>
+                  <li>
+                      <figure class="meal-photo2">
+                          <img src="2.jpg" alt="Simple italian pizza with cherry tomatoes">
+                      </figure>
+                  </li>
+                  <li>
+                      <figure class="meal-photo2">
+                          <img src="3.jpg" alt="Chicken breast steak with vegetables">
+                      </figure>
+                  </li>
+                  <li>
+                      <figure class="meal-photo2">
+                          <img src="4.jpg" alt="Autumn pumpkin soup">
+                      </figure>
+                  </li>
+              </ul>
+          </section>
+        </div>
+
+
+
+
+
+
+
+
+
+
+                    <h2>#3: Add CSS images</h2>
+                    <div class="row">
+
+                        <div class="col-4">
+                            <p>Set opacity to return to normal.</p>
+                            <p>Scale to expand size of image.</p>
+                        </div>
+
+                        <div class="col-8">
+        <pre class="example"><span class="code-css">.meal-photo img:hover {
+  opacity: 1;
+
+  /* scaling to 1 will leave blank space. Add .03 to fill */
+  -webkit-transform: scale(1.03);
+  -ms-transform: scale(1.03);
+  transform: scale(1.03);
+}</pre>
+                        </div>
+                    </div>
+
+
+            <h3>Example</h3>
+            <div class="row">
+
+                  <section class="section-meals">
+                      <ul class="meals-showcase clearfix">
+                          <li>
+                              <figure class="meal-photo3">
+                                  <img src="1.jpg" alt="Korean bibimbap with egg and vegetables">
+                              </figure>
+                          </li>
+                          <li>
+                              <figure class="meal-photo3">
+                                  <img src="2.jpg" alt="Simple italian pizza with cherry tomatoes">
+                              </figure>
+                          </li>
+                          <li>
+                              <figure class="meal-photo3">
+                                  <img src="3.jpg" alt="Chicken breast steak with vegetables">
+                              </figure>
+                          </li>
+                          <li>
+                              <figure class="meal-photo3">
+                                  <img src="4.jpg" alt="Autumn pumpkin soup">
+                              </figure>
+                          </li>
+                      </ul>
+                  </section>
+                </div>
+
+
+
+    </section>
+
+
+    <script src="../../_js/jquery.js"></script>
+    <script src="../../_js/bootstrap.bundle.js"></script>
+</body>
+
+</html>

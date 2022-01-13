@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>jQuery Course</title>
+    <style>
+        div {
+            margin: 20px;
+        }
+        
+        .one {
+            border: 1px solid black;
+            display: inline-block;
+            padding: 5px;
+            background-color: azure;
+        }
+        
+        .highlight {
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="output">Enter text into field 1. When you click into field 2, the function is run</div>
+
+    <!-- input fields -->
+    <input id="pswa" class="matchField" type="text" />
+    <br />
+    <input id="pswb" class="matchField" type="text" />
+
+    <div id="status"></div>
+
+    <script src="../../_js/jquery-3.4.1.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            // only checking pswb because it's assumed the first field pswa is already filled in
+            // on keyup is triggered, validate function is run
+            $("#pswb").keyup(validate);
+
+            function validate() {
+                // when function is triggered, the 'status' div changes to 'Working'
+                $("#status").text("Working");
+            }
+
+        })
+    </script>
+</body>
+
+</html>

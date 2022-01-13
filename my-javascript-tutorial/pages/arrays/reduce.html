@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" type="text/css" href="../../_css/bootstrap.css">
+  <link rel="stylesheet" type="text/css" href="../../_css/style.css">
+
+  <title>reduce()</title>
+</head>
+
+<body>
+  <a href="../../index.html">Home page</a>
+
+
+
+
+
+
+
+
+
+
+
+  <section class="container">
+
+    <h1>reduce()</h1>
+    <p>Used to boil down all the elements of the original array into one single value. And an example of this can be to
+      add all the elements of an array together.</p>
+    <p>In this way, it has 'reduced' the Array to a single value.</p>
+
+
+    <div class="row">
+
+      <div class="col-6">
+        <p>Calculate sum of all values.</p>
+        <p>reduce() takes 3 params: current Element, Index, Array</p>
+        <p>The first param is called the accumulator.</p>
+        <p>0 is the initial value of the accumulator in the first iteration.</p>
+      </div>
+
+      <div class="col-6">
+<pre class="example"><span class="code-js">const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+
+// calculate sum of all values
+const balance = movements.reduce(function (acc, cur, i, arr) {
+  // loop of Array
+  return acc + cur
+}, 0);
+console.log(balance)</span></pre>
+      </div>
+    </div>
+
+
+  </section>
+
+
+
+
+
+
+
+  <script>
+    const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+
+    // calculate sum of all values
+    const balance = movements.reduce(function (acc, cur, i, arr) {
+      // loop of Array
+      return acc + cur
+}, 0);
+console.log(balance)
+  </script>
+</body>
+
+</html>

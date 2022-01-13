@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="../../_css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../../_css/style.css">
+    <title>Filters</title>
+</head>
+
+<body>
+    <section class="container">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb breadcrumb-container">
+                <li class="breadcrumb-item"><a class="breadcrumb-link" href="../../index.html">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Filters</li>
+            </ol>
+        </nav>
+
+
+        <h1>:has </h1>
+        <p>Target all divs that contain a p</p>
+
+<pre class="example"><span class="code-html">&lt;div&gt;
+&lt;p class="testClass"&gt;I am the only p surrounded by a div&lt;/p&gt;
+&lt;/div&gt;
+&lt;p class="testingClass"&gt;p with class named 'testingClass'&lt;/p&gt;
+&lt;p class="classTest"&gt;p with class named 'classTest'&lt;/p&gt;
+&lt;button id="btn1"&gt;Click me&lt;/button&gt;</span>
+
+<span class="code-js">$("#btn1").click(function() {
+  $("div:has(p)").css({
+    'border': '1px solid red'
+  });
+});</span></pre>
+
+        <h3>Example</h3>
+<div>
+<p class="testClass">I am the only p surrounded by a div</p>
+</div>
+<p class="testingClass">p with class named 'testingClass'</p>
+<p class="classTest">p with class named 'classTest'</p>
+<button id="btn1">Click me</button>
+
+
+
+
+
+    </section>
+    <script src="../../_js/jquery-3.4.1.min.js"></script>
+    <script>
+
+    $("#btn1").click(function() {
+        $("div:has(p)").css({
+            'border': '1px solid red'
+        });
+    });
+
+    </script>
+</body>
+
+</html>

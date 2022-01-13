@@ -1,0 +1,396 @@
+/* CSS variables. Place these in :root pseudo element 
+You can then use them using the var() property as shown below */
+
+ :root {
+    --color-nodejs: #64de64;
+    --shadow-dark: 0 2rem 6rem rgba(0, 0, 0, 0.3);
+    --line: 1px solid var(--color-grey-light-2)
+}
+
+
+/* General Sass media query sizes */
+
+
+/* 
+$bp-largest: 75em; // 1200px
+$bp-large: 68.75em; // 1100px
+$bp-medium: 56.25em; // 900px
+$bp-small: 37.5em; // 600px
+$bp-smallest: 31.25em; // 500px */
+
+
+/* universal selector, selects all elements on page */
+
+* {
+    /* removes margins and padding from all elements 
+                    like headers and paragraphs*/
+    margin: 0;
+    padding: 0;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+html {
+    /* changes box model so borders and padding are not added to 
+                    total width or heigh specified for that box*/
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    /* make it easier to use rems 
+    1rem = 10px, 10px/16px = 62.5%*/
+    /* font-size: 62.5%; */
+    font-size: 17px;
+}
+
+body {
+    padding: 1rem 4rem;
+    font-family: 'Lora', serif;
+    font-weight: 400;
+    line-height: 2;
+    background-color: #1f2833;
+    color: #c5c6c7;
+    /* gradient, comma, then image */
+    background-image: linear-gradient(to right bottom, rgba(64, 64, 64, 0.9), rgba(0, 0, 0, 0.9)), url(../_img/terminals.png);
+    /* takes up full width of viewport */
+    background-size: cover;
+    /* top of image will always stay at top of screen when resizing */
+    background-position: top;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+
+/* 
+@media only screen and (max-width: 1800px) {
+    body {
+        padding: 1rem 18rem;
+    }
+}
+
+@media only screen and (max-width: 1500px) {
+    body {
+        padding: 1rem 10rem;
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+    body {
+        padding: 1rem 3rem;
+    }
+} */
+
+#homepage-header-container {
+    display: flex;
+    justify-content: space-between;
+    height: 20%;
+    background: linear-gradient(to bottom right, transparent 10%, rgb(0, 0, 0) 50%, transparent 90%);
+}
+
+#logo-container {
+    width: 20%;
+}
+
+#logo-img {
+    /* height: auto; */
+    width: 100%;
+}
+
+#header-text {
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    flex-basis: 80%;
+    color: #3ee052;
+    font-size: 5rem;
+}
+
+.homepage-title-container {
+    position: relative;
+    margin-top: 2rem;
+    text-align: center;
+    background: linear-gradient(to right, transparent 15%, rgba(111, 111, 111, .4) 50%, transparent 85%);
+}
+
+.homepage-title {
+    margin-top: 3rem;
+    font-size: 5.5rem;
+    /* font-family: 'Cormorant SC', cursive; */
+    padding-bottom: 1rem;
+    letter-spacing: 2px;
+    display: inline;
+    background-image: linear-gradient(to top, #5e6060, #61dafb);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+
+/*___________________________________________________
+Headers
+___________________________________________________*/
+
+h1 {
+    margin-top: 3rem;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #776a6a;
+    font-size: 4rem;
+    background: linear-gradient(to bottom, #64de64 0%, #2f8c00 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+h2 {
+    /* margin-top: 20px; */
+    border-bottom: 2px solid #776a6a;
+    font-size: 2.2rem;
+    background: linear-gradient(to bottom, #daf6ff 0%, #0074c9 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+}
+
+h3 {
+    margin-top: 1rem;
+    font-size: 1.7rem;
+    background: linear-gradient(to bottom, #ffffff 0%, #9100ff 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+h4 {
+    margin-top: 2rem;
+    font-size: 1.4rem;
+    background: linear-gradient(to bottom, #ffffff 0%, #ff0000 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+h5 {
+    margin-top: 2rem;
+    font-size: 1.2rem;
+    background: linear-gradient(to bottom, #ffffff 0%, #817458 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+
+/*___________________________________________________
+Links
+___________________________________________________*/
+
+a:link {
+    color: #5cc2ff;
+}
+
+a:hover {
+    color: #f45b00;
+}
+
+a:active {
+    color: #0071ff;
+}
+
+a:visited {
+    color: #ab85ff;
+}
+
+
+/*___________________________________________________
+NavBar
+___________________________________________________*/
+
+.navbar {
+    display: flex;
+    background-color: rgba(0, 0, 0, 1);
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1030;
+    padding-left: 4rem;
+}
+
+.navbar a {
+    float: left;
+    /* display: block; */
+    color: #f2f2f2;
+    /* text-align: center; */
+    padding: 14px 16px;
+    text-decoration: none;
+    /* font-size: 17px; */
+    /* transition: color 2s; */
+}
+
+.navbar a:hover {
+    color: rgb(111, 150, 255);
+}
+
+.nav-page::before {
+    content: ">";
+    margin-right: .5rem;
+    margin-left: -1rem;
+}
+
+.navbar .nav-active {
+    color: rgb(0 243 255);
+}
+
+
+/*___________________________________________________
+Lists
+___________________________________________________*/
+
+ul {
+    margin: .5rem 0 1rem 2rem;
+}
+
+ol {
+    margin: .5rem 0 1rem 1rem;
+}
+
+
+/*___________________________________________________
+Code Section
+___________________________________________________*/
+
+
+/* Used for text only sections. NO CODE. */
+
+.text-section {
+    padding: 1rem;
+    margin-bottom: 2rem;
+    background-color: rgba(25, 25, 25, .5);
+    color: #b0cad4;
+}
+
+.code-section-container {
+    display: flex;
+    padding: 1rem;
+    margin-bottom: 2rem;
+    background-color: rgba(25, 25, 25, .5);
+    color: #b0cad4;
+    /* border: 1px solid red; */
+    justify-content: space-between;
+    /* font-size: 15px; */
+}
+
+.code-output-container {
+    display: flex;
+    padding: 1rem;
+    margin-bottom: 2rem;
+    background-color: rgba(25, 25, 25, .5);
+    color: #b0cad4;
+    /* border: 1px solid red; */
+    justify-content: space-between
+}
+
+.code-text-section {}
+
+.code-block-section-w60 {
+    min-width: 500px;
+    flex-shrink: 0;
+    flex-basis: 60%;
+    line-height: 18px;
+}
+
+.code-block-section-w100 {
+    min-width: 500px;
+    flex-shrink: 0;
+    flex-basis: 100%;
+    line-height: 18px;
+}
+
+.example {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 1rem;
+    overflow: auto;
+}
+
+
+/*___________________________________________________
+Code Examples
+___________________________________________________*/
+
+.code-html {
+    color: #fcb46c;
+    ;
+}
+
+.code-css {
+    color: #ffe500;
+}
+
+.code-js {
+    color: #ff6f6f;
+}
+
+.code-react {
+    color: #61dafb;
+}
+
+.code-nodejs {
+    color: #64de64;
+    /* font-size: .9rem; */
+}
+
+.code-comment {
+    color: gray;
+    /* font-size: .9rem; */
+}
+
+.code-output {
+    color: #9c9c9c;
+    /* font-size: 1rem; */
+}
+
+.code-highlight {
+    font-weight: bolder;
+    /* font-size: 1rem; */
+    color: #00ff93;
+    ;
+}
+
+.code-keyboard {
+    color: #c2c0c0;
+}
+
+.code {
+    font-family: monospace, sans-serif;
+    font-weight: 400;
+    color: #b2cdff;
+    background-color: #000;
+    border: 1px solid #b2cdff;
+    border-radius: 2px;
+    padding: 1px 4px;
+    white-space: nowrap;
+}
+
+.text-object {
+    color: #fff;
+    /* font-size: 1.1rem; */
+}
+
+
+/*___________________________________________________
+Note Boxes
+___________________________________________________*/
+
+.notebox-note {
+    border: 1px solid #00236f;
+    padding: .5rem;
+    margin: 1rem 0;
+    box-shadow: 1px 1px 21px 1px #698cff inset;
+    color: #9edbff;
+    display: inline-block;
+}
+
+.notebox-warning {
+    border: 1px solid #910000;
+    padding: .5rem;
+    margin: 1rem 0;
+    box-shadow: 1px 1px 21px 1px #b10000 inset;
+    color: #feb8b8;
+    display: inline-block;
+}

@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <style>
+    *,
+    *::after,
+    *::before {
+      margin: 0;
+      padding: 0;
+      box-sizing: inherit
+    }
+
+    html {
+      font-size: 62.5%
+    }
+
+    body {
+      box-sizing: border-box;
+      padding: 3rem
+    }
+
+    .row {
+    max-width: 114rem;
+    margin: 0 auto
+}
+
+    .story {
+      width: 75%;
+      margin: 0 auto;
+      box-shadow: 0 3rem 6rem rgba(0, 0, 0, 0.1);
+      background-color: rgba(255, 255, 255, 0.6);
+      border-radius: 3px;
+      padding: 6rem;
+      padding-left: 9rem;
+      font-size: 1.6rem;
+    }
+
+    .story__shape {
+      width: 15rem;
+      height: 15rem;
+      float: left;
+      background-color: orangered;
+      /* use shape-outside to define WHERE content should flow around element */
+      /* this doesn't actually change the shape of the element */
+      /* make text float around shape (whatever the shape may be) */
+      /* element must be floated and have width and height */
+      /* 1st # is radius of circle
+      2nd and 3rd values are vertical and horizontal */
+      -webkit-shape-outside: circle(50% at 50% 50%);
+      shape-outside: circle(50% at 50% 50%);
+      /* clip content into a circle */
+      /* this is what changes the shape of the element */
+      -webkit-clip-path: circle(50% at 50% 50%);
+      clip-path: circle(50% at 50% 50%);
+        /* skew back 12deg since section is skewed -12deg */
+        transform: translateX(-3rem);
+        /* position: relative; */
+        /* cuts out overflowed image */
+        /* overflow: hidden; */
+    }
+
+ 
+  </style>
+  <title>Float text around image</title>
+</head>
+
+<body>
+  <a href="../../../index.html">Home page</a>
+
+
+
+
+  <div class="row">
+    <div class="story">
+
+      <figure class="story__shape">
+        <img class="story__img" src="###" alt="person on a tour">
+        <figcaption class="story__caption">
+          Mary Smith
+        </figcaption>
+      </figure>
+
+      <div class="story__text">
+        <h3 class="heading-tertiary u-margin-bottom-small">I had the best week ever with my family</h3>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis, est ipsum. Praesentium, consectetur,
+          rem. In minus, ut suscipit facere provident autem sapiente magnam delectus quis est labore velit repellendus
+          aperiam.
+        </p>
+      </div>
+
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>

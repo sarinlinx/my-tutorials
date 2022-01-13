@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <!-- Needed for responsive web design. Says website should be rendered with width of device -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <!-- <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900" rel="stylesheet"> -->
+
+  <!-- <link rel="stylesheet" href="css/icon-font.css"> -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="shortcut icon" type="image/png" href="img/favicon.png">
+
+  <style>
+    *,
+    *::after,
+    *::before {
+      margin: 0;
+      padding: 0;
+      box-sizing: inherit;
+    }
+
+    html {
+      font-size: 62.5%;
+    }
+
+    body {
+      box-sizing: border-box;
+      padding: 3rem;
+    }
+
+    /* FRONT SIDE STYLING */
+    .card10 {
+      perspective: 150rem;
+      -moz-perspective: 150rem;
+      position: relative;
+      height: 52rem;
+    }
+
+    .card10__side {
+      height: 52rem;
+      transition: all .8s ease;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 33%;
+      overflow: hidden;
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+      border-radius: 3px;
+      box-shadow: 20px 20px 50px 15px rgba(1, 1, 1, .15);
+    }
+
+    .card10__side--front {
+      background-color: #fff;
+    }
+
+    .card10__side--back {
+      transform: rotateY(180deg);
+    }
+
+    .card10__side--back--1 {
+      background-image: linear-gradient(to right bottom, #ffb900, #ff7730);
+    }
+
+    .card10:hover .card10__side--front {
+      transform: rotateY(-180deg);
+    }
+
+    .card10:hover .card10__side--back {
+      transform: rotateY(0);
+    }
+
+
+    .card10__picture {
+      background-size: cover;
+      height: 23rem;
+      background-blend-mode: screen;
+      -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+      clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+      /* must manually set border-radius since overflow hidden on &__side is broken when clip-path is used */
+      /* QUESTION: Didn't this work for the first card? or was that before clip-path was used?  */
+      /* border-top-left-radius: 3px; */
+      /* border-top-right-radius: 3px; */
+    }
+
+    .card10__picture--1 {
+      background-image: linear-gradient(to right bottom, #ffb900, #ff7730), url(nat-5.jpg);
+    }
+
+
+        .card10__heading {
+    font-size: 2.8rem;
+        font-weight: 300;
+        text-transform: uppercase;
+        text-align: right;
+        color: #fff;
+        /* layer over background image */
+        position: absolute;
+        top: 12rem;
+        right: 2rem;
+        /* make more narrow so the text box stays within the card box */
+        width: 75%;
+    }
+
+  
+    .card10__heading-span {
+        /* this breaks text into two lines */
+        padding: 1rem 1.5rem;
+        /* this treats broken text as different elements */
+        /* applies all declarations to all boxes created by an element both styled the same */
+        /* this helps in this example to make the padding the same for both lines of text */
+        -webkit-box-decoration-break: clone;
+        box-decoration-break: clone;
+    }
+
+    .card10__heading-span--1 {
+      background-image: linear-gradient(to right bottom, rgba(255, 185, 0, 0.75), rgba(255, 119, 48, 0.75));
+    }
+
+
+
+    .card10__details {
+      padding: 3rem;
+    }
+
+    .card10__details ul {
+      list-style: none;
+      width: 80%;
+      /* center block element inside block element */
+      margin: 0 auto;
+    }
+
+    .card10__details ul li {
+      text-align: center;
+      font-size: 1.5rem;
+      padding: 1rem;
+    }
+
+    .card10__details ul li:not(:last-child) {
+      /* no padding on bottom list item */
+      border-bottom: 1px solid #eee;
+    }
+  </style>
+
+  <title>Flip cards example</title>
+</head>
+
+<body>
+
+
+
+
+
+
+
+
+  <div class="card10">
+    <div class="card10__side card10__side--front">
+      <div class="card10__picture card10__picture--1">&nbsp;</div>
+
+      <h4 class="card10__heading">
+        <span class="card10__heading-span card10__heading-span--1">The Sea Explorer</span>
+      </h4>
+
+      <div class="card10__details">
+<ul>
+  <li>3 day tour</li>
+  <li>Up to 30 people </li>
+  <li>2 tour guides</li>
+  <li>Sleep in cozy hotels</li>
+  <li>Difficulty: easy</li>
+</ul>
+
+      </div>
+
+    </div>
+
+    <div class="card10__side card10__side--back card10__side--back--1">
+      <h4>BACK</h4>
+    </div>
+  </div>
+
+
+
+
+
+</body>
+
+
+</html>

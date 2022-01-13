@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="../../_css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../../_css/style.css">
+    <title>The NOT selector</title>
+</head>
+
+<body>
+    <section class="container">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb breadcrumb-container">
+                <li class="breadcrumb-item"><a class="breadcrumb-link" href="../../index.html">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">The NOT selector</li>
+            </ol>
+        </nav>
+
+
+
+        <h1>The NOT != selector</h1>
+        <p>Use the != NOT selector to check if a given value does NOT belong</p>
+        <p>This selects all paragraphs that do NOT contain the class named 'className'</p>
+
+
+<pre class="example"><span class="code-html">&lt;h3&gt;Example&lt;/h3&gt;
+&lt;p class="className"&gt;This paragraph has a class named 'className'&lt;/p&gt;
+&lt;p&gt;This one does not&lt;/p&gt;
+
+&lt;button id="btn1"&gt;Click me&lt;/button&gt;</span>
+
+<span class="code-js">$("#btn1").click(function() {
+  $("p[class!='className']").css({
+      'border': '1px solid red'
+  });
+});</span></pre>
+
+        <h3>Example</h3>
+        <p class="className">This paragraph has a class named 'className'</p>
+        <p>This one does not</p>
+
+        <button id="btn1">Click me</button>
+
+
+
+
+
+
+    </section>
+    <script src="../../_js/jquery-3.4.1.min.js"></script>
+    <script>
+        $("#btn1").click(function() {
+            $("p[class!='className']").css({
+                'border': '1px solid red'
+            });
+        });
+    </script>
+</body>
+
+</html>

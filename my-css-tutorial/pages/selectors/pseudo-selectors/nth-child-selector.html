@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="../../../_css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../../../_css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <title>nth child selector</title>
+</head>
+
+<body>
+    <a href="../../../index.html">Home page</a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <section class="container">
+        <h1 class="heading-emphasis">nth child selector</h1>
+        <div class="row">
+            <div class="col">
+                <p>The nth child selector allows you to select one or more child elements based on the order within the parent container. You can do this in 3 ways:</p>
+                <ul>
+                    <li>keyword - odd or even</li>
+                    <li>number of element</li>
+                    <li>using a formula</li>
+                </ul>
+            </div>
+        </div>
+
+
+        <h2>Keywords</h2>
+        <div class="row">
+            <div class="col-6">
+                <p>Use the keyword 'odd' or 'even' to select elements. This is good for tables.</p>
+            </div>
+            <div class="col-6">
+                <pre class="example"><span class="code-html">&lt;table class="mytable"&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Row one. Odd row so it's colored.&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Row two. Even row so it's NOT colored.&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Row three. Odd row so it's colored.&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Row four. Even row so it's NOT colored.&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;</span>
+
+<span class="code-css">.mytable tr:nth-child(odd) {
+  background-color: gray;
+}</span>
+
+    <table class="nthrow-table">
+      <tr>
+        <td>Row one. Odd row so it's colored.</td>
+      </tr>
+      <tr>
+        <td>Row two. Even row so it's NOT colored.</td>
+      </tr>
+      <tr>
+        <td>Row three. Odd row so it's colored.</td>
+      </tr>
+      <tr>
+        <td>Row four. Even row so it's NOT colored.</td>
+      </tr>
+    </table>
+    </pre>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="container">
+        <h2>Using a number</h2>
+        <div class="row">
+            <div class="col-6">
+                <p>You can also use a number to select a specific element.</p>
+            </div>
+            <div class="col-6">
+                <pre class="example"><span class="code-html">&lt;table class="mytable"&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Row one. Odd row so it's colored.&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Row two. Even row so it's NOT colored.&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Row three. Odd row so it's colored.&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Row four. Even row so it's NOT colored.&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;</span>
+
+<span class="code-css">.mytable tr:nth-child(3) {
+  background-color: gray;
+}</span>
+
+    <table class="nthrow-table-number">
+      <tr>
+        <td>Row one. Not colored.</td>
+      </tr>
+      <tr>
+        <td>Row two. Not colored.</td>
+      </tr>
+      <tr>
+        <td>Row three is colored since it's the value specified.</td>
+      </tr>
+      <tr>
+        <td>Row four. Not colored.</td>
+      </tr>
+    </table>
+    </pre>
+            </div>
+        </div>
+    </section>
+
+
+
+    <section class="container">
+        <h2 class="heading-emphasis">Using a formula</h2>
+        <div class="row">
+            <div class="col-6">
+                <p class="red">LOOK THIS UP</p>
+                <p>You can use a formula to specify the element.</p>
+                <p>This uses the formula 'an + b'.</p>
+            </div>
+            <div class="col-6">
+                <pre class="example"><span class="code-html">&lt;table class="mytable"&gt;
+  &lt;tr&gt;
+    &lt;td&gt;look this up&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;look this up&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;look this up&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;look this up&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;</span>
+
+<span class="code-css">.mytable tr:nth-child(3n + 2) {
+  background-color: gray;
+}</span>
+
+<table class="nthrow-table-number">
+  <tr>
+    <td>look this up.............</td>
+    </tr>
+  <tr>
+  <td>look this up.............</td>
+    </tr>
+  <tr>
+    <td>look this up.............</td>
+  </tr>
+  <tr>
+    <td>look this up.............</td>
+  </tr>
+</table>
+    </pre>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+    <section class="container">
+        <div class="row">
+            <div class="col">
+                <h2 class="heading-emphasis">nth-of-type</h2>
+                <p>You can use the same methods on nth-of-type. This is similar to first-of-type and last-of-type mentioned above.</p>
+                <p class="red">redo examples above for nth-of-type</p>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
+    <script src="../../_js/jquery.js"></script>
+    <script src="../../_js/bootstrap.bundle.js"></script>
+</body>
+
+</html>

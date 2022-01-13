@@ -1,0 +1,139 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>jQuery Course</title>
+    <style>
+        div {
+            margin: 20px;
+        }
+        
+        .one {
+            border: 1px solid black;
+            display: inline-block;
+            padding: 5px;
+            background-color: azure;
+        }
+        
+        .highlight {
+            background-color: red;
+        }
+        
+        #output {
+            background-color: yellow;
+            border: 2px solid black;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="output">Select a dropdown option and view the full object in the console.log</div>
+
+    <input id="pswa" class="matchField" type="text" />
+    <br />
+    <input id="pswb" class="matchField" type="text" />
+    <div id="status"></div>
+
+    <div id="myForm">
+
+        <input type="radio" value="Yes" name="myRadio">Yes
+        <input type="radio" value="No" name="myRadio" checked>No
+        <br>
+
+        <input type="checkbox" value="send data" name="myCheck1" id="myCheck1"> Check Me
+        <br>
+        <input type="checkbox" value="send data 2" name="myCheck2" id="myCheck2" checked> Hide or Show Output Div
+        <br> Select one
+
+        <select>
+      <option value="option1" selected="selected">Option 1</option>
+      <option value="option2">Option 2</option>
+      <option value="option3">Option 3</option>
+      <option value="option4">Option 4</option>
+    </select>
+    </div>
+
+    <div class="one"><a href="#" id="myClicker">Click me</a></div>
+    <input type="text" value="TEST" id="myA" placeholder="name">
+
+    <BR>
+    <BR>
+
+
+
+
+    <script src="../../_js/jquery-3.4.1.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+
+            // watch for click for checkbox 1
+            $("#myCheck1").on("change", function() {
+                console.log($(this));
+                // if it's checked
+                if ($(this).prop("checked")) {
+                    // creates popup
+                    var sure = confirm("Are you sure?");
+                    this.checked = sure;
+                }
+                // displays 'checked' div in HTML
+                $("#output").html("Checked");
+            });
+
+            // add another event listener for 2nd checkbox
+            $("#myCheck2").change(function() {
+                // if it's checked
+                if (this.checked) {
+                    // use 'show' to display
+                    $("#output").show();
+                } else {
+                    $("#output").hide();
+                }
+            });
+
+
+
+
+
+
+            $("#myClicker").click(function(e) {
+                // prevent hyperlink default
+                e.preventDefault();
+                // get value of HTML field
+                myAjax($("#myA").val());
+            })
+
+            //Ajax call
+            function myAjax(a) {
+                // newdata contains value from #myA 'value' field
+                var newdata = {
+                    name: a
+                }
+                $.ajax({
+                    url: "ajax.php",
+                    type: "POST",
+                    data: newdata,
+                    success: function(data, status, xhr) {
+                        console.log(xhr.responseText);
+                        $("#output").html(xhr.responseText);
+                    },
+                    error: function(data, status, xhr) {
+                        console.log(xhr);
+                    }
+                })
+            }
+
+            $("#myForm select").change(function() {
+                // console.log and print to HTML when there's a change
+                console.log($(this).val());
+                myAjax($("#myA").val());
+                $("#output").text("Selected");
+            })
+
+
+        })
+    </script>
+</body>
+
+</html>

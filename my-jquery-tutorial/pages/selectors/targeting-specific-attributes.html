@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="../../_css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../../_css/style.css">
+    <title>Targeting specific attributes</title>
+</head>
+
+<body>
+    <section class="container">
+      <nav aria-label="breadcrumb">
+          <ol class="breadcrumb breadcrumb-container">
+              <li class="breadcrumb-item"><a class="breadcrumb-link" href="../../index.html">Home</a></li>
+              <li class="breadcrumb-item active" aria-current="page">Targeting specific attributes</li>
+          </ol>
+      </nav>
+
+
+              <h1>Target all elements that contain a specific attribute</h1>
+              <p>You can target all elements that contain a specific attribute using []</p>
+              <p>For example, to target all paragraphs that have a class assigned to them use <span class="standout">p[class]</span>.</p>
+
+              <pre class="example"><span class="code-html">&lt;p class="class1"&gt;I'm a paragraph with a class&lt;/p&gt;
+      &lt;p class="class2"&gt;Me too!&lt;/p&gt;
+      &lt;p&gt;I don't have a class&lt;/p&gt;</span>
+
+      <span class="code-js">$('p[class]').css({'border': '1px solid red'});</span></pre>
+
+              <h3>Example</h3>
+              <p class="class1">I'm a paragraph with a class</p>
+              <p class="class2">Me too!</p>
+              <p>I don't have a class</p>
+
+
+
+              <h1>Target all elements that contain a specific attribute and name</h1>
+              <p>This targets a specific attribute with a specific name</p>
+              <p>Notice how the paragraph with a class of 'class4' does not show.</p>
+              <div class="alert alert-note">
+                  <div class="alert-icon">
+                      <img src="../../_img/icons/note-icon.png" width="60" height="60">
+                  </div>
+                  <div class="alert-content">
+                      <p>You MUST USE double quotes to surround the element and class names. For example</p>
+                      <ul>
+                          Yes
+                          <li><span class="code-js">$("p[class='class4']").hide();</span></li>
+                          No
+                          <li><span class="code-js">$('p[class='class4']').hide();</span></li>
+                      </ul>
+                      <p>It will not work if you use single quotes.</p>
+                  </div>
+              </div>
+
+              <pre class="example"><span class="code-html">&lt;p class="class3"&gt;I'm a paragraph with a class&lt;/p&gt;
+      &lt;p class="class4"&gt;Me too!&lt;/p&gt;
+      &lt;p&gt;I don't have a class&lt;/p&gt;</span>
+
+      <span class="code-js">$("p[class='class4']").hide();</span></pre>
+
+              <h3>Example</h3>
+              <p class="class3">I'm a paragraph with a class</p>
+              <p class="class4">Me too!</p>
+              <p>I don't have a class</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+              <h1>Target all elements that contain an attribute of target='_blank'</h1>
+              <p>Selects all <a> elements with a target attribute value equal to "_blank"</p>
+
+
+<pre class="example"><span class="code-html">&lt;p&gt;This is a paragraph.&lt;/p&gt;
+&lt;p&gt;This is another paragraph.&lt;/p&gt;
+&lt;p&gt;&lt;a href="#" target="_blank"&gt;This link has a target="_blank" attribute&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="#"&gt;This is a normal link&lt;/a&gt;&lt;/p&gt;
+
+&lt;button id="btn1"&gt;Click me&lt;/button&gt;</span>
+
+<span class="code-js">$("#btn1").click(function(){
+  $("a[target='_blank']").css('color', 'red');
+});</span></pre>
+
+              <h3>Example</h3>
+              <p>This is a paragraph.</p>
+              <p>This is another paragraph.</p>
+              <p><a href="#" target="_blank">This link has a target="_blank" attribute</a></p>
+              <p><a href="#">This is a normal link</a></p>
+
+              <button id="btn1">Click me</button>
+
+
+
+
+
+
+
+
+
+
+    </section><script src="../../_js/jquery-3.4.1.min.js"></script>
+    <script>
+    $('p[class]').css({
+        'border': '1px solid red'
+    });
+    $("p[class='class4']").hide();
+
+    $("#btn1").click(function(){
+   $("a[target='_blank']").css('color', 'red');
+ });
+    </script>
+</body>
+
+</html>

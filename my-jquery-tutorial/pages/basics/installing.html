@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="../../_css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../../_css/style.css">
+    <title>Installing</title>
+</head>
+
+<body>
+    <section class="container">
+      <nav aria-label="breadcrumb">
+          <ol class="breadcrumb breadcrumb-container">
+              <li class="breadcrumb-item"><a class="breadcrumb-link" href="../../index.html">Home</a></li>
+              <li class="breadcrumb-item active" aria-current="page">Installing</li>
+          </ol>
+      </nav>
+
+
+
+<h1>Manually Installing</h1>
+<h2>Download the files</h2>
+<p>Download the jQuery files at:</p>
+<ul><li><a href="https://jquery.com/download/" target="_blank">jquery.com/download</a></li></ul>
+<p>On that page, download the compressed version link.</p>
+<ul><li><a href="https://code.jquery.com/jquery-3.4.1.min.js" target="_blank">code.jquery.com/jquery-3.4.1.min.js</a></li></ul>
+
+<h2>Add the script to your website</h2>
+<p>Add a line to link the jQuery file just above the closing &lt;body&gt; tag.</p>
+
+<pre class="example">
+<span class="code-js">&lt;script src="../_js/jquery-3.4.1.min.js"&gt;&lt;/script&gt;</span>
+</pre>
+<p>Order matters! Make sure the call to the jquery file is before any other js files that require jQuery to function.</p>
+
+
+<h1>Linking to a CDN</h1>
+<p>You can also enable jQuery by linking to a CDN. One big advantage of using the hosted jQuery from Google or Microsoft is that many users already have downloaded jQuery from Google or Microsoft when visiting another site. As a result, it will be loaded from cache when they visit your site, which leads to faster loading time. Also, most CDN's will make sure that once a user requests a file from it, it will be served from the server closest to them, which also leads to faster loading time.</p>
+
+<h2>Linking from Google</h2>
+<pre class="example">
+<span class="code-html">&lt;head&gt;
+&lt;script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"&gt;&lt;/script&gt;
+&lt;/head&gt; </span>
+</pre>
+
+<h2>Linking from Microsoft</h2>
+<pre class="example">
+<span class="code-html">&lt;head&gt;
+&lt;script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"&gt;&lt;/script&gt;
+&lt;/head&gt; </span>
+</pre>
+
+
+
+
+    </section><script src="_js/jquery-3.4.1.min.js"></script>
+</body>
+
+</html>

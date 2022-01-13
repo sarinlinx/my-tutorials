@@ -1,0 +1,167 @@
+<html>
+
+<head>
+    <title>Button changing text</title>
+</head>
+<style>
+     :root {
+        --color-primary: #eb2f64;
+        --color-primary-light: #FF3366;
+        --color-primary-dark: #BA265D;
+        --color-grey-light-1: #faf9f9;
+        --color-grey-light-2: #f4f2f2;
+        --color-grey-light-3: #f0eeee;
+        --color-grey-light-4: #ccc;
+        --color-grey-dark-1: #333;
+        --color-grey-dark-2: #777;
+        --color-grey-dark-3: #999;
+        --shadow-dark: 0 2rem 6rem rgba(0, 0, 0, 0.3);
+        --shadow-light: 0 2rem 5rem rgba(0, 0, 0, 0.06);
+        --line: 1px solid var(--color-grey-light-2);
+    }
+    
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    
+    *,
+    *::before,
+    *::after {
+        -webkit-box-sizing: inherit;
+        box-sizing: inherit;
+    }
+    
+    html {
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        font-size: 62.5%;
+    }
+    
+    @media only screen and (max-width: 68.75em) {
+        html {
+            font-size: 50%;
+        }
+    }
+    
+    body {
+        font-family: 'Open Sans', sans-serif;
+        font-weight: 400;
+        line-height: 1.6;
+        color: var(--color-grey-dark-2);
+        background-image: -webkit-gradient(linear, left top, right bottom, from(var(--color-primary-light)), to(var(--color-primary-dark)));
+        background-image: linear-gradient(to right bottom, var(--color-primary-light), var(--color-primary-dark));
+        background-size: cover;
+        background-repeat: no-repeat;
+        min-height: 100vh;
+    }
+    
+    .container {
+        /* so container can decrease if there's not enough space */
+        max-width: 120rem;
+        /* Center container within body */
+        margin: 8rem auto;
+        background-color: var(--color-grey-light-1);
+        -webkit-box-shadow: var(--shadow-dark);
+        box-shadow: var(--shadow-dark);
+        /* for testing purposes */
+        min-height: 50rem;
+    }
+    
+    .hotel-view {
+        background-color: #fff;
+        /* flex: 1 to occupy the full width that remains for this section */
+        -webkit-box-flex: 1;
+        -ms-flex: 1;
+        flex: 1;
+    }
+    
+    .cta {
+        padding: 3.5rem 0;
+        text-align: center;
+    }
+    
+    @media only screen and (max-width: 56.25em) {
+        .cta {
+            padding: 2.5rem 0;
+        }
+    }
+    
+    .cta__book-now {
+        font-size: 2rem;
+        font-weight: 300;
+        text-transform: uppercase;
+        margin-bottom: 2.5rem;
+    }
+    
+    .btn {
+        font-size: 1.5rem;
+        font-weight: 300;
+        text-transform: uppercase;
+        border-radius: 100px;
+        border: none;
+        background-image: -webkit-gradient(linear, left top, right top, from(var(--color-primary-light)), to(var(--color-primary-dark)));
+        background-image: linear-gradient(to right, var(--color-primary-light), var(--color-primary-dark));
+        color: #fff;
+        position: relative;
+        overflow: hidden;
+        cursor: pointer;
+    }
+    
+    .btn>* {
+        display: inline-block;
+        height: 100%;
+        width: 100%;
+        -webkit-transition: all .2s;
+        transition: all .2s;
+    }
+    
+    .btn__visible {
+        padding: 2rem 7.5rem;
+    }
+    
+    .btn__invisible {
+        position: absolute;
+        padding: 2rem 0;
+        left: 0;
+        top: -100%;
+    }
+    
+    .btn:hover {
+        background-image: -webkit-gradient(linear, right top, left top, from(var(--color-primary-light)), to(var(--color-primary-dark)));
+        background-image: linear-gradient(to left, var(--color-primary-light), var(--color-primary-dark));
+    }
+    
+    .btn:hover .btn__visible {
+        -webkit-transform: translateY(100%);
+        transform: translateY(100%);
+    }
+    
+    .btn:hover .btn__invisible {
+        top: 0;
+    }
+</style>
+
+<body>
+
+
+
+
+    <div class="container">
+        <div class="hotel-view">
+            <div class="cta">
+
+                <button class="btn">
+    <span class="btn__visible">Book now</span>
+    <span class="btn__invisible">Only 4 rooms left</span>
+  </button>
+            </div>
+        </div>
+    </div>
+
+
+
+
+</body>
+
+</html>

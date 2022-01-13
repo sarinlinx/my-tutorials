@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <!-- Needed for responsive web design. Says website should be rendered with width of device -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <!-- <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900" rel="stylesheet"> -->
+
+  <!-- <link rel="stylesheet" href="css/icon-font.css"> -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="shortcut icon" type="image/png" href="img/favicon.png">
+
+  <style>
+    *,
+    *::after,
+    *::before {
+      margin: 0;
+      padding: 0;
+      box-sizing: inherit;
+    }
+
+    html {
+      font-size: 62.5%;
+    }
+
+    body {
+      box-sizing: border-box;
+      padding: 3rem;
+    }
+
+    /* FRONT SIDE STYLING */
+    .card8 {
+      perspective: 150rem;
+      -moz-perspective: 150rem;
+      position: relative;
+      height: 52rem;
+    }
+
+    .card8__side {
+      height: 52rem;
+      transition: all .8s ease;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 33%;
+      /* This does not allow the image to overflow the rounded card container */
+      overflow: hidden;
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+      border-radius: 3px;
+      box-shadow: 20px 20px 50px 15px rgba(1, 1, 1, .15);
+    }
+
+    .card8__side--front {
+      background-color: #fff;
+    }
+
+    .card8__side--back {
+      transform: rotateY(180deg);
+    }
+
+    .card8__side--back--1 {
+      background-image: linear-gradient(to right bottom, #ffb900, #ff7730);
+    }
+
+    .card8:hover .card8__side--front {
+      transform: rotateY(-180deg);
+    }
+
+    .card8:hover .card8__side--back {
+      transform: rotateY(0);
+    }
+
+
+    .card8__picture {
+      background-size: cover;
+      /* must add height since there's not text content */
+      height: 23rem;
+      /* this blends the linear-gradient over the image */
+      background-blend-mode: screen;
+      /* clips image into polygon */
+      -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+      clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+      /* must manually set border-radius since overflow hidden on &__side is broken when clip-path is used */
+      /* QUESTION: Didn't this work for the first card? or was that before clip-path was used?  */
+      /* border-top-left-radius: 3px; */
+      /* border-top-right-radius: 3px; */
+    }
+
+    .card8__picture--1 {
+      background-image: linear-gradient(to right bottom, #ffb900, #ff7730), url(nat-5.jpg);
+    }
+
+
+  </style>
+
+  <title>Flip cards example</title>
+</head>
+
+<body>
+
+
+
+
+
+
+
+
+  <div class="card8">
+    <div class="card8__side card8__side--front">
+      <div class="card8__picture card8__picture--1">&nbsp;</div>
+
+      <h4 class="card8__heading">The Sea Explorer</h4>
+
+      <div class="card8__details">Details</div>
+
+    </div>
+
+    <div class="card8__side card8__side--back card8__side--back--1">
+      <h4>BACK</h4>
+    </div>
+  </div>
+
+
+
+
+
+</body>
+
+
+</html>

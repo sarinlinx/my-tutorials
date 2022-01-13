@@ -1,0 +1,661 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="../../_css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../../_css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <title>Combinators</title>
+    <style>
+        p.pcenter {
+            text-align: center;
+            border: 1px solid black;
+            margin-bottom: 0;
+        }
+        
+        .two.three {
+            color: white;
+        }
+        
+        div.parent>p.child {
+            color: white;
+        }
+        
+        div.maindiv+p.paragraph {
+            color: white;
+        }
+        
+        div~.genparagraph {
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+                <a href="../../index.html">Home</a>
+            </li>
+            <li class="breadcrumb-item active" aria-current="page">Combinators</li>
+        </ol>
+    </nav>
+
+
+
+
+
+
+
+    <section class="container">
+        <h1 class="heading-emphasis">CSS Combinators</h1>
+        <div class="row">
+            <div class="col">
+                <p>Combinators explain the relationship between multiple selectors. Between the selectors, you can add a combinator.</p>
+                <p>Examples of combinators:</p>
+                <ul>
+                    <li><a href="#multiple-element-selector">multiple element selector
+                        <span class="text-highlight">(comma)</a></span>
+                    </li>
+                    <li><a href="#grouped-class-selector">grouped class selector
+                        <span class="text-highlight">(period)</a></span>
+                    </li>
+                    <li><a href="#descendant-selector">descendant selector
+                        <span class="text-highlight">(space)</a></span>
+                    </li>
+                    <li><a href="#child-selector">child selector
+                        <span class="text-highlight">(>)</a></span>
+                    </li>
+                    <li><a href="#adjacent-sibling-selector">adjacent sibling selector
+                        <span class="text-highlight">(+)</a></span>
+                    </li>
+                    <li><a href="#general-sibling-selector">general sibling selector
+                        <span class="text-highlight">(~)</a></span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
+
+    <section class="container">
+
+
+
+
+
+        <div class="row">
+            <div class="col">
+                <h2><span id="multiple-element-selector">Multiple element selector (comma)</span></h2>
+                <p>You can write a single declaration for multiple selectors at once. Just separate them with a comma.</p>
+                <h3>This is used for styling links. For example: <strong>.classname, a {}</strong></h3>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <h4>Ex 1</h4>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-6">
+                <p>This CSS applies to h1, h2, and p tags.</p>
+            </div>
+            <div class="col-6">
+                <pre class="example"><span class="code-css">h1, h2, p {
+  text-align: center;
+  color: red;
+}</span></pre>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+        <div class="row">
+            <div class="col">
+                <h2><span id="grouped-class-selector">Grouped class selector (period)</span></h2>
+                <p>If an element has multiple classes, you can select it by referencing its classes separated by a period.</p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <h4>Ex 1: Targeting an element with multiple classes</h4>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-6">
+
+                <p>This matches the HTML element ONLY IF both classes are set in it.</p>
+                <p>Even though there is a 3rd class, it will still be selected since the elment is using both the
+                    <span class="text-highlight">.one</span> and
+                    <span class="text-highlight">.two</span> classes.</p>
+                <p>It doesn't matter which classes you reference as long as they are both present on the element.</p>
+            </div>
+            <div class="col-6">
+                <pre class="example"><span class="code-html">&lt;p class="one two three"&gt;Text here&lt;/p&gt;</span>
+
+<span class="code-css">.one.two {
+  /*styles*/
+}
+
+<span class="code-comment">or</span>
+
+<span class="code-css">.one.three {
+  /*styles*/
+}
+
+<span class="code-comment">or</span>
+
+<span class="code-css">.two.three {
+  /*styles*/
+}
+</span></pre>
+            </div>
+        </div>
+
+
+
+        <div class="row">
+            <div class="col-6">
+                <h5>Result</h5>
+            </div>
+
+            <div class="col-6">
+                <div class="example-container">
+                    <span class="example-text">
+                        <p class="one two three">Text here</p>
+                    </span>
+                </div>
+            </div>
+        </div>
+
+
+
+
+        <div class="row">
+            <div class="col">
+                <h4>Ex 2: Targeting an element with a specific class</h4>
+                <p>You can use the period to specifically assign a class to only one HTML element.</p>
+                <div class="row">
+                    <div class="col-6">
+                        <p>This CSS applies only to h1 elements with a class of
+                            <span class="text-highlight">center</span>.</p>
+                    </div>
+                    <div class="col-6">
+                        <pre class="example"><span class="code-css">h1.center {
+  text-align: center;
+}</span></pre>
+                    </div>
+                </div>
+
+
+                <div class="row">
+                    <div class="col-6">
+                        <h5>Result</h5>
+                    </div>
+
+                    <div class="col-6">
+                        <span class="example-container">
+<p class="pcenter">center class assigned to this element.</p></span>
+                    </div>
+                </div>
+
+
+
+
+
+
+
+
+
+
+
+                <div class="row">
+                    <div class="col">
+                        <h2><span id="descendant-selector">Descendant selector (space)</span></h2>
+                        <p>Selects elements that are descendants (inside of) of the parent element.</p>
+                    </div>
+                </div>
+
+                <div class="row">
+
+                    <div class="col-6">
+                        <h4>Ex 1</h4>
+                        <p>The paragraph with a class of
+                            <span class="text-highlight">.two</span> is selected since it's inside of the div with a class of
+                            <span class="text-highlight">.one</span>
+                        </p>
+                    </div>
+                    <div class="col-6">
+                        <pre class="example"><span class="code-html">&lt;div class="one"&gt;
+  &lt;p class="two"&gt;Text here&lt;/&gt;
+&lt;/div&gt;</span>
+
+<span class="code-css">.one .two {
+  /*styles*/
+}</span></pre>
+                    </div>
+                </div>
+
+
+
+                <div class="row">
+                    <div class="col">
+                        <h4>Ex 2</h4>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-6">
+                        <p>Select a link in a paragraph and change the color to red.</p>
+                    </div>
+
+                    <div class="col-6">
+                        <pre class="example"><span class="code-html">&lt;p&gt;Please click &lt;a href="#"&gt;HERE!!!&lt;/a&gt;&lt;/p&gt;</span>
+
+<span class="code-css">p a {
+  color: red;
+}</span>
+</pre> </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-6">
+                        <h5>Result</h5>
+                    </div>
+
+                    <div class="col-6">
+                        <div class="example-container">
+                            <p class="white">Please click
+                                <a class="descendent-selector-anchor-in-p" href="#">HERE!!!</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+
+                <div class="row">
+                    <div class="col">
+                        <h4>Ex 3: Multiple descendent selectors</h4>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-6">
+                        <p>Select paragraphs and links inside &lt;section&gt;</p>
+                    </div>
+
+                    <div class="col-6">
+                        <pre class="example"><span class="code-html">&lt;section&gt;
+&lt;p&gt;Please click &lt;a href="#"&gt;HERE!!!&lt;/a&gt;&lt;/p&gt;
+&lt;/section&gt;</span>
+
+<span class="code-css">section p a {
+  color: blue;
+}</span></pre>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-6">
+                        <h5>Result</h5>
+                    </div>
+                    <div class="col-6">
+                        <span class="example-container">
+                            <section class="descendent-selector-p-and-anchor-in-section">
+                                <p>Please click
+                                    <a href="#">HERE!!!</a>
+                                </p>
+                            </section>
+                          </span>
+                    </div>
+                </div>
+
+
+
+
+
+
+
+                <div class="row">
+                    <div class="col">
+                        <h4>Ex4: Skipping descendant levels</h4>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-6">
+                        You can also skip levels. This example looks inside all &lt;ancestor&gt; elements and selects any &lt;descendant&gt; elements inside.
+                    </div>
+                    <div class="col-6">
+                        <pre class="example"><span class="code-html">&lt;div class="ancestor"&gt;
+  &lt;div class="parent"&gt;
+   &lt;div class="child"&gt;<span class="white">This is not styled</span>&lt;/div&gt;
+    &lt;div class="descendant"&gt;<span class="white">This IS styled</span>&lt;/div&gt;
+   &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</pre>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-6">
+                        CSS to select the descendant.
+                    </div>
+                    <div class="col-6">
+                        <pre class="example">
+<span class="code-css">.ancestor .descendant {
+  color: blue;
+}</pre>
+                    </div>
+                </div>
+
+
+                <div class="row">
+                    <div class="col-6">
+                        <h5>Result</h5>
+                    </div>
+
+                    <div class="col-6">
+                        <div class="example-container">
+                            <p>
+                                <span class="white">This is not styled</span>
+                            </p>
+                            <p>
+                                <span class="blue">This IS styled</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+
+
+
+
+
+                <div class="row">
+                    <div class="col">
+                        <h2><span id="child-selector">Child selector (>)</span></h2>
+                        <p>The child selector selects all elements that are the direct children of a specified element.</p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col">
+                        <h4>Ex 1</h4>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-6">
+
+                        <p>The following example selects all &lt;p&gt; elements that are children of a &lt;div&gt; element:</p>
+                        <p>Paragraph 3 is not selected since it's not a child of the div. It's a descendant.</p>
+                    </div>
+
+                    <div class="col-6">
+                        <pre class="example"><span class="code-html">&lt;div&gt;
+  &lt;p&gt;Paragraph 1 in the div.&lt;/p&gt;
+  &lt;p&gt;Paragraph 2 in the div.&lt;/p&gt;
+  <span class="code-comment">&lt;!-- not Child but Descendant --&gt;</span>
+  &lt;section&gt;&lt;p&gt;Paragraph 3 in the div.&lt;/p&gt;&lt;/section&gt;
+  &lt;p&gt;Paragraph 4 in the div.&lt;/p&gt;
+&lt;/div&gt;</span>
+
+<span class="code-css">div > p {
+  color: white;
+}</span></pre>
+                    </div>
+                </div>
+
+
+                <div class="row">
+                    <div class="col-6">
+                        <h5>Result</h5>
+                    </div>
+
+                    <div class="col-6">
+                        <span class="example-container">
+                        <div class="parent">
+                            <p class="child">Paragraph 1 in the div.</p>
+                            <p class="child">Paragraph 2 in the div.</p>
+                            <!-- not Child but Descendant -->
+                            <section>
+                                <p class="child">Paragraph 3 in the div.</p>
+                            </section>
+                            <p class="child">Paragraph 4 in the div.</p>
+                        </div>
+                    </span>
+                    </div>
+                </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                <div class="row">
+                    <div class="col">
+                        <h2><span id="adjacent-sibling-selector">Adjacent selector (+)</span></h2>
+                        <p>The adjacent sibling selector selects all elements that are the adjacent siblings (immediately follow) of a specified element.
+                            <p>Sibling elements must have the same parent element</p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col">
+                        <h4>Ex 1</h4>
+                    </div>
+                </div>
+
+                <div class="row">
+
+                    <div class="col-6">
+
+                        <p>This example selects all &lt;p&gt; elements that are placed immediately after &lt;div&gt; elements:</p>
+                    </div>
+
+                    <div class="col-6">
+                        <pre class="example"><span class="code-html">&lt;div&gt;
+  &lt;p&gt;Paragraph 1 in the div.&lt;/p&gt;
+  &lt;p&gt;Paragraph 2 in the div.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Paragraph 3. Not in a div, but is the sibling the immediately follows.&lt;/p&gt;
+&lt;p&gt;Paragraph 4. Not in a div.&lt;/p&gt;</span>
+
+<span class="code-css">div + p {
+  color: white;
+}</span></pre>
+                    </div>
+                </div>
+
+
+                <div class="row">
+                    <div class="col-6">
+                        <h5>Result</h5>
+                    </div>
+                    <div class="col-6">
+                        <span class="example-container">
+                        <div class="maindiv">
+                            <p class="paragraph">Paragraph 1 in the div.</p>
+                            <p class="paragraph">Paragraph 2 in the div.</p>
+                        </div>
+
+                        <p class="paragraph">Paragraph 3. Not in a div, but is the sibling the immediately follows.</p>
+                        <p class="paragraph">Paragraph 4. Not in a div.</p>
+                    </span>
+                    </div>
+                </div>
+
+
+
+
+
+                <div class="row">
+                    <div class="col">
+                        <h4>Ex 2</h4>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-6">
+
+                        <p>This example ONLY selects the paragraph element directly after an &lt;h2&gt; element.</p>
+                        <p>Adjacent Sibling Selectors only select the element immediately following a specified element. They are separated with a + symbol.</p>
+                    </div>
+
+                    <div class="col-6">
+                        <pre class="example"><span class="code-html">&lt;p>Paragraph 1&lt;/p&gt;
+&lt;h2&gt;Heading&lt;/h2&gt;
+&lt;p&gt;Paragraph 2&lt;/p&gt;
+&lt;p&gt;Paragraph 3&lt;/p&gt;</span></pre></div>
+                </div>
+
+                <div class="row">
+                    <div class="col-6">
+                        CSS to select the paragraph immediately following the h2 tag. The 3rd doesn't immediately follow so it's not selected.
+                    </div>
+                    <div class="col-6">
+                        <pre class="example">
+<span class="code-css">h2 + p {
+  color: blue;
+}</pre></div>
+                </div>
+
+                <div class="row">
+                    <div class="col-6">
+                        <h5>Result</h5>
+                    </div>
+                    <div class="col-6">
+                        <pre class="example-container"><span class="white">Paragraph 1</span>
+<span class="white">Heading</span>
+<span class="blue">Paragraph 2</span>
+<span class="white">Paragraph 3</span>
+</span></pre>
+                    </div>
+                </div>
+
+
+
+
+
+
+
+
+
+
+
+                <div class="row">
+                    <div class="col">
+                        <h2><span id="general-sibling-selector">General sibling selector (~)</span></h2>
+                        <p>The adjacent sibling selector selects all elements (with the same parent) that immediately follow that parent.</p>
+                    </div>
+                </div>
+
+
+                <div class="row">
+                    <div class="col">
+                        <h4>Ex 1</h4>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-6">
+
+                        <p>The following example selects all &lt;p&gt; elements that are placed immediately after &lt;div&gt; elements.</p>
+                        <p>Paragraph 2 is not selected because it's inside the div, not following it.</p>
+                        <p>Paragraphs 3 and 4 follow the parent div.</p>
+                    </div>
+
+                    <div class="col-6">
+                        <pre class="example"><span class="code-html">&lt;p&gt;Paragraph 1.&lt;/p&gt;
+
+&lt;div&gt;
+  &lt;p&gt;Paragraph 2.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Paragraph 3.&lt;/p&gt;
+&lt;p&gt;Paragraph 4.&lt;/p&gt;</span>
+
+<span class="code-css">div ~ p {
+  color: white;
+}</span></pre>
+                    </div>
+                </div>
+
+
+                <div class="row">
+                    <div class="col-6">
+                        <h5>Result</h5>
+                    </div>
+
+                    <div class="col-6">
+                        <span class="example-container">
+                        <p class="genparagraph">Paragraph 1.</p>
+
+                        <div>
+                            <p class="genparagraph">Paragraph 2.</p>
+                        </div>
+
+                        <p class="genparagraph">Paragraph 3.</p>
+                        <p class="genparagraph">Paragraph 4.</p>
+                      </span>
+                    </div>
+                </div>
+    </section>
+
+
+
+
+
+
+
+
+
+
+    <script src="../../_js/jquery.js"></script>
+    <script src="../../_js/bootstrap.bundle.js"></script>
+</body>
+
+</html>

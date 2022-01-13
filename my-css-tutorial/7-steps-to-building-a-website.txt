@@ -1,0 +1,45 @@
+
+7 steps of a fully functional website
+
+
+1. Define the project
+
+Define the goal of your project
+Define your audience
+
+2. Plane out everything
+
+Plan your content: text, images, videos
+Think about visual hierarchy
+Define the navigation
+Define the site structure for bigger projects
+
+3. Sketch your ideas before designing
+
+4. Design and develope
+
+You can design in the browser using HTML and CSS
+
+5. Optimize
+
+Optimize performance
+SEO
+
+6. Hosting company
+
+7. Site maintenance
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

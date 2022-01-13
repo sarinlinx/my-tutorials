@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="../../_css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../../_css/style.css">
+
+    <style>
+        #padding-box {
+            padding: 25px;
+            border: 10px dotted #0a32b6;
+            background-image: url("../../_img/backgrounds/examples/purple-dot.jpg");
+            background-origin: padding-box;
+            background-repeat: no-repeat;
+        }
+        
+        #border-box {
+            padding: 25px;
+            border: 10px dotted #0a32b6;
+            background-image: url("../../_img/backgrounds/examples/purple-dot.jpg");
+            background-origin: border-box;
+            background-repeat: no-repeat;
+        }
+        
+        #content-box {
+            padding: 25px;
+            border: 10px dotted #0a32b6;
+            background-image: url("../../_img/backgrounds/examples/purple-dot.jpg");
+            background-origin: content-box;
+            background-repeat: no-repeat;
+        }
+    </style>
+    <title>background-origin</title>
+</head>
+
+<body>
+    <a href="../../index.html">Home page</a>
+
+
+
+
+
+
+    <section class="container">
+        <h1>background-clip</h1>
+        <div class="row">
+            <div class="col">
+                <p>The background-origin property specifies the origin position (the background positioning area) of a background image.</p>
+                <p>Note: This property has no effect if background-attachment is "fixed".</p>
+            </div>
+        </div>
+
+    </section>
+
+
+
+
+
+
+
+    <section class="container">
+        <h2>padding-box</h1>
+            <div class="row">
+                <div class="col-6">
+                    <p>Default value. The background image starts from the upper left corner of the padding edge</p>
+                </div>
+
+                <div class="col-6">
+                    <pre class="example"><span class="code-css">#padding-box {
+  padding: 25px;
+  border: 10px dotted #000000;
+  background-image: url('../../_img/backgrounds/examples/purple-dot.jpg"');
+  background-origin: padding-box;
+  background-repeat: no-repeat;
+}</pre>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-6">
+                    <p>Example:</p>
+                </div>
+                <div class="col-6">
+                    <pre class="example"><div id="padding-box">Testing Testing Testing
+Testing Testing Testing
+Testing Testing Testing
+Testing Testing Testing
+Testing Testing Testing
+Testing Testing Testing</div></pre>
+                </div>
+            </div>
+
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+    <section class="container">
+        <h2>border-box</h1>
+            <div class="row">
+                <div class="col-6">
+                    <p>The background image starts from the upper left corner of the border.</p>
+                </div>
+
+                <div class="col-6">
+                    <pre class="example"><span class="code-css">#border-box {
+  padding: 25px;
+  border: 10px dotted #000000;
+  background-image: url('../../_img/backgrounds/examples/purple-dot.jpg"');
+  background-origin: border-box;
+  background-repeat: no-repeat;
+}</pre>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-6">
+                    <p>Example:</p>
+                </div>
+                <div class="col-6">
+                    <pre class="example"><div id="border-box">Testing Testing Testing
+Testing Testing Testing
+Testing Testing Testing
+Testing Testing Testing
+Testing Testing Testing
+Testing Testing Testing</div></pre>
+                </div>
+            </div>
+
+    </section>
+
+
+
+
+
+
+
+
+
+    <section class="container">
+        <h2>content-box</h1>
+            <div class="row">
+                <div class="col-6">
+                    <p>The background image starts from the upper left corner of the content.</p>
+                </div>
+
+                <div class="col-6">
+                    <pre class="example"><span class="code-css">#content-box {
+  padding: 25px;
+  border: 10px dotted #000000;
+  background-image: url('../../_img/backgrounds/examples/purple-dot.jpg"');
+  background-origin: content-box;
+  background-repeat: no-repeat;
+}</pre>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-6">
+                    <p>Example:</p>
+                </div>
+                <div class="col-6">
+                    <pre class="example"><div id="content-box">Testing Testing Testing
+Testing Testing Testing
+Testing Testing Testing
+Testing Testing Testing
+Testing Testing Testing
+Testing Testing Testing</div></pre>
+                </div>
+            </div>
+
+    </section>
+
+
+
+
+
+
+</body>
+
+</html>

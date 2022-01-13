@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="../../_css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../../_css/style.css">
+
+    <title>Callback Functions</title>
+
+</head>
+
+<body>
+    <section class="container">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb breadcrumb-container">
+                <li class="breadcrumb-item"><a class="breadcrumb-link" href="../../index.html">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Callback Functions</li>
+            </ol>
+        </nav>
+
+        <h1>Callback Functions</h1>
+<p>A callback function is executed after the current effect is finished.</p>
+<p>This is important because JavaScript statements are executed line by line. However, with effects, the next line of code can be run even though the effect is not finished. This can create errors.</p>
+
+<h1>Example without a callback</h1>
+<p>Since there is no callback, the alert box is triggered before the paragraph has time to finish hiding</p>
+
+<pre class="example"><span class="code-html">&lt;button id="btn1"&gt;Hide&lt;/button&gt;
+&lt;p id="p1"&gt;This is a paragraph with little content.&lt;/p&gt;</span>
+
+<span class="code-js">$("button#btn1").click(function(){
+  $("p#p1").hide(3000);
+  alert("The paragraph is now hidden");
+});</span></pre>
+
+
+        <h3>Example</h3>
+        <button id="btn1">Hide</button>
+        <p id="p1">This is a paragraph with little content.</p>
+
+
+
+
+
+        <h1>Example with a callback</h1>
+        <p>Since a callback function is used, the paragraph is allowed to completely hide itself first. Only then does the alert box display.</p>
+
+
+
+<pre class="example"><span class="code-html">&lt;button id="btn2"&gt;Hide&lt;/button&gt;
+&lt;p id="p2"&gt;This is a paragraph with little content.&lt;/p&gt;</span>
+
+<span class="code-js">$("button#btn2").click(function(){
+ $("p#p2").hide("slow", function(){
+   alert("The paragraph is now hidden");
+ });
+});</span></pre>
+
+
+                <h3>Example</h3>
+                <button id="btn2">Hide</button>
+                <p id="p2">This is a paragraph with little content.</p>
+    </section>
+
+
+
+
+
+
+
+    <script src="../../_js/jquery-3.4.1.min.js"></script>
+
+    <script>
+    $("button#btn1").click(function(){
+      $("p#p1").hide(3000);
+      alert("The paragraph is now hidden");
+    });
+
+    $("button#btn2").click(function(){
+   $("p#p2").hide("slow", function(){
+     alert("The paragraph is now hidden");
+   });
+ });
+    </script>
+
+</body>
+
+</html>

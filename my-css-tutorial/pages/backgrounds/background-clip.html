@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="../../_css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../../_css/style.css">
+
+    <style>
+        #example1 {
+            border: 10px dotted rgb(243, 12, 12);
+            padding: 15px;
+            background: lightblue;
+            background-clip: border-box;
+        }
+
+        #example2 {
+            border: 10px dotted rgb(243, 12, 12);
+            padding: 15px;
+            background: lightblue;
+            background-clip: padding-box;
+        }
+
+        #example3 {
+            border: 10px dotted rgb(243, 12, 12);
+            padding: 15px;
+            background: lightblue;
+            background-clip: content-box;
+        }
+    </style>
+    <title>Background-clip</title>
+</head>
+
+<body>
+    <a href="../../index.html">Home page</a>
+
+
+
+
+
+
+    <section class="container">
+        <h1>background-clip</h1>
+        <div class="row">
+            <div class="col-6">
+                <p>Specify how far the background should extend within an element</p>
+            </div>
+
+            <div class="col-6">
+                <pre class="example"><span class="code-css"> #example1 {
+  border: 10px dotted rgb(243, 12, 12);
+  padding: 15px;
+  background: lightblue;
+  background-clip: border-box;
+}
+
+#example2 {
+  border: 10px dotted rgb(243, 12, 12);
+  padding: 15px;
+  background: lightblue;
+  background-clip: padding-box;
+}
+
+#example3 {
+  border: 10px dotted rgb(243, 12, 12);
+  padding: 15px;
+  background: lightblue;
+  background-clip: content-box;
+}</pre>
+            </div>
+        </div>
+<br>
+        <div class="row">
+            <div class="col-6">
+                <p>background-clip: border-box (this is default):</p>
+
+            </div>
+
+            <div class="col-6">
+
+                <div id="example1">
+                    <p>The background extends behind the border.</p>
+                </div>
+            </div>
+        </div>
+
+<br>
+        <div class="row">
+            <div class="col-6">
+                <p>background-clip: padding-box:</p>
+            </div>
+
+            <div class="col-6">
+                <div id="example2">
+                    <p>The background extends to the inside edge of the border.</p>
+                </div>
+            </div>
+        </div>
+
+        <br>
+        <div class="row">
+            <div class="col-6">
+                <p>background-clip: content-box:</p>
+            </div>
+
+
+
+            <div class="col-6">
+                <div id="example3">
+                    <p>The background extends to the edge of the content box.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+</body>
+
+</html>

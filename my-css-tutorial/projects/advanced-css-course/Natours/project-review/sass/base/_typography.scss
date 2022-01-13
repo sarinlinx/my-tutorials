@@ -1,0 +1,118 @@
+body {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.7;
+  color: $color-grey-dark;
+}
+
+.heading-primary {
+  color: $color-white;
+  text-transform: uppercase;
+  /* Hack: Fixes final shake of animation bug in CSS */
+  backface-visibility: hidden;
+  margin-bottom: 6rem;
+
+
+
+
+  &--main {
+    display: block;
+    font-size: 6rem;
+    font-weight: 400;
+    letter-spacing: 3.5rem;
+    /* Set the animation name and duration */
+    animation-name: moveInLeft;
+    animation-duration: 1s;
+    /* How animation should progress over time */
+    animation-timing-function: ease-out;
+    /* Sets a delay before the animation starts */
+    /* iteration-count replays the animation */
+    /* animation-delay: 3s;
+       animation-iteration-count: 3;
+    */
+
+
+    @include respond(phone) {
+      letter-spacing: 1rem;
+      font-family: 5rem;
+    }
+
+
+  }
+
+
+
+
+
+  &--sub {
+    display: block;
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 1.75rem;
+    /* Animation Shorthand */
+    animation: moveInRight 1s ease-out;
+
+
+
+    @include respond(phone) {
+      letter-spacing: .5rem;
+    }
+
+  }
+
+}
+
+
+
+
+.heading-secondary {
+  font-size: 3.5rem;
+  text-transform: uppercase;
+  font-weight: 700;
+
+  // Set gradient on text
+  //first set to inline-block
+  display: inline-block;
+  // first set background color of block
+  background-image: linear-gradient(to right, $color-primary-light, $color-primary-dark);
+  //background clipped to where text is
+  -webkit-background-clip: text;
+  //You cannot see the gradient yet because the text now sits on top of background so it's gray
+  //make text transparent so you can see background color
+  color: transparent;
+
+  letter-spacing: 2px;
+  transition: all .2s;
+
+
+@include respond(tab-port) {
+  font-size: 3rem;
+
+}
+
+@include respond(phone) {
+  font-size: 2.5rem;
+  
+}
+
+  &:hover {
+    //tilts on hover
+    transform: skewY(2deg) skewX(15deg) scale(1.1);
+    text-shadow: .5rem 1rem 2rem rgba($color-black, .2);
+  }
+}
+
+.heading-tertiary {
+  font-size: $default-font-size;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.paragraph {
+  font-size: $default-font-size;
+
+  &:not(last-child) {
+    margin-bottom: 3rem;
+  }
+}

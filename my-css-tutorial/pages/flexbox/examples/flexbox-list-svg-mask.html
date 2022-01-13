@@ -1,0 +1,112 @@
+<html>
+
+<head>
+    <title>Flexbox list icon mask</title>
+</head>
+<style>
+    body {
+        background-color: rgb(126, 126, 126);
+    }
+    
+    .container {
+        color: rgb(53, 53, 53);
+        background-color: rgb(233, 233, 233);
+        padding: 3rem;
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 60%;
+        flex: 0 0 60%;
+        margin-right: 4.5rem;
+    }
+    
+    .list {
+        list-style: none;
+        margin: 3rem 0;
+        padding: 3rem 0;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    }
+    
+    .list__item {
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 50%;
+        /* 50% so elements are side by side */
+        flex: 0 0 50%;
+        margin-bottom: .7rem;
+    }
+    
+    .list__item::before {
+        content: "";
+        display: inline-block;
+        height: 1rem;
+        width: 1rem;
+        margin-right: .7rem;
+        /* older browsers  */
+        background-image: url(img/chevron-thin-right.svg);
+        background-size: cover;
+    }
+    
+    .list__item2 {
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 50%;
+        /* 50% so elements are side by side */
+        flex: 0 0 50%;
+        margin-bottom: .7rem;
+    }
+    /* newer browers use masks */
+    /* @supports (-webkit-mask-image: url()) or (mask-image: url()) { */
+    
+    .list__item2::before {
+        content: "";
+        display: inline-block;
+        height: 1rem;
+        width: 1rem;
+        margin-right: .7rem;
+        background-color: rgb(255, 76, 22);
+        -webkit-mask-image: url(img/chevron-thin-right.svg);
+        /* so icon covers entire element */
+        -webkit-mask-size: cover;
+        mask-image: url(img/chevron-thin-right.svg);
+        mask-size: cover;
+        background-image: none;
+    }
+    /* } */
+</style>
+
+<body>
+
+
+    <h2>You cannot change the color of the icons this way since the icons were added as a background-image</h2>
+    <div class="container">
+        <ul class="list">
+            <li class="list__item">Close to the beach</li>
+            <li class="list__item">Breakfast included</li>
+            <li class="list__item">Free airport shuttle</li>
+            <li class="list__item">Free wifi in all rooms</li>
+            <li class="list__item">Air conditioning and heating</li>
+            <li class="list__item">Pets allowed</li>
+            <li class="list__item">We speak all languages</li>
+            <li class="list__item">Perfect for families</li>
+        </ul>
+    </div>
+
+
+    <h2>This example users a mask so you can view the background color through the icon</h2>
+    <div class="container">
+        <ul class="list">
+            <li class="list__item2">Close to the beach</li>
+            <li class="list__item2">Breakfast included</li>
+            <li class="list__item2">Free airport shuttle</li>
+            <li class="list__item2">Free wifi in all rooms</li>
+            <li class="list__item2">Air conditioning and heating</li>
+            <li class="list__item2">Pets allowed</li>
+            <li class="list__item2">We speak all languages</li>
+            <li class="list__item2">Perfect for families</li>
+        </ul>
+    </div>
+
+</body>
+
+</html>

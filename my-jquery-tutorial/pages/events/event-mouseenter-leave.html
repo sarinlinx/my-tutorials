@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="../../_css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../../_css/style.css">
+
+    <title>The 'mouseenter' event</title>
+</head>
+
+<body>
+    <section class="container">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb breadcrumb-container">
+                <li class="breadcrumb-item"><a class="breadcrumb-link" href="../../index.html">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">The 'mouseenter' event</li>
+            </ol>
+        </nav>
+
+
+        <h1>The 'mouseenter' event</h1>
+        <p>When the user hovers their mouse over an element, the function is run.</p>
+
+
+        <pre class="example">
+<span class="code-html">&lt;p id="p1"&gt;This is a sentence&lt;/p&gt;</span>
+
+<span class="code-js">$('p#p1').on("<span class="standout">mouseenter</span>", function() {
+  $('p#p1').hide();
+});</span></pre>
+
+        <h3>Example</h3>
+        <p id="p1">This is a sentence</p>
+
+
+
+
+
+
+
+
+        <h1>mouseleave()</h1>
+
+        <p>This executes when the mouse leaves the HTML element.</p>
+
+        <pre class="example"><span class="code-html">&lt;p id="p2"&gt;This is a sentence&lt;/p&gt;</span>
+
+<span class="code-js">$('p#p2').mouseenter(function() {
+  $(this).css('color', 'yellow');
+});
+
+$("p#p2").mouseleave(function() {
+  $(this).css('color', 'red');
+});</span></pre>
+
+        <h3>Example</h3>
+        <p id="p2">This is a sentence</p>
+
+    </section>
+
+
+
+
+
+
+
+    <script src="../../_js/jquery-3.4.1.min.js"></script>
+
+    <script>
+        $('p#p1').on("mouseenter", function() {
+            //code to be executed when the button is clicked
+            $('p#p1').hide();
+        });
+
+        $('p#p2').mouseenter(function() {
+            $(this).css('color', 'yellow');
+        });
+
+        $("p#p2").mouseleave(function() {
+          $(this).css('color', 'red');
+            // $(this).css('color', 'red');
+        });
+    </script>
+
+</body>
+
+</html>

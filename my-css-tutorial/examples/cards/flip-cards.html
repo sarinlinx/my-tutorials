@@ -1,0 +1,1293 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" type="text/css" href="../../_css/bootstrap.css">
+  <link rel="stylesheet" type="text/css" href="../../_css/style.css">
+  <style>
+    .card1 {
+      background-color: orangered;
+      width: 30%;
+      /* height of entire card */
+      height: 10rem;
+      transition: all 1s;
+    }
+
+    .card1:hover {
+      transform: rotateY(180deg);
+    }
+
+
+
+
+
+    .card2 {
+      /* add perspective to parent element so transform looks 3d */
+      perspective: 150rem;
+      -moz-perspective: 150rem;
+    }
+
+    .card2__side {
+      background-color: orangered;
+      /* height of entire card */
+      width: 30%;
+      height: 10rem;
+      transition: all 2s;
+    }
+
+    .card2:hover .card2__side {
+      transform: rotateY(180deg);
+    }
+
+
+
+
+    .card3 {
+      perspective: 150rem;
+      -moz-perspective: 150rem;
+    }
+
+    .card3__side {
+      background-color: orangered;
+      width: 30%;
+      height: 10rem;
+      transition: all 2s;
+    }
+
+    .card3__side--front {
+      background-color: orangered;
+    }
+
+    .card3__side--back {
+      background-color: green;
+      transform: rotateY(180deg);
+    }
+
+    .card3:hover .card3__side--front {
+      transform: rotateY(180deg);
+    }
+
+    .card3:hover .card3__side--back {
+      transform: rotateY(0deg);
+    }
+
+
+    .card4 {
+      perspective: 150rem;
+      -moz-perspective: 150rem;
+      position: relative;
+    }
+
+    .card4__side {
+      background-color: orangered;
+
+      height: 10rem;
+      transition: all 2s;
+      /* set position absolute so the front and back sides can be stacked */
+      position: absolute;
+      top: 0;
+      left: 0;
+      /* width: 30%; */
+      /* hides back side until flipped */
+      /* backface-visibility: hidden; */
+    }
+
+    .card4__side--front {
+      background-color: orangered;
+    }
+
+    .card4__side--back {
+      background-color: green;
+      transform: rotateY(180deg);
+    }
+
+    .card4:hover .card4__side--front {
+      transform: rotateY(-180deg);
+    }
+
+    .card4:hover .card4__side--back {
+      transform: rotateY(0deg);
+    }
+
+
+
+
+
+    .card5 {
+      perspective: 150rem;
+      -moz-perspective: 150rem;
+      position: relative;
+    }
+
+    .card5__side {
+      background-color: orangered;
+
+      height: 10rem;
+      transition: all 2s;
+      /* set position absolute so the front and back sides can be stacked */
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 30%;
+      /* hides back side until flipped */
+      /* backface-visibility: hidden; */
+    }
+
+    .card5__side--front {
+      background-color: orangered;
+    }
+
+    .card5__side--back {
+      background-color: green;
+      transform: rotateY(180deg);
+    }
+
+    .card5:hover .card5__side--front {
+      transform: rotateY(-180deg);
+    }
+
+    .card5:hover .card5__side--back {
+      transform: rotateY(0deg);
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+    .card6 {
+      perspective: 150rem;
+      -moz-perspective: 150rem;
+      position: relative;
+    }
+
+    .card6__side {
+      background-color: orangered;
+
+      height: 10rem;
+      transition: all 2s ease;
+      /* set position absolute so the front and back sides can be stacked */
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 30%;
+      /* hides back side until flipped */
+      backface-visibility: hidden;
+    }
+
+    .card6__side--front {
+      background-color: orangered;
+    }
+
+    .card6__side--back {
+      background-color: green;
+      transform: rotateY(180deg);
+    }
+
+    .card6:hover .card6__side--front {
+      transform: rotateY(180deg);
+    }
+
+    .card6:hover .card6__side--back {
+      transform: rotateY(0deg);
+    }
+
+
+
+
+
+    .card6 {
+      perspective: 150rem;
+      -moz-perspective: 150rem;
+      position: relative;
+    }
+
+    .card6__side {
+      background-color: orangered;
+
+      height: 10rem;
+      transition: all 2s ease;
+      /* set position absolute so the front and back sides can be stacked */
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 30%;
+      /* hides back side until flipped */
+      backface-visibility: hidden;
+    }
+
+    .card6__side--front {
+      background-color: orangered;
+    }
+
+    .card6__side--back {
+      background-color: green;
+      transform: rotateY(180deg);
+    }
+
+    .card6:hover .card6__side--front {
+      transform: rotateY(180deg);
+    }
+
+    .card6:hover .card6__side--back {
+      transform: rotateY(0deg);
+    }
+  </style>
+
+  <title>Flip cards</title>
+</head>
+
+<body>
+  <a href="../../index.html">Home page</a>
+
+
+
+  <h1>Flip cards</h1>
+  <section class="container">
+    <div class="row">
+      <div class="col">
+        <p>View example here:</p>
+        <ul>
+          <li><a href="flip-cards-example.html" target="_blank">example</a></li>
+        </ul>
+      </div>
+    </div>
+
+
+
+
+    <h2>Step 1 - rotate the card</h2>
+    <div class="row">
+      <div class="col-5">
+        <p>Basic styles to flip the card</p>
+      </div>
+      <div class="col-7">
+        <pre class="example"><span class="code-css">.card1 {
+  background-color: orangered;
+  width: 30%;
+  <span class="code-comment">/* height of entire card */</span>
+  height: 10rem;
+  transition: all .8s;
+}
+
+.card1:hover {
+  transform: rotateY(180deg);
+}</span>
+        
+<span class="code-html">&lt;div class="card1"&gt;
+    &lt;h4&gt;The Sea Explorer&lt;/h4&gt;      
+&lt;/div&gt;</span></pre>
+      </div>
+    </div>
+
+
+    <div class="card1">
+      <h4>The Sea Explorer</h4>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <br>
+    <h2>Step 2 - Add perspective</h2>
+    <div class="row">
+      <div class="col-5">
+        <p>Add the perspective property so the flip looks 3d.</p>
+        <p>The lower the value, the more dramatic the perspective.</p>
+        <p>You need to keep adjusting the value to get the effect you want.
+        <p>
+      </div>
+      <div class="col-7">
+        <pre class="example"><span class="code-css">.card2 {
+  <span class="code-comment">/* add perspective so transform looks 3d */</span>
+  <span class="code-highlight">perspective: 150rem;
+  -moz-perspective: 150rem;</span>      
+}
+
+.card2__side {
+  background-color: orangered;
+  <span class="code-comment">/* height of entire card */</span>
+  width: 30%;
+  height: 10rem;
+  transition: all 2s;
+}
+
+.card2:hover .card2__side {
+  transform: rotateY(180deg);
+}</span>
+        
+<span class="code-html">&lt;div class="card1"&gt;
+  &lt;div class="card2__side"&gt;
+    &lt;h4&gt;The Sea Explorer&lt;/h4&gt;      
+  &lt;/div&gt;
+&lt;/div&gt;</span></pre>
+      </div>
+    </div>
+
+
+    <div class="card2">
+      <div class="card2__side">
+        <h4>TEXT HERE</h4>
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <br>
+    <h2>Step 3 - Add back side of card</h2>
+    <div class="row">
+      <div class="col-5">
+        <p>Add the back side of the card so you view something different when flipped.
+        <p>
+        <p>The front side starts out at zero deg. When hovered, it flips to 180deg.</p>
+        <p>The back side starts out flipped at 180deg. When hovered, it returns to zero.</p>
+        <p>The problem is the side are not on top of each other.</p>
+      </div>
+      <div class="col-7">
+        <pre class="example"><span class="code-css">.card3 {
+  perspective: 150rem;
+  -moz-perspective: 150rem;
+}
+
+.card3__side {
+  background-color: orangered;
+  width: 30%;
+  height: 10rem;
+  transition: all 2s;
+}
+
+.card3__side--front {
+  background-color: orangered;
+}
+
+.card3__side--back {
+  background-color: green;
+  <span class="code-comment">/* back side starts out flipped at 180deg */</span>
+  transform: rotateY(180deg);
+}
+
+.card3:hover .card3__side--front {
+  <span class="code-comment">/* rotate the front side 180deg to flip */</span>
+  transform: rotateY(180deg);
+}
+
+.card3:hover .card3__side--back {
+  <span class="code-comment">/* rotate back side from 180deg back to zero to flip */</span>
+  transform: rotateY(0deg);
+}</span>
+        
+<span class="code-html">&lt;div class="card3"&gt;
+
+  &lt;div class="card3__side card3__side--front"&gt;  
+    &lt;h4&gt;FRONT&lt;/h4&gt;
+  &lt;/div&gt;
+
+  &lt;div class="card3__side card3__side--back"&gt;
+    &lt;h4&gt;BACK&lt;/h4&gt;
+  &lt;/div&gt;
+
+&lt;/div&gt;</span></pre>
+      </div>
+    </div>
+
+
+    <div class="card3">
+      <div class="card3__side card3__side--front">
+        <h4>FRONT</h4>
+      </div>
+      <div class="card3__side card3__side--back">
+        <h4>BACK</h4>
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <br>
+    <h2>Step 4 - Stack cards on top of each other</h2>
+    <div class="row">
+      <div class="col-5">
+        <p>Add absolute positioning to stack the cards.</p>
+
+      </div>
+      <div class="col-7">
+        <pre class="example"><span class="code-css">.card4 {
+  perspective: 150rem;
+  -moz-perspective: 150rem;
+}
+
+.card4__side {
+  background-color: orangered;
+  height: 10rem;
+  transition: all 2s;
+  <span class="code-comment">/*  use absolute position to stack --front and --back on top of each other */
+  /* this also collapses parent height since these elements were removed from natural flow */
+  /* to fix give same height as parent */</span>
+  <span class="code-highlight">position: absolute;
+  top: 0;
+  left: 0;</span>
+}
+
+.card4__side--front {
+  background-color: orangered;
+}
+
+.card4__side--back {
+  background-color: green;
+  transform: rotateY(180deg);
+}
+
+.card4:hover .card4__side--front {
+  transform: rotateY(180deg);
+}
+
+.card4:hover .card4__side--back {
+  transform: rotateY(0deg);
+}</span>
+        
+<span class="code-html">&lt;div class="card4"&gt;
+
+  &lt;div class="card4__side card4__side--front"&gt;  
+    &lt;h4&gt;FRONT&lt;/h4&gt;
+  &lt;/div&gt;
+
+  &lt;div class="card4__side card4__side--back"&gt;
+    &lt;h4&gt;BACK&lt;/h4&gt;
+  &lt;/div&gt;
+
+&lt;/div&gt;</span></pre>
+      </div>
+    </div>
+
+
+    <div class="card4">
+      <div class="card4__side card4__side--front">
+        <h4>FRONT</h4>
+      </div>
+      <div class="card4__side card4__side--back">
+        <h4>BACK</h4>
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <br><br><br><br><br>
+    <br>
+    <h2>Step 5 - Add width to card side</h2>
+    <div class="row">
+      <div class="col-5">
+        <p>The problem with the step above is that the width collapses to the size of the text.</p>
+        <p>To fix, you must add width: ###% to the card side.</p>
+      </div>
+      <div class="col-7">
+        <pre class="example"><span class="code-css">.card5 {
+  perspective: 150rem;
+  -moz-perspective: 150rem;
+}
+
+.card5__side {
+  background-color: orangered;
+  height: 10rem;
+  transition: all 2s;
+  position: absolute;
+  top: 0;
+  left: 0;
+  <span class="code-highlight">width: 30%;</span>
+}
+
+.card5__side--front {
+  background-color: orangered;
+}
+
+.card5__side--back {
+  background-color: green;
+  transform: rotateY(180deg);
+}
+
+.card5:hover .card5__side--front {
+  transform: rotateY(-180deg);
+}
+
+.card5:hover .card5__side--back {
+  transform: rotateY(0deg);
+}</span>
+        
+<span class="code-html">&lt;div class="card5"&gt;
+
+  &lt;div class="card5__side card5__side--front"&gt;  
+    &lt;h4&gt;FRONT&lt;/h4&gt;
+  &lt;/div&gt;
+
+  &lt;div class="card5__side card5__side--back"&gt;
+    &lt;h4&gt;BACK&lt;/h4&gt;
+  &lt;/div&gt;
+
+&lt;/div&gt;</span></pre>
+      </div>
+    </div>
+
+
+    <div class="card5">
+      <div class="card5__side card5__side--front">
+        <h4>FRONT</h4>
+      </div>
+      <div class="card5__side card5__side--back">
+        <h4>BACK</h4>
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <br><br><br><br><br>
+    <br>
+    <h2>Step 6 - Add backface visibility to hide back side and set height of container</h2>
+    <div class="row">
+      <div class="col-5">
+        <p>Set backface-visibility to hidden so the back side of the card is hidden until flipped.</p>
+        <p>Finally, the parent height of the card collapsed when you took it out of its natural flow by setting position
+          to absolute. This causes the perspective to not function.</p>
+        <p>The solution is to also add the height to the .card container.</p>
+      </div>
+      <div class="col-7">
+        <pre class="example"><span class="code-css">.card6 {
+perspective: 150rem;
+-moz-perspective: 150rem;
+<span class="code-comment">/* height of entire card */</span>
+<span class="code-highlight">height: 10rem;</span>
+}
+
+.card6__side {
+background-color: orangered;
+<span class="code-comment">/* height of each side of the card. must match height of card */</span>
+height: 10rem;
+transition: all 2s <span class="code-highlight">ease</span>;
+position: absolute;
+top: 0;
+left: 0;
+width: 30%;
+<span class="code-comment">/* hides back side until flipped */</span>
+<span class="code-highlight">backface-visibility: hidden;</span>
+}
+
+.card6__side--front {
+background-color: orangered;
+}
+
+.card6__side--back {
+background-color: green;
+transform: rotateY(180deg);
+}
+
+<span class="code-comment">/* hover roates front side 180deg
+  when card is hovered, .card7__side--front is transformed
+  do not put hover here directly on card7__side since there are 2 sides
+  this should only occur on main card component
+  this is -180 so it will turn in the same direction the back turns in */</span>
+.card6:hover .card6__side--front {
+transform: rotateY(-180deg);
+}
+
+<span class="code-comment">/* Since this is already rotated 180deg, change to zero */</span>
+.card6:hover .card6__side--back {
+transform: rotateY(0deg);
+}</span>
+    
+<span class="code-html">&lt;div class="card6"&gt;
+
+&lt;div class="card6__side card6__side--front"&gt;  
+&lt;h4&gt;FRONT&lt;/h4&gt;
+&lt;/div&gt;
+
+&lt;div class="card6__side card6__side--back"&gt;
+&lt;h4&gt;BACK&lt;/h4&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;</span></pre>
+      </div>
+    </div>
+
+
+    <div class="card6">
+      <div class="card6__side card6__side--front">
+        <h4>FRONT</h4>
+      </div>
+      <div class="card6__side card6__side--back">
+        <h4>BACK</h4>
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <br><br><br><br><br><br>
+
+    <h2>Step 7 - Add content</h2>
+    <div class="row">
+      <div class="col-5">
+        <p>Add gradient to back side</p>
+      </div>
+      <div class="col-7">
+        <pre class="example"><span class="code-css">*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+}
+  
+body {
+  box-sizing: border-box;
+  padding: 3rem;
+}
+
+
+<span class="code-comment">/* FRONT SIDE STYLING */</span>
+.card7 {
+  perspective: 150rem;
+  -moz-perspective: 150rem;
+  position: relative;
+  height of entire card
+  height: 52rem;
+}
+
+.card7__side {
+  height: 52rem;
+  transition: all .8s ease;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 33%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  <span class="code-comment">give it curved edges and a box-shadow</span>
+  <span class="code-highlight">border-radius: 3px;
+  box-shadow:20px 20px 50px 15px rgba(1, 1, 1, .15);</span>
+}
+
+.card7__side--front {
+  background-color: #fff;
+}
+
+.card7__side--back {
+  transform: rotateY(180deg);
+}
+
+<span class="code-comment">add gradient to back side</span>
+<span class="code-highlight">.card7__side--back--1 {
+  background-image: linear-gradient(to right bottom, #ffb900, #ff7730);
+}</span>
+
+.card7:hover .card7__side--front {
+  transform: rotateY(-180deg);
+}
+
+.card7:hover .card7__side--back {
+  transform: rotateY(0);
+}</span>
+    
+<span class="code-html">&lt;div class="card7"&gt;
+  &lt;div class="card7__side card7__side--front"&gt;
+    &lt;h4&gt;FRONT&lt;/h4&gt;
+  &lt;/div&gt;
+  &lt;div class="card7__side card7__side--back card7__side--back--1"&gt;
+    &lt;h4&gt;BACK&lt;/h4&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</span></pre>
+      </div>
+    </div>
+
+
+    <div class="row">
+      <div class="col">
+        <p>View example here:</p>
+        <ul>
+          <li><a href="flip-cards-example-card7.html" target="_blank">Example: card7</a></li>
+        </ul>
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <br><br><br><br><br><br>
+
+    <h2>Step 8 - Add background image and new sections</h2>
+    <div class="row">
+      <div class="col-4">
+        <p>Add gradient over image</p>
+        <p>Add a blend-mode to the picture so the gradient can be seen over the image.</p>
+        <p>Use overflow: hidden so the image doesn't cover the rounded edges of the container.</p>
+      </div>
+      <div class="col-8">
+        <pre class="example"><span class="code-css">*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  box-sizing: border-box;
+  padding: 3rem;
+}
+
+<span class="code-comment">/* FRONT SIDE STYLING */</span>
+.card8 {
+  perspective: 150rem;
+  -moz-perspective: 150rem;
+  position: relative;
+  height: 52rem;
+}
+
+.card8__side {
+  height: 52rem;
+  transition: all .8s ease;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 33%;
+  <span class="code-comment">/* This does not allow the image to overflow the rounded card container */
+  overflow: hidden;</span>
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  border-radius: 3px;
+  box-shadow: 20px 20px 50px 15px rgba(1, 1, 1, .15);
+}
+
+.card8__side--front {
+  background-color: #fff;
+}
+
+.card8__side--back {
+  transform: rotateY(180deg);
+}
+
+.card8__side--back--1 {
+  background-image: linear-gradient(to right bottom, #ffb900, #ff7730);
+}
+
+.card8:hover .card8__side--front {
+  transform: rotateY(-180deg);
+}
+
+.card8:hover .card8__side--back {
+  transform: rotateY(0);
+}
+
+
+<span class="code-highlight">.card8__picture {
+  background-size: cover;</span>
+  <span class="code-comment">/* must add height since there's not text content */</span>
+  <span class="code-highlight">height: 23rem;</span>
+  <span class="code-comment">/* this blends the linear-gradient over the image */</span>
+  <span class="code-highlight">background-blend-mode: screen;</span>
+  <span class="code-comment">/* clips image into polygon */</span>
+  <span class="code-highlight">-webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);</span>
+  <span class="code-highlight">clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);</span>
+  <span class="code-comment">/* must manually set border-radius since overflow hidden on &__side is broken when clip-path is used */
+  /* QUESTION: Didn't this work for the first card? or was that before clip-path was used?  */
+  /* border-top-left-radius: 3px; */
+  /* border-top-right-radius: 3px; */</span>
+}
+
+<span class="code-highlight">.card8__picture--1 {
+  background-image: linear-gradient(to right bottom, #ffb900, #ff7730), url(nat-5.jpg);
+}</span></span>
+    
+<span class="code-html">&lt;div class="card8"&gt;
+  &lt;div class="card8__side card8__side--front"&gt;
+    <span class="code-highlight">&lt;div class="card8__picture card8__picture--1"&gt;&nbsp;&lt;/div&gt;
+
+    &lt;h4 class="card8__heading"&gt;The Sea Explorer&lt;/h4&gt;
+
+    &lt;div class="card8__details"&gt;Details&lt;/div&gt;</span>
+
+  &lt;/div&gt;
+
+  &lt;div class="card8__side card8__side--back card8__side--back--1"&gt;
+    &lt;h4&gt;BACK&lt;/h4&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</span></pre>
+      </div>
+    </div>
+
+
+    <div class="row">
+      <div class="col">
+        <p>View example here:</p>
+        <ul>
+          <li><a href="flip-cards-example-card8.html" target="_blank">Example: card8</a></li>
+        </ul>
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <br><br><br><br><br><br>
+
+    <h2>Step 9 - Add heading text over the image</h2>
+    <div class="row">
+      <div class="col-4">
+        <p>Add heading section with a modifier class of card9__heading-span</p>
+        <p>Add another class to specify this heading if you have multiple cards.</p>
+        <p>Position absolute to place on the right.</p>
+        <p>Adding padding to card9__heading-span and width to card9__heading breaks the heading into 2 lines</p>
+        <p>CSS normally would still view the broken heading as a single element.</p>
+        <p>Finally, use box-decoration-break: clone so both lines of the broken header are styled individually.</p>
+      </div>
+      <div class="col-8">
+        <pre class="example"><span class="code-css"> *,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  box-sizing: border-box;
+  padding: 3rem;
+}
+
+<span class="code-comment">/* FRONT SIDE STYLING */</span>
+.card9 {
+  perspective: 150rem;
+  -moz-perspective: 150rem;
+  position: relative;
+  height: 52rem;
+}
+
+.card9__side {
+  height: 52rem;
+  transition: all .8s ease;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 33%;
+  overflow: hidden;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  border-radius: 3px;
+  box-shadow: 20px 20px 50px 15px rgba(1, 1, 1, .15);
+}
+
+.card9__side--front {
+  background-color: #fff;
+}
+
+.card9__side--back {
+  transform: rotateY(180deg);
+}
+
+.card9__side--back--1 {
+  background-image: linear-gradient(to right bottom, #ffb900, #ff7730);
+}
+
+.card9:hover .card9__side--front {
+  transform: rotateY(-180deg);
+}
+
+.card9:hover .card9__side--back {
+  transform: rotateY(0);
+}
+
+
+.card9__picture {
+  background-size: cover;
+  height: 23rem;
+  background-blend-mode: screen;
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+}
+
+.card9__picture--1 {
+  background-image: linear-gradient(to right bottom, #ffb900, #ff7730), url(nat-5.jpg);
+}
+
+
+<span class="code-highlight">.card9__heading {
+  font-size: 2.8rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  text-align: right;
+  color: #fff;</span>
+  <span class="code-comment">/* layer over background image */</span>
+  <span class="code-highlight">position: absolute;
+  top: 12rem;
+  right: 2rem;</span>
+  <span class="code-comment">/* make more narrow so the text box stays within the card box */</span>
+  <span class="code-highlight">width: 75%;</span>
+}
+
+
+<span class="code-highlight">.card9__heading-span {</span>
+  <span class="code-comment">/* this breaks text into two lines */</span>
+  <span class="code-highlight">padding: 1rem 1.5rem;</span>
+  <span class="code-comment">/* this treats broken text as different elements */
+  /* applies all declarations to all boxes created by an element both styled the same */
+  /* this helps in this example to make the padding the same for both lines of text */</span>
+  <span class="code-highlight">-webkit-box-decoration-break: clone;
+  box-decoration-break: clone;</span>
+}
+
+<span class="code-highlight">.card9__heading-span--1 {
+  background-image: linear-gradient(to right bottom, rgba(255, 185, 0, 0.75), rgba(255, 119, 48, 0.75));
+}</span></span></span>
+    
+<span class="code-html">&lt;div class="card9"&gt;
+  &lt;div class="card9__side card9__side--front"&gt;
+    &lt;div class="card9__picture card9__picture--1"&gt;&nbsp;&lt;/div&gt;
+
+    <span class="code-highlight">&lt;h4 class="card9__heading"&gt;
+      &lt;span class="card9__heading-span card9__heading-span--1"&gt;The Sea Explorer&lt;/span&gt;
+    &lt;/h4&gt;</span>
+
+    &lt;div class="card9__details"&gt;Details&lt;/div&gt;
+
+  &lt;/div&gt;
+
+  &lt;div class="card9__side card9__side--back card9__side--back--1"&gt;
+    &lt;h4&gt;BACK&lt;/h4&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</span></pre>
+      </div>
+    </div>
+
+
+    <div class="row">
+      <div class="col">
+        <p>View example here:</p>
+        <ul>
+          <li><a href="flip-cards-example-card9.html" target="_blank">Example: card9</a></li>
+        </ul>
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+    <br><br><br><br><br><br>
+
+    <h2>Step 10 - Create list</h2>
+    <div class="row">
+      <div class="col-4">
+        <p>This section is added below everything above.</p>
+          </div>
+      <div class="col-8">
+<pre class="example"><span class="code-css">.card10__details {
+  padding: 3rem;
+}
+
+.card10__details ul {
+  list-style: none;
+  width: 80%;
+  <span class="code-comment">/* center block element inside block element */</span>
+  margin: 0 auto;
+}
+
+.card10__details ul li {
+  text-align: center;
+  font-size: 1.5rem;
+  padding: 1rem;
+}
+
+.card10__details ul li:not(:last-child) {
+  <span class="code-comment">/* no padding on bottom list item */</span>
+  border-bottom: 1px solid #eee;
+}</span></span></span>
+    
+<span class="code-html">&lt;div class="card10__details"&gt;
+  &lt;ul&gt;
+    &lt;li&gt;3 day tour&lt;/li&gt;
+    &lt;li&gt;Up to 30 people &lt;/li&gt;
+    &lt;li&gt;2 tour guides&lt;/li&gt;
+    &lt;li&gt;Sleep in cozy hotels&lt;/li&gt;
+    &lt;li&gt;Difficulty: easy&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;</span></pre>
+      </div>
+    </div>
+
+
+    <div class="row">
+      <div class="col">
+        <p>View example here:</p>
+        <ul>
+          <li><a href="flip-cards-example-card10.html" target="_blank">Example: card10</a></li>
+        </ul>
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+    <br><br><br><br><br><br>
+
+    <h2>Step 11 - Back side of card</h2>
+    <div class="row">
+      <div class="col-4">
+        <p>#####</p>
+          </div>
+      <div class="col-8">
+<pre class="example"><span class="code-css">#####</span></span></span>
+    
+<span class="code-html">#######</span></pre>
+      </div>
+    </div>
+
+
+    <div class="row">
+      <div class="col">
+        <p>View example here:</p>
+        <ul>
+          <li><a href="flip-cards-example-card11.html" target="_blank">Example: card11</a></li>
+        </ul>
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </section>
+
+
+
+
+</body>
+
+</html>

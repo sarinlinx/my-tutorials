@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>jQuery Course</title>
+    <style>
+        div {
+            margin: 20px;
+        }
+    </style>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+</head>
+
+<body>
+
+
+    <div class="ui-widget">
+        <label for="searcher">Search Me:</label>
+        <input id="searcher">
+    </div>
+
+
+
+
+    <script src="../../_js/jquery-3.4.1.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            var foo = ["abc", "dcd", "eee"];
+            // user 'autocomplete' on the source variable named 'foo'            
+            $("#searcher").autocomplete({
+                source: foo,
+                // options
+                multiple: true,
+                // case check
+                mustMatch: false
+            });
+
+            // run function after keyup
+            $("#searcher").keyup(function() {
+                // store value entered into search field
+                var searchText = $(this).val();
+                foo.length = 0;
+                $.ajax({
+                    url: 'http://api.randomuser.me/?results=50',
+                    dataType: 'json',
+                    success: function(data) {
+                        console.log(data);
+                        $.each(data.results, function(k, v) {
+                            foo.push(v.name.first);
+                        });
+
+                    }
+                })
+            })
+        });
+    </script>
+
+</body>
+
+</html>

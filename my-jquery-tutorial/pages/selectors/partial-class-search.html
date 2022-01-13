@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="../../_css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../../_css/style.css">
+    <title>Partial class search</title>
+</head>
+
+<body>
+    <section class="container">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb breadcrumb-container">
+                <li class="breadcrumb-item"><a class="breadcrumb-link" href="../../index.html">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Partial class search</li>
+            </ol>
+        </nav>
+
+
+        <h1>Starts with</h1>
+        <h2>Partial class search using ^=</h2>
+        <p>^= means 'starts with'</p>
+        <p>This locates all classes that start with a few letters.</p>
+
+<pre class="example"><span class="code-html">&lt;p class="testClass"&gt;p with class named 'testClass'&lt;/p&gt;
+&lt;p class="testingClass"&gt;p with class named 'testingClass'&lt;/p&gt;
+&lt;p class="classTest"&gt;p with class named 'classTest'&lt;/p&gt;</span>
+&lt;button id="btn1"&gt;Click me&lt;/button&gt;
+
+<span class="code-js">$("#btn1").click(function() {
+  $("[class^='test']").css({
+      'border': '1px solid red'
+  });
+});</span></pre>
+
+        <h3>Example</h3>
+<p class="testClass">p with class named 'testClass'</p>
+<p class="testingClass">p with class named 'testingClass'</p>
+<p class="classTest">p with class named 'classTest'</p>
+<button id="btn1">Click me</button>
+
+
+
+
+
+
+
+
+<h1>Ends with</h1>
+<h2>Partial class search using $=</h2>
+<p>$= means 'ends with'</p>
+<p>This locates all classes that end the letters 'lass'.</p>
+
+<pre class="example"><span class="code-html">&lt;p class="testClass"&gt;p with class named 'testClass'&lt;/p&gt;
+&lt;p class="testingClass"&gt;p with class named 'testingClass'&lt;/p&gt;
+&lt;p class="classTest"&gt;p with class named 'classTest'&lt;/p&gt;
+&lt;button id="btn2"&gt;Click me&lt;/button&gt;</span>
+
+<span class="code-js">$("#btn1").click(function() {
+$("[class$='lass']").css({
+'border': '1px solid red'
+});
+});</span></pre>
+
+<h3>Example</h3>
+<p class="testClass">p with class named 'testClass'</p>
+<p class="testingClass">p with class named 'testingClass'</p>
+<p class="classTest">p with class named 'classTest'</p>
+<button id="btn2">Click me</button>
+
+
+
+
+
+
+
+<h1>Contains</h1>
+<h2>Find the element that contains a specific class using ~=</h2>
+<p>~= means 'contains full name'</p>
+<p>This locates all elements with the class of 'classTest'.</p>
+<p>THE FULL class name must be searched for. This is not a partial search</p>
+
+<pre class="example"><span class="code-html">&lt;p class="testClass"&gt;p with class named 'testClass'&lt;/p&gt;
+&lt;p class="testingClass"&gt;p with class named 'testingClass'&lt;/p&gt;
+&lt;p class="classTest"&gt;p with class named 'classTest'&lt;/p&gt;
+&lt;button id="btn3"&gt;Click me&lt;/button&gt;</span>
+
+<span class="code-js">$("#btn1").click(function() {
+$("[class~='classTest']").css({
+'border': '1px solid red'
+});
+});</span></pre>
+
+<h3>Example</h3>
+<p class="testClass">p with class named 'testClass'</p>
+<p class="testingClass">p with class named 'testingClass'</p>
+<p class="classTest">p with class named 'classTest'</p>
+<button id="btn3">Click me</button>
+
+
+
+
+
+
+
+
+
+<h1>Locate any sequence of characters using *=</h1>
+<h2>Find the element that contain a string of letters using *=</h2>
+<p>*= means 'contains string'</p>
+<p>This locates all elements with the string of 'est'.</p>
+
+<pre class="example"><span class="code-html">&lt;p class="testClass"&gt;p with class named 'testClass'&lt;/p&gt;
+&lt;p class="testingClass"&gt;p with class named 'testingClass'&lt;/p&gt;
+&lt;p class="classTest"&gt;p with class named 'classTest'&lt;/p&gt;
+&lt;button id="btn4"&gt;Click me&lt;/button&gt;</span>
+
+<span class="code-js">$("#btn1").click(function() {
+$("[class*='classTest']").css({
+'border': '1px solid red'
+});
+});</span></pre>
+
+<h3>Example</h3>
+<p class="testClass">p with class named 'testClass'</p>
+<p class="testingClass">p with class named 'testingClass'</p>
+<p class="classTest">p with class named 'classTest'</p>
+<button id="btn4">Click me</button>
+
+
+    </section>
+    <script src="../../_js/jquery-3.4.1.min.js"></script>
+    <script>
+
+    $("#btn1").click(function() {
+        $("[class^='test']").css({
+            'border': '1px solid red'
+        });
+    });
+
+    $("#btn2").click(function() {
+        $("[class$='lass']").css({
+            'border': '1px solid red'
+        });
+    });
+
+    $("#btn3").click(function() {
+        $("[class~='classTest']").css({
+            'border': '1px solid red'
+        });
+    });
+
+    $("#btn4").click(function() {
+        $("[class*='est']").css({
+            'border': '1px solid red'
+        });
+    });
+    </script>
+</body>
+
+</html>

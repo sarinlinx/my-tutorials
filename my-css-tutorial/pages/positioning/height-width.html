@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="../../_css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../../_css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <title>Height and Width</title>
+
+    <style>
+        #div1 {
+            height: 200px;
+            width: 50%;
+            background-color: powderblue;
+            color: #000;
+        }
+
+        #div2 {
+            height: 200px;
+            width: 50%;
+            background-color: rgb(0, 61, 70);
+            border: 1px solid red;
+            color: #fff;
+        }
+
+
+        #div3 {
+            height: 50%;
+            width: 50%;
+            background-color: rgb(0, 61, 70);
+            border: 1px solid red;
+            color: #fff;
+        }
+
+        #div4 {
+            height: 200px;
+            max-width: 50%;
+            background-color: rgb(85, 238, 131);
+            color: rgb(32, 32, 32);
+        }
+    </style>
+</head>
+
+<body>
+    <a href="../../index.html">Home page</a>
+
+
+
+
+
+
+    <section class="container">
+
+        <div class="row">
+            <div class="col">
+                <h1>Overview</h1>
+                <p>The height and width properties do not include padding, borders, or margins. It sets the height/width
+                    of the area inside the padding, border, and margin of the element.</p>
+
+            </div>
+        </div>
+
+
+
+        <div class="row">
+            <div class="col">
+                <h1>Height and Width</h1>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <h2>Single container</h2>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-6">
+                <p>Here's a basic container with set height and width.</p>
+            </div>
+
+            <div class="col-6">
+                <pre class="example"><span class="code-css">#div1 {
+  height: 200px;
+  width: 50%;
+}</span></pre>
+            </div>
+        </div>
+
+
+        <h3>Example</h3>
+
+        <div class="col">
+            <div id="div1">
+                Height is 200px.
+                Width is 50% of the container.
+            </div>
+        </div>
+
+
+
+
+        <div class="row">
+            <div class="col">
+                <h2>Container inside a container</h2>
+            </div>
+        </div>
+        <div class="row">
+
+            <div class="col-6">
+                <p>This shows a container in a container. The 50% is now 1/2 of the container it's in.</p>
+            </div>
+
+            <div class="col-6">
+                <pre class="example"><span class="code-css">#div1 {
+  height: 200px;
+  width: 50%;
+  color: #000;
+}
+
+#div2 {
+  height: 200px;
+  width: 50%;
+}</span></pre>
+            </div>
+        </div>
+
+
+        <h3>Example</h3>
+
+        <div class="col">
+            <div id="div1">
+                Height is 200px.
+                Width is 50% of the container.
+                <div id="div2">
+                    Height is 200px.
+                    Width is 50% of the container.
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+        <div class="row">
+            <div class="col">
+                <h2>Container inside a container #2</h2>
+            </div>
+        </div>
+        <div class="row">
+
+            <div class="col-6">
+                <p>This shows a container in a container. 50% height and width of parent container.</p>
+            </div>
+
+            <div class="col-6">
+                <pre class="example"><span class="code-css">#div1 {
+  height: 200px;
+  width: 50%;
+  color: #000;
+}
+
+#div3 {
+  height: 50%;
+  width: 50%;
+}</span></pre>
+            </div>
+        </div>
+
+
+        <h3>Example with text in parent</h3>
+
+        <div class="col">
+            <div id="div1">
+                <p>Height is 200px.</p>
+                <p>Width is 50% of the container.</p>
+                <div id="div3">
+                    Height and widht are 50% of parent.
+                    But the text in the parent pushes this section down.
+                </div>
+            </div>
+        </div>
+
+        <h3>Example without text in parent</h3>
+
+        <div class="col">
+            <div id="div1">
+
+                <div id="div3">
+                    Height and widht are 50% of parent.
+                    But the text in the parent pushes this section down.
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>

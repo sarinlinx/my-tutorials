@@ -1,0 +1,275 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="../../_css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../../_css/style.css">
+
+    <title>Responsive Design</title>
+</head>
+
+<body>
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="../../index.html">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Flexbox</li>
+        </ol>
+    </nav>
+
+
+
+    <section class="container">
+        <h1>HTML meta tag</h1>
+        <p>You must have the following meta tag in the HTML head or responsive queries will not function.</p>
+
+        <pre class="example"><span class="code-html">&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"></span></pre>
+
+
+
+
+
+        <h1>CSS to check if user can hover over HTML elements</h1>
+
+        <p>This allows you to identify touch devices.</p>
+        <div class="row">
+            <div class="col-5">
+                <p>Add hover:none to the media query to select touch devices.</p>
+                <p>The opposite for devices with a mouse would use hover: hover;</p>
+            </div>
+            <div class="col-7">
+                <pre class="example"><span class="code-css">@media only screen and (max-width: 56.25em),
+only screen <span class="code-highlight">and (hover: none)</span> {
+  .card {
+      height: auto;
+      border-radius: 3px;
+      box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
+      background-color: #fff
+  }
+}</span></pre>
+            </div>
+        </div>
+
+
+
+
+
+        <h1 class="heading-emphasis">3 basic principles of responsive design</h1>
+
+        <div class="row">
+            <div class="col">
+                <h2>Fluid grids and layouts</h2>
+                <p>Use % instead of px for all layout-related lenghts and especially width.</p>
+                <p>This allows the content to easily adapt to the current viewport.</p>
+
+
+                <h2>Flexible and responsive images</h2>
+                <p>Optimize the images for different widths.</p>
+
+
+                <h2>Media queries</h2>
+                <p>Allows you to change styles on certain viewport widths (breakpoints).</p>
+                <p>Always use relative units like em or rem. Never px since if the user changes their browsers default font size, your code will still work.</p>
+                <p>ems are preferred since rem doesn't always work in all browsers.</p>
+
+                <h4>max-width</h4>
+                <p>This is usually used with desktop first approach.</p>
+                <p>This checks if the current viewport is smaller or equal to 600px</p>
+                <pre class="example"><span class="code-css">@media only screen and (max-width: 600px) {
+  .class-name {
+    transform: skewX(0)
+  }
+}</span></pre>
+
+                <h4>min-width</h4>
+                <p>This is usually used for mobile first approach.</p>
+                <p>This checks if the current viewport is larger or equal to 600px</p>
+                <pre class="example"><span class="code-css">@media only screen and (min-width: 600px) {
+  .class-name {
+    transform: skewX(0)
+  }
+}</span></pre>
+
+
+
+
+
+                <h1>3 ways to create breakpoints</h1>
+                <h2>Bad</h2>
+                <p>Simply use the width of specific products to set the breakpoints.</p>
+                <p>The prolem is you're only focusing on specific devices.</p>
+                <p>It is also not future proof.</p>
+
+                <h2>Good</h2>
+                <p>Look at the most popular products and create breakpoints.</p>
+                <p>You can find the most popular screen sizes here:</p>
+                <ul>
+                    <li><a href="https://gs.statcounter.com/screen-resolution-stats" target="_blank">statcounter screen sizes</a>
+                    </li>
+                </ul>
+
+
+
+                <h2>Perfect</h2>
+                <p>Ignore screen sizes and focus only on your design.</p>
+                <p>Manually shrink your screen and choose to create a breakpoint whenever you find something should be adjusted.
+                </p>
+                <p>This is very time consuming however.</p>
+
+
+
+
+
+                <h1>3 ways to lay out the page</h1>
+                <h2>Float layouts (old way)</h2>
+                <p>Use the float property to place sections side by side.</p>
+
+                <h2>Flexbox</h2>
+                <p>Great for laying out elements in a 1 dimensional row.</p>
+
+
+                <h2>Grid</h2>
+                <p>Create full 2d grid layout.</p>
+
+
+
+
+
+                <h1>Using Sass Mixins to write media queries</h1>
+                <p>Add the media query into the selector.</p>
+
+                <pre class="example"><span class="code-css">html {
+  font-size: 62.5%;
+
+  @media (min-width: 600px) {
+    font-size: 50%;
+  }
+}</span></pre>
+
+                <p>The problem is that if you wanted to change something often repeated, it would take a lot of work.</p>
+                <p>The better option is to use a Mixin.</p>
+
+                <h3>Mixins</h3>
+                <p>Create a Mixin for value.</p>
+
+                <pre class="example"><span class="code-css"><span class="code-comment">//Media Query Manager
+/*
+0 - 600px Phone
+600px - 900px Tablet portrait
+900px - 1200px Table Landscape
+1200px - 1800px (Normal desktop styles)
+1800px + Big desktop
+*/
+
+/*
+$breakpoint argument choices:
+- phone
+- tab-port
+- tab-land
+- big-desktop
+*/
+
+//This passes a breakpoint into the mixin</span>
+@mixin respond($breakpoint) {
+
+  <span class="code-comment">/*
+  If the breakpoint is called phone, the following media query is used
+   @content allows you to pass blocks of code from other CSS pages into this mixin
+   Use relative unit for media query-not pixels
+   ems and rems not affected by html: font-size setting
+   1 rem or em is equal to default of the browser, so if a user changes the browser default, it changes the media query
+
+   ems is the best option sinces rems don't work in all browsers
+   1em = 16px;
+   
+   1800/16 = 112.5
+   1200/16 = 75
+   900/16 = 56.25
+   600/16 = 37.5
+   
+   These values will be adapated to font size user sets for the browser
+
+   ORDER to work through responsive code:
+   Base + Typography > general layout + grid > page layouts > components
+   */</span>
+
+  @if $breakpoint==big-desktop {
+    @media only screen and (min-width: 112.5em) { @content }; <span class="code-comment">//1800px</span>
+  }
+
+  @if $breakpoint==tab-land {
+    @media only screen and (max-width: 75em) { @content }; <span class="code-comment">//1200px</span>
+  }
+
+  @if $breakpoint==tab-port {
+    @media only screen and (max-width: 56.25em) { @content }; <span class="code-comment">//900px</span>
+  }
+
+  @if $breakpoint==phone {
+    @media only screen  and (max-width: 37.5em) { @content }; <span class="code-comment">//600px</span>
+  }
+}</span></pre>
+                <p>You can then pass the content into the Mixin.</p>
+
+
+                <pre class="example"><span class="code-css">
+html {
+  <span class="code-comment">/* It's bad practice to set the font-size to a pixel since users can change the font size in their browser.
+  16px is default, but we will set it to 10px using a %
+  62.5% of 16px is 10px */
+  font-size: 62.5%; // 1 rem = 10px
+
+  //this passes the media query to the respond mixin
+  //Within that mixin it looks for the phone variable
+  //It then uses this media query
+
+  //% must be recalculated since ems in media queries are not affected by the font-size of the html element above
+  //They are still based off the browser default of 16px
+
+  //THESE MUST BE TOP DOWN
+  //Because if a screen size applies to both of these, the LAST one in the list is used</span>
+  @include respond(big-desktop) {
+    <span class="code-comment">//1rem = 12px 12/16=75%</span>
+    font-size: 75%;
+  }
+
+  @include respond(tab-land) {
+    <span class="code-comment">//9px 9/16 = 56.25%</span>
+    font-size: 56.25%;
+  }
+
+  @include respond(tab-port) {
+    <span class="code-comment">//Change to 8px from browser default of 16px
+    //8/16 = 50%
+    //1 rem (that was originally 62.5% or 10px) now equals 8px throughout all code for this media query</span>
+    font-size: 50%;
+  }
+
+  <span class="code-comment">// @include respond(phone) {
+  //this can be skipped since preceeding media query can be used for this one also
+  // }</span>
+ 
+}</pre>
+            </div>
+
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+    <script src="../../_js/bootstrap.bundle.js"></script>
+</body>
+
+</html>

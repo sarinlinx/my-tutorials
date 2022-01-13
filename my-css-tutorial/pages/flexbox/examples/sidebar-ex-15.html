@@ -1,0 +1,276 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <style>
+         :root {
+            --color-primary: #eb2f64;
+            --color-primary-light: #FF3366;
+            --color-primary-dark: #BA265D;
+            --color-grey-light-1: #faf9f9;
+            --color-grey-light-2: #f4f2f2;
+            --color-grey-light-3: #f0eeee;
+            --color-grey-light-4: #ccc;
+            --color-grey-dark-1: #333;
+            --color-grey-dark-2: #777;
+            --color-grey-dark-3: #999;
+            --shadow-dark: 0 2rem 6rem rgba(0, 0, 0, 0.3);
+            --shadow-light: 0 2rem 5rem rgba(0, 0, 0, 0.06);
+            --line: 1px solid var(--color-grey-light-2)
+        }
+        
+        * {
+            margin: 0;
+            padding: 0
+        }
+        
+        *,
+        *::before,
+        *::after {
+            -webkit-box-sizing: inherit;
+            box-sizing: inherit
+        }
+        
+        html {
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+            font-size: 62.5%
+        }
+        
+        @media only screen and (max-width: 68.75em) {
+            html {
+                font-size: 50%
+            }
+        }
+        
+        body {
+            font-family: 'Open Sans', sans-serif;
+            font-weight: 400;
+            line-height: 1.6;
+            color: var(--color-grey-dark-2);
+            background-image: -webkit-gradient(linear, left top, right bottom, from(var(--color-primary-light)), to(var(--color-primary-dark)));
+            background-image: linear-gradient(to right bottom, var(--color-primary-light), var(--color-primary-dark));
+            background-size: cover;
+            background-repeat: no-repeat;
+            min-height: 100vh
+        }
+        
+        .container {
+            max-width: 120rem;
+            margin: 8rem auto;
+            background-color: var(--color-grey-light-1);
+            -webkit-box-shadow: var(--shadow-dark);
+            box-shadow: var(--shadow-dark);
+            min-height: 50rem
+        }
+        
+        .content {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex
+        }
+        
+        @media only screen and (max-width: 56.25em) {
+            .content {
+                -webkit-box-orient: vertical;
+                -webkit-box-direction: normal;
+                -ms-flex-direction: column;
+                flex-direction: column
+            }
+        }
+        
+        .sidebar {
+            background-color: var(--color-grey-dark-1);
+            -webkit-box-flex: 0;
+            -ms-flex: 0 0 18%;
+            flex: 0 0 18%;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+            flex-direction: column;
+            -webkit-box-pack: justify;
+            -ms-flex-pack: justify;
+            justify-content: space-between
+        }
+        
+        .hotel-view {
+            height: 80rem;
+            background-color: orangered;
+            -webkit-box-flex: 1;
+            -ms-flex: 1;
+            flex: 1
+        }
+        
+        .side-nav {
+            font-size: 1.4rem;
+            list-style: none;
+            margin-top: 3.5rem
+        }
+        
+        @media only screen and (max-width: 56.25em) {
+            .side-nav {
+                display: -webkit-box;
+                display: -ms-flexbox;
+                display: flex;
+                margin: 0
+            }
+        }
+        /* resize svg icons */
+        
+        .side-nav__icon {
+            width: 1.75rem;
+            height: 1.75rem;
+            margin-right: 2rem;
+            fill: currentColor;
+        }
+        
+        @media only screen and (max-width: 37.5em) {
+            .side-nav__icon {
+                margin-right: 0;
+                margin-bottom: .7rem;
+                width: 1.5rem;
+                height: 1.5rem;
+            }
+        }
+        
+        .legal {
+            font-size: 1.2rem;
+            color: var(--color-grey-light-4);
+            text-align: center;
+            padding: 2.5rem;
+        }
+        
+        .side-nav__link:link,
+        .side-nav__link:visited {
+            color: var(--color-grey-light-1);
+            text-decoration: none;
+            text-transform: uppercase;
+            display: block;
+            padding: 1.5rem 3rem;
+            position: relative;
+            z-index: 10;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+        }
+        
+        .side-nav__item {
+            position: relative;
+        }
+        
+        .side-nav__item::before {
+            /* Set content so it can display */
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            /* same height as list item */
+            height: 100%;
+            width: 3px;
+            background-color: var(--color-primary);
+            /* Set initial state to zero so when hovered it expands to 1 */
+            -webkit-transform: scaleY(0);
+            transform: scaleY(0);
+            /* transform starts after .2s 
+            width begins after a .2s delay and takes .4s to complete using a cubic-bezier function*/
+            transition: transform 0.2s, width 0.4s cubic-bezier(1, 0, 0, 1) 0.2s, background-color 0.1s;
+            /* transition: transform 0.2s, width 0.4s cubic-bezier(1, 0, 0, 1) 0.2s, background-color 0.1s, -webkit-transform 0.2s; */
+        }
+        
+        .side-nav__item:hover::before,
+        .side-nav__item--active::before {
+            -webkit-transform: scaleY(1);
+            transform: scaleY(1);
+            width: 100%;
+        }
+        
+        .side-nav__item:not(:last-child) {
+            margin-bottom: .5rem;
+        }
+        
+        .side-nav__item:active::before {
+            background-color: var(--color-primary-light);
+        }
+    </style>
+    <title>Sidebar Example</title>
+</head>
+
+<body>
+
+
+    <div class="container">
+        <div class="content">
+            <nav class="sidebar">
+                <ul class="side-nav">
+
+                    <li class="side-nav__item side-nav__item--active">
+                        <a href="" class="side-nav__link">
+                            <svg class="side-nav__icon">
+                <use xlink:href="img/sprite.svg#icon-home"></use>
+              </svg>
+                            <span>Hotel</span>
+                        </a>
+                    </li>
+
+                    <li class="side-nav__item">
+                        <a href="" class="side-nav__link">
+                            <svg class="side-nav__icon">
+                <use xlink:href="img/sprite.svg#icon-aircraft-take-off"></use>
+              </svg>
+                            <span>Flight</span>
+                        </a>
+                    </li>
+
+                    <li class="side-nav__item">
+                        <a href="" class="side-nav__link">
+                            <svg class="side-nav__icon">
+                <use xlink:href="img/sprite.svg#icon-key"></use>
+              </svg>
+                            <span>Car rental</span>
+                        </a>
+                    </li>
+
+                    <li class="side-nav__item">
+                        <a href="" class="side-nav__link">
+                            <svg class="side-nav__icon">
+                <use xlink:href="img/sprite.svg#icon-map"></use>
+              </svg>
+                            <span>Tours</span>
+                        </a>
+                    </li>
+
+                </ul>
+
+
+                <div class="legal">
+                    &copy; 2017 by trillo. All rights reserved.
+                </div>
+            </nav>
+
+            <main class="hotel-view">
+                Hotel view
+            </main>
+
+
+            <main class="hotel-view">
+
+            </main>
+
+
+
+        </div>
+    </div>
+
+
+</body>
+
+</html>

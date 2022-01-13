@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="../../_css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../../_css/style.css">
+    <style>
+      .timestwo {
+        font-size: 2em;
+      }
+
+      .colorful {
+        color: cyan;
+      }</style>
+
+    <title>removeClass()</title>
+</head>
+
+
+<body>
+    <section class="container">
+      <nav aria-label="breadcrumb">
+          <ol class="breadcrumb breadcrumb-container">
+              <li class="breadcrumb-item"><a class="breadcrumb-link" href="../../index.html">Home</a></li>
+              <li class="breadcrumb-item active" aria-current="page">removeClass()</li>
+          </ol>
+      </nav>
+
+
+
+<h1>removeClass()</h1>
+
+
+  <p>The addClass function adds a CSS class to an element.</p>
+  <p>This targets all paragraph tags.</p>
+  <p>It then assigns those tags the action of addClass().</p>
+  <p>Specify the CSS class name you want to add. This example adds 2 classes.</p>
+  <p>The removeClass() is then run which removes the 'timestwo' class.</p>
+  <p>The result is only the color changing.</p>
+
+<pre class="example">
+<span class="code-css">.timestwo {
+  font-size: 2em;
+}
+
+.colorful {
+  color: white;
+}</span>
+
+<span class="code-html">&lt;div&gt;
+  &lt;p&gt;This is a sentence&lt;/p&gt;
+  &lt;p class="super"&gt; Here's another one &lt;/p&gt;
+  &lt;h4 class="super"&gt; h4 tag not changed &lt;/h4&gt;
+&lt;/div&gt;</span>
+
+<span class="code-js">&lt;script src="js/jquery-3.1.1.min.js"&gt;&lt;/script&gt;
+
+&lt;script&gt;
+  $("p").addClass("colorful timestwo");
+  $("p").<span class="standout">removeClass</span>("timestwo");
+&lt;/script&gt;</span></pre>
+
+  <h3>Example</h3>
+    <div>
+      <p id="ex">This is a sentence</p>
+      <p id="ex" class="super"> Here's another one </p>
+      <p class="white"> h4 tag not changed </p>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <h1>Click button to remove a class</h1>
+
+            <pre class="example"><span class="code-css">.important {
+      font-weight: bold;
+      font-size: xx-large;
+    }
+
+    .blue {
+      color: blue;
+    }</span>
+
+<span class="code-html">&lt;p class="blue"&gt;This is a paragraph.&lt;/p&gt;
+&lt;p&gt;This is another paragraph.&lt;/p&gt;
+&lt;button id="btn3"&gt;Remove class from elements&lt;/button&gt;</span>
+
+<span class="code-js">$("button").click(function(){
+  $("p.blue").removeClass("blue");
+});</span></pre>
+
+
+            <h3>Example</h3>
+            <p class="blue">This is a paragraph.</p>
+            <p>This is another paragraph.</p>
+            <button id="btn3">Remove class from elements</button>
+
+
+
+    </section>
+    <script src="../../_js/jquery-3.4.1.min.js"></script>
+    <script>
+    $("p#ex").addClass("colorful timestwo");
+      $("p#ex").removeClass("timestwo");
+
+      $("button").click(function(){
+  $("p.blue").removeClass("blue");
+});
+    </script>
+
+
+</body>
+
+</html>

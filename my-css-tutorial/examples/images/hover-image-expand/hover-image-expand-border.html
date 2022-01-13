@@ -1,0 +1,412 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="../../../_css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../../../_css/style.css">
+    <style>
+        .composition {
+            position: relative;
+        }
+        
+        .composition__photo {
+            width: 55%;
+            box-shadow: 0 1.5rem 4rem rgba(240, 9, 9, 0.966);
+            border-radius: 2px;
+            position: absolute;
+        }
+        
+        .composition__photo--p1 {
+            left: 0;
+            top: -2rem;
+        }
+        
+        .composition__photo--p2 {
+            right: 0;
+            top: 2rem;
+        }
+        
+        .composition__photo--p3 {
+            left: 20%;
+            top: 10rem;
+        }
+        /* Example 2 */
+        
+        .composition-x2 {
+            position: relative;
+        }
+        
+        .composition__photo-x2 {
+            width: 55%;
+            box-shadow: 0 1.5rem 4rem rgba(240, 9, 9, 0.966);
+            border-radius: 2px;
+            position: absolute;
+            z-index: 10;
+            transition: all 0.2s;
+        }
+        
+        .composition__photo--p1-x2 {
+            left: 0;
+            top: -2rem;
+        }
+        
+        .composition__photo--p2-x2 {
+            right: 0;
+            top: 2rem;
+        }
+        
+        .composition__photo--p3-x2 {
+            left: 20%;
+            top: 10rem;
+        }
+        
+        .composition__photo-x2:hover {
+            transform: scale(1.05);
+            box-shadow: 0 2.5rem 4rem rgba(240, 9, 9, 0.966);
+            z-index: 20;
+        }
+        /* Example 3 */
+        
+        .composition-x3 {
+            position: relative;
+        }
+        
+        .composition__photo-x3 {
+            width: 55%;
+            box-shadow: 0 1.5rem 4rem rgba(240, 9, 9, 0.966);
+            /* border-radius: 2px; */
+            position: absolute;
+            z-index: 10;
+            transition: all 0.2s;
+            outline-offset: 2rem;
+        }
+        
+        .composition__photo--p1-x3 {
+            left: 0;
+            top: -2rem;
+        }
+        
+        .composition__photo--p2-x3 {
+            right: 0;
+            top: 2rem;
+        }
+        
+        .composition__photo--p3-x3 {
+            left: 20%;
+            top: 10rem;
+        }
+        
+        .composition__photo-x3:hover {
+            outline: 1.5rem solid rgb(103, 255, 1);
+            transform: scale(1.05) translateY(-0.5rem);
+            box-shadow: 0 2.5rem 4rem rgba(240, 9, 9, 0.966);
+            z-index: 20;
+        }
+        /* when you hover '.composition',  select '.composition__photo's that are NOT hovered */
+        
+        .composition-x3:hover .composition__photo-x3:not(:hover) {
+            transform: scale(0.95)
+        }
+    </style>
+    <title>Hover over image to expand and add border</title>
+</head>
+
+<body>
+    <a href="../../../index.html">Home page</a>
+
+    <section class="container">
+
+
+
+        <div class="row">
+            <div class="col">
+                <h1>Hover over image to expand and change opacity</h1>
+
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+        <h2>#1: Position images</h2>
+        <div class="row">
+
+            <div class="col-4">
+                <p>(absolute) Position images inside their (relative) container.</p>
+            </div>
+
+            <div class="col-8">
+                <pre class="example"><span class="code-css">.composition {
+  position: relative
+}
+
+.composition__photo {
+  width: 55%;
+  box-shadow: 0 1.5rem 4rem rgba(240, 9, 9, 0.966);
+  border-radius: 2px;
+  position: absolute;                
+}
+
+.composition__photo--p1 {
+  left: 0;
+  top: -2rem
+}
+
+.composition__photo--p2 {
+  right: 0;
+  top: 2rem
+}
+
+.composition__photo--p3 {
+  left: 20%;
+  top: 10rem
+}</span>
+                
+                
+<span class="code-html">&ltdiv class="composition"&gt;
+  &lt;img src="nat-1-large.jpg" alt="photo 1" class="composition__photo composition__photo--p1"&gt;
+  &lt;img src="nat-2-large.jpg" alt="photo 2" class="composition__photo composition__photo--p2"&gt;
+  &lt;img src="nat-3-large.jpg" alt="photo 3" class="composition__photo composition__photo--p3"&gt;
+&lt;/div&gt;</span></pre>
+            </div>
+        </div>
+
+
+        <h3>Example</h3>
+        <br><br><br><br>
+        <div class="composition">
+
+            <!-- OLD image code -->
+            <img src="nat-1-large.jpg" alt="photo 1" class="composition__photo composition__photo--p1">
+            <img src="nat-2-large.jpg" alt="photo 2" class="composition__photo composition__photo--p2">
+            <img src="nat-3-large.jpg" alt="photo 3" class="composition__photo composition__photo--p3">
+
+
+
+
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <h2>#2: Add hover effect</h2>
+        <div class="row">
+
+            <div class="col-4">
+                <p>Hover over any image and it moves on top of other images.</p>
+                <ol>
+                    <li>Add a z-index on the 'composition__photo' class each image shares.</li>
+                    <li>Give the hover property a higher z-index.</li>
+                    <li>Add a transition on the 'composition__photo' class to ease the change.</li>
+                </ol>
+            </div>
+
+            <div class="col-8">
+                <pre class="example"><span class="code-css">.composition {
+  position: relative
+}
+
+.composition__photo {
+  width: 55%;
+  box-shadow: 0 1.5rem 4rem rgba(240, 9, 9, 0.966);
+  border-radius: 2px;
+  position: absolute;    
+  <span class="code-highlight">z-index: 10;
+  transition: all 0.2s;</span>            
+}
+
+.composition__photo--p1 {
+  left: 0;
+  top: -2rem
+}
+
+.composition__photo--p2 {
+  right: 0;
+  top: 2rem
+}
+
+.composition__photo--p3 {
+  left: 20%;
+  top: 10rem
+}
+
+<span class="code-highlight">.composition__photo-x2:hover {
+  transform: scale(1.05);
+  box-shadow: 0 2.5rem 4rem rgba(240, 9, 9, 0.966);
+  z-index: 20;
+}</span></span>
+                
+                
+<span class="code-html">&ltdiv class="composition"&gt;
+  &lt;img src="nat-1-large.jpg" alt="photo 1" class="composition__photo composition__photo--p1"&gt;
+  &lt;img src="nat-2-large.jpg" alt="photo 2" class="composition__photo composition__photo--p2"&gt;
+  &lt;img src="nat-3-large.jpg" alt="photo 3" class="composition__photo composition__photo--p3"&gt;
+&lt;/div&gt;</span></pre>
+            </div>
+        </div>
+
+        <h3>Example</h3>
+        <br><br><br><br>
+        <div class="composition-x2">
+
+            <!-- OLD image code -->
+            <img src="nat-1-large.jpg" alt="photo 1" class="composition__photo-x2 composition__photo--p1-x2">
+            <img src="nat-2-large.jpg" alt="photo 2" class="composition__photo-x2 composition__photo--p2-x2">
+            <img src="nat-3-large.jpg" alt="photo 3" class="composition__photo-x2 composition__photo--p3-x2">
+
+
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <h2>#3: Add hover border</h2>
+        <div class="row">
+
+            <div class="col-4">
+                <p>Add border when hovering image using 'outline' and 'outline-offset'.</p>
+                <p>Also scale the images that are NOT being hovered down when one is hovered.</p>
+            </div>
+
+            <div class="col-8">
+                <pre class="example"><span class="code-css">.composition {
+  position: relative;
+}
+
+.composition__photo {
+  width: 55%;
+  box-shadow: 0 1.5rem 4rem rgba(240, 9, 9, 0.966);
+  position: absolute;
+  z-index: 10;
+  transition: all 0.2s;
+  <span class="code-highlight">outline-offset: 2rem;</span>
+}
+
+.composition__photo--p1 {
+  left: 0;
+  top: -2rem;
+}
+
+.composition__photo--p2 {
+  right: 0;
+  top: 2rem;
+}
+
+.composition__photo--p3 {
+  left: 20%;
+  top: 10rem;
+}
+
+.composition__photo:hover {
+  <span class="code-highlight">outline: 1.5rem solid rgb(103, 255, 1);</span>
+  transform: scale(1.05) <span class="code-highlight">translateY(-0.5rem);</span>
+  box-shadow: 0 2.5rem 4rem rgba(240, 9, 9, 0.966);
+  z-index: 20;
+}
+<span class="code-comment">/* when you hover '.composition',  select '.composition__photo's that are NOT hovered */</span>
+<span class="code-highlight">.composition:hover .composition__photo:not(:hover) {
+  transform: scale(0.95)
+}</span></span>
+  
+                
+<span class="code-html">&ltdiv class="composition"&gt;
+  &lt;img src="nat-1-large.jpg" alt="photo 1" class="composition__photo composition__photo--p1"&gt;
+  &lt;img src="nat-2-large.jpg" alt="photo 2" class="composition__photo composition__photo--p2"&gt;
+  &lt;img src="nat-3-large.jpg" alt="photo 3" class="composition__photo composition__photo--p3"&gt;
+&lt;/div&gt;</span></pre>
+            </div>
+        </div>
+
+        <h3>Example</h3>
+        <br><br><br><br>
+        <div class="composition-x3">
+
+
+            <img src="nat-1-large.jpg" alt="photo 1" class="composition__photo-x3 composition__photo--p1-x3">
+            <img src="nat-2-large.jpg" alt="photo 2" class="composition__photo-x3 composition__photo--p2-x3">
+            <img src="nat-3-large.jpg" alt="photo 3" class="composition__photo-x3 composition__photo--p3-x3">
+
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </section>
+
+
+
+
+
+
+
+
+</body>
+
+</html>

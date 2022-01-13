@@ -1,0 +1,259 @@
+/*___________________________________________________
+General Styles
+___________________________________________________*/
+
+body {
+    background-color: #1a1a1a;
+    color: #70c4ee;
+    position: relative;
+    /* background-image: url("textures/asfalt-dark.png"); */
+}
+
+.toc-heading {
+    text-align: center;
+    font-size: 4rem;
+    font-family: 'Lora', serif;
+    background: linear-gradient(to top, #f00 0%, #a7a7a7 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    border-bottom: 1px solid #eee;
+}
+
+.toc-heading1 {
+    text-align: center;
+    font-size: 3.5rem;
+    font-family: 'Lora', serif;
+    background: linear-gradient(to right, #c9c9c9 0%, #fc8500 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    border-bottom: 1px solid #eee;
+}
+
+.toc-heading2 {
+    font-size: 2.5rem;
+    font-family: 'Lora', serif;
+    background: linear-gradient(to bottom, #bdbdbd 0%, #0083ff 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+h1 {
+    font-size: 3rem;
+    font-family: 'Lora', serif;
+    margin-top: 60px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #eee;
+    /* background-image: url("textures/asfalt-light.png"); */
+    padding: 10px 0;
+    text-align: center;
+    background: linear-gradient(to right, #c9c9c9 0%, #fc8500 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+h2 {
+    font-size: 2.3rem;
+    padding-top: 1rem;
+    font-family: 'Lora', serif;
+    background-color: #0e0e0e;
+    background-image: url("textures/asfalt-dark.png");
+    margin: 30px 0;
+    background: linear-gradient(to right, #30CFD0 0%, #330867 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    border-bottom: 1px solid #eee;
+}
+
+h3 {
+    font-family: 'Lora', serif;
+    background: linear-gradient(to right, #65e470 0%, #000b1d 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    /* border-bottom: 1px solid #eee; */
+}
+
+h4 {
+    font-family: 'Lora', serif;
+    font-size: 1.3rem;
+    background: linear-gradient(to right, #fb8e8e 0%, #a50000 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+h5 {
+    color: #bbbbbb;
+}
+
+
+/*___________________________________________________
+Breadcrumbs
+___________________________________________________*/
+
+.highlight-word {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.standout {
+    font-weight: bolder;
+    font-size: 1.2rem;
+}
+
+.bg-shade {
+    background-color: #1d1d1d;
+    padding: 1.5rem 0;
+}
+
+.breadcrumb-container {
+    background-color: #000;
+}
+
+.breadcrumb-link {
+    color: #ffbf00;
+}
+
+.no-bullets {
+    list-style: none;
+    font-weight: bolder;
+}
+
+
+/*___________________________________________________
+Note boxes
+___________________________________________________*/
+
+.alert-important,
+.alert-note,
+.alert-tip,
+.alert-warning {
+    position: relative;
+    padding: 15px;
+    /* border: 1px solid #DCDCDC; */
+    border: 1px solid #ff0000;
+    height: auto;
+    min-height: 90px;
+    display: table;
+    margin: 15px 0 15px 0;
+    /* background-color: #a0e1cd; */
+}
+
+
+/* vertical divider between icon and text */
+
+.alert-content {
+    margin-left: 80px;
+    line-height: 22px;
+    font-size: 95%;
+    padding-left: 20px;
+    /* border-left: 1px solid #DCDCDC; */
+    border-left: 1px solid #ff0000;
+    display: table-cell;
+    vertical-align: middle;
+    /* color: #000; */
+    color: #fff;
+}
+
+.alert-content ul,
+.alert-content ol {
+    margin-bottom: 0;
+}
+
+.alert-content li {
+    padding: 0;
+}
+
+.alert-icon {
+    display: table-cell;
+    width: 8%;
+    min-width: 75px;
+    vertical-align: middle;
+}
+
+
+/*___________________________________________________
+Code coloring
+___________________________________________________*/
+
+.example {
+    background-color: #000;
+    color: #ffbf00;
+    padding: 5px;
+    box-shadow: 0 0 4px 2px #1f1f1f;
+}
+
+.code-css {
+    color: yellow;
+}
+
+.code-html {
+    color: #ff9d39;
+}
+
+.code-keyboard-command {
+    color: #d0d0d0;
+}
+
+.code-js {
+    color: #e96c6c;
+}
+
+.code-comment {
+    color: gray;
+}
+
+.code-output {
+    color: #9c9c9c;
+}
+
+.code-php {
+    color: #27cf35;
+}
+
+
+/*___________________________________________________
+Text Colors
+___________________________________________________*/
+
+.blue {
+    color: blue;
+    font-weight: bold;
+}
+
+.border-green {
+    border: 3px solid green;
+}
+
+.cyan {
+    color: cyan;
+}
+
+.green {
+    color: green;
+}
+
+.red {
+    color: red;
+}
+
+.white {
+    color: white;
+}
+
+.yellow {
+    color: yellow;
+}
+
+
+/*___________________________________________________
+Examples
+___________________________________________________*/
+
+.html-change-class {
+    color: red;
+    font-size: 3rem;
+}
+
+.code-highlight {
+    font-weight: 700;
+    font-size: 1.1rem;
+}

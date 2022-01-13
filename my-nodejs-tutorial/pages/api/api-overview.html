@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" type="text/css" href="../../_css/styles.css">
+
+  <title>API overview</title>
+</head>
+
+<body>
+
+
+  <nav class="navbar">
+    <a href="../../index.html">Back to homepage</a>
+    <a class="nav-page nav-active">API overview</a>
+  </nav>
+
+
+
+
+
+
+
+  <h1>API</h1>
+  <img src="../../_img/api-overview.png" width="750px">
+
+  <h1>REST Architecture</h1>
+  <div class="text-section">
+    <p>REST (Representational State Transfer) is a way to build web APIs in a logical way and making them easy to
+      consume.</p>
+  </div>
+
+  <h1>Principles</h1>
+
+
+  <h2>1: Separate API into logical resources</h2>
+  <div class="text-section">
+    <p>All data should be separated into Logical Resources.</p>
+    <p>The name of the resource should be a noun. It SHOULD NOT be a verb.</p>
+
+    <img src="../../_img/resources.png" width="350px">
+  </div>
+
+
+
+  <h2>2: Expose the resources</h2>
+  <div class="text-section">
+    <p>These resources are then Exposed (made available) using structured, resource-based URLS.</p>
+    <p>The URL includes and Endpoint.</p>
+    <p>The Enpoint name should be a noun. It SHOULD NOT be a verb.</p>
+    <p>Verbs should only be used for actions.</p>
+    <p>The Endpoint should only contain the Resource, NOT the action to be performed on it.</p>
+    <img src="../../_img/expose-resources.png" width="550px">
+  </div>
+
+
+
+
+  <h2>3: HTTP methods (verbs) </h2>
+  <div class="text-section">
+    <p>Used to READ, WRITE, DELETE data.</p>
+    <p>For example: Do not name the method <span class="code">getTour</span>. Just name it <span
+        class="code">tours</span> and only use it when sending a <span class="code">get</span> request to the endpoint.
+    </p>
+    <p>It's common practice to put the resournce name in plural.</p>
+    <p>This resource returns several values. You can then specify which one you want by adding a forward slash followed
+      by the specific ID.</p>
+  </div>
+
+  <h4>Reading and Writing</h4>
+  <div class="text-section">
+    <p><span class="code">POST</span> is used to create resources.</p>
+    <p><span class="code">GET</span> is used to read resources.</p>
+    <p>In this way, you can control the action based off the HTTP request type you're using.</p>
+    <img src="../../_img/api-get-post.png" width="550px">
+  </div>
+
+  <h4>Updating</h4>
+  <div class="text-section">
+    <p>Use <span class="code">PUT</span> or <span class="code">PATCH</span> to update. </p>
+    <p><span class="code">PUT</span> uses the client to send the entire updated Object.</p>
+    <p><span class="code">PATCH</span> send only the part of the Object that was changed.</p>
+    <img src="../../_img/api-put-patch.png" width="550px">
+  </div>
+
+  <h4>Delete</h4>
+  <div class="text-section">
+    <p>Use <span class="code">DELETE</span> to delete a resource.</p>
+  </div>
+
+  <h3>CRUD Operations</h3>
+  <div class="text-section">
+    <p>The operations above are CRUD Operations.</p>
+    <ul>
+      <li>Create</li>
+      <li>Read</li>
+      <li>Update</li>
+      <li>Delete</li>
+    </ul>
+    <img src="../../_img/crud.png">
+  </div>
+
+  <h3>Example of properly naming/using resources and methods</h3>
+  <div class="text-section">
+    <p>The example on the left is BAD since it uses method terms in the resource name.</p>
+    <img src="../../_img/api-resource-naming-examples.png" width="550px">
+  </div>
+
+
+
+
+  <h2>4: Send data as JSON</h2>
+
+  <div class="text-section">
+    <p><span class="code">JSend</span> is used to format JSON data.</p>
+    <p>A status is added at the top.</p>
+    <p>A new Object named <span class="code">data</span> is created. Inside you add all of your data.</p>
+    <img src="../../_img/jsend.png">
+  </div>
+
+
+
+
+
+
+  <h2>5: Must be Stateless</h2>
+
+  <div class="text-section">
+    <p>All State is handled on the client and not the server.</p>
+    <p>State is data in the application that may change over time.</p>
+    <img src="../../_img/stateless.png">
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>

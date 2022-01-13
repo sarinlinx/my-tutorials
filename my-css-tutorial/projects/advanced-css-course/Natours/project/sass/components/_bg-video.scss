@@ -1,0 +1,25 @@
+.bg-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    //height and width of parent
+    height: 100%;
+    width: 100%;
+    opacity: .15;
+
+    // set z-index so all elements are above this layer
+    z-index: -1;
+   
+    // prevent video overflowing parent
+    overflow: hidden;
+
+    //prevent video overflowing section
+    //This retains aspect ratio of video which may not be the correct size
+    &__content {
+        height: 100%;
+        width: 100%;
+        // allows vide to fill parent while maintaining aspect ratio
+        object-fit: cover;
+
+    }
+}

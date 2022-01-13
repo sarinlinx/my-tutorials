@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="../../_css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../../_css/style.css">
+
+    <title>The val() method</title>
+</head>
+
+<body>
+    <section class="container">
+      <nav aria-label="breadcrumb">
+          <ol class="breadcrumb breadcrumb-container">
+              <li class="breadcrumb-item"><a class="breadcrumb-link" href="../../index.html">Home</a></li>
+              <li class="breadcrumb-item active" aria-current="page">The val() method</li>
+          </ol>
+      </nav>
+
+
+<h1>Get the val()</h1>
+
+<pre class="example">
+<span class="code-html">&lt;p&gt;Name: &lt;input type="text" id="test" value="Mickey Mouse"&gt;&lt;/p&gt;
+&lt;button id="btn1"&gt;Show Value&lt;/button&gt;</span>
+
+<span class="code-js">$("button#btn1").click(function(){
+  alert("Value: " + $("#test").val());
+});</span></pre>
+
+
+    <h3>Example</h3>
+    <p>Name: <input type="text" id="test" value="Mickey Mouse"></p>
+    <button id="btn1">Show Value</button>
+
+
+
+
+
+
+
+
+    <h1>Set the val()</h1>
+
+    <pre class="example"><span class="code-html">&lt;p&gt;Input field: &lt;input type="text" id="test3" value="Mickey Mouse"&gt;&lt;/p&gt;
+    &lt;button id="btn3"&gt;Set Value&lt;/button&gt;</span>
+
+    <span class="code-js">  $("#btn3").click(function(){
+    $("#test3").val("Dolly Duck");
+  });</span></pre>
+
+
+        <h3>Example</h3>
+<p>Input field: <input type="text" id="test3" value="Mickey Mouse"></p>
+<button id="btn3">Set Value</button>
+
+
+
+
+
+
+
+
+    <h1>Targeting a value using val()</h1>
+        <p>This changes the text of a button by targeting the 'value' of it in HTML.</p>
+        <p>You do this using the val()</p>
+
+    <pre class="example">
+<span class="code-html">&lt;h2 class="dope"&gt; You'll learn how to replace me</h2>
+&lt;input type="button" value="Replace" id="btn_main" /&gt;</span>
+
+<span class="code-js">$('#btn_main').on('click', function() {
+  <span class="code-comment">//use the text() method to replace the existing text</span>
+  $('.dope').text('This is new text.')
+  $('#btn_main').<span class="standout">val</span>('Double Click Me');
+});</span></pre>
+
+
+        <h3>Example</h3>
+        <h2 class="dope2"> You'll learn how to replace me </h2>
+        <input type="button" value="Replace" id="btn_main2" />
+
+
+
+
+    </section>
+
+
+
+
+
+
+
+    <script src="../../_js/jquery-3.4.1.min.js"></script>
+
+    <script>
+
+$('#btn_main').on('click', function(){
+  //use the text() method to replace the existing text
+  $('.dope').text('This is new text.');
+});
+
+$('#btn_main2').on('click', function(){
+  //use the text() method to replace the existing text
+  $('.dope2').text('This is new text.');
+  $('#btn_main2').val('Double Click Me');
+
+});
+
+
+$("button#btn1").click(function(){
+  alert("Value: " + $("#test").val());
+});
+
+$("#btn3").click(function(){
+  $("#test3").val("Dolly Duck");
+});
+
+    </script>
+
+</body>
+
+</html>

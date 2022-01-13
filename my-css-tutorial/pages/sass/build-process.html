@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="../../_css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../../_css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+    <title>Build Process</title>
+</head>
+
+<body>
+
+
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+                <a href="../../index.html">Home</a>
+            </li>
+            <li class="breadcrumb-item active" aria-current="page">Build Process</li>
+        </ol>
+    </nav>
+
+
+    <section class="container">
+
+        <h1>Build Process</h1>
+        <p>The Build Process does multiple things to finalize your code.</p>
+        <p>This is a sequence of automated tasks when you're finished developing the product.</p>
+        <p>The final result is multiple files ready to be deployed to a web server.</p>
+
+        <dl>
+            <dd>
+                <img src="../../_img/build-process.png"></dd>
+        </dl>
+
+        <p>This is done in the package.json file</p>
+
+
+
+
+
+        <h1>Update the package.json file with your build code</h1>
+
+        <div class="row">
+            <div class="col">
+                <p>View the <a href="sass.html">Installing Sass Locally</a> guide for instructions on how to install Sass using npm.</p>
+                <p>You can then update the package.json file with your build code.</p>
+                <p>The following build code does two things:</p>
+                <ul>
+                    <li>Creates a development option to run live-server</li>
+                    <li>Builds all CSS files into a final style.css file</li>
+                </ul>
+            </div>
+        </div>
+
+        <h3>The development code</h3>
+        <div class="row">
+
+            <div class="col-4">
+                <p>The first part is the development code.</p>
+                <ul>
+                    <li><strong>watch:sass</strong>: watch for new changes to the code as you're developing</li>
+                    <li><strong>devserver</strong>: add development so you can run this in one command otherwise you'd need to run both this Sass file, and manually start live-server in another terminal</li>
+                    <li><strong>start</strong>: parallel runs both devserver and watch at the same time</li>
+                </ul>
+                <p>When developing code, run <strong>npm run start</strong> to launch live-server</p>
+            </div>
+
+            <div class="col-8">
+                <pre class="example"><span class="code-js">{
+  "name": "natours",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {                  
+      <span class="code-highlight">"watch:sass": "node-sass sass/main.scss css/style.css -w",                     
+      "devserver": "live-server",                      
+      "start": "npm-run-all --parallel devserver watch:sass",</span>
+      // compile the Sass files into style.comp.css
+      "compile:sass": "node-sass sass/main.scss css/style.comp.css",
+      // concatenate into style.concat.css the two css files icon-font.css and style.comp.css 
+      "concat:css": "concat -o css/style.concat.css css/icon-font.css css/style.comp.css",
+      // add prefixes to style.concat.css and save to style.prefix.css
+      // you need to install this using npm install postcss-cli --save-dev
+      // -b option targets browsers. You can also use last 5 versions for last 5 versions of all browsers
+      "prefix:css": "postcss --use autoprefixer -b 'last versions' css/style.concat.css -o css/style.prefix.css",
+      // compress style.prefix.css into style.css
+      "compress:css": "node-sass css/style.prefix.css css/style.css --output-style compressed",
+      // run everything to build css
+      // install npm-run-all --save-dev
+      "build:css": "npm-run-all compile:sass concat:css prefix:css compress:css"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+      "autoprefixer": "^10.1.0",
+      "concat": "^1.0.3",
+      "node-sass": "^5.0.0",
+      "npm-run-all": "^4.1.5",
+      "postcss": "^8.2.1",
+      "postcss-cli": "^8.3.0"
+  }
+}</span></pre>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+        <h3>The build code</h3>
+        <div class="row">
+
+            <div class="col-4">
+                <p>The first part is the development code.</p>
+                <ul>
+                    <li><strong>compile:sass</strong>: compile the Sass files into style.comp.css</li>
+                    <li><strong>concat.css</strong>: concatenate into style.concat.css the two css files icon-font.css and style.comp.css</li>
+                    <li><strong>prefix:css</strong>: add prefixes to style.concat.css and save to style.prefix.css. you need to install this using npm install postcss-cli --save-dev. The -b option targets browsers. You can also use last 5 versions for last
+                        5 versions of all browsers</li>
+                    <li><strong>compress:css</strong>: compress style.prefix.css into style.css</li>
+                    <li><strong>build:css</strong>: run everything to build css. Run this to install package: install npm-run-all --save-dev</li>
+                </ul>
+                <p>When building code, run <strong>npm run build:css</strong> to launch live-server</p>
+            </div>
+
+            <div class="col-8">
+                <pre class="example"><span class="code-js">{
+  "name": "natours",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {                  
+      "watch:sass": "node-sass sass/main.scss css/style.css -w",                     
+      "devserver": "live-server",                      
+      "start": "npm-run-all --parallel devserver watch:sass",      
+      <span class="code-highlight">"compile:sass": "node-sass sass/main.scss css/style.comp.css",       
+      "concat:css": "concat -o css/style.concat.css css/icon-font.css css/style.comp.css",      
+      "prefix:css": "postcss --use autoprefixer -b 'last versions' css/style.concat.css -o css/style.prefix.css",      
+      "compress:css": "node-sass css/style.prefix.css css/style.css --output-style compressed",      
+      "build:css": "npm-run-all compile:sass concat:css prefix:css compress:css"</span>
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+      "autoprefixer": "^10.1.0",
+      "concat": "^1.0.3",
+      "node-sass": "^5.0.0",
+      "npm-run-all": "^4.1.5",
+      "postcss": "^8.2.1",
+      "postcss-cli": "^8.3.0"
+  }
+}</span></pre>
+            </div>
+        </div>
+
+
+
+    </section>
+
+
+
+
+
+</body>
+
+</html>

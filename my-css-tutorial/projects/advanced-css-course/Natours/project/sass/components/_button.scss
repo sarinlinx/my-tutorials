@@ -1,0 +1,138 @@
+.btn {
+  &,
+  &:link,
+  &:visited {
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 1.5rem 4rem;
+    display: inline-block;
+    border-radius: 10rem;
+    /* Animate all properties */
+    transition: all 0.2s;
+    /* the btn::after position:absolute property looks for this relative reference */
+    position: relative;
+    font-size: $default-font-size;
+    border: none;
+    cursor: pointer;
+  }
+
+  &:hover {
+    /* Move up */
+    transform: translateY(-3px);
+    box-shadow: 0 1rem 2rem rgba($color-black,0.2);
+    /* After the button is hovered away from */
+    /* nested, would compile to .btn:hover::after */
+    &::after {
+      /* Increase element scale */
+      transform: scaleX(1.4) scaleY(1.6);
+      /* Fade out to invisible */
+      opacity: 0;
+    }
+  }
+
+  &:active,
+  .btn:focus {
+    outline: none;
+    /* Moves down 1px from INITIAL STATE (not hovered state) when clicked */
+    transform: translateY(-1px);
+    /* Decrease shaow when clicked */
+    box-shadow: 0 0.5rem 1rem rgba($color-black, 0.2);
+  }
+
+  &--white {
+    background-color: $color-white;
+    color: $color-grey-dark;
+    /* nested, this would be .btn--white::after*/
+    &::after {
+      background-color: $color-white;
+    }
+  }
+
+   &--green {
+    background-color: $color-primary;
+    color: $color-white;
+  }
+
+  &--green::after {
+    background-color: $color-primary;
+  }
+  
+
+
+  /* Make it appear same as original button */
+  &::after {
+    /* Must specify content property so it apperas */
+    content: "";
+    /* Must display property for it to display */
+    display: inline-block;
+    /* 100% of width of the button since ::after acts like a child property */
+    height: 100%;
+    width: 100%;
+    border-radius: 10rem;
+    /* Put it behind button */
+    position: absolute;
+    /* This location reference is the first element with a relative position it can find */
+    top: 0;
+    left: 0;
+    /* Defines position of layered elements. -1 puts it behind */
+    z-index: -1;
+    /* Set transition from original state */
+    transition: all 0.4s;
+  }
+  /* Animate a button */
+
+  &--animated {
+    /* Move up from below. .75s is a delay */
+    animation: moveInBottom 0.5s ease-out 0.75s;
+    /* Applies keyframes 0% styles before animation starts. Otherwise you'd see the element before it animates */
+    animation-fill-mode: backwards;
+  }
+  /*
+&-text:link, &-text:visited {
+  font-size: 1.6rem;
+  color: #55c57a;
+  display: inline-block;
+  text-decoration: none;
+  border-bottom: 1px solid #55c57a;
+  padding: 3px;
+  transition: all .2s;
+}
+
+&-text:hover {
+  background-color: #55c57a;
+  color: #fff;
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
+}
+
+&-text:active {
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  transform: translateY(0);
+}
+*/
+}
+
+.btn-text {
+  &:link,
+  &:visited {
+    font-size: $default-font-size;
+    color: $color-primary;
+    display: inline-block;
+    text-decoration: none;
+    border-bottom: 1px solid $color-primary;
+    padding: 3px;
+    transition: all 0.2s;
+  }
+
+  &:hover {
+    background-color: $color-primary;
+    color: $color-white;
+    box-shadow: 0 1rem 1rem rgba($color-black, .15);
+    transform: translateY(-2px);
+  }
+
+  &.active {
+    box-shadow: 0 .5rem 1rem rgba($color-black, .15);
+    transform: translateY(0);
+  }
+}

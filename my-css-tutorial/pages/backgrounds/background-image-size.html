@@ -1,0 +1,443 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="../../_css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../../_css/style.css">
+
+    <style>
+        #example1 {
+            background: url("../../_img/backgrounds/examples/purple-dot.jpg");
+            background-repeat: no-repeat;
+            background-size: 75%;
+        }
+        
+        #example2 {
+            background: url("../../_img/backgrounds/examples/purple-dot.jpg");
+            background-repeat: no-repeat;
+            background-size: 75% 50%;
+        }
+        
+        #two-background-images {
+            border: 2px solid black;
+            padding: 25px;
+            background: url("../../_img/backgrounds/examples/purple-dot.jpg"), url("../../_img/overlay-cliff.jpg");
+            background-repeat: no-repeat;
+            background-size: contain, cover;
+        }
+    </style>
+
+    <title>Background Positioning</title>
+</head>
+
+<body>
+    <a href="../../index.html">Home page</a>
+
+
+
+
+
+
+
+
+
+
+
+
+    <section class="container">
+        <h1>Background size</h1>
+        <div class="row">
+            <div class="col">
+                <p>Background size specifies the size of background images.</p>
+
+                <p>There are four different syntaxes you can use with this property:</p>
+                <ul class="no-style">
+                    <li><strong>Keyword syntax</strong> ("auto", "cover" and "contain")</li>
+                    <li><strong>One-value syntax</strong> (sets the width of the image (height becomes "auto")</li>
+                    <li><strong>Two-value syntax</strong> (first value: width of the image, second value: height)</li>
+                    <li><strong>Multiple background syntax</strong> (separated with comma).</li>
+                </ul>
+            </div>
+        </div>
+
+        <h2>Keyword syntax</h2>
+        <div class="row">
+            <div class="col">
+                <h3>auto</h3>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-6">
+                <p><span class="highlight-word">auto</span> is the default value. The background image is displayed in its original size.</p>
+            </div>
+
+            <div class="col-6">
+                <pre class="example"><span class="code-css">body {
+  background: url("../images/backgrounds/examples/purple-dot.jpg");
+  background-repeat:no-repeat;
+  background-size:auto;
+}</pre></div>
+        </div>
+
+        <div class="row">
+            <div class="col-6">
+                <p>Example:</p>
+            </div>
+            <div class="col-6">
+                <pre class="example"><div class="image-bg-background-size-auto"><span class="white">Testing Testing Testing
+Testing Testing Testing
+Testing Testing Testing
+Testing Testing Testing
+Testing Testing Testing
+Testing Testing Testing</span></div></pre>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col">
+                <h3>cover</h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6">
+                <p><span class="highlight-word">cover</span> resizes the background image to cover the entire container, even if it has to stretch the image or crop a little bit off one of the edges.</p>
+            </div>
+
+            <div class="col-6">
+                <pre class="example"><span class="code-css">body {
+         background: url("../images/backgrounds/examples/purple-dot.jpg");
+         background-repeat:no-repeat;
+         background-size:cover;
+       }</pre></div>
+        </div>
+
+        <div class="row">
+            <div class="col-6">
+                <p>Example:</p>
+            </div>
+            <div class="col-6">
+                <pre class="example"><div class="image-bg-background-size-cover">Testing Testing Testing
+Testing Testing Testing
+Testing Testing Testing
+Testing Testing Testing
+Testing Testing Testing
+Testing Testing Testing</div></pre>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col">
+                <h3>contain</h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6">
+                <p><span class="highlight-word">contain</span> resizes the background image to make sure the image is fully visible.</p>
+                <p>The image will resize to fit the container.</p>
+            </div>
+
+            <div class="col-6">
+                <pre class="example"><span class="code-css">body {
+  background: url("../images/backgrounds/examples/purple-dot.jpg");
+  background-repeat: no-repeat;
+  background-size: contain;
+}</pre></div>
+        </div>
+
+        <div class="row">
+            <div class="col-6">
+                <p>Example:</p>
+            </div>
+            <div class="col-6">
+                <pre class="example"><div class="image-bg-background-size-contain">Testing Testing Testing
+Testing Testing Testing
+Testing Testing Testing
+Testing Testing Testing
+Testing Testing Testing
+Testing Testing Testing
+Testing Testing Testing
+Testing Testing Testing
+Testing Testing Testing
+Testing Testing Testing</div></pre>
+            </div>
+        </div>
+    </section>
+
+    <section class="container">
+        <h2>One value syntax</h2>
+        <div class="row">
+            <div class="col-6">
+                <p>If you set only one value for width, the second value for height becomes 'auto'.</p>
+            </div>
+            <div class="col-6">
+                <pre class="example"><span class="code-css">body {
+  background: url("../images/backgrounds/examples/purple-dot.jpg");
+  background-repeat:no-repeat;
+  background-size: 80px;
+}</pre>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-6">
+                <p>Example: The image is set to 80px.</p>
+            </div>
+            <div class="col-6">
+                <pre class="example"><div class="image-bg-background-size-onevalue">Testing Testing Testing
+Testing Testing Testing
+Testing Testing Testing
+Testing Testing Testing
+Testing Testing Testing
+Testing Testing Testing</div></pre>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+    <section class="container">
+        <h2>One value syntax with Percentages</h2>
+        <div class="row">
+            <div class="col-6">
+                <p>You can also use percentage, but this is not recommended. This isn't a good idea because the aspect ratio does not change, so there could be blank space at the bottom of the page after the image.</p>
+            </div>
+            <div class="col-6">
+                <pre class="example"><span class="code-css">#example1 {
+    background: url("../../_img/backgrounds/examples/purple-dot.jpg");
+    background-repeat: no-repeat;
+    background-size: 75%;
+}</pre>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-6">
+                <p>Example: </p>
+
+            </div>
+            <div class="col-6">
+                <pre class="example"><div id="example1">Testing Testing Testing
+Testing Testing Testing
+Testing Testing Testing
+Testing Testing Testing
+Testing Testing Testing
+Testing Testing Testing</div></pre>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
+    <section class="container">
+        <h2>Two value syntax</h2>
+        <div class="row">
+            <div class="col-6">
+                <p>This sets both a width and height to the property.</p>
+            </div>
+            <div class="col-6">
+                <pre class="example"><span class="code-css">body {
+  background: url("../images/backgrounds/examples/purple-dot.jpg");
+  background-repeat:no-repeat;
+  background-size: 80px 120px;
+}</pre>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-6">
+                <p>Example: The image is set to 80px wide and 120px high.</p>
+                <p>You can also use percentage.</p>
+            </div>
+
+            <div class="col-6">
+                <pre class="example"><div class="image-bg-background-size-twovalue">Testing Testing Testing
+Testing Testing Testing
+Testing Testing Testing
+Testing Testing Testing
+Testing Testing Testing
+Testing Testing Testing</div></pre>
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <section class="container">
+        <h2>Two value syntax with Percentages</h2>
+        <div class="row">
+            <div class="col-6">
+                <p>You can also use percentage, but this is not recommended. This isn't a good idea because the aspect ratio does not change, so there could be blank space at the bottom of the page after the image.</p>
+            </div>
+            <div class="col-6">
+                <pre class="example"><span class="code-css">#example2 {
+    background: url("../../_img/backgrounds/examples/purple-dot.jpg");
+    background-repeat: no-repeat;
+    background-size: 75% 50%;
+}</pre>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-6">
+                <p>Example:</p>
+
+            </div>
+            <div class="col-6">
+                <pre class="example"><div id="example2">Testing Testing Testing
+Testing Testing Testing
+Testing Testing Testing
+Testing Testing Testing
+Testing Testing Testing
+Testing Testing Testing</div></pre>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <section class="container">
+        <h2>Two background images</h2>
+        <div class="row">
+            <div class="col">
+                <p>When using two background images, the first must be specified with <strong>contain</strong></p>
+                <p>The second image then uses <strong>cover</strong></p>
+            </div>
+
+        </div>
+
+
+        <div class="row">
+            <div class="col-6">
+                <p>Example</p>
+            </div>
+
+            <div class="col-6">
+                <pre class="example"><div id="two-background-images">Testing Testing Testing
+Testing Testing Testing
+Testing Testing Testing
+Testing Testing Testing
+Testing Testing Testing
+Testing Testing Testing</div></pre>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+    <section class="container">
+        <h2>Hero image example</h2>
+        <div class="row">
+            <div class="col">
+                <p>This code is an example of multiple background properties used to create a Hero image header.</p>
+            </div>
+
+        </div>
+
+
+        <div class="row">
+            <div class="col-6">
+                <p>Example</p>
+            </div>
+
+            <div class="col-6">
+                <pre class="example"><span class="code-html">&lt;style&gt;</span>
+<span class="code-css">body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.hero-image {
+    background-image: url("/w3images/photographer.jpg");
+    background-color: #cccccc;
+    height: 500px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.hero-text {
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+}</span>
+<span class="code-html">
+&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;div class="hero-image"&gt;
+    &lt;div class="hero-text"&gt;
+    &lt;h1 style="font-size:50px"&gt;I am Jane Doe&lt;/h1&gt;
+    &lt;h3&gt;And I'm a Photographer&lt;/h3&gt;
+    &lt;button&gt;Hire me&lt;/button&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Page content..&lt;/p&gt;
+&lt;p&gt;Note that this technique will also make the image responsive: Resize the browser window to see the effect.&lt;/p&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</span></pre>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+    <script src="../../_js/jquery.js"></script>
+    <script src="../../_js/bootstrap.bundle.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="../../_css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../../_css/style.css">
+    <title>Ancestors</title>
+</head>
+
+<body>
+    <section class="container">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb breadcrumb-container">
+                <li class="breadcrumb-item"><a class="breadcrumb-link" href="../../index.html">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Ancestors</li>
+            </ol>
+        </nav>
+
+
+
+
+        <h1>Ancestors</h1>
+        <p>With jQuery you can traverse up the DOM tree to find ancestors of an element.</p>
+        <p>An ancestor is a parent, grandparent, great-grandparent, and so on.</p>
+        <p>Three useful jQuery methods for traversing up the DOM tree are</p>
+        <ul>
+            <li>parent()</li>
+            <li>parents()</li>
+            <li>parentsUntil()</li>
+        </ul>
+
+
+
+
+        <h2>parent()</h2>
+        <p>The parent() method returns the direct parent element of the selected element.</p>
+        <p>This method only traverse a single level up the DOM tree.</p>
+        <p>The following example returns the direct parent of the element with an ID of 'span1'.</p>
+        <pre class="example"><span class="code-html">&lt;div class="ancestors"&gt;
+  &lt;div style="width:500px;"&gt;div (great-grandparent)
+    &lt;ul&gt; (grandparent)
+      &lt;li&gt; (direct parent)
+        &lt;p id="child1"&gt;&lt;p id="span1"&gt;child&lt;/span&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</span>
+
+<span class="code-js">$("#child1").parent().css({"color": "red", "border": "2px solid red"});</span></pre>
+
+        <h3>Example</h3>
+        <div class="ancestors">
+            <div style="width:500px;">div (great-grandparent)
+                <ul>&lt;ul&gt; (grandparent)
+                    <li>&lt;li&gt; (direct parent)
+                        <p id="child1">&lt;p id="span1"&gt;child</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+
+
+
+        <h2>parents()</h2>
+        <p>View the following 1 page example of the parents() method. Note how everything on the page has changed.</p>
+        <p><a href="parents-all.html" target="_blank">parents()</a></p>
+
+
+
+
+        <h2>parents("element")</h2>
+        <p>You can also use an optional parameter to filter the search for ancestors.</p>
+        <p>The following example returns the direct parent of the element with an ID of 'span1' that is a &lt;ul&gt;.</p>
+
+        <pre class="example"><span class="code-html">&lt;div style="width:500px;"&gt;&lt;div&gt; (great-grandparent)
+    &lt;ul&gt;&lt;ul&gt; (grandparent)
+        &lt;li&gt;&lt;li&gt; (direct parent)
+            &lt;p id="child3"&gt;&lt;p&gt;child&lt;/span&gt;
+        &lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/div&gt;</span>
+
+<span class="code-js">$("#child3").parents().css({"color": "red", "border": "2px solid red"});</span></pre>
+
+        <h3>Example</h3>
+
+        <div style="width:500px;">&lt;div&gt; (great-grandparent)
+            <ul>&lt;ul&gt; (grandparent)
+                <li>&lt;li&gt; (direct parent)
+                    <p id="child3">&lt;p&gt;child</span>
+                </li>
+            </ul>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+                <h2>parentsUntil()</h2>
+                <p>The parentsUntil() method returns all ancestor elements between two given arguments.</p>
+<p>The following example returns all ancestor elements between a an element with the ID of child4 and a &lt;div&gt;</p>
+
+<pre class="example"><span class="code-html">&lt;div style="width:500px;"&gt;&lt;div&gt; (great-grandparent)
+    &lt;ul&gt;&lt;ul&gt; (grandparent)
+        &lt;li&gt;&lt;li&gt; (direct parent)
+            &lt;p id="child4"&gt;&lt;p&gt;child&lt;/span&gt;
+        &lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/div&gt;</span>
+
+<span class="code-js">$("#child4").parentsUntil("div").css({"color": "red", "border": "2px solid red"});</span></pre>
+
+                <h3>Example</h3>
+                <div style="width:500px;">&lt;div&gt; (great-grandparent)
+                    <ul>&lt;ul&gt; (grandparent)
+                        <li>&lt;li&gt; (direct parent)
+                            <p id="child4">&lt;p&gt;child</span>
+                        </li>
+                    </ul>
+                </div>
+
+
+
+    </section>
+    <script src="../../_js/jquery-3.4.1.min.js"></script>
+    <script>
+        $("#child1").parent().css({
+            "color": "red",
+            "border": "2px solid red"
+        });
+
+        $("p#child2").parents().css({
+            "color": "red",
+            "border": "2px solid red"
+        });
+
+        $("p#child3").parents("ul").css({
+            "color": "red",
+            "border": "2px solid red"
+        });
+
+ $("#child4").parentsUntil("div").css({"color": "red", "border": "2px solid red"});
+    </script>
+</body>
+
+</html>

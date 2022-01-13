@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <!-- <link rel="stylesheet" type="text/css" href="../../_css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../../_css/style.css"> -->
+    <link rel="stylesheet" type="text/css" href="../../_css/styles.css">
+
+    <style>
+        #big {
+            font-size: 2em;
+            font-weight: bold
+        }
+        
+        #small {
+            font-size: 1em;
+        }
+        
+        .pretty {
+            color: pink;
+            font-style: italic;
+        }
+        
+        .border {
+            border-style: dashed;
+            border-color: green;
+        }
+    </style>
+    <title>Selecting multiple attributes</title>
+</head>
+
+<body>
+
+
+    <nav class="navbar">
+        <a href="../../index.html">Back to homepage</a>
+        <a class="nav-page nav-active">Selecting multiple attributes</a>
+    </nav>
+
+
+
+
+    <h1>Selecting multiple attribute/value pairs in a single call</h1>
+    <section class="code-section-container">
+        <div class="code-text-section">
+            <p>The attribute would be id= or class= and the value would be it's ID or Class name.</p>
+            <p>This single line selects multiple attributes/values and changes their CSS.</p>
+        </div>
+
+        <div class="code-block-section-w60">
+            <pre class="example">
+<span class="code-html">&lt;p&gt; This is not changed &lt;/p&gt;
+&lt;p class="instruct_title"&gt;Incase of flat tire.&lt;/p&gt;
+
+&lt;div id="closing_statement"&gt;
+    &lt;p&gt;Make sure to put away the tools&lt;/p&gt;
+&lt;/div&gt;</span>
+
+<span class="code-jquery"><span class="code-comment">//Select multiple attributes in the same call</span>
+$('p.instruct_title, div#closing_statement').css('color', 'green');</span></pre>
+
+
+            <h3>Example</h3>
+            <p> This is not changed </p>
+            <p class="instruct_title1">This class is changed to green.</p>
+            <div id="closing_statement1">
+                <p>This ID is changed to green.</p>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h1>Selecting multiple attribute/value pairs using .add</h1>
+
+
+
+
+
+
+
+
+
+
+
+
+    <section class="code-section-container">
+        <div class="code-text-section">
+            <p>Using the .add method to select multiple key/values is faster for the computer to process.</p>
+        </div>
+
+        <div class="code-block-section-w60">
+            <pre class="example">
+<span class="code-html">&lt;p&gt; This is not changed &lt;/p&gt;
+&lt;p class="instruct_title"&gt;Incase of flat tire.&lt;/p&gt;
+
+&lt;div id="closing_statement"&gt;
+    &lt;p&gt;Make sure to put away the tools&lt;/p&gt;
+&lt;/div&gt;</span>
+
+<span class="code-jquery"><span class="code-comment">//Select multiple attributes split us by .add</span>
+$("p.instruct_title").add("div#closing_statement").css("color", "green");</span></pre>
+
+
+            <h3>Example</h3>
+            <p> This is not changed </p>
+            <p class="instruct_title2">This class is changed to green.</p>
+            <div id="closing_statement2">
+                <p>This ID is changed to green.</p>
+            </div>
+        </div>
+    </section>
+
+
+    <script src="../../_js/jquery-3.4.1.min.js"></script>
+
+    <script>
+        //Select multiple attributes in the same call
+        $('p.instruct_title1, div#closing_statement1').css('color', 'green');
+
+        $("p.instruct_title2").add("div#closing_statement2").css("color", "green");
+
+
+        $("li.important").on("mouseover", function() {
+            $(this).attr("id", "big");
+            $(this).on("mouseleave", function() {
+                $(this).attr("id", "small");
+            });
+        });
+
+        $("p#title").on("click", function() {
+            $(this).attr("class", "pretty border");
+        });
+
+        $("#the_img").on("click", function() {
+            $(this).attr({
+                "width": "40%",
+                "length": "40%"
+            });
+        });
+
+        $("p#title2").on("click", function() {
+            $(this).attr("class", "pretty border");
+        });
+
+        $("p#title2").on("dblclick", function() {
+            $(this).attr("class", "pretty border");
+            $(this).remove();
+        });
+
+        $('img#the_img2').on('dblclick', function() {
+            $(this).removeAttr("src");
+        });
+    </script>
+
+</body>
+
+</html>

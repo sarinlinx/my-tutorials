@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <!-- <link rel="stylesheet" type="text/css" href="../../_css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../../_css/style.css"> -->
+    <link rel="stylesheet" type="text/css" href="../../_css/styles.css">
+    <title>Targeting elements</title>
+</head>
+
+<body>
+    <section class="container">
+
+        <nav class="navbar">
+            <a href="../../index.html">Back to homepage</a>
+            <a class="nav-page nav-active">Targeting elements</a>
+        </nav>
+
+
+
+        <h1>Basic jQuery statement</h1>
+        <img src="../../_img/basic-statement-syntax.png" width="500px">
+
+
+        <h1>The target</h1>
+
+        <div class="text-section">
+            <p>The CSS element/s to be acted on.</p>
+            <p>Always in parenthesis and quotes.</p>
+        </div>
+
+
+
+        <h2>Targeting an element with a class</h2>
+        <section class="code-section-container">
+            <div class="code-text-section">
+                <p>Use the element, followed by a period, followed by the class name.</p>
+            </div>
+
+            <div class="code-block-section-w60">
+                <pre class="example">
+<span class="code-html">&lt;p class="myClass"&gt;stuff...&lt;/p&gt;</span>
+
+<span class="code-jquery">$("p.myClass").addClass("colorful");</span>
+</pre>
+
+            </div>
+        </section>
+
+
+
+
+
+
+
+
+        <h2>Targeting an element with an ID</h2>
+
+
+
+
+
+        <section class="code-section-container">
+            <div class="code-text-section">
+                <p>Use the element, followed by a #, followed by the ID name.</p>
+            </div>
+
+            <div class="code-block-section-w60">
+                <pre class="example">
+<span class="code-html">&lt;p id="myID"&gt;stuff...&lt;/p&gt;</span>
+
+<span class="code-jquery">$("p#myID").addClass("colorful");</span>
+</pre>
+
+            </div>
+        </section>
+
+
+
+
+
+
+
+
+        <h2>Targeting 2 elements with a Class</h2>
+
+
+
+
+        <section class="code-section-container">
+            <div class="code-text-section">
+                <p>Use the element, followed by a ., followed by the class name.</p>
+                <p>Next, add a comma to separate the next element</p>
+                <p>Add the new element, followed by a ., followed by the class name.</p>
+            </div>
+
+            <div class="code-block-section-w60">
+                <pre class="example">
+<span class="code-html">&lt;p class="myClass"&gt;stuff...&lt;/p&gt;
+&lt;h4 id="myClass"&gt;stuff...&lt;/p&gt;</span>
+
+<span class="code-jquery">$("p.myClass,h4.myClass").addClass("colorful");</span>
+</pre>
+
+            </div>
+        </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <h2>Target all elements on a page with a class</h2>
+        <section class="code-section-container">
+            <div class="code-text-section">
+                <p>Use the ., followed by the class name.</p>
+            </div>
+
+            <div class="code-block-section-w60">
+                <pre class="example">
+<span class="code-html">&lt;p class="myClass"&gt;stuff...&lt;/p&gt;
+
+<span class="code-jquery">$(".myClass").addClass("colorful");</span>
+</pre>
+            </div>
+        </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <h2>Target only the list elements in a list</h2>
+
+
+
+
+
+
+
+
+
+        <section class="code-section-container">
+            <div class="code-text-section">
+                <p>Target the ID of the list, add a space, then select the li items.</p>
+            </div>
+
+            <div class="code-block-section-w60">
+                <pre class="example"><span class="code-html">&lt;ul id="steps"&gt;
+&lt;li&gt;Step 1&lt;/li&gt;
+&lt;li&gt;Step 2&lt;/li&gt;
+&lt;/ul&gt;</span>
+
+<span class="code-jquery">$('#steps li').css('color', 'yellow');</span></pre>
+
+                <h3>Example</h3>
+                <ul id="steps1">
+                    <li>Step 1</li>
+                    <li>Step 2</li>
+                </ul>
+            </div>
+        </section>
+
+
+
+
+
+
+    </section>
+    <script src="../../_js/jquery-3.4.1.min.js"></script>
+    <script>
+        $('#steps1 li').css('color', 'yellow');
+    </script>
+</body>
+
+</html>

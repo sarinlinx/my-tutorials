@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+    <title>Form example</title>
+
+    <style>
+        *,
+        *::after,
+        *::before {
+            margin: 0;
+            padding: 0;
+            box-sizing: inherit;
+        }
+        
+        html {
+            font-size: 62.5%;
+        }
+        
+        body {
+            box-sizing: border-box;
+            padding: 3rem;
+            font-family: "Lato", sans-serif;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 1.7;
+            color: #777;
+        }
+        
+        .row {
+            max-width: 114rem;
+            margin: 0 auto;
+        }
+        
+        .row:not(:last-child) {
+            margin-bottom: 8rem;
+        }
+        
+        .row::after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+        
+        .row [class^="col-"] {
+            float: left;
+        }
+        
+        .row [class^="col-"]:not(:last-child) {
+            margin-right: 6rem;
+        }
+        
+        .section-book {
+            padding: 15rem 0;
+            background-image: linear-gradient(to right bottom, #7ed56f, #28b485);
+        }
+        
+        @media only screen and (max-width: 56.25em) {
+            .section-book {
+                padding: 10rem 0
+            }
+        }
+        
+        .book {
+            /* Do not add height. The content should set the height */
+            height: 50rem;
+            /* Add gradient over background image */
+            /* Use % to set where gradient should appear */
+            /* At 0% to 50% it's white. After 50% it's transparent */
+            background-image: linear-gradient(105deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.9) 50%, transparent 50%), url(nat-10.jpg);
+            /*  fits container in x direction, 100% is the same as cover. If it was a lower % it would start to repeat */
+            background-size: 100%;
+            border-radius: 3px;
+            box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.25);
+        }
+        
+        @media only screen and (max-width: 75em) {
+            .book {
+                background-image: linear-gradient(105deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.9) 65%, transparent 65%), url(nat-10.jpg);
+                background-size: cover
+            }
+        }
+        
+        @media only screen and (max-width: 56.25em) {
+            .book {
+                background-image: linear-gradient(to right, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.9) 100%), url(nat-10.jpg)
+            }
+        }
+    </style>
+
+    <body>
+
+        <section class="section-book">
+            <div class="row">
+                <div class="book">
+
+                </div>
+            </div>
+        </section>
+
+    </body>
+
+</html>

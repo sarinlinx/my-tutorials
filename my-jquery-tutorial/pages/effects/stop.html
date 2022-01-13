@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="../../_css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../../_css/style.css">
+
+    <title>Stop Animations</title>
+    <style>
+#panel, #flip {
+  padding: 5px;
+  font-size: 18px;
+  text-align: center;
+  background-color: #555;
+  color: white;
+  border: solid 1px #666;
+  border-radius: 3px;
+}
+
+#panel {
+  padding: 50px;
+  display: none;
+}
+</style>
+</head>
+
+<body>
+    <section class="container">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb breadcrumb-container">
+                <li class="breadcrumb-item"><a class="breadcrumb-link" href="../../index.html">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">The 'slideDown' effect</li>
+            </ol>
+        </nav>
+
+        <h1>Stop Animations</h1>
+        <p>The jQuery stop() method is used to stop an animation or effect before it is finished.</p>
+<p>The stop() method works for all jQuery effect functions, including sliding, fading and custom animations.</p>
+<h2>Syntax</h2>
+<pre class="example">$(selector).stop(stopAll,goToEnd);</pre>
+<p>The optional stopAll parameter specifies whether also the animation queue should be cleared or not. Default is false, which means that only the active animation will be stopped, allowing any queued animations to be performed afterwards.</p>
+<p>The optional goToEnd parameter specifies whether or not to complete the current animation immediately. Default is false.</p>
+<p>So, by default, the stop() method kills the current animation being performed on the selected element.</p>
+
+
+
+
+
+
+
+
+<pre class="example"><span class="code-html">&lt;button id="stop"&gt;Stop sliding&lt;/button&gt;
+
+&lt;div id="flip"&gt;Click to slide down panel&lt;/div&gt;
+&lt;div id="panel"&gt;Hello world!&lt;/div&gt;</span>
+
+<span class="code-js">$("#flip").click(function(){
+  $("#panel").slideDown(5000);
+});
+
+$("#stop").click(function(){
+  $("#panel").stop();
+});</span></pre>
+
+
+
+        <h3>Example</h3>
+        <button id="stop">Stop sliding</button>
+
+        <div id="flip">Click to slide down panel</div>
+        <div id="panel">Hello world!</div>
+
+
+    </section>
+
+
+
+
+
+
+
+    <script src="../../_js/jquery-3.4.1.min.js"></script>
+
+    <script>
+    $("#flip").click(function(){
+      $("#panel").slideDown(5000);
+    });
+    $("#stop").click(function(){
+      $("#panel").stop();
+    });
+    </script>
+
+</body>
+
+</html>

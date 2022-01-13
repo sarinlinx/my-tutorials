@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="../../_css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../../_css/style.css">
+
+    <title>The 'dblclick' Event</title>
+</head>
+
+<body>
+    <section class="container">
+      <nav aria-label="breadcrumb">
+          <ol class="breadcrumb breadcrumb-container">
+              <li class="breadcrumb-item"><a class="breadcrumb-link" href="../../index.html">Home</a></li>
+              <li class="breadcrumb-item active" aria-current="page">The 'dblclick' Event</li>
+          </ol>
+      </nav>
+
+
+<h1>The 'dblclick' Event</h1>
+
+
+        <p>When the user Double clicks the button, the paragraph disappears.</p>
+
+        <p>The #firstBtn element has an event happen 'on' it.</p>
+        <p>The 'click' event  is the event that happens 'on' the #firstBtn element.</p>
+        <p>When the 'click' event occurs, the function() is run.</p>
+        <p>The function looks for the paragraph with an ID of 'statement' and uses hide() to hide it.</p>
+
+
+<pre class="example">
+<span class="code-html">&lt;input type="button" value="submit" id="firstBtn"/&gt;
+&lt;p id="statement"&gt;This is a sentence&lt;/p&gt;</span>
+
+<span class="code-js">$('#firstBtn').on("<span class="standout">dblclick</span>", function() {
+  <span class="code-comment">//code to be executed when the button is clicked</span>
+  $('p#statement').hide();
+});</span></pre>
+
+        <h3>Example</h3>
+        <input type="button" value="submit" id="secondBtn"/>
+        <p id="statement2">This is a sentence</p>
+
+
+
+
+
+
+
+    </section>
+
+
+
+
+
+
+
+    <script src="../../_js/jquery-3.4.1.min.js"></script>
+
+    <script>
+
+
+    $('#secondBtn').on("dblclick", function() {
+      //code to be executed when the button is clicked
+      $('p#statement2').hide();
+    });
+
+    </script>
+
+</body>
+
+</html>

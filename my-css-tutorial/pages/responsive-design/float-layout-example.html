@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+  <title>Float Layout example</title>
+</head>
+
+
+
+
+
+<style>
+  /* 
+  $color-primary: #55c57a;
+  $color-primary-light: #7ed56f;
+  $color-primary-dark: #28b485;
+  
+$color-grey-dark: #777;
+$color-white: #fff;
+$color-black: #000;
+
+GRID
+$grid-width: 114rem;
+$gutter-vertical: 8rem;
+$gutter-horizontal: 6rem;
+
+  
+  
+  
+  
+  */
+  * {
+    /* removes margins and padding from all elements like headers and paragraphs*/
+    margin: 0;
+    padding: 0;
+    /* changes box model so borders and padding are not added to total width or heigh specified for that box*/
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 1.7;
+    color: #777;
+    padding: 30px;
+  }
+
+
+  /* if viewport is smaller than 114rem, fill 100% of available space */
+  .row {
+    max-width: 114rem;
+    background-color: #eee;
+    /* center block element inside another block element */
+    margin: 0 auto;
+  }
+
+  /* REMOVE MARGINS */
+
+  /* Remove margin on far right column only */
+  /* Select all elements that are NOT the last row */
+  /* .col-1-0f-2:not(:last-child) {
+        margin-right: 6rem;
+  } */
+
+  /* Remove margin below last row which is not needed */
+  /* this selects all elements that are NOT the last-child */
+  .row:not(:last-child) {
+    margin-bottom: 8rem;
+  }
+  
+  /* Clearfix after each row 
+  because floats collapse height*/
+  .row::after {
+   content: "";
+   display: table;
+   clear: both;
+ }
+
+ /* select all elements with a class that start with col- */
+ [class^="col-"] {
+  background-color: orangered;
+    color: #fff;
+    float: left;
+ }
+
+ /* remove right gutter of all the farthest right col */
+ [class^="col-"]:not(:last-child) {
+        margin-right: 6rem;
+  }
+
+
+
+  /* ROWS */
+
+  .col-1-of-2 {
+    /* calculate the width of each column
+    the full width of each column is the full row - the gutter / by 2 */
+    width: calc((100% - 6rem) / 2);
+    /* NOTE: If you used a variable in Sass, you'd add #{} around it. For example:
+     width: calc((100% - #{$gutter-horizontal}) / 2);*/
+    /* background-color: orangered;
+    color: #fff;
+    float: left; */
+  }
+
+  /* remove gutter right of far right col */
+  /* .col-1-of-2:not(:last-child) {
+        margin-right: 6rem;
+  } */
+
+ 
+  .col-1-of-3 {
+    /* calculate the width of each column
+    the full width of each column is the full row - 2x the gutter / by 3 */
+    width: calc((100% - 2 * 6rem) / 3);
+    /* NOTE: If you used a variable in Sass, you'd add #{} around it. For example:
+     width: calc((100% - #{$gutter-horizontal}) / 2);*/
+    background-color: orangered;
+    color: #fff;
+    float: left;
+  }
+
+  .col-1-of-4 { 
+    width: calc((100% - 3 * 6rem) / 4);
+  }
+
+  .col-2-of-3 { 
+    /* 2x the width of 1-of-3 col +  1 gutter width*/
+    width: calc(2 * ((100% - 2 * 6rem) / 3) + 6rem);
+  }
+
+  .col-2-of-4 { 
+    /* 2x the width of 1-of-4 col, - 3 gutters / 4 +  1 gutter width*/
+    width: calc(2 * ((100% - 3 * 6rem) / 4) + 6rem);
+  }
+
+  .col-3-of-4 { 
+       width: calc(3 * ((100% - 3 * 6rem) / 4) + 2 * 6rem);
+  }
+</style>
+
+<body>
+
+
+
+
+
+
+
+
+
+
+  <section class="grid-test">
+
+    <div class="row">
+      <div class="col-1-of-2">
+        Col 1 of 2
+      </div>
+
+      <div class="col-1-of-2">
+        Col 1 of 2
+      </div>
+    </div>
+
+
+    <div class="row">
+      <div class="col-1-of-3">
+        Col 1 of 3
+      </div>
+
+      <div class="col-1-of-3">
+        Col 1 of 3
+      </div>
+
+      <div class="col-1-of-3">
+        Col 1 of 3
+      </div>
+
+    </div>
+
+    <div class="row">
+      <div class="col-1-of-3">
+        Col 1 of 3
+      </div>
+      <div class="col-2-of-3">
+        Col 2 of 3
+      </div>
+    </div>
+
+
+
+    <div class="row">
+      <div class="col-1-of-4">
+        Col 1 of 4
+      </div>
+      <div class="col-1-of-4">
+        Col 1 of 4
+      </div>
+      <div class="col-1-of-4">
+        Col 1 of 4
+      </div>
+      <div class="col-1-of-4">
+        Col 1 of 4
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-1-of-4">
+        Col 1 of 4
+      </div>
+      <div class="col-1-of-4">
+        Col 1 of 4
+      </div>
+      <div class="col-2-of-4">
+        Col 2 of 4
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-1-of-4">
+        Col 1 of 4
+      </div>
+
+      <div class="col-3-of-4">
+        Col 3 of 4
+      </div>
+    </div>
+  </section>
+
+  </section>
+</body>
+
+</html>

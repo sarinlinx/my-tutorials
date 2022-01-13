@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="../../_css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../../_css/style.css">
+
+
+        <style>
+            .beautify {
+                background-color: yellow;
+                font-weight: bold;
+                color: green;
+                padding-left: 120px;
+            }
+
+            .blue_border {
+                border-style: dashed;
+                border-color: blue;
+                padding-top: 10px;
+                padding-left: 10px;
+                padding-bottom: 10px;
+            }
+
+            .important {
+                color: red;
+                font-weight: bold;
+                font-size: 15px;
+            }
+
+            #super {
+                border-style: dotted;
+                border-color: red;
+                padding-top: 50px;
+                padding-left: 50px;
+                padding-bottom: 50px;
+            }
+        </style>
+    <title>The 'this' keyword</title>
+</head>
+
+<body>
+    <section class="container">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb breadcrumb-container">
+                <li class="breadcrumb-item"><a class="breadcrumb-link" href="../../index.html">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">The 'this' keyword</li>
+            </ol>
+        </nav>
+
+
+        <h1>The 'this' keyword</h1>
+        <p>The 'this' keyword allows you to pinpoint the exact element the user is interacting with.</p>
+        <p>For example, if you have two buttons, the 'this' keyword will only apply to the button that is clicked on my the user, not the other button.</p>
+        <p>This example shows two buttons and an event inside another event.</p>
+
+
+
+        <pre class="example">
+<span class="code-html">&lt;button type="button"&gt;Button 1&lt;/button&gt;
+&lt;button type="button"&gt;Button 2&lt;/button&gt;</span>
+
+<span class="code-js">
+<span class="code-comment">//target the button element</span>
+$('button').on('click', function() {
+  <span class="code-comment">//Since you've already targeted the button element, you can use
+  //the 'this' keyword in the function to refer to it</span>
+  $(this).addClass('beautify');
+
+  <span class="code-comment">//create another event within this event
+  //This event only runs when the parent event is run
+  //The 'this' keyword applies to the single element you're interacting with
+  //If there's more than 1 button, only the one you click is changed</span>
+  $(this).on('dblclick', function() {
+    $(this).addClass('blue_border');
+  });
+});</span></pre>
+
+
+        <h3>Example</h3>
+        <p>Click a button once to change its CSS.</p>
+        <p>Double click it to change it again.</p>
+        <button type="button">Button 1</button>
+        <button type="button">Button 2</button>
+
+    </section>
+
+
+    <script src="../../_js/jquery-3.4.1.min.js"></script>
+
+    <script>
+
+
+//Since you've already targeted the button element, you can use
+//the 'this' keyword in the function to refer to it
+        $('button').on('click', function() {
+          $(this).addClass('beautify');
+          //create another event within this event
+          //This event only runs when the parent event is run
+          //This only applies to the single element you're interacting with
+          //If there's more than 1 button, only the one you click is changed
+          $(this).on('dblclick', function() {
+            $(this).addClass('blue_border');
+          });
+        });
+
+    </script>
+
+</body>
+
+</html>

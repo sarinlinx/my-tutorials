@@ -1,0 +1,434 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="../../_css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../../_css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <style>
+        header {
+            font-size: 150%;
+        }
+
+        header.em {
+          font-size: 150%;
+          padding: 2em;
+        }
+
+        .header-child {
+            font-size: 3em;
+        }
+    </style>
+    <title>Value Processing</title>
+</head>
+
+
+
+
+
+
+<body>
+
+
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+                <a href="../../index.html">Home</a>
+            </li>
+            <li class="breadcrumb-item active" aria-current="page">Value Processing</li>
+        </ol>
+    </nav>
+
+
+
+    <section class="container">
+
+        <div class="row">
+            <div class="col">
+                <h1>How CSS Values are Processed</h1>
+                <p>CSS follows these stpes to determine which values are processed.</p>
+
+                <ul>
+                    <li>#1: Declared value (author declaration)</li>
+                    <li>Cascaded value</li>
+                    <li>Specified value: The default value in CSS if no cascaded value exists</li>
+                    <li>Computed value: Values with relative units are converted</li>
+                    <li>Used value: final calculations based on layout</li>
+                    <li>Actual value: browser and device restrictions</li>
+                </ul>
+
+                <p>The image below breaks down some code and how the values are calculated.</p>
+                <img class="img-fluid" src="../../_img/value-processing_01.png">
+
+
+
+            </div>
+        </div>
+
+
+
+    </section>
+
+
+    <section class="container">
+
+      <div class="row">
+          <div class="col">
+            <h1>Unit Conversion</h1>
+  <img class="img-fluid" src="../../_img/unit-conversion.png">
+</div></div>
+
+        <div class="row">
+            <div class="col">
+
+                <h2>Percentages</h2>
+                <h3>% for font-size</h3>
+                <p>Percentages are relative to the
+                    <span class="text-highlight">Parent's</span> font-size.</p>
+
+                    <h3>% for length</h3>
+                    <p>Percentages are relative to the
+                        <span class="text-highlight">Parent's</span> width if used to specify lengths.</p>
+
+            </div>
+        </div>
+
+
+
+        <div class="row">
+            <div class="col-5">
+                <h4>Ex 1:</h4>
+                <p>The header font size is 24px since it's 150% the size of its parent element.</p>
+
+            </div>
+
+
+            <div class="col-7">
+                <pre class="example"><span class="code-css">html, body {
+  font-size: 16px;
+}
+
+header {
+  font-size: 150%;
+}</span>
+
+<span class="code-html">&body&gt;
+  &lt;header&gt;
+    &lt;p&gt;Paragraph section&lt;/p&gt;
+  &lt;/header&gt;
+&lt;/body&gt/</pre>
+            </div>
+        </div>
+
+
+
+    </section>
+
+
+
+    <section class="container">
+        <div class="row">
+            <div class="col">
+                <h1>em and rem</h1>
+                <p>These values are based off of font-size, even if they are in reference to something else.</p>
+                <p>This makes it eaiser to adjust responsive layouts.</p>
+
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+<h2>em</h2></div></div>
+
+        <div class="row">
+            <div class="col-5">
+
+                <h3>em with fonts</h3>
+                <p>When em is used with a font, the value is in reference to the parent element.</p>
+            </div>
+
+            <div class="col-7">
+                <pre class="example"><span class="code-css">html, body {
+  font-size: 16px;
+}
+
+<span class="code-comment">/* 24px (16px * 2) */</span>
+header {
+  font-size: 150%;
+}
+
+<span class="code-comment">/* 72px (24px * 3) */</span>
+.header-child {
+  font-size: 3em;
+}</span>
+
+<span class="code-html">&lt;p&gt;Normal text 16px&lt;/p&gt;
+
+&lt;header&gt;
+  &lt;p&gt;Header section 24px&lt;/p&gt;
+  &lt;p class="header-child"&gt;Header Child 72px&lt;/p&gt;
+&lt;/header&gt;</span></pre>
+
+            </div>
+        </div>
+
+
+
+        <div class="row">
+            <div class="col-5">
+                <h5>Result</h5>
+            </div>
+
+            <div class="col-7">
+                <div class="example-container">
+                    <p>Normal text 16px</p>
+
+                    <header>
+                        <p>Header section 24px</p>
+                        <p class="header-child">Header Child 72px</p>
+                    </header>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+    <section class="container">
+
+        <div class="row">
+            <div class="col-5">
+                <h3>em with lengths</h3>
+                <p>When em is used with a length, it's in reference to the current element's font size. </p>
+
+            </div>
+
+            <div class="col-7">
+                <pre class="example"><span class="code-css">html, body {
+font-size: 16px;
+}
+
+header {
+  <span class="code-comment">/* 24px (16px * 2) */</span>
+  font-size: 150%;
+  <span class="code-comment">/* uses the font size as a reference (48px = 24px * 2) */</span>
+  padding: 2em;
+}
+
+<span class="code-comment">/* 72px (24px * 3) */</span>
+.header-child {
+  font-size: 3em;
+}</span>
+
+<span class="code-html">&lt;p&gt;Normal text 16px&lt;/p&gt;
+
+&lt;header&gt;
+  &lt;p&gt;Header section 24px&lt;/p&gt;
+    &lt;p class="header-child"&gt;Header Child 72px&lt;/p&gt;
+&lt;/header&gt;</span></pre>
+
+            </div>
+        </div>
+
+
+
+        <div class="row">
+            <div class="col-5">
+                <h5>Result</h5>
+            </div>
+
+            <div class="col-7">
+                <div class="example-container">
+                    <p>Normal text 16px</p>
+
+                    <header class="em">
+                        <p>Header section 24px</p>
+                        <p class="header-child">Header Child 72px</p>
+                    </header>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+<section class="container">
+  <div class="row">
+    <div class="col">
+    <h2>rem</h2>
+    <p>Always used root font size</p>
+  </div></div>
+
+  <div class="row">
+      <div class="col-5">
+          <h4>Ex1</h4>
+          <p>The margin-bottom would be 160px since this is in reference to the font-size of the root (which is 16px).</p>
+
+      </div>
+
+      <div class="col-7">
+          <pre class="example"><span class="code-css">html, body {
+  font-size: 16px;
+}
+
+header {
+  font-size: 150%;
+  <span class="code-comment">/* 160px since root font-size is 16px */</span>
+  margin-bottom: 10rem;
+}</span>
+
+<span class="code-html">&lt;p&gt;Normal text 16px&lt;/p&gt;
+
+&lt;header&gt;
+  &lt;p&gt;Header section 24px&lt;/p&gt;
+    &lt;p class="header-child"&gt;Header Child 72px&lt;/p&gt;
+&lt;/header&gt;</span></pre>
+
+      </div>
+  </div>
+
+
+
+  <div class="row">
+      <div class="col-5">
+          <h5>Result</h5>
+      </div>
+
+      <div class="col-7">
+          <div class="example-container">
+              <p>Normal text 16px</p>
+
+              <header class="em">
+                  <p>Header section 24px</p>
+                  <p class="header-child">Header Child 72px</p>
+              </header>
+          </div>
+      </div>
+  </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <section class="container">
+
+      <div class="row">
+          <div class="col">
+<h1>vh (viewport height) and vw (viewport width)</h1>
+<p>1vh is 1% of the viewport height. So 90vh would be 90% of the current viewport height.</p>
+<p>1vw is 1% of the viewport width</p>
+</div></div>
+
+        <div class="row">
+            <div class="col-5">
+                <h3>em with lengths</h3>
+                <p>When em is used with a length, it's in reference to the current element's font size. </p>
+
+            </div>
+
+            <div class="col-7">
+                <pre class="example"><span class="code-css">html, body {
+font-size: 16px;
+}
+
+header {
+  <span class="code-comment">/* 24px (16px * 2) */</span>
+  font-size: 150%;
+  <span class="code-comment">/* uses the font size as a reference (48px = 24px * 2) */</span>
+  padding: 2em;
+}
+
+<span class="code-comment">/* 72px (24px * 3) */</span>
+.header-child {
+  font-size: 3em;
+}</span>
+
+<span class="code-html">&lt;p&gt;Normal text 16px&lt;/p&gt;
+
+&lt;header&gt;
+  &lt;p&gt;Header section 24px&lt;/p&gt;
+    &lt;p class="header-child"&gt;Header Child 72px&lt;/p&gt;
+&lt;/header&gt;</span></pre>
+
+            </div>
+        </div>
+
+
+
+        <div class="row">
+            <div class="col-5">
+                <h5>Result</h5>
+            </div>
+
+            <div class="col-7">
+                <div class="example-container">
+                    <p>Normal text 16px</p>
+
+                    <header class="em">
+                        <p>Header section 24px</p>
+                        <p class="header-child">Header Child 72px</p>
+                    </header>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,134 @@
+.popup {
+    //cover entire page in dark background
+    height: 100vh;
+    // not really necessary
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba($color-black, .8);
+    z-index: 9999;
+    //hide popup so it can be animated
+    opacity: 0;
+    visibility: hidden;
+
+    transition: all .3s;
+
+
+
+    //feature query. Exclude from a different browser that doesn't support it
+    //This says what to do IF the propert is supported
+    @supports(-webkit-backdrop-filter: blur(10px)) or (backdrop-filter: blur(10px)) {
+        //apply blur behind popup
+        -webkit-backdrop-filter: blur(10px);
+        backdrop-filter: blur(10px);
+        background-color: rgba($color-white, .3);
+    }
+
+
+
+    &__content {
+        // absolute center mixin
+        @include absCenter;
+        width: 75%;
+        background-color: $color-white;
+        box-shadow: 0 2rem 4rem rgab($color-black, .2);
+        border-radius: 3px;
+        // used to make left and right sides have same height
+        display: table;
+        // fixes image from overflowing box container
+        overflow: hidden;
+
+        //initial state of content should be scaled down and invisible
+        opacity: 0;
+        //there is already a transform in the @include, so you cannot add a 2nd in the same declaration 
+        //to fix add the original from the @include and the new one in the same declaration
+        transform: translate(-50%, -50%) scale(.5);
+        transition: all .4s .2s;
+
+    }
+
+    &__left {
+        width: 33.33333%;
+        // used to make left and right sides have same height
+        display: table-cell;
+    }
+
+
+    &__right {
+        width: 66.66666%;
+        // used to make left and right sides have same height
+        display: table-cell;
+        // align vertically
+        vertical-align: middle;
+        padding: 3rem 5rem;
+    }
+
+    &__img {
+        display: block;
+        //enter parent container's width
+        width: 100%;
+    }
+
+    &__text {
+        font-size: 1.4rem;
+        margin-bottom: 4rem;
+
+        //colomn layout
+        -moz-column-count: 2;
+        -moz-column-gap: 4rem;
+        -moz-column-rule: 1px solid $color-grey-light-2;
+
+        column-count: 2;
+        column-gap: 4rem;
+        column-rule: 1px solid $color-grey-light-2;
+
+        //auto hypenation
+        //then only works if HTML has language att set <html lang="en">
+        -moz-hyphens: auto;
+        -ms-hyphens: auto;
+        -webkit-hyphens: auto;
+        hyphens: auto;
+
+    }
+
+
+    // OPEN STATES OF POPUP
+
+    // targert when a button is clicked to anchor tag and URL changes to #popup
+    &:target {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    // popup becomes target then style child element
+    &:target &__content {
+        //scale originally downscaled popup back to full size 1
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+
+    }
+
+
+    &__close {
+
+        &:link,
+        &:visited {
+            color: $color-grey-dark;
+            //positioned to 1st positioned parent which is popup__content
+            position: absolute;
+            top: 2.5rem;
+            right: 2.5rem;
+            font-size: 3rem;
+            text-decoration: none;
+            display: inline-block;
+            transition: all .2s;
+            //to fix inherited line height that adds extra space around X icon
+            line-height: 1;
+        }
+
+        &:hover {
+            color: $color-primary;
+        }
+    }
+}

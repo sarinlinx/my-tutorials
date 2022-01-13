@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="../../_css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../../_css/style.css">
+
+    <title>Select all elements</title>
+</head>
+
+<body>
+    <section class="container">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb breadcrumb-container">
+                <li class="breadcrumb-item"><a class="breadcrumb-link" href="../../index.html">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Select all elements</li>
+            </ol>
+        </nav>
+
+
+
+
+
+
+
+
+        <h1>Select the first type of element on a page</h1>
+        <p>Use :first to select the first type of element on a page.</p>
+        <p>This example locates the first div on a page and hides it.</p>
+
+
+        <pre class="example"><span class="code-html">&lt;h3&gt;Example&lt;/h3&gt;
+
+&lt;h2&gt;This is a heading&lt;/h2&gt;
+
+&lt;p&gt;This is a paragraph.&lt;/p&gt;
+&lt;div&gt;
+  &lt;p&gt;This is a paragraph in a div.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;button id="btn1"&gt;Click me&lt;/button&gt;</span>
+
+<span class="code-js"> $("button").click(function(){
+  $("p:first").hide();
+});</span></pre>
+
+        <h3>Example</h3>
+
+        <h2>This is a heading</h2>
+
+        <p>This is a paragraph.</p>
+        <div>
+            <p>This is a paragraph in a div.</p>
+        </div>
+
+        <button id="btn1">Click me</button>
+
+
+
+
+
+
+
+
+        <h1>Select the first list item</h1>
+        <p>This selects the first list item in a list.</p>
+
+
+        <pre class="example"><span class="code-html">&lt;p&gt;List 1:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Coffee&lt;/li&gt;
+  &lt;li&gt;Milk&lt;/li&gt;
+  &lt;li&gt;Tea&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;List 2:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Coffee&lt;/li&gt;
+  &lt;li&gt;Milk&lt;/li&gt;
+  &lt;li&gt;Tea&lt;/li&gt;
+&lt;/ul&gt;</span>
+
+<span class="code-js">$("#btn2").click(function(){
+  $("ul li:first").css('color', 'red');
+});</span></pre>
+
+        <h3>Example</h3>
+        <p>List 1:</p>
+        <ul>
+            <li>Coffee</li>
+            <li>Milk</li>
+            <li>Tea</li>
+        </ul>
+
+        <p>List 2:</p>
+        <ul>
+            <li>Coffee</li>
+            <li>Milk</li>
+            <li>Tea</li>
+        </ul>
+
+        <button id="btn2">Click me</button>
+
+
+
+
+
+
+
+        <h1>Select every first list item</h1>
+        <p>Use :first-child to select every first list item on the page.</p>
+
+
+<pre class="example"><span class="code-html">&lt;h3&gt;Example&lt;/h3&gt;
+&lt;p&gt;List 1:&lt;/p&gt;
+&lt;ul&gt;
+    &lt;li&gt;Coffee&lt;/li&gt;
+    &lt;li&gt;Milk&lt;/li&gt;
+    &lt;li&gt;Tea&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;List 2:&lt;/p&gt;
+&lt;ul&gt;
+    &lt;li&gt;Coffee&lt;/li&gt;
+    &lt;li&gt;Milk&lt;/li&gt;
+    &lt;li&gt;Tea&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;button id="btn3"&gt;Click me&lt;/button&gt;</span>
+
+<span class="code-js">$("#btn3").click(function() {
+  $("ul li:first-child").css('color', 'red');
+});</span></pre>
+
+        <h3>Example</h3>
+        <p>List 1:</p>
+        <ul>
+            <li>Coffee</li>
+            <li>Milk</li>
+            <li>Tea</li>
+        </ul>
+
+        <p>List 2:</p>
+        <ul>
+            <li>Coffee</li>
+            <li>Milk</li>
+            <li>Tea</li>
+        </ul>
+
+        <button id="btn3">Click me</button>
+
+
+
+
+
+    </section>
+    <script src="../../_js/jquery-3.4.1.min.js"></script>
+    <script>
+        $("#btn1").click(function() {
+            $("div:first").css('color', 'red');
+        });
+
+        $("#btn2").click(function() {
+            $("ul li:first").css('color', 'red');
+        });
+
+
+        $("#btn3").click(function() {
+            $("ul li:first-child").css('color', 'red');
+        });
+    </script>
+
+</body>
+
+</html>

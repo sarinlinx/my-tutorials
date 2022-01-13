@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="../../_css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../../_css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <title>Links</title>
+</head>
+
+<body>
+    <a href="../../index.html">Home page</a>
+
+
+
+
+
+
+    <section class="container">
+        <h2>Unordered Lists</h2>
+
+        <div class="row">
+
+            <div class="col-6">
+                <p>You can style how lists look depending on if they are unordered or ordered.</p>
+            </div>
+            <div class="col-6">
+                <pre class="example"><span class="code-html"><span class="highlight-word">unordered lists</span>
+&lt;ul class="a"&gt;
+  &lt;li>Coffee&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ul class="b"&gt;
+  &lt;li&gt;Coffee&lt;/li&gt;
+&lt;/ul&gt;</span>
+
+<span class="code-css">ul.a {
+  list-style-type: circle;
+}
+
+ul.b {
+  list-style-type: square;
+}</span></pre></div>
+        </div>
+
+        <div class="row">
+            <div class="col-6">
+                <p>Example of unordered lists.</p>
+            </div>
+            <div class="col-6">
+                <pre class="example"><ul class="unordered-list-a">
+  <li>Coffee</li>
+</ul>
+<ul class="unordered-list-b">
+  <li>Coffee</li>
+</ul></pre>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+    <section class="container">
+        <h2>Ordered Lists</h2>
+        <div class="row">
+            <div class="col-6">
+                <p>Example of ordered lists.</p>
+            </div>
+            <div class="col-6">
+                <pre class="example"><span class="code-html"><span class="highlight-word">Ordered lists</span>
+&lt;ol class="c"&gt;
+  &lt;li&gt;Coffee&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;ol class="d"&gt;
+  &lt;li&gt;Coffee&lt;/li&gt;
+&lt;/ol&gt;</span>
+
+<span class="code-css">ol.c {
+  list-style-type: upper-roman;
+}
+
+ol.d {
+  list-style-type: lower-alpha;
+}</span></pre></div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-6">
+                <p>Example of ordered lists.</p>
+            </div>
+            <div class="col-6">
+                <pre class="example"><ol class="ordered-list-c">
+  <li>Coffee</li>
+</ol>
+
+<ol class="ordered-list-d">
+  <li>Coffee</li>
+</ol></pre>
+            </div>
+            <!--end example-container-->
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+<section class="container">
+    <h2>Add a custom image for the list items</h2>
+    <div class="row">
+        <div class="col-6">
+            <p>Example of ordered lists.</p>
+        </div>
+<div class="col-6">
+        <pre class="example"><span class="code-html">&lt;ol&gt;
+ &lt;li&gt;Coffee&lt;/li&gt;
+&lt;/ol&gt;</span>
+
+<span class="code-css">ul {
+  list-style-image: url('sqpurple.gif');
+}</span></pre>
+</div>
+</div>
+
+<div class="row">
+<div class="col-6">
+            <p>Example of a custom list image.</p>
+        </div>
+<div class="col-6">
+        <pre class="example"><ol class="custom-list-image">
+<li>Coffee</li>
+</ol></pre></div>
+</div>
+
+
+
+<div class="row">
+        <div class="col-6">
+            <p>Shorthand for all properties on a custom image. The following can be used:</p>
+        </div>
+<div class="col-6">
+        <pre class="example"><span class="code-css">ul {
+  list-style: square inside url("sqpurple.gif");
+}</span></pre></div>
+</div>
+
+<div class="row">
+  <div class="col">
+        <div class="alert alert-note">
+            <div class="alert-icon">
+                <img src="../../_img/note-icon.png" width="60" height="60">
+            </div>
+            <div class="alert-content">
+                <p><strong>list-style-type</strong> (if a list-style-image is specified, the value of this property will be displayed if the image for some reason cannot be displayed). View the following for a full list of types:
+                    <ul>
+                        <li><a href="https://www.w3schools.com/cssref/pr_list-style-type.asp">list-style-type options</a></li>
+                    </ul>
+                </p>
+                <p><strong>list-style-position</strong> (specifies whether the list-item markers should appear inside or outside the content flow)</p>
+                <p><strong>list-style-image</strong> (specifies an image as the list item marker)</p>
+                <p>If one of the property values above are missing, the default value for the missing property will be inserted, if any.</p>
+
+                <p>View the following link to see the difference between inside and outside:
+                    <ul>
+                        <li><a href="https://www.w3schools.com/css/tryit.asp?filename=trycss_list-style-position">diff between inside and outside</a></li>
+                    </ul>
+            </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+
+
+
+
+
+        <script src="../../_js/jquery.js"></script>
+        <script src="../../_js/bootstrap.bundle.js"></script>
+</body>
+
+</html>

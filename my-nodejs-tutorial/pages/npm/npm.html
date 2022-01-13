@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" type="text/css" href="../../_css/styles.css">
+
+    <title>npm</title>
+</head>
+
+<body>
+
+
+    <nav class="navbar">
+        <a href="../../index.html">Back to homepage</a>
+        <a class="nav-page nav-active">npm</a>
+    </nav>
+
+
+
+
+    <h1>Overview</h1>
+
+
+    <h2>Links</h2>
+    <ul>
+        <li><a href="https://www.npmjs.com/" target="_blank">npm docs</a></li>
+        <li><a href="https://www.npmjs.com/package/express" target="_blank">Express</a></li>
+
+    </ul>
+
+
+    <h2>Create project</h2>
+    <section class="code-section-container">
+        <div class="code-text-section">
+            <p>Run <span class="code">npm init</span> to create a <span class="text-object">package.json</span> file.</p>
+            <p>You are then guided to answer some basic setup questions.</p>
+        </div>
+        <div class="code-block-section-w60">
+            <pre class="example"><span class="code-nodejs">npm init</span></pre>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
+    <h1>Packages (2 types)</h1>
+
+    <h2>Simple Dependencies</h2>
+
+    <div class="text-section">
+        <p>Simple, or regular dependencies, are packages that contain some code upon which we build our own application.</p>
+    </div>
+
+    <h3>Install Slugify</h3>
+    <section class="code-section-container">
+        <div class="code-text-section">
+            <p>Install slugify</p>
+            <p>You do not need to add <span class="code">--save</span>.
+        </div>
+        <div class="code-block-section-w60">
+            <pre class="example"><span class="code-nodejs">npm install slugify</span></pre>
+        </div>
+    </section>
+
+
+    <h3>Install specific version</h3>
+    <section class="code-section-container">
+        <div class="code-text-section">
+            <p>Add version # after: <span class="code">@1.0.0</span>.
+        </div>
+        <div class="code-block-section-w60">
+            <pre class="example"><span class="code-nodejs">npm install slugify@1.0.0</span></pre>
+        </div>
+    </section>
+
+
+
+
+
+    <h2>Developer Dependencies</h2>
+
+    <div class="text-section">
+        <p>These are usually just tools for development. For example, a code bundler like Webpack, or a debugger tool or a testing library.</p>
+    </div>
+
+    <h3>Install locally</h3>
+    <section class="code-section-container">
+        <div class="code-text-section">
+            <p>Install nodemon</p>
+            <p>You must add <span class="code">--save-dev</span> at the end.</p>
+            <p>nodemon is a tool that helps us develop Node.js applications by automatically restarting the Node application whenever we change some files in our working directory.</p>
+        </div>
+        <div class="code-block-section-w60">
+            <pre class="example"><span class="code-nodejs">npm install nodemon --save-dev</span></pre>
+        </div>
+    </section>
+
+    <h4>Run a file using nodemon (locally)</h4>
+    <section class="code-section-container">
+        <div class="code-text-section">
+            <p>To run this locally, you'll need to edit your <span class="text-object">package.json</span> file.</p>
+            <p>You need to edit the <span class="code">scripts</span> line as shown.</p>
+            <p>You can then start the app by running <span class="code">npm run start</span>.</p>
+        </div>
+        <div class="code-block-section-w60">
+            <pre class="example"><span class="code-nodejs">"scripts": {
+  "start": "nodemon index.js"
+},</span></pre>
+        </div>
+    </section>
+
+
+
+
+    <h1>Global installs</h1>
+
+    <div class="text-section">
+        <p>These packages are available anywhere on your machine.</p>
+        <p>A package should be installed globally when it provides an executable command that you can run from the command line interface. nodemon, for example, is one tool like that.</p>
+    </div>
+
+
+    <h3>Install nodemon globally</h3>
+    <section class="code-section-container">
+        <div class="code-text-section">
+            <p>You must add <span class="code">--global</span> at the end.</p>
+        </div>
+        <div class="code-block-section-w60">
+            <pre class="example"><span class="code-nodejs">npm install nodemon --global</span></pre>
+        </div>
+    </section>
+
+    <h4>Run a file using nodemon</h4>
+    <section class="code-section-container">
+        <div class="code-text-section">
+            <p>Use <span class="code">nodemon</span> instead of <span class="code">node</span> to start the app.</p>
+        </div>
+        <div class="code-block-section-w60">
+            <pre class="example"><span class="code-nodejs">nodemon index.js</span></pre>
+        </div>
+    </section>
+
+
+
+
+
+
+    <h3>Uninstall</h3>
+    <section class="code-section-container">
+        <div class="code-text-section">
+            <p>Use <span class="code">uninstall</span>.</p>
+        </div>
+        <div class="code-block-section-w60">
+            <pre class="example"><span class="code-nodejs">npm uninstall nodemon</span></pre>
+        </div>
+    </section>
+
+
+
+
+
+    <h1>Versions</h1>
+
+    <section class="code-section-container">
+        <div class="code-text-section">
+            <p>Verions of packages are split into 3 sections.</p>
+            <ul>
+                <li>Major version (possible breaking changes)</li>
+                <li>Minor version (new minor additions: backwards compatible)</li>
+                <li>patch version (bug fixes)</li>
+            </ul>
+        </div>
+        <div class="code-block-section-w60">
+            <pre class="example"><span class="code-nodejs">"nodemon": "^1.18.11"</span></pre>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+    <h1>Updating</h1>
+
+    <h2>Symbols</h2>
+    <section class="code-section-container">
+        <div class="code-text-section">
+            <p>Symbol in front of version specifies which updates are accepted for each package.</p>
+            <ul>
+                <li><span class="code">^</span> - patch and minor releases</li>
+                <li><span class="code">~</span> - path releases only</li>
+                <li><span class="code">*</span> - current version</li>
+            </ul>
+        </div>
+        <div class="code-block-section-w60">
+            <pre class="example"><span class="code-nodejs">"nodemon": "^1.18.11"
+"slugify": "~1.0.0"</span></pre>
+        </div>
+    </section>
+
+    <h2>Check for outdated packages</h2>
+    <section class="code-section-container">
+        <div class="code-text-section">
+            <p>This displays a table of outdated packages.</p>
+        </div>
+        <div class="code-block-section-w60">
+            <pre class="example"><span class="code-nodejs">npm outdated</span></pre>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+    <h1>Install all dependencies</h1>
+    <section class="code-section-container">
+        <div class="code-text-section">
+            <p>This intalls all packages inside the <span class="text-object">packages.json</span> file.</p>
+            <p>They are installed into the <span class="text-object">node_modules</span> directory.</p>
+        </div>
+        <div class="code-block-section-w60">
+            <pre class="example"><span class="code-nodejs">npm install</span></pre>
+        </div>
+    </section>
+
+    <h2>packages-lock.json file</h2>
+    <div class="text-section">
+        <p>This includes all dependencies of all dependencies.</p>
+        <p>Make sure you share the <span class="text-object">package.json</span> and <span class="text-object">package-lock.json</span> file with any developer you're working with.</p>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>

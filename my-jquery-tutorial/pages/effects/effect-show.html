@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="../../_css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../../_css/style.css">
+
+    <title>The 'show' effect</title>
+</head>
+
+<body>
+    <section class="container">
+      <nav aria-label="breadcrumb">
+          <ol class="breadcrumb breadcrumb-container">
+              <li class="breadcrumb-item"><a class="breadcrumb-link" href="../../index.html">Home</a></li>
+              <li class="breadcrumb-item active" aria-current="page">The 'show' effect</li>
+          </ol>
+      </nav>
+
+
+<h1>The 'show' effect</h1>
+
+    <p>When the user clicks the link, the paragraph disappears and the yellow rectangle appears.</p>
+
+    <p>The #target element has an event happen 'on' it.</p>
+    <p>The 'click' event  is the event that happens 'on' the #target element.</p>
+    <p>When the 'click' event occurs, the function() is run.</p>
+    <p>The function looks for the paragraph with an ID of 'statement' and uses hide() to hide it.</p>
+    <p>It then finds the ID of 'box' and uses show() to display it.</p>
+
+
+<pre class="example">
+<span class="code-html">&lt;a id="target" href="#"&gt; Click Here &lt;/a&gt;
+&lt;p id="statement"&gt; This is a sentence &lt;/p&gt;
+&lt;div id="box" style="width:500px; height:100px; border:1px solid #000; background-color:yellow; display:none;"&gt;
+  This is a rectangle
+  &lt;/div&gt;</span>
+
+<span class="code-js">$('#target').on("click", function() {
+  //code to be executed when the button is clicked
+  $('p#statement').hide();
+  $('div#box').show();
+});</span></pre>
+
+
+
+    <h3>Example</h3>
+<a id="target" href="#"> Click Here </a>
+
+<p id="statement"> This is a sentence </p>
+
+<div id="box" style="width:500px; height:100px; border:1px solid #000; background-color:yellow; display:none;">
+  This is a rectangle
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <h1>Click button to show content</h1>
+
+    <pre class="example"><span class="code-html">&lt;p&gt;If you click on the "Hide" button, I will disappear.&lt;/p&gt;
+&lt;button id="hide"&gt;Hide&lt;/button&gt;</span>
+
+<span class="code-js">$("#hide").click(function() {
+    $("p#p1").hide();
+});
+$("#show").click(function() {
+    $("p#p1").show();
+});</span></pre>
+
+  <h3>Example</h3>
+  <p id="p-hide">If you click on the "Hide" button, I will disappear.</p>
+  <button id="hide">Hide</button>
+  <button id="show">Show</button>
+
+
+
+
+
+
+
+  <h1>Adding a time parameter</h1>
+  <p>The optional speed parameter specifies the speed of the hiding/showing, and can take the following values: "slow", "fast", or milliseconds.</p>
+
+      <pre class="example"><span class="code-html">&lt;p&gt;If you click on the "Hide" button, I will disappear.&lt;/p&gt;
+&lt;button id="hide"&gt;Hide&lt;/button&gt;</span>
+
+<span class="code-js">$("#hide").click(function() {
+    $("p#p2").hide(1000);
+});
+$("#show").click(function() {
+    $("p#p2").show("slow");
+});</span></pre>
+
+    <h3>Example</h3>
+    <p id="p2">If you click on the "Hide" button, I will disappear.</p>
+    <button id="hide2">Hide</button>
+    <button id="show2">Show</button>
+
+
+
+
+    </section>
+
+
+
+
+
+
+
+    <script src="../../_js/jquery-3.4.1.min.js"></script>
+
+    <script>
+    $('#target').on("click", function() {
+      //code to be executed when the button is clicked
+      $('p#statement').hide();
+      $('div#box').show();
+    });
+
+    $("#hide").click(function() {
+        $("p#p-hide").hide();
+    });
+    $("#show").click(function() {
+        $("p#p-hide").show();
+    });
+
+    $("#hide2").click(function() {
+        $("p#p2").hide(1000);
+    });
+    $("#show2").click(function() {
+        $("p#p2").show("slow");
+    });
+    </script>
+
+</body>
+
+</html>

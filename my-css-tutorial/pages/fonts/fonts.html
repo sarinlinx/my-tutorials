@@ -1,0 +1,280 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="../../_css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../../_css/style.css">
+    <style>
+        #normal {
+            font-style: normal;
+        }
+        
+        #italic {
+            font-style: italic;
+        }
+        
+        #oblique {
+            font-style: oblique;
+        }
+        
+        #bold {
+            font-weight: bold;
+        }
+        
+        #bolder {
+            font-weight: bolder;
+        }
+        
+        #lighter {
+            font-weight: lighter;
+        }
+        
+        #fw100 {
+            font-weight: 100;
+        }
+        
+        #fw200 {
+            font-weight: 200;
+        }
+        
+        #fw300 {
+            font-weight: 300;
+        }
+        
+        #fw400 {
+            font-weight: 400;
+        }
+        
+        #fw500 {
+            font-weight: 500;
+        }
+        
+        #fw600 {
+            font-weight: 600;
+        }
+        
+        #fw700 {
+            font-weight: 700;
+        }
+        
+        #fw800 {
+            font-weight: 800;
+        }
+        
+        #fw900 {
+            font-weight: 900;
+        }
+    </style>
+    <title>Fonts</title>
+</head>
+
+<body>
+    <a href="../../index.html">Home page</a>
+
+
+
+
+
+
+
+
+
+
+
+    <section class="container">
+        <h2>font-style</h2>
+        <div class="row">
+            <div class="col-6">
+                <p>font-style is mostly used to specify italic text. This property has three values:</p>
+                <ul>
+                    <li>normal - The text is shown normally</li>
+                    <li>italic - The text is shown in italics</li>
+                    <li>oblique - The text is "leaning" (oblique is very similar to italic, but less supported)</li>
+                </ul>
+            </div>
+            <div class="col-6">
+                <pre class="example"><span class="code-css">p.normal {
+  font-style: normal;
+}
+
+p.italic {
+  font-style: italic;
+}
+
+p.oblique {
+  font-style: oblique;
+}</span></pre>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-6">
+                <p>Example:</p>
+            </div>
+            <div class="col-6">
+                <p id="normal">This is a paragraph in normal style.</p>
+                <p id="italic">This is a paragraph in italic style.</p>
+                <p id="oblique">This is a paragraph in oblique style.</p>
+            </div>
+        </div>
+
+
+
+    </section>
+
+
+
+    <section class="container">
+        <h2>font-weight</h2>
+        <div class="row">
+            <div class="col-6">
+                <p>font-weight specifies the weight of a font.</p>
+                <p>You can use words or numbers to set this value.</p>
+            </div>
+            <div class="col-6">
+                <pre class="example"><span class="code-css">p.normal {
+  font-weight: normal;
+  font-weight: 900;
+}</span></pre></div>
+        </div>
+
+
+        <table class="table table-dark table-bordered">
+            <thead>
+                <tr>
+                    <th scope="col">Value</th>
+                    <th scope="col">Description</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>lighter</td>
+                    <td><span id="lighter">Defines lighter characters</span></td>
+                </tr>
+
+                <tr>
+                    <td>normal</td>
+                    <td>Defines normal characters. This is default</td>
+                </tr>
+                <tr>
+                    <td>bold</td>
+                    <td><span id="bold">Defines thick characters</span></td>
+                </tr>
+                <tr>
+                    <td>bolder</td>
+                    <td><span id="bolder">Defines thicker characters</span></td>
+                </tr>
+
+                <tr>
+                    <td>100<br> 200
+                        <br> 300
+                        <br> 400
+                        <br> 500
+                        <br> 600
+                        <br> 700
+                        <br> 800
+                        <br> 900
+                    </td>
+                    <td>Defines from thin to thick characters. 400 is the same as normal, and 700 is the same as bold<br>
+                        <span id="fw100">This font-weight is 100</span><br>
+                        <span id="fw200">This font-weight is 200</span><br>
+                        <span id="fw300">This font-weight is 300</span><br>
+                        <span id="fw400">This font-weight is 400</span><br>
+                        <span id="fw500">This font-weight is 500</span><br>
+                        <span id="fw600">This font-weight is 600</span><br>
+                        <span id="fw700">This font-weight is 700</span><br>
+                        <span id="fw800">This font-weight is 800</span><br>
+                        <span id="fw900">This font-weight is 900</span><br>
+
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+
+
+
+    <section class="container">
+        <h2>font-variant</h2>
+        <div class="row">
+            <div class="col-6">
+                <p>font-variant specifies whether or not a text should be displayed in a small-caps font.</p>
+                <p>In a small-caps font, all lowercase letters are converted to uppercase letters. However, the converted uppercase letters appears in a smaller font size than the original uppercase letters in the text.</p>
+                <p>You can use words or numbers to set this value.</p>
+            </div>
+            <div class="col-6">
+                <pre class="example"><span class="code-css">p.small {
+  font-variant: small-caps;
+}</span></pre>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6">
+                <p>Example:</p>
+            </div>
+            <div class="col-6">
+
+                <p class="white">Original text: Mix of UPPERCASE and Lowercase text.</p>
+                <p class="font-variant-small-caps">font-variant: Mix of UPPERCASE and Lowercase text.</p>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+    <section class="container">
+        <h2>font shorthand</h2>
+        <div class="row">
+            <div class="col-6">
+                <p>The properties that can be set, are (in order):
+                    <ul>
+                        <li>font-style</li>
+                        <li>font-variant</li>
+                        <li>font-weight</li>
+                        <li>font-size/line-height</li>
+                        <li>font-family</li>
+                    </ul>
+                    <p>The font-size and font-family values are required. If one of the other values are missing, the default values will be inserted, if any.</p>
+
+            </div>
+            <div class="col-6">
+                <pre class="example"><span class="code-css">.fontstyles {
+  font: italic bold 12px/30px Georgia, serif;
+}</span></pre>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="container">
+        <h2>Find font style on page using Chrome</h2>
+        <div class="row">
+            <div class="col">
+                <ol>
+                    <li>In Chrome, open Dev tools, or right click and choose 'Inspect' from the menu.</li>
+                    <li>On the bottom right, click 'Computed'.</li>
+                    <li>Scroll down till you see font family.</li>
+                </ol>
+            </div>
+            <p></p>
+            <img src="../../_img/chrome-view-fonts.png" />
+        </div>
+
+
+
+
+        <script src="../../_js/jquery.js"></script>
+        <script src="../../_js/bootstrap.bundle.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="../../_css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../../_css/style.css">
+    <title>parents()</title>
+</head>
+
+<body>
+    <section class="container">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb breadcrumb-container">
+                <li class="breadcrumb-item"><a class="breadcrumb-link" href="../../index.html">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">parents()</li>
+            </ol>
+        </nav>
+
+
+        <h2>parents()</h2>
+        <p>The parents() method returns all ancestor elements of the selected element, all the way up to the document's root element (&lt;html&gt;).</p>
+        <p><a href="https://www.w3schools.com/jquery/tryit.asp?filename=tryjquery_parents" target="_blank">parents() at w3schools.com</a></p>
+        <pre class="example"><span class="code-html">&lt;div class="ancestors"&gt;
+  &lt;div style="width:500px;"&gt;div (great-grandparent)
+    &lt;ul&gt; (grandparent)
+      &lt;li&gt; (direct parent)
+        &lt;p id="child2"&gt;&lt;p id="span1"&gt;child&lt;/span&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</span>
+
+<span class="code-js">$("#child2").parent().css({"color": "red", "border": "2px solid red"});</span></pre>
+
+        <h3>Example</h3>
+        <div class="ancestors">
+            <div style="width:500px;">div (great-grandparent)
+                <ul>&lt;ul&gt; (grandparent)
+                    <li>&lt;li&gt; (direct parent)
+                        <p id="child2">&lt;p id="span1"&gt;child</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+    </section>
+    <script src="../../_js/jquery-3.4.1.min.js"></script>
+    <script>
+
+        $("p#child2").parents().css({
+            "color": "red",
+            "border": "2px solid red"
+        });
+
+    </script>
+</body>
+
+</html>

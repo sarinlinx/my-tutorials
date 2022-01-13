@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="../../../_css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../../../_css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <title>Pseudo Element Selectors</title>
+</head>
+
+<body>
+
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item">
+        <a href="../../../index.html">Home</a>
+      </li>
+      <li class="breadcrumb-item active" aria-current="page">Pseudo Element Selectors</li>
+    </ol>
+  </nav>
+
+
+
+
+
+
+
+
+
+    <section class="container">
+        
+
+        <h2>::before and ::after</h2>
+        <div class="row">
+            <div class="col-6">
+                <p>:before and :after used in box-model-fix. They are also used to GENERATE elements inserted before or after the selected element</p>
+                <p>These generated elements do NOT become part of the HTML DOM.</p>
+                <p>These must always be used with the content property.</p>
+            </div>
+            <div class="col-6">
+                <pre class="example"><span class="code-css">.someClass::before {
+  content: "words for the pseudo selector ";
+}</span>
+
+<span class="beforeafter">This is the normal text in the HTML.</span>
+    </pre>
+            </div>
+        </div>
+
+
+
+        <h2 class="heading-emphasis">Using ::before and ::after to add quote marks</h2>
+        <div class="row">
+            <div class="col-6">
+                <p>If you need to put quotes around quoted text, you just need to escape the double quote.</p>
+                <p>You could also put the double quote inside of single quotes , or use unicode '\201C'</p>
+            </div>
+            <div class="col-6">
+                <pre class="example"><span class="code-css">.someClass::before {
+  color: red;
+  content: "\"";
+}
+
+.someClass::after {
+  color: red;
+  content: "\"";
+}</span>
+
+<span class="beforeafter-quotes">Red quotes are added.</span>
+    </pre>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+    <script src="../../_js/jquery.js"></script>
+    <script src="../../_js/bootstrap.bundle.js"></script>
+</body>
+
+</html>

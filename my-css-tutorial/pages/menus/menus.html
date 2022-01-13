@@ -1,0 +1,452 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="../../_css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../../_css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <title>Menus</title>
+</head>
+
+<body>
+    <a href="../../index.html">Home page</a>
+    <section class="container">
+        <div class="row">
+            <div class="col">
+                <h1 class="heading-emphasis">Make a menu horizontal</h1>
+                <p>There are a few ways to do this.</p>
+                <ul>
+                    <li>Creating an html section with anchor tags, then using inline-block to force them horizontal</li>
+                    <li>Creating an html unordered list, then using inline-block to force them horizontal</li>
+                    <li>Using float</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+    <section class="container">
+        <div class="row">
+            <div class="col">
+                <h2>Nav section with anchors using display: inline-block</h2>
+                <h3>This first example does not use a display property</h3>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-6">
+                <p>Wrap the menu in a &lt;nav&gt; tag with a class name.</p>
+                <p>You can then pinpoint the anchor tags within it.</p>
+                <p>This example does not use a display property, so it defaults to display: inline.</p>
+            </div>
+            <div class="col-6">
+                <pre class="example"><span class="code-html">&lt;nav class="display-ex"&gt;
+  &lt;a href="#"&gt;About&lt;/a&gt;
+  &lt;a href="#"&gt;Contact&lt;/a&gt;
+&lt;/nav&gt;</span>
+
+<span class="code-css">.display-ex {
+  background-color: green;
+  text-align: center;
+}
+
+.display-ex a {
+  background-color: yellow;
+  border: 1px solid red;
+  padding: 10px 0px; /*add size to links*/
+}</span></pre></div>
+        </div>
+    </section>
+
+
+    <section class="container">
+        <div class="row">
+            <div class="col-6">
+                <p>Example:</p>
+            </div>
+            <div class="col-6">
+                <pre class="example"><nav class="horz-nav-display-no-inline-block"><a href="#">About</a><a href="#">Contact</a></nav></pre>
+            </div>
+        </div>
+
+
+        <div class="alert alert-note">
+            <div class="alert-icon">
+                <img src="../../_img/note-icon.png" width="60" height="60">
+            </div>
+            <div class="alert-content">
+                <p>Notice how the green background does not expand to fit the padding of the links. This is default behavior for inline elements. To fix, just make the anchor links inline-block.</p>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+    <section class="container">
+        <div class="row">
+            <div class="col">
+                <h3>This example uses a display:inline-block</h3>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-6">
+                <p>Add display: inline-block;</p>
+                <p>This forces the background (parent element) to expand to the child's size.</p>
+            </div>
+            <div class="col-6"><pre class="example"><span class="code-css">.display-ex {
+  background-color: green;
+  text-align: center;
+}
+
+.display-ex a {
+  background-color: yellow;
+  border: 1px solid red;
+  padding: 10px 0px; /*add size to links*/
+  <span class="highlight-word">display: inline-block;</span> /*to expand parent element with child*/
+}</span></pre></div>
+        </div>
+
+        <div class="row">
+            <div class="col-6">
+                <p>Example:</p>
+            </div>
+            <div class="col-6">
+                <pre class="example"><nav class="horz-nav-display-inline-block">
+  <a href="#">About</a><a href="#">Contact</a>
+  </nav></pre>
+            </div>
+        </div>
+
+        <div class="alert alert-note">
+            <div class="alert-icon">
+                <img src="../../_img/note-icon.png" width="60" height="60">
+            </div>
+            <div class="alert-content">
+                <p>Notice how there is a space between the anchor tags? That is because the HTML for each link is on a different line.</p>
+                <p>Instead of changing your HTML, just change the font to zero for the parent element, then add it for the child element.</p>
+
+            </div>
+        </div>
+    </section>
+
+
+
+    <section class="container">
+        <div class="row">
+            <div class="col">
+                <h3>Remove space between anchors by setting font-size: 0;</h3>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-6">
+                <p>Set parent font to zero.</p>
+                <p>Set child font (otherwise it would also be zero since it would inherit the parent font).</p>
+            </div>
+            <div class="col-6">
+                <pre class="example"><span class="code-html">&lt;nav class="display-ex"&gt;
+  &lt;a href="#"&gt;About&lt;/a&gt;
+  &lt;a href="#"&gt;Contact&lt;/a&gt;
+&lt;/nav&gt;</span>
+
+<span class="code-css">.display-ex {
+  background-color: green;
+  text-align: center;
+  <span class="highlight-word">font-size: 0;</span>
+}
+
+.display-ex a {
+  background-color: yellow;
+  border: 1px solid red;
+  padding: 10px 0px; /*add size to links*/
+  display: inline-block;
+  <span class="highlight-word">font-size: 16px;</span>
+}</span></pre>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-6">
+                <p>Example:</p>
+            </div>
+
+            <div class="col-6">
+                <pre class="example"><nav class="horz-nav-display-center">
+  <a href="#">About</a><a href="#">Contact</a>
+  </nav></pre>
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <section class="container">
+        <div class="row">
+            <div class="col">
+                <h2>Create horizontal nav using an unordered list</h2>
+                <p>You can do the same as shown above using an unordered list.</p>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-6">
+                <p>asdf</p>
+            </div>
+            <div class="col-6">
+                <pre class="example"><span class="code-html">&lt;ul class="display-ex"&gt;
+  &lt;li&gt;&lt;a href="#"&gt;About&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="#"&gt;Contact&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</span>
+
+<span class="code-css">.display-ex {
+  background-color: yellow;
+  list-style-type: none;
+  text-align: center;
+  margin: 0; /*necessary to keep links from overlapping*/
+  padding: 0; /*necessary to keep links from overlapping*/
+}
+
+.display-ex li {
+  display: inline-block;
+  background-color: green;
+  font-size: 20px;
+  padding: 20px;
+}</span></pre>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-6">
+                <p>Example:</p>
+            </div>
+
+            <div class="col-6">
+                <pre class="example"><nav class="horz-nav-display-center">
+  <a href="#">About</a><a href="#">Contact</a>
+  </nav></pre>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
+
+<section class="container">
+    <h2>Make a menu horizontal using the 'float' property</h2>
+    <div class="alert alert-note">
+        <div class="alert-icon">
+            <img src="../../_img/note-icon.png" width="60" height="60">
+        </div>
+        <div class="alert-content">
+            <p>Using display:inline-block can be achieved with float, but floating requires you to clear the element after the floating boxes. So inline-block is easier.</p>
+            <p>Also, when using float, the display property has no affect.</p>
+        </div>
+    </div>
+</section>
+
+
+<section class="container">
+    <div class="row">
+        <div class="col-6">
+            <p>Background colors only</p>
+        </div>
+
+<div class="col-6">
+<pre class="example"><span class="code-html">&lt;nav class="float"&gt;
+  &lt;a href="#"&gt;About&lt;/a&gt;
+  &lt;a href="#"&gt;Contact&lt;/a&gt;
+&lt;/nav&gt;</span>
+
+<span class="code-css">.float {
+  background-color: yellow;
+}
+
+.float a {
+  background-color: red;
+}</span></pre>
+</div>
+</div>
+
+
+
+<div class="row">
+        <div class="col-6">
+            <p>Original appearance BEFORE adding float:left; to anchor tag:</p>
+        </div>
+        <div class="col-6">
+        <pre class="example"><nav class="horz-nav-no-float">
+  <a id="no-left-float-margin" href="#">About</a> <a href="#">Contact</a>
+</nav></pre></div>
+    </div>
+  </section>
+
+
+
+
+
+<section class="container">
+    <div class="row">
+        <div class="col-6">
+            <p>Addding float: left; causes the spacing to dissapear, but also causes the parent element (in yellow) to dissapear.</p>
+        </div>
+
+<div class="col-6">
+<pre class="example"><span class="code-html">&lt;nav class="float"&gt;
+  &lt;a href="#"&gt;About&lt;/a&gt;
+  &lt;a href="#"&gt;Contact&lt;/a&gt;
+&lt;/nav&gt;</span>
+
+<span class="code-css">.float {
+  background-color: yellow;
+}
+
+.float a {
+  background-color: red;
+  <span class="highlight-word">float: left;</span>
+}</span></pre></div></div>
+
+<div class="row">
+        <div class="col-6">
+            <p>Example: The parent container does not recognize the height of floated child elements and collapses to a height of zero.</p>
+        </div>
+        <div class="col-6">
+        <pre class="example"><nav class="horz-nav-float">
+  <a href="#">About</a> <a href="#">Contact</a>
+        </nav></pre>
+    </div>
+  </div>
+
+<div class="row">
+        <div class="col-6">
+            <p>To restore parent element size, add overflow:hidden;</p>
+        </div>
+
+<div class="col-6">
+        <pre class="example"><span class="code-html">&lt;nav class="float"&gt;
+  &lt;a href="#"&gt;About&lt;/a&gt;
+  &lt;a href="#"&gt;Contact&lt;/a&gt;
+  &lt;/nav&gt;</span>
+
+  <span class="code-css">.horz-nav-float-overflow {
+  background-color: yellow;
+  <span class="highlight-word">overflow: hidden;</span>
+  }
+  .horz-nav-float-overflow a {
+  background-color: red;
+  float: left;
+}</pre></div>
+</div>
+
+<div class="row">
+        <div class="col-6">
+            <p>Example:</p>
+        </div>
+        <div class="col-6">
+        <pre class="example"><nav class="horz-nav-float-overflow">
+  <a href="#">About</a><a href="#">Contact</a>
+      </nav></pre>
+    </div>
+  </div>
+
+
+
+    <div class="alert alert-note">
+        <div class="alert-icon">
+            <img src="../../_img/note-icon.png" width="60" height="60">
+        </div>
+        <div class="alert-content">
+            <p>If you apply float to an inline element, the browser automatically switches display of element to block. This means you can add padding without adjusting the display value.</p>
+            <p><span class="red">Create an example of this</span></div>
+    </div>
+</section>
+
+
+
+<section class="container">
+    <h2>Center a horizontal menu using the 'float' property</h2>
+
+<div class="row">
+    <div class="col-6">
+        <p>text-align: center does NOT work with float you must set width. Divide number of links by a percent.</p>
+        <p>For example, for two links use 50%, for 4 links use 25%.</p>
+    </div>
+<div class="col-6">
+    <pre class="example"><span class="code-html">&lt;nav class="float"&gt;
+  &lt;a href="#"&gt;About&lt;/a&gt;
+  &lt;a href="#"&gt;Contact&lt;/a&gt;
+  &lt;a href="#"&gt;Email&lt;/a&gt;
+  &lt;a href="#"&gt;Links&lt;/a&gt;
+&lt;/nav&gt;</span>
+
+<span class="code-css">.float a {
+  background-color: red;
+  float: left;
+  <span class="highlight-word">width: 25%;</span>
+}</pre></div>
+</div>
+
+    <div class="alert alert-note">
+        <div class="alert-icon">
+            <img src="../../_img/note-icon.png" width="60" height="60">
+        </div>
+        <div class="alert-content">
+            <p>This works best with 4 or more links.</p>
+        </div>
+    </div>
+</section>
+
+
+
+
+<section class="container">
+    <h2>Create a horizontal list from an unordered list</h2>
+<div class="row">
+    <div class="col-6">
+        <p>Everything above applies the same to unordered lists that you're trying to make a navigation menu from. Just make sure to remove the style from the list.</p>
+    </div>
+
+<div class="col-6">
+    <pre class="example"><span class="code-css">.ul-class {
+  <span class="highlight-word">list-style-type: none;</span>
+}</pre></div>
+
+    </div>
+  </section>
+
+
+
+
+
+
+
+
+
+
+    <script src="../../_js/jquery.js"></script>
+    <script src="../../_js/bootstrap.bundle.js"></script>
+</body>
+
+</html>

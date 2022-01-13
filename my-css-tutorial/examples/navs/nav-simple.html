@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="../../_css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../../_css/style.css">
+
+    <title>Simple nav using float</title>
+</head>
+
+<style>
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: #333;
+    }
+    
+    li {
+        float: left;
+    }
+    
+    li a {
+        display: inline-block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+    }
+    
+    li a:hover {
+        background-color: #111;
+    }
+    
+    .active {
+        background-color: red;
+    }
+</style>
+
+<body>
+    <a href="../../index.html">Home page</a>
+
+    <section class="container">
+
+
+
+        <h2>Simple nav using float</h2>
+        <div class="row">
+
+            <div class="col-6">
+                <p>Create a unordered list. Then use float to make them horizontal.</p>
+            </div>
+
+            <div class="col-6">
+                <pre class="example"><span class="code-css">ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: inline-block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: #111;
+}
+
+.active {
+  background-color: red;
+}            
+
+<span class="code-html">&lt;ul&gt;
+&lt;li&gt;&lt;a href="#home" class="active"&gt;Home&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#news"&gt;News&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#contact"&gt;Contact&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#about"&gt;About&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</span></pre>
+            </div>
+        </div>
+
+
+
+
+        <div class="row">
+            <div class="col">
+                <h4>Example</h4>
+                <ul>
+                    <li><a href="#home" class="active">Home</a></li>
+                    <li><a href="#news">News</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#about">About</a></li>
+                </ul>
+
+            </div>
+        </div>
+
+
+
+
+    </section>
+
+
+    <script src="../../_js/jquery.js"></script>
+    <script src="../../_js/bootstrap.bundle.js"></script>
+</body>
+
+</html>

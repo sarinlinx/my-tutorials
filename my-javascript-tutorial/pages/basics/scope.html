@@ -1,0 +1,321 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="../../_css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../../_css/style.css">
+
+    <title>Scope</title>
+</head>
+
+<body>
+    <a href="../../index.html">Home page</a>
+
+
+    <section class="container">
+        <h1>Global and Local scope</h1>
+
+        <h2>Lexical Scope</h2>
+        <div class="row">
+            <div class="col">
+                <p>JavaScript uses Lexical scope.</p>
+            </div>
+        </div>
+
+        <h2>Global Scope</h2>
+        <div class="row">
+            <div class="col">
+                <p>Global scope is anything defined outside of all code blocks.</p>
+                <p>The variable is accessible everywhere in the program.</p>
+            </div>
+        </div>
+
+        <h2>Local Scope</h2>
+        <div class="row">
+            <div class="col">
+                <p>Local Scope are variables defined within a code block.</p>
+                <p>It's only accessible within that code block, or parent scope.</p>
+            </div>
+        </div>
+
+    </section>
+
+
+
+
+
+
+
+
+    <section class="container">
+        <h1>Simple scope example</h1>
+        <div class="row">
+            <div class="col-6">
+                <p>Variables have a scope where they are accessible.</p>
+                <p>If you try to access a variable that's out of the current scope, an error displays.</p>
+                <p>This first prints: 'varOne'.</p>
+                <p>An error is then thrown because 'varTwo' is not in the current scope. It's in the if statement but it's being called outside of it.</p>
+                <p>You'll see this error: ReferenceError: varTwo is not defined</p>
+
+            </div>
+            <div class="col-6">
+                <pre class="example"><span class="code-js">let varOne = 'varOne'
+
+if (true) {
+    console.log(varOne)
+    let varTwo = 'varTwo'
+}
+
+console.log(varTwo)</span></pre>
+            </div>
+        </div>
+
+        <h4>Variable shadowing</h4>
+        <div class="row">
+            <div class="col-6">
+                <p>Variable shadowing is when a local variable uses the same name as a Global variable, but the local value is used.
+                </p>
+                <p>This prints 'Mike' since the local value is used over the Global value.</p>
+
+            </div>
+            <div class="col-6">
+                <pre class="example"><span class="code-js">let name = 'Andrew'
+
+if (true) {
+    let name = 'Mike'
+
+    if (true) {
+      console.log(name)
+    }
+}</span></pre>
+            </div>
+        </div>
+
+    </section>
+
+
+
+
+
+
+
+
+
+
+    <section class="container">
+        <h1>Variable Scope</h1>
+        <div class="row">
+            <div class="col">
+                <p>Scope determines where in your code your variable is available.</p>
+                <p>The location of the variable and how it is declared determines the scope.</p>
+                <p>There are 3 types of scope in JavaScript.</p>
+                <ul>
+                    <li>Global - This is when you declare the variable outside of any function. You can then access it in any script. However, if you update the variable within any function, the global value changes. So, any other references to that variable
+                        are updated as well.</li>
+                    <li>Local - This is when you declare the variable inside a function. It's only then available within that function.
+                    </li>
+                    <li>Block - new scope added with ES2015 used with 'const' and 'let' variables. The scope is limited to a small block of code, even within a function.</li>
+                </ul>
+
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
+    <section class="container">
+        <h1>Scope Chain</h1>
+        <div class="row">
+            <div class="col">
+                <p>Scope Chain determines what happens when a function can't find the variable within its function.</p>
+                <p>The function is then going to look for a variable up through all the parent functions.</p>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+    <section class="container">
+        <h3>Normal example of a function</h3>
+        <div class="row">
+            <div class="col-6">
+                <p>The last line of myDog() runs the function.</p>
+                <p>Since the method inside of that function is the only thing that outputs data, the result is: Rover says woof.
+                </p>
+
+            </div>
+            <div class="col-6">
+                <pre class="example"><span class="code-js">function myDog() {
+  var dogName = 'Fido';
+
+  function otherDog() {
+    var dogName = 'Rover';
+    console.log(dogName + " says woof");
+  }
+
+  otherDog();
+
+}
+
+myDog();</span></span></pre>
+            </div>
+        </div>
+
+    </section>
+
+
+
+
+
+    <section class="container">
+        <h3>Example of Scope Chain</h3>
+        <div class="row">
+            <div class="col-6">
+                <p>This example removes 'var dogName = 'Rover' from the inner function.</p>
+                <p>This now outputs: 'Fido says woof'.</p>
+                <p>This is because although the inner function doesn't have a variable called dogName, it went outside into its parent and found that variable.</p>
+
+            </div>
+            <div class="col-6">
+                <pre class="example"><span class="code-js">function myDog() {
+  var dogName = 'Fido';
+
+  function otherDog() {
+    <span class="code-comment">//var dogName = 'Rover';</span>
+    console.log(dogName + " says woof");
+  }
+
+  otherDog();
+
+  }
+
+  myDog();</span></span></pre>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
+    <section class="container">
+        <h3>Leaked Globals</h3>
+        <p>When a value is assigned to a GLOBAL, but that variable was never explicitly assigned.</p>
+        <div class="row">
+            <div class="col-6">
+                <p>But what if the variable was NEVER declared?</p>
+                <p>The following prints 'Jen' twice, even though the variable was never declared!!!</p>
+                <p>The following is what happens:</p>
+                <ul>
+                    <li>JS looks in the local scope for the declared variable. It does not find it.</li>
+                    <li>It then looks in the parent scope. It does not find it.</li>
+                    <li>It will continue up all scopes to locate it.</li>
+                    <li>When it has not found it in the global scope, JS automatically declares it.</li>
+                </ul>
+
+                <p>This means you can accidentally create a GLOBAL variable by not declaring it.</p>
+
+
+
+            </div>
+            <div class="col-6">
+                <pre class="example"><span class="code-js">if (true) {  
+
+  if (true) {
+    name = 'Jen'
+    console.log(name)
+  }
+}
+
+if (true) {
+  console.log(name)
+}</span></span></pre>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <section class="container">
+        <h1>Function Scope</h1>
+        <div class="row">
+            <div class="col-6">
+                <p>This example breaks down scope variables.</p>
+                <p>NOTE how 'fahrenheit' is an argument, so it's local scope.</p>
+                <p>This outputs: 0, 20</p>
+                <p>NOTE that isFreezing is never printed because nothing returns this value. It's just there to explain scope.
+                </p>
+            </div>
+            <div class="col-6">
+                <pre class="example"><span class="code-js"><span class="code-comment">// Global scope (convertFahrenheitToCelsius, tempOne, tempTwo)
+  // Local scope (fahrenheit, celsius)
+    // Local scope (isFreezing)</span>
+
+let convertFahrenheitToCelsius = function (fahrenheit) {
+    let celsius = (fahrenheit - 32) * 5 / 9
+
+    if (celsius <= 0) {
+        let isFreezing = true
+    }
+
+    return celsius
+}
+
+let tempOne = convertFahrenheitToCelsius(32)
+let tempTwo = convertFahrenheitToCelsius(68)
+
+console.log(tempOne)
+console.log(tempTwo)</span></pre>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+    <script src="../../_js/jquery.js"></script>
+    <script src="../../_js/bootstrap.bundle.js"></script>
+</body>
+
+</html>

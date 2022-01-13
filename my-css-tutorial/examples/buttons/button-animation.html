@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="../../_css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../../_css/style.css">
+
+    <style>
+        .text-box {
+            height: 300px;
+            border: 1px solid red;
+            text-align: center;
+        }
+        
+        .btn,
+        .btn:link,
+        .btn:visited {
+            text-transform: uppercase;
+            text-decoration: none;
+            margin-top: 1rem;
+            padding: 1.5rem 4rem;
+            display: inline-block;
+            border-radius: 10rem;
+            /* Animate all properties */
+            transition: all .2s;
+            /* the btn::after position:absolute property looks for this relative reference */
+            position: relative;
+            /* font-size: 1.6rem; */
+            /* border: none; */
+            /* cursor: pointer; */
+            background-color: #fff;
+            color: rgb(2, 2, 2);
+        }
+        
+        .btn:active,
+        .btn:focus {
+            outline: none;
+            /* Moves down 1px from INITIAL STATE (not hovered state) when clicked */
+            transform: translateY(-1px);
+            /* Decrease shaow when clicked */
+            box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+        }
+        /* Make it appear same as original button */
+        
+        .btn::after {
+            /* Must specify content property so it appears */
+            content: "";
+            /* Must display property for it to display */
+            display: inline-block;
+            /* 100% of width of the button since ::after acts like a child property */
+            height: 100%;
+            width: 100%;
+            border-radius: 10rem;
+            /* Put it behind button */
+            position: absolute;
+            /* This location reference is the first element with a relative position it can find */
+            top: 0;
+            left: 0;
+            /* Defines position of layered elements. -1 puts it behind */
+            z-index: -1;
+            /* Set transition from original state */
+            transition: all .4s;
+            background-color: #fff;
+        }
+        
+        .btn:hover {
+            /* Move up */
+            transform: translateY(-3px);
+            box-shadow: 0 1rem 2rem rgba(245, 239, 222, 0.2);
+        }
+        /* After the button is hovered away from */
+        
+        .btn:hover::after {
+            /* Increase element scale */
+            transform: scaleX(1.4) scaleY(1.6);
+            /* Fade out to invisible after .4s*/
+            opacity: 0;
+        }
+        
+        .btn--animated {
+            /* Move up from below. .75s is a delay */
+            animation: moveInBottom .5s ease-out .75s;
+            /* Applies keyframes 0% styles before animation starts. Otherwise you'd see the element before it animates */
+            animation-fill-mode: backwards;
+        }
+        
+        @keyframes moveInBottom {
+            0% {
+                opacity: 0;
+                transform: translateY(3rem);
+            }
+            100% {
+                opacity: 1;
+                transform: translate(0);
+            }
+        }
+    </style>
+    <title>Button animation</title>
+</head>
+
+<body>
+
+    <a href="../../index.html">Home page</a>
+
+
+
+    <section class="container">
+
+
+
+        <div class="row">
+            <div class="col">
+                <h1>Animate a button</h1>
+            </div>
+        </div>
+
+
+
+
+        <h2>Break this example into smaller steps</h2>
+        <div class="row">
+
+            <div class="col-4">
+                <p>This button does lots of stuff.</p>
+            </div>
+
+            <div class="col-8">
+                <pre class="example"><span class="code-html">&lt;div class="text-box"&gt;
+  &lt;a href="#section-tours" class="btn btn--white btn--animated"&gt;Discover our tours&lt;/a&gt;
+&lt;/div&gt;</span>
+                
+<span class="code-css">.text-box {
+  height: 300px;
+  border: 1px solid red;
+  text-align: center;
+}
+
+.btn,
+.btn:link,
+.btn:visited {
+    text-transform: uppercase;
+    text-decoration: none;
+    margin-top: 1rem;
+    padding: 1.5rem 4rem;
+    display: inline-block;
+    border-radius: 10rem;
+    <span class="code-comment">/* Animate all properties */</span>
+    transition: all .2s;
+    <span class="code-comment">/* the btn::after position:absolute property looks for this relative reference */</span>
+    position: relative;
+    <span class="code-comment">/* font-size: 1.6rem; */</span>
+    /* border: none; */
+    /* cursor: pointer; */</span>
+    background-color: #fff;
+    color: rgb(2, 2, 2);
+}
+
+.btn:active,
+.btn:focus {
+    outline: none;
+    <span class="code-comment">/* Moves down 1px from INITIAL STATE (not hovered state) when clicked */</span>
+    transform: translateY(-1px);
+    <span class="code-comment">/* Decrease shaow when clicked */</span>
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+}
+<span class="code-comment">/* Make it appear same as original button */</span>
+
+.btn::after {
+    <span class="code-comment">/* Must specify content property so it appears */</span>
+    content: "";
+    <span class="code-comment">/* Must display property for it to display */</span>
+    display: inline-block;
+    <span class="code-comment">/* 100% of width of the button since ::after acts like a child property */</span>
+    height: 100%;
+    width: 100%;
+    border-radius: 10rem;
+    <span class="code-comment">/* Put it behind button */</span>
+    position: absolute;
+    <span class="code-comment">/* This location reference is the first element with a relative position it can find */</span>
+    top: 0;
+    left: 0;
+    <span class="code-comment">/* Defines position of layered elements. -1 puts it behind */</span>
+    z-index: -1;
+    <span class="code-comment">/* Set transition from original state */</span>
+    transition: all .4s;
+    background-color: #fff;
+}
+
+.btn:hover {
+    <span class="code-comment">/* Move up */</span>
+    transform: translateY(-3px);
+    box-shadow: 0 1rem 2rem rgba(245, 239, 222, 0.2);
+}
+<span class="code-comment">/* After the button is hovered away from */</span>
+
+.btn:hover::after {
+    <span class="code-comment">/* Increase element scale */</span>
+    transform: scaleX(1.4) scaleY(1.6);
+    <span class="code-comment">/* Fade out to invisible after .4s*/</span>
+    opacity: 0;
+}
+
+.btn--animated {
+    <span class="code-comment">/* Move up from below. .75s is a delay */</span>
+    animation: moveInBottom .5s ease-out .75s;
+    <span class="code-comment">/* Applies keyframes 0% styles before animation starts. Otherwise you'd see the element before it animates */</span>
+    animation-fill-mode: backwards;
+}
+
+@keyframes moveInBottom {
+    0% {
+        opacity: 0;
+        transform: translateY(3rem);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
+}</pre>
+            </div>
+        </div>
+
+
+
+
+
+
+    </section>
+    <div class="text-box">
+        <a href="#section-tours" class="btn btn--white btn--animated">Discover our tours</a>
+    </div>
+
+
+
+
+
+
+
+
+    <script src="../../_js/bootstrap.bundle.js"></script>
+</body>
+
+</html>

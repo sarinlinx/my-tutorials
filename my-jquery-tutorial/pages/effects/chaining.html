@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="../../_css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../../_css/style.css">
+
+    <title>Chaining</title>
+
+</head>
+
+<body>
+    <section class="container">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb breadcrumb-container">
+                <li class="breadcrumb-item"><a class="breadcrumb-link" href="../../index.html">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Chaining</li>
+            </ol>
+        </nav>
+
+
+
+
+        <h1>Chaining</h1>
+<p>Chaining allows us to run multiple jQuery methods (on the same element) within a single statement.</p>
+<p>This way, browsers do not have to find the same element(s) more than once.</p>
+<p>To chain an action, you simply append the action to the previous action.</p>
+<p>The following example chains together the css(), slideUp(), and slideDown() methods. The "p1" element first changes to red, then it slides up, and then it slides down: </p>
+<p>When chaining, the line of code could become quite long. However, jQuery is not very strict on the syntax; so you can format it like you want, including line breaks and indentations. </p>
+
+
+<pre class="example"><span class="code-html">&lt;p id="p1"&gt;jQuery is fun!!&lt;/p&gt;
+&lt;button id="btn1"&gt;Click me&lt;/button&gt;</span>
+
+<span class="code-js">$("button#btn1").click(function(){
+  $("#p1").css("color", "red")
+  .slideUp(2000)
+  .slideDown(2000);
+});</span></pre>
+
+
+                <h3>Example</h3>
+                <p id="p1">jQuery is fun!!</p>
+                <button id="btn1">Click me</button>
+
+
+
+    </section>
+
+
+
+
+
+
+
+    <script src="../../_js/jquery-3.4.1.min.js"></script>
+
+    <script>
+    $("button#btn1").click(function(){
+      $("#p1").css("color", "red").slideUp(2000).slideDown(2000);
+    });
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="../../_css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../../_css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <title>Attribute Selectors</title>
+</head>
+
+<body>
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+                <a href="../../index.html">Home</a>
+            </li>
+            <li class="breadcrumb-item active" aria-current="page">Attribute Selectors</li>
+        </ol>
+    </nav>
+
+
+
+
+    <section class="container">
+
+        <div class="row">
+            <div class="col">
+                <h1>Attribute selectors</h1>
+                <p>The attribute selector locates elements with a specified attribute.</p>
+                <p>A full list can be found here:</p>
+                <ul>
+                    <li>
+                        <a href="https://www.w3schools.com/tags/ref_attributes.asp">HTML attributes</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <h2>Example using the 'target' attribute</h2>
+            </div>
+        </div>
+
+        <div class="row">
+
+            <div class="col-5">
+                <p>HTML</p>
+            </div>
+            <div class="col-7">
+                <pre class="example"><span class="code-html">Make sure to &lt;a href="#" <span class="code-highlight">target</span>="_blank"&gt;Click Here&lt;/a&gt;</span></pre>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-5">
+                <p>Add the attribute name in brackets to target it.</p>
+            </div>
+            <div class="col-7">
+                <pre class="example"><span class="code-css">[target] {
+  color: yellow;
+}</span></pre>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-5">
+                <p>This would make the entire link text yellow.</p>
+            </div>
+            <div class="col-7">
+                <pre class="example"><span class="white">Make sure to </span><span class="yellow">Click Here</span></span></pre>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="container">
+        <div class="row">
+            <div class="col">
+                <h2>Example using the 'type' attribute</h2>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-5">
+                <p>HTML</p>
+            </div>
+            <div class="col-7">
+                <pre class="example"><span class="code-html">&lt;button <span class="code-highlight">type</span>="button"&gt;Click Me!&lt;/button&gt;</a></span></pre>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-5">
+                <p>Add the attribute name in brackets to target it.</p>
+            </div>
+            <div class="col-7">
+                <pre class="example"><span class="code-css">[type] {
+  border-color: green;
+}</span></pre>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-5">
+                <p>The result would add a green border to the button:</p>
+            </div>
+
+            <div class="col-7">
+                <pre class="example"><button class="border-green" type="button">Click Me!</button></span></pre>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col">
+                <h2>Attribute and value selector</h2>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-5">
+                This selects the
+                <span class="text-highlight">target</span> attribute
+                <strong>only</strong> if the value is
+                <span class="text-highlight">_blank</span>.</a>
+            </div>
+            <div class="col-7">
+                <pre class="example"><span class="code-html">Make sure you &lt;a href="#" <span class="code-highlight">target="_blank"</span>&gt;Click Here&lt;/a&gt;</span></pre>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-5">
+                <p>Add the attribute and value names in brackets to target them.</p>
+            </div>
+            <div class="col-7">
+                <pre class="example"><span class="code-css">[target=_blank] {
+  color: green;
+}</span></pre>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-5">
+                <p>This would make only the link with a target of
+                    <span class="text-highlight">_blank</span> green.</p>
+            </div>
+            <div class="col-7">
+                <pre class="example"><span class="white">Make sure you </span><span class="green">Click Here</span></span>
+</span></pre>
+            </div>
+        </div>
+
+    </section>
+
+
+
+
+
+
+
+
+
+
+    <script src="../../_js/jquery.js"></script>
+    <script src="../../_js/bootstrap.bundle.js"></script>
+</body>
+
+</html>

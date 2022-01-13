@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="../../_css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../../_css/style.css">
+
+    <title>Forms</title>
+</head>
+
+<body>
+    <section class="container">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb breadcrumb-container">
+                <li class="breadcrumb-item"><a class="breadcrumb-link" href="../../index.html">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Forms</li>
+            </ol>
+        </nav>
+
+
+        <h1>Forms</h1>
+        <p>Type into the first field.</p>
+<p>when the button is clicked, the second field populates with text.</p>
+<p>This also works for a single or double click event.</p>
+
+        <pre class="example">
+<span class="code-html">&lt;p id="city_display"&gt; Enter Location:&lt;/p&gt;
+
+&lt;form method="post"&gt;
+    Enter Zipcode:
+    &lt;input type="text" id="entered_zip"&gt; State And City:
+    &lt;input type="text" id="entered_city_state"&gt;
+    &lt;br&gt;
+&lt;/form&gt;
+&lt;button id="loc_button"&gt; Get Location &lt;/button&gt;</span>
+
+<span class="code-js">$('button#loc_button').on('dblclick click', function(){
+  var enteredZip = $('input#entered_zip');
+  <span class="code-comment">//hard code the state value what should get displayed when a specific zipcode is entered</span>
+  $('input#entered_city_state').val('NJ');
+});</span></pre>
+
+
+
+    <h3>Example</h3>
+
+
+        <hr>
+        <p id="city_display"> Enter Location:</p>
+
+        <form method="post">
+            Enter Zipcode:
+            <input type="text" id="entered_zip"> State And City:
+            <input type="text" id="entered_city_state">
+            <br>
+        </form>
+        <button id="loc_button"> Get Location </button>
+    </section>
+
+
+    <script src="../../_js/jquery-3.4.1.min.js"></script>
+    <script>
+
+//form #2
+//responds to click or dblclick
+$('button#loc_button').on('dblclick click', function(){
+var enteredZip = $('input#entered_zip');
+//hard code the state value what should get displayed when a specific zipcode is entered
+$('input#entered_city_state').val('NJ');
+});
+
+
+    </script>
+
+</body>
+
+</html>

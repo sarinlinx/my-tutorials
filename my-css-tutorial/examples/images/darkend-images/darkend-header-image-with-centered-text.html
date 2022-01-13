@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="../../../_css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../../../_css/style.css">
+
+    <title>Darkened header image with centered text</title>
+</head>
+
+<body>
+    <a href="../../../index.html">Home page</a>
+
+    <section class="container">
+
+
+
+        <div class="row">
+            <div class="col">
+                <h1>Darkened header image with centered text</h1>
+                <p>This example explains the following.</p>
+                <ul>
+                    <li>How to center a header image</li>
+                    <li>Darken the image using a gradient</li>
+                    <li>Layer and center text over the background image</li>
+                </ul>
+                <p>Click here to view the example page.</p>
+                <ul>
+                    <li><a href="darkend-header-image-with-centered-text-example.html" target="_blank">Example</a></li>
+                </ul>
+            </div>
+        </div>
+
+
+
+
+        <h2>#1: Add a header section with text</h2>
+        <div class="row">
+
+            <div class="col-6">
+                <p>The header should be in header tags.</p>
+                <p>Place the text content in a div with a class.</p>
+            </div>
+
+            <div class="col-6">
+                <pre class="example"><span class="code-html">&lt;header&gt;
+    &lt;div class="hero-text-box"&gt;
+        &lt;h1&gt;Text to be centered over image.&lt;/h1&gt;
+    &lt;/div&gt;
+&lt;/header&gt;</pre>
+            </div>
+        </div>
+
+
+        <h2>#2: Add CSS to center entire page</h2>
+        <div class="row">
+            <div class="col-6">
+                <p>Add and center the image in CSS.</p>
+            </div>
+
+            <div class="col-6">
+                <pre class="example"><span class="code-css">* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}</span></pre>
+            </div>
+        </div>
+
+
+
+        <h2>#3: Add the background image, center it, and add a gradient</h2>
+        <div class="row">
+            <div class="col-6">
+                <p>Add and center the image in CSS.</p>
+                <p>linear-gradient darkens the image. Using the same values means there is no gradient.</p>
+                <p>100vh means 100% of the viewport. This spans the entire page. This can zoom the image so it doesn't look good. To fix, add background-size: cover and background-position: center;</p>
+            </div>
+
+            <div class="col-6">
+                <pre class="example"><span class="code-css">background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(img/hero.jpg);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(img/hero.jpg);
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  background-attachment: fixed;
+}</span></pre>
+            </div>
+        </div>
+
+
+
+        <h2>#4: Center text over image</h2>
+        <div class="row">
+
+            <div class="col-6">
+                <p>Add CSS to position.</p>
+                <p>The position must be absolute so you can vertically and horizontally center it.</p>
+                <p>Using top and left to position should center section on page. If not, use transform to finalize the position.</p>
+                <p>-50% transforms moves the section half of it's height and width.</p>
+            </div>
+
+            <div class="col-6">
+                <pre class="example"><span class="code-css">.hero-text-box {
+  position: absolute;
+  width: 1140px;
+  top: 50%;
+  left: 50%;
+  /*-webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);*/
+}</pre>
+            </div>
+        </div>
+
+
+
+
+
+
+
+    </section>
+
+
+    <script src="../../_js/jquery.js"></script>
+    <script src="../../_js/bootstrap.bundle.js"></script>
+</body>
+
+</html>

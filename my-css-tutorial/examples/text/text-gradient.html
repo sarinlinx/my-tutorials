@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="../../_css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../../_css/style.css">
+
+    <title>Text Tilt</title>
+</head>
+
+<style>
+    .heading-secondary {
+        font-size: 3.5rem;
+        text-transform: uppercase;
+        font-weight: 700;
+        /* Set gradient on text */
+        /* first set to inline so it doesn't take up 100% of width*/
+        display: inline;
+        /* first set background color of block */
+        background-image: linear-gradient(to right, #7ed56f, #162adb);
+        /* background clipped to where text is */
+        -webkit-background-clip: text;
+        /* show the text, not the background gradient 
+    You cannot see the gradient yet because the text now sits on top of background
+    make text transparent so you can see background color */
+        color: transparent;
+        letter-spacing: 2px;
+        transition: all .2s;
+    }
+</style>
+
+<body>
+    <a href="../../index.html">Home page</a>
+
+    <section class="container">
+
+
+
+        <h1>Text gradient</h1>
+        <p>Creates a gradient in the text color.</p>
+        <div class="row">
+
+            <h2>Step 1 - Add a gradient background color</h2>
+
+
+
+            <div class="col">
+                <pre class="example"><span class="code-css">.heading-secondary {
+  font-size: 3.5rem;
+  text-transform: uppercase;
+  font-weight: 700;
+
+  <span class="code-comment">/* Set gradient on text */</span>
+  <span class="code-comment">/* first set to inline so it doesn't take up 100% of width*/</span>
+  display: inline;
+
+  <span class="code-comment">/* first set background color of block */</span>
+  background-image: linear-gradient(to right, #7ed56f, #162adb);
+
+  <span class="code-comment">/* background clipped to where text is */</span>
+  -webkit-background-clip: text;
+
+  <span class="code-comment">/* show the text, not the background gradient 
+  You cannot see the gradient yet because the text now sits on top of background
+  make text transparent so you can see background color */</span>
+  color: transparent;
+
+  letter-spacing: 2px;
+  transition: all .2s;
+}
+
+<span class="code-comment">/* Add line breaks after each inline header element 
+  otherwise, text following the header would appear on the same line*/</span>
+h1::after,
+h2::after,
+h3::after,
+h4::after {
+  content: "\a";
+  white-space: pre;
+}
+
+<span class="code-comment">/*____________________________________________
+SPACER CLASSES
+Add spacer classes since you cannot add margins to the inline header elements
+_____________________________________________*/</span>
+.h1-spacer-top {
+    margin-top: 3rem;
+}
+
+.h2-spacer-top {
+    margin-top: 2rem;
+}
+
+.h3-spacer-top{
+    margin-top: 1.5rem;
+}
+
+
+.h1-spacer-bottom {
+    margin-bottom: 3rem;
+}
+
+.h2-spacer-bottom {
+    margin-bottom: 2rem;
+}
+
+.h3-spacer-bottom{
+    margin-bottom: 1.5rem;
+}
+
+</span>
+
+<span class="code-html">
+  <span class="code-comment">&lt;!--Add jQuery to add the spacer classes before and after the headers --&gt;</span>
+  
+&lt;head&gt;</span>
+<span class="code-js">&lt;script&gt;
+  $( document ).ready(function() {
+
+    $( 'h1' ).before(function() {
+      return '&lt;div class="h1-spacer-top"&gt;&lt;/div&gt;';
+    });
+    
+    $( 'h2' ).before(function() {
+      return '&lt;div class="h2-spacer-top"&gt;&lt;/div&gt;';
+    });
+    
+    $( 'h3' ).before(function() {
+      return '&lt;div class="h3-spacer-top"&gt;&lt;/div&gt;';
+    });
+    
+    
+    $( 'h1' ).after(function() {
+      return '&lt;div class="h1-spacer-bottom"&gt;&lt;/div&gt;';
+    });
+    $( 'h2' ).after(function() {
+      return '&lt;div class="h2-spacer-bottom"&gt;&lt;/div&gt;';
+    });
+    $( 'h3' ).after(function() {
+      return '&lt;div class="h3-spacer-bottom"&gt;&lt;/div&gt;';
+    });
+    
+    });
+&lt;/script&gt;</span> 
+<span class="code-html">&lt;/head&gt;
+  
+  &lt;h2 class="heading-secondary"&gt;
+  Existing tours for adventurous people
+&lt;/h2&gt;</span></pre>
+            </div>
+        </div>
+
+
+
+
+        <div class="row">
+            <div class="col">
+                <h4>Example</h4>
+                <h2 class="heading-secondary">
+                    Existing tours for adventurous people
+                </h2>
+
+            </div>
+        </div>
+
+
+
+
+    </section>
+
+</body>
+
+</html>

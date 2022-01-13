@@ -1,0 +1,819 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="../../../_css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../../../_css/style.css">
+
+    <title>Flexbox Sidebar</title>
+</head>
+
+<body>
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="../../../index.html">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Flexbox Examples</li>
+        </ol>
+    </nav>
+
+
+
+    <section class="container">
+
+
+
+
+
+
+        <h1>Flexbox Sidebar</h1>
+        <p>This creates a sidebar on the left side of the page with the content to the right.</p>
+
+
+        <h2>Step 1 - Create a container</h2>
+        <div class="row">
+            <div class="col-5">
+                <p>Create a container to house all sections.</p>
+                <ul>
+                    <li><a href="sidebar-ex-01.html" target="_blank">Example</a></li>
+                </ul>
+            </div>
+
+            <div class="col-7">
+
+                <pre class="example"><span class="code-css">:root {
+  --color-primary: #eb2f64;
+  --color-primary-light: #FF3366;
+  --color-primary-dark: #BA265D;
+  --color-grey-light-1: #faf9f9;
+  --color-grey-light-2: #f4f2f2;
+  --color-grey-light-3: #f0eeee;
+  --color-grey-light-4: #ccc;
+  --color-grey-dark-1: #333;
+  --color-grey-dark-2: #777;
+  --color-grey-dark-3: #999;
+  --shadow-dark: 0 2rem 6rem rgba(0, 0, 0, 0.3);
+  --shadow-light: 0 2rem 5rem rgba(0, 0, 0, 0.06);
+  --line: 1px solid var(--color-grey-light-2)
+}
+
+* {
+  margin: 0;
+  padding: 0
+}
+
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: inherit;
+  box-sizing: inherit
+}
+
+html {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  font-size: 62.5%
+}
+
+@media only screen and (max-width: 68.75em) {
+  html {
+      font-size: 50%
+  }
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+  line-height: 1.6;
+  color: var(--color-grey-dark-2);
+  background-image: -webkit-gradient(linear, left top, right bottom, from(var(--color-primary-light)), to(var(--color-primary-dark)));
+  background-image: linear-gradient(to right bottom, var(--color-primary-light), var(--color-primary-dark));
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 100vh
+}
+
+<span class="code-highlight">.container {
+  max-width: 120rem;
+  margin: 8rem auto;
+  background-color: var(--color-grey-light-1);
+  -webkit-box-shadow: var(--shadow-dark);
+  box-shadow: var(--shadow-dark);
+  min-height: 50rem
+}
+
+@media only screen and (max-width: 75em) {
+    .container {
+        margin: 0;
+        max-width: 100%;
+        width: 100%
+    }
+}</span></span>
+
+<span class="code-html">&lt;div class="container"&gt;
+
+&lt;/div&gt;</span></pre>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <h2>Step 2 - Create a content area</h2>
+        <div class="row">
+            <div class="col-5">
+                <p>Create a content area to house everything expect the header.</p>
+
+            </div>
+
+            <div class="col-7">
+
+                <pre class="example"><span class="code-css">.content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex
+}
+
+@media only screen and (max-width: 56.25em) {
+  .content {
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+      flex-direction: column
+  }
+}</span></span>
+
+<span class="code-html">&lt;div class="container"&gt;
+  &lt;div class="content"&gt;
+
+  &lt;/div&gt;
+&lt;/div&gt;</span></pre>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+        <h2>Step 3 - Create a sidebar section</h2>
+        <div class="row">
+            <div class="col-5">
+                <p>Create a sidebar section.</p>
+                <p>Each list item contains an href and SVG icon</p>
+                <ul>
+                    <li><a href="sidebar-ex-02.html" target="_blank">Example</a></li>
+                </ul>
+            </div>
+
+            <div class="col-7">
+
+                <pre class="example"><span class="code-css">.sidebar {
+  background-color: var(--color-grey-dark-1);
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 18%;
+  flex: 0 0 18%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between
+}</span></span>
+
+<span class="code-html">&lt;div class="container"&gt;
+  &lt;div class="content"&gt;
+    <span class="code-highlight">&lt;nav class="sidebar"&gt;
+      &lt;ul class="side-nav"&gt;
+    
+        &lt;li class="side-nav__item"&gt;
+          &lt;a href="" class="side-nav__link"&gt;
+            &lt;svg class="side-nav__icon"&gt;
+              &lt;use xlink:href="img/sprite.svg#icon-home"&gt;&lt;/use&gt;
+            &lt;/svg&gt;
+            &lt;span&gt;Hotel&lt;/span&gt;
+          &lt;/a&gt;   
+        &lt;/li&gt;
+    
+        &lt;li class="side-nav__item"&gt;
+          &lt;a href="" class="side-nav__link"&gt;
+            &lt;svg class="side-nav__icon"&gt;
+              &lt;use xlink:href="img/sprite.svg#icon-aircraft-take-off"&gt;&lt;/use&gt;
+            &lt;/svg&gt;
+            &lt;span&gt;Flight&lt;/span&gt;
+          &lt;/a&gt;   
+        &lt;/li&gt;
+    
+        &lt;li class="side-nav__item"&gt;
+          &lt;a href="" class="side-nav__link"&gt;
+            &lt;svg class="side-nav__icon"&gt;
+              &lt;use xlink:href="img/sprite.svg#icon-key"&gt;&lt;/use&gt;
+            &lt;/svg&gt;
+            &lt;span&gt;Car rental&lt;/span&gt;
+          &lt;/a&gt;   
+        &lt;/li&gt;
+    
+        &lt;li class="side-nav__item"&gt;
+          &lt;a href="" class="side-nav__link"&gt;
+            &lt;svg class="side-nav__icon"&gt;
+              &lt;use xlink:href="img/sprite.svg#icon-map"&gt;&lt;/use&gt;
+            &lt;/svg&gt;
+            &lt;span&gt;Tours&lt;/span&gt;
+          &lt;/a&gt;   
+        &lt;/li&gt;
+    
+      &lt;/ul&gt;
+    
+      
+      &lt;div class="legal"&gt;
+        &copy; 2017 by trillo. All rights reserved.
+    &lt;/div&gt;
+    &lt;/nav&gt;</span>
+
+  &lt;/div&gt;
+&lt;/div&gt;</span></pre>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <h2>Step 4 - Add main section with a class name</h2>
+        <div class="row">
+            <div class="col-5">
+                <p>Create a main section.</p>
+                <ul>
+                    <li><a href="sidebar-ex-03.html" target="_blank">Example</a></li>
+                </ul>
+            </div>
+
+            <div class="col-7">
+
+                <pre class="example"><span class="code-css">.hotel-view {
+  background-color: orangered;
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1
+}</span></span>
+
+
+<span class="code-html">&lt;div class="container"&gt;
+  &lt;div class="content"&gt;
+    &lt;nav class="sidebar"&gt;
+      &lt;ul&gt;
+          &lt;li&gt;&lt;a href="#"&gt;&lt;span&gt;Hotel&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href="#"&gt;&lt;span&gt;Flight&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href="#"&gt;&lt;span&gt;Car rental&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href="#"&gt;&lt;span&gt;Tours&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/nav&gt;
+
+    <span class="code-highlight">&lt;main class="hotel-view"&gt;
+
+    &lt;/main&gt;</span>
+
+  &lt;/div&gt;
+&lt;/div&gt;</span></pre>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <h2>Step 5 - Style icons and legal text</h2>
+        <div class="row">
+            <div class="col-5">
+                <p>Create a main section.</p>
+                <ul>
+                    <li><a href="sidebar-ex-04.html" target="_blank">Example</a></li>
+                </ul>
+            </div>
+
+            <div class="col-7">
+
+                <pre class="example"><span class="code-css"> /* resize svg icons */
+
+.side-nav__icon {
+    width: 1.75rem;
+    height: 1.75rem;
+    margin-right: 2rem;
+}
+
+@media only screen and (max-width: 37.5em) {
+    .side-nav__icon {
+        margin-right: 0;
+        margin-bottom: .7rem;
+        width: 1.5rem;
+        height: 1.5rem;
+    }
+}
+
+.legal {
+    font-size: 1.2rem;
+    color: var(--color-grey-light-4);
+    text-align: center;
+    padding: 2.5rem;
+}</span></span></pre>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <h2>Step 6 - Justify sidebar content vertically</h2>
+        <div class="row">
+            <div class="col-5">
+                <p>Make the sidebar a flex container.</p>
+                <p>Use flex-direction to change the AXIS.</p>
+                <p>Use justify-content: space-between to push legal text to bottom.</p>
+                <p>A height of 80rem is temporarily added ot the main section so you can view this effect.</p>
+                <ul>
+                    <li><a href="sidebar-ex-05.html" target="_blank">Example</a></li>
+                </ul>
+            </div>
+
+            <div class="col-7">
+
+                <pre class="example"><span class="code-css">.sidebar {
+  background-color: var(--color-grey-dark-1);
+  /* sets flex-basis at 18% */
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 18%;
+  flex: 0 0 18%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  <span class="code-highlight">-webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  /* change direction of MAIN AXIS */
+  flex-direction: column;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;</span>
+}
+
+.hotel-view {
+  <span class="code-highlight">height: 80rem;</span>
+  background-color: #fff;
+  /* flex: 1 to occupy the full width that remains for this section */
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}</span></span></pre>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <h2>Step 7 - Style text</h2>
+        <div class="row">
+            <div class="col-5">
+                <p>#########.</p>
+                <ul>
+                    <li><a href="sidebar-ex-07.html" target="_blank">Example</a></li>
+                </ul>
+            </div>
+
+            <div class="col-7">
+
+                <pre class="example"><span class="code-css">.side-nav__link:link,
+.side-nav__link:visited {
+    color: var(--color-grey-light-1);
+    text-decoration: none;
+    text-transform: uppercase;
+    display: block;
+    padding: 1.5rem 3rem;
+}</span></span></pre>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+        <h2>Step 8 - Style icons</h2>
+        <div class="row">
+            <div class="col-5">
+                <p>Use currentColor instead of copying color code again.</p>
+                <ul>
+                    <li><a href="sidebar-ex-08.html" target="_blank">Example</a></li>
+                </ul>
+            </div>
+
+            <div class="col-7">
+
+                <pre class="example"><span class="code-css">.side-nav__icon {
+  width: 1.75rem;
+  height: 1.75rem;
+  margin-right: 2rem;
+  /* currentColor is color of current or parent element. This allows you to avoid rewritting the color code again */
+  <span class="code-highlight">fill: currentColor;</span>
+}</span></span></pre>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+        <h2>Step 9 - Align icons and text</h2>
+        <div class="row">
+            <div class="col-5">
+                <p>Align icons and text by setting container to flex</p>
+                <p>Then using align-items: center</p>
+                <ul>
+                    <li><a href="sidebar-ex-09.html" target="_blank">Example</a></li>
+                </ul>
+            </div>
+
+            <div class="col-7">
+
+                <pre class="example"><span class="code-css">.side-nav__link:link,
+.side-nav__link:visited {
+  color: var(--color-grey-light-1);
+  text-decoration: none;
+  text-transform: uppercase;
+  display: block;
+  padding: 1.5rem 3rem;
+  <span class="code-highlight">display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}</span></span></pre>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+        <h2>Step 10 - Add hover effect</h2>
+        <div class="row">
+            <div class="col-5">
+                <p>Add ::before class to add vertical bar to each menu item.</p>
+                <p>side-nav__item to relative so you can position the vertical bar.</p>
+                <p>Add side-nav__item::before to position and style the vertical bar.</p>
+                <p>Finally, use the :not pseudo class to add space between the items.</p>
+                <p>
+                    <ul>
+                        <li><a href="sidebar-ex-10.html" target="_blank">Example</a></li>
+                    </ul>
+            </div>
+
+            <div class="col-7">
+
+                <pre class="example"><span class="code-css">.side-nav__item {
+    position: relative;
+}
+
+.side-nav__item::before {
+  /* Set content so it can display */
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  /* same height as list item */
+  height: 100%;
+  width: 3px;
+  background-color: var(--color-primary);
+}
+
+.side-nav__item:not(:last-child) {
+  margin-bottom: .5rem;
+}</span></span></pre>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <h2>Step 11 - Create hover effect</h2>
+        <div class="row">
+            <div class="col-5">
+                <p>The left vertical line is hidden because transform: scaleY(0); is set to zero.</p>
+                <p>When hovered, it changes to 1.</p>
+                <p>It starts scaling at the center because that is the default for transform-origin.</p>
+                <p>When hovered, the vertical line appears immediately.</p>
+                <ul>
+                    <li><a href="sidebar-ex-11.html" target="_blank">Example</a></li>
+                </ul>
+            </div>
+
+            <div class="col-7">
+
+                <pre class="example"><span class="code-css"> .side-nav__item::before {
+  /* Set content so it can display */
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  /* same height as list item */
+  height: 100%;
+  width: 3px;
+  background-color: var(--color-primary);
+  /* Set initial state to zero so when hovered it expands to 1 */
+  <span class="code-highlight">-webkit-transform: scaleY(0);
+  transform: scaleY(0);</span>
+}
+
+.side-nav__item:hover::before,
+.side-nav__item--active::before {
+  <span class="code-highlight">-webkit-transform: scaleY(1);
+  transform: scaleY(1);</span>                 
+}</span></span></pre>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+        <h2>Step 12 - Allow vertical line to grow</h2>
+        <div class="row">
+            <div class="col-5">
+                <p>Add a transition so the vertical lines grows when hovered.</p>
+                <p>transform starts after .2s</p>
+                <p>width begins after a .2s delay and takes .4s to complete using a cubic-bezier function</p>
+                <p>You could also add a background-color transform of .1s so the transition occurs in step #15 below.</p <p>Set width to 100% on hover</p>
+                <p>
+                    <ul>
+                        <li><a href="sidebar-ex-12.html" target="_blank">Example</a></li>
+                    </ul>
+            </div>
+
+            <div class="col-7">
+
+                <pre class="example"><span class="code-css">.side-nav__item::before {
+  /* Set content so it can display */
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  /* same height as list item */
+  height: 100%;
+  width: 3px;
+  background-color: var(--color-primary);  
+  -webkit-transform: scaleY(0);
+  transform: scaleY(0);
+  transition: transform 0.2s, width 0.4s cubic-bezier(1, 0, 0, 1) 0.2s, background-color 0.1s;</span>
+}
+
+.side-nav__item:hover::before,
+.side-nav__item--active::before {
+  -webkit-transform: scaleY(1);
+  transform: scaleY(1);
+  <span class="code-highlight">width: 100%;</span>
+}</span></span></pre>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+        <h2>Step 13 - Place link on top of hover effect</h2>
+        <div class="row">
+            <div class="col-5">
+                <p>Set a z-index so the link text continues to appear above the hover effect.</p>
+                <p>You must also set position: relative first so this works.</p>
+                <ul>
+                    <li><a href="sidebar-ex-13.html" target="_blank">Example</a></li>
+                </ul>
+            </div>
+
+            <div class="col-7">
+
+                <pre class="example"><span class="code-css">.side-nav__link:link,
+.side-nav__link:visited {
+    color: var(--color-grey-light-1);
+    text-decoration: none;
+    text-transform: uppercase;
+    display: block;
+    padding: 1.5rem 3rem;
+    <span class="code-highlight">position: relative;
+    z-index: 10;</span>
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}</span></span></pre>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+        <h2>Step 14 - Set the first list item to an active state</h2>
+        <div class="row">
+            <div class="col-5">
+                <p>Give the HTML its own code of --active</p>
+                <p>Create CSS that is the same as the hover state.</p>
+                <ul>
+                    <li><a href="sidebar-ex-14.html" target="_blank">Example</a></li>
+                </ul>
+            </div>
+
+            <div class="col-7">
+
+                <pre class="example">           
+<span class="code-css">.side-nav__item:hover::before,
+.side-nav__item--active::before {
+  -webkit-transform: scaleY(1);
+  transform: scaleY(1);
+  width: 100%;
+}</span>
+
+
+<span class="code-html"><span class="code-highlight">&lt;li class="side-nav__item side-nav__item--active"&gt;</span>
+  &lt;!-- Flex container --&gt;
+  &lt;a href="" class="side-nav__link"&gt;
+      &lt;svg class="side-nav__icon"&gt;
+&lt;use xlink:href="img/sprite.svg#icon-home"&gt;&lt;/use&gt;
+&lt;/svg&gt;
+      &lt;span&gt;Hotel&lt;/span&gt;
+  &lt;/a&gt;
+&lt;/li&gt;
+  
+
+
+
+</span></span></pre>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+        <h2>Step 15 - Set active state whe link is clicked</h2>
+        <div class="row">
+            <div class="col-5">
+                <p>Link changes color when clicked.</p>
+                <ul>
+                    <li><a href="sidebar-ex-15.html" target="_blank">Example</a></li>
+                </ul>
+            </div>
+
+            <div class="col-7">
+
+                <pre class="example">           
+<span class="code-css">.side-nav__item:active::before {
+  background-color: var(--color-primary-light);
+}</span></pre>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </section>
+
+</html>

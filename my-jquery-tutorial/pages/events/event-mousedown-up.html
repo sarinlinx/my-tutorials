@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="../../_css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../../_css/style.css">
+
+    <title>mousedown</title>
+</head>
+
+<body>
+    <section class="container">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb breadcrumb-container">
+                <li class="breadcrumb-item"><a class="breadcrumb-link" href="../../index.html">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">mousedown</li>
+            </ol>
+        </nav>
+
+
+        <h1>mousedown</h1>
+        <p>This fires when any mouse button is pressed down (clicked) on an element.</p>
+
+
+        <pre class="example">
+<span class="code-html">&lt;p id="p1"&gt;This is a sentence&lt;/p&gt;</span>
+
+<span class="code-js">$('p#p1').on("<span class="standout">mousedown</span>", function() {
+  $('p#p1').css();
+});</span></pre>
+
+        <h3>Example</h3>
+        <p id="p1">Press the mouse down on me to change my color.</p>
+
+
+
+
+
+                <h1>mouseup</h1>
+                <p>This fires when any mouse button is released on an element.</p>
+                <pre class="example"><span class="code-html">&lt;p id="p2"&gt;This is a sentence&lt;/p&gt;</span>
+
+<span class="code-js">$("#p2").mousedown(function() {
+  $(this).css('color', 'red');
+})
+$("#p2").mouseup(function() {
+  $(this).css('color', 'yellow');
+})</span></pre>
+
+                <h3>Example</h3>
+                <p id="p2">Press the mouse down on me to change my color to red. Release to change my color to yellow.</p>
+
+
+
+
+    </section>
+
+
+
+
+
+
+
+    <script src="../../_js/jquery-3.4.1.min.js"></script>
+
+    <script>
+    $("#p1").mousedown(function() {
+      $(this).css('color', 'red');
+    })
+
+    $("#p2").mousedown(function() {
+      $(this).css('color', 'red');
+    })
+    $("#p2").mouseup(function() {
+      $(this).css('color', 'yellow');
+    })
+
+    </script>
+
+</body>
+
+</html>

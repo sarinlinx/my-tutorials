@@ -1,0 +1,404 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" type="text/css" href="../../_css/styles.css">
+
+    <title>append</title>
+</head>
+
+<body>
+
+
+    <nav class="navbar">
+        <a href="../../index.html">Back to homepage</a>
+        <a class="nav-page nav-active">append</a>
+    </nav>
+
+
+    <h1>Append text to sentence</h1>
+    <section class="code-section-container">
+        <div class="code-text-section">
+            <p>This appends text to an existing paragraph</p>
+        </div>
+
+        <div class="code-block-section-w60">
+            <pre class="example"><span class="code-html">&lt;p id="appendp1"&gt;This is a paragraph.&lt;/p&gt;
+&lt;button id="btn1append"&gt;Append text&lt;/button&gt;</span>
+
+<span class="code-jquery">$("#btn1append").click(function(){
+  $("p#appendp1").append(" <b>Appended text</b>.");
+});</span></pre>
+
+            <h3>Example</h3>
+            <p id="appendp1">This is a paragraph.</p>
+            <button id="btn1append">Append text</button>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h1>Append item to list</h1>
+
+    <section class="code-section-container">
+        <div class="code-text-section">
+            <p>......</p>
+        </div>
+
+        <div class="code-block-section-w60">
+            <pre class="example"><span class="code-html">&lt;ol id="appendol2"&gt;
+&lt;li&gt;List item 1&lt;/li&gt;
+&lt;li&gt;List item 2&lt;/li&gt;
+&lt;li&gt;List item 3&lt;/li&gt;
+&lt;/ol&gt;
+&lt;button id="btn2append"&gt;Append list items&lt;/button&gt;</span>
+
+<span class="code-jquery">$("#btn2append").click(function(){
+  $("ol#appendol2").append("&lt;li&gt;Appended item&lt;/li&gt;");
+});</span></pre>
+        </div>
+    </section>
+
+    <h3>Example</h3>
+    <ol id="appendol2">
+        <li>List item 1</li>
+        <li>List item 2</li>
+        <li>List item 3</li>
+    </ol>
+    <button id="btn2append">Append list items</button>
+
+
+
+
+
+
+
+
+    <h1>.append() to pass in a string</h1>
+    <div class="text-section">
+        <p>This appends something to an element.</p>
+        <p>This example appends another list item to the list</p>
+    </div>
+
+
+    <section class="code-section-container">
+        <div class="code-text-section">
+            <p>......</p>
+        </div>
+
+        <div class="code-block-section-w60"> <pre class="example"><span class="code-html">&lt;h3&gt;Below is a list of course offerings to choose from&lt;/h3&gt;
+      &lt;div&gt;
+          &lt;p&gt;Below is a list of all the available courses &lt;br&gt;
+          that can be enrolled in this semester:
+          &lt;/p&gt;
+      &lt;/div&gt;
+      &lt;ul id="courses"&gt;
+        &lt;li&gt;Sociology&lt;/li&gt;
+        &lt;li&gt;Psychology&lt;/li&gt;
+        &lt;li&gt;Mathematics
+          &lt;ul id="math_subjects"&gt;
+          &lt;li&gt;Algebra&lt;/li&gt;
+          &lt;li&gt;Geometry&lt;/li&gt;
+          &lt;li&gt;Calculus&lt;/li&gt;
+          &lt;/ul&gt;
+        &lt;/li&gt;
+        &lt;li&gt;Sciences
+            &lt;ul id="science_subjects"&gt;
+            &lt;li&gt;Geology&lt;/li&gt;
+            &lt;li&gt;Physics&lt;/li&gt;
+            &lt;li&gt;Chemistry&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/li&gt;
+        &lt;li&gt;World History&lt;/li&gt;
+      &lt;/ul&gt;
+      </span>
+      
+      <span class="code-js">$("#btn1").click(function() {
+        $("#courses").append("&lt;li&gt;&lt;strong&gt;New Course&lt;/strong&gt;&lt;/li&gt;")
+      });</span></pre> <pre class="example"><span class="code-jquery">......</span></pre>
+        </div>
+    </section>
+
+
+    <h3>Example</h3>
+    <h3>Below is a list of course offerings to choose from</h3>
+    <div>
+        <p>Below is a list of all the available courses <br> that can be enrolled in this semester:
+        </p>
+    </div>
+    <ul id="courses">
+        <li>Sociology</li>
+        <li>Psychology</li>
+        <li>Mathematics
+            <ul id="math_subjects">
+                <li>Algebra</li>
+                <li>Geometry</li>
+                <li>Calculus</li>
+            </ul>
+        </li>
+        <li>Sciences
+            <ul id="science_subjects">
+                <li>Geology</li>
+                <li>Physics</li>
+                <li>Chemistry</li>
+            </ul>
+        </li>
+        <li>World History</li>
+    </ul>
+
+    <button id="btn1">Click me</button>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h1>append() to pass in a variable</h1>
+    <p>This example appends an Object item to the list</p>
+    <p>You could also pass in a variable string</p>
+    <p>Put a $ sign before the Object name as a convention</p>
+
+    <pre class="example"><span class="code-html">&lt;h3&gt;Below is a list of course offerings to choose from&lt;/h3&gt;
+&lt;div&gt;
+    &lt;p&gt;Below is a list of all the available courses &lt;br&gt;
+    that can be enrolled in this semester:
+    &lt;/p&gt;
+&lt;/div&gt;
+&lt;ul id="courses"&gt;
+  &lt;li&gt;Sociology&lt;/li&gt;
+  &lt;li&gt;Psychology&lt;/li&gt;
+  &lt;li&gt;Mathematics
+    &lt;ul id="math_subjects"&gt;
+    &lt;li&gt;Algebra&lt;/li&gt;
+    &lt;li&gt;Geometry&lt;/li&gt;
+    &lt;li&gt;Calculus&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Sciences
+      &lt;ul id="science_subjects"&gt;
+      &lt;li&gt;Geology&lt;/li&gt;
+      &lt;li&gt;Physics&lt;/li&gt;
+      &lt;li&gt;Chemistry&lt;/li&gt;
+      &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;World History&lt;/li&gt;
+&lt;/ul&gt;
+</span>
+
+<span class="code-js">$("#btn2").click(function() {
+  <span class="code-comment">//create the object</span>
+  var $newCourse = $("&lt;li&gt;&lt;strong&gt; Trig &lt;/strong&gt;&lt;/li&gt;");
+  <span class="code-comment">//add to page</span>
+  $("#math_subjects2").append(newCourse)
+});</span></pre>
+
+    <h3>Example</h3>
+    <h3>Below is a list of course offerings to choose from</h3>
+    <div>
+        <p>Below is a list of all the available courses <br> that can be enrolled in this semester:
+        </p>
+    </div>
+    <ul id="courses2">
+        <li>Sociology</li>
+        <li>Psychology</li>
+        <li>Mathematics
+            <ul id="math_subjects2">
+                <li>Algebra</li>
+                <li>Geometry</li>
+                <li>Calculus</li>
+            </ul>
+        </li>
+        <li>Sciences
+            <ul id="science_subjects">
+                <li>Geology</li>
+                <li>Physics</li>
+                <li>Chemistry</li>
+            </ul>
+        </li>
+        <li>World History</li>
+    </ul>
+
+    <button id="btn2">Click me</button>
+
+
+
+    <h1>append() an h3 tag</h1>
+    <p>This appends an h3 tag using the jQuery selector</p>
+    <p>This moves the h3 tag below the specified elemetn</p>
+
+    <pre class="example"><span class="code-html">&lt;h3&gt;Below is a list of course offerings to choose from&lt;/h3&gt;
+&lt;div&gt;
+    &lt;p&gt;Below is a list of all the available courses &lt;br&gt;
+    that can be enrolled in this semester:
+    &lt;/p&gt;
+&lt;/div&gt;
+&lt;ul id="courses"&gt;
+  &lt;li&gt;Sociology&lt;/li&gt;
+  &lt;li&gt;Psychology&lt;/li&gt;
+  &lt;li&gt;Mathematics
+    &lt;ul id="math_subjects"&gt;
+    &lt;li&gt;Algebra&lt;/li&gt;
+    &lt;li&gt;Geometry&lt;/li&gt;
+    &lt;li&gt;Calculus&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Sciences
+      &lt;ul id="science_subjects"&gt;
+      &lt;li&gt;Geology&lt;/li&gt;
+      &lt;li&gt;Physics&lt;/li&gt;
+      &lt;li&gt;Chemistry&lt;/li&gt;
+      &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;World History&lt;/li&gt;
+&lt;/ul&gt;
+</span>
+
+<span class="code-js">$("#btn2").click(function() {
+  <span class="code-comment">//create the object</span>
+  var newCourse = $("&lt;li&gt;&lt;strong&gt; Trig &lt;/strong&gt;&lt;/li&gt;");
+  <span class="code-comment">//add to page</span>
+  $("#math_subjects2").append(newCourse)
+});</span></pre>
+
+    <h3>Example</h3>
+    <h3 id="justThish3">Below is a list of course offerings to choose from</h3>
+    <div>
+        <p>Below is a list of all the available courses <br> that can be enrolled in this semester:
+        </p>
+    </div>
+    <ul id="courses2">
+        <li>Sociology</li>
+        <li>Psychology</li>
+        <li>Mathematics
+            <ul id="math_subjects3">
+                <li>Algebra</li>
+                <li>Geometry</li>
+                <li>Calculus</li>
+            </ul>
+        </li>
+        <li>Sciences
+            <ul id="science_subjects">
+                <li>Geology</li>
+                <li>Physics</li>
+                <li>Chemistry</li>
+            </ul>
+        </li>
+        <li>World History</li>
+    </ul>
+
+    <button id="btn3">Click me</button>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h1>Appending newly created elements</h1>
+    <p>This creates a new element, then appends it to the page.</p>
+
+    <pre class="example"><span class="code-html">&lt;p&gt;This is a paragraph.&lt;/p&gt;
+&lt;button onclick="appendText()"&gt;Append text&lt;/button&gt;</span>
+
+<span class="code-js">function appendText() {
+  var txt1 = "&lt;p&gt;Text.&lt;/p&gt;";        // Create text with HTML
+  var txt2 = $("&lt;p&gt;&lt;/p&gt;").text("Text.");  // Create text with jQuery
+  var txt3 = document.createElement("p");
+  txt3.innerHTML = "Text.";         // Create text with DOM
+  $("body").append(txt1, txt2, txt3);   // Append new elements
+}</span></pre>
+
+    <h3>Example</h3>
+    <p>This is a paragraph.</p>
+    <button onclick="appendText()">Append text</button>
+
+
+
+
+
+
+
+
+
+
+
+
+    </section>
+    <script src="../../_js/jquery-3.4.1.min.js"></script>
+    <script>
+        $("#btn1").click(function() {
+            $("#courses").append("<li><strong>New Course</strong></li>")
+        });
+
+        $("#btn2").click(function() {
+            //create the object
+            var newCourse = $("<li><strong> Trig </strong></li>");
+            //add to page
+            $("#math_subjects2").append(newCourse)
+        });
+
+        $("#btn3").click(function() {
+            $("#math_subjects3").append($("h3#justThish3"));
+        });
+
+        $("#btn1append").click(function() {
+            $("p#appendp1").append(" <b>Appended text</b>.");
+        });
+
+        $("#btn2append").click(function() {
+            $("ol#appendol2").append("<li>Appended item</li>");
+        });
+
+
+        function appendText() {
+            var txt1 = "<p>Text.</p>"; // Create text with HTML
+            var txt2 = $("<p></p>").text("Text."); // Create text with jQuery
+            var txt3 = document.createElement("p");
+            txt3.innerHTML = "Text."; // Create text with DOM
+            $("body").append(txt1, txt2, txt3); // Append new elements
+        }
+    </script>
+</body>
+
+</html>

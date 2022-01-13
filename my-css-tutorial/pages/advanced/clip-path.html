@@ -1,0 +1,274 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="../../_css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../../_css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        #clip-circle50 {
+            clip-path: circle(50%);
+        }
+        
+        #clip-circle20 {
+            clip-path: circle(20%);
+        }
+        
+        #ellipse {
+            clip-path: ellipse(25% 40% at 50% 50%);
+        }
+        
+        #polygon1 {
+            /* -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%); */
+            clip-path: polygon(0 0, 100% 0, 100% 75%, 0 100%);
+        }
+        
+        #diamond {
+            clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+        }
+        
+        #triangle {
+            clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+        }
+    </style>
+    <title>clip-path</title>
+</head>
+
+<body>
+    <a href="../../index.html">Home page</a>
+
+
+
+    <section class="container">
+        <h1>clip-path</h1>
+        <div class="row">
+            <div class="col">
+                <p>lets you clip an element to a basic shape or to an SVG source.</p>
+                <p>You use coordinates as percentages to draw the shape.</p>
+                <h2>Online tool</h2>
+                <p>This tool lets you create a shape and gives you the code.</p>
+                <ul>
+                    <li><a href="https://bennettfeely.com/clippy/">Clippy</a></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="container">
+
+
+
+
+
+
+
+
+
+        <h2>Circle</h2>
+        <div class="row">
+            <div class="col">
+                <p>This cliips a square image into a circle.</p>
+            </div>
+        </div>
+
+        <h3>Clipped at 50%</h3>
+        <div class="row">
+            <div class="col-6">
+                <p></p>
+            </div>
+            <div class="col-6">
+                <pre class="example"><span class="code-css">#clip-circle-50 {
+  clip-path: circle(50%);
+}</span></pre>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <img id="clip-circle50" src="../../_img/airplane.png">
+            </div>
+        </div>
+
+        <h3>Clipped at 20%</h3>
+        <div class="row">
+            <div class="col-6">
+                <p></p>
+            </div>
+            <div class="col-6">
+                <pre class="example"><span class="code-css">#clip-circle-20 {
+  clip-path: circle(20%);
+}</span></pre>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <img id="clip-circle20" src="../../_img/airplane.png">
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <h2>Ellipse</h2>
+        <div class="row">
+            <div class="col">
+                <p>This clips a square image into an ellipse.</p>
+            </div>
+        </div>
+
+
+        <h3>vertical ellipse</h3>
+        <div class="row">
+            <div class="col-6">
+                <p>The first value is horizontal</p>
+                <p>The 2nd value is vertical</p>
+                <p>The last two center it.</p>
+            </div>
+            <div class="col-6">
+                <pre class="example"><span class="code-css">#ellipse {
+  clip-path:ellipse(25% 40% at 50% 50%);
+}</span></pre>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <img id="ellipse" src="../../_img/airplane.png">
+            </div>
+        </div>
+
+
+
+
+        <h2>Polygon</h2>
+        <div class="row">
+            <div class="col">
+                <p>The polygon can be any shape.</p>
+                <p>Use percentages to adjust the shape.</p>
+            </div>
+        </div>
+
+
+
+
+
+        <h3>Polygon shape</h3>
+        <div class="row">
+            <div class="col-6">
+                <p>Syntax: clip-path: polygon( x y, x y, x y)</p>
+                <p>The first is left top</p>
+                <p>The 2nd is right top.</p>
+                <p>3rd is right bottom.</p>
+                <p>4th is left bottom.</p>
+            </div>
+            <div class="col-6">
+                <pre class="example"><span class="code-css">#polygon {
+  clip-path: polygon(0 0, 100% 0, 100% 75%, 0 100%);
+}</span></pre>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <img id="polygon1" src="../../_img/airplane.png">
+            </div>
+        </div>
+
+
+
+
+
+        <h3>Diamond</h3>
+        <div class="row">
+            <div class="col-6">
+                <p>The first value is left 50% at the top</p>
+                <p>The 2nd value is right and bottom 50%.</p>
+                <p>The 3rd value right 50% at the bottom</p>
+                <p>The 4th value is left at bottom 50%.</p>
+
+            </div>
+            <div class="col-6">
+                <pre class="example"><span class="code-css">#diamond {               
+  clip-path:polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+}</span></pre>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <img id="diamond" src="../../_img/airplane.png">
+            </div>
+        </div>
+
+
+
+
+        <h3>Triangle</h3>
+        <div class="row">
+            <div class="col-6">
+                <p>Only 3 coordinates.</p>
+                <p>The first value it top center.</p>
+                <p>The 2nd value is left bottom.</p>
+                <p>The 3rd value is right bottom.</p>
+
+            </div>
+            <div class="col-6">
+                <pre class="example"><span class="code-css">#triangle {               
+  clip-path:polygon(50% 0%, 0% 100%, 100% 100%);
+}</span></pre>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <img id="triangle" src="../../_img/airplane.png">
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </section>
+    <script src="../../_js/jquery.js"></script>
+    <script src="../../_js/bootstrap.bundle.js"></script>
+</body>
+
+</html>

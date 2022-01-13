@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="../../_css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../../_css/style.css">
+    <title>Filtering</title>
+</head>
+
+<body>
+    <section class="container">
+      <nav aria-label="breadcrumb">
+          <ol class="breadcrumb breadcrumb-container">
+              <li class="breadcrumb-item"><a class="breadcrumb-link" href="../../index.html">Home</a></li>
+              <li class="breadcrumb-item active" aria-current="page">Filtering</li>
+          </ol>
+      </nav>
+
+
+
+
+              <h1>Target only the first item in a list using a Filter</h1>
+              <p>The filter would be li:first. This targets the first list item.</p>
+              <p>You could also use li:last</p>
+
+              <pre class="example"><span class="code-html">&lt;ul id="steps"&gt;
+        &lt;li&gt;Step 1&lt;/li&gt;
+        &lt;li&gt;Step 2&lt;/li&gt;
+          &lt;ul id="nested_steps"&gt;
+            &lt;li&gt;nested item 1&lt;/li&gt;
+            &lt;li&gt;nested item 1&lt;/li&gt;
+          &lt;/ul&gt;
+      &lt;/ul&gt;</span>
+
+      <span class="code-js">$('#steps > li:first').css('color', 'yellow');</span></pre>
+
+              <h3>Example</h3>
+              <ul id="steps3">
+                  <li>Step 1</li>
+                  <li>Step 2</li>
+                  <ul id="nested_steps">
+                      <li>nested item 1</li>
+                      <li>nested item 1</li>
+                  </ul>
+              </ul>
+
+
+
+
+              <h1>Target only the first items in both lists</h1>
+              <p>Separate call to each item with a comma</p>
+
+              <pre class="example"><span class="code-html">&lt;ul id="steps"&gt;
+      &lt;li&gt;Step 1&lt;/li&gt;
+      &lt;li&gt;Step 2&lt;/li&gt;
+        &lt;ul id="nested_steps"&gt;
+          &lt;li&gt;nested item 1&lt;/li&gt;
+          &lt;li&gt;nested item 1&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/ul&gt;</span>
+
+      <span class="code-js">$('#steps li:first, #nested_steps li:first').css('color', 'yellow');</span></pre>
+
+              <h3>Example</h3>
+              <ul id="steps4">
+                  <li>Step 1</li>
+                  <li>Step 2</li>
+                  <ul id="nested_steps4">
+                      <li>nested item 1</li>
+                      <li>nested item 1</li>
+                  </ul>
+              </ul>
+
+
+
+
+
+
+
+    </section><script src="../../_js/jquery-3.4.1.min.js"></script>
+    <script>
+    $('#steps3 > li:first').css('color', 'yellow');
+    $('#steps4 li:first, #nested_steps4 li:first').css('color', 'yellow');
+
+    </script>
+</body>
+
+</html>

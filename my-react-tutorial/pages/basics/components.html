@@ -1,0 +1,518 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet"> -->
+
+  <link rel="stylesheet" type="text/css" href="../../_css/styles.css">
+
+  <title>Components</title>
+</head>
+
+<body>
+
+  <nav class="navbar">
+    <a href="../../index.html">Back to homepage</a>
+    <a class="nav-page nav-active">Components</a>
+  </nav>
+
+
+  <h1>Components</h1>
+
+
+  <h2>Overview</h2>
+  <div class="text-section">
+    <p>A Component is a plain JavaScript function that returns JSX.</p>
+    <p>Components in REACT have two jobs.</p>
+    <ul>
+      <li>1: They produce JSX, which tells react what we want to show on the screen to the user.</li>
+      <li>2: They handle user events, such as the user typing into a text input or clicking on a button.</li>
+    </ul>
+
+    <p>Components come in two types</p>
+    <ul>
+      <li>Class components</li>
+      <li>Function components</li>
+    </ul>
+    <div class="notebox-note">
+      <p>In older React code bases, you may find Class components primarily used. It is now suggested to use Function
+        components along with Hooks, which were added in React 16.8.</p>
+    </div>
+
+    <img src="../../_img/component.png" width="450px">
+
+    <h3>3 tenets of components</h3>
+    <img src="../../_img/components-3-tenents.png" width="450px">
+  </div>
+
+
+  <h2>Naming Components</h2>
+
+  <div class="text-section">
+    <p>A component's name MUST start with an upper case letter.</p>
+  </div>
+
+
+
+
+  <h1>Creating re-usable Components</h1>
+  <h2>Bad example</h2>
+
+  <section class="code-section-container">
+    <div class="code-text-section">
+      <p>This is a bad example because it copies the same code 3 times.</p>
+    </div>
+    <div class="code-block-section-w60 ">
+      <pre class="example"><span class="code-react">const App = () =&gt; {
+  return (
+    &lt;div className="ui container comments"&gt;
+
+      <span class="code-comment">// code block 1 </span>
+      &lt;div className="comment"&gt;
+        &lt;a href="/" className="avatar"&gt;
+          &lt;img alt="avatar" src={faker.image.image()} /&gt;
+        &lt;/a&gt;
+        &lt;div className="content"&gt;
+          &lt;a href="/" className="author"&gt;
+            Sam
+          &lt;/a&gt;
+          &lt;div className="metadata"&gt;
+            &lt;span className="date"&gt;Today at 6:00PM&lt;/span&gt;
+          &lt;/div&gt;
+          &lt;div className="text"&gt;Nice blog post!&lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+
+      <span class="code-comment">// code block 2 </span>
+      &lt;div className="comment"&gt;
+        &lt;a href="/" className="avatar"&gt;
+          &lt;img alt="avatar" src={faker.image.image()} /&gt;
+        &lt;/a&gt;
+        &lt;div className="content"&gt;
+          &lt;a href="/" className="author"&gt;
+            Sam
+          &lt;/a&gt;
+          &lt;div className="metadata"&gt;
+            &lt;span className="date"&gt;Today at 6:00PM&lt;/span&gt;
+          &lt;/div&gt;
+          &lt;div className="text"&gt;Nice blog post!&lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+
+      <span class="code-comment">// code block 3 </span>
+      &lt;div className="comment"&gt;
+        &lt;a href="/" className="avatar"&gt;
+          &lt;img alt="avatar" src={faker.image.image()} /&gt;
+        &lt;/a&gt;
+        &lt;div className="content"&gt;
+          &lt;a href="/" className="author"&gt;
+            Sam
+          &lt;/a&gt;
+          &lt;div className="metadata"&gt;
+            &lt;span className="date"&gt;Today at 6:00PM&lt;/span&gt;
+          &lt;/div&gt;
+          &lt;div className="text"&gt;Nice blog post!&lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+
+    &lt;/div&gt;
+  );
+};</span></pre>
+    </div>
+  </section>
+
+
+  <h2>Create re-usable code</h2>
+  <div class="text-section">
+    <p>You should never duplicate code like this. Instead, create a re-usable component.</p>
+    <img src="../../_img/creating-reusable-components.png" width="450px">
+  </div>
+
+
+
+  <h2>Step 1: Create a new file for the re-usable code</h2>
+  <section class="code-section-container">
+    <div class="code-text-section">
+      <p>This file will be created in the <span class="text-object">/src</span> directory.</p>
+      <div class="notebox-note">
+        <p>The filename must start with an uppercase character. This example names it: <span class="text-object">CommentDetail.js</span>.</p>
+      </div>
+
+      <p>Copy one section of the JSX into the new file.</p>
+      <p>Import any dependencies into this new file at the top.</p>
+      <p>Add an export statement so other files can use this component.</p>
+      <div class="notebox-warning">
+        <p>This JSX code will not work since it still references specific details.</p>
+      </div>
+
+    </div>
+
+    <div class="code-block-section-w60 ">
+      <pre class="example"><span class="code-react">import React from "react";
+<span class="code-highlight">import faker from "faker";</span>
+
+const CommentDetail = () =&gt; {
+  return (
+    &lt;div className="comment"&gt;
+      &lt;a href="/" className="avatar"&gt;
+        &lt;img alt="avatar" src={faker.image.image()} /&gt;
+      &lt;/a&gt;
+      &lt;div className="content"&gt;
+        &lt;a href="/" className="author"&gt;
+          Sam
+        &lt;/a&gt;
+        &lt;div className="metadata"&gt;
+          &lt;span className="date"&gt;Today at 6:00PM&lt;/span&gt;
+        &lt;/div&gt;
+        &lt;div className="text"&gt;Nice blog post!&lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  );
+};
+
+<span class="code-highlight">export default CommentDetail;</span></span></pre>
+    </div>
+  </section>
+
+
+
+
+  <h3>Import this new Component into index.js</h4>
+    <section class="code-section-container">
+      <div class="code-text-section">
+        <p>Add an import statement at the top of the <span class="text-object">index.js</span> file to import this component file.</p>
+        <p>The first term is the variable/component name.</p>
+        <p>The 2nd part is the part to the file name. You can leave off <span class="text-object">.js</span>.</p>
+
+      </div>
+
+      <div class="code-block-section-w60 ">
+        <pre class="example"><span class="code-react">import CommentDetail from "./CommentDetail";</span></pre>
+      </div>
+    </section>
+
+
+    <h3>Update JSX to remove specific details (index.js)</h3>
+    <section class="code-section-container">
+      <div class="code-text-section">
+        <p>Remove everything in the JSX except the opening/closing tags.</p>
+        <p>Inside, reference the component name you are using to fill the JSX within HTML tags. The tag must self close.
+        </p>
+        <div class="notebox-note">
+          <p>Components DO NOT use curly braces to import content.</p>
+        </div>
+
+      </div>
+
+      <div class="code-block-section-w60 ">
+        <pre class="example"><span class="code-react">import React from "react";
+import ReactDOM from "react-dom";
+import faker from "faker";
+import CommentDetail from "./CommentDetail";
+
+if (module.hot) {
+  module.hot.accept();
+}
+
+const App = () =&gt; {
+  return (
+    &lt;div className="ui container comments"&gt;
+       <span class="code-highlight">&lt;CommentDetail /&gt;
+      &lt;CommentDetail /&gt;
+      &lt;CommentDetail /&gt;
+      &lt;CommentDetail /&gt;
+      &lt;CommentDetail /&gt;      </span>
+    &lt;/div&gt;
+  );
+};
+
+ReactDOM.render(&lt;App /&gt;, document.querySelector("#root"));</span></pre>
+      </div>
+    </section>
+
+
+
+
+    <h3>Specify unique Prop values (index.js)</h3>
+    <section class="code-section-container">
+      <div class="code-text-section">
+        <p>Add a unique Prop value of 'author' to send specific and unique info to each Instance.</p>
+      </div>
+
+      </div>
+
+      <div class="code-block-section-w60 ">
+        <pre class="example"><span class="code-react">import React from "react";
+import ReactDOM from "react-dom";
+import faker from "faker";
+import CommentDetail from "./CommentDetail";
+
+if (module.hot) {
+module.hot.accept();
+}
+
+const App = () =&gt; {
+return (
+&lt;div className="ui container comments"&gt;
+   <span class="code-highlight">&lt;CommentDetail author="Sam" /&gt;
+  &lt;CommentDetail author="Alex" /&gt;
+  &lt;CommentDetail author="Jane" /&gt; </span>
+&lt;/div&gt;
+);
+};
+
+ReactDOM.render(&lt;App /&gt;, document.querySelector("#root"));</span></pre>
+      </div>
+    </section>
+
+
+
+
+
+    <h3>Consume the value in the Component (CommentDetail.js)</h3>
+    <section class="code-section-container">
+      <div class="code-text-section">
+        <p>Props create an Object.</p>
+        <p>Every function receives a first argument of (props).</p>
+
+        <p>Place the Object and your Props value inside curcly braces to consume it.</p>
+        <p>Now, whenever CommentDetail is displayed on the page, it looks up the Props Object.</p>
+        <p>It sees there's an <span class="code">author</span> property within it.</p>
+        <p>The value is then placed into the tag.</p>
+
+
+      </div>
+
+      </div>
+
+      <div class="code-block-section-w60 ">
+        <pre class="example"><span class="code-react">import React from "react";
+import faker from "faker";
+
+const CommentDetail = (props) =&gt; {
+  return (
+    &lt;div className="comment"&gt;
+      &lt;a href="/" className="avatar"&gt;
+        &lt;img alt="avatar" src={faker.image.image()} /&gt;
+      &lt;/a&gt;
+      &lt;div className="content"&gt;
+        &lt;a href="/" className="author"&gt;
+          <span class="code-highlight">{props.author} </span>
+        &lt;/a&gt;
+        &lt;div className="metadata"&gt;
+          &lt;span className="date"&gt;Today at 6:00PM&lt;/span&gt;
+        &lt;/div&gt;
+        &lt;div className="text"&gt;Nice blog post!&lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  );
+};
+
+export default CommentDetail;
+</span></pre>
+      </div>
+    </section>
+
+
+
+
+
+    <h3>Provide a 2nd Prop (index.js)</h3>
+    <section class="code-section-container">
+      <div class="code-text-section">
+        <p>This adds a 2nd Prop called <span class="code">timeAgo</span>.</p>
+      </div>
+
+      </div>
+
+      <div class="code-block-section-w60 ">
+        <pre class="example"><span class="code-react">import React from "react";
+import ReactDOM from "react-dom";
+import faker from "faker";
+import CommentDetail from "./CommentDetail";
+
+if (module.hot) {
+  module.hot.accept();
+}
+
+const App = () =&gt; {
+  return (
+    &lt;div className="ui container comments"&gt;
+      &lt;CommentDetail author="Sam" <span class="code-highlight">timeAgo="Today at 4:45PM" </span>/&gt;
+      &lt;CommentDetail author="Alex" <span class="code-highlight">timeAgo="Today at 2:00AM" </span>/&gt;
+      &lt;CommentDetail author="Jane" <span class="code-highlight">timeAgo="Yesterday at 5:00PM" </span>/&gt;
+    &lt;/div&gt;
+  );
+};
+
+ReactDOM.render(&lt;App /&gt;, document.querySelector("#root"));</span></pre>
+      </div>
+    </section>
+
+
+
+
+    <h3>Consume this 2nd Prop within the Component (CommentDetail.js)</h3>
+    <section class="code-section-container">
+      <div class="code-text-section">
+        <p>Add <span class="code">props.timeAgo</span> within curly braces to consume the data.</p>
+      </div>
+
+      </div>
+
+      <div class="code-block-section-w60 ">
+        <pre class="example"><span class="code-react">import React from "react";
+import faker from "faker";
+
+const CommentDetail = (props) =&gt; {
+  return (
+    &lt;div className="comment"&gt;
+      &lt;a href="/" className="avatar"&gt;
+        &lt;img alt="avatar" src={faker.image.image()} /&gt;
+      &lt;/a&gt;
+      &lt;div className="content"&gt;
+        &lt;a href="/" className="author"&gt;
+          {props.author}
+        &lt;/a&gt;
+        &lt;div className="metadata"&gt;
+          &lt;span className="date"&gt;<span class="code-highlight">{props.timeAgo}</span>&lt;/span&gt;
+        &lt;/div&gt;
+        &lt;div className="text"&gt;Nice blog post!&lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  );
+};
+
+export default CommentDetail;
+</span></pre>
+      </div>
+    </section>
+
+
+
+
+
+
+
+
+    <h2>Add 2nd Component</h2>
+
+    <section class="code-section-container">
+      <div class="code-text-section">
+        <p>Create a 2nd Component named <span class="text-object">ApprovalCard.js</span>. It contains 2 buttons.</p>
+        <p>The CSS classes are from <a href="https://semantic-ui.com">semantic-ui.co</a></p>
+        <div class="notebox-note">
+          <p>When you pass one Component into another (using this syntax that wraps the prop inside the Component), the
+            child Component (<span class="text-object">CommentDetail</span>) will show up inside the <span class="text-object">ApprovalCard</span> (props) Object on a property named
+            <span class="code">children</span>.</p>
+          <p>This can be viewed on the parent Component (<span class="text-object">ApprovalCard</span>) by viewing: <span
+              class="code">console.log(props.children)</span>.</p>
+        </div>
+        <p>Finally, to display the child Component (which is a prop), use: <span class="code">{props.children}</span>.
+        </p>
+        <div class="notebox-note">
+          <p>The child Component will display in the location you place <span class="code">{props.children}</span></p>
+        </div>
+      </div>
+
+      </div>
+
+      <div class="code-block-section-w60 ">
+        <pre class="example"><span class="code-react">import React from 'react'
+
+const ApprovalCard = <span class="code-highlight">(props)</span> =&gt; {
+  return (
+    &lt;div className="ui card"&gt;
+      &lt;div className="content"&gt;<span class="code-highlight">{props.children}</span>&lt;/div&gt;
+      &lt;div className="extra content"&gt;
+        &lt;div className="ui two buttons"&gt;
+          &lt;div className="ui basic green button"&gt;Approve&lt;/div&gt;
+          &lt;div className="ui basic red button"&gt;Reject&lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  )
+}
+
+export default ApprovalCard</span></pre>
+      </div>
+    </section>
+
+
+
+
+
+    <h3>Display the CommentDetail Component inside the ApprovalCard Component</h3>
+    <section class="code-section-container">
+      <div class="code-text-section">
+        <p>In the <span class="text-object">index.js</span> file, wrap the CommentDetail Component inside of <span class="text-object">&lt;ApprovalCard&gt;</span> tags.</p>
+        <p>This passes the CommentDetail component as a Prop into ApprovalCard.</p>
+        <p>It's now a prop because it adds a configuration to the <span class="text-object">ApprovalCard</span> component.</p>
+
+      </div>
+
+      </div>
+
+      <div class="code-block-section-w60 ">
+        <pre class="example"><span class="code-react">import React from 'react'
+import ReactDOM from 'react-dom'
+import faker from 'faker'
+import CommentDetail from './CommentDetail'
+<span class="code-highlight">import ApprovalCard from './ApprovalCard' </span>
+
+if (module.hot) {
+  module.hot.accept()
+}
+
+const App = () =&gt; {
+  return (
+    &lt;div className="ui container comments"&gt;
+      <span class="code-highlight">&lt;ApprovalCard&gt;</span>
+        &lt;CommentDetail
+          author="Sam"
+          timeAgo="Today at 4:45PM"
+          content="Nice blog post"
+          avatar={faker.image.image()}
+        /&gt;
+      <span class="code-highlight">&lt;/ApprovalCard&gt;</span>
+      <span class="code-highlight">&lt;ApprovalCard&gt;</span>
+      &lt;CommentDetail
+        author="Alex"
+        timeAgo="Today at 2:00AM"
+        content="I like the subject"
+        avatar={faker.image.image()}
+      /&gt;
+      <span class="code-highlight">&lt;/ApprovalCard&gt;</span>
+      <span class="code-highlight">&lt;ApprovalCard&gt;</span>
+      &lt;CommentDetail
+        author="Jane"
+        timeAgo="Yesterday at 5:00PM"
+        content="I like the writing"
+        avatar={faker.image.image()}
+      /&gt;
+      <span class="code-highlight">&lt;/ApprovalCard&gt;</span>
+    &lt;/div&gt;
+  )
+}
+
+ReactDOM.render(&lt;App /&gt;, document.querySelector('#root'))</span></pre>
+      </div>
+    </section>
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>

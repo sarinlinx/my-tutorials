@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="../../_css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../../_css/style.css">
+
+    <style>
+        #bg-space {
+            background: url("../../_img/backgrounds/examples/purple-dot.jpg");
+            background-size: 50px;
+            background-repeat: space;
+        }
+        
+        #bg-round {
+            background: url("../../_img/backgrounds/examples/purple-dot.jpg");
+            background-size: 50px;
+            background-repeat: round;
+        }
+    </style>
+    <title>Background Images</title>
+</head>
+
+<body>
+    <a href="../../index.html">Home page</a>
+
+
+
+
+
+
+
+
+
+
+
+    <section class="container">
+        <h1>Background repeat</h1>
+        <div class="row">
+            <div class="col-6">
+                <p>By default, the background-image property repeats an image both horizontally and vertically.</p>
+            </div>
+
+            <div class="col-6">
+                <pre class="example"><div class="image-bg-repeat"><p>p1</p>
+<p>p2</p>
+<p>p3</p>
+    </div></pre>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+    <section class="container">
+        <h1>Repeat the image on the x axis</h1>
+        <div class="row">
+            <div class="col-6">
+                <p>This repeats the image horizontally.</p>
+            </div>
+
+            <div class="col-6">
+                <pre class="example"><span class="code-css">body {
+  background: url("../img/purple-dot.jpg");
+  background-repeat: repeat-x;
+}</pre>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-6">
+                <p>The image is repeated horizontally only. If the image has a short height, anything below it inherits its background color.</p>
+            </div>
+
+            <div class="col-6">
+                <pre class="example"><div class="image-bg-repeat-x"><p>p1</p>
+    <p>p2</p>
+    <p>p3</p></div></pre>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
+
+    <section class="container">
+        <h1>Repeat the image on the y axis</h1>
+        <div class="row">
+            <div class="col-6">
+                <p>This repeats the image vertically.</p>
+            </div>
+
+            <div class="col-6">
+                <pre class="example"><span class="code-css">body {
+  background: url("../img/purple-dot.jpg");
+  background-repeat: repeat-y;
+}</pre>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-6">
+                <p>The image is repeated horizontally only. If the image has a short width, anything to the right inherits its background color.</p>
+            </div>
+
+            <div class="col-6">
+                <pre class="example"><div class="image-bg-repeat-y"><p>p1</p>
+                        <p>p2</p>
+                        <p>p3</p></div></pre>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+    <section class="container">
+        <h1>Do not repeat the image</h1>
+        <div class="row">
+            <div class="col-6">
+                <p>This forces the image to not repeat at all.</p>
+            </div>
+
+            <div class="col-6">
+                <pre class="example"><span class="code-css">body {
+  background: url("../img/purple-dot.jpg");
+  background-repeat: no-repeat;
+}</pre>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-6">
+                <p>The result is that the image shows once in the top left corner.</p>
+            </div>
+
+            <div class="col-6">
+                <pre class="example"><div class="image-bg-no-repeat"><p>p1</p>
+                        <p>p2</p>
+                        <p>p3</p></div></pre>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+    <section class="container">
+        <h1>Add space between the repeated images</h1>
+        <div class="row">
+            <div class="col-6">
+                <p>The background-repeat: space; property repeats as much as possible without clipping. The first and last images are pinned to either side of the element, and whitespace is distributed evenly between the images</p>
+            </div>
+
+            <div class="col-6">
+                <pre class="example"><span class="code-css">body {
+  background: url("../img/purple-dot.jpg");
+  background-size: 50px;
+  background-repeat: space;
+}</pre>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-6">
+                <p>Evenly distributed space is added between the images.</p>
+            </div>
+
+            <div class="col-6">
+                <pre class="example"><div id="bg-space"><p>p1</p>
+                        <p>p2</p>
+                        <p>p3</p></div></pre>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+    <section class="container">
+        <h1>squish or stretch (no gaps)</h1>
+        <div class="row">
+            <div class="col-6">
+                <p>The background-image is repeated and squished or stretched to fill the space (no gaps)</p>
+            </div>
+
+            <div class="col-6">
+                <pre class="example"><span class="code-css">body {
+  background: url("../img/purple-dot.jpg");
+  background-size: 50px;
+  background-repeat: round;
+}</pre>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-6">
+                <p>No gaps.</p>
+            </div>
+
+            <div class="col-6">
+                <pre class="example"><div id="bg-round"><p>p1</p>
+                        <p>p2</p>
+                        <p>p3</p></div></pre>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+    <script src="../../_js/jquery.js"></script>
+    <script src="../../_js/bootstrap.bundle.js"></script>
+</body>
+
+</html>

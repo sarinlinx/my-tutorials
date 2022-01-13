@@ -1,0 +1,235 @@
+<html>
+
+<head>
+    <title>Flexbox margin-auto trick</title>
+</head>
+<style>
+    .overview1 {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        border: 1px solid blue;
+    }
+    
+    .overview__heading1 {
+        padding: 1.5rem 3rem;
+        border: 1px solid blue;
+    }
+    
+    .overview__stars1 {
+        background-color: orangered;
+        /* margin-right: auto; */
+        flex: 1;
+        border: 1px solid blue;
+    }
+    
+    .overview__icon-star1,
+    .overview__icon-location1 {
+        width: 1.75rem;
+        height: 1.75rem;
+    }
+    
+    .overview__location1 {
+        border: 1px solid blue;
+    }
+    
+    .overview__rating1 {
+        border: 1px solid blue;
+    }
+    
+    .overview {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        border: 1px solid blue;
+    }
+    
+    .overview__heading {
+        padding: 1.5rem 3rem;
+        border: 1px solid blue;
+    }
+    
+    .overview__stars {
+        background-color: orangered;
+        /* margin-right: auto; */
+        border: 1px solid blue;
+    }
+    
+    .overview__icon-star,
+    .overview__icon-location {
+        width: 1.75rem;
+        height: 1.75rem;
+    }
+    
+    .overview__location {
+        border: 1px solid blue;
+    }
+    
+    .overview__rating {
+        border: 1px solid blue;
+    }
+    
+    .overview2 {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        border: 1px solid blue;
+    }
+    
+    .overview__heading2 {
+        padding: 1.5rem 3rem;
+        border: 1px solid blue;
+    }
+    
+    .overview__stars2 {
+        background-color: orangered;
+        margin-right: auto;
+        border: 1px solid blue;
+    }
+    
+    .overview__icon-star2,
+    .overview__icon-location2 {
+        width: 1.75rem;
+        height: 1.75rem;
+    }
+    
+    .overview__location2 {
+        border: 1px solid blue;
+    }
+    
+    .overview__rating2 {
+        border: 1px solid blue;
+    }
+</style>
+
+<body>
+
+
+    <main class="hotel-view">
+
+
+        <h1>flex: 1; would occupy full available space.</h1>
+        <div class="overview1">
+            <h1 class="overview__heading1">
+                Star section using flex: 1;
+            </h1>
+
+            <div class="overview__stars1">
+                <svg class="overview__icon-star1">
+        <use xlink:href="img/sprite.svg#icon-star"></use>
+    </svg>
+                <svg class="overview__icon-star1">
+        <use xlink:href="img/sprite.svg#icon-star"></use>
+    </svg>
+                <svg class="overview__icon-star1">
+        <use xlink:href="img/sprite.svg#icon-star"></use>
+    </svg>
+                <svg class="overview__icon-star1">
+        <use xlink:href="img/sprite.svg#icon-star"></use>
+    </svg>
+                <svg class="overview__icon-star1">
+        <use xlink:href="img/sprite.svg#icon-star"></use>
+    </svg>
+            </div>
+
+            <div class="overview__location1">
+                <svg class="overview__icon-location1">
+        <use xlink:href="img/sprite.svg#icon-location-pin1"></use>
+    </svg>
+                <button class="btn-inline1">Albufeira, Portugal</button>
+            </div>
+
+            <div class="overview__rating1">
+                <div class="overview__rating-average1">8.6</div>
+                <div class="overview__rating-count1">429 votes</div>
+            </div>
+        </div>
+
+
+        <br><br>
+        <h1>With no settings, everything is compacted together</h1>
+        <div class="overview">
+            <h1 class="overview__heading">
+                Star section without margin-right: auto;
+            </h1>
+
+            <div class="overview__stars">
+                <svg class="overview__icon-star">
+              <use xlink:href="img/sprite.svg#icon-star"></use>
+          </svg>
+                <svg class="overview__icon-star">
+              <use xlink:href="img/sprite.svg#icon-star"></use>
+          </svg>
+                <svg class="overview__icon-star">
+              <use xlink:href="img/sprite.svg#icon-star"></use>
+          </svg>
+                <svg class="overview__icon-star">
+              <use xlink:href="img/sprite.svg#icon-star"></use>
+          </svg>
+                <svg class="overview__icon-star">
+              <use xlink:href="img/sprite.svg#icon-star"></use>
+          </svg>
+            </div>
+
+            <div class="overview__location">
+                <svg class="overview__icon-location">
+              <use xlink:href="img/sprite.svg#icon-location-pin"></use>
+          </svg>
+                <button class="btn-inline">Albufeira, Portugal</button>
+            </div>
+
+            <div class="overview__rating">
+                <div class="overview__rating-average">8.6</div>
+                <div class="overview__rating-count">429 votes</div>
+            </div>
+        </div>
+
+        <br><br>
+        <h1>margin-right: auto; on the starts section allows it to occupy the full available space while only selected the content of the element.</h1>
+        <div class="overview2">
+            <h1 class="overview__heading2">
+                Star section with margin-right: auto;
+            </h1>
+
+            <div class="overview__stars2">
+                <svg class="overview__icon-star2">
+            <use xlink:href="img/sprite.svg#icon-star"></use>
+        </svg>
+                <svg class="overview__icon-star2">
+            <use xlink:href="img/sprite.svg#icon-star"></use>
+        </svg>
+                <svg class="overview__icon-star2">
+            <use xlink:href="img/sprite.svg#icon-star"></use>
+        </svg>
+                <svg class="overview__icon-star2">
+            <use xlink:href="img/sprite.svg#icon-star"></use>
+        </svg>
+                <svg class="overview__icon-star2">
+            <use xlink:href="img/sprite.svg#icon-star"></use>
+        </svg>
+            </div>
+
+            <div class="overview__location2">
+                <svg class="overview__icon-location2">
+            <use xlink:href="img/sprite.svg#icon-location-pin2"></use>
+        </svg>
+                <button class="btn-inline2">Albufeira, Portugal</button>
+            </div>
+
+            <div class="overview__rating2">
+                <div class="overview__rating-average2">8.6</div>
+                <div class="overview__rating-count2">429 votes</div>
+            </div>
+        </div>
+    </main>
+</body>
+<html>

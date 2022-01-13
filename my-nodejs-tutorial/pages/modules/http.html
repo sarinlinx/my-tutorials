@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" type="text/css" href="../../_css/styles.css">
+
+  <title>http</title>
+</head>
+
+<body>
+
+
+  <nav class="navbar">
+    <a href="../../index.html">Back to homepage</a>
+    <a class="nav-page nav-active">http</a>
+  </nav>
+
+
+  <h1>http Module</h1>
+  <div class="text-section">
+    <p>The http module allows you to build an http server.</p>
+
+    <ul>
+      <li><a href="https://nodejs.org/dist/latest-v16.x/docs/api/http.html" target="_blank">http module documentation</a>
+      </li>
+    </ul>
+  </div>
+
+
+  <h2>Store module in a variable</h2>
+  <section class="code-section-container">
+    <div class="code-text-section">
+      <p>This stores the http module into a variable.</p>
+    </div>
+
+    <div class="code-block-section-w60">
+      <pre class="example"><span class="code-nodejs">const http = require('http');</span></pre>
+    </div>
+  </section>
+
+
+
+
+  <h1>Creating a server</h1>
+  <h2>createServer()</h2>
+  <section class="code-section-container">
+    <div class="code-text-section">
+      <p>createSever takes a callback function that is fired each time a request is made to the server.</p>.
+      <p>This gets access to two Objects.</p>
+      <ul>
+        <li>request (res)</li>
+        <li>response (res)</li>
+      </ul>
+    </div>
+
+    <div class="code-block-section-w60">
+<pre class="example"><span class="code-nodejs">const server = http.createServer((req, res) => {
+  <span class="code-comment">// send back request to the client </span>
+  res.end('Hello from the server');
+});</span></pre>
+</div>
+  </section>
+
+
+
+  <h2>Listen to response with listen()</h2>
+  <section class="code-section-container">
+    <div class="code-text-section">
+      <p>This gets access to two Objects.</p>
+      <ul>
+        <li>port</li>
+        <li>host</li>
+      </ul>
+      <p>A callback function is added once the server starts listening.</p>
+    </div>
+
+    <div class="code-block-section-w60">
+<pre class="example"><span class="code-nodejs">server.listen(8000, '127.0.0.1', () => {
+  console.log('Listening to requests on port 8000');
+});</span></pre>
+</div>
+  </section>
+
+
+
+  <h2>Run the application</h2>
+  <section class="code-section-container">
+    <div class="code-text-section">
+      <p>Run the file.</p>
+      <p>On your computer, visit 127.0.0.1:8000</p>
+      <p>Press <span class="code">CTRL + C</span> to exit the server.</p>
+    </div>
+
+    <div class="code-block-section-w60">
+<pre class="example"><span class="code-nodejs">node index.js</span></pre>
+</div>
+  </section>
+
+
+
+  <h2>Display URL path using res.url</h2>
+  <section class="code-section-container">
+    <div class="code-text-section">
+        <p>This uses the request Object's url method (<span class="code">req.url</span>) to display the path.</p>
+        <p>Run the file. Visit <span class="text-object">127.0.0.1:8000</span> in a browser.</p>
+        <p>At first you should see the overview text.</p>
+        <p>Add <span class="text-object">/product</span> to the URL to see the different response text.</p>
+        <p>Add a final else statement if any other URL is entered. You can see the 404 error in the <span class="text-object">Network</span> tab of Dev Tools.</p>
+    </div>
+
+<div class="code-block-section-w60">
+<pre class="example"><span class="code-nodejs">const server = http.createServer((req, res) => {
+  <span class="code-comment">// save req.url into a var </span>
+  <span class="code-highlight">const pathName = req.url;
+
+  <span class="code-comment">// if you're on the homepage or overview page </span>
+  if (pathName === '/' || pathName === '/overview') {
+    res.end('This is the overview page');
+    <span class="code-comment">// else if you're on the product page </span>
+  } else if (pathName === '/product') {
+    res.end('This is the product');
+  } else {
+    res.writeHead(404)
+    res.end('Page not found')
+  }</span>
+});
+
+server.listen(8000, '127.0.0.1', () => {
+  console.log('Listening to requests on port 8000');
+});</span></pre>
+    </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>

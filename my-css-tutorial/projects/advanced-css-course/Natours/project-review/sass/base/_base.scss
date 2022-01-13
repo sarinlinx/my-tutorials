@@ -1,0 +1,73 @@
+/* universal selector, selects all elements on page */
+/* Add ::after and ::before so all pseudo elements also get these settings */
+*,
+*::after,
+*::before {
+  /* removes margins and padding from all elements like headers and paragraphs*/
+  margin: 0;
+  padding: 0;
+  /* This forces anything on page to inherit box-sizing: border-box from the body */
+  box-sizing: inherit;
+}
+
+html {
+  /* It's bad practice to set the font-size to a pixel since users can change the font size in their browser.
+  16px is default, but we will set it to 10px using a %
+  62.5% of 16px is 10px */
+  font-size: 62.5%; // 1 rem = 10px
+
+  //this passes the media query to the respond mixin
+  //Within that mixin it looks for the phone variable
+  //It then uses this media query
+
+  //% must be recalculated since ems in media queries are not affected by the font-size of the html element above
+  //They are still based off the browser default of 16px
+
+  //THESE MUST BE TOP DOWN
+  //Because if a screen size applies to both of these, the LAST one in the list is used
+  @include respond(big-desktop) {
+    //1rem = 12px 12/16=75%
+    font-size: 75%;
+  }
+
+  @include respond(tab-land) {
+    //9px 9/16 = 56.25%
+    font-size: 56.25%;
+  }
+
+  @include respond(tab-port) {
+    //Change to 8px from browser default of 16px
+    //8/16 = 50%
+    //1 rem (that was originally 62.5% or 10px) now equals 8px throughout all code for this media query
+    font-size: 50%;
+  }
+
+  // @include respond(phone) {
+  //this can be skipped since preceeding media query can be used for this one also
+  // }
+ 
+
+}
+
+
+body {
+  /* changes box model so borders and padding are not added to total width or heigh specified for that box*/
+  box-sizing: border-box;
+  padding: 3rem;
+
+  @include respond(tab-port) {
+    //removes white padding on smaller devices
+   padding: 0;
+  }
+
+
+
+}
+
+
+//this changes color of background when dragging mouse over text
+::selection {
+  background-color: $color-primary;
+color: $color-white;
+
+}

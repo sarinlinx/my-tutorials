@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="../../_css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../../_css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        div .normalbtn {
+            background-color: red;
+        }
+
+        .normalbtn {
+            background-color: yellow;
+        }
+
+        div .importantbtn {
+            background-color: red;
+        }
+
+        .importantbtn {
+            background-color: yellow !important;
+        }
+    </style>
+    <title>Cascade and Specificity</title>
+</head>
+
+
+
+
+
+
+<body>
+
+
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+                <a href="../../index.html">Home</a>
+            </li>
+            <li class="breadcrumb-item active" aria-current="page">Cascade and Specificity</li>
+        </ol>
+    </nav>
+
+
+
+    <section class="container">
+
+        <div class="row">
+            <div class="col">
+                <h1>Cascade and Specificity</h1>
+                <p>When the browser attempts to understand which CSS rule takes priority, it calculates importance, specificity, and source of the values.</p>
+
+                <h3>Importance (where they are declared)</h3>
+                <p>Importance is calculated in this order.</p>
+                <ul>
+                    <li>User declarations that use the !important keyword</li>
+                    <li>Author declarations that use the !important keyword</li>
+                    <li>User declarations</li>
+                    <li>User declarations</li>
+                    <li>Default browser declarations</li>
+                </ul>
+                <h3>Specificity</h3>
+                <p>If importance is the same, specificity is calculated in this order, assigning 1 point each.</p>
+                <ul>
+                    <li>Inline styles</li>
+                    <li>IDs</li>
+                    <li>Classes, pseudo-classes, attributes</li>
+                    <li>Elements, pseudo-elements</li>
+                </ul>
+
+                <h3>Source</h3>
+                <p>If the importance and specificity are the same, source is determined.</p>
+                <p>The last CSS written in the code is the one that is applied.</p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+              <h3>Using multiple style sheets</h3>
+              <p>Style sheets take precedence in the HTML top-down. If you're linking from 3rd party CSS sheets, make sure your custom style sheet is the last in the HTML code.</p>
+            </div>
+          </div>
+
+</section>
+
+        <section class="container">
+            <div class="row">
+                <div class="col">
+
+                    <h2>!important</h2>
+                    <p>The !important declaration forces a less important CSS value to take priority over one with more importance.</p>
+                    <p>Try to use this rarely as it can cause problems/confusion long-term.</p>
+                    <p>Try using more specificities in order to write more maintainable code.</p>
+
+                </div>
+            </div>
+
+
+
+            <div class="row">
+                <div class="col-5">
+                    <h4>Ex 1: A normla button</h4>
+                    <p>Two different CSS declarations are created for a button.</p>
+                    <p>The button should be red since the declaration is more specific and takes priority over a more simple declaration.</p>
+
+                </div>
+
+
+                <div class="col-7">
+                    <pre class="example"><span class="code-css">div .btn {
+        background-color: red;
+        }
+
+        .btn {
+        background-color: yellow;
+        }</span>
+
+        <span class="code-html">&lt;div&gt;
+        &lt;button&gt;Click Me<&lt;/button&gt;
+        &lt;div&gt;</pre>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-5">
+                    <h5>Result</h5>
+                </div>
+
+                <div class="col-7">
+                    <div class="example-container">
+
+
+
+                        <div>
+                            <button class="normalbtn">Click Me</button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-5">
+                    <h4>Ex 2: Using !important</h4>
+
+                    <p>When !important is used on the less specific declaration, it takes priority.</p>
+
+                </div>
+
+
+                <div class="col-7">
+                    <pre class="example"><span class="code-css">div .btn {
+        background-color: red;
+        }
+
+        .btn {
+        background-color: yellow !important;
+        }</span>
+
+        <span class="code-html">&lt;div&gt;
+        &lt;button&gt;Click Me<&lt;/button&gt;
+        &lt;/div&gt;</pre>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-5">
+                    <h5>Result</h5>
+                </div>
+
+                <div class="col-7">
+                    <div class="example-container">
+
+
+
+                        <div>
+                            <button class="importantbtn">Click Me</button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+
+
+        </section>
+
+
+
+<section ="container">
+
+        <div class="row">
+            <div class="col">
+
+                <h2>Calculating Specificity</h2>
+                <p>In this example, all values have the same importance since they are all
+                    <span class="text-highlight">author</span> values.</p>
+                <p>Because of this, the specificity must be calculated.</p>
+                <p>Selectors are viewed from LEFT to RIGHT, so if there is a 1 value for Inline, that will take precedence over any to the right of it.</p>
+                <p>But if there are multiple declarations with the same selectors, the # of those selectors must be added up. The higher number takes precedence.</p>
+                <p>The universal selector * has zero precedence. (0, 0, 0, 0).</p>
+            </div>
+        </div>
+
+
+
+        <div class="row">
+            <div class="col">
+                <h4>Ex 1:</h4>
+                <p>There are 3 declarations for the button.</p>
+                <p>The 2nd one has the highest value (from Left to Right), so it takes precedence.</p>
+                <p>This is called the <span class="text-highlight">Cascaded value</span>.</p>
+
+
+<img class="img-fluid" src="../../_img/specificity.png">
+
+            </div>
+      </div>
+
+
+
+        <div class="row">
+            <div class="col-5">
+                <h5>Result</h5>
+            </div>
+
+            <div class="col-7">
+                <div class="example-container">
+
+
+
+
+                </div>
+            </div>
+        </div>
+
+
+
+    </section>
+
+
+
+
+
+
+
+
+</body>
+
+</html>

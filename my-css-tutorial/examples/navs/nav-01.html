@@ -1,0 +1,704 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="../../_css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../../_css/style.css">
+
+    <title>Navigation</title>
+</head>
+
+<style>
+
+</style>
+
+<body>
+    <a href="../../index.html">Home page</a>
+
+    <section class="container">
+
+        <p>Create a Navigation menu with spinning hamburger icon and page popup menu</p>
+        <p>When you click it, a page overtakes the entire screen with page links.</p>
+
+
+
+        <h2>Step #1 - Add HTML</h2>
+        <div class="row">
+
+            <div class="col-4">
+                <p>Create a navigation container.</p>
+                <p>Add a checkbox</p>
+                <p>Add a button</p>
+                <p>Add a background</p>
+                <p>Add links</p>
+            </div>
+
+            <div class="col-8">
+                <pre class="example"><span class="code-html">&lt;div class="navigation"&gt;
+  &lt;input type="checkbox" class="navigation__checkbox" id="navi-toggle"&gt;
+
+  &lt;label for="navi-toggle" class="navigation__button"&gt;
+  &lt;span class="navigation__icon"&gt;&nbsp;&lt;/span&gt;
+    &lt;/label&gt;
+
+  &lt;div class="navigation__background"&gt;&nbsp;&lt;/div&gt;
+
+  &lt;nav class="navigation__nav"&gt;
+      &lt;ul class="navigation__list"&gt;
+          &lt;li class="navigation__item"&gt;&lt;a href="#" class="navigation__link"&gt;&lt;span&gt;01&lt;/span&gt;About Natours&lt;/a&gt;&lt;/li&gt;
+          &lt;li class="navigation__item"&gt;&lt;a href="#" class="navigation__link"&gt;&lt;span&gt;02&lt;/span&gt;Your benefits&lt;/a&gt;&lt;/li&gt;
+          &lt;li class="navigation__item"&gt;&lt;a href="#" class="navigation__link"&gt;&lt;span&gt;03&lt;/span&gt;Popular tours&lt;/a&gt;&lt;/li&gt;
+          &lt;li class="navigation__item"&gt;&lt;a href="#" class="navigation__link"&gt;&lt;span&gt;04&lt;/span&gt;Stories&lt;/a&gt;&lt;/li&gt;
+          &lt;li class="navigation__item"&gt;&lt;a href="#" class="navigation__link"&gt;&lt;span&gt;05&lt;/span&gt;Book now&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+  &lt;/nav&gt;
+&lt;/div&gt;</span></pre>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col">
+                <h4>Example</h4>
+                <ul>
+                    <li><a href="nav-01-ex01.html" target="_blank">Example</a></li>
+                </ul>
+
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <h2>Step #2 - Add CSS for background</h2>
+        <div class="row">
+
+            <div class="col-4">
+                <p>Create circle with background radial-gradient.</p>
+                <p>This will be fixed to the top right of page.</p>
+            </div>
+
+            <div class="col-8">
+                <pre class="example"><span class="code-css"> .navigation__background {
+  height: 6rem;
+  width: 6rem;
+  border-radius: 50%;
+  <span class="code-comment">/* Take element out of page flow */</span>
+  position: fixed;
+  top: 6.5rem;
+  right: 6.5rem;
+  background-image: radial-gradient(#7ed56f, #28b485);
+  <span class="code-comment">/* so it is always on top */</span>
+  z-index: 1000;
+}
+
+@media only screen and (max-width: 56.25em) {
+  .navigation__background {
+      top: 4.5rem;
+      right: 4.5rem
+  }
+}
+
+@media only screen and (max-width: 37.5em) {
+  .navigation__background {
+      top: 3.5rem;
+      right: 3.5rem
+  }
+}</span></pre>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col">
+                <h4>Example</h4>
+                <ul>
+                    <li><a href="nav-01-ex02.html" target="_blank">Example</a></li>
+                </ul>
+
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <h2>Step #3 - Add CSS for button</h2>
+        <div class="row">
+
+            <div class="col-4">
+                <p>Style white button over top the green background.</p>
+                <p>Hide the checkbox since it should never display.</p>
+            </div>
+
+            <div class="col-8">
+                <pre class="example"><span class="code-css">.navigation__button {
+  background-color: #fff;
+  /* 7rem because background is 6rem. This ensures it gets covered */
+  height: 7rem;
+  width: 7rem;
+  position: fixed;
+  /* 6rem so it is on top of background which is 6.5rem
+  6 is needed because the height and width above are 7 */
+  top: 6rem;
+  right: 6rem;
+  border-radius: 50%;
+  z-index: 2000;
+  box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  <span class="code-comment">/* so hamburger lines are centered */</span>
+  text-align: center
+}
+
+@media only screen and (max-width: 56.25em) {
+  .navigation__button {
+      top: 4rem;
+      right: 4rem
+  }
+}
+
+@media only screen and (max-width: 37.5em) {
+  .navigation__button {
+      top: 3.5rem;
+      right: 3.5rem
+  }
+}
+
+.navigation__checkbox {
+  display: none
+}</span></pre>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col">
+                <h4>Example</h4>
+                <ul>
+                    <li><a href="nav-01-ex03.html" target="_blank">Example</a></li>
+                </ul>
+
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <h2>Step #4 - Add CSS for navigation links</h2>
+        <div class="row">
+
+            <div class="col-4">
+                <p>When the white button is clicked, the page fully becomes this navigation__nav section.</p>
+                <p>It is centered using the navigation__list inside it.</p>
+            </div>
+
+            <div class="col-8">
+                <pre class="example"><span class="code-css">.navigation__nav {
+    width: 100%;
+    <span class="code-comment">/* top right of viewport and covers entire viewport */</span>
+    height: 100vh;
+    <span class="code-comment">/* starts on top right of viewport */</span>
+    top: 0;
+    left: 0;
+    position: fixed;
+    <span class="code-comment">/* this should be on top of the background so it's in between 1000 and 2000 */</span>
+    z-index: 1500;
+}
+
+.navigation__list {
+  <span class="code-comment">/* center list items */</span>
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    list-style: none;
+    text-align: center;
+    width: 100%
+}</span></pre>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col">
+                <h4>Example</h4>
+                <ul>
+                    <li><a href="nav-01-ex04.html" target="_blank">Example</a></li>
+                </ul>
+
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <h2>Step #5 - Style links</h2>
+        <div class="row">
+
+            <div class="col-4">
+                <p>Give the body a background so you can see the white
+                </p>
+                <p>Center links</p>
+            </div>
+
+            <div class="col-8">
+                <pre class="example"><span class="code-css">.navigation__list {
+  <span class="code-comment">/* center list items */</span>
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  list-style: none;
+  text-align: center;
+  width: 100%
+}
+
+.navigation__item {
+  margin: 1rem
+}
+
+.navigation__link:link,
+.navigation__link:visited {
+  <span class="code-comment">/* must be inline-block so settings like padding and transform work */</span>
+  display: inline-block;
+  font-size: 3rem;
+  font-weight: 300;
+  padding: 1rem 2rem;
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+  <span class="code-comment">/* This creates a long horizontal section split in half
+  when hovered, the right side moves to the left, so it looks like the color changes */</span>
+  background-image: linear-gradient(120deg, transparent 0%, transparent 50%, #fff 50%);
+  <span class="code-comment">/* Add a large background-size. This pushes the background to the right to completely cover it.</span>
+  background-size: 220%;
+  transition: all .4s
+}</span></pre>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col">
+                <h4>Example</h4>
+                <ul>
+                    <li><a href="nav-01-ex05.html" target="_blank">Example</a></li>
+                </ul>
+
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <h2>Step #6 - Create effect on link hover</h2>
+        <div class="row">
+
+            <div class="col-4">
+                <p>When the links are hovered, it appears like the background slides in.</p>
+            </div>
+
+            <div class="col-8">
+                <pre class="example"><span class="code-css">.navigation__link:link span,
+.navigation__link:visited span {
+    margin-right: 1.5rem;
+    display: inline-block
+}
+
+.navigation__link:hover,
+.navigation__link:active {
+  <span class="code-comment">/* shift background to left when hovered */</span>
+    background-position: 100%;
+    color: #55c57a;
+    <span class="code-comment">slightly moves */</span>
+    transform: translateX(1rem)
+}</span></pre>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col">
+                <h4>Example</h4>
+                <ul>
+                    <li><a href="nav-01-ex06.html" target="_blank">Example</a></li>
+                </ul>
+
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <h2>Step #7 - Remove/hide navigation</h2>
+        <div class="row">
+
+            <div class="col-4">
+                <p>Remove the navigation links using opacity and width.</p>
+                <p>Remove original width: 100% since it's no longer needed.</p>
+                <p>When checkbox is checked:</p>
+                <ul>
+                    <li>Add a transform on the checkbxo to make the background fill screen</li>
+                    <li>Add opacity to navigation__nav so it shows.</li>
+                </ul>
+            </div>
+
+            <div class="col-8">
+                <pre class="example"><span class="code-css">.navigation__nav {
+  height: 100vh;
+  top: 0;
+  left: 0;
+  position: fixed;
+  z-index: 1500;
+  <span class="code-comment">/* hide menu items */</span>
+  <span class="code-highlight">opacity: 0;</span>
+  <span class="code-comment">/* removes them from page so they can't be clicked even though they are invisible */</span>
+  <span class="code-highlight">width: 0;</span>
+}
+
+.navigation__checkbox:checked~.navigation__background {
+  /* Make it huge so it covers the entire screen */
+  transform: scale(80)
+}
+
+.navigation__checkbox:checked~.navigation__nav {
+  /* show navigation */
+  opacity: 1;
+  width: 100%
+}</span></pre>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col">
+                <h4>Example</h4>
+                <ul>
+                    <li><a href="nav-01-ex07.html" target="_blank">Example</a></li>
+                </ul>
+
+            </div>
+        </div>
+
+
+
+
+
+
+
+        <h2>Step #8 - Add transition when checkbox is checked</h2>
+        <div class="row">
+
+            <div class="col-4">
+                <p>Add transition on background and nav</p>
+            </div>
+
+            <div class="col-8">
+                <pre class="example"><span class="code-css">.navigation__background {
+  height: 6rem;
+  width: 6rem;
+  border-radius: 50%;
+  position: fixed;
+  top: 6.5rem;
+  right: 6.5rem;
+  background-image: radial-gradient(#7ed56f, #28b485);
+  z-index: 1000;
+  <span class="code-comment">/* animation grows to fill page */</span>
+  <span class="code-highlight">transition: transform 0.8s cubic-bezier(0.86, 0, 0.07, 1);</span>
+}
+
+.navigation__nav {
+  height: 100vh;
+  top: 0;
+  left: 0;
+  position: fixed;
+  z-index: 1500;
+  opacity: 0;
+  width: 0;
+  <span class="code-highlight">transition: all 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);</span>
+}</span></pre>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col">
+                <h4>Example</h4>
+                <ul>
+                    <li><a href="nav-01-ex08.html" target="_blank">Example</a></li>
+                </ul>
+
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <h2>Step #9 - Add hamburger icon lines</h2>
+        <div class="row">
+
+            <div class="col-4">
+                <p>Create 3 hamburger icon lines</p>
+                <p>Position them horizontally on top of each other</p>
+            </div>
+
+            <div class="col-8">
+                <pre class="example"><span class="code-css">.navigation__icon {
+  position: relative;
+  margin-top: 3.5rem
+}
+
+<span class="code-comment">/* Create a horizontal line */</span>
+.navigation__icon,
+.navigation__icon::before,
+.navigation__icon::after {
+  width: 3rem;
+  height: 2px;
+  background-color: #333;
+  display: inline-block
+}
+
+.navigation__icon::before,
+.navigation__icon::after {
+  <span class="code-comment">/* to allow pseudo elements to appear on page you must set a content and display property */</span>
+  content: "";
+  <span class="code-comment">/* so you can set their position */</span>
+  position: absolute;
+  left: 0;
+  transition: all .2s
+}
+
+<span class="code-comment">/* spacing of icon line one at top and one at bottom */</span>
+
+.navigation__icon::before {
+  top: -.8rem
+}
+
+.navigation__icon::after {
+  top: .8rem
+}</span></pre>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col">
+                <h4>Example</h4>
+                <ul>
+                    <li><a href="nav-01-ex09.html" target="_blank">Example</a></li>
+                </ul>
+
+            </div>
+        </div>
+
+
+
+
+
+
+
+        <h2>Step #10 - space hamburger lines when hovered</h2>
+        <div class="row">
+
+            <div class="col-4">
+                <p>Use the before and after pseudo classes to move the lines when hovered</p>
+            </div>
+
+            <div class="col-8">
+                <pre class="example"><span class="code-css">.navigation__button:hover .navigation__icon::before {
+  top: -1rem
+}
+
+.navigation__button:hover .navigation__icon::after {
+  top: 1rem
+}</span></pre>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col">
+                <h4>Example</h4>
+                <ul>
+                    <li><a href="nav-01-ex010.html" target="_blank">Example</a></li>
+                </ul>
+
+            </div>
+        </div>
+
+
+
+
+
+        <h2>Step #11 - Rotate hamburger lines when clicked</h2>
+        <div class="row">
+
+            <div class="col-4">
+                <p>When button is clicked, hide center line</p>
+                <p>Rotate top and bottom lines to become an X</p>
+            </div>
+
+            <div class="col-8">
+                <pre class="example"><span class="code-css"><span class="code-comment">/* when checkbox is checked select sibling's icon
+this is the center horizontal line in the icon */</span>
+.navigation__checkbox:checked+.navigation__button .navigation__icon {
+  <span class="code-comment">/* hide */</span>
+  background-color: transparent
+}
+
+<span class="code-comment">/* rotate the top and botom icons */</span>
+.navigation__checkbox:checked+.navigation__button .navigation__icon::before {
+  <span class="code-comment">/* rotate 180deg - 45deg so it flips around */</span>
+  transform: rotate(135deg);
+  <span class="code-comment">/* set to zero so the top and bottom icons form an X */</span>
+  top: 0
+}
+
+.navigation__checkbox:checked+.navigation__button .navigation__icon::after {
+  <span class="code-comment">/* rotate */</span>
+  transform: rotate(-135deg);
+  <span class="code-comment">/* set to zero so the top and bottom icons form an X */</span>
+  top: 0
+}</span></pre>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col">
+                <h4>Example</h4>
+                <ul>
+                    <li><a href="nav-01-ex11.html" target="_blank">Example</a></li>
+                </ul>
+
+            </div>
+        </div>
+
+
+    </section>
+</body>
+
+</html>

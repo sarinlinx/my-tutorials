@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="../../_css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../../_css/style.css">
+
+    <title>Hyperlinks</title>
+</head>
+
+<body>
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+                <a href="../../index.html">Home</a>
+            </li>
+            <li class="breadcrumb-item active" aria-current="page">Hyperlinks</li>
+        </ol>
+    </nav>
+
+
+
+    <section class="container">
+
+        <div class="row">
+            <div class="col">
+                <h1>The 4 link states</h1>
+                <p>Hyperlinks can be styled differently depending on what state they are in.</p>
+
+            </div>
+        </div>
+
+
+
+
+        <div class="row">
+            <div class="col-6">
+                <p>
+                    <span class="highlight">a:link</span> — a normal, unvisited link</p>
+            </div>
+            <div class="col-6">
+                <pre class="example"><span class="code-comment">/* unvisited link */</span>
+<span class="code-css">a:link {
+  color: red;
+}</span></pre> </div>
+        </div>
+
+
+
+
+        <div class="row">
+            <div class="col-6">
+                <p><span class="highlight">a:visited</span> — a link the user has visited</p>
+            </div>
+            <div class="col-6">
+                <pre class="example"><span class="code-comment">/* visited link */</span>
+<span class="code-css">a:visited {
+  color: green;
+}</span></pre>
+            </div>
+        </div>
+
+
+
+
+        <div class="row">
+            <div class="col-6">
+                <p><span class="highlight">a:hover</span> — a link when the user mouses over it</p>
+            </div>
+            <div class="col-6">
+                <pre class="example"><span class="code-comment">/* mouse over link */</span>
+<span class="code-css">a:hover {
+  color: hotpink;
+}</span></pre>
+            </div>
+        </div>
+
+
+
+
+        <div class="row">
+            <div class="col-6">
+                <p><span class="highlight">a:active</span> — a link the moment it is clicked</p>
+            </div>
+            <div class="col-6">
+                <pre class="example"><span class="code-comment">/* selected link */</span>
+<span class="code-css">a:active {
+  color: blue;
+}</span></pre>
+            </div>
+        </div>
+
+
+
+        <div class="row">
+            <div class="col">
+                <h1>Order or link pseudo classes</h1>
+                <p>Link classes must be in this order in CSS in order to function.</p>
+                <ol>
+                    <li><span class="text-highlight">a:link</span> must come first</li>
+                    <li><span class="text-highlight">a:visited</span></li>
+                    <li><span class="text-highlight">a:hover</span> MUST come after a:link and a:visited</li>
+                    <li><span class="text-highlight">a:active</span> MUST come after a:hover</li>
+                </ol>
+            </div>
+        </div>
+
+
+
+        <div class="row">
+            <div class="col">
+                <h1>Make the link look like button</h1>
+            </div>
+        </div>
+
+
+
+        <div class="row">
+            <div class="col-6">
+                <p>If you're using a class or ID, it must come after the <span class="highlight">a</span> character.</p>
+            </div>
+
+            <div class="col-6">
+                <pre class="example"><span class="code-html">&lt;a <span class="standout">class="link-btn"</span> href="#"&gt;Click Here&lt;/a&gt;</span>
+
+<span class="code-css">a.<span class="standout">link-btn</span>:link, a.<span class="standout">link-btn</span>:visited {
+  background-color: #f44336;
+  color: white;
+  padding: 14px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+a.<span class="standout">link-btn</span>:hover, a.<span class="standout">link-btn</span>:active {
+  background-color: red;
+}</span></pre>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-6">
+                <p>Example:</p>
+            </div>
+
+            <div class="col-6">
+                <pre class="example"><a class="link-btn" href="#">Click Here</a></pre>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <div class="row">
+            <div class="col">
+                <h1>Different types of cursors for links</h1>
+            </div>
+        </div>
+
+
+
+        <div class="row">
+            <div class="col-6">
+                <p>Classes to change the cursor when hovering.</p>
+            </div>
+
+            <div class="col-6">
+                <pre class="example"><span class="code-html"> &lt;span style="cursor: auto"&gt;auto&lt;/span&gt;&lt;br&gt;
+&lt;span style="cursor: crosshair"&gt;crosshair&lt;/span&gt;&lt;br&gt;
+&lt;span style="cursor: default"&gt;default&lt;/span&gt;&lt;br&gt;
+&lt;span style="cursor: e-resize"&gt;e-resize&lt;/span&gt;&lt;br&gt;
+&lt;span style="cursor: help"&gt;help&lt;/span&gt;&lt;br&gt;
+&lt;span style="cursor: move"&gt;move&lt;/span&gt;&lt;br&gt;
+&lt;span style="cursor: n-resize"&gt;n-resize&lt;/span&gt;&lt;br&gt;
+&lt;span style="cursor: ne-resize"&gt;ne-resize&lt;/span&gt;&lt;br&gt;
+&lt;span style="cursor: nw-resize"&gt;nw-resize&lt;/span&gt;&lt;br&gt;
+&lt;span style="cursor: pointer"&gt;pointer&lt;/span&gt;&lt;br&gt;
+&lt;span style="cursor: progress"&gt;progress&lt;/span&gt;&lt;br&gt;
+&lt;span style="cursor: s-resize"&gt;s-resize&lt;/span&gt;&lt;br&gt;
+&lt;span style="cursor: se-resize"&gt;se-resize&lt;/span&gt;&lt;br&gt;
+&lt;span style="cursor: sw-resize"&gt;sw-resize&lt;/span&gt;&lt;br&gt;
+&lt;span style="cursor: text"&gt;text&lt;/span&gt;&lt;br&gt;
+&lt;span style="cursor: w-resize"&gt;w-resize&lt;/span&gt;&lt;br&gt;
+&lt;span style="cursor: wait"&gt;wait&lt;/span&gt; </span></pre>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-6">
+                <p>Example: Hover over these to see how the cursor changes.</p>
+            </div>
+
+            <div class="col-6">
+                <pre class="example"> <span style="cursor: auto">auto</span><br>
+<span style="cursor: crosshair">crosshair</span><br>
+<span style="cursor: default">default</span><br>
+<span style="cursor: e-resize">e-resize</span><br>
+<span style="cursor: help">help</span><br>
+<span style="cursor: move">move</span><br>
+<span style="cursor: n-resize">n-resize</span><br>
+<span style="cursor: ne-resize">ne-resize</span><br>
+<span style="cursor: nw-resize">nw-resize</span><br>
+<span style="cursor: pointer">pointer</span><br>
+<span style="cursor: progress">progress</span><br>
+<span style="cursor: s-resize">s-resize</span><br>
+<span style="cursor: se-resize">se-resize</span><br>
+<span style="cursor: sw-resize">sw-resize</span><br>
+<span style="cursor: text">text</span><br>
+<span style="cursor: w-resize">w-resize</span><br>
+<span style="cursor: wait">wait</span> </pre>
+            </div>
+        </div>
+
+
+
+
+
+
+    </section>
+
+
+    <script src="../../_js/jquery.js"></script>
+    <script src="../../_js/bootstrap.bundle.js"></script>
+</body>
+
+</html>

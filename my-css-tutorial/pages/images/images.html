@@ -1,0 +1,346 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="../../_css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../../_css/style.css">
+
+    <style>
+        #ex-responsive {
+            max-width: 100%;
+            height: auto;
+        }
+        
+        #polaroid {
+            width: 50%;
+            background-color: white;
+            box-shadow: 0 0px 10px 10px rgba(245, 6, 6, 0.2), 0 6px 20px 0 rgba(228, 18, 18, 0.19);
+            margin-bottom: 25px;
+            margin: 0 auto;
+        }
+        
+        #polaroid-container {
+            text-align: center;
+            padding: 10px 20px;
+        }
+        
+        #opacity1 {
+            opacity: 0.1;
+        }
+        
+        #opacity2 {
+            opacity: 0.5;
+        }
+        
+        #opacity31 {
+            opacity: 1;
+        }
+        
+        #centering-3 {
+            max-width: 100%;
+            height: auto;
+        }
+        
+        #border-red {
+            border: 1px solid red;
+        }
+    </style>
+    <title>Images</title>
+</head>
+
+<body>
+    <a href="../../index.html">Home page</a>
+
+    <section class="container">
+
+        <h2>Image size</h2>
+        <p>Images should be twice the size as the "correct" size on the page. This is for high-resolution displays (such as retina)</p>
+
+        <h2>Reduce image size</h2>
+        <div class="row">
+
+            <div class="col-6">
+                <p>To adjust the size of an image, add a class. Then, in CSS, add only the width value. The height automatically adjusts to aspect-ratio.</p>
+            </div>
+
+            <div class="col-6">
+                <pre class="example"><span class="code-html">&lt;img class="blah" asdf&gt;</span>
+
+<span class="code-css">.blah {
+  width: 300px;
+}</span></pre>
+            </div>
+        </div>
+
+
+
+
+        <h2>Reshape image</h2>
+        <div class="row">
+            <div class="col-6">
+                <p>Add border radius. Make sure you start with a square image or it will turn it into an oval.</p>
+            </div>
+
+            <div class="col-6">
+                <pre class="example"><span class="code-css">img {
+  border-radius: 50%;
+}</span>
+
+<img class="reshapeimg-per" src="../../_img/redsquare.png"/>
+  </pre>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-6">
+                <p>Here's an example using pixels.</p>
+            </div>
+
+            <div class="col-6">
+                <pre class="example"><span class="code-css">img {
+  border-radius: 22px;
+}</span>
+
+<img class="reshapeimg-px" src="../../_img/redsquare.png"/>
+  </pre>
+            </div>
+        </div>
+
+
+
+
+
+
+        <h2>Center an image</h2>
+
+
+        <div class="row">
+            <div class="col-6">
+                <p>Use margin:auto to center and image.</p>
+            </div>
+
+            <div class="col-6">
+                <pre class="example"><span class="code-css"><span class="code-css">img {
+  display: block;
+  margin: 0 auto;
+}</span></pre>
+            </div>
+        </div>
+
+
+        <div id="border-red" class="row">
+            <div class="col">
+                <img class="alignimg-margin" src="../../_img/redsquare.png" /></div>
+        </div>
+        <br>
+
+
+
+
+
+
+        <div class="row">
+            <div class="col-6">
+                <p>Here's an example using pixels.</p>
+            </div>
+            <div class="col-6">
+                <pre class="example"><span class="code-css">img {
+  display: block;
+  margin: 0 50%;
+}</span></pre>
+            </div>
+        </div>
+
+        <div id="border-red" class="row">
+            <div class="col">
+                <img class="alignimg-margin-per" src="../../_img/redsquare.png" />
+            </div>
+        </div>
+        <br>
+
+
+
+
+
+
+        <div class="row">
+            <div class="col-6">
+                <p>EX3</p>
+            </div>
+            <div class="col-6">
+                <pre class="example"><span class="code-css">img {
+  max-width: 100%;
+  height: auto;
+}</span>
+
+    
+    </pre>
+            </div>
+
+        </div>
+        <img id="centering-3" src="../../_img/redsquare.png" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <h2>Response images</h2>
+        <div class="row">
+            <div class="col-6">
+                <p>If you want an image to scale down if it has to, but never scale up to be larger than its original size.</p>
+            </div>
+
+            <div class="col-6">
+                <pre class="example"><span class="code-css"><span class="code-css">img {
+  max-width: 100%;
+  height: auto;
+}</span>
+          
+          </pre>
+            </div>
+
+            <img id="ex-responsive" src="../../_img/overlay-cliff.jpg" />
+
+
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <h2>Card effect</h2>
+        <div class="row">
+            <div class="col-6">
+                <p>This adds a container around and below the image to look like a Polaroid (card) image.</p>
+            </div>
+
+            <div class="col-6">
+                <pre class="example"><span class="code-css"><span class="code-css">#polaroid {
+  width: 50%;
+  background-color: white;
+  box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin-bottom: 25px;
+  margin: 0 auto;
+}
+
+#container {
+  text-align: center;
+  padding: 10px 20px;
+}</span>
+
+<span class="code-html">&lt;div class="polaroid"&gt;
+
+  &lt;img src="lights600x400.jpg" alt="Norther Lights" style="width:100%"&gt;
+  
+  &lt;div class="container"&gt;
+  &lt;p&gt;Northern Lights&lt;/p&gt;
+  &lt;/div&gt;
+  
+&lt;/div&gt;</span></pre>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col">
+                <h3>Example</h3>
+            </div>
+        </div>
+        <br>
+
+
+        <div id="polaroid">
+
+            <img src="../../_img/overlay-cliff.jpg" style="width:100%">
+
+            <div id="polaroid-container">
+                <p>Swan</p>
+            </div>
+
+        </div>
+
+
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <h2>Image Opacity</h2>
+        <div class="row">
+            <div class="col-6">
+                <p>The opacity property can take a value from 0.0 - 1.0. The lower value, the more transparent:</p>
+            </div>
+
+            <div class="col-6">
+                <pre class="example"><span class="code-css"><span class="code-css">#opacity1 {
+  opacity: 0.1;
+}
+
+#opacity2 {
+  opacity: 0.5;
+}
+
+#opacity31 {
+  opacity: 1;
+}</span></pre>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col">
+                <h3>Example</h3>
+                <img id="opacity1" class="alignimg-margin-per" src="../../_img/redsquare.png" />
+                <img id="opacity2" class="alignimg-margin-per" src="../../_img/redsquare.png" />
+                <img id="opacity3" class="alignimg-margin-per" src="../../_img/redsquare.png" />
+            </div>
+        </div>
+
+
+
+
+
+
+
+    </section>
+
+
+</body>
+
+</html>

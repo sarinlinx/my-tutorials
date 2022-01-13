@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <style>
+    *,
+    *::after,
+    *::before {
+      margin: 0;
+      padding: 0;
+      box-sizing: inherit
+    }
+
+    html {
+      font-size: 62.5%
+    }
+
+    body {
+      box-sizing: border-box;
+      padding: 3rem
+    }
+
+    .row {
+      max-width: 114rem;
+      margin: 0 auto
+    }
+
+    .story {
+      width: 75%;
+      margin: 0 auto;
+      box-shadow: 0 3rem 6rem rgba(0, 0, 0, 0.1);
+      background-color: rgba(255, 255, 255, 0.6);
+      border-radius: 3px;
+      padding: 6rem;
+      padding-left: 9rem;
+      font-size: 1.6rem;
+      transform: skewX(-12deg)
+    }
+
+    .story__shape {
+      width: 15rem;
+      height: 15rem;
+      float: left;
+      -webkit-shape-outside: circle(50% at 50% 50%);
+      shape-outside: circle(50% at 50% 50%);
+      -webkit-clip-path: circle(50% at 50% 50%);
+      clip-path: circle(50% at 50% 50%);
+      transform: translateX(-3rem) skewX(12deg);
+      position: relative;
+      /* cuts out overflowed image */
+      /* overflow: hidden; */
+    }
+
+    .story__img {
+      height: 100%;
+      /* original scale of image is 1.4 */
+      transform: translateX(-4rem) scale(1.4);
+      /* This fixes shape of image if it was change when transform: translateX(-4rem) was added */
+      /* Doesn't occur in chrome though */
+      backface-visibility: hidden;
+      transition: all .5s;
+
+    }
+
+    .story__text {
+      transform: skewX(12deg);
+    }
+
+    .story__caption {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -20%);
+      color: #fff;
+      text-transform: uppercase;
+      font-size: 1.7rem;
+      text-align: center;
+      opacity: 0;
+      transition: all .5s;
+      backface-visibility: hidden;
+    }
+
+    .story:hover .story__caption {
+      opacity: 1;
+      transform: translate(-50%, -50%);
+    }
+
+    .story:hover .story__img {
+        /* scales img back to 1 from 1.4 */
+         transform: translateX(-4rem) scale(1);
+         /* blur 3px is very subtle */
+         /* change image 80% makes it darker from 100% */
+         filter: blur(3px) brightness(80%)
+    }
+  </style>
+  <title>Float text around image</title>
+</head>
+
+<body>
+  <a href="../../../index.html">Home page</a>
+
+
+
+
+  <div class="row">
+    <div class="story">
+
+      <figure class="story__shape">
+        <img class="story__img" src="../../../_img/nat-8.jpg" alt="person on a tour">
+        <figcaption class="story__caption">
+          Mary Smith
+        </figcaption>
+      </figure>
+
+      <div class="story__text">
+        <h3 class="heading-tertiary u-margin-bottom-small">I had the best week ever with my family</h3>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis, est ipsum. Praesentium, consectetur,
+          rem. In minus, ut suscipit facere provident autem sapiente magnam delectus quis est labore velit repellendus
+          aperiam.
+        </p>
+      </div>
+
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>

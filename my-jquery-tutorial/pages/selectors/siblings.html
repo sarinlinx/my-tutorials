@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="../../_css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../../_css/style.css">
+
+    <title>CSS selectors</title>
+</head>
+
+<body>
+    <section class="container">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb breadcrumb-container">
+                <li class="breadcrumb-item"><a class="breadcrumb-link" href="../../index.html">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">CSS selectors</li>
+            </ol>
+        </nav>
+
+
+
+
+
+
+
+
+        <h1>Target paragraph siblings using <span class="standout">~</span></h1>
+        <p>This targets the paragraph siblings of a div</p>
+        <p><a href="https://www.w3schools.com/jquery/sel_previous_siblings.asp">sel_previous_siblings.asp</a></p>
+        <p>You shouldn't use this since you can't pinpoint a specific element with an ID or Class. You can only use this with the normal element tag such as 'div', not 'div#className'.</p>
+
+
+
+
+
+
+        <h1>Target immediately adjacent siblings with +</h1>
+        <p>This targets the immediate next element after the div.</span>.</p>
+
+        <pre class="example"><span class="code-html">&lt;p&gt;I'm a paragraph just before the div.&lt;/p&gt;
+&lt;div id="divsibs"&gt;
+  &lt;p&gt;I'm a paragraph in a div&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;I'm a paragraph just after the div.&lt;/p&gt;
+&lt;p&gt;I'm the 2nd paragraph after the div.&lt;/p&gt;</span>
+
+<span class="code-js">$("#divsibs + p").css('color', 'yellow');</span></pre>
+
+        <h3>Example</h3>
+
+        <p>I'm a paragraph just before the div.</p>
+        <div id="divsibs">
+            <p>I'm a paragraph in a div</p>
+        </div>
+        <p>I'm a paragraph just after the div.</p>
+        <p>I'm the 2nd paragraph after the div.</p>
+
+
+
+
+
+
+
+    </section>
+    <script src="../../_js/jquery-3.4.1.min.js"></script>
+    <script>
+        // $('#steps1 li').css('color', 'yellow');
+        // $('#steps2 > li').css('color', 'yellow');
+        // $('#steps3 > li:first').css('color', 'yellow');
+        // $('#steps4 li:first, #nested_steps4 li:first').css('color', 'yellow');
+        // $('#steps5 li:nth-child(3)').css('color', 'yellow');
+        // $('p[class]').css({
+        //     'border': '1px solid red'
+        // });
+        // $("p[class='class4']").hide();
+        $("#divsibs + p").css('color', 'yellow');
+
+    </script>
+
+</body>
+
+</html>

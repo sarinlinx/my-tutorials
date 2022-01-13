@@ -1,0 +1,12 @@
+//appends a pseudo element after element to clear the float
+//equivalent to .class:after
+@mixin clearfix {
+  &::after{
+    //specify content property so it appears on page
+    //leave empty so it does not display
+    content: "";
+    display: table;
+    //clears float left and right
+    clear: both;
+  }
+}

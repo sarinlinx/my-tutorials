@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" type="text/css" href="../../_css/bootstrap.css">
+  <link rel="stylesheet" type="text/css" href="../../_css/style.css">
+  <style>
+    .feature-box__icon {
+      font-size: 6rem;
+      background-image: linear-gradient(to right, #7ed56f, #03aef1);
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+  </style>
+  <title>4 cards with skewed background</title>
+</head>
+
+<body>
+  <a href="../../index.html">Home page</a>
+
+
+
+  <h1>4 cards with skewed background</h1>
+  <section class="container">
+    <div class="row">
+      <div class="col">
+        <p>View example here:</p>
+        <ul>
+          <li><a href="4-cards-with-skewed-background-example.html" target="_blank">example</a></li>
+        </ul>
+      </div>
+    </div>
+
+
+
+
+
+    <div class="row">
+      
+      <div class="col">
+<pre class="example"><span class="code-css">  *,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit
+}
+
+html {
+font-size: 62.5%
+}
+
+
+body {
+  box-sizing: border-box;
+  padding: 3rem
+}
+
+.row {
+  max-width: 114rem;
+  margin: 0 auto
+}
+
+.row:not(:last-child) {
+  margin-bottom: 8rem
+}
+
+.row::after {
+  content: "";
+  display: table;
+  clear: both
+}
+
+.row [class^="col-"] {
+  float: left
+}
+
+.row [class^="col-"]:not(:last-child) {
+  margin-right: 6rem
+}
+
+.row .col-1-of-4 {
+  width: calc((100% - 3 * 6rem) / 4)
+}
+
+.section-features {
+  padding: 20rem 0;
+  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url(../../img/nat-4.jpg);
+  background-size: cover;
+  margin-top: -13rem;
+  <span class="code-comment">/* This skews the entire container and all elements inside */</span>
+  transform: skewY(-7deg)
+}
+
+<span class="code-comment">/* This skews BACK the elements inside the container */</span>
+.section-features>* {
+  transform: skewY(7deg)
+}
+
+
+.feature-box {
+  background-color: rgba(255, 255, 255, 0.8);
+  font-size: 1.5rem;
+  padding: 2.5rem;
+  text-align: center;
+  border-radius: 3px;
+  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
+  transition: transform .3s
+}
+
+
+.feature-box:hover {
+  transform: translateY(-1.5rem) scale(1.03)
+}</span>
+
+<span class="code-html">
+&lt;section class="section-features"&gt;
+
+  &lt;div class="row"&gt;
+    &lt;!-- no additional CSS should be added to row, only to sections within --&gt;
+    &lt;div class="col-1-of-4"&gt;
+
+      &lt;div class="feature-box"&gt;
+        &lt;i class="icon-basic-world"&gt;&lt;/i&gt;
+        &lt;h3&gt;Explore the world&lt;/h3&gt;
+        &lt;p class="feature-box__text"&gt;
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+          Perferendis, est ipsum. Praesentium, consectetur,
+          rem.
+        &lt;/p&gt;
+      &lt;/div&gt;
+
+    &lt;/div&gt;
+
+    &lt;div class="col-1-of-4"&gt;
+
+      &lt;div class="feature-box"&gt;
+        &lt;i class=" icon-basic-compass"&gt;&lt;/i&gt;
+        &lt;h3&gt;Meet nature&lt;/h3&gt;
+        &lt;p class="feature-box__text"&gt;
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+          Perferendis, est ipsum. Praesentium, consectetur,
+          rem.
+        &lt;/p&gt;
+      &lt;/div&gt;
+
+    &lt;/div&gt;
+
+    &lt;div class="col-1-of-4"&gt;
+
+      &lt;div class="feature-box"&gt;
+        &lt;i class="icon-basic-map"&gt;&lt;/i&gt;
+        &lt;h3&gt;Find your way&lt;/h3&gt;
+        &lt;p class="feature-box__text"&gt;
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+          Perferendis, est ipsum. Praesentium, consectetur,
+          rem.
+        &lt;/p&gt;
+      &lt;/div&gt;
+
+    &lt;/div&gt;
+
+    &lt;div class="col-1-of-4"&gt;
+
+      &lt;div class="feature-box"&gt;
+        &lt;i class="icon-basic-heart"&gt;&lt;/i&gt;
+        &lt;h3&gt;Live a healthier life&lt;/h3&gt;
+        &lt;p class="feature-box__text"&gt;
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+          Perferendis, est ipsum. Praesentium, consectetur,
+          rem.
+        &lt;/p&gt;
+      &lt;/div&gt;
+
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+&lt;/section&gt;</span></pre>
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </section>
+
+
+
+
+</body>
+
+</html>

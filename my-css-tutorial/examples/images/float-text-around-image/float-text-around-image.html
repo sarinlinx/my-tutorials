@@ -1,0 +1,807 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="../../../_css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../../../_css/style.css">
+   
+    <title>Float text around image</title>
+</head>
+
+<body>
+    <a href="../../../index.html">Home page</a>
+
+    <section class="container">
+
+
+        <h1>Float text around image</h1>
+        <p>view the following full example</p>
+        <ul<li><a href="float-text-around-image-example-01.html" target="_blank">Example</a></li></ul>
+
+
+
+        <h2>Step 1 - Create the section and float shape left</h2>
+        <div class="row">
+
+            <div class="col-4">
+                <p>Create the section in HTML.</p>
+                <p>Make the first section orangered and float it to the left.</p>
+            </div>
+
+            <div class="col-8">
+                <pre class="example"><span class="code-css">*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit
+}
+
+html {
+  font-size: 62.5%
+}
+
+body {
+  box-sizing: border-box;
+  padding: 3rem
+}
+
+.row {
+max-width: 114rem;
+margin: 0 auto
+}
+
+.story {
+  width: 75%;
+  margin: 0 auto;
+  box-shadow: 0 3rem 6rem rgba(0, 0, 0, 0.1);
+  background-color: rgba(255, 255, 255, 0.6);
+  border-radius: 3px;
+  padding: 6rem;
+  padding-left: 9rem;
+  font-size: 1.6rem;
+}
+
+.story__shape {
+  width: 15rem;
+  height: 15rem;
+  float: left;
+  background-color: orangered;
+}</span></span>
+  
+                
+<span class="code-html">&lt;div class="row"&gt;
+  &lt;div class="story"&gt;
+
+    &lt;figure class="story__shape"&gt;
+      &lt;img class="story__img" src="#" alt="person on a tour"&gt;
+    &lt;/figure&gt;
+
+    &lt;div class="story__text"&gt;
+      &lt;h3 class="heading-tertiary"&gt;I had the best week ever with my family&lt;/h3&gt;
+      &lt;p&gt;
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis, est ipsum. Praesentium, consectetur,
+        rem. In minus, ut suscipit facere provident autem sapiente magnam delectus quis est labore velit repellendus
+        aperiam.
+      &lt;/p&gt;
+    &lt;/div&gt;
+
+  &lt;/div&gt;
+&lt;/div&gt;</span></pre>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        <h2>Step 2 - Curve text around first section, then change its shape into a cirlce</h2>
+        <ul<li><a href="float-text-around-image-example-02.html" target="_blank">Example</a></li></ul>
+        <div class="row">
+        
+            <div class="col-4">
+                <p>Force the text to curve around the first section as if it were a circle using shape-outside.</p>
+                <p>Then, change the first section into the shape of a circle using clip-path.</p>
+            </div>
+
+            <div class="col-8">
+                <pre class="example"><span class="code-css">.story {
+  width: 75%;
+  margin: 0 auto;
+  box-shadow: 0 3rem 6rem rgba(0, 0, 0, 0.1);
+  background-color: rgba(255, 255, 255, 0.6);
+  border-radius: 3px;
+  padding: 6rem;
+  padding-left: 9rem;
+  font-size: 1.6rem;
+}
+
+.story__shape {
+  width: 15rem;
+  height: 15rem;
+  float: left;
+  background-color: orangered;
+  <span class="code-comment">/* use shape-outside to define WHERE content should flow around element */
+  /* this doesn't actually change the shape of the element */
+  /* make text float around shape (whatever the shape may be) */
+  /* element must be floated and have width and height */
+  /* 1st # is radius of circle
+  2nd and 3rd values are vertical and horizontal */</span>
+  <span class="code-highlight">-webkit-shape-outside: circle(50% at 50% 50%);
+  shape-outside: circle(50% at 50% 50%);</span>
+  <span class="code-comment">/* clip content into a circle */
+  /* this is what changes the shape of the element */</span>
+  <span class="code-highlight">-webkit-clip-path: circle(50% at 50% 50%);
+  clip-path: circle(50% at 50% 50%);</span>
+  <span class="code-comment">/* push circle to the left instead of using margin */</span>
+  <span class="code-highlight">transform: translateX(-3rem);</span>
+}</span></span>
+  
+                
+<span class="code-html">&lt;div class="row"&gt;
+  &lt;div class="story"&gt;
+
+    &lt;figure class="story__shape"&gt;
+      &lt;img class="story__img" src="#" alt="person on a tour"&gt;
+    &lt;/figure&gt;
+
+    &lt;div class="story__text"&gt;
+      &lt;h3 class="heading-tertiary"&gt;I had the best week ever with my family&lt;/h3&gt;
+      &lt;p&gt;
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis, est ipsum. Praesentium, consectetur,
+        rem. In minus, ut suscipit facere provident autem sapiente magnam delectus quis est labore velit repellendus
+        aperiam.
+      &lt;/p&gt;
+    &lt;/div&gt;
+
+  &lt;/div&gt;
+&lt;/div&gt;</span></pre>
+            </div>
+        </div>
+
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+        
+        <h2>Step 3 - Add image to circle section</h2>
+        <ul<li><a href="float-text-around-image-example-03.html" target="_blank">Example 3</a></li></ul>
+        <div class="row">
+        
+            <div class="col-4">
+                <p>Add image to HTML.</p>
+                <p>Remove color from shape.</p>
+                <p>Give image a height so it stays within the parent container (the circle shape)</p>
+                <p>Using transform to position it within that container.</p>
+            </div>
+
+            <div class="col-8">
+                <pre class="example"><span class="code-css">.story {
+  width: 75%;
+  margin: 0 auto;
+  box-shadow: 0 3rem 6rem rgba(0, 0, 0, 0.1);
+  background-color: rgba(255, 255, 255, 0.6);
+  border-radius: 3px;
+  padding: 6rem;
+  padding-left: 9rem;
+  font-size: 1.6rem;
+}
+
+.story__shape {
+  width: 15rem;
+  height: 15rem;
+  float: left;
+  -webkit-shape-outside: circle(50% at 50% 50%);
+  shape-outside: circle(50% at 50% 50%); 
+ -webkit-clip-path: circle(50% at 50% 50%);
+  clip-path: circle(50% at 50% 50%);
+  transform: translateX(-3rem);
+}
+
+.story__img {
+  <span class="code-comment">/* must give it a height of 100% of parent so it is scaled and stays within the parent
+  in this case, the shape 
+  otherwise it would appear below everything FULL SIZE*/</span>
+  <span class="code-highlight">height: 100%;</span>
+  <span class="code-comment">/* This moves the image to the left a little */
+  /* scale makes it bigger at first. You can then set it back to 1 when hovered */</span>
+  <span class="code-highlight">transform: translateX(-4rem) scale(1.4);</span>
+}</span>
+  
+                
+<span class="code-html">&lt;div class="row"&gt;
+  &lt;div class="story"&gt;
+
+    &lt;figure class="story__shape"&gt;
+      <span class="code-highlight">&lt;img class="story__img" src="../../../_img/nat-8.jpg" alt="person on a tour"&gt;</span>
+    &lt;/figure&gt;
+
+    &lt;div class="story__text"&gt;
+      &lt;h3 class="heading-tertiary"&gt;I had the best week ever with my family&lt;/h3&gt;
+      &lt;p&gt;
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis, est ipsum. Praesentium, consectetur,
+        rem. In minus, ut suscipit facere provident autem sapiente magnam delectus quis est labore velit repellendus
+        aperiam.
+      &lt;/p&gt;
+    &lt;/div&gt;
+
+  &lt;/div&gt;
+&lt;/div&gt;</span></pre>
+            </div>
+        </div>
+
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        
+        <h2>Step 4 - (<span class="red">Move to its own section since this doesn't involve floating text</span>: Skew section, but skew subsection back to normal</h2>
+        <ul<li><a href="float-text-around-image-example-04.html" target="_blank">Example 4</a></li></ul>
+        <div class="row">
+        
+            <div class="col-4">
+                <p>Skew the entire section -12deg.</p>
+                <p>Skew individual sections back 12deg so they appear normal within the main section.</p>
+            </div>
+
+            <div class="col-8">
+                <pre class="example"><span class="code-css">.story {
+  width: 75%;
+  margin: 0 auto;
+  box-shadow: 0 3rem 6rem rgba(0, 0, 0, 0.1);
+  background-color: rgba(255, 255, 255, 0.6);
+  border-radius: 3px;
+  padding: 6rem;
+  padding-left: 9rem;
+  font-size: 1.6rem;
+  <span class="code-comment">/* skew the entire section */</span>
+  <span class="code-highlight">transform: skewX(-12deg)</span>
+}
+
+.story__shape {
+  width: 15rem;
+  height: 15rem;
+  float: left;
+  -webkit-shape-outside: circle(50% at 50% 50%);
+  shape-outside: circle(50% at 50% 50%);
+  -webkit-clip-path: circle(50% at 50% 50%);
+  clip-path: circle(50% at 50% 50%);
+  <span class="code-comment">/* skew back 12deg since section is skewed -12deg */</span>
+  transform: translateX(-3rem) <span class="code-highlight">skewX(12deg);</span>
+}
+
+.story__img {
+    height: 100%;
+    transform: translateX(-4rem) scale(1.4);
+}
+
+.story__text {
+  <span class="code-comment">/* this only skews the text */
+  /* the __shape already has a transform used */</span>
+  <span class="code-highlight">transform: skewX(12deg);</span>
+}</span>
+  
+                
+<span class="code-html">&lt;div class="row"&gt;
+  &lt;div class="story"&gt;
+
+    &lt;figure class="story__shape"&gt;
+      <span class="code-highlight">&lt;img class="story__img" src="../../../_img/nat-8.jpg" alt="person on a tour"&gt;</span>
+    &lt;/figure&gt;
+
+    &lt;div class="story__text"&gt;
+      &lt;h3 class="heading-tertiary"&gt;I had the best week ever with my family&lt;/h3&gt;
+      &lt;p&gt;
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis, est ipsum. Praesentium, consectetur,
+        rem. In minus, ut suscipit facere provident autem sapiente magnam delectus quis est labore velit repellendus
+        aperiam.
+      &lt;/p&gt;
+    &lt;/div&gt;
+
+  &lt;/div&gt;
+&lt;/div&gt;</span></pre>
+            </div>
+        </div>
+
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+        
+        
+        <h2>Step 5 - (<span class="red">Move to its own section since this doesn't involve floating text</span>: Add caption over image</h2>
+        <ul<li><a href="float-text-around-image-example-05.html" target="_blank">Example 5</a></li></ul>
+        <div class="row">
+        
+            <div class="col-4">
+                <p>Add figcaption to image.</p>
+                <p>Position its container relative</p>
+                <p>Position the text absolute</p>
+            </div>
+
+            <div class="col-8">
+<pre class="example"><span class="code-css">   *,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit
+}
+
+html {
+  font-size: 62.5%
+}
+
+body {
+  box-sizing: border-box;
+  padding: 3rem
+}
+
+.row {
+  max-width: 114rem;
+  margin: 0 auto
+}
+
+.story {
+  width: 75%;
+  margin: 0 auto;
+  box-shadow: 0 3rem 6rem rgba(0, 0, 0, 0.1);
+  background-color: rgba(255, 255, 255, 0.6);
+  border-radius: 3px;
+  padding: 6rem;
+  padding-left: 9rem;
+  font-size: 1.6rem;
+  transform: skewX(-12deg)
+}
+
+.story__shape {
+  width: 15rem;
+  height: 15rem;
+  float: left;
+  -webkit-shape-outside: circle(50% at 50% 50%);
+  shape-outside: circle(50% at 50% 50%);
+  -webkit-clip-path: circle(50% at 50% 50%);
+  clip-path: circle(50% at 50% 50%);
+  transform: translateX(-3rem) skewX(12deg);
+  <span class="code-comment">/* position relative so .story__caption can be positioned absolute */</span>
+  <span class="code-highlight">position: relative;</span>
+
+}
+
+.story__img {
+  height: 100%;
+  transform: translateX(-4rem) scale(1.4);
+}
+
+.story__text {
+  transform: skewX(12deg);
+}
+
+.story__caption {
+  <span class="code-comment">/* center caption */</span>
+  <span class="code-highlight">position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);</span>
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 1.7rem;
+  text-align: center;                   
+}</span>
+  
+                
+<span class="code-html">&lt;div class="row"&gt;
+  &lt;div class="story"&gt;
+
+    &lt;figure class="story__shape"&gt;
+      &lt;img class="story__img" src="../../../_img/nat-8.jpg" alt="person on a tour"&gt;
+      &lt;figcaption class="story__caption"&gt;
+        Mary Smith
+      &lt;/figcaption&gt;
+    &lt;/figure&gt;
+
+    &lt;div class="story__text"&gt;
+      &lt;h3 class="heading-tertiary u-margin-bottom-small"&gt;I had the best week ever with my family&lt;/h3&gt;
+      &lt;p&gt;
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis, est ipsum. Praesentium, consectetur,
+        rem. In minus, ut suscipit facere provident autem sapiente magnam delectus quis est labore velit repellendus
+        aperiam.
+      &lt;/p&gt;
+    &lt;/div&gt;
+
+  &lt;/div&gt;
+&lt;/div&gt;</span></pre>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <h2>Step 6 - (<span class="red">Move to its own section since this doesn't involve floating text</span>: Move the text on hover</h2>
+        <ul<li><a href="float-text-around-image-example-06.html" target="_blank">Example 6</a></li></ul>
+        <div class="row">
+        
+            <div class="col-4">
+                <p>Add hover properties to container and caption</p>
+                <p>Change the Y axis of the caption to -20 so it's lower at first</p>
+                <p>Hide it by setting opacity to 0.</p>
+                <p>When hovered, the opacity changes to 1 and the Y axis moves back into center at -50%.</p>
+            </div>
+
+            <div class="col-8">
+<pre class="example"><span class="code-css">   *,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit
+}
+
+html {
+  font-size: 62.5%
+}
+
+body {
+  box-sizing: border-box;
+  padding: 3rem
+}
+
+.row {
+  max-width: 114rem;
+  margin: 0 auto
+}
+
+.story {
+  width: 75%;
+  margin: 0 auto;
+  box-shadow: 0 3rem 6rem rgba(0, 0, 0, 0.1);
+  background-color: rgba(255, 255, 255, 0.6);
+  border-radius: 3px;
+  padding: 6rem;
+  padding-left: 9rem;
+  font-size: 1.6rem;
+  transform: skewX(-12deg)
+}
+
+.story__shape {
+  width: 15rem;
+  height: 15rem;
+  float: left;
+  -webkit-shape-outside: circle(50% at 50% 50%);
+  shape-outside: circle(50% at 50% 50%);
+  -webkit-clip-path: circle(50% at 50% 50%);
+  clip-path: circle(50% at 50% 50%);
+  transform: translateX(-3rem) skewX(12deg);
+  position: relative;
+}
+
+.story__img {
+  height: 100%;
+  transform: translateX(-4rem) scale(1.4);
+}
+
+.story__text {
+  transform: skewX(12deg);
+}
+
+.story__caption {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  <span class="code-comment">/* text is set to 20% which is low. When hovered it will go to -50% which raises it up */</span>
+  <span class="code-highlight">transform: translate(-50%, -20%);</span>
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 1.7rem;
+  text-align: center;
+  <span class="code-comment">/* initial state before hover animation */</span>
+  <span class="code-highlight">opacity: 0;</span>
+  <span class="code-comment">/* animation the hover */</span>
+  <span class="code-highlight">transition: all .5s;</span>
+  <span class="code-comment">/* fixes glitch when text is hovered and shakes slightly at end */</span>
+  <span class="code-highlight">backface-visibility: hidden;</span>
+}
+
+<span class="code-comment">/* change caption when hovered */</span>
+.story:hover .story__caption {
+  <span class="code-highlight">opacity: 1;</span>
+  <span class="code-comment">/* -50% raises it to 20% above */</span>
+  <span class="code-highlight">transform: translate(-50%, -50%);</span>
+}</span>
+  
+                
+<span class="code-html">&lt;div class="row"&gt;
+  &lt;div class="story"&gt;
+
+    &lt;figure class="story__shape"&gt;
+      &lt;img class="story__img" src="../../../_img/nat-8.jpg" alt="person on a tour"&gt;
+      &lt;figcaption class="story__caption"&gt;
+        Mary Smith
+      &lt;/figcaption&gt;
+    &lt;/figure&gt;
+
+    &lt;div class="story__text"&gt;
+      &lt;h3 class="heading-tertiary u-margin-bottom-small"&gt;I had the best week ever with my family&lt;/h3&gt;
+      &lt;p&gt;
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis, est ipsum. Praesentium, consectetur,
+        rem. In minus, ut suscipit facere provident autem sapiente magnam delectus quis est labore velit repellendus
+        aperiam.
+      &lt;/p&gt;
+    &lt;/div&gt;
+
+  &lt;/div&gt;
+&lt;/div&gt;</span></pre>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+        <h2>Step 7 - (<span class="red">Move to its own section since this doesn't involve floating text</span>: Blur image on hover</h2>
+        <ul<li><a href="float-text-around-image-example-07.html" target="_blank">Example 7</a></li></ul>
+        <div class="row">
+        
+            <div class="col-4">
+                <p>story__img scale is originally set to 1.4.</p>
+                <p>When hovered, the scale goes back to 1.</p>
+                <p>A filter is also added to blur the image</p>
+            </div>
+
+            <div class="col-8">
+<pre class="example"><span class="code-css">*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit
+}
+
+html {
+  font-size: 62.5%
+}
+
+body {
+  box-sizing: border-box;
+  padding: 3rem
+}
+
+.row {
+  max-width: 114rem;
+  margin: 0 auto
+}
+
+.story {
+  width: 75%;
+  margin: 0 auto;
+  box-shadow: 0 3rem 6rem rgba(0, 0, 0, 0.1);
+  background-color: rgba(255, 255, 255, 0.6);
+  border-radius: 3px;
+  padding: 6rem;
+  padding-left: 9rem;
+  font-size: 1.6rem;
+  transform: skewX(-12deg)
+}
+
+.story__shape {
+  width: 15rem;
+  height: 15rem;
+  float: left;
+  -webkit-shape-outside: circle(50% at 50% 50%);
+  shape-outside: circle(50% at 50% 50%);
+  -webkit-clip-path: circle(50% at 50% 50%);
+  clip-path: circle(50% at 50% 50%);
+  transform: translateX(-3rem) skewX(12deg);
+  position: relative;
+}
+
+.story__img {
+  height: 100%;
+  <span class="code-comment">/* original scale of image is 1.4 */</span>
+  <span class="code-highlight">transform: translateX(-4rem) scale(1.4);</span>
+  <span class="code-comment">/* This fixes shape of image if it was change when transform: translateX(-4rem) was added */</span>
+  <span class="code-comment">/* Doesn't occur in chrome though */</span>
+  <span class="code-highlight">backface-visibility: hidden;</span>
+  <span class="code-highlight">transition: all .5s;</span>
+
+}
+
+.story__text {
+  transform: skewX(12deg);
+}
+
+.story__caption {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -20%);
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 1.7rem;
+  text-align: center;
+  opacity: 0;
+  transition: all .5s;
+  backface-visibility: hidden;
+}
+
+.story:hover .story__caption {
+  opacity: 1;
+  transform: translate(-50%, -50%);
+}
+
+.story:hover .story__img {
+  <span class="code-comment">/* scales img back to 1 from 1.4 */</span>
+  <span class="code-highlight">transform: translateX(-4rem) scale(1);</span>
+  <span class="code-comment">/* blur 3px is very subtle */</span>
+  <span class="code-comment">/* change image 80% makes it darker from 100% */</span>
+  <span class="code-highlight">filter: blur(3px) brightness(80%)</span>
+}</span>
+  
+                
+<span class="code-html">&lt;div class="row"&gt;
+  &lt;div class="story"&gt;
+
+    &lt;figure class="story__shape"&gt;
+      &lt;img class="story__img" src="../../../_img/nat-8.jpg" alt="person on a tour"&gt;
+      &lt;figcaption class="story__caption"&gt;
+        Mary Smith
+      &lt;/figcaption&gt;
+    &lt;/figure&gt;
+
+    &lt;div class="story__text"&gt;
+      &lt;h3 class="heading-tertiary u-margin-bottom-small"&gt;I had the best week ever with my family&lt;/h3&gt;
+      &lt;p&gt;
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis, est ipsum. Praesentium, consectetur,
+        rem. In minus, ut suscipit facere provident autem sapiente magnam delectus quis est labore velit repellendus
+        aperiam.
+      &lt;/p&gt;
+    &lt;/div&gt;
+
+  &lt;/div&gt;
+&lt;/div&gt;</span></pre>
+            </div>
+        </div>
+
+      
+
+
+
+
+
+
+
+
+
+
+    </section>
+
+
+
+
+
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="../../_css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../../_css/style.css">
+
+    <title>The 'click' event</title>
+</head>
+
+<body>
+    <section class="container">
+      <nav aria-label="breadcrumb">
+          <ol class="breadcrumb breadcrumb-container">
+              <li class="breadcrumb-item"><a class="breadcrumb-link" href="../../index.html">Home</a></li>
+              <li class="breadcrumb-item active" aria-current="page">The 'click' event</li>
+          </ol>
+      </nav>
+
+
+
+
+      <h1>.click()</h1>
+
+          <p>The .click() method fires when something is clicked.</p>
+
+
+      <pre class="example"><span class="code-html">&lt;p class="p1"&gt;If you click on me, I will disappear.&lt;/p&gt;
+&lt;p class="p1"&gt;Click me away!&lt;/p&gt;
+&lt;p class="p1"&gt;Click me too!&lt;/p&gt;</span>
+
+<span class="code-js">$("p.p1").click(function(){
+  $(this).hide();
+});</span></pre>
+
+          <h3>Example</h3>
+          <p class="p1">If you click on me, I will disappear.</p>
+    <p class="p1">Click me away!</p>
+    <p class="p1">Click me too!</p>
+
+
+
+
+<h1>.on('click', function()</h1>
+
+    <p>When the user clicks the button, the paragraph disappears.</p>
+
+    <p>The #firstBtn element has an event happen 'on' it.</p>
+    <p>The 'click' event  is the event that happens 'on' the #firstBtn element.</p>
+    <p>When the 'click' event occurs, the function() is run.</p>
+    <p>The function looks for the paragraph with an ID of 'statement' and uses hide() to hide it.</p>
+
+
+<pre class="example">
+<span class="code-html">&lt;input type="button" value="submit" id="firstBtn"/&gt;
+&lt;p id="statement"&gt;This is a sentence&lt;/p&gt;</span>
+
+<span class="code-js">$('#firstBtn').on("<span class="standout">click</span>", function() {
+  <span class="code-comment">//code to be executed when the button is clicked</span>
+  $('p#statement').hide();
+});</span></pre>
+
+    <h3>Example</h3>
+    <input type="button" value="submit" id="firstBtn"/>
+    <p id="statement">This is a sentence</p>
+
+
+
+
+
+
+    </section>
+
+
+
+
+
+
+
+    <script src="../../_js/jquery-3.4.1.min.js"></script>
+
+    <script>
+    $("p.p1").click(function(){
+  $(this).hide();
+});
+
+    $('#firstBtn').on("click", function() {
+      //code to be executed when the button is clicked
+      $('p#statement').hide();
+    });
+
+    </script>
+
+</body>
+
+</html>

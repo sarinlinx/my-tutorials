@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="../../_css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../../_css/style.css">
+    <title>The :not filter</title>
+</head>
+
+<body>
+    <section class="container">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb breadcrumb-container">
+                <li class="breadcrumb-item"><a class="breadcrumb-link" href="../../index.html">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">The :not filter</li>
+            </ol>
+        </nav>
+
+
+
+
+
+
+<h1>Chaining</h1>
+<p>Get all li children of children inside of 'courses' by adding .children()</p>
+
+<pre class="example"><span class="code-html">&lt;h3&gt;Below is a list of course offerings to choose from&lt;/h3&gt;
+&lt;div&gt;
+    &lt;p&gt;Below is a list of all the available courses &lt;br&gt;
+    that can be enrolled in this semester:
+    &lt;/p&gt;
+&lt;/div&gt;
+&lt;ul id="courses"&gt;
+  &lt;li&gt;Sociology&lt;/li&gt;
+  &lt;li&gt;Psychology&lt;/li&gt;
+  &lt;li&gt;Mathematics
+    &lt;ul id="math_subjects"&gt;
+    &lt;li&gt;Algebra&lt;/li&gt;
+    &lt;li&gt;Geometry&lt;/li&gt;
+    &lt;li&gt;Calculus&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Sciences
+      &lt;ul id="science_subjects"&gt;
+      &lt;li&gt;Geology&lt;/li&gt;
+      &lt;li&gt;Physics&lt;/li&gt;
+      &lt;li&gt;Chemistry&lt;/li&gt;
+      &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;World History&lt;/li&gt;
+&lt;/ul&gt;
+</span>
+
+<span class="code-js">$("#btn2").click(function() {
+  $("#courses2").children("li").children().css({
+    'border': '1px solid red'
+  });
+});</span></pre>
+
+<h3>Example</h3>
+<h3>Below is a list of course offerings to choose from</h3>
+<div>
+    <p>Below is a list of all the available courses <br>
+    that can be enrolled in this semester:
+    </p>
+</div>
+<ul id="courses3">
+  <li>Sociology</li>
+  <li>Psychology</li>
+  <li>Mathematics
+    <ul id="math_subjects">
+    <li>Algebra</li>
+    <li>Geometry</li>
+    <li>Calculus</li>
+    </ul>
+  </li>
+  <li>Sciences
+      <ul id="science_subjects">
+      <li>Geology</li>
+      <li>Physics</li>
+      <li>Chemistry</li>
+      </ul>
+  </li>
+  <li>World History</li>
+</ul>
+
+<button id="btn3">Click me</button>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h1>Walking the DOM</h1>
+<p>Chaining multiple things together to step through each element</p>
+<p>Use next() to go forward</p>
+<p>Use prev() to go backwards</p>
+
+<pre class="example"><span class="code-html">&lt;h3&gt;Below is a list of course offerings to choose from&lt;/h3&gt;
+&lt;div&gt;
+    &lt;p&gt;Below is a list of all the available courses &lt;br&gt;
+    that can be enrolled in this semester:
+    &lt;/p&gt;
+&lt;/div&gt;
+&lt;ul id="courses"&gt;
+  &lt;li&gt;Sociology&lt;/li&gt;
+  &lt;li&gt;Psychology&lt;/li&gt;
+  &lt;li&gt;Mathematics
+    &lt;ul id="math_subjects"&gt;
+    &lt;li&gt;Algebra&lt;/li&gt;
+    &lt;li&gt;Geometry&lt;/li&gt;
+    &lt;li&gt;Calculus&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Sciences
+      &lt;ul id="science_subjects"&gt;
+      &lt;li&gt;Geology&lt;/li&gt;
+      &lt;li&gt;Physics&lt;/li&gt;
+      &lt;li&gt;Chemistry&lt;/li&gt;
+      &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;World History&lt;/li&gt;
+&lt;/ul&gt;
+</span>
+
+<span class="code-js">$("#btn4").click(function() {
+  $("#courses4").children("li").first().next().next().css({
+      'border': '1px solid red'
+  });
+});</span></pre>
+
+<h3>Example</h3>
+<h3>Below is a list of course offerings to choose from</h3>
+<div>
+    <p>Below is a list of all the available courses <br>
+    that can be enrolled in this semester:
+    </p>
+</div>
+<ul id="courses4">
+  <li>Sociology</li>
+  <li>Psychology</li>
+  <li>Mathematics
+    <ul id="math_subjects">
+    <li>Algebra</li>
+    <li>Geometry</li>
+    <li>Calculus</li>
+    </ul>
+  </li>
+  <li>Sciences
+      <ul id="science_subjects">
+      <li>Geology</li>
+      <li>Physics</li>
+      <li>Chemistry</li>
+      </ul>
+  </li>
+  <li>World History</li>
+</ul>
+
+<button id="btn4">Click me</button>
+
+
+<h1>Other stuff</h1>
+<p>.closest() starts at the current element and travels up the DOM tree till it finds a match for 0 or 1 elements</p>
+<p>.parent() selects one level above</p>
+<p>.parents() selects all matching elements</p>
+
+
+
+
+
+
+
+    </section>
+    <script src="../../_js/jquery-3.4.1.min.js"></script>
+    <script>
+
+    $("#btn1").click(function() {
+        $("#math_subjects").find("li").css({
+            'border': '1px solid red'
+        });
+    });
+
+    $("#btn2").click(function() {
+        $("#courses2").children("li").css({
+            'border': '1px solid red'
+        });
+    });
+
+    $("#btn3").click(function() {
+        $("#courses3").children("li").children().css({
+            'border': '1px solid red'
+        });
+    });
+
+    $("#btn4").click(function() {
+        $("#courses4").children("li").first().next().next().css({
+            'border': '1px solid red'
+        });
+    });
+    </script>
+</body>
+
+</html>

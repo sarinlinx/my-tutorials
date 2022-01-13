@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="../../_css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../../_css/style.css">
+    <style>
+        .timestwo {
+            font-size: 2em;
+        }
+
+        .colorful {
+            color: white;
+        }
+    </style>
+    <title>The 'hide' effect</title>
+</head>
+
+<body>
+    <section class="container">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb breadcrumb-container">
+                <li class="breadcrumb-item"><a class="breadcrumb-link" href="../../index.html">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">The 'hide' effect</li>
+            </ol>
+        </nav>
+
+
+        <h1>The 'hide' effect</h1>
+
+
+        <p>This example shows two paragraphs.</p>
+        <p>The jQuery code targets all paragraphs in this document, then assigns them the action of 'hide'.</p>
+        <p>the hide() function automatically hides the elements, so you will not see them when the page loads.</p>
+
+        <pre class="example">
+<span class="code-html">&lt;div&gt;
+  &lt;p class="p1"&gt;This is a sentence&lt;/p&gt;
+  &lt;p class="super p1"&gt; Here's another one &lt;/p&gt;
+  &lt;h4 class="super"&gt; Only the h4 tag shows &lt;/h4&gt;
+&lt;/div&gt;</span>
+
+<span class="code-js">
+&lt;script&gt;
+  $("p.p1").hide();
+&lt;/script&gt;</span></pre>
+
+        <h3>Example</h3>
+        <div>
+            <p class="p1">This is a sentence</p>
+            <p class="p1" class="super"> Here's another one </p>
+            <h4 class="super"> Only the h4 tag shows </h4>
+        </div>
+
+
+        <h1>Click button to hide</h1>
+
+
+        <p>Clicking the button hides the paragraph with an ID</p>
+
+        <pre class="example"><span class="code-html">&lt;p&gt;If you click on the "Hide" button, I will disappear.&lt;/p&gt;
+&lt;button id="hide"&gt;Hide&lt;/button&gt;</span>
+
+<span class="code-js">$("#hide").click(function(){
+  $("p").hide();
+});</span></pre>
+
+        <h3>Example</h3>
+        <p id="p-hide">If you click on the "Hide" button, I will disappear.</p>
+        <button id="hide">Hide</button>
+
+
+
+
+          <h1>Adding a time parameter</h1>
+          <p>The optional speed parameter specifies the speed of the hiding/showing, and can take the following values: "slow", "fast", or milliseconds.</p>
+
+              <pre class="example"><span class="code-html">&lt;p&gt;If you click on the "Hide" button, I will disappear.&lt;/p&gt;
+        &lt;button id="hide"&gt;Hide&lt;/button&gt;</span>
+
+        <span class="code-js">$("#hide").click(function() {
+            $("p#p2").hide(1000);
+        });
+        $("#show").click(function() {
+            $("p#p2").show("slow");
+        });</span></pre>
+
+            <h3>Example</h3>
+            <p id="p2">If you click on the "Hide" button, I will disappear.</p>
+            <button id="hide2">Hide</button>
+            <button id="show2">Show</button>
+
+    </section>
+
+
+
+
+
+
+
+    <script src="../../_js/jquery-3.4.1.min.js"></script>
+    <script>
+        $("p.p1").hide();
+        $("p.p2").addClass("colorful timestwo");
+
+
+
+        $("#hide").click(function() {
+            $("p#p-hide").hide();
+        });
+
+        $("#hide2").click(function() {
+            $("p#p2").hide(1000);
+        });
+        $("#show2").click(function() {
+            $("p#p2").show("slow");
+        });
+    </script>
+
+</body>
+
+</html>

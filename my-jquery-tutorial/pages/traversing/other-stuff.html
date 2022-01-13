@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="../../_css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../../_css/style.css">
+    <title>The :not filter</title>
+</head>
+
+<body>
+    <section class="container">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb breadcrumb-container">
+                <li class="breadcrumb-item"><a class="breadcrumb-link" href="../../index.html">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">The :not filter</li>
+            </ol>
+        </nav>
+
+
+<h1>Other stuff</h1>
+<p>.closest() starts at the current element and travels up the DOM tree till it finds a match for 0 or 1 elements</p>
+<p>.parent() selects one level above</p>
+<p>.parents() selects all matching elements</p>
+
+
+
+
+
+
+
+    </section>
+    <script src="../../_js/jquery-3.4.1.min.js"></script>
+    <script>
+
+    $("#btn1").click(function() {
+        $("#math_subjects").find("li").css({
+            'border': '1px solid red'
+        });
+    });
+
+    $("#btn2").click(function() {
+        $("#courses2").children("li").css({
+            'border': '1px solid red'
+        });
+    });
+
+    $("#btn3").click(function() {
+        $("#courses3").children("li").children().css({
+            'border': '1px solid red'
+        });
+    });
+
+    $("#btn4").click(function() {
+        $("#courses4").children("li").first().next().next().css({
+            'border': '1px solid red'
+        });
+    });
+    </script>
+</body>
+
+</html>

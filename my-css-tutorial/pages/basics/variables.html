@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="../../_css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../../_css/style.css">
+
+    <title>CSS variables</title>
+</head>
+
+<body>
+
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+                <a href="../../index.html">Home</a>
+            </li>
+            <li class="breadcrumb-item active" aria-current="page">CSS variables</li>
+        </ol>
+    </nav>
+
+
+
+    <section class="container">
+
+        <div class="row">
+            <div class="col">
+                <h1>CSS variables</h1>
+                <p>CSS variables can be used without a pre-processor like Sass.</p>
+                <p>You can also manipulate the variables in JavaScript and Dev Tools.</p>
+                <p>Easy to use in the Calc() function.</p>
+                <p>They also cascade and are inherited where Sass variables do not.</p>
+            </div>
+        </div>
+
+
+        <h2>Add CSS variables in the :root pseudo class</h2>
+        <div class="row">
+            <div class="col-5">
+                <p>Add CSS variables in the :root pseudo class</p>
+                <p>You can then use var() to add them</p>
+            </div>
+
+            <div class="col-7">
+                <pre class="example"><span class="code-css">:root {
+  --color-primary: #eb2f64;
+  --color-primary-light: #FF3366;
+  --color-primary-dark: #BA265D;
+  --color-grey-light-1: #faf9f9;
+  --color-grey-light-2: #f4f2f2;
+  --color-grey-light-3: #f0eeee;
+  --color-grey-light-4: #ccc;
+  --color-grey-dark-1: #333;
+  --color-grey-dark-2: #777;
+  --color-grey-dark-3: #999;
+  --shadow-dark: 0 2rem 6rem rgba(0, 0, 0, 0.3);
+  --shadow-light: 0 2rem 5rem rgba(0, 0, 0, 0.06);
+  --line: 1px solid var(--color-grey-light-2)
+}
+
+body {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  line-height: 1.7;
+  color: #777;
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 100vh
+  <span class="code-highlight">background-image: linear-gradient(to right bottom, var(--color-primary-light), var(--color-primary-dark));</span>
+}</pre>
+            </div>
+        </div>
+
+
+
+
+    </section>
+
+
+
+
+
+
+
+
+
+
+    <script src="../../_js/jquery.js"></script>
+    <script src="../../_js/bootstrap.bundle.js"></script>
+</body>
+
+</html>

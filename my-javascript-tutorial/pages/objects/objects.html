@@ -1,0 +1,551 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="../../_css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../../_css/style.css">
+
+    <title>Objects</title>
+</head>
+
+<body>
+    <a href="../../index.html">Home page</a>
+
+
+
+    <section class="container">
+        <h1>Creating Objects</h1>
+        <div class="row">
+            <div class="col">
+                <p>Objects store data such as properties and methods.</p>
+                <ul>
+                    <li>Properties: Info about the object we can retrieve and use</li>
+                    <li>Methods: functions that belong to the object</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+    <section class="container">
+        <h1>Object conversion</h1>
+
+        <div class="row">
+            <div class="col-6">
+                <p>Avoid String, Number, and Boolean objects. They complicate your code and slow down execution speed.</p>
+            </div>
+            <div class="col-6">
+                <pre class="example"><span class="code-js">var x = new String(); <span class="code-comment">// Declares x as a String object</span>
+var y = new Number(); <span class="code-comment">// Declares y as a Number object</span>
+var z = new Boolean(); <span class="code-comment">// Declares z as a Boolean object</span></span></pre>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <p>Objects in JavaScript can be converted to primitives in three contexts:</p>
+                <ul>
+                    <li>Numeric</li>
+                    <li>String</li>
+                    <li>Boolean</li>
+                </ul>
+                <p><a href="http://javascript.info/tutorial/object-conversion">Object conversion</a></p>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+    <section class="container">
+        <h1>Comparing Objects to each other using ===</h1>
+        <div class="row">
+
+            <div class="col-6">
+                <p>Comparing two objects with === does not work. This is because even if the Objects have the exact same properties and values, they are stored in memory in different locations.</p>
+                <p>What makes them equal is if they are the same object stored in memory.</p>
+                <p>For example, this will never work.</p>
+            </div>
+
+            <div class="col-6">
+                <pre class="example"><span class="code-js">console.log( {} === {})</span></pre></div>
+        </div>
+
+        <div class="row">
+
+            <div class="col-6">
+                <p>This will work since they are referecing the same Object in memory.</p>
+            </div>
+
+            <div class="col-6">
+                <pre class="example"><span class="code-js">let someObject = {}let otherObject = someObject
+console.log(someObject === otherObject)
+</span></pre></div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <section class="container">
+      <h1>Enhanced Object literals (ES6) </h1>
+      <p>ES6 introduced 3 new ways to simplify the creation of Object literals.</p>
+
+
+      <h2>Old way of adding an Object into another Object</h2>
+      <div class="row">
+
+          <div class="col-5">
+              <p>The old way is to create a new property in the Object and assign the variable name of the 2nd Object.</p>
+          </div>
+
+          <div class="col-7">
+<pre class="example"><span class="code-js">const openingHours = {
+  [weekdays[3]]: {
+    open: 12,
+    close: 22,
+  },
+  [weekdays[4]]: {
+    open: 11,
+    close: 23,
+  },
+  [weekdays[5]]: {
+    open: 0, // Open 24 hours
+    close: 24,
+  },
+};
+
+const restaurant = {
+  name: 'Classico Italiano',
+  location: 'Via Angelo Tavanti 23, Firenze, Italy',
+  categories: ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'],
+  starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
+  mainMenu: ['Pizza', 'Pasta', 'Risotto'],
+  <span class="code-highlight">openingHours: openingHours,</span>
+}</span></pre></div>
+      </div>
+
+
+
+
+
+
+
+
+
+      
+      <h2>New way in ES6 to call another Object</h2>
+      <div class="row">
+
+          <div class="col-5">
+              <p>Just add the variable name of the 2nd Object in to the 1st Object.</p>
+          </div>
+
+          <div class="col-7">
+<pre class="example"><span class="code-js">const openingHours = {
+  [weekdays[3]]: {
+    open: 12,
+    close: 22,
+  },
+  [weekdays[4]]: {
+    open: 11,
+    close: 23,
+  },
+  [weekdays[5]]: {
+    open: 0, // Open 24 hours
+    close: 24,
+  },
+};
+
+const restaurant = {
+  name: 'Classico Italiano',
+  location: 'Via Angelo Tavanti 23, Firenze, Italy',
+  categories: ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'],
+  starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
+  mainMenu: ['Pizza', 'Pasta', 'Risotto'],
+  <span class="code-highlight">openingHours,</span>
+}</span></pre></div>
+      </div>
+
+
+
+
+
+
+
+
+
+       
+      <h2>New way in ES6 to write a method</h2>
+      <div class="row">
+
+          <div class="col-5">
+              <p>In ES6, you do not have to set a property and write a function expression.</p>
+              <p>You can remove the the :function part now to simplify the code.</p>
+          </div>
+
+          <div class="col-7">
+<pre class="example"><span class="code-js"><span class="code-comment">// old way</span>
+order: function (starterIndex, mainIndex) {
+  return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
+},
+
+<span class="code-comment">// ES6 syntax</span>
+order(starterIndex, mainIndex) {
+  return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
+},</span></pre></div>
+      </div>
+
+
+
+
+
+
+      <h2>You can compute property names instead of writing them out manually and literally.</h2>
+      <div class="row">
+
+          <div class="col-5">
+              <p>This shows the old and ES6 way to extract property names from an Array.</p>
+              <p>The old way, you have to manually type out the property names.</p>
+              <p>The ES6 way, you can call the index of the Array, or even compute the property name to something else.</p>
+          </div>
+
+          <div class="col-7">
+<pre class="example"><span class="code-js"><span class="code-comment">// old way</span>
+  const weekdays = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
+
+  const openingHours = {
+    thu: {
+      open: 12,
+      close: 22,
+    },
+    fri: {
+      open: 11,
+      close: 23,
+    },
+    sat: {
+      open: 0, // Open 24 hours
+      close: 24,
+    },
+  }; 
+  
+<span class="code-comment">// ES6 syntax</span>
+const weekdays = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
+
+const openingHours = {
+  [weekdays[3]]: {
+    open: 12,
+    close: 22,
+  },
+  [weekdays[4]]: {
+    open: 11,
+    close: 23,
+  },
+  [`day-${2+4}`]: {
+    open: 0, // Open 24 hours
+    close: 24,
+  },
+};</span></pre></div>
+      </div>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      <h1>Optional Chaining</h1>
+<p>If a certain property does not exist, undefined is immediately returned.</p>
+
+      
+      <h2>Example</h2>
+      <div class="row">
+
+          <div class="col-5">
+              <p>The Optional Chaining value is a question mark followed by a period.</p>
+              <p>?.</p>
+              <p>If the property before the ? exists, the next property will be read. If it doesn't exist, undefined is returned.</p>
+              <p>For example</p>
+          </div>
+
+          <div class="col-7">
+<pre class="example"><span class="code-js"><span class="code-comment">// old way to check if property exists</span>
+  
+  if (restaurant.openingHours && restaurant.openingHours.mon)
+console.log(restaurant.openingHours.mon.open)
+
+
+<span class="code-comment">// Optional Chaining</span> 
+console.log(restaurant.openingHours.mon?.open)</span></pre></div>
+      </div>
+
+
+
+
+
+
+
+
+
+
+      <h2>Multiple Optional Chaining</h2>
+      <div class="row">
+
+          <div class="col-5">
+              <p>This first checks if openingHours exists. If so, the new property .mon is checked. If that exists, the next is checked.</p>
+          </div>
+
+          <div class="col-7">
+<pre class="example"><span class="code-js">console.log(restaurant.openingHours?.mon?.open)
+</span></pre></div>
+      </div>
+
+
+
+
+      
+      <h2>Looping through Array while Chaining</h2>
+      <div class="row">
+
+          <div class="col-5">
+              <p>This checks what days a restaurant is open.</p>
+              <p>It firsts loops through the 'days' Array to retrieve the day name.</p>
+              <p>The variable 'open' is created to check if restaurant.openingHours[].open exists for the specific day during the iteration of the loop. This is fromthe imported Object 'openingHours'.</p>
+              <p>If the .open property exists on the day being iterated, the hours are printed. The nullish operator is used for the value of zero.</p>
+              <p>If the .open property does not exists, the default value of 'closed' is printed.</p>
+          </div>
+
+          <div class="col-7">
+<pre class="example"><span class="code-js">const weekdays = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
+
+const openingHours = {
+  [weekdays[3]]: {
+    open: 12,
+    close: 22,
+  },
+  [weekdays[4]]: {
+    open: 11,
+    close: 23,
+  },
+  [weekdays[5]]: {
+    open: 0, // Open 24 hours
+    close: 24,
+  },
+};
+
+const restaurant = {
+  openingHours,
+};
+
+
+const days = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
+
+<span class="code-comment">// Loops through days Array</span>
+for (const day of days) {
+  <span class="code-comment">// check specific index to see if openingHours.open exists
+// nullish operator ?? is needed for the value of zero</span>
+const open = restaurant.openingHours[day]?.open ?? 'closed';
+console.log(`On ${day}, we open at ${open}`);
+}</span></pre></div>
+      </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+      <h2>Optional Chaining with Methods</h2>
+      <div class="row">
+
+          <div class="col-5">
+              <p>Checks if a method exists before you call it.</p>
+              <p>If so it's called.</p>
+              <p>If not, the default value is printed.</p>
+          </div>
+
+          <div class="col-7">
+<pre class="example"><span class="code-js">
+  const restaurant = {
+    name: 'Classico Italiano',
+    location: 'Via Angelo Tavanti 23, Firenze, Italy',
+    categories: ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'],
+    starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
+    mainMenu: ['Pizza', 'Pasta', 'Risotto'],
+  
+    // ES6 enhanced object literals
+    openingHours,
+  
+    order(starterIndex, mainIndex) {
+      return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
+    },
+}
+
+<span class="code-highlight">console.log(restaurant.order?.(0,1) ?? "Method Does NOT Exist")</span></span></pre></div>
+      </div>
+
+
+
+
+
+
+
+
+
+
+      
+        
+      <h2>Optional Chaining with Arrays</h2>
+      <div class="row">
+
+          <div class="col-5">
+              <p>Checks if a Array is empty</p>
+              <p>If not, the .name value is printed.</p>
+          </div>
+
+          <div class="col-7">
+<pre class="example"><span class="code-js">const users = [{name: 'MyName', email: 'hello@example.com'}];
+console.log(users[0]?.name ?? 'User Array empty')  </span></pre></div>
+      </div>
+
+
+
+
+
+
+
+  </section>
+
+  <script>
+    'use strict'
+
+ 
+
+    const weekdays = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
+
+const openingHours = {
+  [weekdays[3]]: {
+    open: 12,
+    close: 22,
+  },
+  [weekdays[4]]: {
+    open: 11,
+    close: 23,
+  },
+  [weekdays[5]]: {
+    open: 0, // Open 24 hours
+    close: 24,
+  },
+};
+
+const restaurant = {
+  name: 'Classico Italiano',
+  location: 'Via Angelo Tavanti 23, Firenze, Italy',
+  categories: ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'],
+  starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
+  mainMenu: ['Pizza', 'Pasta', 'Risotto'],
+
+  // ES6 enhanced object literals
+  openingHours,
+
+  order(starterIndex, mainIndex) {
+    return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
+  },
+
+  // orderDelivery({ starterIndex = 1, mainIndex = 0, time = '20:00', address }) {
+  //   console.log(
+  //     `Order received! ${this.starterMenu[starterIndex]} and ${this.mainMenu[mainIndex]} will be delivered to ${address} at ${time}`
+  //   );
+  // },
+
+  // orderPasta(ing1, ing2, ing3) {
+  //   console.log(
+  //     `Here is your declicious pasta with ${ing1}, ${ing2} and ${ing3}`
+  //   );
+  // },
+
+  // orderPizza(mainIngredient, ...otherIngredients) {
+  //   console.log(mainIngredient);
+  //   console.log(otherIngredients);
+  // },
+};
+
+
+const days = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
+
+for (const day of days) {
+// check specific index to see if openingHours.open exists
+// nullish operator ?? is needed for the value of zero
+const open = restaurant.openingHours[day]?.open ?? 'closed';
+// console.log(`On ${day}, we open at ${open}`);
+}
+
+
+// console.log(restaurant.order?.(0,1) ?? "Method Does NOT Exist")
+
+
+
+const users = [{name: 'MyName', email: 'hello@example.com'}];
+
+console.log(users[0]?.name ?? 'User Array empty')
+
+
+
+
+</script>
+
+</body>
+
+</html>

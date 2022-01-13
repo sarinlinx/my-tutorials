@@ -1,0 +1,278 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="../../_css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../../_css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <title>Overflow</title>
+</head>
+
+<body>
+    <a href="../../index.html">Home page</a>
+
+
+
+
+    <section class="container">
+        <h2>The Overflow property</h2>
+        <div class="row">
+            <div class="col">
+                <p>The overflow property controls what happens to content that is too big to fit into an area.</p>
+                <p>Possible values are:</p>
+                <ul>
+                    <li><strong>visible</strong> - Default. The overflow is not clipped. It renders outside the element's box</li>
+                    <li><strong>hidden</strong> - The overflow is clipped, and the rest of the content will be invisible</li>
+                    <li><strong>scroll</strong> - The overflow is clipped, but a scrollbar is added to see the rest of the content</li>
+                    <li><strong>auto</strong> - If overflow is clipped, a scrollbar should be added to see the rest of the content</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="alert alert-note">
+            <div class="alert-icon">
+                <img src="../../_img/note-icon.png" width="60" height="60">
+            </div>
+            <div class="alert-content">
+                <p>The overflow property only works for block elements with a specified height.</p>
+                <p>In OS X Lion (on Mac), scrollbars are hidden by default and only shown when being used (even though "overflow:scroll" is set).</p>
+                <p>You can also use white-space or text-wrap to change how text is displayed in the box.</p>
+            </div>
+        </div>
+
+    </section>
+
+
+
+
+
+
+
+    <section class="container">
+        <h3>visible</h3>
+
+        <div class="row">
+            <div class="col-6">
+                <p>visible (default) - nothing is clipped. All text is 'visible'.</p>
+                <p>If the content is larger than the contain, it will flow outside of the container.</p>
+            </div>
+            <div class="col-6">
+                <pre class="example"><span class="code-html">&lt;p&gt;aaaa bbbb cccc dddd eeee ffff gggg hhhh
+iiii jjjjj kkkk llll mmm nnnn ooooo pppp
+qqqq rrrrr ssss tttt uuu vvvv wwwww xxxx
+yyyyy zzzzzzz&lt;/p&gt;</span>
+
+<span class="code-css">p {
+  width: 200px;
+  height: 50px;
+  background-color: #eee;
+  overflow: visible;
+}</span></pre></div>
+        </div>
+
+        <div class="row">
+            <div class="col-6">
+                <p>example</p>
+            </div>
+            <div class="col-6">
+                <p class="overflow-visible">aaaa bbbb cccc dddd eeee ffff gggg hhhh iiii jjjjj kkkk llll mmm nnnn ooooo pppp qqqq rrrrr ssss tttt uuu vvvv wwwww xxxx yyyyy zzzzzzz</p>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <section class="container">
+        <h3>hidden</h3>
+        <div class="row">
+            <div class="col-6">
+                <p>hidden - Any overflowing text is clipped and not visible.</p>
+            </div>
+            <div class="col-6">
+                <pre class="example"><span class="code-html">&lt;p&gt;aaaa bbbb cccc dddd eeee ffff gggg hhhh
+iiii jjjjj kkkk llll mmm nnnn ooooo pppp
+qqqq rrrrr ssss tttt uuu vvvv wwwww xxxx
+yyyyy zzzzzzz&lt;/p&gt;</span>
+
+<span class="code-css">p {
+  width: 200px;
+  height: 50px;
+  background-color: #eee;
+  overflow: hidden;
+}</span></pre></div>
+
+            <div class="col-6">
+                <p>example</p>
+            </div>
+            <div class="col-6">
+
+                <p class="overflow-hidden">aaaa bbbb cccc dddd eeee ffff gggg hhhh iiii jjjjj kkkk llll mmm nnnn ooooo pppp qqqq rrrrr ssss tttt uuu vvvv wwwww xxxx yyyyy zzzzzzz</p>
+
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+    <section class="container">
+        <h3>scroll</h3>
+        <div class="row">
+            <div class="col-6">
+                <p>scroll - Any overflowing text is clipped, but a scrollbar is added to scroll inside the box.</p>
+                <p>Note that <strong>this will add a scrollbar</strong> both horizontally and vertically (even if you do not need it).</p>
+
+            </div>
+            <div class="col-6">
+                <pre class="example"><span class="code-html">&lt;p&gt;aaaa bbbb cccc dddd eeee ffff gggg hhhh
+iiii jjjjj kkkk llll mmm nnnn ooooo pppp
+qqqq rrrrr ssss tttt uuu vvvv wwwww xxxx
+yyyyy zzzzzzz&lt;/p&gt;</span>
+
+<span class="code-css">p {
+  width: 200px;
+  height: 50px;
+  background-color: #eee;
+  overflow: scroll;
+}</span></pre>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6">
+                <p>example</p>
+            </div>
+            <div class="col-6">
+                <div class="overflow-scroll">aaaa bbbb cccc dddd eeee ffff gggg hhhh iiii jjjjj kkkk llll mmm nnnn ooooo pppp qqqq rrrrr ssss tttt uuu vvvv wwwww xxxx yyyyy zzzzzzz</div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+    <section class="container">
+        <h3>auto</h3>
+        <div class="row">
+            <div class="col-6">
+                <p>auto - Similar to scroll, but <strong>the scrollbar is only added when needed</strong>.</p>
+
+            </div>
+            <div class="col-6">
+                <pre class="example"><span class="code-html">&lt;p&gt;aaaa bbbb cccc dddd eeee ffff gggg hhhh
+iiii jjjjj kkkk llll mmm nnnn ooooo pppp
+qqqq rrrrr ssss tttt uuu vvvv wwwww xxxx
+yyyyy zzzzzzz&lt;/p&gt;</span>
+
+<span class="code-css">p {
+  width: 200px;
+  height: 50px;
+  background-color: #eee;
+  overflow: auto;
+}</span></pre></div>
+        </div>
+
+        <div class="row">
+            <div class="col-6">
+                <p>example</p>
+            </div>
+            <div class="col-6">
+                <div class="overflow-auto">aaaa bbbb cccc dddd eeee ffff gggg hhhh iiii jjjjj kkkk llll mmm nnnn ooooo pppp qqqq rrrrr ssss tttt uuu vvvv wwwww xxxx yyyyy zzzzzzz</div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
+    <section class="container">
+        <h3>overflow-x and overflow-y</h3>
+        <div class="row">
+            <div class="col">
+                <p>These properties specify whether to change the overflow of content just horizontally or vertically (or both).</p>
+                <div class="alert alert-note">
+                    <div class="alert-icon">
+                        <img src="../../_img/note-icon.png" width="60" height="60">
+                    </div>
+                    <div class="alert-content">
+                        <p>These are NOT used with the 'overflow' propety (which controls x and y). These are used on their own, or with each other.</p>
+                        <p>You can use visible, hidden, scroll, and auto with these also.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-6">
+                    <p>This uses <strong>white-space: nowrap</strong> so the lines are not broken apart vertically and stacked. This is so you can confirm if the scroll bar appears horizontally.</p>
+                    <p>X is set to scroll while Y is hidden.</p>
+                </div>
+
+                <div class="col-6">
+                    <pre class="example"><span class="code-html">&lt;p&gt;Line 1 Line 1 Line 1 Line 1 Line 1 Line 1 Line 1 Line 1 Line 1
+Line 2 Line 2 Line 2 Line 2 Line 2 Line 2 Line 2 Line 2 Line 2
+Line 3 Line 3  Line 3  Line 3  Line 3  Line 3  Line 3  Line 3  Line 3&lt;/p&gt;</span>
+
+<span class="code-css">p {
+  width: 200px;
+  height: 50px;
+  background-color: #eee;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
+}</span></pre></div>
+
+                <div class="col-6">
+                    <p>example</p>
+                </div>
+                <div class="col-6">
+                    <div class="overflow-xscroll">Line 1 Line 1 Line 1 Line 1 Line 1 Line 1 Line 1 Line 1 Line 1<br> Line 2 Line 2 Line 2 Line 2 Line 2 Line 2 Line 2 Line 2 Line 2<br> Line 3 Line 3 Line 3 Line 3 Line 3 Line 3 Line 3 Line 3 Line 3 </div>
+                </div>
+            </div>
+    </section>
+
+
+
+
+
+
+
+
+
+
+    <script src="../../_js/jquery.js"></script>
+    <script src="../../_js/bootstrap.bundle.js"></script>
+</body>
+
+</html>

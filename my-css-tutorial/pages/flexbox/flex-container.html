@@ -1,0 +1,802 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="../../_css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../../_css/style.css">
+
+    <title>Flexbox container</title>
+
+</head>
+
+<body>
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="../../index.html">Home</a></li>
+            <li class="breadcrumb-item"><a href="../../flexbox.html">Flexbox overview</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Flexbox container</li>
+        </ol>
+    </nav>
+
+
+
+    <section class="container">
+
+
+
+
+        <h1>The flex container</h1>
+
+        <h2>display: flex;</h2>
+        <div class="row">
+            <div class="col">
+                <p>To use flexbox, you must set the container's display property to flex.</p>
+                <pre class="example"><span class="code-css">.container {
+  display: flex;
+}
+
+<span class="code-html">&lt;div class="container"&gt;
+  &lt;div class="item"&gt;1&lt;/div&gt;
+  &lt;div class="item"&gt;2&lt;/div&gt;
+  &lt;div class="item"&gt;3&lt;/div&gt;
+  &lt;div class="item"&gt;4&lt;/div&gt;
+  &lt;div class="item"&gt;5&lt;/div&gt;
+&lt;/div&gt;</span></pre>
+                <p>Example</p>
+                <ul>
+                    <li><a href="flex-example-01.html" target="_blank">Example</a></li>
+                </ul>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+        <h1>flex-direction</h1>
+        <div class="row">
+            <div class="col">
+                <p>flex-direction changes which way the axis points.</p>
+                <p>The default is <strong>row</strong> which is left to right.</p>
+            </div>
+        </div>
+
+
+
+        <h3>row-reverse</h3>
+        <div class="row">
+            <div class="col-5">
+                <p>To reverse the direction, use <strong>row-reverse</strong></p>
+                <p>Example</p>
+                <ul>
+                    <li><a href="flex-example-02.html" target="_blank">Example</a></li>
+                </ul>
+            </div>
+
+
+            <div class="col-7">
+                <pre class="example"><span class="code-css">.container {
+  background-color: #ccc;
+  padding: 10px;
+  display: flex;
+  <span class="code-highlight">flex-direction: row-reverse;</span>
+}
+
+.item {
+  background-color: #f1425d;
+  padding: 40px;
+  margin: 30px;
+  color: #fff;
+  font-size: 40px;
+}</pre>
+            </div>
+
+        </div>
+
+
+
+        <h3>column</h3>
+        <div class="row">
+            <div class="col-5">
+                <p>Use 'column' to stack vertically</p>
+                <p>Example</p>
+                <ul>
+                    <li><a href="flex-example-03.html" target="_blank">Example</a></li>
+                </ul>
+            </div>
+
+
+            <div class="col-7">
+                <pre class="example"><span class="code-css">.container {
+  background-color: #ccc;
+  padding: 10px;
+  display: flex;
+  <span class="code-highlight">flex-direction: column;</span>
+}
+
+.item {
+  background-color: #f1425d;
+  padding: 40px;
+  margin: 30px;
+  color: #fff;
+  font-size: 40px;
+}</pre>
+            </div>
+        </div>
+
+
+        <h3>column-reverse</h3>
+        <div class="row">
+            <div class="col-5">
+                <p>Use 'column-reverse' to stack vertically and change the direction.</p>
+                <p>Example</p>
+                <ul>
+                    <li><a href="flex-example-04.html" target="_blank">Example</a></li>
+                </ul>
+            </div>
+
+
+            <div class="col-7">
+                <pre class="example"><span class="code-css">.container {
+  background-color: #ccc;
+  padding: 10px;
+  display: flex;
+  <span class="code-highlight">flex-direction: column-reverse;</span>
+}
+
+.item {
+  background-color: #f1425d;
+  padding: 40px;
+  margin: 30px;
+  color: #fff;
+  font-size: 40px;
+}</pre>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <h1>justify-content</h1>
+        <div class="row">
+            <div class="col">
+                <p>Position the items within the container.</p>
+            </div>
+        </div>
+
+
+
+        <h3>center</h3>
+        <div class="row">
+            <div class="col-5">
+                <p>This center the items within the container.</p>
+                <p>Example</p>
+                <ul>
+                    <li><a href="flex-example-05.html" target="_blank">Example</a></li>
+                </ul>
+            </div>
+
+
+            <div class="col-7">
+                <pre class="example"><span class="code-css">.container {
+  background-color: #ccc;
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  <span class="code-highlight">justify-content: center;</span>
+}
+
+.item {
+  background-color: #f1425d;
+  padding: 40px;
+  margin: 30px;
+  color: #fff;
+  font-size: 40px;
+}</pre>
+            </div>
+
+        </div>
+
+
+
+
+
+
+
+
+        <h3>space-between</h3>
+        <div class="row">
+            <div class="col-5">
+                <p>evenly distributes space between the flex items.</p>
+                <p>Example</p>
+                <ul>
+                    <li><a href="flex-example-06.html" target="_blank">Example</a></li>
+                </ul>
+            </div>
+
+
+            <div class="col-7">
+                <pre class="example"><span class="code-css">.container {
+  background-color: #ccc;
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  <span class="code-highlight">justify-content: space-between;</span>
+}
+
+.item {
+  background-color: #f1425d;
+  padding: 40px;
+  margin: 30px;
+  color: #fff;
+  font-size: 40px;
+}</pre>
+            </div>
+
+        </div>
+
+
+
+        <h3>space-around</h3>
+        <div class="row">
+            <div class="col-5">
+                <p>Puts the same amount of space on both the left and right side of the items.</p>
+                <p>Note that the left and right items will only have one amount of the space, but the space between items has 2 amounts.</p>
+                <img src="../../_img/flexbox/flexbox-justify-content-space-between.png" width="500px">
+                <p>Example</p>
+                <ul>
+                    <li><a href="flex-example-07.html" target="_blank">Example</a></li>
+                </ul>
+            </div>
+
+
+            <div class="col-7">
+                <pre class="example"><span class="code-css">.container {
+  background-color: #ccc;
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  <span class="code-highlight">justify-content: space-around;</span>
+}
+
+.item {
+  background-color: #f1425d;
+  padding: 40px;
+  margin: 30px;
+  color: #fff;
+  font-size: 40px;
+}</pre>
+            </div>
+
+        </div>
+
+
+
+
+
+
+
+
+
+        <h3>space-evenly</h3>
+        <div class="row">
+            <div class="col-5">
+                <p>Similar to space-around, but the items all have the same amount of space on all sides.</p>
+
+                <img src="../../_img/flexbox/flexbox-justify-content-space-around.png" width="500px">
+                <p>Example</p>
+                <ul>
+                    <li><a href="flex-example-08.html" target="_blank">Example</a></li>
+                </ul>
+            </div>
+
+
+            <div class="col-7">
+                <pre class="example"><span class="code-css">.container {
+  background-color: #ccc;
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  <span class="code-highlight">justify-content: space-evenly;</span>
+}
+
+.item {
+  background-color: #f1425d;
+  padding: 40px;
+  margin: 30px;
+  color: #fff;
+  font-size: 40px;
+}</pre>
+            </div>
+
+        </div>
+
+
+
+
+
+
+
+        <h3>flex-start and flex-end</h3>
+        <div class="row">
+            <div class="col-5">
+                <p>flex-start positions the elements to the starting position of the container (default is left).</p>
+                <p>flex-end positions the elements to the end position of the container (default is right).</p>
+                <p>Example</p>
+                <ul>
+                    <li><a href="flex-example-09.html" target="_blank">Example</a></li>
+                </ul>
+            </div>
+
+
+            <div class="col-7">
+                <pre class="example"><span class="code-css">.container {
+  background-color: #ccc;
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  <span class="code-highlight">justify-content: flex-start;</span>
+  <span class="code-comment">justify-content: flex-end;</span>
+}
+
+.item {
+  background-color: #f1425d;
+  padding: 40px;
+  margin: 30px;
+  color: #fff;
+  font-size: 40px;
+}</pre>
+            </div>
+
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <h1>align-items</h1>
+        <div class="row">
+            <div class="col">
+                <p>align-items positions the items along the CROSS AXIS.</p>
+            </div>
+        </div>
+
+
+
+        <h3>stretch</h3>
+        <div class="row">
+            <div class="col-5">
+                <p>The initial value is stretch.</p>
+                <p>If a single item has a larger height than others, the rest will STRETCH to the same height.</p>
+                <p>Example</p>
+                <ul>
+                    <li><a href="flex-example-10.html" target="_blank">Example</a></li>
+                </ul>
+            </div>
+
+
+            <div class="col-7">
+                <pre class="example"><span class="code-css">.container {
+  background-color: #ccc;
+  padding: 10px;
+  display: flex;
+  flex-direction: center;
+  justify-content: center;
+  <span class="code-highlight">align-items: stretch;</span>
+}
+
+<span class="code-highlight">.i2 {
+  height: 200px;
+}</span>
+
+.item {
+  background-color: #f1425d;
+  padding: 40px;
+  margin: 30px;
+  color: #fff;
+  font-size: 40px;
+}
+
+<span class="code-html">&lt;div class="container"&gt;
+  &lt;div class="item"&gt;1&lt;/div&gt;
+  &lt;div class="item <span class="code-highlight">i2</span>"&gt;2&lt;/div&gt;
+  &lt;div class="item"&gt;3&lt;/div&gt;
+  &lt;div class="item"&gt;4&lt;/div&gt;
+  &lt;div class="item"&gt;5&lt;/div&gt;
+&lt;/div&gt;</span></pre>
+            </div>
+
+        </div>
+
+
+
+
+
+
+
+
+        <h3>center</h3>
+        <div class="row">
+            <div class="col-5">
+                <p>Centers all items vertically.</p>
+                <p>If a single item has a larger height than others, the vertically center position is used for all.</p>
+                <p>Example</p>
+                <ul>
+                    <li><a href="flex-example-11.html" target="_blank">Example</a></li>
+                </ul>
+            </div>
+
+
+            <div class="col-7">
+                <pre class="example"><span class="code-css">.container {
+  background-color: #ccc;
+  padding: 10px;
+  display: flex;
+  flex-direction: center;
+  justify-content: center;
+  <span class="code-highlight">align-items: center;</span>
+}
+
+<span class="code-highlight">.i2 {
+  height: 200px;
+}</span>
+
+.item {
+  background-color: #f1425d;
+  padding: 40px;
+  margin: 30px;
+  color: #fff;
+  font-size: 40px;
+}
+
+<span class="code-html">&lt;div class="container"&gt;
+  &lt;div class="item"&gt;1&lt;/div&gt;
+  &lt;div class="item <span class="code-highlight">i2</span>"&gt;2&lt;/div&gt;
+  &lt;div class="item"&gt;3&lt;/div&gt;
+  &lt;div class="item"&gt;4&lt;/div&gt;
+  &lt;div class="item"&gt;5&lt;/div&gt;
+&lt;/div&gt;</span></pre>
+            </div>
+
+        </div>
+
+
+
+
+
+
+        <h3>flex-start and flex-end</h3>
+        <div class="row">
+            <div class="col-5">
+                <p>Positions vertically starting at the top or bottom.</p>
+                <p>Example</p>
+                <ul>
+                    <li><a href="flex-example-12.html" target="_blank">Example</a></li>
+                </ul>
+            </div>
+
+
+            <div class="col-7">
+                <pre class="example"><span class="code-css">.container {
+  background-color: #ccc;
+  padding: 10px;
+  display: flex;
+  flex-direction: center;
+  justify-content: center;
+  <span class="code-highlight">align-items: flex-start;</span>
+  <span class="code-comment">align-items: flex-end;</span>
+}
+
+<span class="code-highlight">.i2 {
+  height: 200px;
+}</span>
+
+.item {
+  background-color: #f1425d;
+  padding: 40px;
+  margin: 30px;
+  color: #fff;
+  font-size: 40px;
+}
+</pre>
+            </div>
+
+        </div>
+
+
+
+
+
+
+
+
+
+
+        <h3>baseline</h3>
+        <div class="row">
+            <div class="col-5">
+                <p>baseline positions based on the TEXT size.</p>
+                <p>So if one item has a larger text size, the horizontal baseline of all text items is what is used.</p>
+                <img src="../../_img/flexbox/flex-baseline.png" width="500px">
+                <p>Example</p>
+                <ul>
+                    <li><a href="flex-example-13.html" target="_blank">Example</a></li>
+                </ul>
+            </div>
+
+
+            <div class="col-7">
+                <pre class="example"><span class="code-css">.container {
+  background-color: #ccc;
+  padding: 10px;
+  display: flex;
+  flex-direction: center;
+  justify-content: center;
+  <span class="code-highlight">align-items: baseline;</span>
+}
+
+.i2 {
+    height: 200px;
+}
+
+<span class="code-highlight">.i4 {
+    font-size: 90px;
+}</span>
+
+.item {
+    background-color: #f1425d;
+    padding: 40px;
+    margin: 30px;
+    color: #fff;
+    font-size: 40px;
+}
+
+<span class="code-html">&lt;div class="container"&gt;
+  &lt;div class="item"&gt;1&lt;/div&gt;
+  &lt;div class="item <span class="code-highlight">i2</span>"&gt;2&lt;/div&gt;
+  &lt;div class="item"&gt;3&lt;/div&gt;
+  &lt;div class="item i4"&gt;4&lt;/div&gt;
+  &lt;div class="item"&gt;5&lt;/div&gt;
+&lt;/div&gt;</span>
+</pre>
+            </div>
+
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <h2>flex-wrap</h2>
+        <div class="row">
+            <div class="col-5">
+                <p>If there are too many items in a container, they will start to overflow outside of it.</p>
+                <p>flex-wrap takes care of this:</p>
+                <p>flex-wrap: wrap; creates a new line for the items that can't fit the container.</p>
+                <p>Example</p>
+                <ul>
+                    <li><a href="flex-example-21.html" target="_blank">Example</a></li>
+                </ul>
+            </div>
+
+
+            <div class="col-7">
+                <pre class="example"><span class="code-css">.container {
+  background-color: #ccc;
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  <span class="code-highlight">flex-wrap: wrap;</span>
+}
+
+.item {
+  background-color: #f1425d;
+  padding: 40px;
+  margin: 30px;
+  color: #fff;
+  font-size: 40px;
+}
+
+.i2 {
+  height: 200px;
+  flex-grow: 0;
+  flex-basis: 300px;
+  flex-shrink: 0;
+}
+
+.i4 {
+  order: -1;
+}</span>
+
+
+
+<span class="code-html">&lt;div class="container"&gt;
+  &lt;div class="item"&gt;1&lt;/div&gt;
+  &lt;div class="item i2"&gt;2&lt;/div&gt;
+  &lt;div class="item"&gt;3&lt;/div&gt;
+  &lt;div class="item i4"&gt;4&lt;/div&gt;
+  &lt;div class="item"&gt;5&lt;/div&gt;
+  &lt;div class="item"&gt;6&lt;/div&gt;
+  &lt;div class="item"&gt;7&lt;/div&gt;
+  &lt;div class="item"&gt;8&lt;/div&gt;
+  &lt;div class="item"&gt;9&lt;/div&gt;
+  &lt;div class="item"&gt;10&lt;/div&gt;
+&lt;/div&gt;</span>
+</pre>
+            </div>
+
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <h2>align-content</h2>
+        <div class="row">
+            <div class="col-5">
+                <p>Aligns rows along the CROSS AXIS..</p>
+                <p>Since the height of the container is 1000px, all items are in the center.</p>
+                <p>align-content: flex-start; pushes them to the top.</p>
+                <p>The stretch option just stretches the rows which aren't visible, so it's more similar to space-between.</p>
+                <p>Example</p>
+                <ul>
+                    <li><a href="flex-example-22.html" target="_blank">Example</a></li>
+                </ul>
+            </div>
+
+
+            <div class="col-7">
+                <pre class="example"><span class="code-css">.container {
+  background-color: #ccc;
+  padding: 10px;
+  height: 1000px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  <span class="code-highlight">align-content: flex-start;</span>
+}
+
+.item {
+  background-color: #f1425d;
+  padding: 40px;
+  margin: 30px;
+  color: #fff;
+  font-size: 40px;
+}
+
+.i2 {
+  height: 200px;
+  flex-grow: 0;
+  flex-basis: 300px;
+  flex-shrink: 0;
+}
+
+.i4 {
+  order: -1;
+}</span>
+
+
+
+<span class="code-html">&lt;div class="container"&gt;
+  &lt;div class="item"&gt;1&lt;/div&gt;
+  &lt;div class="item i2"&gt;2&lt;/div&gt;
+  &lt;div class="item"&gt;3&lt;/div&gt;
+  &lt;div class="item i4"&gt;4&lt;/div&gt;
+  &lt;div class="item"&gt;5&lt;/div&gt;
+  &lt;div class="item"&gt;6&lt;/div&gt;
+  &lt;div class="item"&gt;7&lt;/div&gt;
+  &lt;div class="item"&gt;8&lt;/div&gt;
+  &lt;div class="item"&gt;9&lt;/div&gt;
+  &lt;div class="item"&gt;10&lt;/div&gt;
+&lt;/div&gt;</span>
+</pre>
+            </div>
+
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+    <script src="../../_js/jquery.js"></script>
+    <script src="../../_js/bootstrap.bundle.js"></script>
+</body>
+
+</html>

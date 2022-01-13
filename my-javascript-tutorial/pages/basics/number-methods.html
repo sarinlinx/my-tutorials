@@ -1,0 +1,369 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="../../_css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../../_css/style.css">
+
+    <title>Number Methods</title>
+</head>
+
+<body>
+    <a href="../../index.html">Home page</a>
+
+
+
+
+
+    <section class="container">
+        <h1>Overview</h1>
+        <div class="row">
+            <div class="col">
+                <p>With JavaScript, methods and properties are available to primitive values, because JavaScript treats primitive values as objects when executing methods and properties.</p>
+                <p>Primitive number values would be: 3.14 or 2014.</p>
+            </div>
+        </div>
+
+        <h2>toString()</h2>
+        <div class="row">
+            <div class="col-6">
+                <p>toString() returns a number as a string.</p>
+                <p><span class="red">Why does the typeof return 'number'?</span></p>
+            </div>
+
+            <div class="col-6">
+                <pre class="example"><span class="code-js">var x = 123;
+x.toString();
+console.log(typeof x);</span></pre>
+            </div>
+        </div>
+
+        <h2>valueOf()</h2>
+        <div class="row">
+            <div class="col">
+
+                <p>The valueOf() method is used internally in JavaScript to convert Number objects to primitive values.</p>
+                <p>There is no reason to use it in your code.</p>
+                <p>All JavaScript data types have a valueOf() and a toString() method.</p>
+            </div>
+
+        </div>
+
+
+        <h2>toFixed()</h2>
+        <div class="row">
+            <div class="col-6">
+                <p>toFixed() returns a string, with the number written with a specified number of decimals</p>
+                <p>This returns:
+                    <ul>
+                        <li>10</li>
+                        <li>9.66</li>
+                        <li>6.6560</li>
+                    </ul>
+            </div>
+
+            <div class="col-6">
+                <pre class="example"><span class="code-js">var x = 9.656;
+x.toFixed(0);
+x.toFixed(2);
+x.toFixed(4);</span></pre>
+            </div>
+        </div>
+
+
+
+        <h2>toPrecision()</h2>
+        <div class="row">
+            <div class="col-6">
+                <p>toPrecision() returns a string, with a number written with a specified length:</p>
+                <p>This returns:
+                    <ul>
+                        <li>9.656</li>
+                        <li>9.7</li>
+                        <li>9.656</li>
+                        <li>9.65600</li>
+                    </ul>
+            </div>
+
+            <div class="col-6">
+                <pre class="example"><span class="code-js">var x = 9.656;
+x.toPrecision();
+x.toPrecision(2);
+x.toPrecision(4);
+x.toPrecision(6); </span></pre>
+            </div>
+        </div>
+
+
+        <h1>Math methods</h1>
+        <h2>round()</h2>
+        <div class="row">
+            <div class="col-6">
+                <p>round() rounds off the value.</p>
+                <p>This returns:
+                    <ul>
+                        <li>104</li>
+
+                    </ul>
+            </div>
+
+            <div class="col-6">
+                <pre class="example"><span class="code-js">let num = 103.941
+console.log(Math.round(num))</span></pre>
+            </div>
+        </div>
+
+
+
+
+        <h2>ceil()</h2>
+        <div class="row">
+            <div class="col-6">
+                <p>ceil() is ceiling method. It rounds UP to the nearest integer.</p>
+                <p>So even though the decimal is .2, this rounds UP to 104.</p>
+
+
+            </div>
+
+
+            <div class="col-6">
+                <pre class="example"><span class="code-js">let num = 103.2
+console.log(Math.ceil(num))</span></pre>
+            </div>
+        </div>
+
+
+
+        <h2>floor()</h2>
+        <div class="row">
+            <div class="col-6">
+                <p>rounds down to the nearest integer.</p>
+                <p>So even though the decimal is .8, this rounds DOWN to 103.</p>
+
+
+            </div>
+
+            <div class="col-6">
+                <pre class="example"><span class="code-js">let num = 103.8
+console.log(Math.floor(num))</span></pre>
+            </div>
+        </div>
+
+
+
+
+
+
+        <h1>Math.min() and Math.max()</h1>
+        <div class="row">
+            <div class="col">
+                <p>Math.min() and Math.max() can be used to find the lowest or highest value in a list of arguments</p>
+            </div>
+        </div>
+        <h4>Find lowest number in a list</h4>
+        <div class="row">
+            <div class="col-6">
+                <p>Math.min() returns the lowest value in a list of arguments:</p>
+                <p>This returns -200.</p>
+            </div>
+            <div class="col-6">
+                <pre class="example"><span class="code-js">let minValue = Math.min(0, 150, 30, 20, -8, -200)
+console.log(minValue)</span></pre>
+            </div>
+        </div>
+        <h4>Find largest number in a list</h4>
+        <div class="row">
+            <div class="col-6">
+                <p>Math.mzx() returns the lowest value in a list of arguments:</p>
+                <p>This returns 150.</p>
+            </div>
+            <div class="col-6">
+                <pre class="example"><span class="code-js">let maxValue = Math.max(0, 150, 30, 20, -8, -200)
+console.log(maxValue)</span></pre>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+        <h1>random()</h1>
+        <div class="row">
+            <div class="col-6">
+                <p>This generates a value between 0 and under 1 (.99999), which you can then scale to your desired range.</p>
+                <p>This returns a number such as: 0.08616273575050071</p>
+            </div>
+            <div class="col-6">
+                <pre class="example"><span class="code-js">let randomNum = Math.random()
+console.log(randomNum)</span></pre>
+            </div>
+        </div>
+
+
+        <h2>Generate random number between 0 and 10</h2>
+        <div class="row">
+            <div class="col-6">
+                <p>If you mutiply Math.random() by 10, the highest value will be 9.9999.</p>
+                <p>To obtain the value 10, multipley by 11 instead. Now the top value could be 10.9999.</p>
+                <p>Finally, use Math.floor() to round that down to 10.</p>
+            </div>
+
+            <div class="col-6">
+                <pre class="example"><span class="code-js">let randValue = Math.floor(Math.random() * 11);
+console.log(randValue)</span></pre>
+            </div>
+        </div>
+
+
+
+        <h2>Generate random number between two specific values</h2>
+        <div class="row">
+            <div class="col-6">
+                <p>This generates a value between 10 and 20.</p>
+                <p>You need to use a simple formula of (max - min +1) to ge a base over the min value.</p>
+                <p>You can then use Math.floor() to round down to the nearest integer to set the base value.</p>
+            </div>
+
+            <div class="col-6">
+                <pre class="example"><span class="code-js">let min = 10
+let max = 20
+<span class="code-comment">//random() creates a value between 0 and 1
+//To get whole numbers between 10 and 20 use this formula: * (max-min)
+//The max is now 9.99999 because .9999 * 10. But you only want values from 10 - 20
+//So, add +1 to make the base value over 10, now the base value can be 10.999
+//Finally, use Math.floor to round down to the nearest integer. This makes the random base value 10</span>
+let randomNum = Math.floor(Math.random() * (max - min + 1)) + min
+console.log(randomNum)</span></pre>
+            </div>
+        </div>
+
+        <h3>Another way to write this</h3>
+        <div class="row">
+            <div class="col-6">
+                <p>This generates a value between 15 and 27.</p>
+            </div>
+
+            <div class="col-6">
+                <pre class="example"><span class="code-js">function getRndInteger(min, max) {
+  return Math.floor(Math.random() * (max - min + 1) ) + min;
+}
+
+let randomValue = getRndInteger(15,27)
+console.log(randomValue)</span></pre>
+            </div>
+        </div>
+
+
+
+        <h2>Create random function that takes a param, then checks if it equals the random number</h2>
+        <div class="row">
+            <div class="col-6">
+                <p>This returns true if your guess is equal to the random value. Othwise false.</p>
+
+            </div>
+
+            <div class="col-6">
+                <pre class="example"><span class="code-js">let min = 10
+  let max = 20
+  let makeGuess = function (guess) {
+  let min = 1
+  let max = 5
+  let randomNum = Math.floor(Math.random() * (max - min + 1)) + min
+
+    return guess === randomNum
+}
+
+console.log(makeGuess(1))</span></pre>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+        <h1>Converting Variables to Numbers</h1>
+        <div class="row">
+            <div class="col-6">
+                <p><span class="red">SKIPPED</span></p>
+                <p><a href="https://www.w3schools.com/js/js_number_methods.asp">js_number_methods.asp</a></p>
+            </div>
+
+            <div class="col-6">
+                <pre class="example"><span class="code-js">lkj</span></pre>
+            </div>
+        </div>
+
+
+
+
+
+        <h1>Number Properties</h1>
+
+
+        <h2>MAX_VALUE</h2>
+        <div class="row">
+            <div class="col-6">
+                <p>Returns the largest number possible in JavaScript</p>
+                <p>This returns: 1.7976931348623157e+308</p>
+            </div>
+
+            <div class="col-6">
+                <pre class="example"><span class="code-js">var x = Number.MAX_VALUE;</span></pre>
+            </div>
+        </div>
+
+        <h2>MIN_VALUE</h2>
+        <div class="row">
+            <div class="col-6">
+                <p>Returns the smallest number possible in JavaScript</p>
+                <p>This returns: 5e-324</p>
+            </div>
+            <div class="col-6">
+                <pre class="example"><span class="code-js">var x = Number.MIN_VALUE;</span></pre>
+            </div>
+        </div>
+
+
+        <h2>POSITIVE or NEGATIVE_INFINITY</h2>
+        <div class="row">
+            <div class="col-6">
+                <p>Returns the smallest number possible in JavaScript</p>
+                <p>This returns: Infinity and -Infinity</p>
+            </div>
+            <div class="col-6">
+                <pre class="example"><span class="code-js">var x = Number.POSITIVE_INFINITY;
+var x = Number.NEGATIVE_INFINITY;</span></pre>
+            </div>
+        </div>
+
+
+
+
+
+
+    </section>
+
+
+
+
+
+    <script src="../../_js/jquery.js "></script>
+    <script src="../../_js/bootstrap.bundle.js "></script>
+</body>
+
+</html>

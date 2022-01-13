@@ -1,0 +1,647 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="../../_css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../../_css/style.css">
+    <script src="../../_js/jquery-3.4.1.min.js"></script>
+    <title>jQuery UI</title>
+
+
+    <script src="../../_js/jquery-3.4.1.min.js"></script>
+</head>
+
+<body>
+    <section class="container">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb breadcrumb-container">
+                <li class="breadcrumb-item"><a class="breadcrumb-link" href="../../index.html">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">jQuery UI</li>
+            </ol>
+        </nav>
+
+
+        <h1>Keyup Content Match in form field</h1>
+
+        <div class="row">
+            <div class="col-5">
+                <p>keyup() is used to check the 2nd input field.</p>
+                <p>If something is entered, the function named 'validate' is run</p>
+                <p>The HTML of the page is then updated.</p>
+                <ul>
+                    <li><a href="example-01.html" target="_blank">Example 1</a></li>
+                </ul>
+            </div>
+            <div class="col-7">
+                <pre class="example"><span class="code-html">&lt;div id="output"&gt;Output1 Content&lt;/div&gt;
+<span class="code-comment">&lt;!-- input fields --&gt;</span>
+&lt;input id="pswa" class="matchField" type="text" /&gt;
+&lt;br /&gt;
+&lt;input id="pswb" class="matchField" type="text" /&gt;
+&lt;div id="status"&gt;&lt;/div&gt;</span>
+                               
+<span class="code-js"> $(document).ready(function() {
+  <span class="code-comment">// only checking pswb because it's assumed the first field pswa is already filled in
+  // on keyup is triggered, validate function is run</span>
+  $("#pswb").keyup(validate);
+
+  function validate() {
+    <span class="code-comment">// when function is triggered, the 'status' div changes to 'Working'</span>
+    $("#status").text("Working");
+  }
+})</span></pre>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+        <h2>Add comparison check of 2 fields</h2>
+
+        <div class="row">
+            <div class="col-5">
+                <p>Create vars in the function to obtain the value of each field.</p>
+                <p>Create if else statment to check if they match.</p>
+                <p>CSS is also removed and added using 'removeClass' and 'addClass'.</p>
+                <ul>
+                    <li><a href="example-02.html" target="_blank">Example 2</a></li>
+                </ul>
+            </div>
+            <div class="col-7">
+                <pre class="example"><span class="code-css">.highlight {
+  background-color: red;
+}</span>
+                  
+<span class="code-html">&lt;div id="output"&gt;Output1 Content&lt;/div&gt;
+<span class="code-comment">&lt;!-- input fields --&gt;</span>
+&lt;input id="pswa" class="matchField" type="text" /&gt;
+&lt;br /&gt;
+&lt;input id="pswb" class="matchField" type="text" /&gt;
+&lt;div id="status"&gt;&lt;/div&gt;</span>
+                               
+<span class="code-js"> $(document).ready(function() {
+  <span class="code-comment">// only checking pswb because it's assumed the first field pswa is already filled in
+  // on keyup is triggered, validate function is run</span>
+  $("#pswb").keyup(validate);
+
+  function validate() {
+    <span class="code-comment">// obtain each value of the fields</span>
+    var psw1 = $("#pswa").val();
+    var psw2 = $("#pswb").val();
+
+    <span class="code-comment">// run a comparison of the 2 fields</span>
+    if (psw1 === psw2) {
+      $("#status").text("MATCHED");
+      <span class="code-comment">// remove the 'highlight' class</span>
+      $(".matchField").removeClass("highlight");
+    } else {
+      $("#status").text("NOT MATCH");
+      <span class="code-comment">// add the highlight class</span>
+      $(".matchField").addClass("highlight");
+    }
+  }
+})</span></pre>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+        <h2>Add dropdown and check value</h2>
+
+        <div class="row">
+            <div class="col-5">
+                <p>Same as above, but add .val() to the console.log to specifically view which option was selected.</p>
+                <p>You can also add the value to the HTML output div</p>
+                <ul>
+                    <li><a href="example-03.html" target="_blank">Example 3</a></li>
+                </ul>
+            </div>
+            <div class="col-7">
+                <pre class="example"><span class="code-html">&lt;div id="output"&gt;Select a dropdown option and view the full object in the console.log&lt;/div&gt;
+
+&lt;input id="pswa" class="matchField" type="text" /&gt;
+&lt;br /&gt;
+&lt;input id="pswb" class="matchField" type="text" /&gt;
+&lt;div id="status"&gt;&lt;/div&gt;
+
+&lt;div id="myForm"&gt;
+                  
+&lt;select&gt;
+  &lt;option value="option1" selected="selected"&gt;Option 1&lt;/option&gt;
+  &lt;option value="option2"&gt;Option 2&lt;/option&gt;
+  &lt;option value="option3"&gt;Option 3&lt;/option&gt;
+  &lt;option value="option4"&gt;Option 4&lt;/option&gt;
+&lt;/select&gt;
+&lt;/div&gt;</span>
+
+<span class="code-js">&lt;script&gt;
+$(document).ready(function() {
+    $("#myForm select").change(function() {
+        <span class="code-comment">// console.log the select value</span>
+        <span class="code-highlight">console.log($(this));
+       $("#output").text("Selected");</span>
+    })
+})
+&lt;/script&gt;</span></pre>
+            </div>
+        </div>
+
+
+
+
+
+
+
+        <h2>Add dropdown and view object</h2>
+
+        <div class="row">
+            <div class="col-5">
+                <p>Same as above, but add .val() to the console.log to specifically view which option was selected.</p>
+                <p>You can also add the value to the HTML output div</p>
+                <ul>
+                    <li><a href="example-04.html" target="_blank">Example 4</a></li>
+                </ul>
+            </div>
+            <div class="col-7">
+                <pre class="example"><span class="code-html">&lt;div id="output"&gt;Select a dropdown option and view the full object in the console.log&lt;/div&gt;
+
+&lt;input id="pswa" class="matchField" type="text" /&gt;
+&lt;br /&gt;
+&lt;input id="pswb" class="matchField" type="text" /&gt;
+&lt;div id="status"&gt;&lt;/div&gt;
+
+&lt;div id="myForm"&gt;
+                  
+&lt;select&gt;
+  &lt;option value="option1" selected="selected"&gt;Option 1&lt;/option&gt;
+  &lt;option value="option2"&gt;Option 2&lt;/option&gt;
+  &lt;option value="option3"&gt;Option 3&lt;/option&gt;
+  &lt;option value="option4"&gt;Option 4&lt;/option&gt;
+&lt;/select&gt;
+&lt;/div&gt;</span>
+
+<span class="code-js">&lt;script&gt;
+$(document).ready(function() {
+    $("#myForm select").change(function() {
+        <span class="code-comment">// console.log the select value</span>
+        <span class="code-highlight">console.log($(this).val());
+       $("#output").text("Selected: " + $(this).val());</span>
+    })
+})
+&lt;/script&gt;</span></pre>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <h2>Add button and print value to page using Ajax</h2>
+
+        <div class="row">
+            <div class="col-5">
+                <p>Add button with ID.</p>
+                <p>Create PHP file</p>
+                <p>When button is clicked, value of dropdown is sent to page. It displays as 'Sent this option3'</p>
+                <p>THIS ONLY WORKS ON A SERVER SINCE CORS IS REQUIRED OF POST</p>
+                <ul>
+                    <li><a href="example-05.html" target="_blank">Example 5</a></li>
+                </ul>
+            </div>
+            <div class="col-7">
+                <pre class="example"><span class="code-html">&lt;div id="output"&gt;Select a dropdown option and view the full object in the console.log&lt;/div&gt;
+
+&lt;input id="pswa" class="matchField" type="text" /&gt;
+&lt;br /&gt;
+&lt;input id="pswb" class="matchField" type="text" /&gt;
+&lt;div id="status"&gt;&lt;/div&gt;
+
+&lt;div id="myForm"&gt;
+                  
+&lt;select&gt;
+  &lt;option value="option1" selected="selected"&gt;Option 1&lt;/option&gt;
+  &lt;option value="option2"&gt;Option 2&lt;/option&gt;
+  &lt;option value="option3"&gt;Option 3&lt;/option&gt;
+  &lt;option value="option4"&gt;Option 4&lt;/option&gt;
+&lt;/select&gt;
+&lt;/div&gt;
+
+&lt;div class="one"&gt;&lt;a href="#" id="myClicker"&gt;Click me&lt;/a&gt;&lt;/div&gt;
+&lt;input type="text" value="TEST" id="myA" placeholder="name"&gt;</span>
+
+<span class="code-js">&lt;script&gt;
+$(document).ready(function() {
+    $("#myForm select").change(function() {
+        <span class="code-comment">// console.log the select value</span>
+        <span class="code-highlight">console.log($(this).val());
+       $("#output").text("Selected: " + $(this).val());</span>
+    })
+})
+&lt;/script&gt;</span>
+
+<span class="code-php"><?php
+  echo "Sent this " .$_POST['name'];
+  ?></span></pre>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <h2>Checkboxes</h2>
+
+        <div class="row">
+            <div class="col-5">
+                <p>Add 2 checkboxes</p>
+                <p>If first is clicked, a popup displays and HTML is written to page.</p>
+                <p>If 2nd is clicked, the 'output' div hides or displays.</p>
+                <ul>
+                    <li><a href="example-06.html" target="_blank">Example 6</a></li>
+                </ul>
+            </div>
+            <div class="col-7">
+                <pre class="example"><span class="code-html">&lt;div id="output"&gt;Output1 Content&lt;/div&gt;
+
+&lt;input id="pswa" class="matchField" type="text" /&gt;
+&lt;br/&gt;
+&lt;input id="pswb" class="matchField" type="text" /&gt;
+&lt;div id="status"&gt;&lt;/div&gt;
+
+&lt;div id="myForm"&gt;    
+    <span class="code-highlight">&lt;input type="checkbox" value="send data" name="myCheck1" id="myCheck1"&gt; Check Me
+    &lt;br&gt;
+    &lt;input type="checkbox" value="send data 2" name="myCheck2" id="myCheck2" checked&gt; Hide or Show Output Div</span>
+    &lt;br&gt; Select one
+    &lt;select&gt;
+        &lt;option value="option1" selected="selected"&gt;Option 1&lt;/option&gt;
+        &lt;option value="option2"&gt;Option 2&lt;/option&gt;
+        &lt;option value="option3"&gt;Option 3&lt;/option&gt;
+        &lt;option value="option4"&gt;Option 4&lt;/option&gt;
+    &lt;/select&gt;
+&lt;/div&gt;
+&lt;div class="one"&gt;&lt;a href="#" id="myClicker"&gt;Click me&lt;/a&gt;&lt;/div&gt;
+&lt;input type="text" value="TEST" id="myA" placeholder="name"&gt;</span>
+
+<span class="code-js"> $(document).ready(function() {
+
+  // watch for click for checkbox 1
+  <span class="code-highlight">$("#myCheck1").on("change", function() {
+      console.log($(this));
+      <span class="code-comment">// if it's checked</span>
+      if ($(this).prop("checked")) {
+        <span class="code-comment">// creates popup</span>
+          var sure = confirm("Are you sure?");
+          this.checked = sure;
+      }
+      <span class="code-comment">// displays 'checked' div in HTML</span>
+      $("#output").html("Checked");
+  });
+
+  <span class="code-comment">// add another event listener for 2nd checkbox</span>
+  $("#myCheck2").change(function() {
+    <span class="code-comment">// if it's checked</span>
+      if (this.checked) {
+        <span class="code-comment">// use 'show' to display</span>
+          $("#output").show();
+      } else {
+          $("#output").hide();
+      }
+  });
+
+})</span></span></pre>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <h2>Radio buttons</h2>
+
+        <div class="row">
+            <div class="col-5">
+                <p>Add 2 radio buttons</p>
+                <p>When either is check, HTML is written to page.</p>
+
+                <ul>
+                    <li><a href="example-07.html" target="_blank">Example 7</a></li>
+                </ul>
+            </div>
+            <div class="col-7">
+                <pre class="example"><span class="code-html">&lt;div id="output"&gt;Output1 Content&lt;/div&gt;
+
+&lt;input id="pswa" class="matchField" type="text" /&gt;
+&lt;br/&gt;
+&lt;input id="pswb" class="matchField" type="text" /&gt;
+&lt;div id="status"&gt;&lt;/div&gt;
+
+&lt;div id="myForm"&gt;    
+    <span class="code-highlight">&lt;input type="radio" value="Yes" name="myRadio"&gt;Yes
+    &lt;input type="radio" value="No" name="myRadio" checked&gt;No
+    &lt;br&gt;</span>
+      
+    &lt;input type="checkbox" value="send data" name="myCheck1" id="myCheck1"&gt; Check Me
+    &lt;br&gt;
+    &lt;input type="checkbox" value="send data 2" name="myCheck2" id="myCheck2" checked&gt; Hide or Show Output Div
+    &lt;br&gt; Select one
+    &lt;select&gt;
+        &lt;option value="option1" selected="selected"&gt;Option 1&lt;/option&gt;
+        &lt;option value="option2"&gt;Option 2&lt;/option&gt;
+        &lt;option value="option3"&gt;Option 3&lt;/option&gt;
+        &lt;option value="option4"&gt;Option 4&lt;/option&gt;
+    &lt;/select&gt;
+&lt;/div&gt;
+&lt;div class="one"&gt;&lt;a href="#" id="myClicker"&gt;Click me&lt;/a&gt;&lt;/div&gt;
+&lt;input type="text" value="TEST" id="myA" placeholder="name"&gt;</span>
+
+<span class="code-js"> $(document).ready(function() {
+
+  // watch for click for checkbox 1
+  $("#myCheck1").on("change", function() {
+      console.log($(this));
+     // if it's checked
+      if ($(this).prop("checked")) {
+        // creates popup
+          var sure = confirm("Are you sure?");
+          this.checked = sure;
+      }
+      // displays 'checked' div in HTML
+      $("#output").html("Checked");
+  });
+
+  // add another event listener for 2nd checkbox
+  $("#myCheck2").change(function() {
+    // if it's checked
+      if (this.checked) {
+        // use 'show' to display
+          $("#output").show();
+      } else {
+          $("#output").hide();
+      }
+  });
+
+  <span class="code-highlight">$("#myForm input:radio").change(function() {
+    var result = "RADIO CHANGED TO : " + $(this).val();
+    myAjax(result);
+    // prints radio value to page
+    $("#status").html(result);
+})</span>
+
+})</span></span></pre>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <h1>jQuery UI auto-complete</h1>
+
+        <h2>Add jQuery UI</h2>
+        <p><a href="https://jqueryui.com/autocomplete/" target="_blank">jquery autocomplete</a></p>
+        <p>First, add the jQuery UI CDN links to the page.</p>
+
+        <p>Add the jquery-ui-css link to the head of your HTML page.</p>
+        <p>https://developers.google.com/speed/libraries#jquery-ui</p>
+        <pre class="example">&lt;link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css"&gt;</pre>
+
+        <p>Add the jquery-ui.min.js to the bottom of the body, or just above the jquery code block at the bottom. The jquery link should go just above the jquery UI link</p>
+        <pre class="example">&lt;script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"&gt;</script></pre>
+
+
+
+
+        <h2>Create an autocomplete dropdown</h2>
+
+        <div class="row">
+            <div class="col-5">
+                <p>Create an HTML search field.</p>
+                <p>Add an Array in jQuery.</p>
+                <p>User the 'autocomplete' function to check the Array.</p>
+                <p>When you type, a dropdown appears below the search field.</p>
+                <ul>
+                    <li><a href="example-08.html" target="_blank">Example 8</a></li>
+                </ul>
+            </div>
+
+            <div class="col-7">
+                <pre class="example"><span class="code-html">&lt;div class="ui-widget"&gt;
+  &lt;label for="searcher"&gt;Search Me:&lt;/label&gt;
+  &lt;input id="searcher"&gt;
+&lt;/div&gt;</span>
+
+<span class="code-js">$(document).ready(function() {
+  var foo = ["abc", "dcd", "eee"];
+  <span class="code-comment">// user 'autocomplete' on the source variable named 'foo'</span>            
+  $("#searcher").autocomplete({
+      source: foo,
+      <span class="code-comment">// options</span>
+      multiple: true,
+      <span class="code-comment">// case check</span>
+      mustMatch: false
+  }); 
+});</span></span></pre>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <h2>User a 3rd party site to pull in random user data for autocomplete field</h2>
+
+        <h3>THIS MUST BE RUN ON A SERVER DUE TO CORS POLICIES of the external API user page</h3>
+
+        <div class="row">
+            <div class="col-5">
+                <p>User <a href="https://api.randomuser.me/" target="_blank">https://api.randomuser.me/</a> to generate a random JSON file of user info.</p>
+                <p>You can add /?results=50 to the end of the URL to get more users.</p>
+                <ul>
+                    <li><a href="example-09.html" target="_blank">Example 9</a></li>
+                </ul>
+                <p>When you type into the field, a list of random names appear.</p>
+            </div>
+
+            <div class="col-7">
+                <pre class="example"><span class="code-html">&lt;div class="ui-widget"&gt;
+  &lt;label for="searcher"&gt;Search Me:&lt;/label&gt;
+  &lt;input id="searcher"&gt;
+&lt;/div&gt;</span>
+
+<span class="code-js">// run function after keyup
+$("#searcher").keyup(function() {
+  var searchText = $(this).val();
+  foo.length = 0;
+  $.ajax({
+      url: 'http://api.randomuser.me/?results=50',
+      dataType: 'json',
+      success: function(data) {
+          console.log(data);
+          $.each(data.results, function(k, v) {
+              foo.push(v.name.first);
+          });
+
+      }
+  })
+})</span></span></pre>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>

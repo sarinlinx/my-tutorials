@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="../../_css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../../_css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <style>
+
+    </style>
+
+
+    <title>floated webpage</title>
+</head>
+
+<body>
+    <a href="../../index.html">Home page</a>
+
+
+
+
+
+
+    <section class="container">
+        <div class="row">
+            <div class="col">
+                <h1>Webpage design using float</h1>
+            </div>
+        </div>
+
+
+
+        <div class="row">
+            <div class="col-4">
+                <p>Design entire page layout with float.</p>
+            </div>
+
+
+            <div class="col-8">
+                <pre class="example"><span class="code-css">* {
+  box-sizing: border-box;
+}
+
+.header, .footer {
+  background-color: grey;
+  color: white;
+  padding: 15px;
+}
+
+.column {
+  float: left;
+  padding: 15px;
+}
+
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.menu {
+  width: 25%;
+}
+
+.content {
+  width: 75%;
+}
+
+.menu ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu li {
+  padding: 8px;
+  margin-bottom: 8px;
+  background-color: #33b5e5;
+  color: #ffffff;
+}
+
+.menu li:hover {
+  background-color: #0099cc;
+}</span>
+
+<span class="code-html">
+&lt;div class="header"&gt;
+&lt;h1&gt;Chania&lt;/h1&gt;
+&lt;/div&gt;
+
+&lt;div class="clearfix"&gt;
+&lt;div class="column menu"&gt;
+&lt;ul&gt;
+&lt;li&gt;The Flight&lt;/li&gt;
+&lt;li&gt;The City&lt;/li&gt;
+&lt;li&gt;The Island&lt;/li&gt;
+&lt;li&gt;The Food&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+
+&lt;div class="column content"&gt;
+&lt;h1&gt;The City&lt;/h1&gt;
+&lt;p&gt;Chania is the capital of the Chania region on the island of Crete. The city can be divided in two parts, the old town and the modern city.&lt;/p&gt;
+&lt;p&gt;You will learn more about web layout and responsive web pages in a later chapter.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="footer"&gt;
+&lt;p&gt;Footer Text&lt;/p&gt;
+&lt;/div&gt;
+</span></pre>
+            </div>
+        </div>
+
+
+
+        <div class="row">
+            <div class="col">
+                <h4>Example</h4>
+
+                <ul>
+                    <li><a href="float-examples/floated-webpage-04.html">Floated webpage layout</a></li>
+                </ul>
+
+
+            </div>
+        </div>
+
+
+
+
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>

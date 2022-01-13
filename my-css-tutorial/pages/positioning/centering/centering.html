@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" type="text/css" href="../../../_css/bootstrap.css">
+  <link rel="stylesheet" type="text/css" href="../../../_css/style.css">
+
+  <style>
+    .ex-01 {
+      margin: auto;
+      width: 60%;
+      border: 1px solid red;
+    }
+
+    .ex-02 {
+      width: 60%;
+      border: 1px solid red;
+      text-align: center;
+    }
+
+    .inlineblock-element {
+      display: inline-block;
+    }
+
+    .u-center-text {
+      text-align: center;
+      width: 60%;
+      border: 1px solid red;
+    }
+
+
+    #blocktext {
+      border: 1px solid red;
+      text-align: center;
+    }
+
+    #inlinetext {
+      border: 1px solid red;
+      text-align: center;
+    }
+
+    .center-img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+  </style>
+
+  <title>Positioning</title>
+</head>
+
+<body>
+  <a href="../../../index.html">Home page</a>
+
+
+
+
+
+
+  <section class="container">
+    <h1>Block elements sections</h1>
+
+
+
+
+    <h2>Center a section</h2>
+
+    <div class="row">
+      <div class="col-6">
+        <p>To horizontally center a block element (like &lt;div&gt;), use margin: auto;</p>
+        <p><span class="red">Make sure to also add a width. Center aligning has no effect if the width property is not
+            set (or set to 100%).</span></p>
+        <p>Adding a width will cause the remaining space to be split equally in both margins.</p>
+      </div>
+
+      <div class="col-6">
+        <pre class="example"><span class="code-css">.center {
+  margin: auto;
+  width: 60%;
+}</span></pre>
+      </div>
+    </div>
+
+    <h3>Example</h3>
+    <div class="ex-01">
+      <p>Content here</p>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+    <h1>Text</h1>
+
+    <h2>Center horizontally from the parent element</h2>
+    <div class="row">
+      <div class="col-6">
+        <p>To just center the text inside an element, use text-align: center;</p>
+        <p>If that parent element is set to text-align: center, the text in the block element will be centered.</p>
+        <p>This works for block or inline text element inside the parent.</p>
+
+
+      </div>
+
+      <div class="col-6">
+        <pre class="example"><span class="code-css">.ex-02 {
+  width: 60%;
+  border: 1px solid red;
+  text-align: center;
+}</span>
+
+<span class="code-html">&lt;div class="ex-02"&gt;
+  &lt;p&gt;Normal paragraph with no styles&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class="ex-02"&gt;
+  &lt;span&gt;Normal paragraph with no styles&lt;/span&gt;
+&lt;/div&gt;</span></pre>
+      </div>
+    </div>
+
+
+
+    <div class="ex-02">
+      <p>Normal paragraph with no styles</p>
+    </div>
+    <br>
+    <div class="ex-02">
+      <span>Span text with no styles</span>
+    </div>
+
+
+
+
+
+
+
+
+
+
+    <h2>Text without a parent</h2>
+    <div class="row">
+      <div class="col-6">
+        <p>text-align: cetner works with a block element if it does not have a parent.</p>
+        <p>This will NOT work with inline elements. inline elements require a parent in order to cetner the text.</p>
+
+
+      </div>
+
+      <div class="col-6">
+        <pre class="example"><span class="code-css">#blocktext {
+  border: 1px solid red;
+  text-align: center;
+}
+
+#inlinetext {
+  border: 1px solid red;
+  text-align: center;
+}</span>
+
+<span class="code-html">&lt;p id="blocktext"&gt;Normal paragraph with no styles&lt;/p&gt;
+
+&lt;span id="inlinetext"&gt;Span text with no styles&lt;/span&gt;</span></pre>
+      </div>
+    </div>
+
+
+    <p id="blocktext">Normal paragraph with no styles</p>
+    <br>
+    <span id="inlinetext">Span text with no styles</span>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h1>Center with a utility class</h1>
+    <div class="row">
+      <div class="col-6">
+        <p>Create a utility class that can be reused.</p>
+      </div>
+
+      <div class="col-6">
+<pre class="example"><span class="code-css">.u-center-text {
+  text-align: center;
+  width: 60%;
+  border: 1px solid red;
+}</span>
+
+<span class="code-html">&lt;div class="u-center-text"&gt;
+  &lt;p&gt;Normal paragraph&lt;/p&gt;
+&lt;/div&gt;</span></pre>
+      </div>
+    </div>
+
+    <div class="u-center-text">
+      <p>Normal paragraph</p>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h1>Center an image</h1>
+    <div class="row">
+      <div class="col-6">
+        <p>set left and right margin to auto and make it into a block element:</p>
+      </div>
+
+      <div class="col-6">
+<pre class="example"><span class="code-css">.center-img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 40%;
+}</span>
+
+<span class="code-html">&lt;img src="img/nat-9.jpg" style="width:40%"&gt;</span></pre>
+      </div>
+    </div>
+
+    <img class="center-img" src="../../../_img/nat-9.jpg" style="width:40%">
+
+  </section>
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="../../_css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../../_css/style.css">
+    <style>
+    .blue {
+  color: blue;
+}
+    </style>
+
+    <title>removeClass()</title>
+</head>
+
+
+<body>
+    <section class="container">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb breadcrumb-container">
+                <li class="breadcrumb-item"><a class="breadcrumb-link" href="../../index.html">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">removeClass()</li>
+            </ol>
+        </nav>
+
+
+
+        <h1>Click button to toggle a class</h1>
+
+        <pre class="example"><span class="code-css">.blue {
+  color: blue;
+}</span>
+
+<span class="code-html">&lt;p&gt;This is a paragraph.&lt;/p&gt;
+&lt;p&gt;This is another paragraph.&lt;/p&gt;
+&lt;button&gt;Toggle class&lt;/button&gt;</span>
+
+<span class="code-js">  $("button").click(function(){
+$("p").toggleClass("blue");
+});</span></pre>
+
+
+        <h3>Example</h3>
+
+        <p>This is a paragraph.</p>
+        <p>This is another paragraph.</p>
+        <button>Toggle class</button>
+
+    </section>
+    <script src="../../_js/jquery-3.4.1.min.js"></script>
+    <script>
+    $("button").click(function(){
+  $("p").toggleClass("blue");
+});
+    </script>
+
+
+</body>
+
+</html>

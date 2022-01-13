@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" type="text/css" href="../../_css/styles.css">
+    <style>
+        #divScroll-01 {
+            border: 1px solid rgb(0, 119, 255);
+            width: 200px;
+            height: 200px;
+            overflow: scroll;
+        }
+        
+        #divScrollTop01 {
+            border: 1px solid rgb(105, 161, 226);
+            width: 200px;
+            height: 200px;
+            overflow: scroll;
+        }
+        
+        #divScrollTop02 {
+            border: 1px solid rgb(105, 161, 226);
+            width: 200px;
+            height: 200px;
+            overflow: scroll;
+        }
+        
+        .test {
+            background-color: yellow;
+            color: #000;
+        }
+    </style>
+    <title>Scroll</title>
+</head>
+
+<body>
+
+
+    <nav class="navbar">
+        <a href="../../index.html">Back to homepage</a>
+        <a class="nav-page nav-active">Scroll</a>
+    </nav>
+
+
+
+
+
+    <h1>scroll()</h1>
+    <div class="text-section">
+        <p>The scroll event occurs when the user scrolls in the specified element.</p>
+        <p>The scroll event works for all scrollable elements and the window object (browser window).</p>
+        <p>The scroll() method triggers the scroll event, or attaches a function to run when a scroll event occurs.</p>
+    </div>
+
+
+
+
+
+
+
+
+    <h2>Code section</h2>
+    <section class="code-section-container">
+        <div class="code-text-section">
+            <p>......</p>
+        </div>
+
+        <div class="code-block-section-w60">
+            <pre class="example"><span class="code-html">&lt;div id="scroll-01"&gt;blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah
+&lt;br&gt;&lt;br&gt; 'blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah
+&lt;/div&gt;
+&lt;p&gt;Scrolled &lt;span id="scroll"&gt;0&lt;/span&gt; times.&lt;/p&gt;</span>
+
+<span class="code-jquery">var x = 0;
+$("#scroll-01").scroll(function() {
+    $("span#scroll").text(x += 1);
+});</span></pre>
+
+
+            <h3>Example</h3>
+            <div id="divScroll-01">blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah
+                <br><br> 'blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah
+            </div>
+            <p>Scrolled <span id="spanScroll-01">0</span> times.</p>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h1>scrollTop</h1>
+    <section class="code-section-container">
+        <div class="code-text-section">
+            <p>......</p>
+        </div>
+
+        <div class="code-block-section-w60">
+            <pre class="example"><span class="code-html">&lt;div id="divScrollTop01"&gt;blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah
+&lt;br&gt;&lt;br&gt; 'blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah
+&lt;/div&gt;
+
+&lt;p&gt;Scrolled from top &lt;span id="spanScrollTop-01"&gt;0&lt;/span&gt;&lt;/p&gt;</span>
+
+<span class="code-jquery"><span class="code-comment">// assign var to the div</span>
+let $divScroll = $(divScrollTop01);
+$($divScroll).on('scroll', function() {
+    $topOffset = $(this).scrollTop();
+    <span class="code-comment">// Prints topOffset to the page</span>
+    $("#spanScrollTop-01").text($topOffset);
+});</span></pre>
+
+
+            <h3>Example</h3>
+            <div id="divScrollTop01">blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah
+                <br><br> 'blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah
+                <p>When you have scrolled 50 pixels from the top, add the class "test" (yellow background color) to the paragraph. Scroll up again to remove the class.</p>
+            </div>
+            <p>Scrolled from top <span id="spanScrollTop-01">0</span></p>
+
+
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h1>Toggle Classes based on Scroll position</h1>
+
+    <section class="code-section-container">
+        <div class="code-text-section">
+            <p>......</p>
+        </div>
+
+        <div class="code-block-section-w60">
+            <pre class="example"><span class="code-html">&lt;div id="divScrollTop02"&gt;blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah
+&lt;br&gt;&lt;br&gt; 'blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah
+&lt;p&gt;When you have scrolled 50 pixels from the top, add the class "test" (yellow background color) to the paragraph. Scroll up again to remove the class.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Scrolled from top &lt;span id="spanScrollTop-02"&gt;0&lt;/span&gt;&lt;/p&gt;
+
+&lt;p class="pClass"&gt;The background changes when scrollTop() is over 50.&lt;/p&gt;</span>
+
+<span class="code-jquery">let $divScroll2 = $(divScrollTop02);
+$($divScroll2).on('scroll', function() {
+    $topOffset2 = $(this).scrollTop();
+    $("#spanScrollTop-02").text($topOffset2);
+
+    if ($("#divScrollTop02").scrollTop() > 50) {
+        $(".pClass").addClass("test");
+    } else {
+        $(".pClass").removeClass("test");
+    }
+});</span></pre>
+
+
+            <h3>Example</h3>
+            <div id="divScrollTop02">blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah
+                <br><br> 'blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah
+                <p>When you have scrolled 50 pixels from the top, add the class "test" (yellow background color) to the paragraph. Scroll up again to remove the class.</p>
+            </div>
+            <p>Scrolled from top <span id="spanScrollTop-02">0</span></p>
+            <p class="pClass">The background changes when scrollTop() is over 50.</p>
+
+
+        </div>
+    </section>
+
+
+
+
+
+    <script src="../../_js/jquery-3.4.1.min.js"></script>
+    <script>
+        // Display how many px scrolled
+        let x = 0;
+        $("#divScroll-01").scroll(function() {
+            $("#spanScroll-01").text(x += 1);
+        });
+
+
+        // assign var to the div
+        let $divScroll = $(divScrollTop01);
+        $($divScroll).on('scroll', function() {
+            $topOffset = $(this).scrollTop();
+            $("#spanScrollTop-01").text($topOffset);
+        });
+
+
+
+        // Toggle class on scroll
+        let $divScroll2 = $(divScrollTop02);
+        $($divScroll2).on('scroll', function() {
+            $topOffset2 = $(this).scrollTop();
+            $("#spanScrollTop-02").text($topOffset2);
+
+            if ($("#divScrollTop02").scrollTop() > 50) {
+                $(".pClass").addClass("test");
+            } else {
+                $(".pClass").removeClass("test");
+            }
+        });
+    </script>
+</body>
+
+</html>

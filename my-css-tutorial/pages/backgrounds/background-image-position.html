@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="../../_css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../../_css/style.css">
+
+    <title>Background Image Position</title>
+</head>
+
+<body>
+    <a href="../../index.html">Home page</a>
+
+
+
+
+
+
+
+
+
+
+
+
+        <section class="container">
+            <h1>Background Position</h1>
+            <div class="row">
+                <div class="col">
+                    <p>Position the background image to a specific area of the page.</p>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="container">
+            <h2>Using positional words</h2>
+            <div class="row">
+                <div class="col-6">
+                    <p>You can use words like 'top right' to position the background.</p>
+                </div>
+
+                <div class="col-6">
+                    <pre class="example"><span class="code-css">body {
+  background: url("../img/purple-dot.jpg");
+  background-repeat: no-repeat;
+  background-position: top right;
+}</pre>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-6">
+                    <p>The result will be the image on the top right.</p>
+                </div>
+
+                <div class="col-6">
+                    <pre class="example"><div class="image-bg-position-words"><span class="white">Testing Testing Testing
+Testing Testing Testing
+Testing Testing Testing
+Testing Testing Testing
+Testing Testing Testing
+Testing Testing Testing
+Testing Testing Testing
+Testing Testing Testing</span></div></pre>
+                </div>
+            </div>
+            <p>Other options are:</p>
+            <ul>
+                <li>left top</li>
+                <li>left center</li>
+                <li>left bottom</li>
+                <li>right top</li>
+                <li>right center</li>
+                <li>right bottom</li>
+                <li>center top</li>
+                <li>center center</li>
+                <li>center bottom</li>
+            </ul>
+            <p>If you only specify one keyword, the other value will be "center"</p>
+
+        </section>
+
+
+        <section class="container">
+            <h2>Using % values</h2>
+            <div class="row">
+                <div class="col-6">
+                    <p>You can use % values to position the background.</p>
+                    <p>The first value is the horizontal position and the second value is the vertical. The top left corner is 0% 0%. The right bottom corner is 100% 100%.</p>
+                    <p>If you only specify one value, the other value will be 50%. Default value is: 0% 0%.</p>
+                </div>
+
+                <div class="col-6">
+                    <pre class="example"><span class="code-css">body {
+  background: url("../img/purple-dot.jpg");
+  background-repeat: no-repeat;
+  background-position: 20% 10%;
+}</pre>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-6">
+                    <p>This example moves the image 20% to the right and 10% down on the page.</p>
+                </div>
+
+                <div class="col-6">
+                    <pre class="example"><div class="image-bg-position-percent"><span class="white">Testing Testing Testing
+Testing Testing Testing
+Testing Testing Testing
+Testing Testing Testing
+Testing Testing Testing
+Testing Testing Testing
+Testing Testing Testing
+Testing Testing Testing</span></div></pre></div>
+            </div>
+        </section>
+
+        <section class="container">
+            <h2>Using CSS units</h2>
+            <div class="row">
+                <div class="col-6">
+                    <p>You can position using any CSS unit like pixels.</p>
+                </div>
+
+                <div class="col-6">
+                    <pre class="example"><span class="code-css">body {
+  background: url("../images/backgrounds/examples/purple-dot.jpg");
+  background-repeat: no-repeat;
+  background-position: 20px 50px;
+}</pre>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-6">
+                    <p>This example moves the image 20 pixels to the right and 50 pixels down on the page.</p>
+                </div>
+
+                <div class="col-6">
+                    <pre class="example"><div class="image-bg-position-pixels"><span class="white">Testing Testing Testing
+Testing Testing Testing
+Testing Testing Testing
+Testing Testing Testing
+Testing Testing Testing
+Testing Testing Testing
+Testing Testing Testing
+Testing Testing Testing</span></div></pre></div>
+            </div>
+        </section>
+
+
+
+
+
+
+    <script src="../../_js/jquery.js"></script>
+    <script src="../../_js/bootstrap.bundle.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,1415 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="../../_css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../../_css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        .row-large {
+            height: 350px;
+            border: 1px solid red;
+        }
+        
+        #test-animation {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            animation-name: example;
+            animation-duration: 4s;
+        }
+        
+        @keyframes example {
+            from {
+                background-color: red;
+            }
+            to {
+                background-color: yellow;
+            }
+        }
+        
+        #test-animation2 {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            animation-name: example2;
+            animation-duration: 4s;
+        }
+        
+        @keyframes example2 {
+            0% {
+                background-color: red;
+            }
+            25% {
+                background-color: yellow;
+            }
+            50% {
+                background-color: blue;
+            }
+            100% {
+                background-color: green;
+            }
+        }
+        
+        #test-animation3 {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            animation-name: example3;
+            animation-duration: 4s;
+            position: relative;
+        }
+        
+        @keyframes example3 {
+            0% {
+                background-color: red;
+                left: 0px;
+                top: 0px;
+            }
+            25% {
+                background-color: yellow;
+                left: 200px;
+                top: 0px;
+            }
+            50% {
+                background-color: blue;
+                left: 200px;
+                top: 200px;
+            }
+            75% {
+                background-color: green;
+                left: 0px;
+                top: 200px;
+            }
+            100% {
+                background-color: red;
+                left: 0px;
+                top: 0px;
+            }
+        }
+        
+        #test-animation4 {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            position: relative;
+            animation-name: example4;
+            animation-duration: 4s;
+            animation-delay: 2s;
+        }
+        
+        @keyframes example4 {
+            0% {
+                background-color: red;
+                left: 0px;
+                top: 0px;
+            }
+            25% {
+                background-color: yellow;
+                left: 200px;
+                top: 0px;
+            }
+            50% {
+                background-color: blue;
+                left: 200px;
+                top: 200px;
+            }
+            75% {
+                background-color: green;
+                left: 0px;
+                top: 200px;
+            }
+            100% {
+                background-color: red;
+                left: 0px;
+                top: 0px;
+            }
+        }
+        
+        #test-animation5 {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            position: relative;
+            animation-name: example5;
+            animation-duration: 4s;
+            animation-delay: -2s;
+            position: relative;
+        }
+        
+        @keyframes example5 {
+            0% {
+                background-color: red;
+                left: 0px;
+                top: 0px;
+            }
+            25% {
+                background-color: yellow;
+                left: 200px;
+                top: 0px;
+            }
+            50% {
+                background-color: blue;
+                left: 200px;
+                top: 200px;
+            }
+            75% {
+                background-color: green;
+                left: 0px;
+                top: 200px;
+            }
+            100% {
+                background-color: red;
+                left: 0px;
+                top: 0px;
+            }
+        }
+        
+        #test-animation6 {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            animation-name: example6;
+            animation-duration: 4s;
+            animation-iteration-count: 3;
+            position: relative;
+        }
+        
+        @keyframes example6 {
+            0% {
+                background-color: red;
+                left: 0px;
+                top: 0px;
+            }
+            25% {
+                background-color: yellow;
+                left: 200px;
+                top: 0px;
+            }
+            50% {
+                background-color: blue;
+                left: 200px;
+                top: 200px;
+            }
+            75% {
+                background-color: green;
+                left: 0px;
+                top: 200px;
+            }
+            100% {
+                background-color: red;
+                left: 0px;
+                top: 0px;
+            }
+        }
+        
+        #test-animation7 {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            animation-name: example7;
+            animation-duration: 4s;
+            animation-iteration-count: infinite;
+            position: relative;
+        }
+        
+        @keyframes example7 {
+            0% {
+                background-color: red;
+                left: 0px;
+                top: 0px;
+            }
+            25% {
+                background-color: yellow;
+                left: 200px;
+                top: 0px;
+            }
+            50% {
+                background-color: blue;
+                left: 200px;
+                top: 200px;
+            }
+            75% {
+                background-color: green;
+                left: 0px;
+                top: 200px;
+            }
+            100% {
+                background-color: red;
+                left: 0px;
+                top: 0px;
+            }
+        }
+        
+        #test-animation8 {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            animation-name: example8;
+            animation-duration: 4s;
+            animation-direction: reverse;
+            position: relative;
+        }
+        
+        @keyframes example8 {
+            0% {
+                background-color: red;
+                left: 0px;
+                top: 0px;
+            }
+            25% {
+                background-color: yellow;
+                left: 200px;
+                top: 0px;
+            }
+            50% {
+                background-color: blue;
+                left: 200px;
+                top: 200px;
+            }
+            75% {
+                background-color: green;
+                left: 0px;
+                top: 200px;
+            }
+            100% {
+                background-color: red;
+                left: 0px;
+                top: 0px;
+            }
+        }
+        
+        #test-animation9 {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            animation-name: example9;
+            animation-duration: 4s;
+            animation-iteration-count: 2;
+            animation-direction: alternate;
+            position: relative;
+        }
+        
+        @keyframes example9 {
+            0% {
+                background-color: red;
+                left: 0px;
+                top: 0px;
+            }
+            25% {
+                background-color: yellow;
+                left: 200px;
+                top: 0px;
+            }
+            50% {
+                background-color: blue;
+                left: 200px;
+                top: 200px;
+            }
+            75% {
+                background-color: green;
+                left: 0px;
+                top: 200px;
+            }
+            100% {
+                background-color: red;
+                left: 0px;
+                top: 0px;
+            }
+        }
+        
+        #test-animation10 {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            animation-name: example10;
+            animation-duration: 4s;
+            animation-iteration-count: 2;
+            animation-direction: alternate-reverse;
+            position: relative;
+        }
+        
+        @keyframes example10 {
+            0% {
+                background-color: red;
+                left: 0px;
+                top: 0px;
+            }
+            25% {
+                background-color: yellow;
+                left: 200px;
+                top: 0px;
+            }
+            50% {
+                background-color: blue;
+                left: 200px;
+                top: 200px;
+            }
+            75% {
+                background-color: green;
+                left: 0px;
+                top: 200px;
+            }
+            100% {
+                background-color: red;
+                left: 0px;
+                top: 0px;
+            }
+        }
+        
+        .test-animation11 {
+            width: 100px;
+            height: 50px;
+            background-color: red;
+            font-weight: bold;
+            position: relative;
+            animation: mymove 5s infinite;
+            position: relative;
+        }
+        
+        #div1 {
+            animation-timing-function: linear;
+        }
+        
+        #div2 {
+            animation-timing-function: ease;
+        }
+        
+        #div3 {
+            animation-timing-function: ease-in;
+        }
+        
+        #div4 {
+            animation-timing-function: ease-out;
+        }
+        
+        #div5 {
+            animation-timing-function: ease-in-out;
+        }
+        
+        @keyframes mymove {
+            from {
+                left: 0px;
+            }
+            to {
+                left: 300px;
+            }
+        }
+        
+        #test-animation12 {
+            width: 100px;
+            height: 100px;
+            background: red;
+            position: relative;
+            animation-name: example12;
+            animation-delay: 1s;
+            animation-duration: 3s;
+            animation-fill-mode: backwards;
+        }
+        
+        @keyframes example12 {
+            from {
+                left: 0px;
+                background-color: green;
+            }
+            to {
+                left: 200px;
+                background-color: blue;
+            }
+        }
+        
+        #test-animation13 {
+            width: 100px;
+            height: 100px;
+            background: red;
+            position: relative;
+            animation-name: example13;
+            animation-delay: 1s;
+            animation-duration: 3s;
+            animation-fill-mode: both;
+        }
+        
+        @keyframes example13 {
+            from {
+                left: 0px;
+                background-color: green;
+            }
+            to {
+                left: 200px;
+                background-color: blue;
+            }
+        }
+        
+        #test-animation14 {
+            width: 100px;
+            height: 100px;
+            background: red;
+            position: relative;
+            animation-name: example14;
+            animation-duration: 3s;
+            animation-fill-mode: forwards;
+        }
+        
+        @keyframes example14 {
+            from {
+                left: 0px;
+            }
+            to {
+                left: 200px;
+                background-color: blue;
+            }
+        }
+        
+        #transform-1 {
+            display: block;
+            font-size: 1.1rem;
+            color: #fff;
+            /* letter-spacing: 3.5rem; */
+            /* Set the animation name and duration */
+            animation-name: moveInLeft;
+            animation-duration: 1s;
+            /* How animation should progress over time */
+            animation-timing-function: ease-out;
+        }
+        
+        @keyframes moveInLeft {
+            /* Start */
+            0% {
+                opacity: 0;
+                /* Animates in X plane */
+                transform: translateX(-10rem);
+            }
+            /* 80% of animate time */
+            /* 1rem moves further to the right */
+            80% {
+                transform: translateX(1rem);
+            }
+            /* End of animation */
+            100% {
+                opacity: 1;
+                /* 0 is its normal position */
+                transform: translate(0);
+            }
+        }
+        
+        #transform-2 {
+            display: block;
+            text-align: center;
+            font-size: 1.1rem;
+            color: #fff;
+            animation-name: rotate180;
+            animation-duration: 3s;
+            animation-timing-function: ease-out;
+            position: relative;
+        }
+        
+        @keyframes rotate180 {
+            0% {
+                opacity: 0;
+            }
+            80% {
+                transform: rotate(180deg);
+            }
+            100% {
+                opacity: 1;
+                transform: translate(0);
+            }
+        }
+    </style>
+    <title>Animations</title>
+</head>
+
+<body>
+    <a href="../../index.html">Home page</a>
+
+
+
+    <section class="container">
+        <h1>Animations</h1>
+        <div class="row">
+            <div class="col">
+                <p>An animation lets an element gradually change from one style to another.</p>
+                <p>To use CSS animation, you must first specify some keyframes for the animation.</p>
+                <p>Keyframes hold what styles the element will have at certain times.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="container">
+        <h1>The @keyframes rule</h1>
+        <div class="row">
+            <div class="col">
+                <p>When you specify CSS styles inside the @keyframes rule, the animation will gradually change from the current style to the new style at certain times.</p>
+                <p>To get an animation to work, you must bind the animation to an element.</p>
+            </div>
+        </div>
+    </section>
+
+
+
+    <section class="container">
+        <h1>backface-visibility hack</h1>
+        <div class="row">
+            <div class="col">
+                <p>Sometimes, animations cause a very small glitch (shift) at the end. To fix this add <span class="code-highlight">backface-visibility: hidden;</span> to the element that shakes.</p>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+    <section class="container">
+
+
+        <h2>Simple example</h2>
+        <div class="row">
+            <div class="col-4">
+                <p>This creates a square that changes color.</p>
+                <ol>
+                    <li>Create an HTML element</li>
+                    <li>Add CSS to it. Give it a default background color, animation-name, and animation-duration.</li>
+                    <li>Create a @keyframes block that's binded to the HTML elment's animation-name.</li>
+                    <li>Use from (0%) and to (100%) to set the time of the changes.</li>
+                    <li>The total time of the animation is set by animation-duration</li>
+                </ol>
+                <p>The animation
+            </div>
+            <div class="col-8">
+                <pre class="example"><span class="code-html">&lt;div id="test-animation"&gt;&lt;/div&gt;</span>
+                  
+
+<span class="code-css">#test-animation {
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  animation-name: example;
+  animation-duration: 4s;
+}
+
+@keyframes example {
+  from {background-color: red;}
+  to {background-color: yellow;}
+}</span></pre>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <div id="test-animation"></div>
+            </div>
+        </div>
+
+
+        <h2>Multiple changes</h2>
+        <div class="row">
+            <div class="col-4">
+                <p>This creates a square that changes color at specific percentages of the animation-duration.</p>
+            </div>
+            <div class="col-8">
+                <pre class="example"><span class="code-html">&lt;div id="test-animation"&gt;&lt;/div&gt;</span>
+                  
+
+<span class="code-css">#test-animation2 {
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  animation-name: example2;
+  animation-duration: 4s;
+}
+
+@keyframes example2 {
+  0%   {background-color: red;}
+  25%  {background-color: yellow;}
+  50%  {background-color: blue;}
+  100% {background-color: green;}
+}</span></pre>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <div id="test-animation2"></div>
+            </div>
+        </div>
+
+
+        <h2>Multiple types of changes</h2>
+        <div class="row">
+            <div class="col-4">
+                <p>This creates a square that changes color and position at specific percentages of the animation-duration.</p>
+            </div>
+            <div class="col-8">
+                <pre class="example"><span class="code-html">&lt;div id="test-animation"&gt;&lt;/div&gt;</span>
+                  
+
+<span class="code-css">#test-animation3 {
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  animation-name: example3;
+  animation-duration: 4s;
+}
+
+@keyframes example3 {
+  0%   {background-color:red; left:0px; top:0px;}
+  25%  {background-color:yellow; left:200px; top:0px;}
+  50%  {background-color:blue; left:200px; top:200px;}
+  75%  {background-color:green; left:0px; top:200px;}
+  100% {background-color:red; left:0px; top:0px;}
+}</span></pre>
+            </div>
+        </div>
+
+        <div class="row-large">
+            <!-- <div class="col"> -->
+            <div id="test-animation3">
+            </div>
+            <!-- </div> -->
+        </div>
+
+
+
+
+
+
+
+
+
+        <h1>animation-delay</h1>
+        <h2>Using a positive value</h2>
+        <div class="row">
+            <div class="col-4">
+                <p>The animation-delay property specifies a delay for the start of an animation.</p>
+
+                <p>The following example has a 2 seconds delay before starting the animation:</p>
+            </div>
+            <div class="col-8">
+                <pre class="example"><span class="code-html">&lt;div id="test-animation"&gt;&lt;/div&gt;</span>
+                  
+
+<span class="code-css">#test-animation4 {
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  position: relative;
+  animation-name: example4;
+  <span class="code-highlight">animation-duration: 4s;</span>
+  animation-delay: 2s;
+}
+
+@keyframes example4 {
+  0% {
+      background-color: red;
+      left: 0px;
+      top: 0px;
+  }
+  25% {
+      background-color: yellow;
+      left: 200px;
+      top: 0px;
+  }
+  50% {
+      background-color: blue;
+      left: 200px;
+      top: 200px;
+  }
+  75% {
+      background-color: green;
+      left: 0px;
+      top: 200px;
+  }
+  100% {
+      background-color: red;
+      left: 0px;
+      top: 0px;
+  }
+}</span></pre>
+            </div>
+        </div>
+
+        <div class="row-large">
+            <div id="test-animation4">
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+        <h2>Using a negative value</h2>
+        <div class="row">
+            <div class="col-4">
+                <p>If using negative values, the animation will start as if it had already been playing for N seconds.</p>
+            </div>
+            <div class="col-8">
+                <pre class="example"><span class="code-html">&lt;div id="test-animation"&gt;&lt;/div&gt;</span>
+                  
+
+<span class="code-css">#test-animation5 {
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  position: relative;
+  animation-name: example5;
+  animation-duration: 4s;
+  <span class="code-highlight">animation-delay: -2s;</span>
+}
+
+@keyframes example5 {
+  0% {
+      background-color: red;
+      left: 0px;
+      top: 0px;
+  }
+  25% {
+      background-color: yellow;
+      left: 200px;
+      top: 0px;
+  }
+  50% {
+      background-color: blue;
+      left: 200px;
+      top: 200px;
+  }
+  75% {
+      background-color: green;
+      left: 0px;
+      top: 200px;
+  }
+  100% {
+      background-color: red;
+      left: 0px;
+      top: 0px;
+  }
+}</span></pre>
+            </div>
+        </div>
+
+        <div class="row-large">
+            <div id="test-animation5">
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+        <h2>Multiple animation runs</h2>
+        <h3>Repeat 3 times</h3>
+        <div class="row">
+            <div class="col-4">
+                <p>The animation-iteration-count property specifies the number of times an animation should run.</p>
+                <p> The following example will run the animation 3 times before it stops:</p>
+            </div>
+            <div class="col-8">
+                <pre class="example"><span class="code-html">&lt;div id="test-animation"&gt;&lt;/div&gt;</span>
+                              
+            
+<span class="code-css">#test-animation6 {
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  animation-name: example6;
+  animation-duration: 4s;
+  <span class="code-highlight">animation-iteration-count: 3;</span>
+}
+
+@keyframes example6 {
+  0%   {background-color:red; left:0px; top:0px;}
+  25%  {background-color:yellow; left:200px; top:0px;}
+  50%  {background-color:blue; left:200px; top:200px;}
+  75%  {background-color:green; left:0px; top:200px;}
+  100% {background-color:red; left:0px; top:0px;}
+}</span></pre>
+            </div>
+        </div>
+
+        <div class="row-large">
+            <div id="test-animation6">
+            </div>
+        </div>
+
+
+
+        <h3>Infinite repeat</h3>
+        <div class="row">
+            <div class="col-4">
+                <p>The value of infinite causes the animation to go on for ever.</p>
+            </div>
+            <div class="col-8">
+                <pre class="example"><span class="code-html">&lt;div id="test-animation"&gt;&lt;/div&gt;</span>
+                              
+            
+<span class="code-css">#test-animation7 {
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  animation-name: example7;
+  animation-duration: 4s;
+  <span class="code-highlight">animation-iteration-count: infinite;</span>
+}
+
+@keyframes example7 {
+  0%   {background-color:red; left:0px; top:0px;}
+  25%  {background-color:yellow; left:200px; top:0px;}
+  50%  {background-color:blue; left:200px; top:200px;}
+  75%  {background-color:green; left:0px; top:200px;}
+  100% {background-color:red; left:0px; top:0px;}
+}</span></pre>
+            </div>
+        </div>
+
+        <div class="row-large">
+            <div id="test-animation7">
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <div class="row">
+            <div class="col">
+                <h1>Alternate directions</h1>
+                <p>The animation-direction property specifies whether an animation should be played forwards, backwards or in alternate cycles.</p>
+
+                <p>The animation-direction property can have the following values:</p>
+                <ul>
+                    <li>normal - The animation is played as normal (forwards). This is default</li>
+                    <li>reverse - The animation is played in reverse direction (backwards)</li>
+                    <li>alternate - The animation is played forwards first, then backwards</li>
+                    <li>alternate-reverse - The animation is played backwards first, then forwards</li>
+                </ul>
+            </div>
+        </div>
+
+
+
+        <h3>reverse</h3>
+        <div class="row">
+            <div class="col-4">
+                <p>This reverses the animation.</p>
+            </div>
+            <div class="col-8">
+                <pre class="example"><span class="code-html">&lt;div id="test-animation"&gt;&lt;/div&gt;</span>
+                  
+
+<span class="code-css">#test-animation8 {
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  animation-name: example8;
+  animation-duration: 4s;
+  animation-direction: reverse;
+}
+
+@keyframes example8 {
+  0%   {background-color:red; left:0px; top:0px;}
+  25%  {background-color:yellow; left:200px; top:0px;}
+  50%  {background-color:blue; left:200px; top:200px;}
+  75%  {background-color:green; left:0px; top:200px;}
+  100% {background-color:red; left:0px; top:0px;}
+}</span></pre>
+            </div>
+        </div>
+
+        <div class="row-large">
+            <div id="test-animation8">
+            </div>
+        </div>
+        </div>
+
+
+        <h3>alternate</h3>
+        <div class="row">
+            <div class="col-4">
+                <p>Forwards and backwards.</p>
+                <p>animation-iteration-count must be set to 2 for this to work.</p>
+            </div>
+            <div class="col-8">
+                <pre class="example"><span class="code-html">&lt;div id="test-animation"&gt;&lt;/div&gt;</span>
+                  
+
+<span class="code-css">#test-animation9 {
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  animation-name: example9;
+  animation-duration: 4s;
+  <span class="code-highlight">animation-iteration-count: 2;
+  animation-direction: alternate;</span>
+}
+
+@keyframes example9 {
+  0%   {background-color:red; left:0px; top:0px;}
+  25%  {background-color:yellow; left:200px; top:0px;}
+  50%  {background-color:blue; left:200px; top:200px;}
+  75%  {background-color:green; left:0px; top:200px;}
+  100% {background-color:red; left:0px; top:0px;}
+}</span></pre>
+            </div>
+        </div>
+
+        <div class="row-large">
+            <div id="test-animation9">
+            </div>
+        </div>
+        </div>
+
+        <h3>alternate reverse</h3>
+        <div class="row">
+            <div class="col-4">
+                <p>Run backwards, then forwards.</p>
+                <p>animation-iteration-count must be set to 2 for this to work.</p>
+            </div>
+            <div class="col-8">
+                <pre class="example"><span class="code-html">&lt;div id="test-animation"&gt;&lt;/div&gt;</span>
+                  
+
+<span class="code-css">#test-animation10 {
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  animation-name: example10;
+  animation-duration: 4s;
+  <span class="code-highlight">animation-iteration-count: 2;
+  animation-direction: alternate-reverse;</span>
+}
+
+@keyframes example10 {
+  0%   {background-color:red; left:0px; top:0px;}
+  25%  {background-color:yellow; left:200px; top:0px;}
+  50%  {background-color:blue; left:200px; top:200px;}
+  75%  {background-color:green; left:0px; top:200px;}
+  100% {background-color:red; left:0px; top:0px;}
+}</span></pre>
+            </div>
+        </div>
+
+        <div class="row-large">
+            <div id="test-animation10">
+            </div>
+        </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <div class="row">
+            <div class="col">
+                <h1>Set speed curve of animation</h1>
+                <p>The animation-timing-function property specifies the speed curve of the animation.</p>
+                <p> The animation-timing-function property can have the following values:</p>
+                <ul>
+                    <li>ease - Specifies an animation with a slow start, then fast, then end slowly (this is default)</li>
+                    <li>linear - Specifies an animation with the same speed from start to end</li>
+                    <li>ease-in - Specifies an animation with a slow start</li>
+                    <li>ease-out - Specifies an animation with a slow end</li>
+                    <li>ease-in-out - Specifies an animation with a slow start and end</li>
+                    <li>cubic-bezier(n,n,n,n) - Lets you define your own values in a cubic-bezier function</li>
+                </ul>
+            </div>
+        </div>
+
+
+
+        <h3>reverse</h3>
+        <div class="row">
+            <div class="col-4">
+                <p>Multiple speed curve settings</p>
+            </div>
+            <div class="col-8">
+                <pre class="example"><span class="code-html">&lt;div id="div1" class="test-animation11"&gt;linear&lt;/div&gt;
+&lt;div id="div2" class="test-animation11"&gt;ease&lt;/div&gt;
+&lt;div id="div3" class="test-animation11"&gt;ease-in&lt;/div&gt;
+&lt;div id="div4" class="test-animation11"&gt;ease-out&lt;/div&gt;
+&lt;div id="div5" class="test-animation11"&gt;ease-in-out&lt;/div&gt;</span>
+                
+
+<span class="code-css">.test-animation11 {
+  width: 100px;
+  height: 50px;
+  background-color: red;
+  font-weight: bold;
+  position: relative;
+  animation: mymove 5s infinite;
+}
+
+#div1 {
+  animation-timing-function: linear;
+}
+
+#div2 {
+  animation-timing-function: ease;
+}
+
+#div3 {
+  animation-timing-function: ease-in;
+}
+
+#div4 {
+  animation-timing-function: ease-out;
+}
+
+#div5 {
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes mymove {
+  from {
+      left: 0px;
+  }
+  to {
+      left: 300px;
+  }
+}</span></pre>
+            </div>
+        </div>
+
+        <div class="row-large">
+            <div id="div1" class="test-animation11">linear</div>
+            <div id="div2" class="test-animation11">ease</div>
+            <div id="div3" class="test-animation11">ease-in</div>
+            <div id="div4" class="test-animation11">ease-out</div>
+            <div id="div5" class="test-animation11">ease-in-out</div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <div class="row">
+            <div class="col">
+                <h1>animation-fill-mode</h1>
+                <p>The animation-fille-mode property specifies the style of the elment either:</p>
+                <ul>
+                    <li>before it starts</li>
+                    <li>or after it ends</li>
+                </ul>
+                <p>Otherwise, the element will immediately revert to its original style when the animation is complete.</p>
+                <p> The animation-fill-mode property can have the following values:</p>
+                <ul>
+                    <li>forwards - The element will retain the style values that is set by the last keyframe (depends on animation-direction and animation-iteration-count)</li>
+                    <li>backwards - The element will get the style values that is set by the first keyframe (depends on animation-direction), and retain this during the animation-delay period</li>
+                    <li>both - The animation will follow the rules for both forwards and backwards, extending the animation properties in both directions</li>
+                </ul>
+            </div>
+        </div>
+
+
+
+        <h3>forwards</h3>
+        <div class="row">
+            <div class="col-4">
+                <p>The original color of the element is red.</p>
+                <p>Th first animation sets a color.</p>
+                <p>Since animation-delay is set, it overrides the original color of red.</p>
+                <p>When the animation is over, the original position and color display.</p>
+            </div>
+            <div class="col-8">
+                <pre class="example"><span class="code-html">&lt;div id="test-animation"&gt;&lt;/div&gt;</span>
+            
+
+<span class="code-css">#test-animation14 {
+width: 100px;
+height: 100px;
+background: red;
+position: relative;
+animation-name: example14;
+animation-duration: 3s;
+animation-fill-mode: forwards;
+}
+
+@keyframes example12 {
+  from {
+      left: 0px;
+  }
+  to {
+      left: 200px;
+      background-color: blue;
+  }
+}</span></pre>
+            </div>
+        </div>
+
+        <div class="row-large">
+            <div id="test-animation14"></div>
+        </div>
+
+
+
+
+        <h3>backwards</h3>
+        <div class="row">
+            <div class="col-4">
+                <p>The original color of the element is red.</p>
+                <p>Th first animation sets a color.</p>
+                <p>Since animation-delay is set, it overrides the original color of red.</p>
+                <p>When the animation is over, the original position and color display.</p>
+            </div>
+            <div class="col-8">
+                <pre class="example"><span class="code-html">&lt;div id="test-animation"&gt;&lt;/div&gt;</span>
+              
+
+<span class="code-css">#test-animation12 {
+  width: 100px;
+  height: 100px;
+  background: red;
+  position: relative;
+  animation-name: example12;
+  animation-delay: 1s;
+  animation-duration: 3s;
+  animation-fill-mode: backwards;
+}
+
+@keyframes example12 {
+  from {
+      left: 0px;
+      background-color: green;
+  }
+  to {
+      left: 200px;
+      background-color: blue;
+  }
+}</span></pre>
+            </div>
+        </div>
+
+        <div class="row-large">
+            <div id="test-animation12"></div>
+        </div>
+
+
+
+
+
+
+
+        <h3>both</h3>
+        <div class="row">
+            <div class="col-4">
+                <p>The original color of the element is red.</p>
+                <p>Th first animation sets a color.</p>
+                <p>Since animation-delay is set, it overrides the original color of red.</p>
+                <p>When the animation is over, the final position and color continue to display.</p>
+            </div>
+            <div class="col-8">
+                <pre class="example"><span class="code-html">&lt;div id="test-animation"&gt;&lt;/div&gt;</span>
+                  
+    
+<span class="code-css"> #test-animation12 {
+  width: 100px;
+  height: 100px;
+  background: red;
+  position: relative;
+  animation-name: example12;
+  animation-delay: 1s;
+  animation-duration: 3s;
+  animation-fill-mode: both;
+}
+  
+@keyframes example12 {
+    from {
+        left: 0px;
+        background-color: green;
+    }
+    to {
+        left: 200px;
+        background-color: blue;
+    }
+}</span></pre>
+            </div>
+        </div>
+
+        <div class="row-large">
+            <div id="test-animation13"></div>
+        </div>
+
+
+
+
+
+
+
+
+        <div class="row">
+            <div class="col">
+                <h1>Shorthand</h1>
+                <p>The shorthand properties go in this order:</p>
+                <ul>
+                    <li>animation-name</li>
+                    <li>animation-duration</li>
+                    <li>animation-timing-function</li>
+                    <li>animation-delay</li>
+                    <li>animation-iteration-count</li>
+                    <li>animation-direction</li>
+                </ul>
+                <pre class="example"><span class="code-css">div {
+  animation: example 5s linear 2s infinite alternate;
+}</span></pre>
+            </div>
+        </div>
+
+
+
+
+
+
+
+        <h1>Example using translate</h1>
+        <div class="row">
+
+            <div class="col-5">
+
+                <p>transform allows you to animate horizontally.</p>
+                <p>This moves in from the left with opacity zero.</p>
+                <p>At 80% is goes too far to the right.</p>
+                <p>At 100% it moves into it's centered location with opacity of 1.</p>
+            </div>
+            <div class="col-7"><pre class="example"><span class="code-css"> #translate-1 {
+  display: block;
+  font-size: 1.1rem;
+  color: #fff;
+  /* letter-spacing: 3.5rem; */
+  /* Set the animation name and duration */
+  animation-name: moveInLeft;
+  animation-duration: 1s;
+  /* How animation should progress over time */
+  animation-timing-function: ease-out;
+}
+
+@keyframes moveInLeft {
+  /* Start */
+  0% {
+      opacity: 0;
+      /* Animates in X plane */
+      transform: translateX(-10rem);
+  }
+  /* 80% of animate time */
+  /* 1rem moves further to the right */
+  80% {
+      transform: translateX(1rem);
+  }
+  /* End of animation */
+  100% {
+      opacity: 1;
+      /* 0 is its normal position */
+      transform: translate(0);
+  }
+}</span></pre>
+            </div>
+        </div>
+
+
+        <div id="transform-1">Moving to the right, then back to the left</div>
+
+
+
+
+
+
+
+        <h1>Example using rorate</h1>
+        <div class="row">
+
+            <div class="col-5">
+
+                <p>transform also allows you to rotate the element.</p>
+            </div>
+            <div class="col-7"><pre class="example"><span class="code-css">#tranform-2 {
+  display: block;
+  font-size: 1.1rem;
+  color: #fff;
+  animation-name: rotate;
+  animation-duration: 1s;
+  animation-timing-function: ease-out;
+}
+
+@keyframes rotate {
+  0% {
+      opacity: 0;
+  }
+  80% {
+      transform: rotate(180deg);
+  }
+  100% {
+      opacity: 1;
+      transform: translate(0);
+  }
+}</span></pre>
+            </div>
+        </div>
+
+
+        <div id="transform-2">Rotate 180deg</div>
+
+
+
+
+        <br><br><br><br><br><br>
+
+
+
+
+
+
+
+
+
+    </section>
+
+    <script src="../../_js/bootstrap.bundle.js "></script>
+</body>
+
+</html>

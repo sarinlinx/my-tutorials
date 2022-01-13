@@ -1,0 +1,329 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="../../_css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../../_css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <title>Text</title>
+</head>
+
+<body>
+    <a href="../../index.html">Home page</a>
+
+
+
+
+
+
+
+
+
+
+        <section class="container">
+            <h2>Aligning text</h2>
+            <div class="row">
+                <div class="col-6">
+                    <p>Use text-align to set the horizontal alignment of text. Text can be left or right aligned, centered, or justified.</p>
+                </div>
+                <div class="col-6">
+                    <pre class="example"><span class="code-css">h1 {
+      text-align: center;
+    }
+
+    h2 {
+      text-align: left;
+    }
+
+    h3 {
+      text-align: right;
+    }</span></pre></div>
+            </div>
+
+
+            <div class="row">
+                <div class="col-6">
+                    <p>justify will stretch so that every line has equal width, and the left and right margins are straight (like in magazines and newspapers).</p>
+                </div>
+                <div class="col-6">
+                    <pre class="example"><span class="code-css">div {
+      text-align: justify;
+    }</pre>
+                </div>
+            </div>  </section>
+
+
+
+
+
+
+    <section class="container">
+        <h2>Transform text to uppercase/lowercase/capitalize</h2>
+        <div class="row">
+            <div class="col-6">
+                <p>text-transform allows you to turn everything into uppercase or lowercase letters, or capitalize the first letter of each word.</p>
+            </div>
+            <div class="col-6">
+                <pre class="example"><span class="code-css">p.uppercase {
+  text-transform: uppercase;
+}
+
+p.lowercase {
+  text-transform: lowercase;
+}
+
+p.capitalize {
+  text-transform: capitalize;
+}
+
+p.capitalize {
+  text-transform: none;
+}</span></pre>
+
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+    <section class="container">
+        <h2>Indenting text</h2>
+        <div class="row">
+            <div class="col-6">
+                <p>text-indent is used to specify the indentation of the first line of a block of text.</p>
+                <p>You can use pixels or %.</p>
+            </div>
+            <div class="col-6">
+                <pre class="example"><span class="code-html">&lt;p class="indent-section"&gt;Blah blah bl
+s dlfjakf
+dkjfdkjfa
+djfkdf kdjf kdjfkd
+asdfdfsadf
+asdfasdf
+&lt;/p&gt;</span>
+
+
+<span class="code-css">.indent-section {
+  text-indent: 50px;
+}
+
+.indent-section {
+  text-indent: 10%;
+}</span></pre></div>
+        </div>
+
+        <div class="row">
+            <div class="col-6">
+                <p>Example:</p>
+            </div>
+            <div class="col-6">
+                <pre class="example"><span class="text-indent-section">     Blah blah blah kdj s dlfjakf
+dkjfdkjfa
+djfkdf kdjf kdjfkd
+asdfdfsadf
+asdfasdf</span></pre>
+
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+    <section class="container">
+        <h2 class="heading-emphasis">Letter spacing</h2>
+        <div class="row">
+            <div class="col-6">
+                <p>letter-spacing specifies the space between the characters in a text.</p>
+            </div>
+            <div class="col-6">
+                <pre class="example"><span class="code-css">.letter-spacing {
+  letter-spacing: 3px;
+}
+
+.letter-spacing {
+  letter-spacing: -3px;
+}
+
+.letter-spacing {
+  letter-spacing: normal;
+}</span></pre></div>
+        </div>
+
+        <div class="row">
+            <div class="col-6">
+                <p>Example:</p>
+            </div>
+            <div class="col-6">
+                <pre class="example"><span class="letter-spacing-pixels">Letters spaced by pixels</span>
+<span class="letter-spacing-none">No spacing used</span></pre>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
+    <section class="container">
+        <h2 class="heading-emphasis">Line Height</h2>
+        <div class="row">
+            <div class="col-6">
+                <p>Line Height specifies the space between lines.</p>
+            </div>
+            <div class="col-6">
+                <pre class="example"><span class="code-css">.small {
+  line-height: 0.8;
+}
+
+.big {
+  line-height: 1.8;
+}
+
+.normal {
+  line-height:normal;
+}
+
+div {
+  line-height: 25px;
+}
+
+div {
+  line-height:150%;
+}</span></pre></div>
+        </div>
+
+        <div class="row">
+            <div class="col-6">
+                <p>Example. Space between lines goes from small, to normal, to large.</p>
+            </div>
+            <div class="col-6">
+                <div class="example"><span class="line-height-small">Line height small</span><br>
+                    <span class="line-height-small">Line height small</span><br><br>
+                    <span class="line-height-medium">Line height medium</span><br>
+                    <span class="line-height-medium">Line height medium</span><br><br>
+                    <span class="line-height-large">Line height large</span><br>
+                    <span class="line-height-large">Line height large</span></div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+    <section class="container">
+        <h2>Word Spacing</h2>
+        <div class="row">
+            <div class="col-6">
+                <p>word-spacing specifies the space between the words in a text.</p>
+            </div>
+            <div class="col-6">
+                <pre class="example"><span class="code-css">h1 {
+  word-spacing: -5px;
+}
+
+h2 {
+  word-spacing: 10px;
+}</span></pre></div>
+        </div>
+
+        <div class="row">
+            <div class="col-6">
+                <p>Example. Space between lines goes from small, to normal, to large.</p>
+            </div>
+            <div class="col-6">
+                <pre class="example"><span class="word-spacing-small">Small space between words.</span>
+<span class="word-spacing-large">Large space between words.</span></pre>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
+
+    <section class="container">
+        <h2>Text direction</h2>
+        <div class="row">
+            <div class="col-6">
+                <p>direction is used to specify which direction the text grows from.</p>
+            </div>
+            <div class="col-6">
+                <pre class="example"><span class="code-css">/* text position to right and moves to left while typing */
+div {
+  direction: rtl;
+}
+
+/* text position to left and moves to right while typing */
+div {
+  direction: ltr;
+}</span></pre></div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+    <section class="container">
+        <h2 class="heading-emphasis">Bi directional override</h2>
+        <p>Look into this</p>
+        <ul>
+            <li><a href="https://www.w3schools.com/cssref/pr_text_unicode-bidi.asp">bi directional override</a></li>
+        </ul>
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script src="../../_js/jquery.js"></script>
+    <script src="../../_js/bootstrap.bundle.js"></script>
+</body>
+
+</html>

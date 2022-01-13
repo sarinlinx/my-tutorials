@@ -1,0 +1,170 @@
+.form {
+
+    &__group:not(:last-child) {
+        margin-bottom: 2rem;
+
+    }
+
+
+    &__input {
+        //input elements do not inherit fonts and color by default
+        //change default browser font for forms to font-family of page
+        font-family: inherit;
+        color: inherit;
+        font-size: 1.5rem;
+        padding: 1.5rem 2rem;
+
+
+        border-radius: 2px;
+        background-color: rgba($color-white, .5);
+        border: none;
+        //set initial border to transparent 
+        //this prevents the 3px from pushing down the fields below the first box 
+        border-bottom: 3px solid transparent;
+        width: 90%;
+        display: block;
+
+        transition: all .3s;
+
+
+
+
+        @include respond(tab-port) {
+            width: 100%;           
+        }
+
+
+
+        //style focus state of form fields
+        &:focus {
+            outline: none;
+            box-shadow: 0 1rem 2rem rgba($color-black, .1);
+            border-bottom: 3px solid $color-primary;
+        }
+
+
+        //if form field text is invalid
+        &:focus:invalid {
+            border-bottom: 3px solid $color-secondary-dark;
+        }
+
+
+        // Changes color of text when you type into field
+        &::-webkit-input-placeholder {
+            color: $color-grey-dark-2;
+        }
+
+
+
+    }
+
+
+
+
+
+    &__label {
+        // This aligns the label text with the input field placeholder text
+        font-size: 1.2rem;
+        font-weight: 700;
+        // display:block so you can use box model properties
+        display: block;
+        margin-left: 2rem;
+        margin-top: .7rem;
+
+        transition: all .3s;
+    }
+
+
+    // when placeholder is shown we hide hide the label
+    // use sibling selector to select the label that comes right AFTER the input in the HTML
+    &__input:placeholder-shown+&__label {
+
+        //allows hidden element to be animated
+        opacity: 0;
+        //  removes from page, not just hides
+        visibility: hidden;
+        // move up 4 rem to where text displays in input field
+        transform: translateY(-4rem);
+
+    }
+
+
+
+
+    &__radio-group {
+        // Set the radio buttons side by side
+        width: 49%;
+        display: inline-block;
+
+
+        @include respond(tab-port) {
+            width: 100%;
+            margin-bottom: 2rem;
+           
+        }
+
+
+    }
+
+
+
+
+
+
+
+    &__radio-input {
+        //hide the original HTML radio inputs
+        display: none;
+    }
+
+    &__radio-label {
+        font-size: $default-font-size;
+        cursor: pointer;
+        position: relative;
+        padding-left: 5rem;
+    }
+
+    // outline of new radio element
+    &__radio-button {
+        height: 3rem;
+        width: 3rem;
+        //set as inline-block so following properties work
+        display: inline-block;
+        border: 5px solid $color-primary;
+        border-radius: 50%;
+
+        // position custom circle over HTML radio button circle
+        // use dev tools to figure out values to position
+        position: absolute;
+        top: -.4rem;
+        left: 0;
+
+
+        // inside of new radio element
+        &::after {
+            // must set content and display properties for pseudo elements
+            content: "";
+            display: block;
+            height: 1.3rem;
+            width: 1.3rem;
+            border-radius: 50%;
+            // set position
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: $color-primary;
+            //hide under selected
+            opacity: 0;
+            transition: opacity .2s;
+        }
+
+    }
+
+    // select all radio inputs that are checked
+    // then select sibling label that follows it
+    // finally the span class that's a child of the label
+    &__radio-input:checked~&__radio-label &__radio-button::after {
+        opacity: 1;
+    }
+}

@@ -1,0 +1,34 @@
+<html>
+
+<head>
+    <script src="../../_js/jquery-3.4.1.min.js"></script>
+</head>
+
+<body>
+
+    <div id="output">Output1</div>
+
+    <div class="one"><a href="#" id="myClicker">Click me</a>Some Content</div>
+    <input type="text" value="hihihi" id="myA">
+
+    <script>
+        $(document).ready(function() {
+            $("#myClicker").click(function(e) {
+                e.preventDefault(); //prevent default link action
+                // set URL var
+                var url = "ex-json.json";
+                // add .getJSON method since you're working with a JSON file
+                $.getJSON(url, function(data) {
+                    // view data in console
+                    console.log(data)
+                        // send data to HTML
+                    $("#output").html(data.age)
+                })
+            })
+        })
+    </script>
+
+
+</body>
+
+</html>

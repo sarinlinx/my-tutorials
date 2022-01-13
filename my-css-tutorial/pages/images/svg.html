@@ -1,0 +1,150 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="../../_css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../../_css/style.css">
+
+    <style>
+        .search__icon2 {
+            height: 2rem;
+            width: 2rem;
+            fill: #999;
+        }
+    </style>
+    <title>SVGs</title>
+</head>
+
+<body>
+    <a href="../../index.html">Home page</a>
+
+    <section class="container">
+
+        <h1>SVGs</h1>
+
+
+        <h2>Best practices</h2>
+        <p>SVGs are preferred over icon fonts as they are more reliable and work with screen-readers.</p>
+        <p>You can convert an icon font to an SVG at this site.</p>
+        <ul>
+            <li><a href="https://icomoon.io/app/#/select">IcoMoon.com</a></li>
+            <li><a href="https://icomoon.io/app/#/select/library">Free libraries</a></li>
+        </ul>
+
+
+
+
+
+
+        <h2>Download SVGs</h2>
+        <ol>
+            <li>Visit the libraries page.
+                <ul>
+                    <li><a href="https://icomoon.io/app/#/select/library">Free libraries</a></li>
+                </ul>
+            </li>
+
+            <li>Click the 'ADD' button under a library.</li>
+            <li>Select the icons you want.</li>
+            <li>Click 'Generate SVG and more' button.</li>
+            <li>Click the gear icon at the bottom to view settings.</li>
+            <li>Un-check png</li>
+            <li>Click download</li>
+            <li>Create a new directory in your project where you'll unzip this file.</li>
+            <li>Unzip. Several files and folders are unzipped.</li>
+            <li>You only need the SVG files in the /SVG directory and a file named symbol.defs.svg. This is a sprite file which contains all the SVGs in it. This allows you to include 1 HTTP request instead of including 10 individual files. There's also a
+                demo file you can use to view the SVGs and their names.</li>
+            <li>Rename the symbol.defs.svg file sprites.svg</li>
+            <li>Copy these files into your main project folder /img directory.</li>
+        </ol>
+
+
+
+
+
+
+        <h2>Include the SVG in your HTML</h2>
+        <div class="row">
+
+            <div class="col-5">
+                <p>Add an svg tag</p>
+                <p>Inside, add &lt;use xlink:href= to include the SVG file.</p>
+                <p>Link to the sprite.svg file, then a #, and finally the specific SVG file</p>
+                <p>NOTE: You'll only be able to view the xlink file on a web server</p>
+            </div>
+
+            <div class="col-7">
+                <pre class="example"><span class="code-html">&lt;form action="#" class="search"&gt;
+  &lt;input type="text" class="search__input" placeholder="Search hotels"&gt;
+  &lt;button class="search__button"&gt;
+    <span class="code-highlight">&lt;svg class="search__icon"&gt;
+      &lt;use xlink:href="img/sprite.svg#icon-magnifying-glass"&gt;&lt;/use&gt;
+    &lt;/svg&gt;</span>
+  &lt;/button&gt;
+&lt;/form&gt;</span></pre>
+            </div>
+        </div>
+
+
+        <h3>Example</h3>
+        <form action="#" class="search">
+            <input type="text" class="search__input" placeholder="Search hotels">
+            <button class="search__button">
+    <svg class="search__icon">
+      <use xlink:href="img/sprite.svg#icon-magnifying-glass"></use>
+    </svg>
+  </button>
+        </form>
+
+
+
+
+
+
+
+
+
+
+
+        <h2>Style the SVG in CSS</h2>
+        <div class="row">
+
+            <div class="col-5">
+                <p>Resize the SVG.</p>
+            </div>
+
+            <div class="col-7">
+                <pre class="example"><span class="code-css">.search__icon {
+  height: 2rem;
+  width: 2rem;
+  fill: #999;
+}</span></pre>
+            </div>
+        </div>
+
+
+        <h3>Example</h3>
+        <form action="#" class="search">
+            <input type="text" class="search__input" placeholder="Search hotels">
+            <button class="search__button">
+    <svg class="search__icon2">
+      <use xlink:href="img/sprite.svg#icon-magnifying-glass"></use>
+    </svg>
+  </button>
+        </form>
+
+
+
+
+    </section>
+
+
+</body>
+
+</html>

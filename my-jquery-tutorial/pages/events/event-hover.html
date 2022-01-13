@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="../../_css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../../_css/style.css">
+
+    <title>The 'mouseenter' event</title>
+</head>
+
+<body>
+    <section class="container">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb breadcrumb-container">
+                <li class="breadcrumb-item"><a class="breadcrumb-link" href="../../index.html">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">The 'mouseenter' event</li>
+            </ol>
+        </nav>
+
+
+        <h1>hover()</h1>
+        <p>Takes two functions and is a combination of the mouseenter() and mouseleave() methods.</p>
+<p>The first function is executed when the mouse enters the HTML element, and the second function is executed when the mouse leaves the HTML element:</p>
+
+
+        <pre class="example">
+<span class="code-html">&lt;p id="p1"&gt;This is a sentence&lt;/p&gt;</span>
+
+<span class="code-js">$("#p1").hover(function(){
+  $(this).css('color', 'yellow');
+},
+function(){
+  $(this).css('color', 'white');
+});</span></pre>
+
+        <h3>Example</h3>
+        <p id="p1">Hover over me to change my color to yellow. Remove the mouse away to change my color to white.</p>
+
+
+
+
+
+
+
+
+    </section>
+
+
+
+
+
+
+
+    <script src="../../_js/jquery-3.4.1.min.js"></script>
+
+    <script>
+    $("#p1").hover(function(){
+        $(this).css('color', 'yellow');
+      },
+      function(){
+        $(this).css('color', 'white');
+      });
+    </script>
+
+</body>
+
+</html>

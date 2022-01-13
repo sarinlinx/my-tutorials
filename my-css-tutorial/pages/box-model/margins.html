@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="../../_css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../../_css/style.css">
+    <style>
+        #divauto {
+            width: 300px;
+            margin: auto;
+            border: 1px solid red;
+        }
+    </style>
+    <title>Margins</title>
+</head>
+
+<body>
+    <a href="../../index.html">Home page</a>
+
+
+
+
+
+
+    <section class="container">
+        <h1>The auto Value</h1>
+        <div class="row">
+
+            <div class="col-6">
+                <p>You can set the margin property to auto to horizontally center the element within its container.</p>
+                <p>The element will then take up the specified width, and the remaining space will be split equally between the left and right margins.</p>
+            </div>
+
+            <div class="col-6">
+                <pre class="example"><span class="code-css">div {
+  width: 300px;
+  margin: auto;
+  border: 1px solid red;
+}</pre>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col">
+                <h3>Example</h3>
+                <p>The following div is cenetered horizontally.</p>
+                <p>You must specify the Width for this to work.</p>
+            </div>
+        </div>
+
+
+        <div id="divauto">This div will be horizontally centered because it has margin: auto;</div>
+
+
+    </section>
+
+
+
+
+
+
+
+
+
+    <section class="container">
+        <h1>Margin Collapse</h1>
+        <div class="row">
+
+            <div class="col">
+                <p>Top and bottom margins of elements are sometimes collapsed into a single margin that is equal to the largest of the two margins.</p>
+                <p>This does not happen on left and right margins! Only top and bottom margins!</p>
+            </div>
+
+
+        </div>
+
+
+        <div class="row">
+            <div class="col-6">
+                <h3>Example</h3>
+                <p>In this example, the &lt;h1&gt; element has a bottom margin of 50px and the &lt;h2&gt; element has a top margin set to 20px.</p>
+                <p>Common sense would seem to suggest that the vertical margin between the &lt;h1&gt; and the &lt;h2&gt; would be a total of 70px (50px + 20px). But due to margin collapse, the actual margin ends up being 50px.</p>
+            </div>
+            <div class="col-6">
+                <pre class="example"><span class="code-css">h1 {
+margin: 0 0 50px 0;
+}
+
+h2 {
+margin: 20px 0 0 0;
+}</pre>
+            </div>
+        </div>
+
+
+
+
+
+    </section>
+
+
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="../../_css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../../_css/style.css">
+
+    <title>Vendor prefixes</title>
+</head>
+
+<body>
+  <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+          <li class="breadcrumb-item">
+              <a href="../../index.html">Home</a>
+          </li>
+          <li class="breadcrumb-item active" aria-current="page">Vendor Prefixes</li>
+      </ol>
+  </nav>
+
+    <section class="container">
+
+
+
+        <div class="row">
+            <div class="col">
+                <h1>Vendor prefixes</h1>
+                <p>Each browser uses its own prefix applied to the beginning of the property name.</p>
+                <p>Vendor prefixes are used to add browser support for new or experimental features that are not fully standardized across browsers yet.</p>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-5">
+                <p>Android, iOS, Chrome, Safari</p>
+            </div>
+
+            <div class="col-7">
+                <pre class="example"><span class="cyan">-webkit-</span></pre>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-5">
+                <p>Firefox</p>
+            </div>
+
+            <div class="col-7">
+                <pre class="example"><span class="cyan">-moz-</span></pre>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-5">
+                <p>Internet Explorer</p>
+            </div>
+
+            <div class="col-7">
+                <pre class="example"><span class="cyan">-ms-</span></pre>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-5">
+                <p>Opera</p>
+            </div>
+
+            <div class="col-7">
+                <pre class="example"><span class="cyan">-o-</span></pre>
+            </div>
+        </div>
+
+
+
+
+        <div class="row">
+            <div class="col">
+                <h1>How to use Vendor Prefixes?</h1>
+</div>
+</div>
+
+<div class="row">
+
+<div class="col-5">
+                <p>CSS is rendered top to bottom. Because of this, you should list the Vendor Prefix versions of your code first.</p>
+                <p>Only after the Vendor Prefix lines have been written should you add the standard CSS property.</p>
+                <p>Browsers will read the first line and ignore it if it's not the prefix for that specific browser.</p>
+            </div>
+
+
+            <div class="col-7">
+                <pre class="example"><span class="cyan">-webkit-</span><span class="code-css">transition: all .2s;
+transition: all .2s;</span></div>
+</div>
+
+
+
+
+
+    </section>
+
+
+
+
+
+
+
+
+
+
+    <script src="../../_js/jquery.js"></script>
+    <script src="../../_js/bootstrap.bundle.js"></script>
+</body>
+
+</html>

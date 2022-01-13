@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+    <style>
+        *,
+        *::after,
+        *::before {
+            margin: 0;
+            padding: 0;
+            box-sizing: inherit
+        }
+        
+        html {
+            font-size: 62.5%
+        }
+        
+        body {
+            box-sizing: border-box;
+            padding: 3rem
+        }
+        
+        .row {
+            max-width: 114rem;
+            margin: 0 auto
+        }
+        
+        .section-stories {
+            position: relative;
+            padding: 15rem 0
+        }
+        
+        .story {
+            width: 75%;
+            margin: 0 auto;
+            box-shadow: 0 3rem 6rem rgba(0, 0, 0, 0.1);
+            background-color: rgba(255, 255, 255, 0.6);
+            border-radius: 3px;
+            padding: 6rem;
+            padding-left: 9rem;
+            font-size: 1.6rem;
+            transform: skewX(-12deg)
+        }
+        
+        .story2 {
+            width: 75%;
+            margin: 2rem auto;
+            box-shadow: 0 3rem 6rem rgba(0, 0, 0, 0.1);
+            /* background-color: rgba(255, 255, 255, 0.6); */
+            border-radius: 3px;
+            padding: 6rem;
+            padding-left: 9rem;
+            font-size: 1.6rem;
+            transform: skewX(-12deg)
+        }
+        
+        .story__text {
+            transform: skewX(12deg);
+        }
+        
+        .bg-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            /* height and width of parent */
+            height: 100%;
+            width: 100%;
+            opacity: .15;
+            /* set z-index so all elements are above this layer */
+            z-index: -1;
+            /* prevent video size from overflowing parent */
+            overflow: hidden
+        }
+        
+        .bg-video__content {
+            /* prevent video overflowing section */
+            height: 100%;
+            width: 100%;
+            /* allows vide to fill parent while maintaining aspect ratio */
+            -o-object-fit: cover;
+            object-fit: cover
+        }
+    </style>
+    <title>Float text around image</title>
+</head>
+
+<body>
+
+
+    <section class="section-stories">
+
+        <!-- video background -->
+        <div class="bg-video">
+
+            <video class="bg-video__content" autoplay muted loop>
+        <!-- dont' use src in the video tag. Use <source> tag instead-->
+        <source src="video.mp4" type="video/mp4">
+        <source src="video.webm" type="video/mp4">
+        Your browser is not supported!
+      </video>
+
+        </div>
+
+
+
+        <div class="row">
+            <div class="story">
+                <div class="story__text">
+                    <h3>Set Opacity on parent</h3>
+                    <p>
+                        If you want to add a background to a text area that is darker than the video background, you must set that opacity on the parent of the text block.
+                    </p>
+                    <p>This block sets the parent div to background-color: rgba(255, 255, 255, 0.6);</p>
+                </div>
+            </div>
+        </div>
+
+
+
+
+        <div class="row ">
+            <div class="story2 ">
+
+                <div>
+                    <p>This section did not set an opacity for it's parent background, so it blends in with the background video.
+                    </p>
+                    <p>You can only see the outline since there is a box-shadow added.</p>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>

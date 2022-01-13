@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="../../_css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../../_css/style.css">
+
+    <title>Flexbox</title>
+</head>
+
+<body>
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="../../index.html">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Flexbox</li>
+        </ol>
+    </nav>
+
+
+
+    <section class="container">
+
+
+
+
+
+
+
+        <h1 class="heading-emphasis">Overview</h1>
+        <img src="../../_img/flexbox/flexbox-overview.png" width="900px">
+
+
+
+
+
+
+
+        <h1>The flex container</h1>
+        <div class="row">
+            <div class="col-6">
+                <p>The element you use flexbox on is called the flex container.</p>
+                <p>You add this with a display property of flex</p>
+            </div>
+            <div class="col-6">
+                <pre class="example"><span class="code-css">.class {
+  display: flex;
+}
+
+<span class="code-comment">or for an inline element</span>
+.class {
+  display: flex-inline;
+}</pre>
+            </div>
+        </div>
+
+
+
+
+        <h2>Flex container properties</h2>
+        <img src="../../_img/flexbox/flex-container-properties.png" width="500px">
+        <div class="row">
+            <div class="col">
+
+                <h3>flex-direction</h3>
+                <p>The direction of the MAIN AXIS</p>
+                <p>row is the default</p>
+
+                <h3>flex wrap</h3>
+                <p>If items should wrap into next line if there isn't enough space.</p>
+
+                <h3>justify-content</h3>
+                <p>How items are aligned on the MAIN AXIS</p>
+
+                <h3>align-items</h3>
+                <p>How items are aligned on the CROSS AXIS</p>
+
+                <h3>align-content</h3>
+                <p>Only applies when there is more than 1 row of flex items</p>
+                <p>Controls how lines are aligned along the CROSS AXIS if there's some empty space.</p>
+
+            </div>
+        </div>
+
+
+
+        <h1>Flex items</h1>
+        <img src="../../_img/flexbox/flex-items.png" width="700px">
+        <div class="row">
+            <div class="col">
+                <p>Flex items are the direct children of the flex container.</p>
+                <p>They are laid out on the MAIN AXIS</p>
+                <p>The vertical axis is called the CROSS AXIS</p>
+                <p>You can also change the direction of the MAIN AXIS</p>
+            </div>
+        </div>
+
+
+
+        <h2>Flex item properties</h1>
+            <img src="../../_img/flexbox/flex-items-properties.png" width="500px">
+            <div class="row">
+                <div class="col">
+
+                    <h3>align-self</h3>
+                    <p>Similar to align-items for the container, but only for a single item</p>
+
+                    <h3>orde</h3>
+                    <p>Order a single item should appear within the container</p>
+
+                    <h2>3 properties that help flexbox decide on the width of an item</h2>
+                    <h3>flex-grow</h3>
+                    <p>defines how much an item can grow</p>
+
+                    <h3>flex-shrink</h3>
+                    <p>defines how much an item can shrink</p>
+
+                    <h3>flex-basis</h3>
+                    <p>define its base width</p>
+
+                    <p>A shortend property called flex should be used instead of writing them individually</p>
+
+
+                </div>
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+    <script src="../../_js/jquery.js"></script>
+    <script src="../../_js/bootstrap.bundle.js"></script>
+</body>
+
+</html>

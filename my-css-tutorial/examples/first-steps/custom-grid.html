@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="../../_css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../../_css/style.css">
+
+    <title>Custom Grid</title>
+</head>
+
+<body>
+    <a href="../../index.html">Home page</a>
+
+    <section class="container">
+
+
+
+        <div class="row">
+            <div class="col">
+                <h1>Custom Grid</h1>
+                <h3>Add the following CSS so you can create a custom grid layout.</h3>
+            </div>
+        </div>
+
+
+        <div class="row">
+
+
+
+            <div class="col">
+                <pre class="example"><span class="code-css">.row {
+  /* 1140px / 10 = 114 rem */
+  max-width: 114rem;
+  background-color: #eee;
+  /* center block element inside another block element */
+  margin: 0 auto;
+  /* remove margin from last row using not pseudo class */
+  /*  The not pseudo class selects everything except the last child */
+}
+
+.row:not(:last-child) {
+  margin-bottom: 8rem;
+}
+
+.row::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.row [class^="col-"] {
+  background-color: orangered;
+  float: left;
+  /*since gutter is only applied to the right of an element the
+    you must remove the gutter from the element all the way on the right */
+}
+
+.row [class^="col-"]:not(:last-child) {
+  margin-right: 6rem;
+}
+
+.row .col-1-of-2 {
+  width: calc((100% - 6rem) / 2);
+}
+
+.row .col-1-of-3 {
+  width: calc((100% - 2 * 6rem) / 3);
+}
+
+.row .col-1-of-4 {
+  width: calc((100% - 3 * 6rem) / 4);
+}
+
+.row .col-2-of-3 {
+  width: calc((2 * (100% - 2 * 6rem) / 3) + 6rem);
+}
+
+.row .col-2-of-4 {
+  width: calc((2 * (100% - 3 * 6rem) / 4) + 6rem);
+}
+
+.row .col-3-of-4 {
+  width: calc((3 * (100% - 3 * 6rem) / 4) + 2 * 6rem);
+
+
+  <div class="code-html">&lt;div class="row"&gt;
+    &lt;div class="col-1-of-2"&gt;
+        Col 1 of 2
+    &lt;/div&gt;
+    &lt;div class="col-1-of-2"&gt;
+        Col 1 of 2
+    &lt;/div&gt;
+  &lt;/div&gt;
+  
+  &lt;div class="row"&gt;
+  
+    &lt;div class="col-1-of-3"&gt;
+        Col 1 of 3
+    &lt;/div&gt;
+  
+          &lt;div class="col-1-of-3"&gt;
+        Col 1 of 3
+    &lt;/div&gt;
+  
+          &lt;div class="col-1-of-3"&gt;
+        Col 1 of 3
+    &lt;/div&gt;
+    
+  &lt;/div&gt;
+  
+  &lt;div class="row"&gt;
+    &lt;div class="col-1-of-3"&gt;
+        Col 1 of 3
+    &lt;/div&gt;
+    &lt;div class="col-2-of-3"&gt;
+        Col 2 of 3
+    &lt;/div&gt;
+  &lt;/div&gt;
+  
+  &lt;div class="row"&gt;
+    &lt;div class="col-1-of-4"&gt;
+        Col 1 of 4
+    &lt;/div&gt;
+    &lt;div class="col-1-of-4"&gt;
+        Col 1 of 4
+    &lt;/div&gt;
+    &lt;div class="col-1-of-4"&gt;
+        Col 1 of 4
+    &lt;/div&gt;
+    &lt;div class="col-1-of-4"&gt;
+        Col 1 of 4
+    &lt;/div&gt;
+  &lt;/div&gt;
+  
+  &lt;div class="row"&gt;
+    &lt;div class="col-1-of-4"&gt;
+        Col 1 of 4
+    &lt;/div&gt;
+    &lt;div class="col-1-of-4"&gt;
+        Col 1 of 4
+    &lt;/div&gt;
+    &lt;div class="col-2-of-4"&gt;
+        Col 2 of 4
+    &lt;/div&gt;
+  &lt;/div&gt;
+  
+  &lt;div class="row"&gt;
+    &lt;div class="col-1-of-4"&gt;
+        Col 1 of 4
+    &lt;/div&gt;
+  
+    &lt;div class="col-3-of-4"&gt;
+        Col 3 of 4
+    &lt;/div&gt;
+  &lt;/div&gt;</span></pre>
+            </div>
+        </div>
+
+
+
+
+    </section>
+
+
+    <script src="../../_js/jquery.js"></script>
+    <script src="../../_js/bootstrap.bundle.js"></script>
+</body>
+
+</html>

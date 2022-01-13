@@ -1,0 +1,395 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="../../_css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../../_css/style.css">
+
+    <title>Methods</title>
+</head>
+
+<body>
+    <a href="../../index.html">Home page</a>
+
+
+
+
+    <section class="container">
+        <h1>Methods</h1>
+        <div class="row">
+            <div class="col-6">
+                <p>A method is a function definition stored as a property value.</p>
+                <p>Methods use or change the data in the object properties.</p>
+                <p>These are added just like properties.</p>
+                <p>This outputs: 0, then increments to 1, then outputs 1.</p>
+            </div>
+            <div class="col-6">
+                <pre class="example"><span class="code-js">var course = {
+  title: "JavaScript Essential Training",
+  instructor: "Name of teacher",
+  level: 1,
+  views: 0,
+  <span class="standout">updateViews: function() {
+      return ++course.views;
+  }</span>
+}
+
+console.log(course.views);
+course.updateViews();
+console.log(course.views);</span></pre>
+            </div>
+        </div>
+    </section>
+
+
+
+        <section class="container">
+            <h2>Accessing Methods</h2>
+            <div class="row">
+                <div class="col-6">
+                    <p>You must add () or it will only return the function definition instead.</p>
+                </div>
+                <div class="col-6">
+                    <pre class="example"><span class="code-js">objectName.methodName();</span></pre>
+                </div>
+            </div>
+        </section>
+
+
+    <section class="container">
+        <h2>Restaurant example</h2>
+        <div class="row">
+            <div class="col-6">
+                <p>This checks customer count against the total capacity.</p>
+                <p>This returns: true, then false.</p>
+            </div>
+            <div class="col-6">
+                <pre class="example"><span class="code-js">let restaurant = {
+    name: 'ASB',
+    guestCapacity: 75,
+    guestCount: 0,
+    checkAvailability: function (partySize) {
+        <span class="code-comment">//'this' refers to this current Object
+        //(first time ran) seatsLeft = 75 - 72
+        //(second time ran) seatsLeft = 75  - 68</span>
+        let seatsLeft = this.guestCapacity - this.guestCount
+        <span class="code-comment">//(first time ran) 4 <= 3 is false
+        //(second time ran) 4 <= 7 is true</span>
+        return partySize <= seatsLeft
+    },
+    seatParty: function (partySize) {
+        <span class="code-comment">//change guestCount to new value
+        //guestCount = 0 + 72</span>
+        this.guestCount = this.guestCount + partySize
+    },
+    removeParty: function (partySize) {
+        <span class="code-comment">//guestCount = 72 - 5</span>
+        this.guestCount = this.guestCount - partySize
+    }
+}
+
+<span class="code-comment">//Send 72 into the method seatParty</span>
+restaurant.seatParty(72)
+<span class="code-comment">//Checks if partySize (72) is <= seatsLeft (75)</span>
+
+<span class="code-comment">//Now send 4 into method checkAvailability
+//This returns: false since there were only 3 seats left</span>
+console.log(restaurant.checkAvailability(4))
+
+<span class="code-comment">//Send 5 into method removeParty</span>
+restaurant.removeParty(5)
+console.log(restaurant.checkAvailability(4))</span></pre>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <section class="container">
+        <h1>Send information to the function using an object</h1>
+        <h2><span class="red">REVIEW THESE SECTIONS</span></h2>
+        <div class="row">
+            <div class="col-6">
+                <p>In the script, you need to capture arguments being sent to it.</p>
+                <p>This allows you to send arguments into function and then parse them out using an array.</p>
+                <p>use the 'arguments' array as an internal object</p>
+            </div>
+            <div class="col-6">
+                <pre class="example"><span class="code-js">var ray = (function() {
+  return {
+    speak: function() {
+      console.log('arguments[0].say');
+    }
+  };
+}) () ;</span>
+
+&lt;body&gt;
+<span class="code-js">&lt;script&gt;
+ray.speak({ say: 'howdy' });
+&lt;/script&gt;</span>
+&lt;/body&gt;</pre>
+            </div>
+        </div>
+    </section>
+
+
+
+    <section class="container">
+        <h1>What if user doesn't enter an argument?</h1>
+        <div class="row">
+            <div class="col-6">
+                <p>var myArguments sets to the arguments that get passed from my function, or I'll set it to nothing.</p>
+                <p>So if user forgets to set it, it's automatically set to nothing.</p>
+                <p>This outputs 'undefined'.</p>
+            </div>
+            <div class="col-6">
+                <pre class="example"><span class="code-js">var ray = (function() {
+  return {
+    speak: function() {
+    var myArguments = arguments[0] || '';
+    console.log('myArguments.say');
+    }
+  };
+}) () ;</span></pre>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-6">
+                <p>Instead of allowing the output to be 'undefined' make sure something is in the argument.</p>
+                <p>If nothing is entered as an argument, it outputs the default which is 'hello'</p>
+                <p>If an argument is passed, it outputs that argument</p>
+            </div>
+            <div class="col-6">
+                <pre class="example"><span class="code-js">var ray = (function() {
+  return {
+    speak: function() {
+    var myArguments = arguments[0] || '';
+    var statement = myArguments.say || 'hello';
+    console.log('statement');
+    }
+  };
+}) () ;</span></pre>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-6">
+                <p>You can also add a defalt value to the top of the function, rather than specifying the default value within the statement</p>
+                <p>It's a good idea to set default at the top of the method. Makes it easier to see and edit them.</p>
+            </div>
+            <div class="col-6">
+                <pre class="example"><span class="code-js">var ray = (function() {
+  var DEFAULTS = {
+    say: 'hello'
+    }
+
+  return {
+    speak: function() {
+    var myArguments = arguments[0] || '';
+    var statement = myArguments.say || DEFAULTS.say;
+    console.log('statement');
+    }
+  };
+}) () ;</span></pre>
+            </div>
+        </div>
+
+    </section>
+
+
+
+
+
+
+    <section class="container">
+        <h1>Chaining</h1>
+        <p>You can continue to chain methods as long as they return new Arrays.</p>
+
+
+        <div class="row">
+            <div class="col-6">
+                <p>Chaining allows one function to call another function.</p>
+                <p>This outputs:<br>howdy<br>running...fast</p>
+            </div>
+            <div class="col-6">
+                <pre class="example"><span class="code-js">var ray = (function() {
+  var DEFAULTS = {
+    say: 'hello'
+    speed: 'normal'
+    }
+
+  return {
+    speak: function() {
+    var myArguments = arguments[0] || '';
+    var statement = myArguments.say || DEFAULTS.say;
+    console.log('statement');
+    },
+    run : function() {
+    var myArguments = arguments[0] || '';
+    var running = myArguments.speed || DEFAULTS.speed;
+    console.log('running...' + running);
+    }
+  };
+}) () ;</span>
+
+&lt;body&gt;
+<span class="code-js">&lt;script&gt;
+  ray.speak({ say: 'howdy' });
+  ray.speed({ speed: 'fast' });
+&lt;/script&gt;</span>
+&lt;/body&gt;
+</pre>
+            </div>
+        </div>
+
+
+
+
+
+
+        <h2>Example 2</h1>
+        <div class="row">
+            <div class="col-6">
+                <p>This chains multiple methods and outputs the en</p>
+            </div>
+<div class="col-6">
+<pre class="example"><span class="code-js">const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+const eurToUsd = 1.1;
+
+// use filter() to create a new Array of only positive values
+// then call .map() on the new Array
+// then call reduce()
+const totalDepositsUSD = movements
+.filter(mov => mov > 0)
+.map(mov => mov * eurToUsd)
+.reduce((acc, mov) => acc + mov, 0);
+
+console.log(totalDepositsUSD)</pre>
+            </div>
+        </div>
+
+
+
+
+
+
+
+        
+        <h2>Debugging chained functions</h1>
+          <div class="row">
+              <div class="col-6">
+                  <p>Use the Array parameters built into each function to check it. For example, .map() takes currentElement, Index, and Array. </p>
+                  <p>This checks the current iteration of the filter() Array.</p>
+                  <p>This is called 3 times because there are 3 negative values.</p>
+
+              </div>
+  <div class="col-6">
+<pre class="example"><span class="code-js">const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+const eurToUsd = 1.1;
+
+// use filter() to create a new Array of only positive values
+// then call .map() on the new Array
+// then call reduce()
+const totalDepositsUSD = movements
+<span class="code-highlight">.filter(mov => mov &lt; 0)
+.map((mov, i, arr) => {
+  console.log(arr);
+  return mov * eurToUsd;
+})</span>
+.reduce((acc, mov) => acc + mov, 0);
+
+console.log(totalDepositsUSD)</pre>
+              </div>
+          </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+    </section>
+<script>
+const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+const eurToUsd = 1.1;
+
+// use filter() to create a new Array of only positive values
+// then call .map() on the new Array
+// then call reduce()
+const totalDepositsUSD = movements
+.filter(mov => mov < 0)
+.map((mov, i, arr) => {
+  console.log(arr);
+  return mov * eurToUsd;
+})
+.reduce((acc, mov) => acc + mov, 0);
+
+console.log(totalDepositsUSD)
+  </script>
+
+
+
+
+
+</body>
+
+</html>

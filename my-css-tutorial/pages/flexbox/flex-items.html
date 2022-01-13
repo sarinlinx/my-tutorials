@@ -1,0 +1,508 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="../../_css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../../_css/style.css">
+
+    <title>Flexbox items</title>
+
+</head>
+
+<body>
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="../../index.html">Home</a></li>
+            <li class="breadcrumb-item"><a href="../../flexbox.html">Flexbox overview</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Flexbox items</li>
+        </ol>
+    </nav>
+
+
+
+    <section class="container">
+
+
+
+
+        <h1>Flex items</h1>
+
+        <h2>align-self</h2>
+        <div class="row">
+            <div class="col-5">
+                <p>Overrides the align-contents property for a single item.</p>
+                <p>This example aligns all items across the CROSS access first in the container using <strong>align-items:
+            center;</strong></p>
+                <p>Item with class i4 then overrides this with <strong>align-self: end;</strong></p>
+                <p>Other options are:</p>
+                <ul>
+                    <li>flex-start</li>
+                    <li>stretch</li>
+                </ul>
+                <p>Example</p>
+                <ul>
+                    <li><a href="flex-example-14.html" target="_blank">Example</a></li>
+                </ul>
+            </div>
+            <div class="col-7">
+                <pre class="example"><span class="code-css">.container {
+  background-color: #ccc;
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.i2 {
+  height: 200px;
+}
+
+.i4 {
+  font-size: 90px;
+  <span class="code-highlight">align-self: flex-end;</span>
+}
+
+.item {
+  background-color: #f1425d;
+  padding: 40px;
+  margin: 30px;
+  color: #fff;
+  font-size: 40px;
+}</span>
+
+<span class="code-html">&lt;div class="container"&gt;
+  &lt;div class="item"&gt;1&lt;/div&gt;
+  &lt;div class="item i2"&gt;2&lt;/div&gt;
+  &lt;div class="item"&gt;3&lt;/div&gt;
+  &lt;div class="item i4"&gt;4&lt;/div&gt;
+  &lt;div class="item"&gt;5&lt;/div&gt;
+&lt;/div&gt;</span></pre>
+
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+        <h2>Order</h2>
+        <div class="row">
+            <div class="col">
+                <p>The order # changes the items position.</p>
+                <p>All items have order value of zero.</p>
+                <p>This moves '4' to the first position.</p>
+
+                <p>Example</p>
+                <ul>
+                    <li><a href="flex-example-15.html" target="_blank">Example</a></li>
+                </ul>
+            </div>
+            <div class="col-7">
+                <pre class="example"><span class="code-css">.container {
+  background-color: #ccc;
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.i2 {
+  height: 200px;
+}
+
+.i4 {
+  font-size: 90px;
+  <span class="code-highlight">order: -1;</span>
+}
+
+.item {
+  background-color: #f1425d;
+  padding: 40px;
+  margin: 30px;
+  color: #fff;
+  font-size: 40px;
+}</span>
+
+<span class="code-html">&lt;div class="container"&gt;
+  &lt;div class="item"&gt;1&lt;/div&gt;
+  &lt;div class="item i2"&gt;2&lt;/div&gt;
+  &lt;div class="item"&gt;3&lt;/div&gt;
+  &lt;div class="item i4"&gt;4&lt;/div&gt;
+  &lt;div class="item"&gt;5&lt;/div&gt;
+&lt;/div&gt;</span></pre>
+
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+        <h2>flex-grow</h2>
+        <div class="row">
+            <div class="col">
+                <p>Specify # to grow item.</p>
+                <p>Add <strong>flex-grow: 1;</strong> to all items so items grow to as much as they can.</p>
+                <p>The margin is removed so you can see how they grow all the way to each other.</p>
+
+
+                <p>Example</p>
+                <ul>
+                    <li><a href="flex-example-16.html" target="_blank">Example</a></li>
+                </ul>
+            </div>
+            <div class="col-7">
+                <pre class="example"><span class="code-css">.container {
+  background-color: #ccc;
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.i2 {
+  height: 200px;
+}
+
+.i4 {
+  font-size: 90px;
+  <span class="code-highlight">order: -1;</span>
+}
+
+.item {
+  background-color: #f1425d;
+  padding: 40px;
+  margin: 30px;
+  color: #fff;
+  font-size: 40px;
+}</span>
+
+<span class="code-html">&lt;div class="container"&gt;
+  &lt;div class="item"&gt;1&lt;/div&gt;
+  &lt;div class="item i2"&gt;2&lt;/div&gt;
+  &lt;div class="item"&gt;3&lt;/div&gt;
+  &lt;div class="item i4"&gt;4&lt;/div&gt;
+  &lt;div class="item"&gt;5&lt;/div&gt;
+&lt;/div&gt;</span></pre>
+
+            </div>
+        </div>
+
+
+
+
+
+
+
+        <div class="row">
+            <div class="col">
+                <p>The # is in relation to other elements.</p>
+                <p>So, if you set <strong>flex-grow: 1;</strong> on all items, and then add <strong>flex-grow: 2;</strong> to a specific item, that item will grows 2x the size of the other items.</p>
+                <p>NOTE: The items CSS section must come before the specific item flex-grow property. If not, it will not be read.
+                </p>
+                <p>NOTE: Setting an item to 1 will always allow it to occupy as much space that is allowed.</p>
+
+                <p>Example</p>
+                <ul>
+                    <li><a href="flex-example-17.html" target="_blank">Example</a></li>
+                </ul>
+            </div>
+            <div class="col-7">
+                <pre class="example"><span class="code-css">.container {
+background-color: #ccc;
+padding: 10px;
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+align-items: center;
+}
+
+.item {
+  background-color: #f1425d;
+  padding: 40px;
+  <span class="code-comment">/* margin: 30px; */</span>
+  color: #fff;
+  font-size: 40px;
+  <span class="code-highlight">flex-grow: 1;</span>
+}
+
+.i2 {
+  height: 200px;
+  <span class="code-highlight">flex-grow: 2;</span>
+}
+
+.i4 {
+  font-size: 90px;
+  order: -1;
+}</span>
+
+<span class="code-html">&lt;div class="container"&gt;
+&lt;div class="item"&gt;1&lt;/div&gt;
+&lt;div class="item i2"&gt;2&lt;/div&gt;
+&lt;div class="item"&gt;3&lt;/div&gt;
+&lt;div class="item i4"&gt;4&lt;/div&gt;
+&lt;div class="item"&gt;5&lt;/div&gt;
+&lt;/div&gt;</span></pre>
+
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <div class="row">
+            <div class="col">
+                <p>Setting a single item to 1 (while not setting others) will allow it to occupy as much space that is allowed.
+                </p>
+                <p>This example expands '3' as much as it can.</p>
+                <p>Example</p>
+                <ul>
+                    <li><a href="flex-example-18.html" target="_blank">Example</a></li>
+                </ul>
+            </div>
+            <div class="col-7">
+                <pre class="example"><span class="code-css">.container {
+background-color: #ccc;
+padding: 10px;
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+align-items: center;
+}
+
+.item {
+  background-color: #f1425d;
+  padding: 40px;
+  margin: 30px;
+  color: #fff;
+  font-size: 40px;
+}
+
+.i2 {
+  height: 200px;
+  order: 1;
+  <span class="code-highlight">flex-grow: 1;</span>
+}
+
+.i4 {
+  order: -1;
+}</span>
+
+<span class="code-html">&lt;div class="container"&gt;
+&lt;div class="item"&gt;1&lt;/div&gt;
+&lt;div class="item i2"&gt;2&lt;/div&gt;
+&lt;div class="item"&gt;3&lt;/div&gt;
+&lt;div class="item i4"&gt;4&lt;/div&gt;
+&lt;div class="item"&gt;5&lt;/div&gt;
+&lt;/div&gt;</span></pre>
+
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <h2>flex-basis</h2>
+
+        <div class="row">
+            <div class="col">
+                <p>flex-basis allows you to set the width of a flex item.</p>
+                <p>Initial value is 'auto'.</p>
+                <p>Set a % value.</p>
+                <p>Example</p>
+                <ul>
+                    <li><a href="flex-example-19.html" target="_blank">Example</a></li>
+                </ul>
+            </div>
+            <div class="col-7">
+                <pre class="example"><span class="code-css">.container {
+background-color: #ccc;
+padding: 10px;
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+align-items: center;
+}
+
+.item {
+background-color: #f1425d;
+padding: 40px;
+margin: 30px;
+color: #fff;
+font-size: 40px;
+}
+
+.i2 {
+height: 200px;
+<span class="code-highlight">flex-basis: 20%;</span>
+}
+
+.i4 {
+order: -1;
+}</span>
+
+<span class="code-html">&lt;div class="container"&gt;
+&lt;div class="item"&gt;1&lt;/div&gt;
+&lt;div class="item i2"&gt;2&lt;/div&gt;
+&lt;div class="item"&gt;3&lt;/div&gt;
+&lt;div class="item i4"&gt;4&lt;/div&gt;
+&lt;div class="item"&gt;5&lt;/div&gt;
+&lt;/div&gt;</span></pre>
+
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <h2>flex-shrink</h2>
+
+        <div class="row">
+            <div class="col">
+                <p>Even if you set flex-basis to a pixel value, it will still shrink when the size of the windows shrinks.</p>
+                <p>flex-shrink controls how an element can shrink.</p>
+                <p>Initial value is 1 which means it's allowed to shrink.</p>
+                <p>Set it to zero so it's NOT allowed to shrink.</p>
+                <p>Example</p>
+                <ul>
+                    <li><a href="flex-example-20.html" target="_blank">Example</a></li>
+                </ul>
+            </div>
+            <div class="col-7">
+                <pre class="example"><span class="code-css">.container {
+background-color: #ccc;
+padding: 10px;
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+align-items: center;
+}
+
+.item {
+background-color: #f1425d;
+padding: 40px;
+margin: 30px;
+color: #fff;
+font-size: 40px;
+}
+
+.i2 {
+  height: 200px;
+  flex-grow: 0;
+  <span class="code-highlight">flex-basis: 300px;
+  flex-shrink: 0;</span>
+}
+
+.i4 {
+order: -1;
+}</span>
+
+<span class="code-html">&lt;div class="container"&gt;
+&lt;div class="item"&gt;1&lt;/div&gt;
+&lt;div class="item i2"&gt;2&lt;/div&gt;
+&lt;div class="item"&gt;3&lt;/div&gt;
+&lt;div class="item i4"&gt;4&lt;/div&gt;
+&lt;div class="item"&gt;5&lt;/div&gt;
+&lt;/div&gt;</span></pre>
+
+            </div>
+        </div>
+
+
+
+        <h2>Shorthand</h2>
+
+        <div class="row">
+            <div class="col">
+                <p>Shorthand properties go in this order:</p>
+                <ul>
+                    <li>flex-grow</li>
+                    <li>flex-shrink</li>
+                    <li>flex-basis</li>
+                </ul>
+                <pre class="example"><span class="code-css">flex: 0 0 300px;</span></pre>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+        <h2>Margin auto trick</h2>
+
+        <div class="row">
+            <div class="col-5">
+                <p>Use margin-right: auto; to expand section to occupy all the space available, while at the same time without stretching the entire element.</p>
+                <p>This allows the space to be taken up, but only the content of the element is selected.</p>
+                <p><a href="examples/flexbox-margin-auto.html" target="_blank">Margin Auto</a></p>
+            </div>
+            <div class="col-7">
+                <pre class="example"><span class="code-css">margin-right: auto;</span></pre>
+            </div>
+        </div>
+
+
+    </section>
+</body>
+
+</html>

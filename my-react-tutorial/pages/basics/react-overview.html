@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet"> -->
+
+    <link rel="stylesheet" type="text/css" href="../../_css/styles.css">
+
+    <title>React Overview</title>
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <a href="../../index.html">Back to homepage</a>
+        <a class="nav-page nav-active">React overview</a>
+    </nav>
+
+
+
+    <h1>Overview</h1>
+
+    <div class="text-section">
+        <p>React creates a VIRTUAL DOM in memory.</p>
+        <p>Instead of manipulating the browser's DOM directly, React creates a virtual DOM in memory, where it does all the necessary manipulating, before making the changes in the browser DOM.</p>
+    </div>
+
+
+
+
+
+
+    <h1>Components</h1>
+
+    <div class="text-section">
+        <p>A Component is a plain JavaScript function that returns JSX.</p>
+        <p>Components in REACT have two jobs.</p>
+        <ul>
+            <li>1: They produce JSX, which tells react what we want to show on the screen to the user.</li>
+            <li>2: They handle user events, such as the user typing into a text input or clicking on a button.</li>
+        </ul>
+
+        iew the following page for more information. </p>
+        <ul>
+            <li><a href="components.html">Components</a></li>
+        </ul>
+    </div>
+
+
+
+
+
+
+
+    <h1>JSX</h1>
+    <div class="text-section">
+        <p>JSX is a set of instructions that tells React exactly what content to display on the screen at any given time. View the following page for more information. </p>
+        <ul>
+            <li><a href="jsx-overview.html">JSX overview</a></li>
+        </ul>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h1>React and ReactDOM</h1>
+    <div class="text-section">
+        <p>Whenever you work with React, you're actually working with two separate libraries. React and ReactDOM.</p>
+        <img src="../../_img/react-reactdom.png" width="450px">
+        <h4>React</h4>
+        <p>The React Library has a bunch of code inside of it that knows how to get a bunch of different components to work together, how to call a component function, how to get back that JSX and how to iterate over all those elements and decide whether
+            to create some kind of HTML element or whether to call some other component function.</p>
+        <p>This library is called a 'reconciler'.</p>
+
+        <h4>ReactDOM</h4>
+        <p>Specialized library that knows how to take a set of instructions on different elements that we need to create and create HTML out of it.</p>
+        <p>It takes JSX and turns it into HTML and puts it into the DOM to display.</p>
+        <p>Because ReactDOM is responsible for rendering content or showing content to a user, we refer to it as a 'renderer'.
+        </p>
+    </div>
+
+
+
+
+
+
+
+
+
+
+    <h1>The render() function</h1>
+    <section class="code-section-container">
+        <div class="code-text-section">
+            <p>The purpose of the function is to display the specified HTML code inside the specified HTML element.</p>
+            <p>render() takes two arguments</p>
+            <ul>
+                <li>HTML code (component)</li>
+                <li>HTML element - (located in the /public/index.html file)</li>
+            </ul>
+            <p>This example uses a Component named App().</p>
+            <div class="notebox-note">
+                <p>The HTML element id is usually named 'root' by convention, but it does not have to be called "root".</p>
+            </div>
+        </div>
+        <div class="code-block-section-w60 ">
+            <pre class="example"><span class="code-react">ReactDOM.render(&lt;App /&gt;, document.querySelector("#root"));</span></pre>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+    <h1>useState</h1>
+    <div class="text-section">
+        <img src="../../_img/usestate.png" width="450px">
+        <p>useState is a function that we make use of to work with a system in react called the State System.</p>
+        <p>The State Sytem manages data inside your application. Specifically, data that changes over time.</p>
+        <p>This system updates content on the screen.</p>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>

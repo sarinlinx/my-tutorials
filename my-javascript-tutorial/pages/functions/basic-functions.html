@@ -1,0 +1,532 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="../../_css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../../_css/style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <title>Basic Functions</title>
+</head>
+
+<body>
+    <a href="../../index.html">Home page</a>
+
+
+
+    <section class="container">
+        <h1>Basics of Functions</h1>
+        <div class="row">
+            <div class="col">
+                <ul>
+                    <li>All functions are defined with 'function' keyword.</li>
+                    <li>Giving the function a name is optional.</li>
+                    <li>Function names cannot start with a number. However, they can include: $, _, a...z, 0...9</li>
+                    <li>You can have zero or as many parameters as you want, and these will become variables that are local to and only available inside your function.</li>
+                    <li>Function parameters are the names listed in the function definition.</li>
+                    <li>Function arguments are the real values received by the function when it is invoked.</li>
+                    <li>You invoke
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="container">
+        <h1>Parameters</h1>
+        <h4>Parameter Rules</h4>
+        <ul>
+            <li>JavaScript function definitions do not specify data types for parameters.</li>
+            <li>JavaScript functions do not perform type checking on the passed arguments.</li>
+            <li>JavaScript functions do not check the number of arguments received.</li>
+        </ul>
+
+        <h4>Parameter Defaults</h4>
+        <div class="row">
+            <div class="col-6">
+                <p>If a function is called with missing arguments (less than declared), the missing values are set to: undefined.</p>
+                <p>Sometimes this is acceptable, but sometimes it is better to assign a default value to the parameter:</p>
+                <p>This example outputs: 0</p>
+            </div>
+
+            <div class="col-6">
+                <pre class="example"><span class="code-html">&lt;p id="demo"&gt;&lt;/p&gt;
+
+<span class="code-js">function myFunction(x, y) {
+  if (y === undefined) {
+    y = 0;
+  }
+  return x * y;
+}
+
+document.getElementById("demo").innerHTML = myFunction(4);</span></pre>
+            </div>
+        </div>
+
+        <h5>Output</h5>
+        <div class="row">
+            <div class="col-6">
+
+                <p class="code-output">This example outputs: 0</p>
+            </div>
+
+            <div class="col-6">
+                <pre class="example"><span class="code-output">0</span></pre>
+            </div>
+        </div>
+
+
+
+
+
+
+        <h4>The Arguments Object (parameter)</h4>
+        <div class="row">
+            <div class="col-6">
+                <p>JavaScript functions have a built-in object called the arguments object.</p>
+                <p>If a function is called with too many arguments (more than declared), these arguments can be reached using the arguments object.</p>
+                <p>The argument object contains an array of the arguments used when the function was called (invoked). Holds a list of all the elements passed as arguments to the function.</p>
+                <p>This way you can simply use a function to find (for instance) the highest value in a list of numbers.</p>
+            </div>
+
+            <div class="col-6">
+                <pre class="example"><span class="code-html">&lt;p id="demo"&gt;&lt;/p&gt;
+
+<span class="code-js">function myFunction(x, y) {
+  if (y === undefined) {
+  y = 0;
+}
+  return x * y;
+}
+
+document.getElementById("demo").innerHTML = myFunction(4);</span></pre>
+            </div>
+        </div>
+
+
+
+
+        <h4>The Arguments Array: arguments[x]</h4>
+        <div class="row">
+            <div class="col-6">
+                <p>You can loop through the Array like object with a 'for' loop.</p>
+                <p>However, this is an array-like object, not a real Array.</p>
+                <p>Because they're not Arrays, (but an Object that happens to have some list-like functionality), you can't use Array methods like pop, push, shift, or others.</p>
+                <p>This example loops through all elements in the argument Array (like Object).</p>
+                <p>This returns: 4, 6, 7.</p>
+            </div>
+
+            <div class="col-6">
+                <pre class="example"><span class="code-js">var plus = function() {
+var sum = 0;
+  for (var i = arguments.length - 1; i >= 0; i--) {
+    sum += arguments[i];
+  }
+  return sum;
+}
+
+console.log(plus(2, 2));
+console.log(plus(2, 2, 2));
+console.log(plus(2, 2, 3));</span></pre>
+            </div>
+        </div>
+
+        <h5>Output</h5>
+        <div class="row">
+            <div class="col-6">
+
+                <p class="code-output">This example outputs: 4, 6, 7</p>
+            </div>
+
+            <div class="col-6">
+                <pre class="example"><span class="code-output">4
+6
+7</span></pre>
+            </div>
+        </div>
+
+
+        <h4>Arguments are passed by Value</h4>
+        <div class="row">
+            <div class="col">
+                <p>The parameters, in a function call, are the function's arguments.</p>
+                <p>JavaScript arguments are passed by value: The function only gets to know the values, not the argument's locations.</p>
+                <p>If a function changes an argument's value, it does not change the parameter's original value.</p>
+                <p>Changes to arguments are not visible (reflected) outside the function.</p>
+            </div>
+        </div>
+
+
+
+
+
+
+
+        <h4>Setting default values for parameters</h4>
+        <div class="row">
+            <div class="col-6">
+                <p>It's sometimes helpful to assign default values to params so an undefined error isn't thrown.</p>
+                <p>To set the default value, just type it into the param field</p>
+            </div>
+
+            <div class="col-6">
+                <pre class="example"><span class="code-js">let getScoreText = function (name = 'Anonymous', score = 0) {
+
+  console.log(name);
+  console.log(score);
+}
+
+getScoreText();</span></pre>
+            </div>
+        </div>
+
+        <h5>Output</h5>
+        <div class="row">
+            <div class="col-6">
+
+                <p class="code-output">This example outputs: Anonymous, 0</p>
+            </div>
+
+            <div class="col-6">
+                <pre class="example"><span class="code-output">Anonymous
+0</span></pre>
+            </div>
+        </div>
+
+
+        <h4>Changing the first and second default values</h4>
+        <div class="row">
+            <div class="col-6">
+                <p>If you use two arguments, they are passed to the function normally.</p>
+                <p>If you add one argument, only the first parameter is changed. The second remains default.</p>
+                <p>If you only want to change the second param, you must set the first argument to undefined.</p>
+            </div>
+
+            <div class="col-6">
+                <pre class="example"><span class="code-js">let getScoreText = function (name = 'Anonymous', score = 0) {
+    return 'Name: ' + name + ' - Score: ' + score
+}
+
+let scoreText = getScoreText(undefined, 99)
+console.log(scoreText)</span></pre>
+            </div>
+        </div>
+
+        <h5>Output</h5>
+        <div class="row">
+            <div class="col-6">
+
+                <p class="code-output">This example outputs: Anonymous, 99</p>
+            </div>
+
+            <div class="col-6">
+                <pre class="example"><span class="code-output">Anonymous
+99</span></pre>
+            </div>
+        </div>
+
+
+
+
+
+
+        
+        <h3>(ES6) Setting default values for parameters</h3>
+        <div class="row">
+            <div class="col-6">
+                <p>ES6 way to create default params</p>
+                <p>You can also use math like 199 * 2 for the default value.</p>
+                <p>You can also use other params: 199 * numPassengers, but the other variable must already be written first in the code.</p>
+                <p>You can't skip a param either. If you want to skip, just set as undefined: <strong>createBooking('LH123', undefined, 1000)</strong>. setting to undefined is like not even setting it.</p>
+            </div>
+
+            <div class="col-6">
+<pre class="example"><span class="code-js">const bookings = [];
+
+const createBooking = function (flightNum, numPassengers = 1, price = 199) {
+
+  const booking = {
+    flightNum,
+    numPassengers,
+    price,
+  };
+
+  console.log(booking);
+  bookings.push(booking);
+};
+
+createBooking('LH123');</span></pre>
+</div>
+        </div>
+
+
+    </section>
+
+
+
+
+
+
+
+
+
+    <section class="container">
+        <h1>Declaring functions</h1>
+        <h2>2 ways to declare a function</h2>
+        <h3>Function declaration</h3>
+        <h4>Declaring a function without a name</h4>
+        <div class="row">
+            <div class="col-6">
+                <p>This is only executed when called.</p>
+            </div>
+
+            <div class="col-6">
+                <pre class="example"><span class="code-js">function plus(a,b) {
+  var sum = a+b;
+  return sum;
+}
+
+<span class="code-comment">//call the function</span>
+plus(2,2);</span></span></pre>
+
+            </div>
+        </div>
+
+        <h4>Declaring a function with a name</h4>
+        <div class="row">
+            <div class="col-6">
+                <p>This is only executed when called.</p>
+            </div>
+
+            <div class="col-6">
+                <pre class="example"><span class="code-js">function myFunction(parameter1, parameter2, parameter3) {
+  code to be executed
+}</span></span></pre>
+
+            </div>
+        </div>
+
+
+
+        <h3>Definition expression (aka 'anonymous function')</h3>
+        <div class="row">
+            <div class="col">
+                <p>Assigns functions to variable or expression. A function expression can be stored in a variable.</p>
+                <p>Functions stored in variables do not need function names. They are always invoked (called) using the variable name.</p>
+            </div>
+        </div>
+
+        <div class="alert alert-note">
+            <div class="alert-icon">
+                <img src="../../_img/note-icon.png" width="60" height="60">
+            </div>
+            <div class="alert-content">
+                <p>If you create a function, you can call it by its function name.</p>
+                <p>But, if you assign the function to a variable, the function name no longer exists in the GLOBAL scope.</p>
+                <p>So, you must call the function by the variable name.</p>
+            </div>
+        </div>
+
+
+        <h4>Variable assigned but not used</h4>
+        <div class="row">
+            <div class="col-6">
+                <p>This is ran when it's called. For example: <span class="standout">plus(2,2);</span></p>
+                <p>This prints 4 to the console.</p>
+            </div>
+
+            <div class="col-6">
+                <pre class="example"><span class="code-js">var plus = function(a,b) {
+  return console.log(a + b);
+};
+
+<span class="code-comment">//call the function</span>
+plus(2,2);</span></span></pre>
+            </div>
+        </div>
+
+
+        <h4>Variables used as functions</h4>
+        <div class="row">
+            <div class="col-6">
+                <p>After a function expression has been stored in a variable, the variable can be used as a function.</p>
+                <p>This returns: 12</p>
+            </div>
+
+            <div class="col-6">
+                <pre class="example"><span class="code-html">&lt;p id="demo"&gt;&lt;/p&gt;</span>
+
+<span class="code-js">var x = function (a,b) {
+  return a * b;
+};
+
+document.getElementById("demo").innerHTML = x(4,3);</span></pre>
+            </div>
+        </div>
+
+        <h4>Another way variables can be used</h4>
+        <div class="row">
+            <div class="col-6">
+                <p>The function is first named.</p>
+                <p>The variable is then assigned to the function name along with arguments.</p>
+            </div>
+
+            <div class="col-6">
+                <pre class="example"><span class="code-js">function myFunction(a, b) {
+return a * b;
+}
+
+var x = myFunction(4, 3) * 2;</span></pre>
+            </div>
+        </div>
+
+
+        <h4>Immediately invoke instead of calling it later</h4>
+        <div class="row">
+            <div class="col-6">
+                <p>A function is immediately invoked by adding () after the closing }.</p>
+            </div>
+
+            <div class="col-6">
+                <pre class="example"><span class="code-js">var plus = function(a,b) {
+  return console.log(a+b);
+} (2,2);</span></pre>
+            </div>
+        </div>
+
+
+        <h4>Assigning a function by reference to a variable</h4>
+        <div class="row">
+            <div class="col-6">
+                <p>The function is kept in memory and sayHi is a reference (or you could say pointer) to it.</p>
+                <p>When assigned it to hi, both variables start to reference the same function.</p>
+                <p>This outputs: hi, dude</p>
+            </div>
+
+            <div class="col-6">
+                <pre class="example"><span class="code-js">function sayHi(name) {
+alert("Hi, "+name)
+}
+
+var hi = sayHi <span class="code-comment">// assign a function to another variable</span>
+
+hi("dude") <span class="code-comment">// call the function</span></span></pre>
+            </div>
+        </div>
+
+
+
+
+
+    </section>
+
+
+
+
+
+
+    <section class="container">
+        <h1>Where to define variables?</h1>
+        <div class="row">
+            <div class="col-6">
+                <p>You must define them BEFORE the function is called.</p>
+            </div>
+            <div class="col-6">
+                <pre class="example"><span class="code-js">function multiply(a,b) {
+  var result = a*b;
+  console.log(result);
+  return result;
+}
+
+var multiplied = multipy(3,4);
+
+multiply();</span></pre>
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <section class="container">
+        <h1>Return values</h1>
+        <div class="row">
+            <div class="col">
+                <p>The 'return' keyword returns the value of your function statment.</p>
+                <p>JS can also return an object or another function.</p>
+                <p>return is only available inside the function body</p>
+                <p>You can put it anywhere in the function, but it will stop the rest of the function from executing.</p>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="container">
+        <h1>Undefined</h1>
+        <div class="row">
+            <div class="col">
+                <p>If it returns nothing it's considered undefined</p>
+    </section>
+
+    <section class="container">
+        <h1>Execution order</h1>
+        <div class="row">
+            <div class="col-6">
+                <p>Function Declarations are parsed at pre-execution stage, when the browser prepares to execute the code.</p>
+                <p>These are the same.</p>
+            </div>
+            <div class="col-6">
+                <pre class="example"><span class="code-js">function sayHi(name) {
+  alert("Hi, "+name)
+}
+
+sayHi("John")
+
+
+sayHi("John")
+
+function sayHi(name) {
+  alert("Hi, "+name)
+}</span></pre></div>
+        </div>
+    </section>
+
+    <section class="container">
+        <h1>Function literal??????????</h1>
+        <div class="row">
+            <div class="col">
+                <p>an expression that defines an unnamed function..????????????</p>
+            </div>
+        </div>
+    </section>
+
+
+
+    </section>
+
+
+
+
+<script>
+const bookings = [];
+
+const createBooking = function (flightNum, numPassengers = 1, price = 199) {
+
+  const booking = {
+    flightNum,
+    numPassengers,
+    price,
+  };
+
+  console.log(booking);
+  bookings.push(booking);
+};
+
+createBooking('LH123');
+  </script>
+</body>
+
+</html>

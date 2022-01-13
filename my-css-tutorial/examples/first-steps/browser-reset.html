@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="../../_css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../../_css/style.css">
+
+    <title>Basic reset</title>
+</head>
+
+<body>
+    <a href="../../index.html">Home page</a>
+
+    <section class="container">
+
+
+
+        <div class="row">
+            <div class="col">
+                <h1>Basic reset</h1>
+                <p>This ensures the page displays the same in all browsers.</p>
+
+            </div>
+        </div>
+
+
+
+
+        <h2>Add CSS to the Universal selector *</h2>
+        <div class="row">
+
+            <div class="col-4">
+                <p>###</p>
+            </div>
+
+            <div class="col-8">
+                <pre class="example"><span class="code-css"><span class="code-comment">/* CSS variables. Place these in :root pseudo element 
+                You can then use them using the var() property as shown below */</span>
+:root {
+  --color-primary: #eb2f64;
+  --color-primary-light: #FF3366;
+  --color-primary-dark: #BA265D;
+  --color-grey-light-1: #faf9f9;
+  --color-grey-light-2: #f4f2f2;
+  --color-grey-light-3: #f0eeee;
+  --color-grey-light-4: #ccc;
+  --color-grey-dark-1: #333;
+  --color-grey-dark-2: #777;
+  --color-grey-dark-3: #999;
+  --shadow-dark: 0 2rem 6rem rgba(0, 0, 0, 0.3);
+  --shadow-light: 0 2rem 5rem rgba(0, 0, 0, 0.06);
+  --line: 1px solid var(--color-grey-light-2)
+}
+
+                  
+<span class="code-comment">/* General Sass media query sizes */                  
+$bp-largest: 75em;     // 1200px
+$bp-large: 68.75em;    // 1100px
+$bp-medium: 56.25em;   // 900px
+$bp-small: 37.5em;     // 600px
+$bp-smallest: 31.25em; // 500px</span>
+                  
+<span class="code-comment">/* universal selector, selects all elements on page */</span>
+* {
+  <span class="code-comment">/* removes margins and padding from all elements 
+  like headers and paragraphs*/</span>
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+html {
+  <span class="code-comment">/* changes box model so borders and padding are not added to 
+  total width or heigh specified for that box*/</span>
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  <span class="code-comment">/* make it easier to use rems 
+  1rem = 10px, 10px/16px = 62.5%</span>
+  font-size: 62.5%; 
+
+  @media only screen and (max-width: 68.75em) { <span class="code-comment">68.75em;  // 1100px</span>
+      font-size: 50%;
+  }
+}
+
+<span class="code-comment">/* set fonts on body so it's inherited in rest of page */</span>
+body {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  line-height: 1.7;
+  color: #777;
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 100vh
+  background-image: linear-gradient(to right bottom, var(--color-primary-light), var(--color-primary-dark));
+}</pre>
+            </div>
+        </div>
+
+
+
+
+    </section>
+
+
+    <script src="../../_js/jquery.js"></script>
+    <script src="../../_js/bootstrap.bundle.js"></script>
+</body>
+
+</html>

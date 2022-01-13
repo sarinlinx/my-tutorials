@@ -1,0 +1,475 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Krona+One|Audiowide&display=swap" rel="stylesheet"> -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide|Krona+One|Sofia&effect=fire">
+    <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia&effect=fire"> -->
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="../../_css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../../_css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <style>
+        #google-font {
+            font-family: 'Krona One', sans-serif;
+        }
+        
+        #google-font2 {
+            font-family: 'Audiowide', sans-serif;
+        }
+        
+        #google-font3 {
+            font-family: 'Audiowide', sans-serif;
+            font-size: 30px;
+            text-shadow: 3px 3px 3px #ababab;
+        }
+        
+        #google-font4 {
+            font-family: "Sofia", sans-serif;
+            font-size: 30px;
+        }
+    </style>
+
+    <title>Web Fonts</title>
+</head>
+
+<body>
+    <a href="../../index.html">Home page</a>
+
+
+
+    <section class="container">
+        <h1>Overview</h1>
+        <div class="row">
+            <div class="col">
+                <p>Web fonts are a CSS feature that allows you to specify font files to be downloaded along with your website as it is accessed, meaning that any browser that supports web fonts can have exactly the fonts you specify available to it.</p>
+                <p>There are two types of Web Fonts:</p>
+                <ul>
+                    <li>Internal</li>
+                    <li>External</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
+    <section class="container">
+        <h1>Internal web fonts</h1>
+        <div class="row">
+            <div class="col-6">
+                <p>Internal web fonts are files you download.</p>
+                <p>You can then include them in your site just like an image or CSS file.</p>
+                <p>Declare and link to it using @font-face</p>
+            </div>
+            <div class="col-6">
+                <pre class="example"><span class="code-css">@font-face {
+  font-family: 'Museo Sans';
+  src: url(museo-sans.tff);//font file name
+}</span></pre>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-6">
+                <p>You must then add it to the font stack in CSS like you would add any other.</p>
+            </div>
+            <div class="col-6">
+                <pre class="example"><span class="code-css">body {
+  font-family: 'Museo Sans', Arial, sans-serif;
+}</span></pre>
+            </div>
+        </div>
+
+    </section>
+
+
+
+
+
+
+    <section class="container">
+        <h3>File formats</h3>
+        <div class="row">
+            <div class="col-6">
+                <p>Most browsers support WOFF and WOFF2 fonts</p>
+            </div>
+            <div class="col-6">
+                <pre class="example"><span class="code-css">@font-face {
+  font-family: 'Museo Sans';
+  src: url(museo-sans.woff2) format('woff');
+}</span></pre></div>
+        </div>
+    </section>
+
+
+
+    <section class="container">
+        <h3>Links</h3>
+        <div class="row">
+            <div class="col">
+                <ul>
+                    <li><a href="https://css-tricks.com/snippets/css/using-font-face/">CSS tricks page</a></li>
+                    <li><a href="https://www.fontsquirrel.com/">Free font generator</a></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <section class="container">
+        <h1>External web fonts</h1>
+        <div class="row">
+            <div class="col">
+                <p>External web fonts are 3rd party files you DO NOT download.</p>
+                <p>You just link to the font URL. Here are a few examples:</p>
+                <ul>
+                    <li><a href="https://typekit.com/" target="_blank">TypeKit</a></li>
+                    <li><a href="https://fonts.google.com" target="_blank">Google Fonts</a></li>
+                </ul>
+            </div>
+        </div>
+
+
+
+
+
+
+        <section class="container">
+            <h2>Using Google fonts</h2>
+            <div class="row">
+                <div class="col">
+                    <p>You can add a Google font by adding a special style sheet link in the &lt;head&gt; section and then refer to the font in the CSS.</p>
+
+
+                    <ol>
+                        <li>Visit <a href="https://fonts.google.com/" target="_blank">fonts.google.com</a></li>
+                        <li>On the font page, click the <span class="standout">+ Select this style</span> link. This adds the font to your drawer on the top right.</li>
+                        <li>Click the drawer on the top right to view your fonts and their code.</li>
+                        <li>Copy the link code into the &lt;head&gt; of your HTML page BEFORE your custom css file.</li>
+                        <li>Add the CSS declaration to your CSS file. <strong>Make sure to always add a fallback font.</strong></li>
+                        </ul>
+                </div>
+            </div>
+
+
+            <div class="row">
+                <div class="col-6">
+                    <p>Code added to the HEAD of the HTML file.</p>
+                </div>
+                <div class="col-6">
+                    <pre class="example"><span class="code-html">&lt;link rel="preconnect" href="https://fonts.gstatic.com"&gt;
+&lt;link href="https://fonts.googleapis.com/css2?family=Krona+One&display=swap" rel="stylesheet"&gt;
+  
+&lt;style&gt;
+  #google-font {
+    font-family: 'Krona One', sans-serif;
+  }
+&lt;/style&gt;</span></pre>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-6">
+                    <p>Example</p>
+                </div>
+                <div class="col-6">
+                    <p id="google-font">This is using a Google Font!!!</p>
+                </div>
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+            <div class="row">
+                <div class="col">
+                    <h3>Multiple Google Fonts</h3>
+                </div>
+            </div>
+
+
+            <div class="row">
+                <div class="col-6">
+                    <p>To use multiple Google fonts, just separate the font names with a pipe character (|).</p>
+                    <p>NOTE: This only works if the tag in the head is <strong>css (APIv1), not css2(APIv2)</strong>. For example:</p>
+                </div>
+                <div class="col-6">
+                    <pre class="example"><span class="code-html">&lt;link rel="preconnect" href="https://fonts.gstatic.com"&gt;
+&lt;link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide|Krona+One"&gt;
+
+&lt;style&gt;
+#google-font {
+  font-family: 'Krona One', sans-serif;
+}
+#google-font2 {
+  font-family: Audiowide, sans-serif;
+}
+&lt;/style&gt;</span></pre>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-6">
+                    <p>Example</p>
+                </div>
+                <div class="col-6">
+                    <p id="google-font">This is using the Kona One Google Font!!!</p>
+                    <p id="google-font2">This is using the Audiowide Google Font!!!</p>
+                </div>
+            </div>
+
+
+
+
+
+            <div class="row">
+                <h3>Difference between Google Font tags</h3>
+                <div class="col">
+                    <p>Google Fonts use either the API or APIv2 version</p>
+                    <ul>
+                        <li><a href="https://developers.google.com/fonts/docs/getting_started">APIv1 (css)</a></li>
+                        <li><a href="https://developers.google.com/fonts/docs/css2">APIv2 (css2)</a></li>
+                    </ul>
+                </div>
+
+            </div>
+
+
+
+
+
+            <div class="row">
+                <div class="col">
+                    <h3>Style Google Fonts</h3>
+                </div>
+            </div>
+
+
+            <div class="row">
+                <div class="col-6">
+                    <p>Use CSS to style your fonts.</p>
+                </div>
+
+                <div class="col-6">
+                    <pre class="example"><span class="code-css">&lt;style&gt;
+#google-font {
+font-family: 'Krona One', sans-serif;
+font-size: 30px;
+text-shadow: 3px 3px 3px #ababab;
+}</span></pre>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-6">
+                    <p>Example</p>
+                </div>
+                <div class="col-6">
+                    <p id="google-font3">Styled Google Font!!!</p>
+
+                </div>
+            </div>
+
+
+
+
+
+
+            <div class="row">
+                <div class="col">
+                    <h3>Font Effects using the Google Font API</h3>
+                    <p>Google have also enabled different font effects that you can use. First add effect=effectname to the Google API, then add a special class name to the element that is going to use the special effect. The class name always starts with
+                        font-effect- and ends with the effectname.</p>
+                    <p>View the API pages for correct syntax depending on which API version you're using.</p>
+                    <ul>
+                        <li><a href="https://developers.google.com/fonts/docs/getting_started">APIv1 (css)</a></li>
+                        <li><a href="https://developers.google.com/fonts/docs/css2">APIv2 (css2)</a></li>
+                    </ul>
+                </div>
+            </div>
+
+
+            <div class="row">
+                <div class="col-6">
+                    <p>APIv1 example</p>
+                </div>
+
+                <div class="col-6">
+                    <pre class="example"><span class="code-html">&lt;style&gt;
+&lt;link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia&effect=fire"&gt;
+
+#google-font-effect {
+  font-family: "Sofia", sans-serif;
+  font-size: 30px;
+}
+&lt;/style&gt;
+
+&lt;p id="google-font-effect" <span class="code-highlight">class="font-effect-fire"</span>&gt;This uses a Google Font Effect APIv1&lt;/p&gt;
+
+</span></pre>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-6">
+                    <p>Example</p>
+                </div>
+                <div class="col-6">
+
+                    <p id="google-font-effect" class="font-effect-fire">This uses a Google Font Effect APIv1</p>
+
+
+                </div>
+            </div>
+
+
+        </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <section class="container">
+            <h2>Font icons</h2>
+
+            <div class="row">
+                <div class="col-6">
+                    <p>Font icons are scalable vector icons that can be customized using CSS.</p>
+                    <p><a href="https://fontawesome.io">font awesome</a> has a large selection of icons for use. You just need to submit your email address to get the font code.</p>
+
+                </div>
+                <div class="col-6">
+                    <pre class="example"><span class="code-css">@font-face {
+        font-family: 'Museo Sans';
+        src: url(museo-sans.tff);//font file name
+        }</span></pre>
+                </div>
+            </div>
+
+
+            <div class="row">
+                <div class="col-6">
+
+                    <p>For example, this code adds a center icon. You have to add the link in the header.</p>
+                    <p>You can then add it to a button.</p>
+                </div>
+                <div class="col-6">
+                    <pre class="example"><span class="code-html">&lt;head&gt;
+        &lt;link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"&gt;
+        &lt;/head&gt;
+
+        Use a class of &lt;p&gt;fa fa-align-center&lt;/p&gt;
+        &lt;i class="fa fa-align-center"&gt;&lt;/i&gt;
+
+        &lt;p&gt;Used on a button:&lt;/p&gt;
+        &lt;button style="font-size:24px"&gt;Button &lt;i class="fa fa-align-center"&gt;&lt;/i>&lt;/button&gt;</span></pre>
+                </div>
+            </div>
+
+
+
+
+            <div class="row">
+                <div class="col-6">
+                    <p>Example.</p>
+                </div>
+
+                <div class="col-6">
+                    <pre class="codebox-white"><span class="font-icon-example"><p>Use a class of fa fa-align-center</p>
+        <i class="fa fa-align-center"></i>
+        <p>Used on a button:</p>
+        <button style="font-size:24px">Button <i class="fa fa-align-center"></i></button></span></pre>
+                </div>
+            </div>
+        </section>
+
+
+
+        <section class="container">
+            <h2>Links</h2>
+            <div class="row">
+                <div class="col">
+                    <ul>
+                        <li><a href="http://fontawesome.io/icons/">icons</a></li>
+                        <li><a href="http://fontawesome.io/icon/twitter-square/">Searching for an icon</a> - HTML to link is on this page. Click examples link for more options</li>
+                        <li><a href="http://fontello.com/">fontello</a></li>
+                    </ul>
+                </div>
+        </section>
+
+
+
+
+
+
+        <script src="../../_js/jquery.js"></script>
+        <script src="../../_js/bootstrap.bundle.js"></script>
+</body>
+
+</html>

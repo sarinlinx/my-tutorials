@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="../../../_css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../../../_css/style.css">
+
+    <title>Header example #2</title>
+</head>
+
+<body>
+    <a href="../../../index.html">Home page</a>
+
+    <section class="container">
+
+
+
+        <div class="row">
+            <div class="col">
+                <h1>Header example #2</h1>
+                <p>This example shows how to create a header with an image that fills the page.</p>
+                <p>A gradient is then laid overtop.</p>
+                <ul>
+                    <li><a href="header-02.html" target="_blank">Header example</a></li>
+                </ul>
+
+            </div>
+        </div>
+
+
+
+
+        <h2>#1: Add a header section</h2>
+        <div class="row">
+
+            <div class="col-4">
+                <p>Add a header section in HTML</p>
+            </div>
+
+            <div class="col-8">
+                <pre class="example"><span class="code-html">&lt;header class="header"&gt;
+
+&lt;/header&gt;</span></pre>
+            </div>
+        </div>
+
+
+        <h2>#2: Add CSS to add image and gradient</h2>
+        <div class="row">
+            <div class="col-4">
+                <p>This adds an image with a gradient.</p>
+                <p>It then covers the entire page.</p>
+            </div>
+
+            <div class="col-8">
+                <pre class="example"><span class="code-css">.header {
+  <span class="code-comment">/* This box should be 95% of viewport */</span>
+  height: 95vh;
+  <span class="code-comment">/* gradient, comma, then image */</span>
+  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url(hero.jpg);
+  <span class="code-comment">/* takes up full width of viewport */</span>
+  background-size: cover;
+  <span class="code-comment">/* top of image will always stay at top of screen when resizing */</span>
+  background-position: top;
+  <span class="code-comment">/* clip-path changes shape of image by adjusting 4 corners using x y values */</span>
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+  <span class="code-comment">/* must set to relative so you can position logo as absolute */</span>
+  position: relative;
+}</span></pre>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+        <h2>#3: Adding text</h2>
+        <div class="row">
+            <div class="col-4">
+                <p>Add span tags with your text.</p>
+                <p>Set them as block elments so they won't break apart when the browser is resized.</p>
+            </div>
+
+            <div class="col-8">
+                <pre class="example"><span class="code-html">&lt;header class="header"&gt;
+  &lt;span class="heading-primary--main"&gt;Outdoors&lt;/span&gt;
+&lt;/header&gt;</span>
+
+<span class="code-css">
+.heading-primary--main {
+  display: block;
+  font-size: 6rem;
+  font-weight: 400;
+  letter-spacing: 3.5rem;
+}
+</span></pre>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+        <h2>#3: Center text</h2>
+        <div class="row">
+            <div class="col-4">
+                <p>Surround text in a div</p>
+                <p>Set element to absolute</p>
+                <p>Add percentages to center. This won't work though since the elements top left corner will be what's centered, so the element will appear low and to the right.</p>
+                <p>To center by the ELEMENT and not the exact position of where it begins, use 'transform'. This will center the ELEMENT itself.</p>
+            </div>
+
+            <div class="col-8">
+                <pre class="example"><span class="code-html">&lt;header class="header"&gt;
+  &lt;div class="header__text-box"&gt;
+    &lt;span class="heading-primary--main"&gt;Outdoors&lt;/span&gt;
+  &lt;/div&gt;
+&lt;/header&gt;</span>
+
+<span class="code-css">.header__text-box {
+  <span class="code-comment">/* set absolute position */</span>
+  position: absolute;
+  <span class="code-comment">/* the top and left value position from the parent element, 
+  so they are not visually centered since the elment will START 50% down and 50% to the right
+  this means it will appear low to the right because it's top left point is centered on the page */</span>
+  top: 50%;
+  left: 50%;
+  <span class="code-comment">/* this centers the element visually by adjusting 50% of the element, not the parent*/</span>
+  transform: translate(-50%, -50%);
+  text-align: center;
+}</span></pre>
+            </div>
+        </div>
+
+
+
+
+
+
+    </section>
+
+
+    <script src="../../_js/bootstrap.bundle.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="../../../_css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../../../_css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <title>fist-child last-child</title>
+</head>
+
+<body>
+
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+                <a href="../../../index.html">Home</a>
+            </li>
+            <li class="breadcrumb-item active" aria-current="page">fist-child last-child</li>
+        </ol>
+    </nav>
+
+
+
+
+
+
+
+
+
+
+
+    <section class="container">
+        <h1>:first-child</h1>
+
+        <div class="row">
+            <div class="col">
+                <p>The <span class="text-highlight">:first-child</span> pseudo-class matches a specified element that is the first child of another element.</p>
+
+                <div class="alert alert-note">
+                    <div class="alert-icon">
+                        <img src="../../../_img/note-icon.png" width="60" height="60">
+                    </div>
+                    <div class="alert-content">
+                        <p>This must be added to the child element.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-5">
+                <p>Select the first and last child elements from the parent.</p>
+                <p>NOTE how the first-child and last-child selectors are added to the child elements, not the parent.</p>
+
+            </div>
+
+            <div class="col-7">
+                <pre class="example"><span class="code-css">p:first-child {
+  color: red;
+}
+
+<span class="code-html">&lt;section&gt;
+&lt;p&gt;Paragraph&lt;/p&gt; &lt;!-- this is red --&gt;
+&lt;p&gt;Paragraph&lt;/p&gt;
+&lt;/section></span></pre>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-5">
+                <h5>Result</h5>
+            </div>
+
+            <div class="col-7">
+                <div class="example-container">
+
+
+
+                </div>
+            </div>
+        </div>
+
+
+
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+    <section class="container">
+        <h1>:last-child</h1>
+
+        <div class="row">
+            <div class="col">
+                <p>The <span class="text-highlight">:last-child</span> selector matches every element that is the last child of its parent.</p>
+                <p>It looks for the last child within a section such as a div.</p>
+                <p>If there are no sections on the page, it locates the last child within the body tag.</p>
+
+
+                <div class="alert alert-note">
+                    <div class="alert-icon">
+                        <img src="../../../_img/note-icon.png" width="60" height="60">
+                    </div>
+                    <div class="alert-content">
+                        <p>This must be added to the child element.</p>
+                        <p>p:last-child is equal to p:nth-last-child(1).</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-5">
+              <h4>Ex 1: No sections in the HTML</h4>
+                <p>Select the last paragraph child from the body tag.</p>
+                <p>Since there are no other sections on this page (such as &lt;div&gt; or &lt;section&gt;, the selector looks for the last paragraph in the body.</p>
+
+            </div>
+
+            <div class="col-7">
+                <pre class="example"><span class="code-css">p:last-child {
+  color: red;
+}
+
+<span class="code-html">&lt;p&gt;Paragraph 1&lt;/p&gt;
+&lt;p&gt;Paragraph 2&lt;/p&gt;
+&lt;p&gt;Paragraph 3&lt;/p&gt;</span></pre>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-5">
+                <h5>Result</h5>
+            </div>
+
+            <div class="col-7">
+                <div class="example-container">
+                  <p class="first-last-child-pseudo-elements2">Paragraph 1</p>
+                  <p class="first-last-child-pseudo-elements2">Paragraph 2</p>
+                  <p class="first-last-child-pseudo-elements2">Paragraph 3</p>
+
+                </div>
+            </div>
+        </div>
+
+
+
+
+        <div class="row">
+            <div class="col-5">
+              <h4>Ex 2: Paragraphs in sections in the HTML</h4>
+                <p>Since there are other sections on this page (such as &lt;div&gt; or &lt;section&gt;, the selector does not look at the first paragraphs within the  body tag. It only looks for paragraphs in each section type.</p>
+
+            </div>
+
+            <div class="col-7">
+                <pre class="example"><span class="code-css">p:last-child {
+  color: red;
+}
+
+<span class="code-html">
+&lt;p class="first-last-child-pseudo-elements2"&gt;paragraph 1&lt;/p&gt;
+&lt;p class="first-last-child-pseudo-elements2"&gt;paragraph 2&lt;/p&gt;
+
+&lt;section&gt;
+  &lt;p class="first-last-child-pseudo-elements2"&gt;paragraph 3&lt;/p&gt;
+  &lt;p class="first-last-child-pseudo-elements2"&gt;paragraph 4&lt;/p&gt;
+&lt;/section&gt;
+
+&lt;div&gt;
+  &lt;p class="first-last-child-pseudo-elements2"&gt;paragraph 5&lt;/p&gt;
+  &lt;p class="first-last-child-pseudo-elements2"&gt;paragraph 6&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;article&gt;
+  &lt;p class="first-last-child-pseudo-elements2"&gt;paragraph 7&lt;/p&gt;
+  &lt;p class="first-last-child-pseudo-elements2"&gt;paragraph 8&lt;/p&gt;
+&lt;/article&gt;</span></pre>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-5">
+                <h5>Result</h5>
+            </div>
+
+            <div class="col-7">
+                <div class="example-container">
+
+  <p class="first-last-child-pseudo-elements2">paragraph 1</p>
+  <p class="first-last-child-pseudo-elements2">paragraph 2</p>
+
+  <section>
+
+  <p class="first-last-child-pseudo-elements2">paragraph 3</p>
+  <p class="first-last-child-pseudo-elements2">paragraph 4</p>
+  </section>
+
+  <div>
+
+  <p class="first-last-child-pseudo-elements2">paragraph 5</p>
+  <p class="first-last-child-pseudo-elements2">paragraph 6</p>
+  </div>
+
+  <article>
+  <p class="first-last-child-pseudo-elements2">paragraph 7</p>
+  <p class="first-last-child-pseudo-elements2">paragraph 8</p>
+</article>
+
+                </div>
+            </div>
+        </div>
+
+
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>

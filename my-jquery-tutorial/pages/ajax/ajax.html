@@ -1,0 +1,1131 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="../../_css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../../_css/style.css">
+    <script src="../../_js/jquery-3.4.1.min.js"></script>
+    <title>Ajax</title>
+
+    <style>
+        table {
+            margin: 5%;
+            font-family: Arial;
+            font-size: 1.25em;
+        }
+        
+        table,
+        th,
+        td {
+            border: 1px solid purple;
+            border-collapse: collapse;
+        }
+        
+        th,
+        td {
+            padding: .25em;
+        }
+        
+        th {
+            background-color: purple;
+            color: white;
+        }
+        
+        .txtbox_itm {
+            font-size: 18pt;
+            height: 20px;
+            width: 300px;
+        }
+        
+        .txtbox {
+            font-size: 18pt;
+            height: 20px;
+            width: 50px;
+        }
+        
+        #amount_1 {
+            display: none;
+        }
+        
+        button {
+            width: 100px;
+            height: 50px;
+        }
+    </style>
+    <script src="../../_js/jquery-3.4.1.min.js"></script>
+</head>
+
+<body>
+    <section class="container">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb breadcrumb-container">
+                <li class="breadcrumb-item"><a class="breadcrumb-link" href="../../index.html">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Ajax</li>
+            </ol>
+        </nav>
+
+
+        <h1>Ajax</h1>
+        <p>Old aticle that doesn't use Ajax</p>
+        <ul>
+            <li><a href="http://norvig.com/21-days.html">norvig.com/21-days</a></li>
+        </ul>
+
+        <h1>Ajax</h1>
+        <p>Ajax can return 3 types of data</p>
+        <ul>
+            <li>xml</li>
+            <li>html</li>
+            <li>json</li>
+        </ul>
+
+
+
+
+
+
+
+
+
+
+        <h1>Implementing Ajax using the load() method</h1>
+        <p>Put the data at https://raw.githubusercontent.com/imtiazahmad007/resources/master/some_random_text.txt onto the web page</p>
+
+        <pre class="example"><span class="code-html">&lt;div class="main"&gt;
+&lt;/div&gt;
+&lt;button id="btn_1"&gt; Load Messages &lt;/button&gt;</span>
+
+<span class="code-js">$("button").on("click", function() {
+  <span class="code-comment">//load method</span>
+  var url = "https://raw.githubusercontent.com/imtiazahmad007/resources/master/some_random_text.txt";
+  $("div.main").load(url);
+});</span></pre>
+
+        <h3>Example</h3>
+        <!-- <p><img src="img/SQL Image.jpg" height="300" width="300"></p> -->
+        <div class="main">
+        </div>
+        <button id="btn1"> Load Messages </button>
+
+
+
+
+
+
+
+        <div class="row">
+            <div class="col-5">
+                <p>You could also load a local file instead of a URL.</p>
+                <p>NOTE: You must load the page in 'live-server' for it to work.</p>
+            </div>
+            <div class="col-7">
+
+                <pre class="example"><span class="code-html">&lt;div id="output"&gt;Output here&lt;/div&gt;</span>
+  
+<span class="code-js">$(document).ready(function () {
+$("#output").load("load.json");
+})</span></pre>
+            </div>
+        </div>
+
+
+
+        <h3>Example</h3>
+        <div id="output">Output</div>
+        <div class="one"><a href="#" id="myClicker">Click me</a></div>
+
+        <script>
+            $(document).ready(function() {
+                $("#myClicker").click(function(e) {
+                    e.preventDefault(); //prevent default link action
+                    $("#output").load("ex-json.json");
+                })
+            })
+        </script>
+
+
+
+
+
+
+
+
+
+
+        <h1>Load a table using load()</h1>
+
+        <pre class="example"><span class="code-html">&lt;div class="main"&gt;
+        &lt;/div&gt;
+        &lt;button id="btn_1"&gt; Load Messages &lt;/button&gt;</span>
+
+        <span class="code-js">$("button").on("click", function() {
+          <span class="code-comment">//load method</span>
+          var table = "https://raw.githubusercontent.com/imtiazahmad007/resources/master/sample_table.html";
+          $("div.main").load(table);
+        });</span></pre>
+
+        <h3>Example</h3>
+        <!-- <p><img src="img/SQL Image.jpg" height="300" width="300"></p> -->
+        <div class="main2">
+        </div>
+        <button id="btn2"> Load Messages </button>
+
+
+
+
+
+
+
+
+        <h1>Load only part of the table</h1>
+        <p>Add CSS selectors after the HTML URL to specify which part of the table to load</p>
+
+        <pre class="example"><span class="code-html">&lt;div class="main"&gt;
+        &lt;/div&gt;
+        &lt;button id="btn_1"&gt; Load Messages &lt;/button&gt;</span>
+
+        <span class="code-js">$("button").on("click", function() {
+          <span class="code-comment">//load method</span>
+          var table = "https://raw.githubusercontent.com/imtiazahmad007/resources/master/sample_table.html table fieldset:first";
+          $("div.main").load(table);
+        });</span></pre>
+
+        <h3>Example</h3>
+        <!-- <p><img src="img/SQL Image.jpg" height="300" width="300"></p> -->
+        <div class="main3">
+        </div>
+        <button id="btn3"> Load Messages </button>
+
+
+
+
+        <h1>Callback function</h1>
+        <p>Executed after current event has completed</p>
+        <p>Wait for an element to load before doing anything else</p>
+        <p>To tell JS to wait, use a callback function</p>
+
+        <pre class="example"><span class="code-html">&lt;p id="img4"&gt;&lt;img src="../../_img/SQL-Image.jpg" height="300" width="300"&gt;&lt;/p&gt;
+
+&lt;div class="main4"&gt;
+&lt;/div&gt;
+
+&lt;button id="btn4"&gt; Load Messages &lt;/button&gt;</span>
+
+<span class="code-js">$("button#btn4").on("click", function() {
+  <span class="code-comment">//load method</span>
+  var table = "https://raw.githubusercontent.com/imtiazahmad007/resources/master/sample_table.html table fieldset:first";
+  $("div.main4").load(table);
+
+  <span class="code-comment">//add a callback function so everything after the image line waits 4 secs until it disappears</span>
+  $("p#img4").hide(4000, function(){
+    <span class="code-comment">//anything in here will load after the image is hidden</span>
+    alert("the image has been hdiden");
+  });
+});</span></pre>
+
+        <h3>Example</h3>
+        <p id="img4"><img src="../../_img/SQL-Image.jpg" height="300" width="300"></p>
+        <div class="main4">
+        </div>
+        <button id="btn4"> Load Messages </button>
+
+
+
+
+
+
+        <h1>Using the ajax method</h1>
+
+        <p>Executed after current event has completed</p>
+        <p>Wait for an element to load before doing anything else</p>
+        <p>To tell JS to wait, use a callback function</p>
+
+        <pre class="example"><span class="code-html">&lt;div class="main5"&gt;
+&lt;/div&gt;
+
+&lt;button id="btn5"&gt; Load Messages &lt;/button&gt;</span>
+
+<span class="code-js">$("button#btn5").on("click", function() {
+    var url = "https://raw.githubusercontent.com/imtiazahmad007/resources/master/sample_table.html";
+<span class="code-comment">//first var is the URL</span>
+  $.ajax(url, {
+    dataType: "html",<span class="code-comment">//next add the data type</span>
+    method: 'GET',<span class="code-comment">//method</span>
+    <span class="code-comment">//only if call is successful load response from the URL</span>
+    success: function(response){
+      $("div.main5").html(response);
+    }<span class="code-comment">//no comma needed since it's last</span>
+  })
+});
+</span></pre>
+
+        <h3>Example</h3>
+        <div class="main5">
+        </div>
+        <button id="btn5"> Load Messages </button>
+
+
+
+
+
+
+
+
+
+
+        <h1>If there was an error during the Ajax call</h1>
+        <p>Since the URL is broken, an alert box displays notifying you that the ajax call failed.</p>
+
+
+        <pre class="example"><span class="code-html">&lt;div class="main6"&gt;
+&lt;/div&gt;
+
+&lt;button id="btn6"&gt; Load Messages &lt;/button&gt;</span>
+
+<span class="code-js">$("button#btn6").on("click", function() {
+  //load method
+  var url = "https://raw.githubusercontent.com/imtiazahmad007/resources/master/sample_table_BROKEN.html";
+  //first var is the URL
+
+  $.ajax(url, {
+    dataType: "html",
+    method: 'GET',
+    success: function(response){
+      $("div.main6").html(response);
+    },
+    <span class="code-comment">//if there's an error
+    //the param order matters, but you can name them anything</span>
+    <span class="standout">error: function(request, errorType, errorMsg){
+      alert("There was an issue with the Ajax call: " + errorMsg);
+    }</span>
+  });
+});</span></pre>
+
+        <h3>Example</h3>
+        <div class="main6">
+        </div>
+        <button id="btn6"> Load Messages </button>
+
+
+
+
+
+
+
+
+
+
+        <h1>Retrieving JSON dummy data using a test website</h1>
+        <p>This website provide dummy data to test your code.</p>
+        <ul>
+            <li><a href="https://jsonplaceholder.typicode.com" target="_blank">API site to test your code</a></li>
+        </ul>
+        <p>This prints the json data to the console.</p>
+        <pre class="example"><span class="code-js">$("button#btn7").on("click", function() {
+  //load method
+  var url = "https://jsonplaceholder.typicode.com/posts/1";
+  //first var is the URL
+
+  $.ajax(url, {
+    dataType: "json",
+    method: 'GET',
+    success: function(response){
+      // $("div.main7").json(response);
+      console.log(response);
+    },
+    //if there's an error
+    //the param order matters, but you can name them anything
+    error: function(request, errorType, errorMsg){
+      alert("There was an issue with the Ajax call: " + errorMsg);
+    }
+  });
+});</span></pre>
+
+        <h3>Example</h3>
+        <div class="main7">
+        </div>
+        <button id="btn7"> Load Messages </button>
+
+
+
+
+
+
+
+
+
+
+        <h1>Load JSON dummy data into the webpage</h1>
+        <pre class="example"><span class="code-html">&lt;div class="main8"&gt;
+&lt;/div&gt;
+
+&lt;button id="btn8"&gt; Load Messages &lt;/button&gt;</span>
+
+<span class="code-js">$("button#btn8").on("click", function() {
+  //load method
+  var url = "https://jsonplaceholder.typicode.com/posts/1";
+  //first var is the URL
+
+  $.ajax(url, {
+    dataType: "json",
+    method: 'GET',
+    success: function(response){
+      //get specific data
+      var userId = response.userId;
+      var title = response.title;
+      //define html node
+      var $info = $("&lt;p&gt;&lt;/p&gt;");
+      //populate paragraph tags
+      $info.text("user id is: " + userId + " title is: " + title);
+      //print to web page
+      $("div.main8").append($info);
+    },
+    //if there's an error
+    //the param order matters, but you can name them anything
+    error: function(request, errorType, errorMsg){
+      alert("There was an issue with the Ajax call: " + errorMsg);
+    }
+  });
+});</span></pre>
+
+        <h3>Example</h3>
+        <div class="main8">
+        </div>
+        <button id="btn8"> Load Messages </button>
+
+
+
+
+
+
+
+
+
+
+        <h1>Specify the param in the API url</h1>
+        <p>The full URL to get is https://jsonplaceholder.typicode.com/comments?postId=1</p>
+        <p>But the param at the end will be retrieved within the code using the data: {"postId": 1}.</p>
+        <p>Make sure to also use bracket notation to specify which index of the Array you wish to retrieve data from.</p>
+
+
+
+        <pre class="example"><span class="code-html"><span class="code-html">&lt;div class="main9"&gt;
+&lt;/div&gt;
+
+&lt;button id="btn9"&gt; Load Messages &lt;/button&gt;</span>
+
+<span class="code-js">$("button#btn9").on("click", function() {
+<span class="code-comment">//load method</span>
+var root = "https://jsonplaceholder.typicode.com/posts/1";
+var root = "https://jsonplaceholder.typicode.com/comments";
+
+$.ajax(root, {
+  dataType: "json",
+  method: 'GET',
+  success: function(response){
+    <span class="code-comment">//get specific data from a specific Object Array
+    //use array notation to specify</span>
+
+    var postId = response[0].postId;
+    var email = response[0].email;
+    <span class="code-comment">//define html node</span>
+    var $info = $("<p></p>");
+    <span class="code-comment">//populate paragraph tags</span>
+    $info.text("post id is: " + postId + " email is: " + email);
+    <span class="code-comment">//print to web page</span>
+    $("div.main9").append($info);
+    console.log(response);
+
+  },
+  error: function(request, errorType, errorMsg){
+    alert("There was an issue with the Ajax call: " + errorMsg);
+  },
+  <span class="code-comment">//data function. This passes in the param to the URL</span>
+  data: {"postId": 1}
+});
+  });</span></pre>
+
+        <h3>Example</h3>
+        <div class="main9">
+        </div>
+        <button id="btn9"> Load Messages </button>
+
+
+
+
+
+
+
+
+
+
+        <h1>beforeSend and complete functions</h1>
+        <p>beforeSend executes before Ajax call is made</p>
+        <p>complete function runs after the Ajax call has been made, even if it errors</p>
+
+
+        <pre class="example"><span class="code-html"><span class="code-html">&lt;div class="main10"&gt;
+&lt;/div&gt;
+
+&lt;button id="btn10"&gt; Load Messages &lt;/button&gt;</span>
+
+<span class="code-js">$("button#btn10").on("click", function() {
+<span class="code-comment">//load method</span>
+var root = "https://jsonplaceholder.typicode.com/posts/1";
+var root = "https://jsonplaceholder.typicode.com/comments";
+
+$.ajax(root, {
+  dataType: "json",
+  method: 'GET',
+  success: function(response){
+    <span class="code-comment">//get specific data from a specific Object Array
+    //use array notation to specify</span>
+
+    var postId = response[0].postId;
+    var email = response[0].email;
+    <span class="code-comment">//define html node</span>
+    var $info = $("<p></p>");
+    <span class="code-comment">//populate paragraph tags</span>
+    $info.text("post id is: " + postId + " email is: " + email);
+    <span class="code-comment">//print to web page</span>
+    $("div.main9").append($info);
+    console.log(response);
+
+  },
+  error: function(request, errorType, errorMsg){
+    alert("There was an issue with the Ajax call: " + errorMsg);
+  },
+  <span class="code-comment">//data function. This passes in the param to the URL</span>
+  data: {"postId": 1},
+  <span class="code-comment">//this executes before Ajax call is made</span>
+  <span class="standout">beforeSend</span>: function() {
+   ...
+  },
+  <span class="code-comment">//runs after Ajax call has been made</span>
+  <span class="standout">complete</span>: function() {
+   ...
+  }
+});
+  });</span></pre>
+
+        <h3>Example</h3>
+        <div class="main10">
+        </div>
+        <button id="btn10"> Load Messages </button>
+
+
+
+
+
+
+
+
+
+
+
+        <h1>get method</h1>
+        <p>instead of using the ajax method, you can use the get method</p>
+        <p>this just takes the URL and SUCCESS callback</p>
+
+
+
+        <h2>Viewing data change in the browser</h2>
+        <div class="row">
+            <div class="col-5">
+                <p>The .get method allows you to do something with the returned data.</p>
+                <p><a href="ajax-get-method-01.html">Example</a></p>
+                <p>This alerts info from a PHP file. ( A server is required to view this info) </p>
+                <p>Visit the PHP file in a browser. Add <strong>?name=Hi</strong> to the end.</p>
+                <p>file.php$name=Hi</p>
+                <p>The page returns <strong>GET Hi</strong></p>
+            </div>
+            <div class="col-7">
+
+                <pre class="example"><span class="code-html">&lt;div id="output"&gt;Output&lt;/div&gt;
+&lt;div class="one"&gt;&lt;a href="#" id="myClicker"&gt;Click me&lt;/a&gt;Some Content&lt;/div&gt;
+&lt;input type="text" value="hihihi" id="myA"&gt;</span>
+
+<span class="code-js">&lt;script&gt;
+  $(document).ready(function() {
+      $("#myClicker2").click(function(e) {
+          e.preventDefault(); //prevent default link action
+          // send data to load.json file
+          // use function(data) to listen for returned information
+          $.get("get-method-php.php", function(data) {
+              //output any returned data
+              $("#output2").html(data);
+          })
+      })
+  })
+&lt;/script&gt;</span>
+
+<span class="code-php">&lt;?php
+
+if (isset($_GET['name'])) {
+  $name= "GET " . $_GET['name'];
+}
+
+else if (isset($_POST['name'])){
+$name= "POST" . $_POST['name'];
+}
+
+else {
+  $name= "Just default data ".rand(1,10000);
+}
+
+echo $name;
+
+?&gt;</span></pre>
+            </div>
+        </div>
+
+
+
+
+
+
+        <h2>Passing data in the code</h2>
+        <div class="row">
+            <div class="col-5">
+                <p>Add a variable to store and object.</p>
+                <p>The object contains the value of the HTML field</p>
+                <p>Add the variable name to the .get() function</p>
+                <p>When you click the link, the page updates with <strong>GET hihihi</strong> since that's the value of the input field.</p>
+            </div>
+            <div class="col-7">
+
+                <pre class="example"><span class="code-html">&lt;div id="output"&gt;Output&lt;/div&gt;
+&lt;div class="one"&gt;&lt;a href="#" id="myClicker"&gt;Click me&lt;/a&gt;Some Content&lt;/div&gt;
+&lt;input type="text" value="hihihi" id="myA"&gt;</span>
+
+<span class="code-js">&lt;script&gt;
+$(document).ready(function() {
+  $("#myClicker2").click(function(e) {
+      e.preventDefault(); //prevent default link action
+      // use object oriented method to pick up data   
+      // create var and assign to object with data to pass over
+      <span class="code-highlight">var newdata = {
+        //get the value
+        name: $("#myA").val()
+      }</span>
+      // add newdata var as content your're passing
+      $.get("get-method-php.php", newdata, function(data) {
+          //output any returned data
+          $("#output2").html(data);
+      })
+  })
+})
+&lt;/script&gt;</span></pre>
+            </div>
+        </div>
+
+
+
+
+        <h2>JSON example</h2>
+        <p><a href="ajax-get-method-01.html">Example</a></p>
+
+        <div class="row">
+            <div class="col-5">
+                <p>Add url variable you're getting data from.</p>
+                <p>Use .getJSON to load the URL and retrieve the data.</p>
+                <p>You can then output to HTML and specify a specific JSON property key.</p>
+            </div>
+            <div class="col-7">
+                <pre class="example"><span class="code-html">&lt;div class="one"&gt;&lt;a href="#" id="myClicker"&gt;Click me&lt;/a&gt;Some Content&lt;/div&gt;
+&lt;input type="text" value="hihihi" id="myA"&gt;</span>
+
+<span class="code-js">&lt;script&gt;
+$(document).ready(function() {
+  $("#myClicker").click(function(e) {
+    e.preventDefault(); //prevent default link action
+    // set URL var
+    <span class="code-highlight">var url = "load.json";</span> 
+        // add .getJSON method since you're working with a JSON file
+    <span class="code-highlight">$.getJSON(url, function(data) {
+        // view data in console
+        console.log(data)
+            // send data to HTML
+        $("#output").html(data.age)
+    })</span>
+  })
+})
+&lt;/script&gt;</span></pre>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <h1>POST method</h1>
+        <p>More secure than GET since it's not sent in the URL.</p>
+
+
+        <div class="row">
+            <div class="col-5">
+                <p>This uses post to retrieve the data when you click the link.</p>
+                <p>This prints hihihi</p>
+            </div>
+            <div class="col-7">
+                <pre class="example"><span class="code-html">&lt;div id="output"&gt;Output&lt;/div&gt;
+              &lt;div class="one"&gt;&lt;a href="#" id="myClicker"&gt;Click me&lt;/a&gt;Some Content&lt;/div&gt;
+              &lt;input type="text" value="hihihi" id="myA"&gt;</span>
+              
+              <span class="code-js">&lt;script&gt;
+                $(document).ready(function() {
+                    $("#myClicker2").click(function(e) {
+                        e.preventDefault(); //prevent default link action  
+                        <span class="code-highlight">var newdata = {                       
+                          name: $("#myA").val()
+                        }
+                        $.post("file.php", newdata, function(data) {                        
+                            $("#output2").html(data);
+                        })</span>
+
+                    })
+                })
+              &lt;/script&gt;</span>
+              
+              <span class="code-php">&lt;?php
+              
+              if (isset($_GET['name'])) {
+                $name= "GET " . $_GET['name'];
+              }
+              
+              else if (isset($_POST['name'])){
+              $name= "POST" . $_POST['name'];
+              }
+              
+              else {
+                $name= "Just default data ".rand(1,10000);
+              }
+              
+              echo $name;
+              
+              ?&gt;</span></pre>
+            </div>
+        </div>
+
+
+
+
+
+
+
+        <h2>Additional POST data</h2>
+        <h3>status</h3>
+        <p>This will return something like 'success' to confirm AJAX worked</p>
+        <h3>xhr</h3>
+        <p>All the object information in the callback</p>
+
+
+        <div class="row">
+            <div class="col-5">
+                <p>Add status and xhr to the post function call to retrieve it</p>
+            </div>
+            <div class="col-7">
+                <pre class="example"><span class="code-html">&lt;div id="output"&gt;Output&lt;/div&gt;
+              &lt;div class="one"&gt;&lt;a href="#" id="myClicker"&gt;Click me&lt;/a&gt;Some Content&lt;/div&gt;
+              &lt;input type="text" value="hihihi" id="myA"&gt;</span>
+              
+              <span class="code-js">&lt;script&gt;
+                $(document).ready(function() {
+                    $("#myClicker2").click(function(e) {
+                        e.preventDefault(); //prevent default link action  
+                        var newdata = {                       
+                          name: $("#myA").val()
+                        }
+                        $.post("file.php", newdata, function(data,<span class="code-highlight">status,xhr</span>) {                        
+                            $("#output2").html(data);
+                        })
+
+                    })
+                })
+              &lt;/script&gt;</span></pre>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+        <h1>AJAX method</h1>
+
+        <p>Allows you to control content more than post.</p>
+
+
+        <div class="row">
+            <div class="col-5">
+                <p>Default method is get, but you can change with type</p>
+            </div>
+            <div class="col-7">
+                <pre class="example"><span class="code-html">&lt;div id="output"&gt;Output&lt;/div&gt;
+              &lt;div class="one"&gt;&lt;a href="#" id="myClicker"&gt;Click me&lt;/a&gt;Some Content&lt;/div&gt;
+              &lt;input type="text" value="hihihi" id="myA"&gt;</span>
+              
+<span class="code-js">&lt;script&gt;
+$(document).ready(function() {
+  $("#myClicker2").click(function(e) {
+      e.preventDefault(); //prevent default link action  
+      var newdata = {                       
+        name: $("#myA").val()
+      }
+    
+    $.ajax({
+      url:"ajax.php",
+      type:"POST",
+      data: newdata,
+      //if success is successful, fire function
+      success:function(data,status,xhr){
+      },
+      //otherwise run error function
+      error: function(data,status,xhr){
+      console.log(xhr); }
+
+  })
+})
+&lt;/script&gt;</span></pre>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </section>
+    <script src="../../_js/jquery-3.4.1.min.js"></script>
+    <script>
+        $("button#btn1").on("click", function() {
+            //load method
+            var url = "https://raw.githubusercontent.com/imtiazahmad007/resources/master/some_random_text.txt";
+            $("div.main").load(url);
+        });
+
+        $("button#btn2").on("click", function() {
+            //load method
+            var table = "https://raw.githubusercontent.com/imtiazahmad007/resources/master/sample_table.html";
+            $("div.main2").load(table);
+        });
+
+
+        $("button#btn3").on("click", function() {
+            //load method
+            var table = "https://raw.githubusercontent.com/imtiazahmad007/resources/master/sample_table.html table fieldset:first";
+            $("div.main3").load(table);
+        });
+
+
+        $("button#btn4").on("click", function() {
+            //load method
+            var table = "https://raw.githubusercontent.com/imtiazahmad007/resources/master/sample_table.html table fieldset:first";
+            $("div.main4").load(table);
+
+            //add a callback function so everything after the image line waits 4 secs until it disappears
+            $("p#img4").hide(4000, function() {
+                //anything in here will load after the image is hidden
+                alert("the image has been hdiden");
+            });
+        });
+
+        $("button#btn5").on("click", function() {
+            //load method
+            var url = "https://raw.githubusercontent.com/imtiazahmad007/resources/master/sample_table.html";
+            //first var is the URL
+
+            $.ajax(url, {
+                dataType: "html", //next add the data type
+                method: 'GET', //method
+                //only if call is successful load response from the URL
+                success: function(response) {
+                        $("div.main5").html(response);
+                    } //no comma needed since it's last
+            })
+        });
+
+
+        $("button#btn6").on("click", function() {
+            //load method
+            var url = "https://raw.githubusercontent.com/imtiazahmad007/resources/master/sample_table_BROKEN.html";
+            //first var is the URL
+
+            $.ajax(url, {
+                dataType: "html",
+                method: 'GET',
+                success: function(response) {
+                    $("div.main6").html(response);
+                },
+                //if there's an error
+                //the param order matters, but you can name them anything
+                error: function(request, errorType, errorMsg) {
+                    alert("There was an issue with the Ajax call: " + errorMsg);
+                }
+            });
+        });
+
+        $("button#btn7").on("click", function() {
+            //load method
+            var url = "https://jsonplaceholder.typicode.com/posts/1";
+            //first var is the URL
+
+            $.ajax(url, {
+                dataType: "json",
+                method: 'GET',
+                success: function(response) {
+                    // $("div.main7").json(response);
+                    console.log(response);
+                },
+                //if there's an error
+                //the param order matters, but you can name them anything
+                error: function(request, errorType, errorMsg) {
+                    alert("There was an issue with the Ajax call: " + errorMsg);
+                }
+            });
+        });
+
+        $("button#btn8").on("click", function() {
+            //load method
+            var url = "https://jsonplaceholder.typicode.com/posts/1";
+            //first var is the URL
+
+            $.ajax(url, {
+                dataType: "json",
+                method: 'GET',
+                success: function(response) {
+                    //get specific data
+                    var userId = response.userId;
+                    var title = response.title;
+                    //define html node
+                    var $info = $("<p></p>");
+                    //populate paragraph tags
+                    $info.text("user id is: " + userId + " title is: " + title);
+                    //print to web page
+                    $("div.main8").append($info);
+                },
+                //if there's an error
+                //the param order matters, but you can name them anything
+                error: function(request, errorType, errorMsg) {
+                    alert("There was an issue with the Ajax call: " + errorMsg);
+                }
+            });
+        });
+
+
+
+        $("button#btn9").on("click", function() {
+            //load method
+            var root = "https://jsonplaceholder.typicode.com/posts/1";
+            var root = "https://jsonplaceholder.typicode.com/comments";
+
+            $.ajax(root, {
+                dataType: "json",
+                method: 'GET',
+                success: function(response) {
+                    //get specific data from a specific Object Array
+                    //use array notation to specify
+
+                    var postId = response[0].postId;
+                    var email = response[0].email;
+                    //define html node
+                    var $info = $("<p></p>");
+                    //populate paragraph tags
+                    $info.text("post id is: " + postId + " email is: " + email);
+                    //print to web page
+                    $("div.main9").append($info);
+                    console.log(response);
+
+                },
+                error: function(request, errorType, errorMsg) {
+                    alert("There was an issue with the Ajax call: " + errorMsg);
+                },
+                //data function. This passes in the param to the URL
+                data: {
+                    "postId": 1
+                }
+            });
+        });
+
+
+
+
+        $("button#btn10").on("click", function() {
+            //load method
+            var root = "https://jsonplaceholder.typicode.com/posts/1";
+            var root = "https://jsonplaceholder.typicode.com/comments";
+
+            $.ajax(root, {
+                dataType: "json",
+                method: 'GET',
+                success: function(response) {
+                    //get specific data from a specific Object Array
+                    //use array notation to specify
+
+                    var postId = response[0].postId;
+                    var email = response[0].email;
+                    //define html node
+                    var $info = $("<p></p>");
+                    //populate paragraph tags
+                    $info.text("post id is: " + postId + " email is: " + email);
+                    //print to web page
+                    $("div.main10").append($info);
+                    console.log(response);
+
+                },
+                error: function(request, errorType, errorMsg) {
+                    alert("There was an issue with the Ajax call: " + errorMsg);
+                },
+                //data function. This passes in the param to the URL
+                data: {
+                    "postId": 1
+                },
+                //this executes before Ajax call is made
+                beforeSend: function() {
+
+                },
+                //runs after Ajax call has been made
+                complete: function() {
+
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

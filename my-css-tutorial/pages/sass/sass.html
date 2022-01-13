@@ -1,0 +1,1025 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="../../_css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../../_css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <style>
+        .btn-main:link {
+            background-color: #f08a5d;
+        }
+        
+        .btn-main:hover {
+            background-color: #ea5717;
+        }
+    </style>
+    <title>sass</title>
+</head>
+
+<body>
+
+
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+                <a href="../../index.html">Home</a>
+            </li>
+            <li class="breadcrumb-item active" aria-current="page">sass</li>
+        </ol>
+    </nav>
+
+
+
+    <div <section class="container">
+
+        <div class="row">
+            <div class="col">
+                <h1>Sass</h1>
+                <p>Sass is a CSS Preprocessor.</p>
+                <p>You write sass code in a sass file. Then compile it. This compiler converts it into regular CSS code.</p>
+                <p>Sass reduces repetition of CSS and therefore saves time.</p>
+                <p>Sass files has the ".scss" file extension. </p>
+                <p>Sass supports standard CSS comments /* comment */, and in addition it supports inline comments // comment:</p>
+                <p>Sass uses variables.</p>
+                <p>You can next selectors inside of each other, allowing you to write less code.</p>
+                <p>Operators can be used.</p>
+                <p>Partials and imports. Allows you to write CSS in different files and import them into a single file.</p>
+                <p>Mixins: Reusable pieces of CSS code.</p>
+                <p>Functions. Produce a value that can be used.</p>
+                <p>Extends. Make different selectors inherit declarations that are common to all of them.</p>
+                <p>Control directives: Uses conditionals and loops. Not often used.</p>
+            </div>
+        </div>
+
+
+
+        <div class="row">
+            <div class="col">
+                <h1>Installing Sass</h1>
+                <p>View the following page for installation instructions:</p>
+                <ul>
+                    <li><a href="https://sass-lang.com/install">Install Sass</a></li>
+                </ul>
+
+                </section>
+
+
+
+
+                <section class="container">
+                    <div class="row">
+                        <div class="col">
+                            <h1>Variables</h1>
+                            <h2>Overview</h2>
+                            <p>Variables allow you to store data that you would otherwise write out.</p>
+                            <p>With Sass, you can store information in variables, like:</p>
+                            <ul>
+
+                                <li>strings</li>
+                                <li>numbers</li>
+                                <li>colors</li>
+                                <li>booleans</li>
+                                <li>lists</li>
+                                <li>nulls</li>
+                            </ul>
+
+                            <p>Sass uses the $ symbol, followed by a name, to declare variables:</p>
+
+                        </div>
+                    </div>
+
+
+
+                    <div class="row">
+                        <div class="col-5">
+                            <h4>Ex 1:</h4>
+                            <p>This stores the background-color in a variable. You can then use that variable in the CSS intead of the hex code.</p>
+                        </div>
+
+
+                        <div class="col-7">
+                            <pre class="example"><span class="code-css"><span class="code-comment">//Sass variable</span>
+$width = 30px;
+$color-primary: #f9ed69;
+
+nav {
+  margin: <span class="code-highlight">$width</span>;
+  background-color: <span class="code-highlight">$color-primary</span>;
+}</span></pre>
+                        </div>
+                    </div>
+
+
+                    <div class="row">
+                        <div class="col">
+                            <h2>Scope</h2>
+                            <p>Add the variables at the top of the script.</p>
+                            <p>If you put them in a tag (like an h1), they will only be available within that tag.</p>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-5">
+                            <h4>Ex 1:</h4>
+                            <p>The output of the paragraph is red since the variable was declared in another tag.</p>
+                        </div>
+
+
+                        <div class="col-7">
+                            <pre class="example"><span class="code-css">$myColor: red;
+
+h1 {
+  $myColor: green;
+  color: $myColor;
+}
+
+p {
+  color: $myColor;
+}</span></pre>
+                        </div>
+                    </div>
+
+
+                    <div class="row">
+                        <div class="col">
+                            <h3>!global</h3>
+                            <p>Use !global to create a global variable. This will be available everywhere.</p>
+                        </div>
+                    </div>
+
+
+                    <div class="row">
+                        <div class="col-5">
+                            <h4>Ex 1:</h4>
+                            <p>This create a global variable for $myColor as green.</p>
+                            <p>You can then use it in a different tag even though it was created in another tag.</p>
+                            <p>The output of the paragraph is now green.</p>
+                        </div>
+
+
+                        <div class="col-7">
+                            <pre class="example"><span class="code-css">$myColor: red;
+
+h1 {
+  $myColor: green <span class="code-highlight">!global</span>;
+  color: $myColor;
+}
+
+p {
+  color: $myColor;
+}</span></pre>
+                        </div>
+                    </div>
+                </section>
+
+
+
+
+
+
+
+
+                <section class="container">
+                    <div class="row">
+                        <div class="col">
+                            <h1>Nesting</h1>
+                            <p>You can nest code within blocks instead of writing the full selector out.</p>
+                            <p>The & writes copies the selector it's nested in.</p>
+
+                        </div>
+                    </div>
+
+
+
+                    <div class="row">
+                        <div class="col-5">
+                            <h4>Ex 1:</h4>
+                            <p>Nesting the li inside the .navigation class.</p>
+                        </div>
+
+
+                        <div class="col-7">
+                            <pre class="example"><span class="code-css">.navigation {
+  list-style: none;
+
+  <span class="code-comment">//nested selector
+  //Otherwise this would be written as: .navigation li</span>
+  <span class="code-highlight">li {
+    display: inline-block;
+    margin-left: 30px;
+  }</span>
+}</span>
+
+<span class="code-html">&lt;ul class="navigation"&gt;
+  &lt;li&gt;&lt;a href="#"&gt;About us&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="#"&gt;Pricing&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="#"&gt;Contact&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</span></pre>
+                        </div>
+                    </div>
+
+
+
+
+
+                    <div class="row">
+                        <div class="col-5">
+                            <h4>Ex 2: Using the & symbol</h4>
+                            <p>The & writes copies the selector it's nested in. Otherwise you have to write <span class="text-highlight">.navigation li:first-child</span>.</p>
+                            <p>This & symbol copies the li element.</p>
+                        </div>
+
+
+                        <div class="col-7">
+                            <pre class="example"><span class="code-css">.navigation {
+  list-style: none;
+
+  <span class="code-comment">//nested selector</span>
+  li {
+    display: inline-block;
+    margin-left: 30px;
+
+    <span class="code-comment">//first child
+    //The & writes out the code for this selector
+    //Equivalent to .navigation li:first-child</span>
+    <span class="code-highlight">&:first-child</span> {
+    margin: 0;
+    }
+  }
+}</span>
+
+
+<span class="code-html">&lt;ul class="navigation"&gt;
+  &lt;li&gt;&lt;a href="#"&gt;About us&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="#"&gt;Pricing&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="#"&gt;Contact&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</span></pre>
+                        </div>
+                    </div>
+
+
+
+                    <div class="row">
+                        <div class="col-5">
+                            <h4>Ex 3: Using the & symbol with links</h4>
+                            <p>This uses the & symbol with links.</p>
+                        </div>
+
+
+                        <div class="col-7">
+                            <pre class="example"><span class="code-css">.btn-main {
+  <span class="code-comment">This is same as: .btn-main:link</span>
+  &:link{
+    background-color: $color-secondary;
+  }
+
+  <span class="code-comment">This is same as: .btn-main:hover</span>
+  &:hover {
+    <span class="code-comment">//color function: darken by 15%</span>
+    background-color: darken($color-secondary, 15%)
+  }
+}</span></pre>
+                        </div>
+                    </div>
+
+
+                </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                <section class="container">
+                    <div class="row">
+                        <div class="col">
+                            <h1>Functions</h1>
+                            <p>Sass comes with functions you can use to alter your code.</p>
+
+                        </div>
+                    </div>
+
+
+
+                    <div class="row">
+                        <div class="col-5">
+                            <h4>Ex 1: darken</h4>
+                            <p>This uses the <span class="text-highlight">darken</span> function to darken the color.</p>
+                        </div>
+
+
+                        <div class="col-7">
+                            <pre class="example"><span class="code-css">.btn-main {
+  &:link{
+    background-color: $color-secondary;
+  }
+
+  &:hover {
+    <span class="code-comment">//color function: darken by 15%</span>
+    background-color: <span class="code-highlight">darken($color-secondary, 15%)</span>
+  }
+}</span>
+
+<span class="code-html">&lt;a class="btn-main" href="#"&gt;Sign up&lt;/a&gt;</span></pre>
+                        </div>
+                    </div>
+
+
+
+
+                    <div class="row">
+                        <div class="col-5">
+                            <h5>Result</h5>
+                        </div>
+
+                        <div class="col-7">
+                            <div class="example-container">
+                                <a class="btn-main" href="#">Sign up</a>
+
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+                    <div class="row">
+                        <div class="col">
+                            <h2>Creating a function</h2>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-5">
+                            <h4>Ex 2: function to divide</h4>
+                            <p>This creates a function that divides two values.</p>
+                            <p>The values are then passed when the function is called.</p>
+                        </div>
+
+
+                        <div class="col-7">
+                            <pre class="example"><span class="code-css"><span class="code-comment">Create a function named divide</span>
+@function divide($a, $b) {
+  @return $a / $b;
+}
+
+nav {
+  <span class="code-comment">//Use function to set 30px
+  //* 1px is needed to add the value</span>
+  margin: <span class="code-highlight">divide(60, 2) * 1px</span>;
+}</span></pre>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+                </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                <section class="container">
+                    <div class="row">
+                        <div class="col">
+                            <h1>Mixins</h1>
+                            <h2>Overview</h2>
+                            <p>Reusable piece of code in separate file. You can then add it anywhere.</p>
+
+                        </div>
+                    </div>
+
+
+
+                    <div class="row">
+                        <div class="col-5">
+                            <h4>Ex 1: </h4>
+                            <p>Add clearfix code to a mixin named clearfix.</p>
+                            <p>Use @import to add that code to the &lt;nav&gt; section.</p>
+                        </div>
+
+
+                        <div class="col-7">
+                            <pre class="example"><span class="code-css"><span class="code-comment">//Adding a mixin for the clearfix</span>>
+@mixin clearfix {
+  <span class="code-comment">//Adds pseudo element after collapsed element
+  //This is equivalent to writing nav::after</span>
+  &::after {
+  content: "";
+  clear: both;
+  display: table;
+  }
+}
+
+nav {
+  margin: 30px;
+  background-color: $color-primary;
+
+  <span class="code-highlight">@include clearfix;</span>>
+}</span></pre>
+                        </div>
+                    </div>
+
+
+
+
+
+
+                    <div class="row">
+                        <div class="col">
+
+                            <h2>Arguments</h2>
+                            <p>You can use arguments in the mixin to specify a value.</p>
+
+                        </div>
+                    </div>
+
+
+
+                    <div class="row">
+                        <div class="col-5">
+                            <h4>Ex 1: </h4>
+                            <p>This changes the color depending on which color variable is called in the @include statment.</p>
+                        </div>
+
+
+                        <div class="col-7">
+                            <pre class="example"><span class="code-css"><span class="code-comment">//Add ($color) argument to mixin</span>
+@mixin style-link-text<span class="code-highlight">($color)</span> {
+  text-decoration: none;
+  text-transform: uppercase;
+  <span class="code-comment">The $color variable will become what was passend into the @include statment</span>
+  color: <span class="code-highlight">$color</span>;
+}
+
+<span class="code-comment">//This passes the $color-text-dark variable</span>
+a:link {
+  @include style-link-text<span class="code-highlight">($color-text-dark)</span>>;
+}
+</span></pre>
+                        </div>
+                    </div>
+                </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                <section class="container">
+                    <div class="row">
+                        <div class="col">
+                            <h1>Extends</h1>
+                            <p>Opposite of mixin. @extend copies the selector, not the content.</p>
+                            <p>Allows you to write a placeholder and put styles in it and have other selectors EXTEND that placeholder.</p>
+                            <p>Only use with similar related selectors.</p>
+
+                            <p>Start with % sign.</p>
+                            <p>Put repeated code into the block.</p>
+                            <p>Finally, EXTEND it into another block of code.</p>
+
+
+                        </div>
+                    </div>
+
+
+
+                    <div class="row">
+                        <div class="col-5">
+                            <h4>Ex 1: </h4>
+                            <p>Copies Extends code into another block</p>
+                        </div>
+
+
+                        <div class="col-7">
+                            <pre class="example"><span class="code-css"><span class="code-comment">// Extends</span>
+  %btn-placeholder {
+  padding: 10px;
+  display: inline-block;
+  text-align: center;
+}
+
+<span class="code-comment">// new block of code to EXTEND info</span>
+.btn-main {
+  @extend %btn-placeholder;
+}</span></div>
+                    </div>
+                </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                <section class="container">
+                    <div class="row">
+                        <div class="col">
+                            <h1><span id="installing-sass-locally">Compiling Sass locally</span></h1>
+                            <p>Install sass using NPM.</p>
+                        </div>
+                    </div>
+
+
+
+                    <div class="row">
+                        <div class="col-5">
+                            <h4>Create a package.json file</h4>
+                            <p>This should be created in the home directory of your project.</p>
+                            <p>You are prompted for the following questions:</p>
+                            <ol>
+
+                                <li>Accept name or give it a new one.</li>
+
+                                <li>Version: Accept</li>
+                                <li>Description: Leave blank or enter something</li>
+
+                                <li>Entry point: Accept or enter the project's main file</li>
+
+                                <li>test command: Leave blank or enter a command such as <a href="https://github.com/standard/standard">Standard</a>.</li>
+
+                                <li>git repository: Leave blank or enter the git repository URL</li>
+
+                                <li>keywords: Leave blank or enter keywords others could use when searching for your module.</li>
+
+                                <li>author: </li>
+
+                                <li>License: this defaults to ISC - most open-source Node.js projects are MIT</li>
+                            </ol>
+                        </div>
+
+
+                        <div class="col-7">
+                            <pre class="example"><span class="code-js">npm init</span></pre>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-5">
+                            <h4>Install sass</h4>
+                            <p>Save it as a dev dependency.</p>
+                        </div>
+
+
+                        <div class="col-7">
+                            <pre class="example"><span class="code-js">npm install node-sass --save-dev</span></pre>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-5">
+                            <h4>Write a script in the package.json file to compile sass</h4>
+                            <p>Edit the package.json file. Add the compile:sass command to the scripts section.</p>
+                            <p>Then add the input file and output file. (This will overwrite the existing style.css file)</p>
+                            <p>The -w flag watches for changes in the main.scss file. If it changes, it is automatically compiled.</div>
+
+
+                        <div class="col-7">
+                            <pre class="example"><span class="code-js">{
+  "name": "natours",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    <span class="code-highlight">"compile:sass": "node-sass sass/main.scss css/style.css -w"</span>
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "node-sass": "^5.0.0"
+  }
+}</span></pre>
+                        </div>
+                    </div>
+
+
+                    <div class="row">
+                        <div class="col-5">
+                            <h4>Run this command to compile.</h4>
+                            <p>Since the -w flag is being used, the script will remain running in your terminal and update whenever you save your main.scss file.</p>
+                        </div>
+
+
+                        <div class="col-7">
+                            <pre class="example"><span class="code-js">npm run compile:sass</span></pre>
+                        </div>
+                    </div>
+
+
+                </section>
+
+
+
+
+
+
+
+
+
+
+                <section class="container">
+                    <div class="row">
+                        <div class="col">
+                            <h1>Automatically reload page on file change</h1>
+                        </div>
+                    </div>
+
+
+
+                    <div class="row">
+                        <div class="col-5">
+                            <h4>Install liveserver NPM package</h4>
+                            <p>Install globally by using the -g flag: -g</p>
+
+                        </div>
+
+
+                        <div class="col-7">
+                            <pre class="example"><span class="code-js">npm install live-server -g</span></pre>
+                        </div>
+                    </div>
+
+
+                    <div class="row">
+                        <div class="col-5">
+                            <h4>Call from command line</h4>
+                            <p>This opens the page automatically in your default browser.</p>
+
+                        </div>
+
+
+                        <div class="col-7">
+                            <pre class="example"><span class="code-js">live-server</span></pre>
+                        </div>
+                    </div>
+
+
+                </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                <section class="container">
+                    <div class="row">
+                        <div class="col">
+                            <h1>Creating Sass files</h1>
+                            <h2>Create a folder</h2>
+                            <p>First, create a folder to house your Sass files. For example: _sass.</p>
+
+                            <h2>Create a Sass file with a .scss extension.</h2>
+                            <p>Create a file named main.scss.</p>
+
+                            <h2>Add line to package.json file to compile</h2>
+                            <p>Add the line above to the package.json file</p>
+                            <pre class="example"><span class="code-js">{
+  "name": "natours",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    <span class="code-highlight">"compile:sass": "node-sass sass/main.scss css/style.css -w"</span>
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "node-sass": "^5.0.0"
+  }
+}</span></pre>
+
+                            <h2>Run script to compile</h2>
+                            <pre class="example"><span class="code-js">npm run compile:sass</span></pre>
+
+
+
+
+                        </div>
+                    </div>
+
+
+
+
+                </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                <section class="container">
+                    <div class="row">
+                        <div class="col">
+                            <h1>7-1 Sass folder architecture</h1>
+                            <h2>Create a main Sass folder</h2>
+                            <p>First, create a folder to house your Sass files. For example: _sass.</p>
+                            <pre class="example">_sass</pre>
+
+                            <h3>Create main.scss file in the main Sass directory.</h3>
+                            <p>This file will only have lines that import other files into it.</p>
+                            <p>This file does not contain any Sass code.</p>
+                            <pre class="example">_sass
+  main.scss
+</pre>
+
+                            <p>At top of file, write import statements for each file below so it knows to import its content into the main.scss file.</p>
+                            <p>Do not add the underscore or extension to the filename.</p>
+                            <pre class="example"><span class="code-css">@import "abstracts/functions";
+                              
+@import "base/animations";
+@import "base/base";
+@import "base/typography";
+@import "base/utilities";
+
+
+@import "pages/home";</span></pre>
+
+                            <h2>Create base directory</h2>
+                            <pre class="example">_sass
+  main.scss
+
+  _base
+</pre>
+                            <p>This folder is low level basic code.</p>
+                            <p>Resets, HTML styles, and body element selectors.</p>
+
+                            <h3>Create a partial file</h3>
+                            <p>Create a partial file to import into the main.scss file.</p>
+                            <p>Partial files start with an underscore. For example: _base.scss.</p>
+                            <pre class="example">_sass
+  main.scss
+
+  _base
+    _base.scss
+</pre>
+
+
+
+
+                            <h3>More partial files under the base folder</h3>
+
+                            <pre class="example">_sass
+  main.scss
+
+  _base
+    _animations.scss
+    _base.scss
+    _typography.scss
+    _utilities.scss
+</pre>
+
+
+                            <h2>Create abstracts folder</h2>
+                            <p>Code here does not output any CSS.</p>
+                            <p>Entends, Mixins, Functions</p>
+
+                            <pre class="example">_sass
+  main.scss
+
+  _abstracts
+    _functions.scss
+    _mixins.scss
+    _variables.scss
+
+  _base
+    _animations.scss
+    _base.scss
+    _typography.scss
+    _utilities.scss
+</pre>
+
+
+
+
+
+                            <h2>Create components folder</h2>
+                            <p>Components are reuseable building blocks</p>
+                            <p>Should be useable anywhere on the page and completely independent.</p>
+
+                            <pre class="example">_sass
+  main.scss
+
+  _abstracts
+    _functions.scss
+    _mixins.scss
+    _variables.scss
+
+  _base
+    _animations.scss
+    _base.scss
+    _typography.scss
+    _utilities.scss
+
+  _components
+    _???
+</pre>
+
+
+
+
+                            <h2>Create layouts folder</h2>
+                            <p>for each piece of the global layout of the page</p>
+                            <p>header, foots, etc</p>
+
+                            <pre class="example">_sass
+  main.scss
+
+  _abstracts
+    _functions.scss
+    _mixins.scss
+    _variables.scss
+
+  _base
+    _animations.scss
+    _base.scss
+    _typography.scss
+    _utilities.scss
+
+  _components
+    _???
+
+  _layout
+    _???
+</pre>
+
+
+
+
+
+                            <h2>Create pages folder</h2>
+                            <p>for specific styles of a specific page</p>
+
+                            <pre class="example">_sass
+  main.scss
+
+  _abstracts
+    _functions.scss
+    _mixins.scss
+    _variables.scss
+
+  _base
+    _animations.scss
+    _base.scss
+    _typography.scss
+    _utilities.scss
+
+  _components
+    _???
+
+  _layout
+    _???
+
+  _pages
+    _home.scss
+</pre>
+
+
+
+
+
+
+
+
+
+                        </div>
+                    </div>
+
+
+
+
+                </section>
+
+
+
+
+
+</body>
+
+</html>

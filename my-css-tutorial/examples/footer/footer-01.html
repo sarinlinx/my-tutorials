@@ -1,0 +1,415 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="../../_css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../../_css/style.css">
+
+    <title>Footer</title>
+</head>
+
+<style>
+
+</style>
+
+<body>
+    <a href="../../index.html">Home page</a>
+
+    <section class="container">
+
+        <p>Create a footer with a logo on top and 1 row below with a left and right section.</p>
+
+
+
+        <h2>Step #1 -Create containers</h2>
+        <div class="row">
+
+            <div class="col-4">
+                <p>Create the footer container.</p>
+                <p>Create a container inside for the logo.</p>
+                <p>Add multiple images using srcset.</p>
+            </div>
+
+            <div class="col-8">
+                <pre class="example"><span class="code-html">&lt;footer class="footer"&gt;
+
+  &lt;div class="footer__logo-box"&gt;
+
+      &lt;picture class="footer__logo"&gt;
+          &lt;!-- at least 1 image, but you can use more than 1 source --&gt;
+          &lt;!-- srcset in the &lt;source&gt; tag is the default image --&gt;
+          &lt;!-- media= sets the media query for this image --&gt;
+          &lt;source srcset="img/logo-green-small-1x.png 1x, img/logo-green-small-2x.png 2x" media="(max-width: 37.5em)" src="img/logo-green-small-1x.png"&gt;
+
+          &lt;img srcset="img/logo-green-1x.png 1x, img/logo-green-2x.png 2x" alt="Full logo" class="footer__logo"&gt;
+          &lt;/source&gt;
+      &lt;/picture&gt;
+
+  &lt;/div&gt;
+
+&lt;/footer&gt;</span></pre>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col">
+                <h4>Example</h4>
+                <ul>
+                    <li><a href="footer-01-ex01.html" target="_blank">Example</a></li>
+                </ul>
+
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <h2>Step #2 -Add a row below the logo with a left and right column</h2>
+        <div class="row">
+
+            <div class="col-4">
+                <p>Add a row below the logo.</p>
+                <p>Add two columns.</p>
+                <p>Left side are list items.</p>
+                <p>Right side is copyright</p>
+            </div>
+
+            <div class="col-8">
+                <pre class="example"><span class="code-html">&lt;footer class="footer"&gt;
+
+  &lt;div class="footer__logo-box"&gt;
+
+      &lt;picture class="footer__logo"&gt;
+          &lt;!-- at least 1 image, but you can use more than 1 source --&gt;
+          &lt;!-- srcset in the &lt;source&gt; tag is the default image --&gt;
+          &lt;!-- media= sets the media query for this image --&gt;
+          &lt;source srcset="img/logo-green-small-1x.png 1x, img/logo-green-small-2x.png 2x" media="(max-width: 37.5em)" src="img/logo-green-small-1x.png"&gt;
+
+          &lt;img srcset="img/logo-green-1x.png 1x, img/logo-green-2x.png 2x" alt="Full logo" class="footer__logo"&gt;
+          &lt;/source&gt;
+      &lt;/picture&gt;
+
+  &lt;/div&gt;
+
+  <span class="code-highlight">&lt;div class="row"&gt;
+
+    &lt;div class="col-1-of-2"&gt;
+        &lt;div class="footer__navigation"&gt;
+            &lt;ul class="footer__list"&gt;
+                &lt;li class="footer__item"&gt;&lt;a href="#" class="footer__link"&gt;Company&lt;/a&gt;&lt;/li&gt;
+                &lt;li class="footer__item"&gt;&lt;a href="#" class="footer__link"&gt;Contact us&lt;/a&gt;&lt;/li&gt;
+                &lt;li class="footer__item"&gt;&lt;a href="#" class="footer__link"&gt;Careers&lt;/a&gt;&lt;/li&gt;
+                &lt;li class="footer__item"&gt;&lt;a href="#" class="footer__link"&gt;Privacy&lt;/a&gt;&lt;/li&gt;
+                &lt;li class="footer__item"&gt;&lt;a href="#" class="footer__link"&gt;Terms&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+  
+    &lt;div class="col-1-of-2"&gt;
+        &lt;p class="footer__copyright"&gt;
+            Built my &lt;a href="" class="footer__link"&gt;Name hear&lt;/a&gt; online course &lt;a href="#" class="footer__link"&gt;Advanced CSS and Sass&lt;/a&gt;. Copyright &copy; by NAME.
+        &lt;/p&gt;
+    &lt;/div&gt;
+  
+  &lt;/div&gt;</span>
+
+&lt;/footer&gt;</span></pre>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col">
+                <h4>Example</h4>
+                <ul>
+                    <li><a href="footer-01-ex02.html" target="_blank">Example</a></li>
+                </ul>
+
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <h2>Step #3 -Add CSS to the background and logo</h2>
+        <div class="row">
+
+            <div class="col-4">
+                <p>Set background colors and padding.</p>
+            </div>
+
+            <div class="col-8">
+                <pre class="example"><span class="code-css">.footer {
+    background-color: #333;
+    padding: 10rem 0;
+    font-size: 1.4rem;
+    color: #f7f7f7
+}
+
+@media only screen and (max-width: 56.25em) {
+    .footer {
+        padding: 8rem 0
+    }
+}
+/* Centers logo */
+
+.footer__logo-box {
+    text-align: center;
+    margin-bottom: 8rem
+}
+
+@media only screen and (max-width: 56.25em) {
+    .footer__logo-box {
+        margin-bottom: 6rem
+    }
+}
+
+.footer__logo {
+    width: 15rem;
+    height: auto
+}</span></pre>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col">
+                <h4>Example</h4>
+                <ul>
+                    <li><a href="footer-01-ex03.html" target="_blank">Example</a></li>
+                </ul>
+
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <h2>Step #4 -Add CSS to list</h2>
+        <div class="row">
+
+            <div class="col-4">
+                <p>Add border line to navigation container.</p>
+                <p>Style list and links</p>
+            </div>
+
+            <div class="col-8">
+                <pre class="example"><span class="code-css">.footer__navigation {
+    border-top: 1px solid #777;
+    padding-top: 2rem;
+    <span class="code-comment">// causes width to not extend past last list item</span>
+    display: inline-block
+}
+
+@media only screen and (max-width: 56.25em) {
+    .footer__navigation {
+        width: 100%;
+        text-align: center
+    }
+}
+  .footer__list {
+      list-style: none
+  }
+  
+  .footer__item {
+      display: inline-block
+  }
+  
+  .footer__item:not(:last-child) {
+      margin-right: 1.5rem
+  }
+  
+  .footer__link:link,
+  .footer__link:visited {
+      color: #f7f7f7;
+      background-color: #333;
+      text-decoration: none;
+      text-transform: uppercase;
+      display: inline-block;
+      transition: all .2s
+  }
+  
+  .footer__link:hover,
+  .footer__link:active {
+      color: #55c57a;
+      box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.4);
+      transform: rotate(5deg) scale(1.3)
+  }</span></pre>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col">
+                <h4>Example</h4>
+                <ul>
+                    <li><a href="footer-01-ex04.html" target="_blank">Example</a></li>
+                </ul>
+
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <h2>Step #5 -Add CSS to right column</h2>
+        <div class="row">
+
+            <div class="col-4">
+                <p>########</p>
+            </div>
+
+            <div class="col-8">
+                <pre class="example"><span class="code-css">.footer__copyright {
+  border-top: 1px solid #777;
+  padding-top: 2rem;
+  <span class="code-comment">/* Add width and float right so this section appears more in the correct position */</span>
+  width: 80%;
+  float: right
+}
+
+@media only screen and (max-width: 56.25em) {
+  .footer__copyright {
+      width: 80%;
+      float: none
+  }
+}</span></pre>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col">
+                <h4>Example</h4>
+                <ul>
+                    <li><a href="footer-01-ex05.html" target="_blank">Example</a></li>
+                </ul>
+
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </section>
+</body>
+
+</html>

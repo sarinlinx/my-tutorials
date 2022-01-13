@@ -1,0 +1,298 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" type="text/css" href="../../_css/bootstrap.css">
+  <link rel="stylesheet" type="text/css" href="../../_css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- <link href="../../_css/fontawesome/css/all.css" rel="stylesheet"> -->
+  <script src="https://kit.fontawesome.com/70e64bfa9c.js" crossorigin="anonymous"></script>
+
+  <title>Font Awesome</title>
+</head>
+
+<body>
+  <a href="../../index.html">Home page</a>
+
+
+
+
+
+  <h1>Font Awesome</h1>
+
+
+  <section class="container">
+    <h2>Overview</h2>
+
+    <div class="row">
+      <div class="col">
+        <p><a href="https://fontawesome.com/" target="_blank">Font Awesome</a> is currently in version 5 (as of June
+          2021).</p>
+        <p>There is a FREE version with 1588 icons, or a Pro version with 7842 icons.</p>
+        <p>The following reference page lists popular icons:</p>
+        <ul>
+          <li><a href="https://www.w3schools.com/icons/fontawesome5_icons_buildings.asp" target="_blank">List of popular
+              icons</a>
+      </div>
+    </div>
+
+    <h1>2 ways to add Font Awesome</h1>
+    <h2>Option 1 - Download the library</h2>
+
+    <div class="row">
+      <div class="col">
+
+
+
+        <h3>Download the library</h3>
+        <p>When you download the library, several folders and files are downloaded.</p>
+        <ul>
+          <li><span class="standout">/css</span> - Stylesheets for Web Fonts (main file is all.css) - this file contains
+            the core styling ( and additional files for all of Font Awesome’s style options - solid, regular, light, and
+            brands.), plus all of the icon styles that you’ll need when using Font Awesome.</li>
+          <li><span class="standout">/js</span> - SVG with JavaScript (main file is all.js) - loads all of the base
+            features, plus all of the icon styles that you’ll need when using Font Awesome.</li>
+          <li><span class="standout">/less</span> - Less pre-processor (main file is fontawesome.less)</li>
+          <li><span class="standout">/scss</span> - Sass pre-processor (main file is fontawesome.scss)</li>
+          <li><span class="standout">/sprites</span> - SVG sprites (main file is solid.svg)</li>
+          <li><span class="standout">/svgs</span> - Individual SVG for each icon (main file are individual *.svg icons)
+          </li>
+          <li><span class="standout">/webfonts</span> - Web Font files used with CSS (See /css) - contains all of the
+            typeface files that the above CSS references and depends on.</li>
+
+        </ul>
+
+
+        <h3>Load all styles and JS</h3>
+        <h4>all.css</h4>
+        <p>Copy both the /webfonts and the /css folders into your project’s static assets directory</p>
+        <p>Add a reference to the <span class="standout">/css/all.css</span> file into the &lt;head&gt; of each template
+          or page that you want to use Font Awesome on.</p>
+        <pre
+          class="example"><span class="code-html">&lt;link href="/your-path-to-fontawesome/css/all.css" rel="stylesheet"&gt;</span></pre>
+
+        <h4>all.js</h4>
+        <p>Add a reference to the <span class="standout">/js/all.js</span> file into the &lt;head&gt; of each template
+          or page that you want to use Font Awesome on.</p>
+        <pre
+          class="example"><span class="code-html">&lt;script defer src="/your-path-to-fontawesome/js/all.js"&gt;&lt;/script&gt;</span></pre>
+
+
+        <h3>Using Just Certain Styles </h3>
+        <h4>The core styling files is /css/fontawesome.css</h4>
+        <p>Copy both the /webfonts and the /css folders into your project’s static assets directory</p>
+        <p>Add a reference to the <span class="standout">/css/fontawesome.css</span> file into the &lt;head&gt; of each
+          template or page that you want to use Font Awesome on.</p>
+        <pre
+          class="example"><span class="code-html">&lt;link href="/your-path-to-fontawesome/css/fontawesome.css" rel="stylesheet"&gt;</span></pre>
+        <p>Add a reference to individual style files such as brands.css and solid.css.</p>
+        <pre class="example"><span class="code-html">&lt;link href="/your-path-to-fontawesome/css/brands.css" rel="stylesheet"&gt;</span>
+<span class="code-html">&lt;link href="/your-path-to-fontawesome/css/solid.css" rel="stylesheet"&gt;</span></pre>
+
+        <h4>fontawesome.js</h3>
+          <p>Repeat the steps above for specific files using /js/fontawesome.js</p>
+          <pre class="example"><span class="code-html">&lt;script defer src="/your-path-to-fontawesome/js/fontawesome.js"&gt;&lt;/script&gt;
+&lt;script defer src="/your-path-to-fontawesome/css/brands.js"&gt;&lt;/script&gt;
+&lt;script defer src="/your-path-to-fontawesome/css/solid.css"&gt;&lt;/script&gt;</span></pre>
+
+
+
+
+
+
+
+          <h2>Option 2 - Sign up for a KIT code</h2>
+          <p>Sign up.</p>
+          <p>Get your <a href="https://fontawesome.com/kits">Kit Code number</a>.</p>
+          <p>You then insert a &lt;script&gt; tag at the top of your HTML page.</p>
+          <p>The KIT code is placed in the head of the HTML page and looks like this:</p>
+          <pre
+            class="example"><span class="code-html">&lt;script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"&gt;&lt;/script&gt;</pre>
+
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+    <h1>Sass</h1>
+    <ul>
+      <li>https://fontawesome.com/v5.15/how-to-use/on-the-web/using-with/sass</li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h1>Using Font Awesome</h1>
+    <h2>Prefixes</h2>
+
+    <div class="row">
+      <div class="col">
+        <p>Font Awesome 5 uses <strong>fas</strong> or <strong>far</strong>.</p>
+        <ul>
+          <li>fas stands for solid</li>
+          <li>far stands for regular</li>
+          <li>fab stands for brands</li>
+        </ul>
+        <p>Font Awesome 4 uses <strong>fa</strong>.</p>
+
+      </div>
+    </div>
+
+
+
+
+
+    <h2>HTML</h2>
+    <ul><li><a href="https://fontawesome.com/v5.15/how-to-use/on-the-web/referencing-icons/basic-use">Basic use</a></li></ul>
+
+    <div class="row">
+      <div class="col">
+        <p>Add the code to an inline element.</p>
+        <pre class="example"><span class="code-html">&lt;i class="fas fa-camera"&gt;&lt;/i&gt;
+&lt;span class="fas fa-camera"&gt;&lt;/span&gt;
+&lt;i class="fab fa-font-awesome"&gt;&lt;/i&gt;</span></pre>
+        <i class="fas fa-camera"></i><br>
+        <span class="fas fa-camera"></span><br>
+        <i class="fab fa-font-awesome"></i>
+
+      </div>
+    </div>
+
+
+
+
+
+    <h2>CSS</h2>
+
+    <h3>font-weight</h3>
+    <div class="row">
+      <div class="col">
+        <p>Only solid (font-weight: 900;) and brands (font-weight: 400;) are supported on the free plan.</p>
+        <p>But you can use pseudo styling to customize further.</p>
+        <ul><li><a href="https://fontawesome.com/v5.15/how-to-use/on-the-web/advanced/css-pseudo-elements"> CSS Pseudo-elements</a></li></ul>
+      </div>
+    </div>
+
+
+    <h3>inherited styles</h3>
+    <div class="row">
+      <div class="col">
+        <p>If you change the font-size or color of the icon's container, the icon changes. Same things goes for shadow,
+          and anything else that gets inherited using CSS.</p>
+      </div>
+    </div>
+
+    <h3>Sizing</h3>
+    <ul><li><a href="https://fontawesome.com/v5.15/how-to-use/on-the-web/styling/sizing-icons">Sizing</a></li></ul>
+
+    <h3>Fixed width icons</h3>
+    <ul><li><a href="https://fontawesome.com/v5.15/how-to-use/on-the-web/styling/fixed-width-icons">Fixed width icons</a></li></ul>
+
+    <h3>Icons in a list</h3>
+    <ul><li><a href="https://fontawesome.com/v5.15/how-to-use/on-the-web/styling/icons-in-a-list">Icons in a list</a></li></ul>
+
+    <h3>Rotating Icons</h3>
+    <ul><li><a href="https://fontawesome.com/v5.15/how-to-use/on-the-web/styling/rotating-icons">Rotating Icons</a></li></ul>
+
+    <h3>Animating Icons</h3>
+    <ul><li><a href="https://fontawesome.com/v5.15/how-to-use/on-the-web/styling/animating-icons">Animating Icons</a></li></ul>
+
+    <h3>Bordered + Pulled Icons</h3>
+    <ul><li><a href="https://fontawesome.com/v5.15/how-to-use/on-the-web/styling/bordered-pulled-icons">Bordered + Pulled Icons</a></li></ul>
+
+    <h3>Stacked Icons</h3>
+    <ul><li><a href="https://fontawesome.com/v5.15/how-to-use/on-the-web/styling/stacking-icons">Stacked Icons</a></li></ul>
+
+    <h3>Power Transforms</h3>
+    <ul><li><a href="https://fontawesome.com/v5.15/how-to-use/on-the-web/styling/power-transforms">Power Transforms</a></li></ul>
+
+    <h3>Masking Icons</h3>
+    <ul><li><a href="https://fontawesome.com/v5.15/how-to-use/on-the-web/styling/masking">Masking Icons</a></li></ul>
+
+    <h3>Layering, Text, & Counters</h3>
+    <ul><li><a href="https://fontawesome.com/v5.15/how-to-use/on-the-web/styling/layering">Layering, Text, & Counters</a></li></ul>
+
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h2>Font Awesome 4</h2>
+    <div class="row">
+      <div class="col-6">
+        <p>You can use Font Awesome 4 by placing the following code in the head of your HTML file.</p>
+      </div>
+      <div class="col-6">
+        <pre
+          class="example"><span class="code-html">&lt;link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"&gt;</pre>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-6">
+        <p>Then insert the Font Awesome code into an inline element.</p>
+      </div>
+      <div class="col-6">
+        <pre class="example"><span class="code-html">&lt;i class="fa fa-car"&gt;&lt;/i&gt;&lt;/span&gt;</pre>
+      </div>
+    </div>
+
+    <h3>Example</h3>
+    <div class="row">
+      <div class="col">
+        <i class="fa fa-car"></i></span>
+      </div>
+    </div>
+
+
+
+  </section>
+
+
+
+
+</body>
+
+</html>

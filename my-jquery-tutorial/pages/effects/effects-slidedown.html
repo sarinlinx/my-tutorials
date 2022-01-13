@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="../../_css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../../_css/style.css">
+    <style>
+    #panel, #flip {
+      padding: 5px;
+      text-align: center;
+      background-color: #e5eecc;
+      border: solid 1px #c3c3c3;
+    }
+
+    #panel {
+      padding: 50px;
+      display: none;
+    }
+    </style>
+    <title>The 'slideDown' effect</title>
+</head>
+
+<body>
+    <section class="container">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb breadcrumb-container">
+                <li class="breadcrumb-item"><a class="breadcrumb-link" href="../../index.html">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">The 'slideDown' effect</li>
+            </ol>
+        </nav>
+
+
+        <h1>The 'slideDown' effect</h1>
+
+        <p>slideDown() slides a hidden element down on the page.</p>
+        <p>You can add additional parameters such as 'speed', 'easing' and 'callback'.</p>
+        <ul>
+            <li><a href="https://www.w3schools.com/jquery/eff_slidedown.asp">jQuery slideDown() method</a></li>
+        </ul>
+
+
+        <pre class="example">
+<span class="code-html">&lt;a id="target" href="#"&gt; Click Here &lt;/a&gt;
+&lt;p id="statement"&gt; This is a sentence &lt;/p&gt;
+&lt;div id="box" style="width:500px; height:100px; border:1px solid #000; background-color:yellow; display:none;"&gt;
+  This is a rectangle
+  &lt;/div&gt;</span>
+
+<span class="code-js">$('#target').on("click", function() {
+  //code to be executed when the button is clicked
+  $('p#statement').hide();
+  $('div#box').<span class="standout">slideDown(1000)</span>;
+});</span></pre>
+
+
+
+        <h3>Example</h3>
+        <a id="target" href="#"> Click Here </a>
+
+        <p id="statement"> This is a sentence </p>
+
+        <div id="box" style="width:500px; height:100px; border:1px solid #000; background-color:yellow; display:none;">
+            This is a rectangle
+        </div>
+
+
+
+
+
+
+
+        <h1>simple version</h1>
+
+        <pre class="example"><span class="code-html">&lt;div id="flip"&gt;Click to slide down panel&lt;/div&gt;
+&lt;div id="panel"&gt;Hello world!&lt;/div&gt;</span>
+
+<span class="code-js">$("#flip").click(function(){
+  $("#panel").slideDown("slow");
+});</span></pre>
+
+
+
+        <h3>Example</h3>
+        <div id="flip">Click to slide down panel</div>
+        <div id="panel">Hello world!</div>
+
+
+
+    </section>
+
+
+
+
+
+
+
+    <script src="../../_js/jquery-3.4.1.min.js"></script>
+
+    <script>
+        $('#target').on("click", function() {
+            //code to be executed when the button is clicked
+            $('p#statement').hide();
+            $('div#box').slideDown(1000);
+        });
+
+        $("#flip").click(function(){
+  $("#panel").slideDown("slow");
+});
+    </script>
+
+</body>
+
+</html>

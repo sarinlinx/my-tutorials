@@ -1,0 +1,296 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="../../_css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../../_css/style.css">
+
+    <title>Strings</title>
+</head>
+
+<body>
+    <a href="../../index.html">Home page</a>
+
+
+
+    <section class="container">
+        <h1>Strings</h1>
+        <div class="row">
+            <div class="col">
+                <p>Strings are text.</p>
+                <p>In JavaScript, all strings are in unicode, no matter which type of encoding is used.</p>
+            </div>
+        </div>
+
+        <h1>Basics</h1>
+        <h2>Creating a string</h2>
+
+        <div class="row">
+            <div class="col-6">
+                <p>Put the string in quotes.</p>
+            </div>
+            <div class="col-6">
+                <pre class="example"><span class="code-js">var text = "my text string";</span></pre>
+            </div>
+        </div>
+
+        <h4>Adding a number and a string</h4>
+        <div class="row">
+            <div class="col-6">
+                <p>The result is 45 because the number is just joined with the string.</p>
+                <p>If you check typeof, you'll see it's a string now.</p>
+            </div>
+            <div class="col-6">
+                <pre class="example"><span class="code-js">var a = 4;
+var b= "5";
+var sum = a + b;
+
+alert(sum);
+alert(typeof sum);</span></pre>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+    <section class="container">
+        <h1>Special characters</h1>
+        <div class="row">
+            <div class="col">
+                <ul>
+                    <li>\b Backspace</li>
+                    <li>\f Form feed</li>
+                    <li>\n New line</li>
+                    <li>\r Carriage return</li>
+                    <li>\t Tab</li>
+                    <li>\u#### Unicode 4 digit hex code</li>
+                </ul>
+            </div>
+        </div>
+
+        <h4>Example of Backspace</h4>
+        <div class="row">
+            <div class="col-6">
+                <p>asdf</p>
+            </div>
+
+            <div class="col-6">
+                <pre class="example"><span class="code-js">asdf</pre>
+            </div>
+        </div>
+
+        <h4>Example of Form feed</h4>
+        <div class="row">
+            <div class="col-6">
+                <p>asdf</p>
+            </div>
+
+            <div class="col-6">
+                <pre class="example"><span class="code-js">asdf</pre>
+            </div>
+        </div>
+
+        <h4>Example of newline</h4>
+        <div class="row">
+            <div class="col-6">
+                <p>This displays as:</p>
+                <p>first</p>
+                <p>second</p>
+                <p>third</p>
+            </div>
+
+            <div class="col-6">
+                <pre class="example"><span class="code-js">var multiLine = " first \n second \n third line "
+alert(multiLine)</pre>
+            </div>
+        </div>
+
+        <h4>Example of Carriage return</h4>
+        <div class="row">
+            <div class="col-6">
+                <p>asdf</p>
+            </div>
+
+            <div class="col-6">
+                <pre class="example"><span class="code-js">asdf</pre>
+            </div>
+        </div>
+
+        <h4>Example of tab</h4>
+        <div class="row">
+            <div class="col-6">
+                <p>asdf</p>
+            </div>
+
+            <div class="col-6">
+                <pre class="example"><span class="code-js">asdf</pre>
+            </div>
+        </div>
+
+        <h4>Example of Unicode</h4>
+        <div class="row">
+            <div class="col-6">
+                <p>This displays the copyright symbol.</p>
+            </div>
+
+            <div class="col-6">
+                <pre class="example"><span class="code-js">var unicode = "\u00A9 copyright symbol"
+alert(unicode)</pre>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+    <section class="container">
+        <h1>Escaping quotes</h1>
+        <div class="row">
+            <div class="col">
+                <p>To escape a quote, add a \ slash before the quote.</p>
+            </div>
+        </div>
+
+        <h4>Escape a single quote in a single quoted string</h4>
+        <div class="row">
+            <div class="col-6">
+                <p>A single quote inside a single quoted string must be escaped.</p>
+            </div>
+
+            <div class="col-6">
+                <pre class="example"><span class="code-js">var str = 'I\'m the Walrus';
+alert(str)</pre>
+            </div>
+        </div>
+
+
+        <h4>Escape a single quote in a double quoted string</h4>
+        <div class="row">
+            <div class="col-6">
+                <p>A single quote inside a double quoted string does not need to be escaped.</p>
+            </div>
+
+            <div class="col-6">
+                <pre class="example"><span class="code-js">var str = "I'm the Walrus";
+alert(str)</pre>
+            </div>
+        </div>
+
+
+        <h4>Escape double quotes in a double quoted string</h4>
+        <div class="row">
+            <div class="col-6">
+                <p>A double quote inside a double quoted string must be escaped.</p>
+            </div>
+
+            <div class="col-6">
+                <pre class="example"><span class="code-js">var str = "double \"quote\" ";
+alert(str)</pre>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+    <section class="container">
+        <h1>Breaking Long Code Lines</h1>
+        <div class="row">
+            <div class="col">
+                <p>For best readability, programmers often like to avoid code lines longer than 80 characters.</p>
+                <p>There are a few ways to do this.</p>
+            </div>
+        </div>
+
+        <h3>Breaking after an operator</h3>
+        <div class="row">
+            <div class="col-6">
+                <p>The clearest place to break is after an operator.</p>
+
+            </div>
+            <div class="col-6">
+                <pre class="example"><span class="code-js">document.getElementById("demo").innerHTML =
+"Hello Dolly!"; </pre>
+            </div>
+        </div>
+
+        <h3>Using a backslash</h3>
+        <div class="row">
+            <div class="col-6">
+                <p>This is not recommended since some browsers may not support it.</p>
+
+            </div>
+            <div class="col-6">
+                <pre class="example"><span class="code-js">document.getElementById("demo").innerHTML = "Hello \
+Dolly!";</pre>
+            </div>
+        </div>
+
+        <h3>Using string addition with +</h3>
+        <div class="row">
+            <div class="col-6">
+                <p>Use the + sign to add two string together.</p>
+
+            </div>
+            <div class="col-6">
+                <pre class="example"><span class="code-js">document.getElementById("demo").innerHTML = "Hello " +
+"Dolly!";</pre>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+    <section class="container">
+        <h1>Template Strings</h1>
+
+        <div class="row">
+            <div class="col-6">
+              <p>String templates are a different option to concatentation. They make your code easier to write and read.</p>
+                <p>Use the ` character to enclose a template string.</p>
+                <p>The variable string is written as: ${varName}</p>
+                <p>This takes the place of string concatenation using the + character.</p>
+                <p>This shows the difference in the two methods.</p>
+
+
+            </div>
+            <div class="col-6">
+                <pre class="example"><span class="code-js">var name="Andrew";
+<span class="code-comment">concatenation</span>
+console.log("Hi, my name is " + name);
+<span class="code-comment">String template</span>
+console.log(`Hi, my name is ${name}`);</pre>
+            </div>
+        </div>
+
+
+
+
+
+    <script src="../../_js/jquery.js"></script>
+    <script src="../../_js/bootstrap.bundle.js"></script>
+</body>
+
+</html>

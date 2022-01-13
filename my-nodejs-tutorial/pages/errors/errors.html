@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" type="text/css" href="../../_css/styles.css">
+
+  <title>Errors</title>
+</head>
+
+<body>
+
+
+  <nav class="navbar">
+    <a href="../../index.html">Back to homepage</a>
+    <a class="nav-page nav-active">Errors</a>
+  </nav>
+
+
+
+
+
+
+
+  <h1>Errors</h1>
+
+  <h4>TypeError [ERR_INVALID_ARG_TYPE]: The "data" argument must be of type string or an instance of Buffer, TypedArray,
+    or DataView. Received undefined</h4>
+
+  <section class="code-section-container">
+    <div class="code-text-section">
+      <p>The name of the property was misspelled.</p>
+      <p>It was spelled <span class="code">mesage</span> when it should be <span class="code">message</span>.</p>
+    </div>
+    <div class="code-block-section-w60">
+      <pre class="example"><span class="code-nodejs">fs.writeFile('dog-img.txt', res.body.<span class="code-highlight">messsage</span>, (err) => {
+        console.log('Random dog image saved to file');
+      });</span></pre>
+    </div>
+  </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>

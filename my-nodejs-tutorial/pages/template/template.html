@@ -1,0 +1,377 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" type="text/css" href="../../_css/styles.css">
+
+  <title>Templating</title>
+</head>
+
+<body>
+
+
+  <nav class="navbar">
+    <a href="../../index.html">Back to homepage</a>
+    <a class="nav-page nav-active">Templating</a>
+  </nav>
+
+
+
+
+
+
+
+  <h1>Templating</h1>
+  <h2>Simple example</h2>
+
+  <div class="text-section">
+    <p>This creates a single HTML page with a single template string.</p>
+    <p>The template string is then replaced by text.</p>
+  </div>
+
+  <section class="code-section-container">
+    <div class="code-text-section">
+      <ol>
+        <li>Create an HTML page with a single template string <span class="code">{%PRODUCT_CARDS%}</span>.</li>
+        <li>Create a variable named <span class="code">tempOverview</span> to read the contents of <span
+            class="text-object">template.html</span>.</li>
+        <li>Create a server.</li>
+        <li>Set the HTML Header so the web page can display the data.</li>
+        <li>Read the file stored in <span class="code">tempOverview</span> and use <span class="code">replace()</span>
+          to replace the template string with text.</li>
+        <li>Run <span class="code">res.end(output)</span> to display the result.</li>
+      </ol>
+    </div>
+    <div class="code-block-section-w60">
+      <pre class="example"><span class="code-html">&lt;div class="container"&gt;
+  &lt;h1&gt;🌽 Node Farm 🥦&lt;/h1&gt;
+  &lt;div class="cards-container"&gt;
+    <span class="code-nodejs">{%PRODUCT_CARDS%}</span>
+  &lt;/div&gt;
+&lt;/div&gt;</span>
+
+
+
+<span class="code-nodejs">const fs = require('fs');
+const http = require('http');
+const <span class="code-highlight">tempOverview</span> = fs.readFileSync(`${__dirname}/templates/template.html`, 'utf-8');
+
+
+<span class="code-comment">// SERVER </span>
+const server = http.createServer((req, res) => { 
+   <span class="code-highlight">res.writeHead(200, { 'Content-type': 'text/html'</span> });
+   const <span class="code-highlight">output</span> = <span class="code-highlight">tempOverview.replace('{%PRODUCT_CARDS%}', "This text replaces the template");
+   res.end(output);</span>
+});
+
+server.listen(8000, '127.0.0.1', () => {
+  console.log('Listening to requests on port 8000');
+});</span></pre>
+    </div>
+  </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <h1>Advanced example</h1>
+  <h2>Overview page</h2>
+
+<section class="code-section-container">   
+<div class="code-block-section-w100">
+<pre class="example"><span class="code-html"><span class="code-html">&lt;div class="container"&gt;
+  &lt;h1&gt;🌽 Node Farm 🥦&lt;/h1&gt;
+  &lt;div class="cards-container"&gt;
+    <span class="code-nodejs">{%PRODUCT_CARDS%}</span>
+  &lt;/div&gt;
+&lt;/div&gt;</span></span></pre>
+</div>
+  </section>
+
+
+
+<h2>Product page</h2>
+  <section class="code-section-container">
+    <div class="code-block-section-w100">
+      <pre class="example"><span class="code-html">&lt;!DOCTYPE html&gt;
+  &lt;html lang="en"&gt;
+    &lt;head&gt;
+      &lt;meta charset="UTF-8" /&gt;
+      &lt;meta name="viewport" content="width=device-width, initial-scale=1.0" /&gt;
+      &lt;meta http-equiv="X-UA-Compatible" content="ie=edge" /&gt;
+      &lt;link
+        href="https://fonts.googleapis.com/css?family=Megrim|Nunito+Sans:400,900"
+        rel="stylesheet"
+      /&gt;
+      &lt;link
+        rel="icon"
+        href="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/155/ear-of-maize_1f33d.png"
+      /&gt;
+      &lt;title&gt;<span class="code-highlight">{%PRODUCTNAME%} {%IMAGE%}</span> /// NODE FARM&lt;/title&gt;
+    &lt;/head&gt;
+  
+    &lt;body&gt;
+      &lt;div class="container"&gt;
+        &lt;h1&gt;🌽 Node Farm 🥦&lt;/h1&gt;
+  
+        &lt;figure class="product"&gt;
+          &lt;div class="product__organic <span class="code-highlight">{%NOT_ORGANIC%}</span>"&gt;&lt;h5&gt;Organic&lt;/h5&gt;&lt;/div&gt;
+          
+          &lt;a href="/overview" class="product__back"&gt;
+            &lt;span class="emoji-left"&gt;👈&lt;/span&gt;Back
+          &lt;/a&gt;
+  
+          &lt;div class="product__hero"&gt;
+            &lt;span class="product__emoji product__emoji--1"&gt;<span class="code-highlight">{%IMAGE%}</span>&lt;/span&gt;
+            &lt;span class="product__emoji product__emoji--2"&gt;<span class="code-highlight">{%IMAGE%}</span>&lt;/span&gt;
+            &lt;span class="product__emoji product__emoji--3"&gt;<span class="code-highlight">{%IMAGE%}</span>&lt;/span&gt;
+            &lt;span class="product__emoji product__emoji--4"&gt;<span class="code-highlight">{%IMAGE%}</span>&lt;/span&gt;
+            &lt;span class="product__emoji product__emoji--5"&gt;<span class="code-highlight">{%IMAGE%}</span>&lt;/span&gt;
+            &lt;span class="product__emoji product__emoji--6"&gt;<span class="code-highlight">{%IMAGE%}</span>&lt;/span&gt;
+            &lt;span class="product__emoji product__emoji--7"&gt;<span class="code-highlight">{%IMAGE%}</span>&lt;/span&gt;
+            &lt;span class="product__emoji product__emoji--8"&gt;<span class="code-highlight">{%IMAGE%}</span>&lt;/span&gt;
+            &lt;span class="product__emoji product__emoji--9"&gt;<span class="code-highlight">{%IMAGE%}</span>&lt;/span&gt;
+          &lt;/div&gt;
+  
+          &lt;h2 class="product__name"&gt;<span class="code-highlight">{%PRODUCTNAME%}</span>&lt;/h2&gt;
+          &lt;div class="product__details"&gt;
+            &lt;p&gt;&lt;span class="emoji-left"&gt;🌍&lt;/span&gt;From <span class="code-highlight">{%FROM%}</span>&lt;/p&gt;
+            &lt;p&gt;&lt;span class="emoji-left"&gt;❤️&lt;/span&gt;<span class="code-highlight">{%NUTRIENTS%}</span>&lt;/p&gt;
+            &lt;p&gt;&lt;span class="emoji-left"&gt;📦&lt;/span&gt;<span class="code-highlight">{%QUANTITY%}</span>&lt;/p&gt;
+            &lt;p&gt;&lt;span class="emoji-left"&gt;🏷&lt;/span&gt;<span class="code-highlight">{%PRICE%}</span>€&lt;/p&gt;
+          &lt;/div&gt;
+    
+          &lt;a href="#" class="product__link"&gt;
+            &lt;span class="emoji-left"&gt;🛒&lt;/span&gt;
+            &lt;span&gt;Add to shopping card (<span class="code-highlight">{%PRICE%}</span>€)&lt;/span&gt;
+          &lt;/a&gt;
+    
+          &lt;p class="product__description"&gt;
+          <span class="code-highlight">{%DESCRIPTION%}</span>
+          &lt;/p&gt;
+        &lt;/figure&gt;
+        
+      &lt;/div&gt;
+    &lt;/body&gt;
+  &lt;/html&gt;
+  </span></pre>
+    </div>
+  </section>
+
+
+
+
+  <h2>Card page</h2>
+
+  <section class="code-section-container">   
+<div class="code-block-section-w100">
+<pre class="example"><span class="code-html">&lt;figure class="card"&gt;
+  &lt;div class="card__emoji"&gt;<span class="code-highlight">{%IMAGE%}{%IMAGE%}</span>&lt;/div&gt;
+  &lt;div class="card__title-box"&gt;
+    &lt;h2 class="card__title"&gt;<span class="code-highlight">{%PRODUCTNAME%}</span>&lt;/h2&gt;
+  &lt;/div&gt;
+
+  &lt;div class="card__details"&gt;
+    &lt;div class="card__detail-box <span class="code-highlight">{%NOT_ORGANIC%}</span>"&gt;
+        &lt;h6 class="card__detail card__detail--organic"&gt;Organic!&lt;/h6&gt;
+    &lt;/div&gt;
+
+    &lt;div class="card__detail-box"&gt;
+      &lt;h6 class="card__detail"&gt;<span class="code-highlight">{%QUANTITY%}</span> per 📦&lt;/h6&gt;
+    &lt;/div&gt;
+      
+    &lt;div class="card__detail-box"&gt;
+      &lt;h6 class="card__detail card__detail--price"&gt;<span class="code-highlight">{%PRICE%}</span>€&lt;/h6&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;a class="card__link" href="/product?id=<span class="code-highlight">{%ID%}</span>"&gt;
+    &lt;span&gt;Detail &lt;i class="emoji-right"&gt;👉&lt;/i&gt;&lt;/span&gt;
+  &lt;/a&gt;
+&lt;/figure&gt;</span></pre>
+</div>
+    </section>
+
+
+
+
+
+
+  <h1>Template and Node.js example</h1>
+
+  <section class="code-section-container">
+    <div class="code-text-section">
+      <p>This example shows the HTML and Node.js code.</p>
+      <ol>
+        <li>First, create a var to store the JSON data. In this example it's stored as <span class="code">data</span>.
+        </li>
+        <li>Next, use JSON.parse to turn the JSON data into a JavaScript Object you can manipulate.</li>
+        <li>Add variables to store the different HTML template pages. Do this at the top of the file outside of the
+          server so it's only called once when the app loads.</li>
+        <li>Create a callback function named <span class="code">replaceTemplate</span>. This is used to loop through the
+          template code. It's called in the server section.</p>
+        <li>Inside the server, use the url module to deconstruct variables for the query string and page name. The
+          variables created are <span class="code">query</span> and <span class="code">pathname</span></li>
+        <li>Add HTML Header so the data can be displayed.</li>
+        <li>Then run <span class="code">res.end</span> to display the file.</li>
+        <li>Add a a variable named <span class="code">product</span> to capture the query ID# for the specific product
+          pages. They display when you click on a product. The URL adds a query string like: <span
+            class="code">?id=1</span>.</li>
+        <li>Run the <span class="code">replaceTemplate</span> function again for the template-product.html page passed
+          in.</p>
+      </ol>
+
+
+
+
+
+
+    </div>
+    <div class="code-block-section-w60">
+      <pre class="example"><span class="code-html">&lt;body&gt;
+  &lt;div class="container"&gt;
+    &lt;h1&gt;🌽 Node Farm 🥦&lt;/h1&gt;
+
+    &lt;div class="cards-container"&gt;
+      <span class="code-nodejs">{%PRODUCT_CARDS%} </span>
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/body&gt;</span>
+        
+              
+
+
+
+
+
+<span class="code-nodejs">const fs = require('fs');
+const http = require('http');
+const url = require('url');
+
+<span class="code-highlight"><span class="code-comment">// Store the JSON file data into a variable </span>
+const data = fs.readFileSync(`${__dirname}/dev-data/data.json`, 'utf-8');
+<span class="code-comment">// JSON.parse takes json data which is a string and turns it into JavaScript
+// This is an Array of Objects of all JSON data </span>
+const dataObj = JSON.parse(data); 
+
+
+<span class="code-comment">// Read templates once outside of server </span>
+const tempOverview = fs.readFileSync(`${__dirname}/templates/template-overview.html`, 'utf-8' );
+const tempCard = fs.readFileSync(`${__dirname}/templates/template-card.html`, 'utf-8');
+const tempProduct = fs.readFileSync(`${__dirname}/templates/template-product.html`, 'utf-8');
+
+
+const replaceTemplate = (temp, product) => {
+  <span class="code-comment">// the template is replaced with the Object.Property you want to display from the JSON file
+  // Wrap the template text in a regular expression with the g (global flag) so all instances of this placeholder are replaced
+  // the var 'output' is created to manipulate the argument passed in, rather than directly manipulating 'temp'. This is best practice </span>
+  let output = temp.replace(/{%PRODUCTNAME%}/g, product.productName);
+  output = output.replace(/{%IMAGE%}/g, product.image);
+  output = output.replace(/{%PRICE%}/g, product.price);
+  output = output.replace(/{%FROM%}/g, product.from);
+  output = output.replace(/{%NUTRIENTS%}/g, product.nutrients);
+  output = output.replace(/{%QUANTITY%}/g, product.quantity);
+  output = output.replace(/{%DESCRIPTION%}/g, product.description);
+  output = output.replace(/{%ID%}/g, product.id);
+
+  <span class="code-comment">// if statement to check if product is organic
+  // 'not-organic' is a CSS placeholder set to display: none
+  // This replaces the existing HTML Class value </span>
+  if (!product.organic)
+    output = output.replace(/{%NOT_ORGANIC%}/g, 'not-organic');
+  return output;
+};</span>
+
+
+<span class="code-comment">// SERVER </span>
+const server = http.createServer((req, res) => {
+<span class="code-comment">// use the url module and .parse property to extract the current URL being viewed.
+// Destruture
+// query is the string after the page name. For example: id: '1'. This appears in the URL as: /product?id=1
+// pathname is the page name: /product</span>
+const { query, pathname } = url.parse(req.url, true);
+
+  if (pathName === '/' || pathName === '/overview') {
+    <span class="code-comment">// Set HTML Header </span>
+    res.writeHead(200, { 'Content-type': 'text/html' });
+    <span class="code-comment">// loop over JSON product data stored in dataObj
+     // in each iteration, the template placeholders are replaced with the JSON Object Properties
+     // Anything returned from map() is saved into an Array
+     // This creates a function titled replaceTemplate to loop over all Objects to display
+     // This takes in the template-card.html data and current Object (el) which holds the data
+     // finally, add join('') with an empt string to convert everything into a single string </span>
+     const cardsHtml = dataObj.map((el) => replaceTemplate(tempCard, el)).join('')
+
+    <span class="code-comment">// Replace PRODUCT_CARDS template with cardsHtml function output
+    // This displays the data to the page </span>
+    const output = tempOverview.replace('{%PRODUCT_CARDS%}', cardsHtml)
+    <span class="code-comment">// Print to page </span>
+    res.end(output); </span>
+
+
+
+    <span class="code-comment">// else if you're on the product page </span>
+  } else if (pathName === '/product') {
+    <span class="code-highlight">res.writeHead(200, { 'Content-type': 'text/html' });
+    <span class="code-comment">// dataObj is an Array
+    // the query.id is the position of the element </span>
+    const product = dataObj[query.id]
+    <span class="code-comment">// pass in template-product.html page, and the product ID from the Array </span>
+    const output = replaceTemplate(tempProduct, product)
+    res.end(output); </span>
+
+    // api page
+  } else if (pathName === '/api') {
+    // Create JSON header to tell browser you're sending JSON
+    res.writeHead(200, { 'Content-type': 'application/json' });
+    // send back a string
+    res.end(data);
+
+    // note found
+  } else {
+    res.writeHead(404);
+    res.end('Page not found');
+  }
+});
+
+server.listen(8000, '127.0.0.1', () => {
+  console.log('Listening to requests on port 8000');
+});
+</span></pre>
+    </div>
+  </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>

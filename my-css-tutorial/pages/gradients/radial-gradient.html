@@ -1,0 +1,485 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="../../_css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../../_css/style.css">
+
+    <style>
+        #radial-gradient-1 {
+            height: 150px;
+            width: 200px;
+            background-image: radial-gradient(red 5%, green 15%, blue 60%);
+        }
+        
+        #radial-gradient-2 {
+            height: 150px;
+            width: 200px;
+            background-image: radial-gradient(red, yellow, green);
+        }
+        
+        #radial-gradient-3 {
+            height: 150px;
+            width: 200px;
+            background-image: radial-gradient(ellipse, red, yellow, green);
+        }
+        
+        #radial-gradient-3-circle {
+            height: 150px;
+            width: 200px;
+            background-image: radial-gradient(circle, red, yellow, green);
+        }
+        
+        #radial-gradient-closest-side {
+            height: 200px;
+            width: 200px;
+            background-image: radial-gradient(closest-side at 60% 55%, blue, green, yellow, black);
+        }
+        
+        #radial-gradient-farthest-side {
+            height: 200px;
+            width: 200px;
+            background-image: radial-gradient(farthest-side at 60% 55%, blue, green, yellow, black);
+        }
+        
+        #radial-gradient-closest-corner {
+            height: 200px;
+            width: 200px;
+            background-image: radial-gradient(closest-corner at 60% 55%, blue, green, yellow, black);
+        }
+        
+        #radial-gradient-farthest-corner {
+            height: 200px;
+            width: 200px;
+            background-image: radial-gradient(farthest-corner at 60% 55%, blue, green, yellow, black);
+        }
+        
+        #repeating-radial-gradient {
+            height: 200px;
+            width: 200px;
+            background-image: repeating-radial-gradient(blue, green 10%, yellow 15%);
+        }
+    </style>
+
+
+    <title>radial-gradient</title>
+</head>
+
+<body>
+    <a href="../../index.html">Home page</a>
+
+
+
+
+    <section class="container">
+
+        <div class="row">
+            <div class="col">
+                <h1>Radial gradients</h1>
+                <p>radial-gradient move from the center out in a circle.</p>
+
+
+                <h2>Syntax</h2>
+                <pre class="example">background-image: radial-gradient(shape size at position, start-color, ..., last-color); </pre>
+
+
+                <ul>
+                    <li><strong>shape</strong>: Defines the shape. Either ellipse (default) or circle</li>
+                    <li><strong>size</strong>: Defines the size. Values are: farthest-corner (default), closest-side, closest-corner, farthest-side</li>
+                    <li><strong>postition</strong>: default is center</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+    <section class="container">
+        <div class="row">
+            <div class="col">
+                <h1>Examples</h1>
+            </div>
+        </div>
+
+
+        <h2>Ex</h2>
+        <div class="row">
+            <div class="col-6">
+                <p>This shows different colors and the % where they change.</p>
+            </div>
+
+            <div class="col-6">
+                <pre class="example"><span class="code-html">&lt;p class="myClass"&gt;Testing to see how the radial gradient works.&lt;/p&gt;</span>
+
+<span class="code-css">.mydiv {
+  background-image: radial-gradient(red 5%, green 15%, blue 60%);
+}</span></pre>
+            </div>
+        </div>
+
+
+
+        <div class="row">
+            <div class="col-6">
+                <p>Ex.</p>
+            </div>
+
+            <div class="col-6">
+                <div id="radial-gradient-1">
+                    <p>Testing to see how the radial gradient works.</p>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+
+
+
+
+
+
+
+
+
+    <section class="container">
+        <div class="row">
+            <div class="col">
+                <h1>Ellipse and circle</h1>
+            </div>
+        </div>
+
+
+
+
+
+        <h2>Ellipse</h2>
+        <div class="row">
+            <div class="col">
+                <p>The Ellipse shape is default if not specified.</p>
+                <p>You can also specify it if you like.</p>
+            </div>
+        </div>
+
+
+
+
+
+
+        <div class="row">
+            <div class="col-6">
+                <p>Ellipse not specified</p>
+            </div>
+
+            <div class="col-6">
+                <pre class="example"><span class="code-html">&lt;p class="myClass"&gt;Testing to see how the radial gradient works.&lt;/p&gt;</span>
+
+<span class="code-css">.mydiv {
+    background-image: radial-gradient(red, yellow, green);
+}
+
+.mydiv2 {
+    background-image: radial-gradient(red, yellow, green);
+}</span></pre>
+                <p><strong>Ellipse (this is default):</strong></p>
+                <div id="radial-gradient-2"></div>
+            </div>
+        </div>
+
+
+
+        <div class="row">
+            <div class="col-6">
+                <p>Ellipse specified</p>
+            </div>
+
+            <div class="col-6">
+                <pre class="example"><span class="code-html">&lt;p class="myClass"&gt;Testing to see how the radial gradient works.&lt;/p&gt;</span>
+
+<span class="code-css">.mydiv {
+    background-image: radial-gradient(red, yellow, green);
+}
+
+.mydiv2 {
+    background-image: radial-gradient(ellipse, red, yellow, green);
+}</span></pre>
+                <p><strong>Ellipse</strong></p>
+                <div id="radial-gradient-3"></div>
+            </div>
+        </div>
+
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+    <section class="container">
+
+        <h2>Circle</h2>
+        <div class="row">
+            <div class="col-6">
+                <p>You must specify the circle shape.</p>
+            </div>
+
+            <div class="col-6">
+                <pre class="example"><span class="code-html">&lt;p class="myClass"&gt;Testing to see how the radial gradient works.&lt;/p&gt;</span>
+
+<span class="code-css">.mydiv {
+  background-image: radial-gradient(red, yellow, green);
+}
+
+.mydiv2 {
+  background-image: radial-gradient(circle, red, yellow, green);
+}</span></pre>
+            </div>
+        </div>
+
+
+
+        <div class="row">
+            <div class="col-6">
+                <p>Ex.</p>
+            </div>
+
+            <div class="col-6">
+                <p><strong>Circle:</strong></p>
+                <div id="radial-gradient-3-circle"></div>
+            </div>
+        </div>
+
+    </section>
+
+
+
+
+
+
+
+    <section class="container">
+        <div class="row">
+            <div class="col">
+                <h1>Different keywords</h1>
+                <p>The size parameter defines the size of the gradient. It can take four values:</p>
+                <ul>
+                    <li>
+                        closest-side</li>
+                    <li>farthest-side</li>
+                    <li>closest-corner</li>
+                    <li>farthest-corner</li>
+                </ul>
+                </p>
+            </div>
+        </div>
+
+
+
+
+        <h3>closest-side</h3>
+        <div class="row">
+            <div class="col-6">
+                <p>closest-side</p>
+            </div>
+
+            <div class="col-6">
+                <pre class="example"><span class="code-html">&lt;p class="myClass"&gt;Testing to see how the radial gradient works.&lt;/p&gt;</span>
+
+<span class="code-css">.mydiv {
+  background-image: radial-gradient(closest-side at 60% 55%,blue,green,yellow,black);
+}</span></pre>
+            </div>
+        </div>
+
+
+
+        <div class="row">
+            <div class="col-6">
+                <p>Ex.</p>
+            </div>
+
+            <div class="col-6">
+
+                <div id="radial-gradient-closest-side"></div>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+        <h3>farthest-side</h3>
+        <div class="row">
+            <div class="col-6">
+                <p>farthest-side</p>
+            </div>
+
+            <div class="col-6">
+                <pre class="example"><span class="code-html">&lt;p class="myClass"&gt;Testing to see how the radial gradient works.&lt;/p&gt;</span>
+
+<span class="code-css">.mydiv {
+  background-image: radial-gradient(farthest-side at 60% 55%,blue,green,yellow,black);
+}</span></pre>
+            </div>
+        </div>
+
+
+
+        <div class="row">
+            <div class="col-6">
+                <p>Ex.</p>
+            </div>
+
+            <div class="col-6">
+                <p><strong>Ellipse (this is default):</strong></p>
+                <div id="radial-gradient-farthest-side"></div>
+            </div>
+        </div>
+
+
+
+
+
+
+        <h3>closest-corner</h3>
+        <div class="row">
+            <div class="col-6">
+                <p>closest-corner</p>
+            </div>
+
+            <div class="col-6">
+                <pre class="example"><span class="code-html">&lt;p class="myClass"&gt;Testing to see how the radial gradient works.&lt;/p&gt;</span>
+
+<span class="code-css">.mydiv {
+  background-image: radial-gradient(closest-corner at 60% 55%,blue,green,yellow,black);
+}</span></pre>
+            </div>
+        </div>
+
+
+
+        <div class="row">
+            <div class="col-6">
+                <p>Ex.</p>
+            </div>
+
+            <div class="col-6">
+                <p><strong>Ellipse (this is default):</strong></p>
+                <div id="radial-gradient-closest-corner"></div>
+            </div>
+        </div>
+
+
+
+
+
+
+
+        <h3>farthest-corner</h3>
+        <div class="row">
+            <div class="col-6">
+                <p>farthest-corner</p>
+            </div>
+
+            <div class="col-6">
+                <pre class="example"><span class="code-html">&lt;p class="myClass"&gt;Testing to see how the radial gradient works.&lt;/p&gt;</span>
+
+<span class="code-css">.mydiv {
+  background-image: radial-gradient(farthest-corner at 60% 55%,blue,green,yellow,black);
+}</span></pre>
+            </div>
+        </div>
+
+
+
+        <div class="row">
+            <div class="col-6">
+                <p>Ex.</p>
+            </div>
+
+            <div class="col-6">
+                <p><strong>Ellipse (this is default):</strong></p>
+                <div id="radial-gradient-farthest-corner"></div>
+            </div>
+        </div>
+
+
+
+
+
+    </section>
+
+
+
+
+
+
+
+
+
+    <section class="container">
+        <div class="row">
+            <div class="col">
+                <h1>repeating-radial-gradient</h1>
+            </div>
+        </div>
+
+
+
+
+
+        <h2>Ex</h2>
+        <div class="row">
+            <div class="col">
+                <p>This works the same as above. it just repeats the gradient.</p>
+            </div>
+        </div>
+
+
+
+
+
+
+        <div class="row">
+            <div class="col-6">
+                <p>repeating-radial-gradient</p>
+            </div>
+
+            <div class="col-6">
+                <pre class="example"><span class="code-html">&lt;p class="myClass"&gt;Testing to see how the radial gradient works.&lt;/p&gt;</span>
+
+<span class="code-css">.mydiv {
+  background-image: repeating-radial-gradient(blue, green 10%, yellow 15%);
+}</span></pre>
+
+                <div id="repeating-radial-gradient"></div>
+            </div>
+        </div>
+
+    </section>
+
+
+</body>
+
+</html>

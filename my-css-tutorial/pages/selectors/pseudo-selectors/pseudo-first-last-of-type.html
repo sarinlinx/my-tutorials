@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="../../../_css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../../../_css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <title>first last-of-type</title>
+</head>
+
+<body>
+
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+                <a href="../../../index.html">Home</a>
+            </li>
+            <li class="breadcrumb-item active" aria-current="page">first last-of-type</li>
+        </ol>
+    </nav>
+
+
+
+
+
+    <section class="container">
+
+        <h1>:first-of-type</h1>
+        <div class="row">
+            <div class="col">
+                <p>This is different from <span class="text-highlight">first-child</span> since it doesn't matter what order the HTML is in.</p>
+                <p>The first type of the specified element will be selected.</p>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-5">
+              <h4>Ex 1</h4>
+                <p>Select the first paragraph elements in each parent.</p>
+            </div>
+
+            <div class="col-7">
+                <pre class="example"><span class="code-css">p:first-of-type {
+  color: red;
+}
+
+<span class="code-html">&lt;div&gt;
+  &lt;p&gt;Paragraph 1&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Paragraph 2&lt;/p&gt;
+&lt;p&gt;Paragraph 3&lt;/p&gt;
+
+&lt;section&gt;
+  &lt;p&gt;Paragraph 4&lt;/p&gt;
+&lt;/section&gt;</span></pre>
+            </div>
+        </div>
+
+
+
+
+        <div class="row">
+            <div class="col-5">
+                <h5>Result</h5>
+            </div>
+
+            <div class="col-7">
+                <div class="example-container">
+
+                  <div>
+  <p class="first-type-pseudo-elements">Paragraph 1</p>
+</div>
+
+<p class="first-type-pseudo-elements">Paragraph 2</p>
+<p class="first-type-pseudo-elements">Paragraph 3</p>
+
+<section>
+  <p class="first-type-pseudo-elements">Paragraph 4</p>
+</section>
+
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+
+
+
+
+
+
+</body>
+
+</html>

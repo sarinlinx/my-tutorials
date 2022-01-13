@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="../../_css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../../_css/style.css">
+
+    <title>on</title>
+</head>
+
+<body>
+    <section class="container">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb breadcrumb-container">
+                <li class="breadcrumb-item"><a class="breadcrumb-link" href="../../index.html">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">on</li>
+            </ol>
+        </nav>
+
+
+
+
+        <h1>on()</h1>
+        <p>The on() method attaches one or more event handlers for the selected elements.</p>
+
+
+        <pre class="example"><span class="code-html">&lt;p id="p1"&gt;Click or move the mouse pointer over this paragraph.&lt;/p&gt;</span>
+
+<span class="code-js">$("p#p1").on({
+  mouseenter: function(){
+    $(this).css("background-color", "lightgray");
+  },
+  mouseleave: function(){
+    $(this).css("background-color", "green");
+  },
+  click: function(){
+    $(this).css("background-color", "yellow");
+  }
+});</span></pre>
+
+
+        <h3>Example</h3>
+        <p id="p1">Click or move the mouse pointer over this paragraph.</p>
+
+    </section>
+
+
+
+    <script src="../../_js/jquery-3.4.1.min.js"></script>
+
+    <script>
+
+    $("p#p1").on({
+      mouseenter: function(){
+        $(this).css("background-color", "lightgray");
+      },
+      mouseleave: function(){
+        $(this).css("background-color", "green");
+      },
+      click: function(){
+        $(this).css("background-color", "yellow");
+      }
+    });
+    </script>
+
+</body>
+
+</html>

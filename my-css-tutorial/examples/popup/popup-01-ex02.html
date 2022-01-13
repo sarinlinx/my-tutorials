@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+    <title>Navigation example</title>
+
+    <style>
+        *,
+        *::after,
+        *::before {
+            margin: 0;
+            padding: 0;
+            box-sizing: inherit;
+        }
+        
+        html {
+            font-size: 62.5%;
+        }
+        
+        body {
+            box-sizing: border-box;
+            padding: 3rem;
+            font-family: "Lato", sans-serif;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 1.7;
+            color: #777;
+        }
+        
+        .row {
+            max-width: 114rem;
+            margin: 0 auto;
+        }
+        
+        .row:not(:last-child) {
+            margin-bottom: 8rem;
+        }
+        
+        .row::after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+        
+        .row [class^="col-"] {
+            float: left;
+        }
+        
+        .row [class^="col-"]:not(:last-child) {
+            margin-right: 6rem;
+        }
+        
+        .popup {
+            /* cover entire page in dark background */
+            height: 100vh;
+            /* not really necessary */
+            width: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: rgba(0, 0, 0, 0.8);
+            z-index: 9999;
+            /* hide popup so it can be animated */
+            /* opacity: 0; */
+            /* visibility: hidden; */
+            /* transition: all .3s */
+        }
+        
+        .popup__content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 75%;
+            /* only use height now since there's no content */
+            height: 50rem;
+            background-color: #fff;
+            box-shadow: 0 2rem 4rem rgab(#000, 0.2);
+            border-radius: 3px;
+            /* used to make left and right sides have same height */
+            /* display: table; */
+            /* overflow: hidden; */
+            /* initial state of content should be scaled down and invisible */
+            /* opacity: 0; */
+            /* there is already a transform in the @include, so you cannot add a 2nd in the same declaration 
+               to fix add the original from the @include and the new one in the same declaration */
+            /* transform: translate(-50%, -50%) scale(0.5); */
+            /* transition: all .4s .2s */
+        }
+    </style>
+
+    <body>
+
+
+
+        <p>page text</p>
+        <p>page text</p>
+        <p>page text</p>
+        <p>page text</p>
+        <p>page text</p>
+        <p>page text</p>
+        <p>page text</p>
+        <p>page text</p>
+        <p>page text</p>
+        <p>page text</p>
+        <p>page text</p>
+        <p>page text</p>
+        <p>page text</p>
+        <p>page text</p>
+
+
+        <div class="row">
+            <div class="popup" id="popup">
+                <div class="popup__content">
+
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+    </body>
+
+</html>

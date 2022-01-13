@@ -1,0 +1,437 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet"> -->
+
+    <link rel="stylesheet" type="text/css" href="../../_css/styles.css">
+
+    <title>JSX Overview</title>
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <a href="../../index.html">Back to homepage</a>
+        <a class="nav-page nav-active">JSX</a>
+    </nav>
+
+
+
+
+
+
+
+    <h1>JSX</h1>
+    <div class="text-section">
+        <p>JSX is a set of instructions that tells React exactly what content to display on the screen at any given time.
+        </p>
+        <p>It looks very similar to HTML.</p>
+        <img src="../../_img/jsx-elements.png" width="450px">
+        <p>React iterates over every JSX element. If it's a DOM element, it displays to the page.</p>
+        <p>If it's a React Component, the Component function is called and inspects the JSX it gets back.</p>
+        <p>Your browser doesn't understand JSX. Bable converts it into JavaScript code.</p>
+        <p>You could write out the JavaScript functions manually, but JSX makes it much easier. For example:</p>
+        <img src="../../_img/jsx-bable.png" width="450px">
+    </div>
+
+    <h2>One Top Level Element</h2>
+    <div class="text-section">
+        <p>All HTML code must be wrapped in ONE top level element.</p>
+        <p>This is often a div tag.</p>
+    </div>
+
+
+    <h2>Elements Must be Closed</h2>
+    <section class="code-section-container">
+        <div class="code-text-section">
+            <p> JSX follows XML rules, and therefore HTML elements must be properly closed.</p>
+            <p>Example Close empty elements with /&gt;</p>
+        </div>
+
+        <div class="code-block-section-w60">
+            <pre class="example"><span class="code-react">const myelement = &lt;input type="text" /&gt;</span></pre>
+        </div>
+    </section>
+
+
+    <h2>The return statement line with multi-line JSX</h2>
+    <section class="code-section-container">
+        <div class="code-text-section">
+            <p>There must be something on the same line after return, otherwise it will not work.</p>
+            <p>The convention is to put an opening parenthesis after the 'return' keyword, then JSX on the following lines.
+            </p>
+        </div>
+
+        <div class="code-block-section-w60 ">
+            <pre class="example"><span class="code-react">const App = () =&gt; {
+  return <span class="code-highlight">(
+    &lt;div&gt;
+      &lt;label className="label" for="name"&gt;
+        Enter name:
+      &lt;/label&gt;
+      &lt;input id="name" type="text" /&gt;
+      &lt;button style={{ backgroundColor: "blue", color: "white" }}&gt;
+        Submit
+      &lt;/button&gt;
+    &lt;/div&gt;
+  ); </span>
+};</span></pre>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h2>Converting Inline CSS to JSX</h2>
+    <section class="code-section-container">
+        <div class="code-text-section">
+            <p>The JSX must be formatted differently than the HTML when adding CSS styles.</p>
+            <p>The first curly brace indicates a JavaScript variable inside JSX.</p>
+            <p>The 2nd references a JavaScript Object.</p>
+            <p>If the CSS property has a hyphen, remove it and capitalize the next letter.</p>
+            <p>Add single quotes around value to create a string.</p>
+            <p>Remove semicolon.</p>
+        </div>
+
+
+        <div class="code-block-section-w60 ">
+            <pre class="example"><span class="code-html">&lt;div style="background-color: red;"&gt;&lt;/div&gt; </span>
+<span class="code-comment">// change to </span>
+<span class="code-react">&lt;div style=<span class="code-highlight">{{</span>backgroundColor: <span class="code-highlight">'</span>red<span class="code-highlight">'}}</span>&gt;&lt;/div&gt; </span> </span></pre>
+        </div>
+    </section>
+
+
+    <h2>Quotes in JSX</h2>
+    <div class="text-section">
+        <p>Use double quotes for JSX properties.</p>
+        <p>For any NON-JSX property, use single quotes instead. For example, when adding CSS properties.</p>
+    </div>
+
+
+
+    <h2>HTML classes in JSX</h2>
+    <section class="code-section-container">
+        <div class="code-text-section">
+            <p>Do not use the word class in JSX. Use className.</p>
+            <p>This is to avoid confusion with JavaScript thinking the word class should be a JavaScript class, not HTML.</p>
+            <p>NOTE: This may not be required in future versions of React.</p>
+        </div>
+
+        <div class="code-block-section-w60 ">
+            <pre class="example"><span class="code-react">const App = () =&gt; {
+    return (
+      &lt;div&gt;
+        &lt;label <span class="code-highlight">className</span>="label" for="name"&gt;
+          Enter name:
+        &lt;/label&gt;
+        &lt;input id="name" type="text" /&gt;
+        &lt;button style={{ backgroundColor: "blue", color: "white" }}&gt;
+          Submit
+        &lt;/button&gt;
+      &lt;/div&gt;
+    );
+  };</span></pre>
+        </div>
+    </section>
+
+
+
+    <h1>Expressions in JSX</h1>
+    <div class="text-section">
+        <p>With JSX you can write expressions inside curly braces { }.</p>
+        <p> The expression can be a React variable, or property, or any other valid JavaScript expression. JSX will execute the expression and return the result.</p>
+    </diV>
+
+
+
+
+    <h2>JSX can reference JavaScript variables</h2>
+    <section class="code-section-container">
+        <div class="code-text-section">
+            <p>This means you can add a JavaScript variable inside JSX.</p>
+            <p>This creates a variable named buttonText. It's then added to the JSX inside of curly braces.</p>
+        </div>
+
+        <div class="code-block-section-w60">
+            <pre class="example"><span class="code-react">const App = () =&gt; {
+  <span class="code-highlight">const buttonText = 'Click Me!'; </span>
+
+  return (
+    &lt;div&gt;
+      &lt;label className="label" for="name"&gt;
+        Enter name:
+      &lt;/label&gt;
+      &lt;input id="name" type="text" /&gt;
+      &lt;button style={{ backgroundColor: "blue", color: "white" }}&gt;
+      <span class="code-highlight">{buttonText}</span>
+      &lt;/button&gt; 
+    &lt;/div&gt;
+  );
+};</span></pre>
+        </div>
+    </section>
+
+
+
+
+    <h2>JSX can reference JavaScript functions outside the App()</h2>
+    <section class="code-section-container">
+        <div class="code-text-section">
+            <p>This creates a function outside App().</p>
+            <p>You can then call it in JSX by placing it inside curly braces.</p>
+            <p>Make sure to add () to invoke then function.</p>
+        </div>
+
+        <div class="code-block-section-w60 ">
+            <pre class="example"><span class="code-react"><span class="code-highlight">function getButtonText() {
+  return 'Click on me!';    
+} </span>
+
+const App = () =&gt; {
+
+  return (
+    &lt;div&gt;
+      &lt;label className="label" for="name"&gt;
+        Enter name:
+      &lt;/label&gt;
+      &lt;input id="name" type="text" /&gt;
+      &lt;button style={{ backgroundColor: "blue", color: "white" }}&gt;
+       <span class="code-highlight">{getButtonText()} </span>
+      &lt;/button&gt;
+    &lt;/div&gt;
+  );
+};</span></pre>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h2>JSX and Objects</h2>
+    <section class="code-section-container">
+        <div class="code-text-section">
+            <p>You cannot reference a JavaScript Object to print text. This will throw an error.</p>
+            <div class="notebox-warning">
+                <p>Error: Objects are not valid as a React child (found: object with keys {text}). If you meant to render a collection of children, use an array instead.</p>
+            </div>
+        </div>
+
+        <div class="code-block-section-w60 ">
+            <pre class="example"><span class="code-react">const App = () =&gt; {
+  const buttonText = <span class="code-highlight">{ text: 'Cick Me!' }</span>
+
+  return (
+    &lt;div&gt;
+      &lt;label className="label" for="name"&gt;
+        Enter name:
+      &lt;/label&gt;
+      &lt;input id="name" type="text" /&gt;
+      &lt;button style={{ backgroundColor: "blue", color: "white" }}&gt;
+      <span class="code-highlight">{buttonText} </span>
+      &lt;/button&gt;
+    &lt;/div&gt;
+  );
+};</span></pre>
+        </div>
+    </section>
+
+    <h3>Solution. Use the key name to display text.</h3>
+    <section class="code-section-container">
+        <div class="code-text-section">
+            <p>You must reference the property.</p>
+            <p>For example: {buttonText.text}</p>
+        </div>
+
+        <div class="code-block-section-w60 ">
+            <pre class="example"><span class="code-react">const App = () =&gt; {
+  const buttonText = <span class="code-highlight">{ text: 'Cick Me!' }</span>
+
+  return (
+    &lt;div&gt;
+      &lt;label className="label" for="name"&gt;
+        Enter name:
+      &lt;/label&gt;
+      &lt;input id="name" type="text" /&gt;
+      &lt;button style={{ backgroundColor: "blue", color: "white" }}&gt;
+      <span class="code-highlight">{buttonText.text}</span>
+      &lt;/button&gt;
+    &lt;/div&gt;
+  );
+};</span></pre>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
+    <h2>The 'for' keyword</h2>
+    <section class="code-section-container">
+        <div class="code-text-section">
+            <p>React will throw a console error if the HTML word 'for' is used.</p>
+            <p>Instead, change this to htmlFor.</p>
+        </div>
+
+        <div class="code-block-section-w60 ">
+            <pre class="example"><span class="code-react">const App = () =&gt; {
+  const buttonText = { text: 'Cick Me!' }
+
+  return (
+    &lt;div&gt;
+      &lt;label className="label" <span class="code-highlight">htmlFor</span>="name"&gt;
+        Enter name:
+      &lt;/label&gt;
+      &lt;input id="name" type="text" /&gt;
+      &lt;button style={{ backgroundColor: "blue", color: "white" }}&gt;
+     {buttonText} 
+      &lt;/button&gt;
+    &lt;/div&gt;
+  );
+};</span></pre>
+        </div>
+    </section>
+
+
+
+
+    <h2>if statements</h2>
+    <section class="code-section-container">
+        <div class="code-text-section">
+            <p>React supports if statements, but not inside JSX.</p>
+            <p>if statements must be placed outside of the JSX.</p>
+            <p>But, you can use a ternary expression inside JSX.</p>
+        </div>
+
+        <div class="code-block-section-w60 ">
+            <pre class="example"><span class="code-react">const myelement = &lt;h1&gt;{(x) &lt; 10 ? "Hello" : "Goodbye"}&lt;/h1&gt;;</span></pre>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h1>Adding images using faker.js</h1>
+    <section class="code-section-container">
+        <div class="code-text-section">
+            <p>This uses <a href="https://github.com/marak/Faker.js/">faker.js</a> to generate a fake image.</p>
+            <p>Stop your app.</p>
+            <p>Install the faker library into your local project.</p>
+        </div>
+
+        <div class="code-block-section-w60 ">
+            <pre class="example"><span class="code-react">npm install --save faker</span></pre>
+        </div>
+    </section>
+
+
+
+    <h2>Import faker.js</h2>
+    <section class="code-section-container">
+        <div class="code-text-section">
+            <p>Add an import statement at the top.</p>
+        </div>
+
+        <div class="code-block-section-w60 ">
+            <pre class="example"><span class="code-react">import React from "react";
+import ReactDOM from "react-dom";
+<span class="code-highlight">import faker from "faker"; </span>
+
+if (module.hot) {
+  module.hot.accept();
+}
+
+const App = () =&gt; {
+  return (
+    &lt;div className="ui container comments"&gt;
+      &lt;div className="comment"&gt;
+        &lt;a href="/" className="avatar"&gt;
+          <span class="code-comment">// call the faker API </span>
+          <span class="code-highlight">&lt;img alt="avatar" src={faker.image.image()} /&gt; </span>
+        &lt;/a&gt;
+        &lt;div className="content"&gt;
+          &lt;a href="/" className="author"&gt;
+            Sam
+          &lt;/a&gt;
+          &lt;div className="metadata"&gt;
+            &lt;span className="date"&gt;Today at 6:00PM&lt;/span&gt;
+          &lt;/div&gt;
+          &lt;div className="text"&gt;Nice blog post!&lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  );
+};
+
+ReactDOM.render(&lt;App /&gt;, document.querySelector("#root"));</span></pre>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>

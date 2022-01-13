@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" type="text/css" href="../../_css/styles.css">
+
+  <title>API</title>
+</head>
+
+<body>
+
+
+  <nav class="navbar">
+    <a href="../../index.html">Back to homepage</a>
+    <a class="nav-page nav-active">API</a>
+  </nav>
+
+
+
+
+
+
+
+  <h1>API</h1>
+
+
+
+  <h2>Read and display JSON file data</h2>
+  <section class="code-section-container">
+    <div class="code-text-section">
+      <p>This reads data from a .json file, parses it into JavaScript, and sends it back to the client.</p>
+      <p>This uses <span class="code">${__dirname}</span>
+        which is where the script that you're currently executing is located.</p>
+    </div>
+
+    <div class="code-block-section-w60">
+      <pre class="example"><span class="code-nodejs">const fs = require('fs');
+  const http = require('http');
+  const url = require('url');
+  
+  const server = http.createServer((req, res) => {
+    const pathName = req.url;
+  
+    if (pathName === '/' || pathName === '/overview') {
+      res.end('This is the overview page');      
+    } else if (pathName === '/product') {
+      res.end('This is the product');
+      <span class="code-highlight"><span class="code-comment">// create API route </span>
+    } else if (pathName === '/api') {
+      <span class="code-comment">// Read the JSON file </span>
+      fs.readFile(`${__dirname}/dev-data/data.json`, 'utf-8', (err, data) => {     
+        <span class="code-comment">// Create JSON header to tell browser you're sending JSON </span>
+        res.writeHead(200, {'Content-type': 'application/json'})
+        <span class="code-comment">// send back a string </span>
+      res.end(data);
+    }); </span>  
+    } else {
+      res.writeHead(404);
+      res.end('Page not found');
+    }
+  });
+  
+  server.listen(8000, '127.0.0.1', () => {
+    console.log('Listening to requests on port 8000');
+  });</span></pre>
+    </div>
+  </section>
+
+
+
+
+
+
+
+
+  <h2>Optimized option</h2>
+  <section class="code-section-container">
+    <div class="code-text-section">
+      <p>The example above reads the file everytime the route is visited.</p>
+      <p>This reads the file once, then when someone visits the route it sends the data back without having to read it each time that a user requested.</p>
+      <p>This reads it synchronously but it is not a problem because the top level code only gets executed once right in the beginning.</p>
+    </div>
+
+    <div class="code-block-section-w60">
+<pre class="example"><span class="code-nodejs">const fs = require('fs');
+const http = require('http');
+const url = require('url');
+
+<span class="code-highlight"><span class="code-comment">// Read the file synchronously </span>
+const data = fs.readFileSync(`${__dirname}/dev-data/data.json`, 'utf-8'); </span>
+
+const server = http.createServer((req, res) => {
+  const pathName = req.url;
+
+  if (pathName === '/' || pathName === '/overview') {
+    res.end('This is the overview page');
+  } else if (pathName === '/product') {
+    res.end('This is the product');
+  } <span class="code-highlight">else if (pathName === '/api') {
+    <span class="code-comment">// Create JSON header to tell browser you're sending JSON </span>
+    res.writeHead(200, { 'Content-type': 'application/json' });
+    <span class="code-comment">// send back a string </span>
+    res.end(data); </span>
+  } else {
+    res.writeHead(404);
+    res.end('Page not found');
+  }
+});
+
+server.listen(8000, '127.0.0.1', () => {
+  console.log('Listening to requests on port 8000');
+});
+</span></pre>
+    </div>
+  </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>

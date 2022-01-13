@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <!-- Needed for responsive web design. Says website should be rendered with width of device -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <!-- <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900" rel="stylesheet"> -->
+
+  <!-- <link rel="stylesheet" href="css/icon-font.css"> -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="shortcut icon" type="image/png" href="img/favicon.png">
+
+  <style>
+    *,
+    *::after,
+    *::before {
+      margin: 0;
+      padding: 0;
+      box-sizing: inherit;
+    }
+
+    html {
+      font-size: 62.5%;
+    }
+
+    body {
+      box-sizing: border-box;
+      padding: 3rem;
+    }
+
+    /* FRONT SIDE STYLING */
+    .card9 {
+      perspective: 150rem;
+      -moz-perspective: 150rem;
+      position: relative;
+      height: 52rem;
+    }
+
+    .card9__side {
+      height: 52rem;
+      transition: all .8s ease;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 33%;
+      overflow: hidden;
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+      border-radius: 3px;
+      box-shadow: 20px 20px 50px 15px rgba(1, 1, 1, .15);
+    }
+
+    .card9__side--front {
+      background-color: #fff;
+    }
+
+    .card9__side--back {
+      transform: rotateY(180deg);
+    }
+
+    .card9__side--back--1 {
+      background-image: linear-gradient(to right bottom, #ffb900, #ff7730);
+    }
+
+    .card9:hover .card9__side--front {
+      transform: rotateY(-180deg);
+    }
+
+    .card9:hover .card9__side--back {
+      transform: rotateY(0);
+    }
+
+
+    .card9__picture {
+      background-size: cover;
+      height: 23rem;
+      background-blend-mode: screen;
+      -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+      clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+      /* must manually set border-radius since overflow hidden on &__side is broken when clip-path is used */
+      /* QUESTION: Didn't this work for the first card? or was that before clip-path was used?  */
+      /* border-top-left-radius: 3px; */
+      /* border-top-right-radius: 3px; */
+    }
+
+    .card9__picture--1 {
+      background-image: linear-gradient(to right bottom, #ffb900, #ff7730), url(nat-5.jpg);
+    }
+
+
+        .card9__heading {
+    font-size: 2.8rem;
+        font-weight: 300;
+        text-transform: uppercase;
+        text-align: right;
+        color: #fff;
+        /* layer over background image */
+        position: absolute;
+        top: 12rem;
+        right: 2rem;
+        /* make more narrow so the text box stays within the card box */
+        width: 75%;
+    }
+
+  
+    .card9__heading-span {
+        /* this breaks text into two lines */
+        padding: 1rem 1.5rem;
+        /* this treats broken text as different elements */
+        /* applies all declarations to all boxes created by an element both styled the same */
+        /* this helps in this example to make the padding the same for both lines of text */
+        -webkit-box-decoration-break: clone;
+        box-decoration-break: clone;
+    }
+
+    .card9__heading-span--1 {
+      background-image: linear-gradient(to right bottom, rgba(255, 185, 0, 0.75), rgba(255, 119, 48, 0.75));
+    }
+
+  </style>
+
+  <title>Flip cards example</title>
+</head>
+
+<body>
+
+
+
+
+
+
+
+
+  <div class="card9">
+    <div class="card9__side card9__side--front">
+      <div class="card9__picture card9__picture--1">&nbsp;</div>
+
+      <h4 class="card9__heading">
+        <span class="card9__heading-span card9__heading-span--1">The Sea Explorer</span>
+      </h4>
+
+      <div class="card9__details">Details</div>
+
+    </div>
+
+    <div class="card9__side card9__side--back card9__side--back--1">
+      <h4>BACK</h4>
+    </div>
+  </div>
+
+
+
+
+
+</body>
+
+
+</html>

@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="../../_css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../../_css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <title>Web Safe Fonts</title>
+</head>
+
+<body>
+    <a href="../../index.html">Home page</a>
+
+
+
+
+    <section class="container">
+        <h1>Web Safe Fonts</h1>
+        <div class="row">
+            <div class="col">
+
+                <p>Web Safe fonts are supported on different operating systems and devices.</p>
+                <p>Because they are fully supported, it's a good idea to use these as fallback fonts, just in case the first font you tell teh browser to use is NOT supported.</p>
+                <p>View the following site for a list of Web Safe Fonts:</p>
+                <ul>
+                    <li><a href="https://www.cssfontstack.com/">Web Safe Fonts</a></li>
+                </ul>
+                <p>This means that you should add a list of similar "backup fonts" in the font-family property. If the first font does not work, the browser will try the next one, and the next one, and so on. Always end the list with a generic font family
+                    name.
+                </p>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+    <section class="container">
+        <h2>Best Web Safe Fonts for HTML and CSS</h2>
+        <div class="row">
+            <div class="col">
+                <p> The following list are the best web safe fonts for HTML and CSS:</p>
+                <ul>
+                    <li>Verdana (sans-serif)</li>
+                    <li>Arial (sans-serif)</li>
+                    <li> Helvetica (sans-serif)</li>
+                    <li> Tahoma (sans-serif)</li>
+                    <li> Trebuchet MS (sans-serif)</li>
+                    <li> Times New Roman (serif)</li>
+                    <li> Georgia (serif)</li>
+                    <li> Garamond (serif)</li>
+                    <li> Courier New (monospace)</li>
+                    <li> Brush Script MT (cursive)</li>
+                </ul>
+
+            </div>
+        </div>
+
+
+
+        <div class="row">
+            <div class="col-6">
+                <p>Here, there are three font types: Tahoma, Verdana, and sans-serif. The second and third fonts are backups, in case the first one is not found.</p>
+            </div>
+            <div class="col-6">
+                <pre class="example"><span class="code-css">p {
+  font-family: Tahoma, Verdana, sans-serif;
+}</span></pre>
+            </div>
+        </div>
+
+
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+    <section class="container">
+        <h2>Commonly Used Font Fallbacks</h2>
+        <div class="row">
+            <div class="col">
+                <p> Below are some commonly used font fallbacks, organized by the 5 generic font families:</p>
+            </div>
+        </div>
+
+
+        <h3>Serif Fonts</h2>
+            <div class="row">
+                <div class="col-6">
+                    <p>Examples of Serif fallback fonts</p>
+                </div>
+
+
+                <div class="col-6">
+                    <pre class="example"><span class="code-css">body {
+  font-family: "Times New Roman", Times, serif;
+}
+
+body {
+  font-family: Georgia, serif;
+}
+
+body {
+  font-family: Garamond, serif;
+}</span></pre>
+                </div>
+            </div>
+
+
+
+
+
+
+            <h3>Serif Fonts</h2>
+                <div class="row">
+                    <div class="col-6">
+                        <p>Examples of Sans-Serif fallback fonts</p>
+                    </div>
+
+
+                    <div class="col-6">
+                        <pre class="example"><span class="code-css">body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  font-family: Tahoma, Verdana, sans-serif;
+}
+
+body {
+  font-family: "Trebuchet MS", Helvetica, sans-serif;
+}
+
+body {
+  font-family: Georgia, Verdana, sans-serif;
+}</span></pre>
+                    </div>
+                </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                <h3>Monospace</h2>
+                    <div class="row">
+                        <div class="col-6">
+                            <p>Examples of Monospace fallback fonts</p>
+                        </div>
+
+
+                        <div class="col-6">
+                            <pre class="example"><span class="code-css">body {
+  font-family: "Courier New", Courier, monospace;
+}</span></pre>
+                        </div>
+                    </div>
+
+
+
+
+                    <h3>Cursive</h2>
+                        <div class="row">
+                            <div class="col-6">
+                                <p>Examples of Cursive fallback fonts</p>
+                            </div>
+
+
+                            <div class="col-6">
+                                <pre class="example"><span class="code-css">body {
+  font-family: "Brush Script MT", cursive;
+}</span></pre>
+                            </div>
+                        </div>
+
+
+
+
+                        <h3>Fantasy</h2>
+                            <div class="row">
+                                <div class="col-6">
+                                    <p>Examples of Fantasy fallback fonts</p>
+                                </div>
+
+
+                                <div class="col-6">
+                                    <pre class="example"><span class="code-css">body {
+  font-family: Copperplate, Papyrus, fantasy;
+}</span></pre>
+                                </div>
+                            </div>
+
+
+
+
+
+
+
+
+
+
+
+    </section>
+
+
+
+
+
+    <script src="../../_js/bootstrap.bundle.js"></script>
+</body>
+
+</html>

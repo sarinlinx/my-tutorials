@@ -1,0 +1,404 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+    <title>Form example</title>
+
+    <style>
+        *,
+        *::after,
+        *::before {
+            margin: 0;
+            padding: 0;
+            box-sizing: inherit;
+        }
+        
+        html {
+            font-size: 62.5%;
+        }
+        
+        body {
+            box-sizing: border-box;
+            padding: 3rem;
+            font-family: "Lato", sans-serif;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 1.7;
+            color: #777;
+        }
+        
+        .row {
+            max-width: 114rem;
+            margin: 0 auto;
+        }
+        
+        .row:not(:last-child) {
+            margin-bottom: 8rem;
+        }
+        
+        .row::after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+        
+        .row [class^="col-"] {
+            float: left;
+        }
+        
+        .row [class^="col-"]:not(:last-child) {
+            margin-right: 6rem;
+        }
+        
+        .section-book {
+            padding: 15rem 0;
+            background-image: linear-gradient(to right bottom, #7ed56f, #28b485);
+        }
+        
+        @media only screen and (max-width: 56.25em) {
+            .section-book {
+                padding: 10rem 0
+            }
+        }
+        
+        .book {
+            /* Do not add height. The content should set the height */
+            /* Add gradient over background image */
+            /* Use % to set where gradient should appear */
+            /* At 0% to 50% it's white. After 50% it's transparent */
+            background-image: linear-gradient(105deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.9) 50%, transparent 50%), url(nat-10.jpg);
+            /*  fits container in x direction, 100% is the same as cover. If it was a lower % it would start to repeat */
+            background-size: 100%;
+            border-radius: 3px;
+            box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.25);
+        }
+        
+        @media only screen and (max-width: 75em) {
+            .book {
+                background-image: linear-gradient(105deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.9) 65%, transparent 65%), url(nat-10.jpg);
+                background-size: cover
+            }
+        }
+        
+        @media only screen and (max-width: 56.25em) {
+            .book {
+                background-image: linear-gradient(to right, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.9) 100%), url(nat-10.jpg)
+            }
+        }
+        
+        .heading-secondary {
+            font-size: 3.5rem;
+            text-transform: uppercase;
+            font-weight: 700;
+            display: inline-block;
+            background-image: linear-gradient(to right, #7ed56f, #28b485);
+            -webkit-background-clip: text;
+            color: transparent;
+            letter-spacing: 2px;
+            transition: all .2s
+        }
+        
+        .u-margin-bottom-medium {
+            margin-bottom: 4rem !important
+        }
+        
+        .book__form {
+            width: 50%;
+            padding: 6rem;
+        }
+        /* Remove margin from last group element */
+        
+        @media only screen and (max-width: 75em) {
+            .book__form {
+                width: 65%
+            }
+        }
+        
+        @media only screen and (max-width: 56.25em) {
+            .book__form {
+                width: 100%
+            }
+        }
+        
+        .form__group:not(:last-child) {
+            margin-bottom: 2rem;
+        }
+        
+        .form__input {
+            /* input elements do not inherit fonts and color by default
+        change default browser font for forms to font-family of page */
+            font-family: inherit;
+            color: inherit;
+            font-size: 1.5rem;
+            /* Looks better when more padding is on sides */
+            padding: 1.5rem 2rem;
+            border-radius: 2px;
+            background-color: rgba(255, 255, 255, 0.5);
+            border: none;
+            /*set initial border to transparent 
+        this prevents the 3px (from .form__input:focus) from pushing down the fields below the first box */
+            border-bottom: 3px solid transparent;
+            width: 90%;
+            display: block;
+            transition: all .3s;
+        }
+        
+        .form__input:focus {
+            /* remove browser default outline */
+            outline: none;
+            /* add box shadow for users not using a mouse so they can see what field is focused */
+            box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
+            /* This 3px will cause the field to shift down when focused
+            To fix, add border-bottom: 3px solid transparent; to the primary input selector */
+            border-bottom: 3px solid #55c57a;
+        }
+        
+        .form__input:focus:invalid {
+            /* invalid reference is built into the browser */
+            /* if form field text is invalid when focused*/
+            border-bottom: 3px solid #ff7730;
+        }
+        
+        .form__input::-webkit-input-placeholder {
+            /* Changes color of text when you type into field (safari and chrome)*/
+            color: #999;
+        }
+        /* This label text is an extra effect
+        It is placed below the text field
+        It ony shows AFTER text is entered into field */
+        
+        .form__label {
+            font-size: 1.2rem;
+            font-weight: 700;
+            display: block;
+            margin-left: 2rem;
+            margin-top: .7rem;
+            transition: all .3s;
+        }
+        /* This label text is an extra effect
+        It is placed below the text field
+        It ony shows AFTER text is entered into field */
+        
+        .form__label {
+            font-size: 1.2rem;
+            font-weight: 700;
+            display: block;
+            margin-left: 2rem;
+            margin-top: .7rem;
+            transition: all .3s;
+        }
+        /* placeholder-shown is built into browser
+        when it is shown (meaning nothing has been typed yet), hide label 
+        You must select the label since that is what you want to style
+        Use adjacent sibling selector + 
+        The label must also be after the input for this to work because that's how the HTML is written*/
+        
+        .form__input:placeholder-shown+.form__label {
+            /* hide label */
+            opacity: 0;
+            /* this removes it from the page, not just hides it. opacity is also used because you cannot animate visibility */
+            visibility: hidden;
+            /* set initial state so it will move when focused */
+            transform: translateY(-4rem);
+        }
+        /* set them side by side */
+        
+        .form__radio-group {
+            /* width 49% so they are side by side. 50% would split the lines in the container */
+            width: 49%;
+            display: inline-block
+        }
+        
+        .form__radio-label {
+            font-size: 1.6rem;
+            cursor: pointer;
+            position: relative;
+            padding-left: 5rem
+        }
+        /* Create circle radio button */
+        
+        .form__radio-button {
+            height: 3rem;
+            width: 3rem;
+            display: inline-block;
+            border: 5px solid #55c57a;
+            border-radius: 50%;
+            position: absolute;
+            top: -.4rem;
+            left: 0
+        }
+        /* Create ::after pseudo element for circle inside of hollow circle radio button */
+        
+        .form__radio-button::after {
+            content: "";
+            display: block;
+            height: 1.3rem;
+            width: 1.3rem;
+            border-radius: 50%;
+            /* center in HTML */
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            /* center in visual position */
+            transform: translate(-50%, -50%);
+            background-color: #55c57a;
+            opacity: 0;
+            transition: opacity .2s
+        }
+        /* Check all radio buttons
+        that are siblings of radio-input, then select radio-label, then select child element of it */
+        /* when you click the radio button, the input becomes CHECKED using the checked pseudo class
+        then select its sibling, and then its child since this is what is changed
+         */
+        
+        .form__radio-input:checked~.form__radio-label .form__radio-button::after {
+            opacity: 1
+        }
+        
+        .form__radio-input {
+            display: none
+        }
+        
+        .btn,
+        .btn:link,
+        .btn:visited {
+            text-transform: uppercase;
+            text-decoration: none;
+            padding: 1.5rem 4rem;
+            display: inline-block;
+            border-radius: 10rem;
+            transition: all 0.2s;
+            position: relative;
+            font-size: 1.6rem;
+            border: none;
+            cursor: pointer
+        }
+        
+        .btn:active,
+        .btn .btn:focus {
+            outline: none;
+            transform: translateY(-1px);
+            box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2)
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2)
+        }
+        
+        .btn:hover::after {
+            transform: scaleX(1.4) scaleY(1.6);
+            opacity: 0
+        }
+        
+        .btn--white {
+            background-color: #fff;
+            color: #777
+        }
+        
+        .btn--white::after {
+            background-color: #fff
+        }
+        
+        .btn--green {
+            background-color: #55c57a;
+            color: #fff
+        }
+        
+        .btn--green::after {
+            background-color: #55c57a
+        }
+        
+        .btn::after {
+            content: "";
+            display: inline-block;
+            height: 100%;
+            width: 100%;
+            border-radius: 10rem;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            transition: all 0.4s
+        }
+        
+        .btn--green {
+            background-color: #55c57a;
+            color: #fff
+        }
+        
+        .btn--green::after {
+            background-color: #55c57a
+        }
+    </style>
+
+    <body>
+
+        <section class="section-book">
+            <div class="row">
+                <div class="book">
+                    <!-- Left side container of the form  -->
+                    <div class="book__form">
+
+
+                        <form action="" class="form">
+
+                            <div class="u-margin-bottom-medium">
+                                <h2 class="heading-secondary">Start booking now</h2>
+                            </div>
+
+
+                            <div class="form__group">
+                                <input id="name" type="text" class="form__input" placeholder="Full Name" required>
+                                <label for="name" class="form__label">Full name</label>
+                            </div>
+
+                            <div class="form__group">
+                                <input id="email" type="email" class="form__input" placeholder="Email Address" required>
+                                <label for="email" class="form__label">Email address</label>
+                            </div>
+
+
+
+                            <!-- Radio buttons -->
+                            <div class="form__group">
+                                <!-- Inputs must have same 'name' attribute so only one can be selected -->
+                                <!-- Cannot style radio buttons in CSS. Must create span that will be selected when label is clicked, instead of input which will be hidden-->
+                                <div class="form__radio-group u-margin-bottom-medium">
+                                    <input type="radio" class="form__radio-input" id="small" name="size">
+                                    <label for="small" class="form__radio-label">
+                                      <!--Add span class to you can style since you cannot style radio buttons in CSS-->
+                  <span class="form__radio-button"></span>
+                  Small tour group</label>
+                                </div>
+
+                                <div class="form__radio-group u-margin-bottom-medium">
+                                    <input type="radio" class="form__radio-input" id="large" name="size">
+                                    <label for="large" class="form__radio-label">
+                  <span class="form__radio-button"></span>Large tour group</label>
+                                </div>
+                            </div>
+
+                            <div class="form__group">
+                                <button class="btn btn--green">Next step &rarr;</button>
+                            </div>
+
+
+
+
+                        </form>
+
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </body>
+
+</html>
