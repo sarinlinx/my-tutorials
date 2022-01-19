@@ -180,6 +180,56 @@ app.listen(port, () =&gt; {
 
 
 
+  <h1>The Request-Response cycle</h1>
+
+  <div class="text-section">
+    <p>Express app receives a request when someone hits a server for which it will then create a request and response
+      object.</p>
+    <p>That data will then be used and processed in order to generate and send back a meaningful response.</p>
+    <p>In order to process that data, in Express we use something called middleware, which can manipulate the request or
+      the response object.</p>
+    <p>It's called middleware remember because it's a function that is executed between, so in the middle of receiving
+      the request and sending the response.</p>
+    <p>All the middleware together that we use in our app, is called the middleware Stack.</p>
+    <p>It's very important to keep in mind that the order of middleware in the stack, is actually defined by the order
+      they are defined in the code. So a middleware that appears first in the code, is executed before one that appears
+      later.</p>
+    <img src="../../_img/middleware.png" width="750px">
+  </div>
+
+  <h2>Process</h2>
+  <div class="text-section">
+    <p>The <span class="code">next()</span> function is available for all middleware functions.</p>
+    <p>It's called at the end of each middleware function on the exact same request and response object.</p>
+    <p>The last middleware function is usually a route handler without a <span class="code">next()</span> function.</p>
+    <p>At that point, the response data is sent back to the client.</p>
+    <p>This completes the Request-Response cycle.</p>
+  </div>
+
+
+
+  <h2>Express Middleware</h2>
+  <div class="text-section">
+    <ul>
+      <li><a href="https://expressjs.com/en/resources/middleware.html" target="_blank">Express Middleware options</a>
+      </li>
+    </ul>
+
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

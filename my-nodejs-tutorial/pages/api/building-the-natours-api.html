@@ -486,6 +486,404 @@ app.<span class="code-highlight">delete</span>('/api/v1/tours/:id', (req, res) =
 
 
 
+  <h1>Refactor code</h1>
+  <div class="text-section">
+
+  </div>
+
+  <section class="code-section-container">
+    <div class="code-text-section">
+      <p>This separates the callback functions into their own variables.</p>
+      <p>They can then be called by the name instead of writing out all the code in each app call.</p>
+      <p>It also separates the action that is repeated for multiple calls into <span class="code">app.route()</span>.
+      </p>
+      <p>You can then chain methods that use this same action.</p>
+    </div>
+
+    <div class="code-block-section-w60">
+      <pre class="example"><span class="code-nodejs">const fs = require('fs');
+const express = require('express');
+const app = express();
+
+// Middleware: This stands in the MIDDLE of the request and response
+app.use(express.json());
+
+const tours = JSON.parse(
+  fs.readFileSync(`${__dirname}/dev-data/data/tours-simple.json`)
+);
+
+
+
+<span class="code-comment">/*___________________________________
+Separate callback functions
+_____________________________________*/ </span>
+<span class="code-highlight">const getAllTours = (req, res) =&gt; {
+  res.status(200).json({
+    status: 'success',
+    results: tours.length,
+    data: {
+      tours: tours
+    }
+  });
+};
+
+const getTour = (req, res) =&gt; {
+  const id = req.params.id * 1;
+  const tour = tours.find(el =&gt; el.id === id);
+
+  // Check if ID# entered does not exist in the Array
+  if (!tour) {
+    // immediately return a 404
+    return res.status(404).json({
+      status: 'fail',
+      message: 'Invalid ID'
+    });
+  }
+
+  res.status(200).json({
+    status: 'success',
+    data: {
+      tour: tour
+    }
+  });
+};
+
+const createTour = (req, res) =&gt; {
+  const newId = tours[tours.length - 1].id + 1;
+
+  const newTour = Object.assign({ id: newId }, req.body);
+  tours.push(newTour);
+  fs.writeFile(
+    `${__dirname}/dev-data/data/tours-simple.json`,
+    JSON.stringify(tours),
+    err =&gt; {
+      res.status(201).json({
+        status: 'success',
+        data: {
+          tour: newTour
+        }
+      });
+    }
+  );
+};
+
+const updateTour = (req, res) =&gt; {
+  if (req.params.id * 1 &gt; tours.length) {
+    // immediately return a 404
+    return res.status(404).json({
+      status: 'fail',
+      message: 'Invalid ID'
+    });
+  }
+
+  res.status(200).json({
+    status: 'success',
+    data: {
+      tour: '&lt;Updated tour here...&gt;'
+    }
+  });
+};
+
+const deleteTour = (req, res) =&gt; {
+  if (req.params.id * 1 &gt; tours.length) {
+    // immediately return a 404
+    return res.status(404).json({
+      status: 'success',
+      message: 'Invalid ID'
+    });
+  }
+
+  // 204 means NO CONTENT
+  res.status(204).json({
+    status: 'success',
+    data: null
+  });
+}; </span>
+
+
+<span class="code-comment">/*___________________________________
+Separate actions for routes
+_____________________________________*/ 
+// This is the same as app.get() above
+// But it allows you to chain the post method </span>
+<span class="code-highlight">app
+  .route('/api/v1/tours')
+  .get(getAllTours)
+  .post(createTour);
+
+app
+  .route('/api/v1/tours/:id')
+  .get(getTour)
+  .patch(updateTour)
+  .delete(deleteTour); </span>
+
+const port = 3000;
+
+app.listen(port, () =&gt; {
+  console.log('App running');
+});
+</span></pre>
+    </div>
+  </section>
+
+  <div class="text-section">
+    <div class="notebox-note">
+      <p>The calls could also be written like this: </p>
+      <pre class="example"><span class="code-nodejs"><span class="code-comment">// call the name of the callback function instead of writing it out </span>
+app.get('/api/v1/tours', getAllTours);
+app.post('/api/v1/tours', createTour);
+app.get('/api/v1/tours/:id', getTour);
+app.patch('/api/v1/tours/:id', updateTour);
+app.delete('/api/v1/tours/:id', deleteTour);</span></pre>
+      <p>However the option in the code is more simple and clear.</p>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+  <h1>Create a middleware function</h1>
+
+  <section class="code-section-container">
+    <div class="code-text-section">
+      <p>This creates a simple middleware function.</p>
+      <p>ORDER MATTERS!!! It's added at the top of the script below the variable declarations.</p>
+      <p>Start with <span class="code">app.use()</span>.</p>
+      <p>Pass in function you want to add to the middleware stack. req, res, is the convention.</p>
+      <p>next is added as a 3rd arg since it's available on all middleware functions.</p>
+      <p>It does not matter if it's named <span class="code">next</span>, it only matters that it's the 3rd argument.
+      </p>
+      <p>This example runs on EVERY request since it does not specify a route.</p>
+
+    </div>
+    <div class="code-block-section-w60">
+      <pre class="example"><span class="code-nodejs">
+app.use((req, res, next) => {
+  console.log('Hello from middelware');
+  next();
+});</span></pre>
+    </div>
+  </section>
+
+
+
+
+  <h2>Create a middleware function to track time of response</h2>
+
+  <section class="code-section-container">
+    <div class="code-text-section">
+      <p>First, create middleware to track the <span class="code">req.requestTime</span> property.</p>
+      <p>You can then add this as a response in your callback function.</p>
+    </div>
+    <div class="code-block-section-w60">
+      <pre class="example"><span class="code-nodejs">app.use((req, res, next) => {
+  req.requestTime = new Date().toISOString();
+  next();
+});
+
+
+const getAllTours = (req, res) => {
+  res.status(200).json({
+    status: 'success',
+    <span class="code-highlight">requestedAt: req.requestTime, </span>
+    results: tours.length,
+    data: {
+      tours: tours
+    }
+  });
+};
+</span></pre>
+    </div>
+  </section>
+
+
+
+
+
+  <h1>3rd party middleware</h1>
+
+  <h2>Install morgan</h2>
+  <section class="code-section-container">
+    <div class="code-text-section">
+      <p><span class="text-object">morgan</span> is logging middleware.</p>
+      <p>This is not a dev dependency so you so not specify <span class="code">--save-dev</span>.</p>
+    </div>
+    <div class="code-block-section-w60">
+      <pre class="example"><span class="code-nodejs">npm i morgan</span></pre>
+    </div>
+  </section>
+
+  <h2>Add to script</h2>
+  <section class="code-section-container">
+    <div class="code-text-section">
+      <p>Add to script at top.</p>
+    </div>
+    <div class="code-block-section-w60">
+      <pre class="example"><span class="code-nodejs">const morgan = require('morgan');</span></pre>
+    </div>
+  </section>
+
+
+  <h2>Create middleware</h2>
+  <section class="code-section-container">
+    <div class="code-text-section">
+      <p>Calling this function returns a function.</p>
+    </div>
+    <div class="code-block-section-w60">
+      <pre class="example"><span class="code-nodejs"><span class="code-comment">// pass in arg to define how logging appears </span>
+app.use(morgan('dev'));</span></pre>
+    </div>
+  </section>
+
+
+
+
+
+
+  <h1>Users Routes</h1>
+
+  <div class="text-section">
+    <p>The Users resource allows for the creation of accounts and user roles.</p>
+  </div>
+
+  <section class="code-section-container">
+    <div class="code-text-section">
+      <p>This exapmle creates the handlers and routes for the <span class="text-object">Users</span> resource.</p>
+      <p>Visit <span class="text-object">127.0.0.1:3000/api/v1/users</span> in Postman to view the 500 error response.
+      </p>
+    </div>
+    <div class="code-block-section-w60">
+      <pre class="example"><span class="code-nodejs"><span class="code-comment">/*___________________________________
+ROUTE HANDLERS
+_____________________________________*/ </span>
+const getAllUsers = (req, res) =&gt; {
+  res.status(500).json({
+    status: 'error',
+    message: 'This route is not yet defined'
+  });
+};
+
+const getUser = (req, res) =&gt; {
+  res.status(500).json({
+    status: 'error',
+    message: 'This route is not yet defined'
+  });
+};
+
+const createUser = (req, res) =&gt; {
+  res.status(500).json({
+    status: 'error',
+    message: 'This route is not yet defined'
+  });
+};
+
+const updateUser = (req, res) =&gt; {
+  res.status(500).json({
+    status: 'error',
+    message: 'This route is not yet defined'
+  });
+};
+
+const deleteUser = (req, res) =&gt; {
+  res.status(500).json({
+    status: 'error',
+    message: 'This route is not yet defined'
+  });
+};
+        
+<span class="code-comment">/*___________________________________
+ROUTES
+_____________________________________*/ </span>
+        
+app
+  .route('/api/v1/users')
+  .get(getAllUsers)
+  .post(createUser);
+
+app
+  .route('/api/v1/users/:id')
+  .get(getUser)
+  .patch(updateUser)
+  .delete(deleteUser);</span></pre>
+    </div>
+  </section>
+
+
+
+
+
+
+
+  <h1>Create and mount multiple routers</h1>
+
+  <div class="text-section">
+    <p>Create 2 new variables to run the <span class="text-object">tours</span> and <span
+        class="text-object">users</span> routes.</p>
+    <p>Instead of using <span class="code">app.route()</span>, change them to use the new variable names.</p>
+    <p>Update the route for each router to <span class="code">/</span> since you're now using the base URL of that
+      route.</p>
+    <p>This new routes will need to be 'Mounted' as middleware.</p>
+  </div>
+
+  <section class="code-section-container">
+    <div class="code-text-section">
+      <p>This simplifies the routers above. It creates new routers.</p>
+    </div>
+    <div class="code-block-section-w60">
+      <pre class="example"><span class="code-nodejs"><span class="code-comment">/*___________________________________
+ROUTES
+_____________________________________*/ </span>
+<span class="code-comment">// Create new router </span>
+<span class="code-highlight">const tourRouter = express.Router();
+const userRouter = express.Router(); </span>
+
+<span class="code-comment">// change app.route() to tourRouter.route()
+// change route to / since you're already on that route </span>
+<span class="code-highlight">tourRouter </span>
+  .route('<span class="code-highlight">/</span>')
+  .get(getAllTours)
+  .post(createTour);
+
+<span class="code-comment">// change route to /:id </span>
+<span class="code-highlight">tourRouter</span>
+  .route('<span class="code-highlight">/:id</span>')
+  .get(getTour)
+  .patch(updateTour)
+  .delete(deleteTour);
+
+  <span class="code-highlight">userRouter</span>
+  .route('<span class="code-highlight">/</span>')
+  .get(getAllUsers)
+  .post(createUser);
+
+  <span class="code-highlight">userRouter</span>
+  .route('<span class="code-highlight">/:id</span>')
+  .get(getUser)
+  .patch(updateUser)
+  .delete(deleteUser);
+
+<span class="code-comment">// Use new Router as Middleware
+// This is called 'Mounting' the Routers </span>
+<span class="code-highlight">app.use('/api/v1/tours', tourRouter);
+app.use('/api/v1/users', userRouter); </span>
+</span></pre>
+    </div>
+  </section>
+
+
+
+
+
+
+
 
 
 
