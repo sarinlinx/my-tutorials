@@ -883,6 +883,268 @@ app.use('/api/v1/users', userRouter); </span>
 
 
 
+  <h1>Refactor code</h1>
+  <div class="text-section">
+    <p>Create a new directory named <span class="text-object">routes</span>.</p>
+    <p>In that directory, create new files named <span class="text-object">tourRoutes.js</span> and <span
+        class="text-object">userRoutes.js</span>.</p>
+  </div>
+
+  <h2>Split tour handlers and routes into new file</h2>
+
+  <section class="code-section-container">
+    <div class="code-text-section">
+      <ol>
+        <li>Add import statements for fs and express since you'll be using their modules in this file.</li>
+        <li>Create a new variable named <span class="code">router</span> to store the Express router module. The term
+          <span class="text-object">router</span> is a convention.
+        </li>
+        <li>Export the router.</li>
+        <li>Change the <span class="code">tourRouter</span> variable to <span class="code">router</span>.</li>
+      </ol>
+    </div>
+    <div class="code-block-section-w60">
+      <pre class="example"><span class="code-nodejs">const fs = require('fs');
+<span class="code-comment">// import Express since you'll need to use the Router() module </span>
+const express = require('express');
+
+<span class="code-comment">// convention is to name the router 'router' </span>
+<span class="code-highlight">const router = express.Router(); </span>
+
+<span class="code-comment">// export the router </span>
+<span class="code-highlight">module.exports = router; </span>
+
+<span class="code-highlight">router </span>
+  .route('/')
+  .get(getAllTours)
+  .post(createTour);
+
+<span class="code-highlight">router </span>
+  .route('/:id')
+  .get(getTour)
+  .patch(updateTour)
+  .delete(deleteTour);
+</span></pre>
+    </div>
+  </section>
+
+
+
+
+  <h2>Import the router files</h2>
+  <section class="code-section-container">
+    <div class="code-text-section">
+      <p>At the top of the <span class="text-object">app.js</span> file, import the new router files.</p>
+    </div>
+    <div class="code-block-section-w60">
+      <pre class="example"><span class="code-nodejs">const tourRouter = require('./routes/tourRoutes');
+const userRouter = require('./routes/userRoutes');</span></pre>
+    </div>
+  </section>
+
+
+
+  <h1>Controllers</h1>
+
+  <div class="text-section">
+    <p>Create a new directory named <span class="text-object">controllers</span>.</p>
+    <p>This is where the handler functions are located.</p>
+    <p>Create files named <span class="text-object">tourController.js</span> and <span
+        class="text-object">userController.js</span>.</p>
+    <p>Copy all handlers of each resources into those files.</p>
+    <p>These files only contain the callback functions.</p>
+  </div>
+
+
+  <section class="code-section-container">
+    <div class="code-text-section">
+      <p>Put all functions on the <span class="text-object">exports</span> Object.</p>
+      <p>For each function, instead of using <span class="code">const</span> to assign a variable, use <span
+          class="code">exports</span></p>
+
+    </div>
+    <div class="code-block-section-w60">
+      <pre class="example"><span class="code-nodejs"><span class="code-highlight">exports</span>.checkID = (req, res, next, val) => {
+  console.log(`Tour id is: ${val}`);
+
+  if (req.params.id * 1 > tours.length) {
+    return res.status(404).json({
+      status: 'fail',
+      message: 'Invalid ID'
+    });
+  }
+  next();
+};</span></pre>
+    </div>
+  </section>
+
+
+  <h2>Import the controller into the Route file</h2>
+  <section class="code-section-container">
+    <div class="code-text-section">
+      <p>Add require statement for to the <span class="text-object">tourRoutes.js</span> file.</p>
+      <p>This imports the <span class="text-object">tourController.js</span> file.</p>
+    </div>
+    <div class="code-block-section-w60">
+      <pre
+        class="example"><span class="code-nodejs">const tourController = require('./../controllers/tourController');</span></pre>
+    </div>
+  </section>
+
+  <section class="code-section-container">
+    <div class="code-text-section">
+      <p>Finally, update the <span class="code">route()</span> calls in the <span
+          class="text-object">tourRoutes.js</span> file to point to this new controller name.</p>
+    </div>
+    <div class="code-block-section-w60">
+      <pre class="example"><span class="code-nodejs">router
+.route('/')
+.get(<span class="code-highlight">tourController</span>.getAllTours)
+.post(<span class="code-highlight">tourController</span>.checkBody, <span class="code-highlight">tourController</span>.createTour);
+
+router
+.route('/:id')
+.get(<span class="code-highlight">tourController</span>.getTour)
+.patch(<span class="code-highlight">tourController</span>.updateTour)
+.delete(<span class="code-highlight">tourController</span>.deleteTour);</span></pre>
+    </div>
+  </section>
+
+
+
+
+
+  <h1>Create server.js file</h1>
+
+  <div class="text-section">
+    <p>Everything related to Express should be in 1 file.</p>
+    <p>Everything related to the server should be in its own file.</p>
+    <p><span class="text-object">server.js</span> will be the starting file that calls the <span
+        class="text-object">app.js</span>.</p>
+  </div>
+
+  <section class="code-section-container">
+    <div class="code-text-section">
+      <p>First, export the app within the <span class="text-object">app.js</span> file.</p>
+      <p>Add this to the bottom of the file.</p>
+      <p>Remove the lines that start the server.</p>
+    </div>
+    <div class="code-block-section-w60">
+      <pre class="example"><span class="code-nodejs">module.exports = app;</span></pre>
+    </div>
+  </section>
+
+
+  <h2>Update package.json</h2>
+  <section class="code-section-container">
+    <div class="code-text-section">
+      <p>Update line in <span class="text-object">package.json</span> file.</p>
+      <p>Now you can run <span class="code">npm start</span> to start the server.</p>
+    </div>
+    <div class="code-block-section-w60">
+      <pre class="example"><span class="code-nodejs">"scripts": {
+  "start:dev": "nodemon server.js",</span></pre>
+    </div>
+  </section>
+
+
+
+
+  <h2>server.js file</h2>
+  <section class="code-section-container">
+    <div class="code-text-section">
+      <p>Import <span class="text-object">app.js</span> and start the server.</p>
+    </div>
+    <div class="code-block-section-w60">
+      <pre class="example"><span class="code-nodejs">const app = require('./app');
+
+<span class="code-comment">/*___________________________________
+START SERVER
+_____________________________________*/ </span>
+const port = 3000;
+
+app.listen(port, () => {
+  console.log('App running');
+});</span></pre>
+    </div>
+  </section>
+
+
+
+
+
+
+
+
+
+  <h1>Create param middleware</h1>
+  <div class="text-section">
+    <p>Param middleware only runs if there's a certain parameter in the URL.</p>
+  </div>
+
+  <section class="code-section-container">
+    <div class="code-text-section">
+      <p>Add code to <span class="text-object">tourRoutes.js</span> file.</p>
+      <p>The first argument is the parameter to search for.</p>
+      <p>The 2nd arg is the middleware function.</p>
+      <p>This takes an additional 4th argument which is the value of the param.</p>
+      <p>Visit a URL with an ID and the terminal will print the ID#.</p>
+    </div>
+    <div class="code-block-section-w60">
+      <pre class="example"><span class="code-nodejs">router.param('id', (req, res, next, val) => {
+  console.log('Tour id is: ${val}');
+  next();
+});</span></pre>
+    </div>
+  </section>
+
+
+
+
+  <h2>Add value check function</h2>
+
+  <section class="code-section-container">
+    <div class="code-text-section">
+      <p>Add this function to the controller file.</p>
+      <p>It checks if the ID# exists. If so, the code proceeds normally.</p>
+      <p>If not, an error displays.</p>
+    </div>
+    <div class="code-block-section-w60">
+      <pre class="example"><span class="code-nodejs">exports.checkID = (req, res, next, val) => {
+  console.log(`Tour id is: ${val}`);
+
+  if (req.params.id * 1 > tours.length) {
+    return res.status(404).json({
+      status: 'fail',
+      message: 'Invalid ID'
+    });
+  }
+  next();
+};</span></pre>
+    </div>
+  </section>
+
+  <section class="code-section-container">
+    <div class="code-text-section">
+      <p>Update the param middleware line in the routes file to call this function.</p>
+    </div>
+    <div class="code-block-section-w60">
+      <pre class="example"><span class="code-nodejs">router.param('id', tourController.checkID);</span></pre>
+    </div>
+  </section>
+
+  <h3>Why do it this way?</h3>
+  <div class="text-section">
+    <p>You should always work with the Middleware stack in Express.</p>
+    <p>In this case, the param middleware checks if the ID# exists. Only then would the following code be executed.</p>
+    <p>Each router then can only focus on it's specific job and not checking if the ID# exists.</p>
+  </div>
+
+
+
+
+
+
 
 
 
