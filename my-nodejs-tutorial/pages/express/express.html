@@ -225,16 +225,150 @@ app.listen(port, () =&gt; {
 
 
 
+  <h1>Serving static files</h1>
+  <div class="text-section">
+    <p>Static files are usually in the <span class="text-object">/public</span> subdirectory.</p>
+    <p>You cannot access these in a browser unless you add middleware.</p>
+    <p>
+  </div>
+
+  <section class="code-section-container">
+    <div class="code-text-section">
+      <p>Add this line to your <span class="code">app.js</span> file.</p>
+      <p>This specifies which directory to serve static files from.</p>
+      <p>You can then access the files at <span class="text-object">http://127.0.0.1:3000/overview.html</span>.</p>
+    </div>
+    <div class="code-block-section-w60">
+      <pre class="example"><span class="code-nodejs">app.use(express.static(`__dir__}/public`));</span></pre>
+    </div>
+  </section>
 
 
 
 
 
+  <h1>Environmental Variables</h1>
+
+  <h2>Environments</h2>
+  <div class="text-section">
+    <p>Node.js and Express apps can run in different environemnts. The most common are.</p>
+    <ul>
+      <li>development</li>
+      <li>production</li>
+    </ul>
+    <p>These different environments allow you to use different databases, or turn logging on or off.</p>
+    <p>By default, Express sets the environment to <span class="text-object">development</span>.</p>
+  </div>
+
+
+  <h3>View the Express environment you're in</h3>
+  <section class="code-section-container">
+    <div class="code-text-section">
+      <p>Add this code to the <span class="text-object">server.js</span> file.</p>
+    </div>
+    <div class="code-block-section-w60">
+      <pre class="example"><span class="code-nodejs">console.log(app.get('env'));</span></pre>
+    </div>
+  </section>
+
+  <h3>View the environment variable from Node.js</h3>
+  <section class="code-section-container">
+    <div class="code-text-section">
+      <p>Add this code to the <span class="text-object">server.js</span> file.</p>
+      <p>This lists lots of Node.js environment variables.</p>
+    </div>
+    <div class="code-block-section-w60">
+      <pre class="example"><span class="code-nodejs">console.log(process.env);</span></pre>
+    </div>
+  </section>
+
+
+
+  <h2>Manually set the environment when starting the app</h2>
+  <section class="code-section-container">
+    <div class="code-text-section">
+      <p>Prepend <span class="code">NODE_ENV</span> to the <span class="code">nodemon</span> command to specify the
+        environment your app should use.</p>
+    </div>
+    <div class="code-block-section-w60">
+      <pre class="example"><span class="code-nodejs">NODE_ENV=development nodemon server.js</span></pre>
+    </div>
+  </section>
+
+
+  <h2>Create config file to store environment variables</h2>
+  <section class="code-section-container">
+    <div class="code-text-section">
+      <p>Create a file named <span class="text-object">config.env</span> with the following content.</p>
+      <p>Use the <span class="text-object">DotENV</span> extension in VS Code to highlight variables in this file type.
+      </p>
+    </div>
+    <div class="code-block-section-w60">
+      <pre class="example"><span class="code-nodejs">NODE_ENV=development
+PORT=3000
+USERNAME=jonas
+PASSWORD=123456</span></pre>
+    </div>
+  </section>
+
+
+  <h3>Install the npm package to read these variables</h3>
+  <section class="code-section-container">
+    <div class="code-text-section">
+      <p>Install the <span class="text-object">dotenv</span> package.</p>
+    </div>
+    <div class="code-block-section-w60">
+      <pre class="example"><span class="code-nodejs">npm i dotenv</span></pre>
+    </div>
+  </section>
+
+  <h3>Requre the module so you can use these variables</h3>
+  <section class="code-section-container">
+    <div class="code-text-section">
+      <p>Add the following lines to the <span class="text-object">server.js</span> file.</p>
+      <p>The first requires the module.</p>
+      <p>The 2nd specifies the file.</p>
+      <p>NOTE: The require app variable must be after the config.env. This is because the app needs the environment
+        variables to know when to run certain middleware.</p>
+    </div>
+    <div class="code-block-section-w60">
+      <pre class="example"><span class="code-nodejs">const dotenv = require('dotenv');
+
+<span class="code-comment">// specify file </span>
+dotenv.config({ path: './config.env' });
+
+const app = require('./app');</span></pre>
+    </div>
+  </section>
+
+
+  <h3>Specify that middleware is used only in a development environement</h3>
+  <section class="code-section-container">
+    <div class="code-text-section">
+      <p>This goes in the <span class="text-object">app.js</span> file.</p>
+    </div>
+    <div class="code-block-section-w60">
+      <pre class="example"><span class="code-nodejs">if (process.env.NODE_ENV === 'development') {
+  app.use(morgan('dev'));
+}</span></pre>
+    </div>
+  </section>
 
 
 
 
-
+  <h2>Add lines to your package.json file to specify environment</h2>
+  <section class="code-section-container">
+    <div class="code-text-section">
+      <p>Add these lines to specify which environment to use when you run a certain command to start the app.</p>
+    </div>
+    <div class="code-block-section-w60">
+      <pre class="example"><span class="code-nodejs">  "scripts": {
+  "start:dev": "nodemon server.js",
+  "start:prod": "NODE_ENV=production nodemon server.js"
+},</span></pre>
+    </div>
+  </section>
 
 
 

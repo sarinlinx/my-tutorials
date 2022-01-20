@@ -1149,6 +1149,45 @@ app.listen(port, () => {
 
 
 
+  <h1>Chaining middleware functions</h1>
+
+  <h2>Add function to controller file</h2>
+  <section class="code-section-container">
+    <div class="code-text-section">
+      <p>This function checks if the body contains content is trying to be created without a name or price.</p>
+    </div>
+    <div class="code-block-section-w60">
+      <pre class="example"><span class="code-nodejs">exports.checkBody = (req, res, next) =&gt; {
+  if (!req.body.name || !req.body.price) {
+    return res.status(400).json({
+      status: 'fail',
+      message: 'Missing name or price'
+    });
+  }
+  next();
+};</span></pre>
+    </div>
+  </section>
+
+
+  <h2>Chain functions</h2>
+  <section class="code-section-container">
+    <div class="code-text-section">
+      <p>Add this to the route file</p>
+      <p>Add the <span class="code">checkBody</span> function first, then the <span class="code">createTour</span>
+        function.</p>
+      <p>This way, the first function must run first when you attempt to run <span class="code">createTour</span>.</p>
+    </div>
+    <div class="code-block-section-w60">
+      <pre class="example"><span class="code-nodejs">router
+.route('/')
+.get(tourController.getAllTours)
+.post(<span class="code-highlight">tourController.checkBody, tourController.createTour</span>);</span></pre>
+    </div>
+  </section>
+
+
+
 
 
 

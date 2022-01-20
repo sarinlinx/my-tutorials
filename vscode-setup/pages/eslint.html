@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet"> -->
+
+  <link rel="stylesheet" type="text/css" href="../_css/styles.css">
+
+  <title>ESLint</title>
+</head>
+
+<body>
+
+  <nav class="navbar">
+    <a href="../../index.html">Back to homepage</a>
+    <a class="nav-page nav-active">ESLint</a>
+  </nav>
+
+
+  <h1>ESLint</h1>
+  <div class="text-section">
+    <p>This configures ESLint to work with Prettier.</p>
+  </div>
+
+  <h2>Install dev dependencies</h2>
+  <section class="code-section-container">
+    <div class="code-text-section">
+      <p>eslint-config-prettier disables formatting in ESLint.</p>
+      <p>eslint-plugin-prettier allows ESLint to show formatting erros while you type.</p>
+      <p>eslint-config-airbnb sets a JavaScript style guide to follow.</p>
+      <p>eslint-pluging-node adds ESLint rules for Node.js.</p>
+      <p>These 3 allow the style guide to work. eslint-plugin-import eslint-plugin-jsx-ally eslint-plugin-react.</p>
+    </div>
+    <div class="code-block-section-w60">
+      <pre
+        class="example"><span class="code-nodejs">npm i eslint prettier eslint-config-prettier eslint-plugin-prettier eslint-config-airbnb eslint-plugin-node eslint-plugin-import eslint-plugin-jsx-ally eslint-plugin-react</span></pre>
+    </div>
+  </section>
+
+
+
+  <h2>Create a config file</h2>
+  <section class="code-section-container">
+    <div class="code-text-section">
+      <p>Create a file named <span class="text-object">.eslintrc.json</span> in your application directory.</p>
+      <p> This is the same location as your <span class="text-object">.prettierrc</span> file.</p>
+      <p>This allows you to adjust the rules ESLint uses. For example:</p>
+      <ul>
+        <li>no-console: ESLint displays an error when you use console.log. This turns it into a warning.</li>
+        <li>consistent-return: Every function should always return something. This is turned off.</li>
+        <li>no-unused-vars: This catches unused variables, but adds a few exceptions.</li>
+      </ul>
+    </div>
+    <div class="code-block-section-w60">
+      <pre class="example"><span class="code-nodejs">{
+  "extends": ["airbnb", "prettier", "plugin:node/recommended"],
+  "plugins": ["prettier"],
+  "rules": {
+    "prettier/prettier": "error",
+    "spaced-comment": "off",
+    "no-console": "warn",
+    "consistent-return": "off",
+    "func-names": "off",
+    "object-shorthand": "off",
+    "no-process-exit": "off",
+    "no-param-reassign": "off",
+    "no-return-await": "off",
+    "no-underscore-dangle": "off",
+    "class-methods-use-this": "off",
+    "prefer-destructuring": ["error", { "object": true, "array": false }],
+    "no-unused-vars": ["error", { "argsIgnorePattern": "req|res|next|val" }]
+  }
+}</span></pre>
+    </div>
+  </section>
+
+  <h2>More configurations</h2>
+  <div class="text-section">
+    <ul>
+      <li><a href="https://eslint.org/docs/rules/" target="_blank">ESLint Rules</a></li>
+    </ul>
+  </div>
+
+
+  <h2>View errors in VSCode terminal</h2>
+  <div class="text-section">
+    <p>Open a terminal: <span class="text-object">Termainal > New Terminal</span>.</p>
+    <p>Click the <span class="text-object">PROBLEMS</span> tab.</p>
+  </div>
+  <img src="../_img/eslint-terminal-problems.png">
+</body>
+
+</html>
