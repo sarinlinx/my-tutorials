@@ -1,0 +1,487 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" type="text/css" href="../../_css/styles.css">
+
+  <title>MongoDB</title>
+</head>
+
+<body>
+
+
+  <nav class="navbar">
+    <a href="../../index.html">Back to homepage</a>
+    <a class="nav-page nav-active">MongoDB Running Commands</a>
+  </nav>
+
+
+
+  <h1>Running commands</h1>
+  <h2>Start the server and Shell</h2>
+  <div class="text-section">
+    <p>You must first start by starting the MongoDB server. Then, open a Shell to run commands.</p>
+  </div>
+
+  <h3>Start the server</h3>
+  <section class="code-section-container">
+    <div class="code-text-section">
+      <p>Open PowerShell.</p>
+      <p>Run <span class="code">mongod.exe</span>.</p>
+    </div>
+    <div class="code-block-section-w60">
+      <pre class="example"><span class="code-nodejs">mongod.exe</span></pre>
+    </div>
+  </section>
+
+  <h3>Open the Shell</h3>
+  <section class="code-section-container">
+    <div class="code-text-section">
+      <p>Open PowerShell.</p>
+      <p>Run <span class="code">mongo</span>.</p>
+    </div>
+    <div class="code-block-section-w60">
+      <pre class="example"><span class="code-nodejs">mongo</span></pre>
+    </div>
+  </section>
+
+  <h3>Quit the Shell</h3>
+  <section class="code-section-container">
+    <div class="code-text-section">
+      <p>Run <span class="code">quit()</span> when you're ready to close the Shell.</p>
+    </div>
+    <div class="code-block-section-w60">
+      <pre class="example"><span class="code-nodejs">&gt; quit()</span></pre>
+    </div>
+  </section>
+
+
+  <h1>Database</h1>
+  <h2>Create a new database</h2>
+  <section class="code-section-container">
+    <div class="code-text-section">
+      <p>Run the <span class="code">use</span> command to create a new database or switch to an existing database.</p>
+    </div>
+    <div class="code-block-section-w60">
+      <pre class="example"><span class="code-nodejs">&gt; use natours-test
+switched to db natours-test</span></pre>
+    </div>
+  </section>
+
+  <h2>Show all databases</h2>
+  <section class="code-section-container">
+    <div class="code-text-section">
+      <p>This commands lists all databases.</p>
+      <p><span class="text-object">admin</span>, <span class="text-object">config</span>, and <span
+          class="text-object">local</span> are default databases.</p>
+    </div>
+    <div class="code-block-section-w60">
+      <pre class="example"><span class="code-nodejs">&gt; show dbs</span></pre>
+    </div>
+  </section>
+
+
+
+  <h1>Collections</h1>
+
+  <h2>Show Collections</h2>
+  <section class="code-section-container">
+    <div class="code-text-section">
+      <p>This command lists all Collections in a database.</p>
+    </div>
+    <div class="code-block-section-w60">
+      <pre class="example"><span class="code-nodejs">&gt; show collections</span></pre>
+    </div>
+  </section>
+
+
+
+
+
+
+  <h1>Documents</h1>
+  <h2>Create a new document</h2>
+  <div class="text-section">
+    <p>Creating a new document follows this syntax:</p>
+    <p><span class="code-highlight">DATABASE.COLLECTION.FUNCTION("object")</span></p>
+  </div>
+
+  <section class="code-section-container">
+    <div class="code-text-section">
+      <p>The command starts with the current database. This is noted by <span class="code">db</span>.</p>
+      <p>To create a new document, you must first specify a collection. In this example, <span class="code">tours</span>
+        is the collection.</p>
+      <p>Create a document inside of this collection using the <span class="code">insertOne()</span> function.</p>
+      <p>In the <span class="code">insertOne()</span> function, pass in a JavaScript Object.</p>
+
+    </div>
+    <div class="code-block-section-w60">
+      <pre class="example"><span class="code-nodejs">&gt; db.tours.insertOne({ name: "The Forest Hiker", price: 297, rating: 4.7})
+{
+  "acknowledged" : true,
+  "insertedId" : ObjectId("61e9e02f5eb0346bcc45d3a8")
+}        </span></pre>
+    </div>
+  </section>
+
+
+
+
+
+
+  <h2>Create multiple documents</h2>
+  <div class="text-section">
+    <p>Use <span class="code">insertMany()</span> to insert multiple documents.</p>
+    <p>This accepts an Array of multiple objects.</p>
+  </div>
+
+  <section class="code-section-container">
+    <div class="code-text-section">
+      <p>Create an Array using <span class="code">[]</span>.</p>
+      <p>Add Objects within the Array.</p>
+    </div>
+    <div class="code-block-section-w60">
+      <pre class="example"><span class="code-nodejs">&gt; db.tours.insertMany([{name: "The Sea Explorer", price: 497, rating: 4.8 }, { name: "The Snow Adventurer", price: 997, rating: 4.9, difficulty: "easy"}])</span>
+{
+  "acknowledged" : true,
+  "insertedIds" : [
+          ObjectId("6254917a4b556a73e5dc893b"),
+          ObjectId("6254917a4b556a73e5dc893c")
+  ]
+}  </pre>
+    </div>
+  </section>
+
+
+
+  <h1>Querying Documents</h1>
+
+  <h2>Query all Documents in a Collection</h2>
+  <section class="code-section-container">
+    <div class="code-text-section">
+      <p>Use the <span class="code">find()</span> command to view all Documents in a Collection.</p>
+      <p>Note how MongoDB automatically creates a unique <span class="code">ObjectId</span> for the Document.</p>
+    </div>
+    <div class="code-block-section-w60">
+      <pre
+        class="example"><span class="code-nodejs">&gt; db.tours.find()
+{ "_id" : ObjectId("61e9e02f5eb0346bcc45d3a8"), "name" : "The Forest Hiker", "price" : 297, "rating" : 4.7 }</span></pre>
+    </div>
+  </section>
+
+
+
+  <h2>Query a property value</h2>
+
+  <div class="text-section">
+    <p>This command returns all documents that contain the specific property value queried.</p>
+  </div>
+
+  <section class="code-section-container">
+    <div class="code-text-section">
+      <p>Add an Object into the <span class="code">find()</span> method.</p>
+      <p>Pass in the filter.</p>
+      <p>In this example, you are searching for the 'name' property.</p>
+    </div>
+    <div class="code-block-section-w60">
+      <pre class="example"><span class="code-nodejs">db.tours.find({ name: "The Forest Hiker" })</span>
+{ "_id" : ObjectId("61e9e02f5eb0346bcc45d3a8"), "name" : "The Forest Hiker", "price" : 297, "rating" : 4.7 }</pre>
+    </div>
+  </section>
+
+
+
+
+
+
+
+  <h2>Query a property value LESS THAN or EQUAL to a specific amount</h2>
+
+  <div class="text-section">
+    <p>This returns all documents where the 'price' property is LESS THAN 500.</p>
+  </div>
+
+  <section class="code-section-container">
+    <div class="code-text-section">
+      <p>Create a new Object for the value to search for surrounded by {}.</p>
+      <p>Use the LESS THAN or EQUAL operator. <span class="code">$lte</span>. This is a Mongo Operator.</p>
+    </div>
+    <div class="code-block-section-w60">
+      <pre class="example"><span class="code-nodejs">db.tours.find({ price: {$lte: 500} })</span></pre>
+    </div>
+  </section>
+
+
+
+
+
+
+
+
+
+  <h2>Query for multiple values</h2>
+
+  <div class="text-section">
+    <p>This returns all documents where the 'price' property is LESS THAN 500, and if the rating is greater than 4.8.
+    </p>
+  </div>
+
+  <section class="code-section-container">
+    <div class="code-text-section">
+      <p>Use the LESS THAN operator to query a value.</p>
+      <p>Add a comma, then the next query.</p>
+      <p>The next query uses the GREATER THAN or EQUAL operator.</p>
+    </div>
+    <div class="code-block-section-w60">
+      <pre
+        class="example"><span class="code-nodejs">db.tours.find({ price: {$lt: 500}, rating: {$gte: 4.8} })</span></pre>
+    </div>
+  </section>
+
+
+
+
+
+  <h2>OR query for multiple values</h2>
+
+  <div class="text-section">
+    <p>This checks if only 1 value is true.</p>
+  </div>
+
+  <section class="code-section-container">
+    <div class="code-text-section">
+      <p>Start with the <span class="code">$or</span> Operator.</p>
+      <p>THis is followed by an Array.</p>
+      <p>Inside the Array you add the conditions.</p>
+    </div>
+    <div class="code-block-section-w60">
+      <pre
+        class="example"><span class="code-nodejs">db.tours.find({ $or: [ {price: {$lt: 500}}, {rating: {$gte: 4.8}}  ] })</span></pre>
+    </div>
+  </section>
+
+
+
+
+
+
+
+  <h2>Output only a specific property</h2>
+
+  <div class="text-section">
+    <p>This will query, but only output the 'name' property.</p>
+  </div>
+
+  <section class="code-section-container">
+    <div class="code-text-section">
+      <p>After the Array, add the property to output.</p>
+    </div>
+    <div class="code-block-section-w60">
+      <pre
+        class="example"><span class="code-nodejs">db.tours.find({ $or: [ {price: {$lt: 500}}, {rating: {$gte: 4.8}}  ] }, <span class="code-highlight">{name: 1}</span>)</span></pre>
+    </div>
+  </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <h1>Updating Documents: CRUD</h1>
+
+  <h2>Update a document</h2>
+  <div class="text-section">
+    <p>This uses <span class="code">updateOne()</span> to update a single document.</p>
+
+  </div>
+
+  <section class="code-section-container">
+    <div class="code-text-section">
+      <p>The first element is a filter Object. It's what you're going to update.</p>
+      <p>The second element is the new value. Use <span class="code">$set</span> to update by creating a new Object.</p>
+    </div>
+    <div class="code-block-section-w60">
+      <pre class="example"><span class="code-nodejs">db.tours.updateOne({ name: "The Snow Adventurer"}, { $set: {price: 597} })</span>
+{ "acknowledged" : true, "matchedCount" : 1, "modifiedCount" : 1 }</pre>
+    </div>
+  </section>
+
+
+
+
+  <h2>Update multiple documents</h2>
+  <div class="text-section">
+    <p>This uses <span class="code">updateMany()</span> to update a several documents.</p>
+
+  </div>
+
+  <section class="code-section-container">
+    <div class="code-text-section">
+      <p>The first two elements are search for what to update.</p>
+      <p>The second uses the <span class="code">$set</span> operator to add a new property value of premium: true.</p>
+    </div>
+    <div class="code-block-section-w60">
+      <pre
+        class="example"><span class="code-nodejs">db.tours.updateMany({ price: {$gt: 500}, rating: {$gte: 4.8}}, { $set: {premium: true}})</pre>
+    </div>
+  </section>
+
+
+
+
+
+
+
+
+
+  <h1>Deleting documents</h1>
+
+  <h2>deleteOne()</h2>
+  <div class="text-section">
+    <p>This deletes the first document matching the query.</p>
+  </div>
+
+
+  <h2>deleteMany()</h2>
+  <div class="text-section">
+    <p>This deletes all documents matching the query.</p>
+  </div>
+
+
+  <section class="code-section-container">
+    <div class="code-text-section">
+      <p>Delete tours with rating below 4.8.</p>
+    </div>
+    <div class="code-block-section-w60">
+      <pre class="example"><span class="code-nodejs">db.tours.deleteMany({ rating: {$lt: 4.8} })</span></pre>
+    </div>
+  </section>
+
+
+  <h2>Delete all documents</h2>
+  <section class="code-section-container">
+    <div class="code-text-section">
+      <p>Pass in an empty objet to delete all documents.</p>
+      <p>This is permanent.</p>
+
+    </div>
+    <div class="code-block-section-w60">
+      <pre class="example"><span class="code-nodejs">db.tours.deleteMany({})</span></pre>
+    </div>
+
+  </section>
+
+
+
+
+
+
+
+
+
+
+  <h1>Using COMPASS for CRUD operations</h1>
+  <p>Compass is a GUI to work with Mongo.</p>
+
+  <h2>Download from website.</h2>
+  <div class="text-section">
+    <ul>
+      <li><a href="https://www.mongodb.com/products/compass" target="_blank">Download Compass</a></li>
+
+    </ul>
+  </div>
+
+  <h2>Start the monogo server in the background</h2>
+
+  <h2>Open Compass</h2>
+  <div class="text-section">
+    <p>Make sure you're on the 'New Connectin' screen.</p>
+    <img src="../../_img/compass.png">
+    <p>Everything should already be configured to use localhost and your mongo port.</p>
+    <p>Click the 'Connect' button to load your environment.</p>
+    <img src="../../_img/compass-dbs.png">
+    <p>All databases are listed.</p>
+  </div>
+
+  <h2>Insert a Document</h2>
+  <div class="text-section">
+    <p>Click into your database.</p>
+    <img src="../../_img/compass-add-data.png">
+    <p>Click the 'Add Data' dropdown, then 'Insert Document'.</p>
+    <img src="../../_img/compass-insert-document.png">
+
+    <p>Add new properties and values.</p>
+    <p>NOTE: You must enter it exacty as shown or it will not validate.</p>
+
+  </div>
+
+  <h2>Query a property</h2>
+  <div class="text-section">
+    <p>Use the same syntax as in the Mongo shell.</p>
+    <img src="../../_img/compass-query.png">
+    <p>Click the 'Options' dropdown to refine the results. This examle show the 'Project' field adding a search for the
+      name. The results will then only contain the name property and no others.</p>
+    <img src="../../_img/compass-query-options.png">
+
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+  <h1>Atlas App</h1>
+  <div class="text-section">
+    <p>Download Atlas from the MongoDB website.</p>
+    <p>Create a new Project.</p>
+    <p>Create a MongoDB user and password for this new Atlas cluster.</p>
+  </div>
+
+  <h2>Your application config file</h2>
+  <div class="text-section">
+    <p>You must now update your application config.env file so it can connect to Atlas.</p>
+
+    <ul>
+      <li>.....</li>
+      <li>.....</li>
+      <li>.....</li>
+    </ul>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>

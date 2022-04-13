@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" type="text/css" href="../../_css/styles.css">
+
+  <title>Installing MongoDB</title>
+</head>
+
+<body>
+
+
+  <nav class="navbar">
+    <a href="../../index.html">Back to homepage</a>
+    <a class="nav-page nav-active">Installing MongoDB</a>
+  </nav>
+
+
+
+  <h1>Installing MongoDB</h1>
+
+  <h2>Windows</h2>
+
+  <div class="text-section">
+    <ol>
+      <li>Visit the downloads page. Download the <a href="https://www.mongodb.com/try/download/community"
+          target="_blank">community version</a>.</li>
+      <li>Download msi file.</li>
+      <li>Run it to install</li>
+
+      <li>Open PowerShell</li>
+      <li>Navigate to C:\Program Files\MongoDB\Server\5.0\bin</li>
+      <li>Run the server: .\mongod.exe</li>
+      <li>This starts the server</li>
+      <li>Open 2nd Powershell window in the same directory</li>
+      <li>Run the file: .\mongo.exe. This opens the mongo shell.
+        <section class="code-section-container">
+          <div class="code-text-section">
+            <p>Type in db to view the test database</p>
+          </div>
+          <div class="code-block-section-w60">
+            <pre class="example"><span class="code-nodejs">&gt; db
+    test</span></pre>
+          </div>
+        </section>
+      </li>
+      <li>
+        CTRL + C to exit</li>
+    </ol>
+  </div>
+
+  <h3> Run MongoDB from another directory</h3>
+  <div class="text-section">
+    <ol>
+      <li>Open SETTINGS</li>
+      <li>Type in env</li>
+      <li>Click 'Edit the system environment variables'.</li>
+
+
+
+
+      <li>In popup, click 'Environment Variables...' button</li>
+      <li>Next popup: In 'System Variables' list, click Path. Then EDIT</li>
+      <li>Next popup:</li>
+      <li>Click NEW button</li>
+      <li>Paste in path: C:\Program Files\MongoDB\Server\5.0\bin</li>
+      <li>Click OK to save</li>
+
+
+      <li>Open new PowerShell</li>
+      <li>Type on mongod.exe</li>
+      <li>The server will start</li>
+    </ol>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>
