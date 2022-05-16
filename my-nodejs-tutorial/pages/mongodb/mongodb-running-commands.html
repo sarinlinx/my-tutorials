@@ -655,30 +655,34 @@ DATABASE_PASSWORD=password</span></pre>
 
 	<h1>Mongoose</h1>
 
+	<h2>Overview</h2>
+
+	<div class="text-section">
+		<p>Mongoose is an Object Data Modeing (ODM) library for MongoDB and Node.js providing a higher level of abstraction.
+		</p>
+		<p>It's similar to the abstraction provided by Express to Node.js.</p>
+		<p>An ODM is is a way to write JavaScript to interact with a database.</p>
+		<p>You don't need to use Mongoose, but it comes with a lot of functionality right out of the box allowing for faster
+			and more simple development of MongoDB applications.</p>
+	</div>
+
+	<h3>Mongoose Schema</h3>
+	<div class="text-section">
+		<p>This is where you model your data by describing the structure of the data, default values, and validation.</p>
+
+		<h3>Model</h3>
+		<p>You use the Schema to create a model. The model is a wrapper around the schema prividing an interface to teh
+			database for CRUD operations.</p>
+		<p>Models are like blueprints used to create documents.</p>
+		<p>It's like classes in JavaScript when used to create Objects from them.</p>
+		<p>Create a model so you can create a document from it and run CRUD operations on it.</p>
 
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+	</div>
 
 
 
@@ -769,6 +773,115 @@ app.listen(port, () => {
 	console.log(`App running on port ${port}...`);
 });</span></pre>
 		</div>
+
+
+
+	</section>
+
+
+
+
+
+	<h2>Create a simple Tour model</h2>
+
+	<h3>Step #1: Create a Schema</h3>
+	<section class="code-section-container">
+		<div class="code-text-section">
+			<p>Add to the <span class="code">server.js</span> file.</p>
+			<p>First create a Schema you can use to create a Model.</p>
+			<p>This is a very simple example of a Schema. Just add the data type after the property.</p>
+		</div>
+		<div class="code-block-section-w60">
+			<pre class="example"><span class="code-nodejs">const mongoose = require('mongoose');
+const dotenv = require('dotenv');
+const app = require('./app');
+
+dotenv.config({ path: './config.env' });
+
+const DB = process.env.DATABASE.replace(
+ '&lt;PASSWORD&gt;',
+ process.env.DATABASE_PASSWORD
+);
+
+mongoose
+ .connect(DB, {
+   useNewUrlParser: true,
+	 useCreateIndex: true,
+	 useFindAndModify: false
+})
+.then(() =&gt; console.log('DB connection successful'));
+
+<span class="code-comment">// Create Schema. Pass in the Schema as an Object</span>
+<span class="code-highlight">const tourSchema = new mongoose.Schema({
+ name: String,
+ rating: Number,
+ price: Number
+});</span>
+
+const port = process.env.PORT || 3000;
+app.listen(port, () =&gt; {
+	console.log(`App running on port ${port}...`);
+});</span></pre>
+		</div>
+	</section>
+
+
+
+
+	<h4>Add Schema-type options</h4>
+	<section class="code-section-container">
+		<div class="code-text-section">
+			<p>This adds on to the example above.</p>
+			<p>Instead of specifying <span class="code">String</span>, pass in another Object.</p>
+			<p>Schema-type options can be different for different types. Such as Strings or Numbers.</p>
+			<p>This example adds Schema-types of <span class="code">type</span> and <span class="code">required</span>.</p>
+
+
+
+
+		</div>
+		<div class="code-block-section-w60">
+			<pre class="example"><span class="code-nodejs">const mongoose = require('mongoose');
+const dotenv = require('dotenv');
+const app = require('./app');
+
+dotenv.config({ path: './config.env' });
+
+const DB = process.env.DATABASE.replace(
+ '&lt;PASSWORD&gt;',
+ process.env.DATABASE_PASSWORD
+);
+
+mongoose
+ .connect(DB, {
+   useNewUrlParser: true,
+	 useCreateIndex: true,
+	 useFindAndModify: false
+})
+.then(() =&gt; console.log('DB connection successful'));
+
+<span class="code-comment">// Create Schema. Pass in the Schema as an Object</span>
+const tourSchema = new mongoose.Schema({
+  name: <span class="code-highlight">{
+    type: String,
+    required: true,
+		unique: true
+  },</span>
+  rating: <span class="code-highlight">{
+    type: Number,
+    default: 4.5
+  }</span>,
+  price: <span class="code-highlight">{
+    type: Number,
+    required: true
+  }</span>
+});
+
+const port = process.env.PORT || 3000;
+app.listen(port, () =&gt; {
+	console.log(`App running on port ${port}...`);
+});</span></pre>
+		</div>
 	</section>
 
 
@@ -777,6 +890,499 @@ app.listen(port, () => {
 
 
 
+
+
+
+
+
+
+	<h4>Add Array to throw error if required field is missing</h4>
+	<section class="code-section-container">
+		<div class="code-text-section">
+			<p>
+			<p>This adds an Array to throw an error if the <span class="code">required</span> field is not entered.
+			</p>
+
+
+
+		</div>
+		<div class="code-block-section-w60">
+			<pre class="example"><span class="code-nodejs">const mongoose = require('mongoose');
+const dotenv = require('dotenv');
+const app = require('./app');
+
+dotenv.config({ path: './config.env' });
+
+const DB = process.env.DATABASE.replace(
+ '&lt;PASSWORD&gt;',
+ process.env.DATABASE_PASSWORD
+);
+
+mongoose
+ .connect(DB, {
+   useNewUrlParser: true,
+	 useCreateIndex: true,
+	 useFindAndModify: false
+})
+.then(() =&gt; console.log('DB connection successful'));
+
+<span class="code-comment">// Create Schema. Pass in the Schema as an Object</span>
+const tourSchema = new mongoose.Schema({
+  name: {
+    type: String,
+    required: <span class="code-highlight">[true, 'A tour must have a name']</span>,
+		unique: true
+  },
+  rating: {
+    type: Number,
+    default: 4.5
+  },
+  price: {
+    type: Number,
+    required: <span class="code-highlight">[true, 'A tour must have a price']</span>
+  }
+});
+
+const port = process.env.PORT || 3000;
+app.listen(port, () =&gt; {
+	console.log(`App running on port ${port}...`);
+});</span></pre>
+		</div>
+	</section>
+
+
+
+	<h3>Step #2: Create a Model</h3>
+
+	<section class="code-section-container">
+		<div class="code-text-section">
+			<p>This creates a Model from the Schema.</p>
+		</div>
+		<div class="code-block-section-w60">
+			<pre class="example"><span class="code-nodejs">const mongoose = require('mongoose');
+const dotenv = require('dotenv');
+const app = require('./app');
+
+dotenv.config({ path: './config.env' });
+
+const DB = process.env.DATABASE.replace(
+ '&lt;PASSWORD&gt;',
+ process.env.DATABASE_PASSWORD
+);
+
+mongoose
+ .connect(DB, {
+   useNewUrlParser: true,
+	 useCreateIndex: true,
+	 useFindAndModify: false
+})
+.then(() =&gt; console.log('DB connection successful'));
+
+<span class="code-comment">// Create Schema. Pass in the Schema as an Object</span>
+const tourSchema = new mongoose.Schema({
+  name: {
+    type: String,
+    required: [true, 'A tour must have a name'],
+		unique: true
+  },
+  rating: {
+    type: Number,
+    default: 4.5
+  },
+  price: {
+    type: Number,
+    required: [true, 'A tour must have a price']
+  }
+});
+
+<span class="code-comment">// Use uppercase on Model names
+// Add schema after the name</span>
+<span class="code-highlight">const Tour = mongoose.model('Tour', tourSchema);</span>
+
+const port = process.env.PORT || 3000;
+app.listen(port, () =&gt; {
+	console.log(`App running on port ${port}...`);
+});</span></pre>
+		</div>
+	</section>
+
+
+
+
+
+
+
+
+
+	<h2>Create Documents using the Model</h2>
+
+	<section class="code-section-container">
+		<div class="code-text-section">
+			<p>This creates a Document from the Model.</p>
+			<p>The new Document contains methods you can use to interact with the database. For example, <span
+					class="code">save()</span>.</p>
+		</div>
+		<div class="code-block-section-w60">
+			<pre class="example"><span class="code-nodejs">const mongoose = require('mongoose');
+const dotenv = require('dotenv');
+const app = require('./app');
+
+dotenv.config({ path: './config.env' });
+
+const DB = process.env.DATABASE.replace(
+ '&lt;PASSWORD&gt;',
+ process.env.DATABASE_PASSWORD
+);
+
+mongoose
+ .connect(DB, {
+   useNewUrlParser: true,
+	 useCreateIndex: true,
+	 useFindAndModify: false
+})
+.then(() =&gt; console.log('DB connection successful'));
+
+<span class="code-comment">// Create Schema. Pass in the Schema as an Object</span>
+const tourSchema = new mongoose.Schema({
+  name: {
+    type: String,
+    required: [true, 'A tour must have a name'],
+		unique: true
+  },
+  rating: {
+    type: Number,
+    default: 4.5
+  },
+  price: {
+    type: Number,
+    required: [true, 'A tour must have a price']
+  }
+});
+
+const Tour = mongoose.model('Tour', tourSchema);
+
+<span class="code-comment">// Create new Document based off Tour Model
+// This new Document has methods attached to it from the Schema which allow you to interact with the database</span>
+<span class="code-highlight">const testTour = new Tour ({
+ name: 'The FOrest Hiker',
+ rating: 4.7,
+ price: 497
+})</span>
+
+<span class="code-comment">// Using Methods
+// This saves it to the Tours collection in the database
+// This returns a Promise which you can then consume</span>
+<span class="code-highlight">testTour.save()</span>
+
+
+
+const port = process.env.PORT || 3000;
+app.listen(port, () =&gt; {
+	console.log(`App running on port ${port}...`);
+});</span></pre>
+		</div>
+	</section>
+
+
+
+	<h3>Consume the Promise from the save() method</h3>
+
+	<section class="code-section-container">
+		<div class="code-text-section">
+			<p>This consumes the Promise from teh <span class="code">save()</span> method.</p>
+			<p>Use <span class="code">.then()</span> and <span class="code">catch()</span>.</p>
+			<p>Run <span class="code">nodemon server.js</span> to start your server. When you save the new code, you'll see
+				the output in the terminal saving it to the database.</p>
+		</div>
+		<div class="code-block-section-w60">
+			<pre class="example"><span class="code-nodejs">const mongoose = require('mongoose');
+const dotenv = require('dotenv');
+const app = require('./app');
+
+dotenv.config({ path: './config.env' });
+
+const DB = process.env.DATABASE.replace(
+	'&lt;PASSWORD&gt;',
+	process.env.DATABASE_PASSWORD
+);
+
+mongoose
+	.connect(DB, {
+		useNewUrlParser: true,
+		useCreateIndex: true,
+		useFindAndModify: false
+})
+.then(() =&gt; console.log('DB connection successful'));
+
+<span class="code-comment">// Create Schema. Pass in the Schema as an Object</span>
+const tourSchema = new mongoose.Schema({
+	name: {
+		type: String,
+		required: [true, 'A tour must have a name'],
+		unique: true
+	},
+	rating: {
+		type: Number,
+		default: 4.5
+	},
+	price: {
+		type: Number,
+		required: [true, 'A tour must have a price']
+	}
+});
+
+const Tour = mongoose.model('Tour', tourSchema);
+
+<span class="code-comment">// Create new Document based off Tour Model
+// This new Document has methods attached to it from the Schema which allow you to interact with the database</span>
+const testTour = new Tour ({
+	name: 'The FOrest Hiker',
+	rating: 4.7,
+	price: 497
+})
+
+
+<span class="code-comment">// Using Methods
+// This saves it to the Tours collection in the database
+// This returns a Promise which you can then consume
+// then() has access to the document you just saved to the databse
+// Add catch() in case saving errors </span>
+<span class="code-highlight">testTour.save()
+ .then(doc =&gt; {
+   console.log(doc);
+ })
+ .catch(err =&gt; {
+  console.log('ERROR', err);
+ });
+
+const port = process.env.PORT || 3000;
+app.listen(port, () =&gt; {
+ console.log(`App running on port ${port}...`);
+});
+</span></pre>
+		</div>
+	</section>
+
+
+	<h3>View the saved Document in Compass</h3>
+	<div class="text-section">
+		<p>Open Compass.</p>
+		<p>Make sure you're connected to the external database as shown above.
+		<p>Click into <span class="code">natours.tours</span> and you should see the following.</p>
+		<img src="../../_img/compass-new-document.png">
+	</div>
+
+
+
+
+
+
+
+
+
+
+
+
+	<h1>Back-End Architecture</h1>
+	<h2>MVC Architecture</h2>
+
+	<h3>MODEL (Business Logic)</h3>
+	<div class="text-section">
+		<p>This layer is concerned with application data and business logic.</p>
+	</div>
+
+
+
+	<h3>CONTROLLER (Application Logic)</h3>
+	<div class="text-section">
+		<p>Handles the application request. Interacts with Models. Sends back responses to the client.</p>
+	</div>
+
+
+	<h3>View (Presentation Logic)</h3>
+	<div class="text-section">
+		<p>Necessary if there's a graphical interface in your application. Uses templates to generate the view.</p>
+	</div>
+
+
+	<h2>Example of MVC</h2>
+	<img src="../../_img/mvc-architecture.png" width="800px">
+	<h4>Step #1: The Request</h4>
+	<div class="text-section">
+		<p>A request will hit one of the Routers.</p>
+	</div>
+
+	<h4>Step #2: Routers</h4>
+	<div class="text-section">
+		<p>This delegates the request to the correct handler function in the Controller.</p>
+	</div>
+
+	<h4>Step #3: The Controller</h4>
+	<div class="text-section">
+		<p>There is a Controller for each resource.</p>
+	</div>
+
+	<h4>Step #4: The Model</h4>
+	<div class="text-section">
+		<p>The Controller will then interact with the Model to retrieve information from the database.</p>
+	</div>
+
+	<h4>Step #5: The View</h4>
+	<div class="text-section">
+		<p>The Controller selects a view template and injects data into it.</p>
+	</div>
+
+	<h4>Step #6: The Response</h4>
+	<div class="text-section">
+		<p>The Controller then sends back the data to the client.</p>
+	</div>
+
+
+	<h2>Application Logic vs Business Logic</h2>
+	<img src="../../_img/mvc-application-business-logic.png" width="800px">
+
+
+
+
+
+	<h1>Refactoring</h1>
+
+
+
+	<h2>Split out code into Model</h2>
+	<section class="code-section-container">
+		<div class="code-text-section">
+			<ol>
+				<li>Create a new directory name <span class="text-object">models</span>.</li>
+				<li>Create a new file in that directory named <span class="text-object">tourModel.js</span>.</li>
+				<li>From the <span class="text-object">server.js</span> file copy the Mongoose import statement into the <span
+						class="text-object">tourModel.js</span> file.</li>
+				<li>From the <span class="text-object">server.js</span> file cut out the Schema, and
+					Model declaration and place it in the <span class="text-object">tourModel.js</span> file.</li>
+				<li>Finally, add an export statement at the bottom to export the Model.</li>
+			</ol>
+		</div>
+		<div class="code-block-section-w60">
+			<span class="file-name">tourModel.js</span>
+			<pre class="example"><span class="code-nodejs">const mongoose = require('mongoose');
+<span class="code-comment">// Create Schema. Pass in the Schema as an Object</span>
+const tourSchema = new mongoose.Schema({
+ name: {
+  type: String,
+  required: [true, 'A tour must have a name'],
+  unique: true
+ },
+  rating: {
+  type: Number,
+  default: 4.5
+ },
+  price: {
+  type: Number,
+  required: [true, 'A tour must have a price']
+ }
+});
+
+<span class="code-comment">// Use uppercase on Model names
+// Add schema after the name</span>
+const Tour = mongoose.model('Tour', tourSchema);
+
+module.exports = Tour;</span></pre>
+		</div>
+	</section>
+
+
+	<h2>Update Controller to require the Model</h2>
+
+	<section class="code-section-container">
+		<div class="code-text-section">
+			<p>Add the require statement in the <span class="text-object">tourController.js</span> file to require the new
+				<span class="text-object">tourModel.js</span> file.
+			</p>
+			<p>Add it at the top.</p>
+		</div>
+		<div class="code-block-section-w60"><span class="file-name">tourController.js</span>
+			<pre class="example"><span class="code-nodejs">const Tour = require('./../models/tourModel');</span></pre>
+		</div>
+	</section>
+
+	<h3>Remove old test code</h3>
+	<div class="text-section">
+		<p>Remove test code from <span class="text-object">tourController.js</span> that was used in testing with the
+			imported JSON file.</p>
+		<p>Also remove Middleware referencing <span class="code">checkID</span> from <span
+				class="text-object">tourController.js</span> and <span class="text-object">tourRoutes.js</span>.</p>
+		<p>Remove the <span class="code">fs</span> import.</p>
+	</div>
+
+
+	<h3>Current tourController.js file</h3>
+	<section class="code-section-container">
+		<div class="code-text-section">
+			<p>The following is how the <span class="text-object">tourController.js</span> file should now appear.</p>
+		</div>
+		<div class="code-block-section-w60"><span class="file-name">tourController.js</span>
+			<pre class="example"><span class="code-nodejs">const Tour = require('./../models/tourModel');
+
+exports.checkBody = (req, res, next) => {
+  if (!req.body.name || !req.body.price) {
+    return res.status(400).json({
+      status: 'fail',
+      message: 'Missing name or price'
+    });
+  }
+  next();
+};
+
+exports.getAllTours = (req, res) => {
+  console.log(req.requestTime);
+
+  res.status(200).json({
+    status: 'success',
+    requestedAt: req.requestTime
+  });
+};
+
+exports.getTour = (req, res) => {
+  console.log(req.params);
+  const id = req.params.id * 1;
+};
+
+exports.createTour = (req, res) => {
+  res.status(201).json({
+    status: 'success'
+  });
+};
+
+exports.updateTour = (req, res) => {
+  res.status(200).json({
+    status: 'success',
+    data: {
+      tour: '<Updated tour here...>'
+    }
+  });
+};
+
+exports.deleteTour = (req, res) => {
+  res.status(204).json({
+    status: 'success',
+    data: null
+  });
+};</span></pre>
+		</div>
+	</section>
+
+
+
+
+
+
+
+
+
+
+
+
+	<h1>Another way to create a Document</h1>
 
 
 
