@@ -1323,15 +1323,7 @@ module.exports = Tour;</span></pre>
 		<div class="code-block-section-w60"><span class="file-name">tourController.js</span>
 			<pre class="example"><span class="code-nodejs">const Tour = require('./../models/tourModel');
 
-exports.checkBody = (req, res, next) => {
-  if (!req.body.name || !req.body.price) {
-    return res.status(400).json({
-      status: 'fail',
-      message: 'Missing name or price'
-    });
-  }
-  next();
-};
+
 
 exports.getAllTours = (req, res) => {
   console.log(req.requestTime);
@@ -1382,7 +1374,529 @@ exports.deleteTour = (req, res) => {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+	<h1>Mongoose Queries</h1>
+	<div class="text-section">
+		<p>The following examples uses methods specific to Mongoose.</p>
+		<ul>
+			<li><a href="https://mongoosejs.com/docs/queries.html" target="_blank">Mongoose Queries</a></li>
+		</ul>
+		<div class="notebox-note">
+			<p>If a Mongoose method starts with <span class="code">Model.prototype.</span>, it means it cannot be used on the
+				Model itself, on an instance of that Model.</p>
+			<p>For example, you could run <span class="code">save()</span> on a document created by a Model, but you couldn't
+				use it on the Model directly.</p>
+		</div>
+	</div>
+
+
+
+
+
+
+
 	<h1>Another way to create a Document</h1>
+
+	<section class="code-section-container">
+		<div class="code-text-section">
+			<p>This example uses the <span class="code">create()</span> method directly on the <span class="code">Tour</span>
+				Model.</p>
+			<p>Pass in the POST body request using <span class="code">req.body</span>. This is the data you want to store in
+				the database as a new Tour.</p>
+			<p><span class="code">create()</span> returns a Promise. Use Async/Await to store the result into <span
+					class="code">newTour</span>.</p>
+			<p><span class="code">newTour</span> is the new document.</p>
+			<p>Finally, wrap everything in a <span class="code">try/catch</span> block to check for errors.</p>
+			<p>In <span class="text-object">Postman</span>, visit POST 127.0.0.1:3000/api/v1/tours. Enter a new tour and click
+				SEND. You'll see the result was saved to the database.</p>
+			<img src="../../_img/postman-create-tour.png">
+			<div class="notebox-note">
+				<p>Notice how <span class="code">difficulty</span> and <span class="code">price</span> are not added to the
+					database. That's because they are not in the Schema. Only data listed in the Schema can be added.</p>
+			</div>
+
+		</div>
+
+
+		<div class="code-block-section-w60"><span class="file-name">tourController.js</span>
+			<pre class="example"><span class="code-nodejs">const Tour = require('./../models/tourModel');
+
+<span class="code-highlight">exports.createTour = async (req, res) =&gt; {
+  try {</span>
+    <span class="code-comment">// Create a new Tour by calling the create method on the model
+    // create() returns a Promise
+    // Instead of using .then(), use Async/Await
+    // The resolved value of the Promise is stored in the newTour variable
+    // req.body is the data from the POST request</span>
+    <span class="code-highlight">const newTour = await Tour.create(req.body);
+
+    res.status(201).json({
+      status: 'success',
+      data: {
+        tour: newTour
+      }
+    });
+  } catch (err) {
+    res.status(400).json({
+      status: 'fail',
+      message: err
+    });
+  }
+};</span></span></pre>
+		</div>
+	</section>
+
+
+
+
+	<h1>View all Documents using find()</h1>
+
+	<section class="code-section-container">
+		<div class="code-text-section">
+			<p>Use Async/Await.</p>
+			<p>Create a variable to store the retrieved data. It's called <span class="code">tours</span>.</p>
+			<p>This variable saves from the Model named <span class="code">Tour</span>.</p>
+			<p>It is attached to the <span class="code">find()</span> method which returns all data.</p>
+			<p>Wrap everything in a <span class="code">try/catch</span> block.</p>
+			<p>In <span class="text-object">Postman</span>, visit GET 127.0.0.1:3000/api/v1/tours.</p>
+		</div>
+		<div class="code-block-section-w60"><span class="file-name">tourController.js</span>
+			<pre class="example"><span class="code-nodejs">const Tour = require('./../models/tourModel');
+
+exports.getAllTours = async (req, res) =&gt; {
+  try {
+    <span class="code-comment">// Get all tours
+    // Tour Model followed by find() method </span>
+    <span class="code-highlight">const tours = await Tour.find();
+
+    res.status(200).json({
+      status: 'success',
+      results: tours.length,
+      data: {
+        tours
+      }
+    });
+  } catch (err) {
+    res.status(404).json({
+      status: 'fail',
+      message: err
+    });
+  }
+};</span></span></pre>
+		</div>
+	</section>
+
+
+
+
+
+
+
+
+
+
+
+	<h1>View a single Document using findById()</h1>
+
+	<section class="code-section-container">
+		<div class="code-text-section">
+			<p>Mongoose provides <span class="code">findById()</span>.</p>
+			<p>This example uses <span class="code">Tour.findById(req.params.id);</span> to locate the ID#.</p>
+			<p>This is the same as writing <span class="code">Tour.findOne({_id: req.params.id })</span> in normal Node.js
+				code.</p>
+			<p>To test in <span class="text-object">Postman</span> grab an ID# from the full list of documents from the
+				example above. It will look like <span class="code">62829dbc2ef9f0608c062681</span>. Then make a GET request to
+				<span class="code">127.0.0.1:3000/api/v1/tours/62829dbc2ef9f0608c062681</span> to view this single result.
+			</p>
+		</div>
+
+		<div class="code-block-section-w60"><span class="file-name">tourController.js</span>
+			<pre class="example"><span class="code-nodejs">const Tour = require('./../models/tourModel');
+
+exports.getTour = async (req, res) => {
+  try {
+    <span class="code-comment">// id comes from tourRoutes.js: .route('/:id')</span>
+    const tour = await Tour.findById(req.params.id);
+
+    res.status(200).json({
+      status: 'success',
+      data: {
+        tour
+      }
+    });
+  } catch (err) {
+    res.status(404).json({
+      status: 'fail',
+      message: err
+    });
+  }
+};</span></span></pre>
+		</div>
+	</section>
+
+
+
+
+
+
+
+
+
+
+
+	<h1>Updating Documents</h1>
+
+
+
+	<section class="code-section-container">
+		<div class="code-text-section">
+			<p>Mongoose provides <span class="code">findByIdAndUpdate()</span>.</p>
+			<ul>
+				<li><a href="https://mongoosejs.com/docs/api.html#model_Model.findByIdAndUpdate"
+						target="_blank">findByIdAndUpdate</a></li>
+			</ul>
+			<p>In <span class="text-object">Postman</span> send a PATCH request <span
+					class="code">127.0.0.1:3000/api/v1/tours/62829dbc2ef9f0608c062681</span>. In the <span
+					class="text-object">body</span> section, add what you want to change.</p>
+			<p>Click SEND and you'll see the record updated.</p>
+
+			<img src="../../_img/postman-patch-tour.png">
+		</div>
+
+		<div class="code-block-section-w60"><span class="file-name">tourController.js</span>
+			<pre class="example"><span class="code-nodejs">const Tour = require('./../models/tourModel');
+	
+exports.updateTour = async (req, res) =&gt; {
+  try {
+    <span class="code-comment">// Query for document by ID# to udpate, then update it
+    // First argument is ID#, second is what to change, 3rd is options</span>
+    const tour = await Tour.findByIdAndUpdate(req.params.id, req.body, {
+      new: true, <span class="code-comment">// new updated document will be returned</span>
+      runValidators: true <span class="code-comment">// each update runs validators specified in the Schema</span>
+    });
+
+    res.status(200).json({
+      status: 'success',
+      data: {
+        tour // the tour property is set to the tour object. In ES6, you can just write it as tour and not tour: tour
+      }
+    });
+  } catch (err) {
+    res.status(404).json({
+      status: 'fail',
+      message: err
+    });
+  }
+};</span></span></pre>
+		</div>
+	</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<h1>Deleting Documents</h1>
+
+
+
+	<section class="code-section-container">
+		<div class="code-text-section">
+			<p>Get all tours in Postman.</p>
+			<p>Copy the ID# of the one you want to delete.</p>
+			<p>In Postman, send a <span class="code">DELETE</span> request to <span
+					class="code">127.0.0.1:3000/api/v1/tours/628eaeb35b43987cbc4bc583</span>.</p>
+			<p>There will be no reply but you should see a <span class="code">204</span> response.</p>
+
+
+		</div>
+
+		<div class="code-block-section-w60"><span class="file-name">tourController.js</span>
+			<pre class="example"><span class="code-nodejs">const Tour = require('./../models/tourModel');
+	
+exports.deleteTour = (req, res) =&gt; {
+  res.status(204).json({
+    status: 'success',
+    data: null
+  });
+};
+
+exports.deleteTour = async (req, res) =&gt; {
+  try {
+    // there's nothing to send back to the client so you do not need to save to a variable
+    await Tour.findByIdAndDelete(req.params.id);
+
+    res.status(204).json({
+      status: 'success',
+      data: null
+    });
+  } catch (err) {
+    res.status(404).json({
+      status: 'fail',
+      message: err
+    });
+  }
+};</span></span></pre>
+		</div>
+	</section>
+
+
+
+
+
+
+
+
+
+	<h1>Update the tourModel.js and send data into it</h1>
+
+
+	<h2>New tourModel.js fields</h2>
+	<section class="code-section-container">
+		<div class="code-text-section">
+			<p>This is the new <span class="code">tourMode.js</span> file. New fields have been added to the Schema.</p>
+			<p>This allows you to send requests with these new fields and data.</p>
+		</div>
+		<div class="code-block-section-w60"><span class="file-name">tourModel.js</span>
+			<pre class="example"><span class="code-nodejs">const mongoose = require('mongoose');
+
+// Create Schema. Pass in the Schema as an Object
+const tourSchema = new mongoose.Schema({
+  name: {
+    type: String,
+    required: [true, 'A tour must have a name'],
+    unique: true,
+    trim: true
+  },
+  duration: {
+    type: Number,
+    required: [true, 'A tour must have a duration']
+  },
+  maxGroupSize: {
+    type: Number,
+    required: [true, 'A tour must have a group size']
+  },
+  difficulty: {
+    type: String,
+    required: [true, 'A tour must have a difficulty']
+  },
+  ratingsQuantity: {
+    type: Number,
+    defautl: 0
+  },
+  rating: {
+    type: Number,
+    default: 4.5
+  },
+  price: {
+    type: Number,
+    required: [true, 'A tour must have a price']
+  },
+  priceDiscount: Number,
+  summary: {
+    type: String,
+    trim: true, <span class="code-comment">// removes white space around String</span>
+    required: [true, 'A tour must have a description']
+  },
+  description: {
+    type: String,
+    trim: true
+  },
+  imageCover: {
+    type: String,
+    required: [true, 'A tour must have a cover image']
+  }, <span class="code-comment">// save images as an Array of Strings. Just place brackets around String</span>
+  images: [String],
+  createdAt: {
+    type: Date,
+    default: Date.now() <span class="code-comment">// get current timestamp</span>
+  },
+  startDates: [Date]
+});
+
+<span class="code-comment">// Use uppercase on Model names
+// Add schema after the name</span>
+const Tour = mongoose.model('Tour', tourSchema);
+
+module.exports = Tour;
+</span></pre>
+		</div>
+	</section>
+
+
+
+	<h2>Send data into app in Postman</h2>
+
+	<div class="text-section">
+		<p>You can now use Postman to send data into the app using the new fields in the Schema.</p>
+		<img src="../../_img/postman-post-data.png">
+	</div>
+
+
+
+	<h2>Script to load JSON data into the database</h2>
+
+	<section class="code-section-container">
+		<div class="code-text-section">
+			<p>This script is run once to import everything in the JSON file.</p>
+			<p>Create a new file named <span class="text-object">import-dev-data.js</span> in the <span
+					class="text-object">dev-data/data/</span> directory.</p>
+		</div>
+		<div class="code-block-section-w60">
+			<pre class="example"><span class="code-nodejs">const fs = require('fs'); // to read the JSON file
+const dotenv = require('dotenv');
+const mongoose = require('mongoose');
+const Tour = require('./../../models/tourModel'); // to access the tourModel so you can write to it
+
+dotenv.config({ path: './config.env' });
+
+<span class="code-comment">// process.env.DATABASE is the variable in the config.env file
+// This replaces the password variable in the connection string with the real password from the password variable</span>
+const DB = process.env.DATABASE.replace(
+  '&lt;PASSWORD&gt;',
+  process.env.DATABASE_PASSWORD
+);
+
+<span class="code-comment">// pass in database connection string
+// then pass in an Object with some options (these deal with deprecation warnings)
+// This connection returns a promise. Handle it using then()
+// This gives you access to a connection Object</span>
+mongoose
+  .connect(DB, {
+    useNewUrlParser: true,
+    useCreateIndex: true,
+    useFindAndModify: false
+  }) <span class="code-comment">// this connection will be the resolved value of the Promise</span>
+  .then(() =&gt; console.log('DB connection successful'));
+
+<span class="code-comment">// Read JSON file
+// Convert to a JavaScript Object using JSON.parse()</span>
+const tours = JSON.parse(
+  fs.readFileSync(`${__dirname}/tours-simple.json`, 'utf-8')
+);
+
+<span class="code-comment">// Import data</span>
+const importData = async () =&gt; {
+  try {
+    <span class="code-comment">// create method can accept an Array of Objects to create a new document for each Object in the Array</span>
+    await Tour.create(tours);
+    console.log('Data successfully loaded!');
+  } catch (err) {
+    console.log(err);
+  }
+	<span class="code-comment">ends the Node.js application. This is ok because this is a simple script</span>
+	process.exit(); 
+};
+
+<span class="code-comment">// Delete all data from database</span>
+const deleteData = async () =&gt; {
+  try {
+    <span class="code-comment">// use deleteMany() with no arguments to delete all documents in a collection
+    // This is a Mongoose function, but it's the same name as the native MongoDB function</span>
+    await Tour.deleteMany(tours);
+    console.log('Data successfully deleted!');	
+  } catch (err) {
+    console.log(err);
+  }
+	<span class="code-comment">ends the Node.js application. This is ok because this is a simple script</span>
+	process.exit(); 
+};
+
+<span class="code-comment">// if 3rd element in arguments Array is equal to --import, run the importData function</span>
+if (process.argv[2] === '--import') {
+  importData();
+} else if (process.argv[2] === '--delete') {
+  deleteData();
+}
+
+<span class="code-comment">// This prints the arguments of the Node process</span>
+console.log(process.argv);
+</span></pre>
+		</div>
+	</section>
+
+
+	<h3>Run the file</h3>
+	<section class="code-section-container">
+		<div class="code-text-section">
+			<p>When you run the file, nothing happens. This is because there are no function calls in the script.</p>
+			<p>You will only see the Node arguments printed from <span class="code">process.argv</span>
+		</div>
+		<div class="code-block-section-w60">
+			<pre class="example"><span class="code-nodejs">node dev-data/data/import-dev-data.js
+[
+  'C:\\Program Files\\nodejs\\node.exe',
+  'C:\\Users\\chris_opmq71j\\Documents\\webdev\\my-tutorials\\my-tutorials\\my-nodejs-tutorial\\udemy\\complete-node-bootcamp-master\\4-natours\\after-
+section-06\\dev-data\\data\\import-dev-data.js'
+]
+</span></pre>
+		</div>
+	</section>
+
+	<h3>Run the file and its functions</h3>
+
+
+	<h4>Delete all data</h4>
+	<section class="code-section-container">
+		<div class="code-text-section">
+			<p>Add an option to the command using <span class="code">--import</span> or <span class="code">--delete</span>.
+			</p>
+			<p>This option triggers the function call from the <span class="code">if</span> statement.</p>
+			<p>
+		</div>
+		<div class="code-block-section-w60">
+			<pre
+				class="example"><span class="code-nodejs">node dev-data/data/import-dev-data.js <span class="code-highlight">--delete</span></span></pre>
+		</div>
+	</section>
+
+	<h4>Import new data</h4>
+	<section class="code-section-container">
+		<div class="code-text-section">
+			<p>Run the command using <span class="code">--import</span> to import from the JSON file.
+			<p>
+		</div>
+		<div class="code-block-section-w60">
+			<pre
+				class="example"><span class="code-nodejs">node dev-data/data/import-dev-data.js <span class="code-highlight">--import</span></span></pre>
+		</div>
+	</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
