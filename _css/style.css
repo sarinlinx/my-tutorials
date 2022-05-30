@@ -147,10 +147,10 @@ Headers
 ___________________________________________________*/
 
 h1 {
-    margin-top: 3rem;
+    margin-top: 5rem;
     margin-bottom: 20px;
     border-bottom: 2px solid #776a6a;
-    font-size: 3rem;
+    font-size: 4rem;
     background: linear-gradient(to bottom, #daf6ff 0%, #0074c9 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -286,7 +286,7 @@ ___________________________________________________*/
 }
 
 .code-text-section {
-    line-height: 22px;
+    line-height: 28px;
     margin-right: 10px;
 }
 
@@ -354,6 +354,7 @@ ___________________________________________________*/
     border: 1px solid #b2cdff;
     border-radius: 2px;
     padding: 1px 4px;
+    white-space: nowrap;
 }
 
 .text-object {
@@ -389,9 +390,13 @@ ___________________________________________________*/
    ==================================================== */
 
 #breadcrumb-container {
+    position: absolute;
+    left: 0px;
+    right: 0px;
     background-color: #000;
-    padding-left: 10px;
+    padding: 0 0 8px 63px;
     font-size: 1.4rem;
+    margin-top: -13px;
 }
 
 .breadcrumb-link {
@@ -399,7 +404,8 @@ ___________________________________________________*/
 }
 
 .breadcrumb-link::before {
-    content: ' > '
+    content: ' > ';
+    color: #a1cfff
 }
 
 
@@ -412,7 +418,7 @@ ___________________________________________________*/
     position: -webkit-sticky;
     /* Safari */
     position: sticky;
-    top: 0;
+    top: 46px;
     z-index: 10000;
     width: 400px;
 }
@@ -573,6 +579,7 @@ ___________________________________________________*/
     display: block;
     color: #00CAAA;
     margin-left: 10px;
+    text-decoration: none;
 }
 
 

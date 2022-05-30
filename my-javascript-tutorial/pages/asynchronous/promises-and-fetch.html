@@ -16,7 +16,13 @@
 </head>
 
 <body>
-    <a href="../../index.html">Home page</a>
+    <div id="breadcrumb-container">
+
+        <span id="breadcrumb-homepage">
+          <a href="../../index.html">Home page</a>
+        </span>
+        <span class="breadcrumb-link">Promises and Fetch</span>
+    </div>
     <div id="auto-toc"></div>
 
 
@@ -41,6 +47,16 @@
 
         <h5>Async functions</h5>
         <p>Async functions use Promises behind the scenes, so understanding Promises is fundamental to understanding how Async/Await works.</p>
+
+        <h3>Links</h3>
+        <ul>
+            <li><a href="https://nodejs.dev/learn/understanding-javascript-promises" target="_blank">Understanding Promises</a></li>
+            <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise" target="_blank">MDM: Promises</a></li>
+            <li><a href="https://www.w3schools.com/js/js_promise.asp" target="_blank">W3Schools: Promises</a></li>
+        </ul>
+
+
+
     </div>
 
 
@@ -114,36 +130,279 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h1>Promise architecture</h1>
+    <h2>The Promise Constructor</h2>
+    <section class="code-section-container">
+        <div class="code-text-section">
+            <ul>
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/Promise" target="_blank">The Promise Constructor</a></li>
+            </ul>
+            <p>The Promise constructor is primarily used to wrap functions that do not already support promises.</p>
+            <p>This example builds a Promise named <span class="code">myPromise</span> using the <span class="code">new Promise()</span> constructor.</p>
+
+        </div>
+        <div class="code-block-section-w60"><pre class="example"><span class="code-js">let <span class="code-highlight-js">myPromise</span> = <span class="code-highlight-js">new Promise()</span></span></pre></div>
+    </section>
+
+
+    <h2>The Executor parameter</h2>
+    <section class="code-section-container">
+        <div class="code-text-section">
+
+            <p>The Promise Constuctor takes in an Executor parameter.</p>
+            <p>This is a function to be executed by the constructor.</p>
+            <p>The Executor is the developers custom code.</p>
+
+        </div>
+        <div class="code-block-section-w60"><pre class="example"><span class="code-js">let myPromise = new Promise<span class="code-highlight-js">(function() </span>{
+  <span class="code-comment">executor code here</span>
+}</pre></div>
+    </section>
+
+
+    <h2>Executor functions</h2>
+    <section class="code-section-container">
+        <div class="code-text-section">
+            <p>Two functions are passed in to the Executor.</p>
+            <ul>
+                <li> The first for when the Promise resolves.</li>
+                <li> The second for when it is rejected.</li>
+            </ul>
+            <p>You can name these anything you want. They are usually <span class="code">resolve, reject</span>. This example uses <span class="code">myResolve, myReject</span></p>
+            <p>At the time when the constructor generates the new Promise object, it also generates a corresponding pair of functions to resolve or reject; these are "tethered" to the Promise object.</p>
+
+        </div>
+        <div class="code-block-section-w60"><pre class="example"><span class="code-js">let myPromise = new Promise(function<span class="code-highlight-js">(myResolve, myReject)</span> {
+  <span class="code-comment">executor code here</span>
+}</pre></div>
+    </section>
+
+
+
+
+    <h2>The Return value</h2>
+    <section class="code-section-container">
+        <div class="code-text-section">
+            <p>The Promise constructor returns a Promise Object.</p>
+            <img src="../../_img/fetch-response.png" width="250px">
+            <p>The Promise Object is "resolved" when either of the Executor functions (resolve or reject) are invoked.</p>
+            <div class="notebox-note">
+                <p>The Promise returns a value, but you cannot see it unless you use the <span class="code">then()</span> method.</p>
+            </div>
+
+        </div>
+        <div class="code-block-section-w60"><pre class="example"><span class="code-js">let myPromise = new Promise(function(myResolve, myReject) {
+    let x = 0;
+
+    if (x == 0) {
+      <span class="code-highlight-js">myResolve("OK");</span>
+    } else {
+      <span class="code-highlight-js">myReject("Error");</span>
+    }
+  });
+}</pre></div>
+    </section>
+
+
+
+    <h2>View the result of the Promise</h2>
+    <section class="code-section-container">
+        <div class="code-text-section">
+
+
+
+            <p>The Promise returns a value, but you cannot see it unless you use the <span class="code">then()</span> method.</p>
+            <ul>
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/then" target="_blank">then()</a></li>
+            </ul>
+            <p>The <span class="code">then()</span> method returns a Promise.</p>
+            <p>It takes up to two arguments:</p>
+            <ul>
+                <li>A callback function for the <span class="text-object">success</span> of the Promise.</li>
+                <li>A callback function for the <span class="text-object">failure</span> of the Promise.</li>
+            </ul>
+            <div class="notebox-note">
+                <p>Both are optional, so you can add a callback for success or failure only.</p>
+            </div>
+
+
+
+
+        </div>
+        <div class="code-block-section-w60"><pre class="example"><span class="code-js">let myPromise = new Promise(function(myResolve, myReject) {
+  let x = 0;
+
+  if (x == 0) {
+    myResolve("OK");
+  } else {
+    myReject("Error");
+  }
+});
+
+myPromise.<span class="code-highlight-js">then(function(value) {
+    console.log(value)
+  },
+  function(error) {
+    console.log(error)
+  }
+);</span></pre></div>
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h1>Example of a Promise</h1>
+
+
+
+    <section class="code-section-container">
+        <div class="code-text-section">
+            <ol>
+                <li>Build a Promise using the <span class="code">new Promise()</span> constructor.</li>
+                <li>It automatically runs the executor function which passes in two other arguments. <span class="code">resolve</span> and <span class="code">reject</span> functions.
+                </li>
+                <li>Use the <span class="code">then()</span> method to view the result of the Promise Object.</li>
+                <p>The <span class="code">then()</span> method returns a Promise.</p>
+                <p>It takes up to two arguments:</p>
+                <ul>
+                    <li>A callback function for the <span class="text-object">success</span> of the Promise.</li>
+                    <li>A callback function for the <span class="text-object">failure</span> of the Promise.</li>
+                </ul>
+            </ol>
+
+
+            <p>Reload the page to see the WIN or LOSE result.</p>
+
+        </div>
+
+
+
+        <div class="code-block-section-w60"> <pre class="example"><span class="code-js">const lotteryPromise = new Promise(function(resolve, reject) {
+
+if (Math.random() >= 0.5) {
+  <span class="code-comment">// The value passed into the resolve function 
+  // wil be the result of the promise
+  // It will be available using the then() handler. </span>
+  resolve('You WIN')
+}
+else {
+  <span class="code-comment">// pass in error message to be available in catch() </span>
+  reject('You lost your money.')
+}
+})
+
+<span class="code-comment">// lotteryPromise is Promise Object at this point.
+// Use the then() method to view the result of the Promise Object
+// the then() method needs a callback function that is going to be called
+// with the resolved value of the promise.
+// res can be any name
+// .catch any errors </span>
+lotteryPromise.then(res => console.log(res)).catch(err => console.error(err))</span></pre></div>
+    </section>
+
+
+
+
+
+
+
+
+
+    <h1>Fetch</h1>
+    <section class="code-section-container">
+        <div class="code-text-section">
+            <p>The Fetch API is a promise-based mechanism, and calling fetch() is equivalent to defining our own promise using new Promise().</p>
+
+
+
+
+            <p>Project example:</p>
+            <ul>
+                <li><a href="project/index.html" target="_blank">Example project</a></li>
+            </ul>
+            <p>In these examples, the <a href="https://restcountries.com/">restcountries.com</a> API is used.</p>
+
+            <p>This is a very basic fetch function call to a URL.</p>
+            <p>Fetch returns a promise.</p>
+            <img src="../../_img/fetch-response.png" width="250px">
+        </div>
+        <div class="code-block-section-w60"><pre class="example"><span class="code-js">const request = fetch('https://restcountries.com/v2/name/portugal')
+console.log(request)</span></pre></div>
+    </section>
+
+
+
+
+
     <h1>Consuming Promises</h1>
 
     <section class="code-section-container">
         <div class="code-text-section">
-            <p>This is a very basic fetch function call to a URL.</p>
-            <p>This returns a promise.</p>
-            <p>.then() is used to handle this first Promise. It returns the response Object. But, the .body property cannot be read.</p>
-            <p>To read the .body property, you must use json(). But, this creates a 2nd Promise.</p>
-            <p>Use then() again on this 2nd Promise. This time, the data is returned.</p>
+            <p>This is a basic fetch function call to a URL which returns a promise.</p>
+            <ol>
+                <li>Use the Fetch API to create a Promise.</li>
+                <li><span class="code">.then()</span> is used to handle this first Promise. </li>
+                <li>Pass in a callback function to be executed as soon as the Promise is fulfilled. This is <span class="code">(function (response)</span>.</li>
+                <li>This function receives 1 arg once it's called by JavaScript. That argument is the resulting value of the fulfilled promise. In this example it's named <span class="code">response</span>. It returns the response Object.</li>
+                <li>The response Object contains a <span class="code">body</span> property, but the <span class="code">body</span> property cannot be read.
+                    <p><img src="../../_img/promise-body.png" width="450px"></p>
+                </li>
+                <li>To read the <span class="code">body</span> property, you must the <span class="code">json()</span> method on the response Object. </li>
+                <li><span class="code">json()</span> also returns a new Promise, so you must return it here and handle it.</li>
+                <li>Use <span class="code">then()</span> again on this 2nd Promise. This <span class="code">then()</span> is a callback function to handle the <span class="code">json()</span> Promise data. This time, the data is returned because the resolved
+                    value of this Promise is the data itself.</li>
+                <li>Use <span class="code">data.name</span> which is a property of the API data returned.</p>
+            </ol>
+
+            </p>
         </div>
-        <div class="code-block-section-w60"><pre class="example"><span class="code-js">const getCountryData = function (country) {
-  <span class="code-comment">// This creates a Promise </span>
-  fetch(`https://restcountries.com/v2/name/${country}`)
-    <span class="code-comment">// Use the then() Promise method to handle the Promise
-    // Pass in a callback function to be executed as soon as the promise is fulfilled
-    // This function receives 1 arg once it's called by JavaScript
-    // That argument is the resulting value of the fulfilled promise. Here's it's called response </span>
-    .then(function (response) {
-      <span class="code-comment">// This returns an Object named Response </span>
-      console.log(response);
-      <span class="code-comment">// The Response Object contains a body property
-      // You must use the json() method on the response Object to view this data
-      // json() also returns a new Promise, so you must return it here and handle it </span>
-      return response.json();
-    }) <span class="code-comment">// this then() is a callback function to handle the json() promise data
-    // this time you get access to the data because the resolved value of this promise is the data itself </span>
-    .then(function (data) {
-      console.log(data);
-      renderCountry(data[0]);
-    });
+
+
+
+        <div class="code-block-section-w60"><pre class="example"><span class="code-js">const renderCountry = function(data) {
+  console.log(<span class="code-highlight-js">data.name</span>)
+};
+    
+  const getCountryData = function (country) {
+
+  <span class="code-highlight-js">fetch</span>(`https://restcountries.com/v2/name/${country}`)  
+  <span class="code-highlight-js">.then(function (response)</span> {
+    console.log(response)
+    return response.<span class="code-highlight-js">json()</span>;
+  })
+  <span class="code-highlight-js">.then(function (data)</span> {
+    renderCountry(data[0]);
+  });
 };
 
 getCountryData('portugal');</span></pre></div>
@@ -167,11 +426,14 @@ getCountryData('portugal');</span></pre></div>
             <p>This is the same as above but uses Arrow Functions.</p>
             <p>This fetches something and then we get a response which will be transformed to json. And then we take that data and render the country to the DOM.</p>
         </div>
-        <div class="code-block-section-w60"><pre class="example"><span class="code-js">const getCountryData = function (country) {
+        <div class="code-block-section-w60"><pre class="example"><span class="code-js">const renderCountry = function(data) {
+  console.log(data.name)
+};
+
+const getCountryData = function(country) {
   fetch(`https://restcountries.com/v2/name/${country}`)
-  <span class="code-comment">// Arrow function to return response.json </span>
-  .then(response => response.json())
-  .then(data => renderCountry(data[0]));
+      .then(<span class="code-highlight-js">response => response.json()</span>)
+      .then(<span class="code-highlight-js">data => renderCountry(data[0])</span>);
 };
 
 getCountryData('portugal');</span></pre></div>
@@ -188,36 +450,231 @@ getCountryData('portugal');</span></pre></div>
 
 
     <h1>Chaining Promises</h1>
+    <h2>Overview</h2>
+    <div class="text-section">
+        <p>A Promise can be returned to another Promise, creating a chain of Promises.</p>
+        <p>In this way, you can execute two or more asynchronous operations back to back, where each subsequent operation starts when the previous operation succeeds, with the result from the previous step.</p>
+        <p>The <span class="code">then()</span> method returns a new Promise, different from the original.</p>
+        <p>Each Promise represents the completion of another asynchronous step in the chain.</p>
+    </div>
 
+
+
+
+    <h2>Chaining Syntax</h2>
+    <section class="code-section-container">
+        <div class="code-text-section">
+            <p>This shows the idea of how chaining works.</p>
+        </div>
+        <div class="code-block-section-w60"><pre class="example"><span class="code-js">doSomething()
+<span class="code-highlight-js">.then</span>(function(result) {
+  return doSomethingElse(result);
+})
+<span class="code-highlight-js">.then</span>(function(newResult) {
+  return doThirdThing(newResult);
+})
+<span class="code-highlight-js">.then</span>(function(finalResult) {
+  console.log('Got the final result: ' + finalResult);
+})
+<span class="code-highlight-js">.catch</span>(failureCallback);</span></pre></div>
+    </section>
+
+
+    <h2>Chaining exmaple #1</h2>
+    <section class="code-section-container">
+        <div class="code-text-section">
+            <p>This creates a function named <span class="code">numberValue</span>.</p>
+        </div>
+        <div class="code-block-section-w60"><pre class="example"><span class="code-js">let <span class="code-highlight-js">numberValue</span> = new Promise(function(resolve, reject) {
+    const product = 2;
+    resolve(product);
+});
+
+numberValue
+    <span class="code-highlight-js">.then</span>(function successValue(product) {
+      console.log(product);
+      return product * 2;
+    })
+    <span class="code-highlight-js">.then</span>(function successValue1(product) {
+      console.log(product);
+      return product * 4;
+    })
+    <span class="code-highlight-js">.then</span>(function successValue2(product) {
+      console.log(product);
+      return product * 6;
+});</span></pre></div>
+    </section>
+
+    <section class="code-section-container">
+        <div class="code-text-section">
+            <p>Output</p>
+        </div>
+        <div class="code-block-section-w60"><pre class="example"><span class="output">2
+4
+16</span></pre></div>
+    </section>
+
+
+
+
+
+
+
+
+
+    <h2>Chaining example #2</h2>
+    <section class="code-section-container">
+        <div class="code-text-section">
+            <p>This example uses the <span class="code">setTimeout()</span> function to create Async behavior.</p>
+            <p>Create three functions that return a Promise.</p>
+            <p>Chain all of them together using <span class="code">then()</span>.</p>
+        </div>
+        <div class="code-block-section-w60"><pre class="example"><span class="code-js">function getUser(userId) {
+  return new Promise((resolve, reject) => {
+      console.log('Get the user from the database.');
+      setTimeout(() => {
+          resolve({
+              userId: userId,
+              username: 'admin'
+          });
+      }, 1000);
+  })
+}
+
+function getServices(user) {
+  return new Promise((resolve, reject) => {
+      console.log(`Get the services of user# ${user.userId} with the username of ${user.username} from the API.`);
+      setTimeout(() => {
+          resolve(['Email', 'VPN', 'CDN']);
+      }, 3 * 1000);
+  });
+}
+
+function getServiceCost(services) {
+  return new Promise((resolve, reject) => {
+      console.log(`Calculate the service cost of ${services}.`);
+      setTimeout(() => {
+          resolve(services.length * 100);
+      }, 2 * 1000);
+  });
+}
+
+<span class="code-comment">// Chaining</span>
+<span class="code-highlight-js">getUser(100)
+  .then(getServices)
+  .then(getServiceCost)
+  .then(console.log);</spasn></span></pre></div>
+    </section>
+
+    <section class="code-section-container">
+        <div class="code-text-section">
+            <p>Output</p>
+        </div>
+        <div class="code-block-section-w60"><pre class="example"><span class="output">Get the user from the database.
+Get the services of user# 100 with the username of admin from the API.
+Calculate the service cost of Email,VPN,CDN.
+300</span></pre></div>
+    </section>
+
+
+
+
+
+
+
+
+    <h2>Chaining example #3</h2>
     <section class="code-section-container">
         <div class="code-text-section">
             <p>This chains an additional fetch call based off the first fetch call.</p>
             <p>The avoids callback hell by returning the promise and handling it outside by continuing the chain using .then().
             </p>
         </div>
-        <div class="code-block-section-w60"><pre class="example"><span class="code-js">const getCountryData = function (country) {
-fetch(`https://restcountries.com/v2/name/${country}`)
-  <span class="code-comment">// 2nd call depends on data from 1st call </span>
-  .then(response => response.json())    
-  .then(data => {
-    <span class="code-comment">// get data then get neighbor country and perform AJAX call </span>
-    renderCountry(data[0]);
-    const neighbour = data[0].borders[0];
-
-    if (!neighbour) return;
-
-    <span class="code-comment">// 2nd AJAX call
-    // you must return this promise so you can chain an then method
-    // the then method always returns a promise, even if nothing is returned </span>
-    return fetch(`https://restcountries.com/v2/alpha/${neighbour}`);
-  }) 
-  <span class="code-comment">// this is the fullfilled value from the fetch promise </span>
-  .then(response => response.json())
-  .then(data => renderCountry(data, 'neighbour'));
+        <div class="code-block-section-w60"><pre class="example"><span class="code-js">const renderCountry = function(data) {
+  console.log(data.name)
 };
 
+const getCountryData = function(country) {
+  fetch(`https://restcountries.com/v2/name/${country}`)
+      <span class="code-comment">// return the response body using json()</span>
+      .then(response => response.json())
+      .then(data => {
+        <span class="code-comment">// data[0] is the only line from the API that contains information </span>                   
+          renderCountry(data[0]);
+          <span class="code-comment">// borders is the neighbor country from the API</span>
+          const neighbour = data[0].borders[0];
+
+          if (!neighbour) return;
+
+          <span class="code-comment">// 2nd AJAX call
+          // you must return this promise so you can chain a then method</span>
+          return fetch(`https://restcountries.com/v2/alpha/${neighbour}`);
+      })
+      <span class="code-comment">// this is the fullfilled value from the fetch promise </span>
+      .then(response => response.json())
+      .then(data => renderCountry(data, 'neighbour'));
+};
 getCountryData('portugal');</span></pre></div>
     </section>
+
+    <section class="code-section-container">
+        <div class="code-text-section">
+            <p>Output</p>
+        </div>
+        <div class="code-block-section-w60"><pre class="example"><span class="output">Portugal 
+Spain</span></pre></div>
+    </section>
+
+
+
+
+
+
+
+
+
+
+    <h1>finally() method</h1>
+    <section class="code-section-container">
+        <div class="code-text-section">
+            <p>The callback function you add to <span class="code">finally()</span> is always called, even if it's rejected.</p>
+            <p>Use when something always needs to happen with the Promise.</p>
+            <p>A common use is hiding a rotating loading spinner.</p>
+        </div>
+        <div class="code-block-section-w60"><pre class="example"><span class="code-js">const renderError = function (msg) {
+countriesContainer.insertAdjacentText('beforeend', msg);
+countriesContainer.style.opacity = 1;
+};
+
+
+const getCountryData = function (country) {
+fetch(`https://restcountries.com/v2/name/${country}`)
+.then(response => response.json())    
+.then(data => {
+renderCountry(data[0]);
+const neighbour = data[0].borders[0];
+
+if (!neighbour) return;
+
+return fetch(`https://restcountries.com/v2/alpha/${neighbour}`);
+}) 
+.then(response => response.json())
+.then(data => renderCountry(data, 'neighbour'))
+.catch(err => {
+console.error(`${err} 💥💥💥`);
+renderError(`Something went wrong 💥💥 ${err.message}. Try again!`);
+})
+<span class="code-highlight-js">.finally(() => {
+countriesContainer.style.opacity = 1;
+}); </span>
+};</span></pre></div>
+    </section>
+
+
+
+
+
+
 
 
 
@@ -370,43 +827,6 @@ fetch(`https://restcountries.com/v2/name/${country}`)
 
 
 
-        <h1>finally() method</h1>
-        <section class="code-section-container">
-            <div class="code-text-section">
-                <p>The callback function you add to <span class="code">finally()</span> is always called, even if it's rejected.</p>
-                <p>Use when something always needs to happen with the Promise.</p>
-                <p>A common use is hiding a rotating loading spinner.</p>
-            </div>
-            <div class="code-block-section-w60"><pre class="example"><span class="code-js">const renderError = function (msg) {
-  countriesContainer.insertAdjacentText('beforeend', msg);
-  countriesContainer.style.opacity = 1;
-};
-  
-  
-const getCountryData = function (country) {
-fetch(`https://restcountries.com/v2/name/${country}`)
-  .then(response => response.json())    
-  .then(data => {
-    renderCountry(data[0]);
-    const neighbour = data[0].borders[0];
-
-    if (!neighbour) return;
-
-    return fetch(`https://restcountries.com/v2/alpha/${neighbour}`);
-  }) 
-  .then(response => response.json())
-  .then(data => renderCountry(data, 'neighbour'))
-  .catch(err => {
-    console.error(`${err} 💥💥💥`);
-    renderError(`Something went wrong 💥💥 ${err.message}. Try again!`);
-  })
-  <span class="code-highlight-js">.finally(() => {
-    countriesContainer.style.opacity = 1;
-  }); </span>
-};</span></pre></div>
-        </section>
-
-
 
 
 
@@ -546,44 +966,6 @@ getCountryData('australia');</span></pre></div>
 
 
 
-
-
-        <h1>Build a Promise</h1>
-        <section class="code-section-container">
-            <div class="code-text-section">
-                <p>Build a Promise using the new Promise constructor.</p>
-                <p>Take 1 arg which is an executor function.</p>
-                <p>As soon as the promise constructor runs, it will automatically execute this executor function that we pass in.
-                </p>
-                <p>As it executes this function, it will do so by passing in two other arguments. <strong>resolve</strong> and
-                    <strong>reject</strong> functions.
-                </p>
-                <p>Reload the page to see the WIN or LOSE result.</p>
-            </div>
-            <div class="code-block-section-w60"> <pre class="example"><span class="code-js">const lotteryPromise = new Promise(function(resolve, reject) {
-
-if (Math.random() >= 0.5) {
-  <span class="code-comment">// call resolve function to fullfill the promise
-  // into the resolved function pass the fulfilled value of the promise
-  // so it can be consumed with the then() method.
-  // whatever value we pass into the resolve function here is gonna to be the result of the promise
-  // that will be available in the then() handler. </span>
-  resolve('You WIN')
-  }
-else {
-  <span class="code-comment">// pass in error message to be available in catch() </span>
-  reject('You lost your money.')
-  }
-})
-
-<span class="code-comment">//lotteryPromise is Promise Object at this point.
-// so we can call the then() method,
-// the then() method needs a callback function that is going to be called
-// with the resolved value of the promise.
-// res can be any name
-// .catch any errors </span>
-lotteryPromise.then(res => console.log(res)).catch(err => console.error(err))</span></pre></div>
-        </section>
 
 
 
@@ -780,36 +1162,6 @@ const whereAmI = async function (country) {
 
 
 
-        <h1>Promises and Fetch</h1>
-
-        <h2>Overview</h2>
-        <div class="row">
-            <div class="col">
-                <p>Project example:</p>
-                <ul>
-                    <li><a href="project/index.html" target="_blank">Example project</a></li>
-                </ul>
-                <p>In these examples, the <a href="https://restcountries.com/">restcountries.com</a> API is used.</p>
-            </div>
-        </div>
-
-
-
-
-
-        <h1>Fetch</h1>
-
-        <div class="row">
-            <div class="col-5">
-                <p>This is a very basic fetch function call to a URL.</p>
-                <p>This returns a promise.</p>
-            </div>
-
-            <div class="col-7">
-                <pre class="example"><span class="code-js">const request = fetch('https://restcountries.com/v2/name/portugal')
-console.log(request)</span></pre>
-            </div>
-        </div>
 
 
 
