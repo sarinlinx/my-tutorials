@@ -19,8 +19,8 @@
     <div id="breadcrumb-container">
 
         <span id="breadcrumb-homepage">
-          <a href="../../index.html">Home page</a>
-        </span>
+      <a href="../../index.html">Home page</a>
+    </span>
         <span class="breadcrumb-link">Promises and Fetch</span>
     </div>
     <div id="auto-toc"></div>
@@ -50,7 +50,8 @@
 
         <h3>Links</h3>
         <ul>
-            <li><a href="https://nodejs.dev/learn/understanding-javascript-promises" target="_blank">Understanding Promises</a></li>
+            <li><a href="https://nodejs.dev/learn/understanding-javascript-promises" target="_blank">Understanding
+          Promises</a></li>
             <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise" target="_blank">MDM: Promises</a></li>
             <li><a href="https://www.w3schools.com/js/js_promise.asp" target="_blank">W3Schools: Promises</a></li>
         </ul>
@@ -98,7 +99,8 @@
 
         <h5>After it finishes</h5>
         <p>After the Promise finishes, it calls the callback functions (passed to then and catch).</p>
-        <p>A Promise is only settled once as Fulfilled or Rejected. It's impossible to change the state after it finishes.</p>
+        <p>A Promise is only settled once as Fulfilled or Rejected. It's impossible to change the state after it finishes.
+        </p>
 
     </div>
 
@@ -120,9 +122,11 @@
     <div class="text-section">
         <p>Promises are used by standard modern Web APIs such as:</p>
         <ul>
-            <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Battery_Status_API" target="_blank">Battery API</a></li>
+            <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Battery_Status_API" target="_blank">Battery API</a>
+            </li>
             <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API" target="_blank">Fetch API</a></li>
-            <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API" target="_blank">Service Workers</a></li>
+            <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API" target="_blank">Service
+          Workers</a></li>
         </ul>
     </div>
 
@@ -157,10 +161,13 @@
                 <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/Promise" target="_blank">The Promise Constructor</a></li>
             </ul>
             <p>The Promise constructor is primarily used to wrap functions that do not already support promises.</p>
-            <p>This example builds a Promise named <span class="code">myPromise</span> using the <span class="code">new Promise()</span> constructor.</p>
+            <p>This example builds a Promise named <span class="code">myPromise</span> using the <span class="code">new
+          Promise()</span> constructor.</p>
 
         </div>
-        <div class="code-block-section-w60"><pre class="example"><span class="code-js">let <span class="code-highlight-js">myPromise</span> = <span class="code-highlight-js">new Promise()</span></span></pre></div>
+        <div class="code-block-section-w60">
+            <pre class="example"><span class="code-js">let <span class="code-highlight-js">myPromise</span> = <span class="code-highlight-js">new Promise()</span></span></pre>
+        </div>
     </section>
 
 
@@ -173,9 +180,11 @@
             <p>The Executor is the developers custom code.</p>
 
         </div>
-        <div class="code-block-section-w60"><pre class="example"><span class="code-js">let myPromise = new Promise<span class="code-highlight-js">(function() </span>{
+        <div class="code-block-section-w60">
+            <pre class="example"><span class="code-js">let myPromise = new Promise<span class="code-highlight-js">(function() </span>{
   <span class="code-comment">executor code here</span>
-}</pre></div>
+}</pre>
+        </div>
     </section>
 
 
@@ -191,9 +200,11 @@
             <p>At the time when the constructor generates the new Promise object, it also generates a corresponding pair of functions to resolve or reject; these are "tethered" to the Promise object.</p>
 
         </div>
-        <div class="code-block-section-w60"><pre class="example"><span class="code-js">let myPromise = new Promise(function<span class="code-highlight-js">(myResolve, myReject)</span> {
+        <div class="code-block-section-w60">
+            <pre class="example"><span class="code-js">let myPromise = new Promise(function<span class="code-highlight-js">(myResolve, myReject)</span> {
   <span class="code-comment">executor code here</span>
-}</pre></div>
+}</pre>
+        </div>
     </section>
 
 
@@ -206,11 +217,13 @@
             <img src="../../_img/fetch-response.png" width="250px">
             <p>The Promise Object is "resolved" when either of the Executor functions (resolve or reject) are invoked.</p>
             <div class="notebox-note">
-                <p>The Promise returns a value, but you cannot see it unless you use the <span class="code">then()</span> method.</p>
+                <p>The Promise returns a value, but you cannot see it unless you use the <span class="code">then()</span> method.
+                </p>
             </div>
 
         </div>
-        <div class="code-block-section-w60"><pre class="example"><span class="code-js">let myPromise = new Promise(function(myResolve, myReject) {
+        <div class="code-block-section-w60">
+            <pre class="example"><span class="code-js">let myPromise = new Promise(function(myResolve, myReject) {
     let x = 0;
 
     if (x == 0) {
@@ -219,7 +232,8 @@
       <span class="code-highlight-js">myReject("Error");</span>
     }
   });
-}</pre></div>
+}</pre>
+        </div>
     </section>
 
 
@@ -230,7 +244,8 @@
 
 
 
-            <p>The Promise returns a value, but you cannot see it unless you use the <span class="code">then()</span> method.</p>
+            <p>The Promise returns a value, but you cannot see it unless you use the <span class="code">then()</span> method.
+            </p>
             <ul>
                 <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/then" target="_blank">then()</a></li>
             </ul>
@@ -248,7 +263,8 @@
 
 
         </div>
-        <div class="code-block-section-w60"><pre class="example"><span class="code-js">let myPromise = new Promise(function(myResolve, myReject) {
+        <div class="code-block-section-w60">
+            <pre class="example"><span class="code-js">let myPromise = new Promise(function(myResolve, myReject) {
   let x = 0;
 
   if (x == 0) {
@@ -264,7 +280,8 @@ myPromise.<span class="code-highlight-js">then(function(value) {
   function(error) {
     console.log(error)
   }
-);</span></pre></div>
+);</span></pre>
+        </div>
     </section>
 
 
@@ -307,7 +324,8 @@ myPromise.<span class="code-highlight-js">then(function(value) {
 
 
 
-        <div class="code-block-section-w60"> <pre class="example"><span class="code-js">const lotteryPromise = new Promise(function(resolve, reject) {
+        <div class="code-block-section-w60">
+            <pre class="example"><span class="code-js">const lotteryPromise = new Promise(function(resolve, reject) {
 
 if (Math.random() >= 0.5) {
   <span class="code-comment">// The value passed into the resolve function 
@@ -327,7 +345,8 @@ else {
 // with the resolved value of the promise.
 // res can be any name
 // .catch any errors </span>
-lotteryPromise.then(res => console.log(res)).catch(err => console.error(err))</span></pre></div>
+lotteryPromise.then(res => console.log(res)).catch(err => console.error(err))</span></pre>
+        </div>
     </section>
 
 
@@ -356,8 +375,10 @@ lotteryPromise.then(res => console.log(res)).catch(err => console.error(err))</s
             <p>Fetch returns a promise.</p>
             <img src="../../_img/fetch-response.png" width="250px">
         </div>
-        <div class="code-block-section-w60"><pre class="example"><span class="code-js">const request = fetch('https://restcountries.com/v2/name/portugal')
-console.log(request)</span></pre></div>
+        <div class="code-block-section-w60">
+            <pre class="example"><span class="code-js">const request = fetch('https://restcountries.com/v2/name/portugal')
+console.log(request)</span></pre>
+        </div>
     </section>
 
 
@@ -373,7 +394,8 @@ console.log(request)</span></pre></div>
                 <li>Use the Fetch API to create a Promise.</li>
                 <li><span class="code">.then()</span> is used to handle this first Promise. </li>
                 <li>Pass in a callback function to be executed as soon as the Promise is fulfilled. This is <span class="code">(function (response)</span>.</li>
-                <li>This function receives 1 arg once it's called by JavaScript. That argument is the resulting value of the fulfilled promise. In this example it's named <span class="code">response</span>. It returns the response Object.</li>
+                <li>This function receives 1 arg once it's called by JavaScript. That argument is the resulting value of the fulfilled promise. In this example it's named <span class="code">response</span>. It returns the response Object.
+                </li>
                 <li>The response Object contains a <span class="code">body</span> property, but the <span class="code">body</span> property cannot be read.
                     <p><img src="../../_img/promise-body.png" width="450px"></p>
                 </li>
@@ -389,7 +411,8 @@ console.log(request)</span></pre></div>
 
 
 
-        <div class="code-block-section-w60"><pre class="example"><span class="code-js">const renderCountry = function(data) {
+        <div class="code-block-section-w60">
+            <pre class="example"><span class="code-js">const renderCountry = function(data) {
   console.log(<span class="code-highlight-js">data.name</span>)
 };
     
@@ -405,7 +428,8 @@ console.log(request)</span></pre></div>
   });
 };
 
-getCountryData('portugal');</span></pre></div>
+getCountryData('portugal');</span></pre>
+        </div>
     </section>
 
 
@@ -426,7 +450,8 @@ getCountryData('portugal');</span></pre></div>
             <p>This is the same as above but uses Arrow Functions.</p>
             <p>This fetches something and then we get a response which will be transformed to json. And then we take that data and render the country to the DOM.</p>
         </div>
-        <div class="code-block-section-w60"><pre class="example"><span class="code-js">const renderCountry = function(data) {
+        <div class="code-block-section-w60">
+            <pre class="example"><span class="code-js">const renderCountry = function(data) {
   console.log(data.name)
 };
 
@@ -436,7 +461,8 @@ const getCountryData = function(country) {
       .then(<span class="code-highlight-js">data => renderCountry(data[0])</span>);
 };
 
-getCountryData('portugal');</span></pre></div>
+getCountryData('portugal');</span></pre>
+        </div>
     </section>
 
 
@@ -466,7 +492,8 @@ getCountryData('portugal');</span></pre></div>
         <div class="code-text-section">
             <p>This shows the idea of how chaining works.</p>
         </div>
-        <div class="code-block-section-w60"><pre class="example"><span class="code-js">doSomething()
+        <div class="code-block-section-w60">
+            <pre class="example"><span class="code-js">doSomething()
 <span class="code-highlight-js">.then</span>(function(result) {
   return doSomethingElse(result);
 })
@@ -476,7 +503,8 @@ getCountryData('portugal');</span></pre></div>
 <span class="code-highlight-js">.then</span>(function(finalResult) {
   console.log('Got the final result: ' + finalResult);
 })
-<span class="code-highlight-js">.catch</span>(failureCallback);</span></pre></div>
+<span class="code-highlight-js">.catch</span>(failureCallback);</span></pre>
+        </div>
     </section>
 
 
@@ -485,7 +513,8 @@ getCountryData('portugal');</span></pre></div>
         <div class="code-text-section">
             <p>This creates a function named <span class="code">numberValue</span>.</p>
         </div>
-        <div class="code-block-section-w60"><pre class="example"><span class="code-js">let <span class="code-highlight-js">numberValue</span> = new Promise(function(resolve, reject) {
+        <div class="code-block-section-w60">
+            <pre class="example"><span class="code-js">let <span class="code-highlight-js">numberValue</span> = new Promise(function(resolve, reject) {
     const product = 2;
     resolve(product);
 });
@@ -502,16 +531,19 @@ numberValue
     <span class="code-highlight-js">.then</span>(function successValue2(product) {
       console.log(product);
       return product * 6;
-});</span></pre></div>
+});</span></pre>
+        </div>
     </section>
 
     <section class="code-section-container">
         <div class="code-text-section">
             <p>Output</p>
         </div>
-        <div class="code-block-section-w60"><pre class="example"><span class="output">2
+        <div class="code-block-section-w60">
+            <pre class="example"><span class="output">2
 4
-16</span></pre></div>
+16</span></pre>
+        </div>
     </section>
 
 
@@ -529,7 +561,8 @@ numberValue
             <p>Create three functions that return a Promise.</p>
             <p>Chain all of them together using <span class="code">then()</span>.</p>
         </div>
-        <div class="code-block-section-w60"><pre class="example"><span class="code-js">function getUser(userId) {
+        <div class="code-block-section-w60">
+            <pre class="example"><span class="code-js">function getUser(userId) {
   return new Promise((resolve, reject) => {
       console.log('Get the user from the database.');
       setTimeout(() => {
@@ -563,17 +596,20 @@ function getServiceCost(services) {
 <span class="code-highlight-js">getUser(100)
   .then(getServices)
   .then(getServiceCost)
-  .then(console.log);</spasn></span></pre></div>
+  .then(console.log);</spasn></span></pre>
+        </div>
     </section>
 
     <section class="code-section-container">
         <div class="code-text-section">
             <p>Output</p>
         </div>
-        <div class="code-block-section-w60"><pre class="example"><span class="output">Get the user from the database.
+        <div class="code-block-section-w60">
+            <pre class="example"><span class="output">Get the user from the database.
 Get the services of user# 100 with the username of admin from the API.
 Calculate the service cost of Email,VPN,CDN.
-300</span></pre></div>
+300</span></pre>
+        </div>
     </section>
 
 
@@ -590,7 +626,8 @@ Calculate the service cost of Email,VPN,CDN.
             <p>The avoids callback hell by returning the promise and handling it outside by continuing the chain using .then().
             </p>
         </div>
-        <div class="code-block-section-w60"><pre class="example"><span class="code-js">const renderCountry = function(data) {
+        <div class="code-block-section-w60">
+            <pre class="example"><span class="code-js">const renderCountry = function(data) {
   console.log(data.name)
 };
 
@@ -614,15 +651,18 @@ const getCountryData = function(country) {
       .then(response => response.json())
       .then(data => renderCountry(data, 'neighbour'));
 };
-getCountryData('portugal');</span></pre></div>
+getCountryData('portugal');</span></pre>
+        </div>
     </section>
 
     <section class="code-section-container">
         <div class="code-text-section">
             <p>Output</p>
         </div>
-        <div class="code-block-section-w60"><pre class="example"><span class="output">Portugal 
-Spain</span></pre></div>
+        <div class="code-block-section-w60">
+            <pre class="example"><span class="output">Portugal 
+Spain</span></pre>
+        </div>
     </section>
 
 
@@ -637,11 +677,13 @@ Spain</span></pre></div>
     <h1>finally() method</h1>
     <section class="code-section-container">
         <div class="code-text-section">
-            <p>The callback function you add to <span class="code">finally()</span> is always called, even if it's rejected.</p>
+            <p>The callback function you add to <span class="code">finally()</span> is always called, even if it's rejected.
+            </p>
             <p>Use when something always needs to happen with the Promise.</p>
             <p>A common use is hiding a rotating loading spinner.</p>
         </div>
-        <div class="code-block-section-w60"><pre class="example"><span class="code-js">const renderError = function (msg) {
+        <div class="code-block-section-w60">
+            <pre class="example"><span class="code-js">const renderError = function (msg) {
 countriesContainer.insertAdjacentText('beforeend', msg);
 countriesContainer.style.opacity = 1;
 };
@@ -667,7 +709,8 @@ renderError(`Something went wrong 💥💥 ${err.message}. Try again!`);
 <span class="code-highlight-js">.finally(() => {
 countriesContainer.style.opacity = 1;
 }); </span>
-};</span></pre></div>
+};</span></pre>
+        </div>
     </section>
 
 
@@ -684,9 +727,55 @@ countriesContainer.style.opacity = 1;
 
 
 
+    <h1>Catch</h1>
+    <section class="code-section-container">
+        <div class="code-text-section">
+            <p>When a Promise rejects, the control jumps to the closest <span class="code">catch()</span> rejection handler.
+            </p>
+            <p><span class="code">.catch</span> doesn’t have to be immediate. It may appear after one or maybe several <span class="code">.then()</span> methods.</p>
+            <p> The easiest way to catch all errors is to append <span class="code">.catch</span> to the end of the chain.</p>
+            <p>In this cample, <span class="code">.jsonn</span> is misspelled.</p>
+        </div>
+        <div class="code-block-section-w60">
+            <pre class="example"><span class="code-js">fetch('https://jsonplaceholder.typicode.com/users')
+.then(function(response) {
+  return response.json();
+})
+<span class="code-comment">// .then(response =&gt; response.json())</span>
+.then(user =&gt; fetch(`https://jsonplaceholder.typicode.com/comments`))
+.then(function(response) {
+  return response.<span class="code-highlight-js">jsonn()</span>;
+})
+<span class="code-comment">// .then(response =&gt; response.json())</span>
+.then(githubUser =&gt; new Promise((resolve, reject) =&gt; {
+  setTimeout(() =&gt; {
+      console.log("setTimeout() block")
+      resolve(githubUser);
+  }, 3000)
+
+}))
+.catch(error =&gt; console.log("Error is: " + error.message));</span></pre>
+        </div>
+    </section>
+
+    <section class="code-section-container">
+        <div class="code-text-section">
+            <h6>Output</h6>
+        </div>
+        <div class="code-block-section-w60">
+            <pre class="example"><span class="code-nodejs">Error is: response.jsonn is not a function</span></pre>
+        </div>
+    </section>
 
 
-    <h1>Handling rejected Promises</h1>
+
+
+
+
+    <h2>Handling rejected Promises</h2>
+
+
+
 
 
 
@@ -708,7 +797,8 @@ countriesContainer.style.opacity = 1;
             <p>The problem is you would have to add this to each fetch call when is a lot of duplicated code.</p>
 
         </div>
-        <div class="code-block-section-w60"><pre class="example"><span class="code-js">const getCountryData = function (country) {
+        <div class="code-block-section-w60">
+            <pre class="example"><span class="code-js">const getCountryData = function (country) {
 fetch(`https://restcountries.com/v2/name/${country}`)
   .then(response => response.json()<span class="code-highlight-js">, 
   err => alert(err) </span>
@@ -723,7 +813,8 @@ fetch(`https://restcountries.com/v2/name/${country}`)
   }) 
   .then(response => response.json())
   .then(data => renderCountry(data, 'neighbour'));
-};</span></pre></div>
+};</span></pre>
+        </div>
     </section>
 
 
@@ -744,7 +835,8 @@ fetch(`https://restcountries.com/v2/name/${country}`)
             <p>Instead of writing err for each call, add catch to the last method.</p>
             <p>Adding catch to the end catches any errors at any point in the chain.</p>
         </div>
-        <div class="code-block-section-w60"><pre class="example"><span class="code-js">const getCountryData = function (country) {
+        <div class="code-block-section-w60">
+            <pre class="example"><span class="code-js">const getCountryData = function (country) {
 fetch(`https://restcountries.com/v2/name/${country}`)
   // 2nd call depends on data from 1st call
   .then(response => response.json())    
@@ -764,7 +856,8 @@ fetch(`https://restcountries.com/v2/name/${country}`)
   .then(response => response.json())
   .then(data => renderCountry(data, 'neighbour'))
   <span class="code-highlight-js">.catch(err = > alert(err)) </span>
-};</span></pre></div>
+};</span></pre>
+        </div>
     </section>
 
 
@@ -779,7 +872,8 @@ fetch(`https://restcountries.com/v2/name/${country}`)
             <div class="code-text-section">
                 <p>This uses catch to print a message to the page.</p>
             </div>
-            <div class="code-block-section-w60"><pre class="example"><span class="code-js"><span class="code-comment">// add text to page </span>
+            <div class="code-block-section-w60">
+                <pre class="example"><span class="code-js"><span class="code-comment">// add text to page </span>
 <span class="code-highlight-js">const renderError = function (msg) {
   countriesContainer.insertAdjacentText('beforeend', msg);
   countriesContainer.style.opacity = 1;
@@ -802,7 +896,8 @@ fetch(`https://restcountries.com/v2/name/${country}`)
     <span class="code-highlight-js">.catch(err => {
       renderError(`Something went wrong ${err.message}`);
       })</span>
-};</span></pre></div>
+};</span></pre>
+            </div>
         </section>
 
 
@@ -855,7 +950,8 @@ fetch(`https://restcountries.com/v2/name/${country}`)
                 <p>If so, throw a custom error response.</p>
                 <p>The problem with this is that if you want to also create a custom error response for the 2nd Promise, you'll have to duplicate the code.</p>
             </div>
-            <div class="code-block-section-w60"><pre class="example"><span class="code-js">const getCountryData = function (country) {
+            <div class="code-block-section-w60">
+                <pre class="example"><span class="code-js">const getCountryData = function (country) {
 fetch(`https://restcountries.com/v2/name/${country}`)
 <span class="code-highlight-js">.then(response => {
   <span class="code-comment">// log the response error </span>
@@ -888,7 +984,8 @@ fetch(`https://restcountries.com/v2/name/${country}`)
   })
 };
 
-getCountryData('');</span></pre></div>
+getCountryData('');</span></pre>
+            </div>
         </section>
 
 
@@ -908,7 +1005,8 @@ getCountryData('');</span></pre></div>
                 <p>Additionally, another if statement is added to check if there's a neighbour country. if not, a custom error displays.
                 </p>
             </div>
-            <div class="code-block-section-w60"> <pre class="example"><span class="code-js"><span class="code-comment">// errorMsg has a default error message set as a param
+            <div class="code-block-section-w60">
+                <pre class="example"><span class="code-js"><span class="code-comment">// errorMsg has a default error message set as a param
 // this function returns a Promise </span>
 const getJSON = function (url, errorMsg = 'Something went wrong') {
   return fetch(url).then(response => {
@@ -949,27 +1047,9 @@ getJSON(
   });
 };
 
-getCountryData('australia');</span></pre></div>
+getCountryData('australia');</span></pre>
+            </div>
         </section>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -985,7 +1065,8 @@ getCountryData('australia');</span></pre></div>
                 <div class="code-text-section">
                     <p>This uses a timer. This encapsulates asyn behavior into the Promise</p>
                 </div>
-                <div class="code-block-section-w60"><pre class="example"><span class="code-js">const lotteryPromise = new Promise(function (resolve, reject) {
+                <div class="code-block-section-w60">
+                    <pre class="example"><span class="code-js">const lotteryPromise = new Promise(function (resolve, reject) {
 
 console.log('Lottery draw is happening')
 
@@ -1001,7 +1082,8 @@ console.log('Lottery draw is happening')
 })
 
 
-lotteryPromise.then(res => console.log(res)).catch(err => console.error(err))</span></pre></div>
+lotteryPromise.then(res => console.log(res)).catch(err => console.error(err))</span></pre>
+                </div>
             </section>
 
 
@@ -1017,12 +1099,20 @@ lotteryPromise.then(res => console.log(res)).catch(err => console.error(err))</s
 
             <section class="code-section-container">
                 <div class="code-text-section">
-                    <p>in practice, most of the time all we actually do is to consume promises. And we usually only built promises to basically wrap old callback based functions into promises. And this is a process that we call promisifying.</p>
+
+                    <p>“Promisification” is the conversion of a function that accepts a callback into a function that returns a promise.</p>
+                    <p>Many functions and libraries are callback-based. But promises are more convenient, so it makes sense to promisify them.</p>
+
+
+
+                    <p>Promisifying is building a Promise to wrap a callback based functions into promises. And this is a process that we call .
+                    </p>
                     <p> promisifying means to convert callback based asynchronous behavior to promise based.</p>
                     <p>This promisifies the setTimeout function and creates a wait function</p>
 
                 </div>
-                <div class="code-block-section-w60"><pre class="example"><span class="code-js">const lotteryPromise = new Promise(function (resolve, reject) {
+                <div class="code-block-section-w60">
+                    <pre class="example"><span class="code-js">const lotteryPromise = new Promise(function (resolve, reject) {
 
   console.log('Lottery draw is happening')
 
@@ -1056,15 +1146,9 @@ wait(2).then(() => {
   console.log('Code to run after 2 seconds')
   <span class="code-comment">// return a new Promise </span>
   return wait(1)
-}).then(() => console.log('Waited for 1 second'))</span></pre></div>
+}).then(() => console.log('Waited for 1 second'))</span></pre>
+                </div>
             </section>
-
-
-
-
-
-
-
 
 
 
@@ -1079,27 +1163,103 @@ Promise.reject('this rejects immediately').catch(x => console.log(x)) </span></p
 
 
 
+
+
+
+
+
+
+
+
+
+
+
             <h1>Consuming Promises with async/await</h1>
+
+            <h2>Overview</h2>
+            <div class="text-section">
+                <p><span class="text-object">Async/Await</span> is used to make Asynchronous code look more like Synchronous.</p>
+                <p>It is thought of "syntactic sugar" over the <span class="code">then()</span> method in Promises.</p>
+                <p>Behind the scenes, we are still using Promises. We are simply using a different way of consuming them here
+                </p>
+                <p>This makes it easier for humans to understand.</p>
+            </div>
+
+            <h2>Syntax</h2>
+            <section class="code-section-container">
+                <div class="code-text-section">
+                    <p>This is the basic syntax of <span class="text-object">Async/Await</span>.</p>
+                </div>
+                <div class="code-block-section-w60"><pre class="example"><span class="code-js"><span class="code-highlight-js">async</span> function myFunction(){
+  <span class="code-highlight-js">await</span> printString("one")
+  <span class="code-highlight-js">await</span> printString("two")
+  <span class="code-highlight-js">await</span> printString("three")
+}</span></pre></div>
+            </section>
+
+
+
+
+            <h3>async</h3>
+            <div class="text-section">
+
+                <p>The <span class="code">async</span> keyword is used to wrap the current function named <span class="code">myFunction</span>.</p>
+                <p>Functions must always be wrapped individually. There is no way to do this at the global level.</p>
+                <p>You can also think of this as: <span class="code">await</span> is only used with an <span class="text-object">Async</span> function.</p>
+                <p><span class="code">async</span> makes a function return a Promise</p>
+            </div>
+
+            <h3>await</h3>
+            <div class="text-section">
+                <p>The <span class="code">await</span> keyword ensures all Promises returned "wait" for each other.</p>
+
+                <p>Await eliminates the use of callbacks in <span class="code">.then()</span> and <span class="code">.catch()</span>.</p>
+                <p><span class="code">await</span> makes a function wait for a Promise.</p>
+            </div>
+            <h3>try/catch</h3>
+            <div class="text-section">
+                <p><span class="code">try</span> and <span class="code">catch</span> are also used to get the rejection value of an async function.</p>
+            </div>
+
+
+
+
+
+
+
+
+
+            <h2>Example</h2>
+
+
+            <div class="text-section">
+                <p>This is a function that keeps running in the background while performing the code inside of it</p>
+                <p>When finished it returns a Promise</p>
+            </div>
 
 
             <section class="code-section-container">
                 <div class="code-text-section">
-                    <p>This is a function that keeps running in the background while performing the code inside of it</p>
-
-                    <p>When finished it returns a Promise</p>
-                    <p>await will stop the code execution at this point of the function until the Promise is fulfilled.</p>
-                    <p>stopping execution in an async function, is not a problem because this function is running asynchronously in the background.</p>
-                    <p>So it's not blocking the call stack. that's,what's so special about async/ await. it's the fact that it makes our code look like regular synchronous code while behind the scenes. Everything is in fact asynchronous.</p>
-                    <p>as soon as this premise here is resolved,then the value of this whole await expression that we havehere is going to be the resolved value of the premise.And so we can simply store that into a variable.</p>
-                    <p>before you start using a sync await you need to first understand that a sink await is in fact, simply syntactic sugar over the then() method in Promises.</p>
-                    <p>Behind the scenes, we are still using Promises. We are simply using a different way of consuming them here</p>
+                    <ol>
+                        <li>Start by creating an <span class="text-object">Async</span> function by adding the <span class="code">async</span> keyword in front of the function name.</li>
+                        <li>Inside the funciton, use <span class="code">fetch</span> to create a Promise.</li>
+                        <li>Adding <span class="code">await</span> stops the code execution at this point of the function until the Promise is fulfilled.
+                            <div class="notebox-note">
+                                <p>Stopping execution in an <span class="text-object">Async</span> function is okay because this function is running asynchronously in the background. This means it's not blocking the call stack.</p>
+                            </div>
+                        </li>
+                        <li>When the Promise is resolved, the value of the <span class="code">await</span> expression is going to be the resolved value of the Promise, stored into a variable. You can then call this variable.</li>
+                    </ol>
                 </div>
-                <div class="code-block-section-w60"><pre class="example"><span class="code-js"><span class="code-comment">// Start by creating an async function by adding async in front of it </span>              
-const whereAmI = async function (country) {
+                <div class="code-block-section-w60">
+                    <pre class="example"><span class="code-js">const whereAmI = <span class="code-highlight-js">async</span> function (country) {
   <span class="code-comment">// inside create await statements that await the result of the Promise </span>                  
-  cosnt res = await fetch(`https://restcountries.com/v2/name/${country}`)
+  const res = <span class="code-highlight-js">await</span> fetch(`https://restcountries.com/v2/name/${country}`)
   console.log(res)
-}</span></pre></div>
+}
+
+whereAmI()</span></pre>
+                </div>
             </section>
 
 
@@ -1108,7 +1268,8 @@ const whereAmI = async function (country) {
 
 
 
-            <h1>Combinators</h2>
+            <h1>Combinators
+        </h2>
 
         <h2>race</h2>
         <h2>allSettled</h2>

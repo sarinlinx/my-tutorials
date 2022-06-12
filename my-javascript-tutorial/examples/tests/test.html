@@ -1,0 +1,20 @@
+<html>
+
+<body>
+
+
+    <div id="container"></div>
+
+
+    <script>
+        const whereAmI = async function myFunction(country) {
+            // inside create await statements that await the result of the Promise                   
+            const res = await fetch(`https://restcountries.com/v2/name/portugal`)
+            console.log(res)
+        }
+
+        whereAmI()
+    </script>
+</body>
+
+</html>

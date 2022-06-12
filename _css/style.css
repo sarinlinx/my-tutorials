@@ -336,6 +336,11 @@ ___________________________________________________*/
     color: #9c9c9c;
 }
 
+.output-heading {
+    color: #c0c0c0;
+    font-size: 2rem;
+}
+
 .code-highlight-js {
     font-weight: bolder;
     font-size: 1.1rem;
@@ -580,6 +585,7 @@ ___________________________________________________*/
     color: #00CAAA;
     margin-left: 10px;
     text-decoration: none;
+    font-size: 1rem;
 }
 
 
@@ -613,6 +619,7 @@ ___________________________________________________*/
     max-height: 700px;
     -webkit-transition: all .7s cubic-bezier(.38, .13, .7, .97);
     transition: all .8s cubic-bezier(.38, .13, .7, .97);
+    line-height: 1.4;
 }
 
 .display-headings {
