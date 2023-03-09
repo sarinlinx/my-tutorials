@@ -2,41 +2,138 @@
 <html lang="en">
 
 <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" type="text/css" href="../../_css/bootstrap.css">
-    <link rel="stylesheet" type="text/css" href="../../_css/style.css">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" type="text/css" href="../../_css/bootstrap.css">
+  <link rel="stylesheet" type="text/css" href="../../_css/style.css">
 
-    <title>Grid</title>
+  <title>Grid</title>
 </head>
 
 <body>
   <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
-      <li  class="breadcrumb-item"><a href="../../index.html">Home</a></li>
-      <li  class="breadcrumb-item active" aria-current="page">Grid</li>
+      <li class="breadcrumb-item"><a href="../../index.html">Home</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Grid</li>
     </ol>
   </nav>
 
 
 
-    <section class="container">
-        <h2 class="heading-emphasis">########</h2>
+  <section class="container">
+    <h1>The grid container</h1>
 
-        <div class="row">
-            <div class="col-6">
-                <p>##########</p>
+    <div class="row">
 
-            </div>
-            <div class="col-6">
-                <pre class="example"><span class="code-css">##################</pre></div>
-        </div>
-    </section>
+      <div class="col-6">
+        <p>All CSS grid elements go inside of a container.</p>
+        <p>Assign display: grid; to it.</p>
+        <p>All direct children of the grid container automatically become grid items.</p>
+      </div>
 
 
+      <div class="col-6">
+
+        <pre class="example"><span class="code-css">.grid-container {
+  display: grid;
+}</span>
+          
+<span class="code-html">&lt;div class="grid-container"&gt;
+.....
+.....
+.....
+.....
+&lt;/div&gt;</span></pre>
+      </div>
+
+    </div>
+
+
+
+
+
+
+
+
+
+    <h1>Creating columns</h1>
+
+    <div class="row">
+      <div class="col">
+        <p>Create a specific amount of columns using grid-template-columns.</p>
+        <p>It defines the number of columns their width.</p>
+        <p>Use "auto" if all columns should have the same width.</p>
+      </div>
+    </div>
+
+
+    <h3>Example</h3>
+    <div class="row">
+      <div class="col-6">
+        <p>This creates 4 columns of different widths.</p>
+      </div>
+
+      <div class="col-6">
+        <pre class="example"><span class="code-css">.grid-container {
+  display: grid;
+  <span class="code-highlight">grid-template-columns: 80px 200px 100px 40px;</span>
+}</span>
+          
+<span class="code-html">&lt;div class="grid-container"&gt;
+.....
+.....
+.....
+.....
+&lt;/div&gt;</span></pre>
+      </div>
+    </div>
+
+    <h3>Example</h3>
+    <div class="row">
+      <div class="col-6">
+        <p>This creates 4 columns of equal widths.</p>
+      </div>
+
+      <div class="col-6">
+        <pre class="example"><span class="code-css">.grid-container {
+  display: grid;
+  <span class="code-highlight">grid-template-columns: auto auto auto auto;</span>
+}</span>
+          
+<span class="code-html">&lt;div class="grid-container"&gt;
+.....
+.....
+.....
+.....
+&lt;/div&gt;</span></pre>
+      </div>
+    </div>
+
+
+
+    <h3>Example</h3>
+    <div class="row">
+      <div class="col-6">
+        <p>This combines specific widths with auto widths.</p>
+      </div>
+
+      <div class="col-6">
+        <pre class="example"><span class="code-css">.grid-container {
+  display: grid;
+  <span class="code-highlight">grid-template-columns: 80px 200px auto 100px;</span>
+}</span>
+          
+<span class="code-html">&lt;div class="grid-container"&gt;
+.....
+.....
+.....
+.....
+&lt;/div&gt;</span></pre>
+      </div>
+    </div>
 
 
 
@@ -47,8 +144,571 @@
 
 
 
-    <script src="../../_js/jquery.js"></script>
-    <script src="../../_js/bootstrap.bundle.js"></script>
+
+
+
+
+
+    <h1>Set row height</h1>
+    <div class="row">
+      <div class="col-6">
+        <p>grid-template-row sets the height of each row.</p>
+        <p>You must specify a vaule for each row.</p>
+      </div>
+
+      <div class="col-6">
+        <pre class="example"><span class="code-css">.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto auto;</span>
+  <span class="code-highlight">grid-template-rows: 80px 200px;</span>
+}</span>
+          
+<span class="code-html">&lt;div class="grid-container"&gt;
+.....
+.....
+.....
+.....
+&lt;/div&gt;</span></pre>
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h1>Horizontally align content</h1>
+
+    <div class="row">
+      <div class="col">
+        <p>justify-content is used to align the whole grid inside the container.</p>
+        <p>The grid's total width has to be less than the container's width for the justify-content property to have
+          any effect.</p>
+      </div>
+    </div>
+
+
+
+    <h3>Example: center</h3>
+    <div class="row">
+      <div class="col-6">
+        <p>This centers the grid inside of its container.</p>
+      </div>
+      <div class="col-6">
+        <pre class="example"><span class="code-css">.grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto auto;</span>
+    <span class="code-highlight">justify-content: center;</span>
+  }</span>
+            
+  <span class="code-html">&lt;div class="grid-container"&gt;
+  .....
+  .....
+  .....
+  .....
+  &lt;/div&gt;</span></pre>
+        <img src="../../_img/grid-justify-center.png" width="500px;">
+      </div>
+    </div>
+
+
+
+
+
+    <h3>Example: space-evenly</h3>
+    <div class="row">
+      <div class="col-6">
+        <p>This gives the columns equal amount of space between, and around them.</p>
+      </div>
+      <div class="col-6">
+        <pre class="example"><span class="code-css">.grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto auto;</span>
+    <span class="code-highlight">justify-content: space-evenly;</span>
+  }</span>
+            
+  <span class="code-html">&lt;div class="grid-container"&gt;
+  .....
+  .....
+  .....
+  .....
+  &lt;/div&gt;</span></pre>
+        <img src="../../_img/grid-justify-space-evenly.png" width="500px;">
+      </div>
+    </div>
+
+
+
+
+
+
+    <h3>Example: space-around</h3>
+    <div class="row">
+      <div class="col-6">
+        <p>This gives the columns equal amount of space around them:</p>
+      </div>
+      <div class="col-6">
+        <pre class="example"><span class="code-css">.grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto auto;</span>
+    <span class="code-highlight">justify-content: space-around;</span>
+  }</span>
+            
+  <span class="code-html">&lt;div class="grid-container"&gt;
+  .....
+  .....
+  .....
+  .....
+  &lt;/div&gt;</span></pre>
+        <img src="../../_img/grid-justify-space-around.png" width="500px;">
+      </div>
+    </div>
+
+
+
+
+    <h3>Example: space-between</h3>
+    <div class="row">
+      <div class="col-6">
+        <p>This gives the columns equal amount of space between them.</p>
+      </div>
+      <div class="col-6">
+        <pre class="example"><span class="code-css">.grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto auto;</span>
+    <span class="code-highlight">justify-content: space-between;</span>
+  }</span>
+            
+  <span class="code-html">&lt;div class="grid-container"&gt;
+  .....
+  .....
+  .....
+  .....
+  &lt;/div&gt;</span></pre>
+        <img src="../../_img/grid-justify-space-between.png" width="500px;">
+      </div>
+    </div>
+
+
+
+
+    <h3>Example: start</h3>
+    <div class="row">
+      <div class="col-6">
+        <p>"start" will align the grid at the beginning of the container.</p>
+      </div>
+      <div class="col-6">
+        <pre class="example"><span class="code-css">.grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto auto;</span>
+    <span class="code-highlight">justify-content: start;</span>
+  }</span>
+            
+  <span class="code-html">&lt;div class="grid-container"&gt;
+  .....
+  .....
+  .....
+  .....
+  &lt;/div&gt;</span></pre>
+        <img src="../../_img/grid-justify-start.png" width="500px;">
+      </div>
+    </div>
+
+
+
+
+    <h3>Example: end</h3>
+    <div class="row">
+      <div class="col-6">
+        <p>"end" will align the grid at the end of the container.</p>
+      </div>
+      <div class="col-6">
+        <pre class="example"><span class="code-css">.grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto auto;</span>
+    <span class="code-highlight">justify-content: end;</span>
+  }</span>
+            
+  <span class="code-html">&lt;div class="grid-container"&gt;
+  .....
+  .....
+  .....
+  .....
+  &lt;/div&gt;</span></pre>
+        <img src="../../_img/grid-justify-end.png" width="500px;">
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h1>Vertically align content</h1>
+
+    <div class="row">
+      <div class="col">
+        <p>align-content property is used to vertically align the whole grid inside the container.</p>
+        <p>The grid's total height has to be less than the container's height for the align-content property to have any
+          effect.</p>
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+
+    <h3>Example: center</h3>
+    <div class="row">
+      <div class="col-6">
+        <p>This centers the grid inside of its container.</p>
+      </div>
+      <div class="col-6">
+        <pre class="example"><span class="code-css">.grid-container {
+      display: grid;
+      grid-template-columns: auto auto auto auto;</span>
+      <span class="code-highlight">align-content: center;</span>
+    }</span>
+              
+    <span class="code-html">&lt;div class="grid-container"&gt;
+    .....
+    .....
+    .....
+    .....
+    &lt;/div&gt;</span></pre>
+        <img src="../../_img/grid-align-content-center.png" width="500px;">
+      </div>
+    </div>
+
+
+
+
+
+
+
+    <h3>Example: space-evenly</h3>
+    <div class="row">
+      <div class="col-6">
+        <p> "space-evenly" will give the rows equal amount of space between, and around them:</p>
+      </div>
+      <div class="col-6">
+        <pre class="example"><span class="code-css">.grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto auto;</span>
+    <span class="code-highlight">align-content: space-evenly;</span>
+  }</span>
+            
+  <span class="code-html">&lt;div class="grid-container"&gt;
+  .....
+  .....
+  .....
+  .....
+  &lt;/div&gt;</span></pre>
+        <img src="../../_img/grid-align-content-space-evenly.png" width="500px;">
+      </div>
+    </div>
+
+
+
+
+
+
+
+    <h3>Example: space-around</h3>
+    <div class="row">
+      <div class="col-6">
+        <p>"space-around" will give the rows equal amount of space around them:</p>
+      </div>
+      <div class="col-6">
+        <pre class="example"><span class="code-css">.grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto auto;</span>
+    <span class="code-highlight">align-content: space-around;</span>
+  }</span>
+            
+  <span class="code-html">&lt;div class="grid-container"&gt;
+  .....
+  .....
+  .....
+  .....
+  &lt;/div&gt;</span></pre>
+        <img src="../../_img/grid-align-content-space-around.png" width="500px;">
+      </div>
+    </div>
+
+
+
+
+
+
+    <h3>Example: space-between</h3>
+    <div class="row">
+      <div class="col-6">
+        <p>"space-between" will give the rows equal amount of space between them:</p>
+      </div>
+      <div class="col-6">
+        <pre class="example"><span class="code-css">.grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto auto;</span>
+    <span class="code-highlight">align-content: space-between;</span>
+  }</span>
+            
+  <span class="code-html">&lt;div class="grid-container"&gt;
+  .....
+  .....
+  .....
+  .....
+  &lt;/div&gt;</span></pre>
+        <img src="../../_img/grid-align-content-space-between.png" width="500px;">
+      </div>
+    </div>
+
+
+
+
+    <h3>Example: start</h3>
+    <div class="row">
+      <div class="col-6">
+        <p>"start" will align the rows at the beginning of the container:</p>
+      </div>
+      <div class="col-6">
+        <pre class="example"><span class="code-css">.grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto auto;</span>
+    <span class="code-highlight">align-content: start;</span>
+  }</span>
+            
+  <span class="code-html">&lt;div class="grid-container"&gt;
+  .....
+  .....
+  .....
+  .....
+  &lt;/div&gt;</span></pre>
+        <img src="../../_img/grid-align-content-start.png" width="500px;">
+      </div>
+    </div>
+
+
+
+
+    <h3>Example: end</h3>
+    <div class="row">
+      <div class="col-6">
+        <p>"end" will align the rows at the end of the container:</p>
+      </div>
+      <div class="col-6">
+        <pre class="example"><span class="code-css">.grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto auto;</span>
+    <span class="code-highlight">align-content: end;</span>
+  }</span>
+            
+  <span class="code-html">&lt;div class="grid-container"&gt;
+  .....
+  .....
+  .....
+  .....
+  &lt;/div&gt;</span></pre>
+        <img src="../../_img/grid-align-content-end.png" width="500px;">
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+
+    <h1>Gaps</h1>
+
+    <div class="row">
+      <div class="col">
+        <p>The spaces between each column/row are called gaps.</p>
+        <ul>
+          <li>column-gap: sets the gap between columns</li>
+          <li>row-gap: sets the gap between rows</li>
+          <li>gap: shorthand for both row-gap and column-gap</li>
+          <img src="../../_img/grid-gaps.png" width="500px;">
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+
+    <h3>Example: column-gap</h3>
+    <div class="row">
+      <div class="col-6">
+        <p>This sets a column-gap of 100px between each column.</p>
+      </div>
+      <div class="col-6">
+        <pre class="example"><span class="code-css">.grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    <span class="code-highlight">column-gap: 100px;</span>
+  }</span>
+            
+<span class="code-html">&lt;div class="grid-container"&lt;div class="grid-container"&gt;
+  &lt;div class="grid-item"&gt;1&lt;/div&gt;
+  &lt;div class="grid-item"&gt;2&lt;/div&gt;
+  &lt;div class="grid-item"&gt;3&lt;/div&gt;  
+  &lt;div class="grid-item"&gt;4&lt;/div&gt;
+  &lt;div class="grid-item"&gt;5&lt;/div&gt;
+  &lt;div class="grid-item"&gt;6&lt;/div&gt;  
+  &lt;div class="grid-item"&gt;7&lt;/div&gt;
+  &lt;div class="grid-item"&gt;8&lt;/div&gt;
+  &lt;div class="grid-item"&gt;9&lt;/div&gt;  
+&lt;/div&gt;</span></pre>
+        <img src="../../_img/grid-column-gap.png" width="500px;">
+      </div>
+    </div>
+
+
+
+
+
+    <h3>Example: row-gap</h3>
+    <div class="row">
+      <div class="col-6">
+        <p>This sets a row-gap of 50px between each row.</p>
+      </div>
+      <div class="col-6">
+        <pre class="example"><span class="code-css">.grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    <span class="code-highlight">row-gap: 50px;</span>
+  }</span>
+            
+<span class="code-html">&lt;div class="grid-container"&lt;div class="grid-container"&gt;
+  &lt;div class="grid-item"&gt;1&lt;/div&gt;
+  &lt;div class="grid-item"&gt;2&lt;/div&gt;
+  &lt;div class="grid-item"&gt;3&lt;/div&gt;  
+  &lt;div class="grid-item"&gt;4&lt;/div&gt;
+  &lt;div class="grid-item"&gt;5&lt;/div&gt;
+  &lt;div class="grid-item"&gt;6&lt;/div&gt;  
+  &lt;div class="grid-item"&gt;7&lt;/div&gt;
+  &lt;div class="grid-item"&gt;8&lt;/div&gt;
+  &lt;div class="grid-item"&gt;9&lt;/div&gt;  
+&lt;/div&gt;</span></pre>
+        <img src="../../_img/grid-row-gap.png" width="500px;">
+      </div>
+    </div>
+
+
+
+
+    <h3>Example: gap shorthand</h3>
+    <div class="row">
+      <div class="col-6">
+        <p>This sets a row-gap of 25px and column gap of 100px.</p>
+      </div>
+      <div class="col-6">
+        <pre class="example"><span class="code-css">.grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    <span class="code-highlight">gap: 25px 100px;</span>
+  }</span>
+            
+<span class="code-html">&lt;div class="grid-container"&lt;div class="grid-container"&gt;
+  &lt;div class="grid-item"&gt;1&lt;/div&gt;
+  &lt;div class="grid-item"&gt;2&lt;/div&gt;
+  &lt;div class="grid-item"&gt;3&lt;/div&gt;  
+  &lt;div class="grid-item"&gt;4&lt;/div&gt;
+  &lt;div class="grid-item"&gt;5&lt;/div&gt;
+  &lt;div class="grid-item"&gt;6&lt;/div&gt;  
+  &lt;div class="grid-item"&gt;7&lt;/div&gt;
+  &lt;div class="grid-item"&gt;8&lt;/div&gt;
+  &lt;div class="grid-item"&gt;9&lt;/div&gt;  
+&lt;/div&gt;</span></pre>
+        <img src="../../_img/grid-gap-shorthand.png" width="500px;">
+      </div>
+    </div>
+
+
+
+
+
+
+
+<h1>Setting default values</h1>
+grid-auto-columns
+
+
+
+
+
+
+
+  </section>
+
+
+
+
+
+
+
+
+
+
+
+
 </body>
 
 </html>

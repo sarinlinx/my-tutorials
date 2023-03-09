@@ -1,0 +1,590 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="../../_css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../../_css/style.css">
+
+    <title>Grid Items</title>
+</head>
+
+<body>
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="../../index.html">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Grid Items</li>
+        </ol>
+    </nav>
+
+
+
+    <section class="container">
+        <h1>Grid items</h1>
+        <div class="row">
+            <div class="col">
+                <p>A grid container contains grid items.</p>
+                <p>By default, a container has one grid item for each column, in each row.</p>
+                <p>You can style the grid items so they span multiple columns and/or rows.</p>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <h1>Horizontally span items</h1>
+        <div class="row">
+            <div class="col">
+                <p>grid-column defines on which column(s) to place an item.</p>
+                <ul>
+                    <li>Target an item by its id= or class= attribute.</li>
+                    <li>Define where the item will start</li>
+                    <li>Define where the item will end.</li>
+                </ul>
+                <p>The grid-column property is a shorthand property for:</p>
+                <ul>
+                    <li>grid-column-start</li>
+                    <li>grid-column-end</li>
+                </ul>
+            </div>
+        </div>
+
+        <h3>Example: start and end before</h3>
+        <div class="row">
+            <div class="col-6">
+                <p>tem1 will start on column 1 and end before column 5:......</p>
+            </div>
+            <div class="col-6">
+                <pre class="example"><span class="code-css">.grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto auto auto auto;
+}
+<span class="code-highlight">    
+.item1 {
+    grid-column: 1 / 5;
+}</span></span>          
+<span class="code-html">
+
+&lt;div class="grid-container"&gt;
+    &lt;div <span class="code-highlight">class="item1"</span>&gt;1&lt;/div&gt;
+    &lt;div class="item2"&gt;2&lt;/div&gt;
+    &lt;div class="item3"&gt;3&lt;/div&gt;  
+    &lt;div class="item4"&gt;4&lt;/div&gt;
+    &lt;div class="item5"&gt;5&lt;/div&gt;
+    &lt;div class="item6"&gt;6&lt;/div&gt;
+    &lt;div class="item7"&gt;7&lt;/div&gt;
+    &lt;div class="item8"&gt;8&lt;/div&gt;  
+    &lt;div class="item9"&gt;9&lt;/div&gt;
+    &lt;div class="item10"&gt;10&lt;/div&gt;
+    &lt;div class="item11"&gt;11&lt;/div&gt;
+    &lt;div class="item12"&gt;12&lt;/div&gt;
+    &lt;div class="item13"&gt;13&lt;/div&gt;
+    &lt;div class="item14"&gt;14&lt;/div&gt;
+    &lt;div class="item15"&gt;15&lt;/div&gt;
+&lt;/div&gt;</span></pre>
+                <img src="../../_img/grid-column-1-5.png" width="500px;">
+            </div>
+
+        </div>
+
+
+
+
+
+        <h3>Example: start and span</h3>
+        <div class="row">
+            <div class="col-6">
+                <p>Item1 will start on column-line 1 and span 3 columns:</p>
+            </div>
+            <div class="col-6">
+                <pre class="example"><span class="code-css">.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto auto auto auto;
+}
+<span class="code-highlight">    
+.item1 {
+  grid-column: 1 / span 3;
+}</span></span>          
+<span class="code-html">
+
+&lt;div class="grid-container"&gt;
+&lt;div <span class="code-highlight">class="item1"</span>&gt;1&lt;/div&gt;
+&lt;div class="item2"&gt;2&lt;/div&gt;
+&lt;div class="item3"&gt;3&lt;/div&gt;  
+&lt;div class="item4"&gt;4&lt;/div&gt;
+&lt;div class="item5"&gt;5&lt;/div&gt;
+&lt;div class="item6"&gt;6&lt;/div&gt;
+&lt;div class="item7"&gt;7&lt;/div&gt;
+&lt;div class="item8"&gt;8&lt;/div&gt;  
+&lt;div class="item9"&gt;9&lt;/div&gt;
+&lt;div class="item10"&gt;10&lt;/div&gt;
+&lt;div class="item11"&gt;11&lt;/div&gt;
+&lt;div class="item12"&gt;12&lt;/div&gt;
+&lt;div class="item13"&gt;13&lt;/div&gt;
+&lt;div class="item14"&gt;14&lt;/div&gt;
+&lt;div class="item15"&gt;15&lt;/div&gt;
+&lt;/div&gt;</span></pre>
+                <img src="../../_img/grid-column-span.png" width="500px;">
+            </div>
+
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <h1>Vertically span items</h1>
+
+        <div class="row">
+            <div class="col">
+                <p>grid-row defines on which column(s) to place an item.</p>
+                <ul>
+                    <li>Target an item by its id= or class= attribute.</li>
+                    <li>Define where the item will start</li>
+                    <li>Define where the item will end.</li>
+                </ul>
+                <p>The grid-row property is a shorthand property for:</p>
+                <ul>
+                    <li>grid-row-start</li>
+                    <li>grid-row-end</li>
+                </ul>
+            </div>
+        </div>
+
+        <h3>Example: start and end</h3>
+        <div class="row">
+            <div class="col-6">
+                <p>Item1 will start on row-line 1 and end on row-line 4:</p>
+            </div>
+            <div class="col-6">
+                <pre class="example"><span class="code-css">.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto auto auto auto;
+}
+<span class="code-highlight">    
+.item1 {
+  grid-row: 1 / 4;
+}</span></span>          
+<span class="code-html">
+
+&lt;div class="grid-container"&gt;
+&lt;div <span class="code-highlight">class="item1"</span>&gt;1&lt;/div&gt;
+&lt;div class="item2"&gt;2&lt;/div&gt;
+&lt;div class="item3"&gt;3&lt;/div&gt;  
+&lt;div class="item4"&gt;4&lt;/div&gt;
+&lt;div class="item5"&gt;5&lt;/div&gt;
+&lt;div class="item6"&gt;6&lt;/div&gt;
+&lt;div class="item7"&gt;7&lt;/div&gt;
+&lt;div class="item8"&gt;8&lt;/div&gt;  
+&lt;div class="item9"&gt;9&lt;/div&gt;
+&lt;div class="item10"&gt;10&lt;/div&gt;
+&lt;div class="item11"&gt;11&lt;/div&gt;
+&lt;div class="item12"&gt;12&lt;/div&gt;
+&lt;div class="item13"&gt;13&lt;/div&gt;
+&lt;div class="item14"&gt;14&lt;/div&gt;
+&lt;div class="item15"&gt;15&lt;/div&gt;
+&lt;/div&gt;</span></pre>
+                <img src="../../_img/grid-row-1-4.png" width="500px;">
+            </div>
+
+        </div>
+
+
+
+        <h3>Example: span rows</h3>
+        <div class="row">
+            <div class="col-6">
+                <p>Item1 will start on row 1 and span 2 rows:</p>
+            </div>
+            <div class="col-6">
+                <pre class="example"><span class="code-css">.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto auto auto auto;
+}
+<span class="code-highlight">    
+.item1 {
+  grid-row:  1 / span 2;
+}</span></span>          
+<span class="code-html">
+
+&lt;div class="grid-container"&gt;
+&lt;div <span class="code-highlight">class="item1"</span>&gt;1&lt;/div&gt;
+&lt;div class="item2"&gt;2&lt;/div&gt;
+&lt;div class="item3"&gt;3&lt;/div&gt;  
+&lt;div class="item4"&gt;4&lt;/div&gt;
+&lt;div class="item5"&gt;5&lt;/div&gt;
+&lt;div class="item6"&gt;6&lt;/div&gt;
+&lt;div class="item7"&gt;7&lt;/div&gt;
+&lt;div class="item8"&gt;8&lt;/div&gt;  
+&lt;div class="item9"&gt;9&lt;/div&gt;
+&lt;div class="item10"&gt;10&lt;/div&gt;
+&lt;div class="item11"&gt;11&lt;/div&gt;
+&lt;div class="item12"&gt;12&lt;/div&gt;
+&lt;div class="item13"&gt;13&lt;/div&gt;
+&lt;div class="item14"&gt;14&lt;/div&gt;
+&lt;div class="item15"&gt;15&lt;/div&gt;
+&lt;/div&gt;</span></pre>
+                <img src="../../_img/grid-row-span-2.png" width="500px;">
+            </div>
+
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <h1>Specify a horizontal and vertical area</h1>
+
+        <div class="row">
+            <div class="col">
+                <p>grid-area property can be used as a shorthand property for:</p>
+
+                <ul>
+                    <li>grid-row-start</li>
+                    <li>grid-column-start</li>
+                    <li>grid-row-end</li>
+                    <li>grid-column-end</li>
+                </ul>
+            </div>
+        </div>
+
+        <h3>Example:</h3>
+        <div class="row">
+            <div class="col-6">
+                <p>Item8 will start on row-line 1 and column-line 2,<br> and end on row-line 5 column-line 6</p>
+            </div>
+            <div class="col-6">
+                <pre class="example"><span class="code-css">.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto auto auto auto;
+}
+<span class="code-highlight">    
+.item8 {
+  grid-area: 1 / 2 / 5 / 6;
+}</span></span>          
+<span class="code-html">
+
+&lt;div class="grid-container"&gt;
+&lt;div class="item1"&gt;1&lt;/div&gt;
+&lt;div class="item2"&gt;2&lt;/div&gt;
+&lt;div class="item3"&gt;3&lt;/div&gt;  
+&lt;div class="item4"&gt;4&lt;/div&gt;
+&lt;div class="item5"&gt;5&lt;/div&gt;
+&lt;div class="item6"&gt;6&lt;/div&gt;
+&lt;div class="item7"&gt;7&lt;/div&gt;
+&lt;div <span class="code-highlight">class="item8"</span>&gt;8&lt;/div&gt;  
+&lt;div class="item9"&gt;9&lt;/div&gt;
+&lt;div class="item10"&gt;10&lt;/div&gt;
+&lt;div class="item11"&gt;11&lt;/div&gt;
+&lt;div class="item12"&gt;12&lt;/div&gt;
+&lt;div class="item13"&gt;13&lt;/div&gt;
+&lt;div class="item14"&gt;14&lt;/div&gt;
+&lt;div class="item15"&gt;15&lt;/div&gt;
+&lt;/div&gt;</span></pre>
+                <img src="../../_img/grid-area.png" width="500px;">
+            </div>
+
+        </div>
+
+
+
+        <h3>Example: span</h3>
+        <div class="row">
+            <div class="col-6">
+                <p>Item8 will start on row-line 2 and column-line 1, and span 2 rows and 3 columns:</p>
+            </div>
+            <div class="col-6">
+                <pre class="example"><span class="code-css">.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto auto auto auto;
+}
+<span class="code-highlight">    
+.item8 {
+  grid-area: 2 / 1 / span 2 / span 3;
+}</span></span>          
+<span class="code-html">
+
+&lt;div class="grid-container"&gt;
+&lt;div class="item1"&gt;1&lt;/div&gt;
+&lt;div class="item2"&gt;2&lt;/div&gt;
+&lt;div class="item3"&gt;3&lt;/div&gt;  
+&lt;div class="item4"&gt;4&lt;/div&gt;
+&lt;div class="item5"&gt;5&lt;/div&gt;
+&lt;div class="item6"&gt;6&lt;/div&gt;
+&lt;div class="item7"&gt;7&lt;/div&gt;
+&lt;div <span class="code-highlight">class="item8"</span>&gt;8&lt;/div&gt;  
+&lt;div class="item9"&gt;9&lt;/div&gt;
+&lt;div class="item10"&gt;10&lt;/div&gt;
+&lt;div class="item11"&gt;11&lt;/div&gt;
+&lt;div class="item12"&gt;12&lt;/div&gt;
+&lt;div class="item13"&gt;13&lt;/div&gt;
+&lt;div class="item14"&gt;14&lt;/div&gt;
+&lt;div class="item15"&gt;15&lt;/div&gt;
+&lt;/div&gt;</span></pre>
+                <img src="../../_img/grid-area-span.png" width="500px;">
+            </div>
+
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <h1>Name grid items</h1>
+
+
+        <div class="row">
+            <div class="col">
+                <p>grid-area property can also be used to assign names to grid items.</p>
+                <p>Named grid items can be referred to by the grid-template-areas property of the grid container.</p>
+                <p> Each row is defined by apostrophes (' ')</p>
+                <p> The columns in each row is defined inside the apostrophes, separated by a space.</p>
+            </div>
+        </div>
+
+        <h3>Example:</h3>
+        <div class="row">
+            <div class="col-6">
+                <p>Item1, is called "myArea" and will take up the place of all five columns:</p>
+            </div>
+            <div class="col-6">
+                <pre class="example"><span class="code-css">.grid-container {
+  display: grid;
+  <span class="code-highlight">grid-template-areas: 'myArea myArea myArea myArea myArea';</span>
+}
+<span class="code-highlight">    
+.item1 {
+  grid-area: myArea;
+}</span></span>          
+<span class="code-html">
+
+&lt;div class="grid-container"&gt;
+&lt;div class="item1"&gt;1&lt;/div&gt;
+&lt;div class="item2"&gt;2&lt;/div&gt;
+&lt;div class="item3"&gt;3&lt;/div&gt;  
+&lt;div class="item4"&gt;4&lt;/div&gt;
+&lt;div class="item5"&gt;5&lt;/div&gt;
+&lt;div class="item6"&gt;6&lt;/div&gt;
+&lt;/div&gt;</span></pre>
+                <img src="../../_img/grid-area-name.png" width="500px;">
+            </div>
+
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <h3>Example: using periods to span columns</h3>
+        <div class="row">
+            <div class="col-6">
+                <p>The div with a class of item1 is named "myArea" and spans 2 columns out of 5.</p>
+            </div>
+            <div class="col-6">
+                <pre class="example"><span class="code-css">.grid-container {
+  display: grid;
+  <span class="code-highlight">grid-template-areas: 'myArea myArea . . .';</span>
+}   
+<span class="code-highlight">    
+.item1 {
+  grid-area: myArea;
+}</span></span>          
+<span class="code-html">
+
+&lt;div class="grid-container"&gt;
+&lt;div class="item1"&gt;1&lt;/div&gt;
+&lt;div class="item2"&gt;2&lt;/div&gt;
+&lt;div class="item3"&gt;3&lt;/div&gt;  
+&lt;div class="item4"&gt;4&lt;/div&gt;
+&lt;div class="item5"&gt;5&lt;/div&gt;
+&lt;div class="item6"&gt;6&lt;/div&gt;
+&lt;/div&gt;</span></pre>
+                <img src="../../_img/grid-area-periods.png" width="500px;">
+            </div>
+
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <h3>Example: arrange multiple sections</h3>
+        <div class="row">
+            <div class="col-6">
+                <p>To create a grid for multiple sections of a page:</p>
+                <ol>
+                    <li>Give each section an ID or Class name.</li>
+                    <li>For grid item, give it a property of grid-area with a specific area name.</li>
+                    <li>In the grid-container, the property grid-template-areas must list each area name inside single quotes.</li>
+                </ol>
+                <p>The visual layout of the grid-template-areas property is how the webpage will look.</p>
+            </div>
+            <div class="col-6">
+                <pre class="example"><span class="code-css">.grid-container {
+  display: grid;
+  <span class="code-highlight">grid-template-areas:
+  'header header header header header header'
+  'menu   main   main   main   right  right'
+  'menu   footer footer footer footer footer';</span>
+}   
+<span class="code-highlight">
+.item1 { 
+    grid-area: header; 
+}
+.item2 { 
+    grid-area: menu; 
+}
+.item3 { 
+    grid-area: main; 
+}
+.item4 { 
+    grid-area: right; 
+}
+.item5 { 
+    grid-area: footer; 
+}</span></span>          
+<span class="code-html">
+
+&lt;div class="grid-container"&gt;
+  &lt;div class="item1"&gt;Header&lt;/div&gt;
+  &lt;div class="item2"&gt;Menu&lt;/div&gt;
+  &lt;div class="item3"&gt;Main&lt;/div&gt;  
+  &lt;div class="item4"&gt;Right&lt;/div&gt;
+  &lt;div class="item5"&gt;Footer&lt;/div&gt;
+&lt;/div&gt;</span></pre>
+                <img src="../../_img/grid-area-multiple-sections.png" width="500px;">
+            </div>
+
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </section>
+</body>
+
+</html>

@@ -1,0 +1,58 @@
+<html>
+
+<head>
+    <title>Grid Example</title>
+    <style>
+        .grid-container {
+            display: grid;
+            grid-template-areas:
+                'header header header header header header'
+                'menu   main   main   main   right  right'
+                'menu   footer footer footer footer footer';
+                border: 1px solid red;
+        }
+
+        .item1 {
+            grid-area: header;
+            border: 1px solid black;
+        }
+
+        .item2 {
+            grid-area: menu;
+            border: 1px solid black;
+        }
+
+        .item3 {
+            grid-area: main;
+            border: 1px solid black;
+        }
+
+        .item4 {
+            grid-area: right;
+            border: 1px solid black;
+        }
+
+        .item5 {
+            grid-area: footer;
+            border: 1px solid black;
+        }
+    </style>
+
+<body>
+
+
+    <div class="grid-container">
+        <div class="item1">Header</div>
+        <div class="item2">Menu</div>
+        <div class="item3">Main</div>
+        <div class="item4">Right</div>
+        <div class="item5">Footer</div>
+    </div>
+
+
+
+
+
+</body>
+
+</html>
