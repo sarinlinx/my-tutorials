@@ -24,6 +24,11 @@
 
 
   <section class="container">
+
+<p><a href="https://grid.malven.co/" target="_blank">Grid Cheat Sheet</a></p>
+
+
+
     <h1>The grid container</h1>
 
     <div class="row">
@@ -688,7 +693,213 @@
 
 
 <h1>Setting default values</h1>
-grid-auto-columns
+
+
+
+<h2>Default column sizes</h2>
+
+
+
+
+<h3>Default column size</h3>
+<div class="row">
+  <div class="col-6">
+    <p>grid-auto-columns sets a default size for all columns.</p>
+    <p>This sets all columns to 50px.</p>
+    <p>This could also be a %</p>
+    <p>NOTE: The grid-item positions must be specified for this to work.</p>
+  </div>
+  <div class="col-6">
+    <pre class="example"><span class="code-css">.grid-container {
+display: grid;
+<span class="code-highlight">grid-auto-columns: 50px;</span>
+}
+
+.item1 { grid-area: 1 / 1 / 2 / 2; }
+.item2 { grid-area: 1 / 2 / 2 / 3; }
+.item3 { grid-area: 1 / 3 / 2 / 4; }
+.item4 { grid-area: 2 / 1 / 3 / 2; }
+.item5 { grid-area: 2 / 2 / 3 / 3; }
+.item6 { grid-area: 2 / 3 / 3 / 4; }</span>
+        
+<span class="code-html">&lt;div class="grid-container"&lt;div class="grid-container"&gt;
+&lt;div class="grid-item"&gt;1&lt;/div&gt;
+&lt;div class="grid-item"&gt;2&lt;/div&gt;
+&lt;div class="grid-item"&gt;3&lt;/div&gt;  
+&lt;div class="grid-item"&gt;4&lt;/div&gt;
+&lt;div class="grid-item"&gt;5&lt;/div&gt;
+&lt;div class="grid-item"&gt;6&lt;/div&gt;
+&lt;/div&gt;</span></pre>
+    <img src="../../_img/grid-auto-columns.png" width="500px;">
+  </div>
+</div>
+
+
+
+<h3>Default max-column size</h3>
+<div class="row">
+  <div class="col-6">
+    <p>grid-auto-columns: max-content Sets the size of each column depending on the largest item in the column.</p>  
+    <p>NOTE: The grid-item positions must be specified for this to work.</p>
+  </div>
+  <div class="col-6">
+    <pre class="example"><span class="code-css">.grid-container {
+display: grid;
+<span class="code-highlight">grid-auto-columns: max-content;</span>
+}
+
+.item1 { grid-area: 1 / 1 / 2 / 2; }
+.item2 { grid-area: 1 / 2 / 2 / 3; }
+.item3 { grid-area: 1 / 3 / 2 / 4; }
+.item4 { grid-area: 2 / 1 / 3 / 2; }
+.item5 { grid-area: 2 / 2 / 3 / 3; }
+.item6 { grid-area: 2 / 3 / 3 / 4; }</span>
+        
+<span class="code-html">&lt;div class="grid-container"&lt;div class="grid-container"&gt;
+  &lt;div class="grid-item"&gt;1&lt;/div&gt;
+  &lt;div class="grid-item"&gt;2&lt;/div&gt;
+  &lt;div class="grid-item"&gt;3&lt;/div&gt;  
+  &lt;div class="grid-item"&gt;4&lt;/div&gt;
+  &lt;div class="grid-item"&gt;5&lt;/div&gt;
+  &lt;div class="grid-item"&gt;666666&lt;/div&gt;
+&lt;/div&gt;</span></pre>
+    <img src="../../_img/grid-auto-columns-max-content.png" width="500px;">
+  </div>
+</div>
+
+
+
+<h3>Default min-column size</h3>
+<div class="row">
+  <div class="col-6">
+    <p>grid-auto-columns: min-content Sets the size of each column depending on the smallest item in the column.</p>  
+    <p>NOTE: The grid-item positions must be specified for this to work.</p>
+    <p>NOTE: This seems the same as max-content</p>
+  </div>
+  <div class="col-6">
+    
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2>Default row sizes</h2>
+
+
+
+
+<h3>Default row size</h3>
+<div class="row">
+  <div class="col-6">
+    <p>grid-auto-rows  sets a size for the rows.</p>
+    <p>This sets all columns to 150px.</p>
+    <p>This could also be a %</p>
+    <p>NOTE: The grid-item positions must be specified for this to work.</p>
+  </div>
+  <div class="col-6">
+    <pre class="example"><span class="code-css">.grid-container {
+display: grid;
+<span class="code-highlight">grid-auto-rows: 150px;</span>
+}
+
+.item1 { grid-area: 1 / 1 / 2 / 2; }
+.item2 { grid-area: 1 / 2 / 2 / 3; }
+.item3 { grid-area: 1 / 3 / 2 / 4; }
+.item4 { grid-area: 2 / 1 / 3 / 2; }
+.item5 { grid-area: 2 / 2 / 3 / 3; }
+.item6 { grid-area: 2 / 3 / 3 / 4; }</span>
+        
+<span class="code-html">&lt;div class="grid-container"&lt;div class="grid-container"&gt;
+&lt;div class="grid-item"&gt;1&lt;/div&gt;
+&lt;div class="grid-item"&gt;2&lt;/div&gt;
+&lt;div class="grid-item"&gt;3&lt;/div&gt;  
+&lt;div class="grid-item"&gt;4&lt;/div&gt;
+&lt;div class="grid-item"&gt;5&lt;/div&gt;
+&lt;div class="grid-item"&gt;6&lt;/div&gt;
+&lt;/div&gt;</span></pre>
+    <img src="../../_img/grid-auto-rows.png" width="500px;">
+  </div>
+</div>
+
+
+
+<h3>Default max-row size</h3>
+<div class="row">
+  <div class="col-6">
+    <p>grid-auto-rows: max-row Sets the size of each row to depend on the largest item in the row.</p>  
+    <p>NOTE: The grid-item positions must be specified for this to work.</p>
+  </div>
+  <div class="col-6">
+    <pre class="example"><span class="code-css">.grid-container {
+display: grid;
+<span class="code-highlight">grid-auto-rows: max-content;</span>
+}
+
+.item1 { grid-area: 1 / 1 / 2 / 2; }
+.item2 { grid-area: 1 / 2 / 2 / 3; }
+.item3 { grid-area: 1 / 3 / 2 / 4; }
+.item4 { grid-area: 2 / 1 / 3 / 2; }
+.item5 { grid-area: 2 / 2 / 3 / 3; }
+.item6 { grid-area: 2 / 3 / 3 / 4; }</span>
+        
+<span class="code-html">&lt;div class="grid-container"&lt;div class="grid-container"&gt;
+  &lt;div class="grid-item"&gt;1&lt;&lt;br&gt;Hello&lt;/div&gt;
+  &lt;div class="grid-item"&gt;2&lt;/div&gt;
+  &lt;div class="grid-item"&gt;3&lt;/div&gt;  
+  &lt;div class="grid-item"&gt;4&lt;/div&gt;
+  &lt;div class="grid-item"&gt;5&lt;/div&gt;
+  &lt;div class="grid-item"&gt;6&lt;/div&gt;
+&lt;/div&gt;</span></pre>
+    <img src="../../_img/grid-auto-rows-max-content.png" width="500px;">
+  </div>
+</div>
+
+
+
+<h3>Default min-row size</h3>
+<div class="row">
+  <div class="col-6">
+    <p>grid-auto-row: min-content Sets the size of each row depending on the smallest item in the row.</p>  
+    <p>NOTE: The grid-item positions must be specified for this to work.</p>
+    <p>NOTE: This seems the same as max-content</p>
+  </div>
+  <div class="col-6">
+ 
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+<h1>grid-auto-flow: SKIPPED</h1>
+
 
 
 
