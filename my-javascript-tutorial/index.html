@@ -7,26 +7,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" type="text/css" href="_css/bootstrap.css">
+    <!-- <link rel="stylesheet" type="text/css" href="_css/bootstrap.css"> -->
     <!-- <link rel="stylesheet" type="text/css" href="_css/style.css"> -->
     <link href="https://fonts.googleapis.com/css?family=Lora" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
-
-    <link rel="stylesheet" type="text/css" href="../_css/style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+        integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="_css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="_css/styles.css">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="../_css/styles.css">
+
     <title>JavaScript Tutorial</title>
 </head>
 
 <body>
 
 
-
-    <div class="homepage-title-container">
-        <h1 class="homepage-title">My JavaScript Tutorial</h1>
-    </div>
-    <br><br>
-    <div id="auto-toc"></div>
+    <section id="homepage-header-container">
+        <span id="logo-container"><img id="logo-img" src="../_img/logo-js"></span>
+        <span id="header-text">JavaScript Tutorial</span>
+    </section>
 
 
 
@@ -149,7 +150,8 @@
             <li><a href="pages/basics/string-methods-search.html ">search</a> - indexOf(), search(), </li>
             <li><a href="pages/basics/string-methods-extract.html ">extract</a> - substring(), substr(), slice(), </li>
             <li><a href="pages/basics/string-methods-replace.html ">replace</a> - replace()</li>
-            <li><a href="pages/basics/string-methods-altering.html ">altering</a> - charAt(), toUpperCase(), toLowerCase(), concat(), trim(), includes(), startsWith(), endsWith()</li>
+            <li><a href="pages/basics/string-methods-altering.html ">altering</a> - charAt(), toUpperCase(),
+                toLowerCase(), concat(), trim(), includes(), startsWith(), endsWith()</li>
             <li><a href="pages/basics/string-methods-convert-to-array.html ">convert to array</a> - split()</li>
             <li><a href="pages/basics/string-methods-property-access.html ">Property access</a></li>
             <li><a href="pages/basics/string-methods-padding.html ">Padding</a></li>
@@ -207,10 +209,15 @@
         <ul>
             <li><a href="pages/basics/displaying-data.html">Displaying data</a></li>
             <li><a href="pages/dom/dom-overview.html ">DOM overview</a></li>
-            <li><a href="pages/dom/dom-retrieving-elements.html ">Retrieving elements from the DOM</a> - getElementByID, getElementsByClassName, getElementsByTagName, querySelector, querySelectorAll</li>
-            <li><a href="pages/dom/adding-elements.html ">Adding elements to the DOM</a> - insertAdjacentHTML, prepend(), append(), appendChild(), before(), after(), remove()</li>
-            <li><a href="pages/dom/changing-element-data.html ">Changing element data</a> - createElement(), createTextNode(), textContent(), innerHTML</li>
-            <li><a href="pages/dom/traversing-the-dom.html ">Traversing the DOM</a> - childNodes, children, firstElementChild, lastElementChild, parentNode, parentElement, closest(), previousElementSibling, nextElementSibling, previousSibling, nextSibling</li>
+            <li><a href="pages/dom/dom-retrieving-elements.html ">Retrieving elements from the DOM</a> - getElementByID,
+                getElementsByClassName, getElementsByTagName, querySelector, querySelectorAll</li>
+            <li><a href="pages/dom/adding-elements.html ">Adding elements to the DOM</a> - insertAdjacentHTML,
+                prepend(), append(), appendChild(), before(), after(), remove()</li>
+            <li><a href="pages/dom/changing-element-data.html ">Changing element data</a> - createElement(),
+                createTextNode(), textContent(), innerHTML</li>
+            <li><a href="pages/dom/traversing-the-dom.html ">Traversing the DOM</a> - childNodes, children,
+                firstElementChild, lastElementChild, parentNode, parentElement, closest(), previousElementSibling,
+                nextElementSibling, previousSibling, nextSibling</li>
             <li><a href="pages/dom/read-only-properties.html ">Interacting with READ-ONLY properties</a></li>
             <li><a href="pages/dom/changing-attributes.html ">Changing attributes</a></li>
             <li><a href="pages/dom/changing-css.html ">Changing CSS</a></li>
@@ -228,7 +235,8 @@
             <li><a href="pages/events/stopping-an-event.html ">Stopping an Event</a></li>
             <li><a href="pages/events/click-events.html ">Click events</a></li>
             <li><a href="pages/events/event-delegation.html ">Event delegation</a></li>
-            <li><a href="pages/events/passing-arguments-to-event-handlers.html ">Passing arguments to event handlers</a></li>
+            <li><a href="pages/events/passing-arguments-to-event-handlers.html ">Passing arguments to event handlers</a>
+            </li>
         </ul>
     </div>
 
@@ -253,8 +261,10 @@
     <h2>Basics</h2>
     <div class="text-section">
         <ul>
-            <li><a href="pages/functions/basic-functions.html ">Basic Functions</a> - Parameters, Declaring, return, execution order</li>
-            <li><a href="pages/functions/function-types.html ">Types of functions</a> - Named, Anonymous, Immediately Invoked, First class, higher order
+            <li><a href="pages/functions/basic-functions.html ">Basic Functions</a> - Parameters, Declaring, return,
+                execution order</li>
+            <li><a href="pages/functions/function-types.html ">Types of functions</a> - Named, Anonymous, Immediately
+                Invoked, First class, higher order
             </li>
 
             <ul>
@@ -263,7 +273,8 @@
 
             <li><a href="pages/functions/invoking-functions.html ">Invoking Functions</a></li>
             <li><a href="pages/functions/arrow-functions.html ">Arrow Functions</a></li>
-            <li><a href="pages/functions/functions-calling-other-functions.html ">Functions calling other functions</a></li>
+            <li><a href="pages/functions/functions-calling-other-functions.html ">Functions calling other functions</a>
+            </li>
             <li><a href="pages/functions/callback-functions.html ">Callback functions</a></li>
             <li><a href="pages/functions/functions-returning-functions.html ">Functions returning Functions</a></li>
             <li><a href="pages/functions/call-and-apply-methods.html ">Call and APply methods</a></li>
@@ -327,17 +338,23 @@
     <div class="text-section">
         <ul>
             <li><a href="pages/arrays/array-for-loop.html ">Array for and while loop</a></li>
-            <li><a href="pages/arrays/array-foreach.html ">forEach()</a> - calls a function (a callback function) once for each array element</li>
+            <li><a href="pages/arrays/array-foreach.html ">forEach()</a> - calls a function (a callback function) once
+                for each array element</li>
             <li><a href="pages/arrays/array-for-of.html ">for of()</a> ES6 Array loop</li>
             <li><a href="pages/arrays/array-indexOf.html ">indexOf()</a> - returns index of an element </li>
-            <li><a href="pages/arrays/array-map.html ">map()</a> - creates a new array by performing a function on each array element</li>
-            <li><a href="pages/arrays/array-filter.html ">filter()</a> - creates a new array, but only with elements that pass a specific test in the function</li>
+            <li><a href="pages/arrays/array-map.html ">map()</a> - creates a new array by performing a function on each
+                array element</li>
+            <li><a href="pages/arrays/array-filter.html ">filter()</a> - creates a new array, but only with elements
+                that pass a specific test in the function</li>
             <li><a href="pages/arrays/reduce.html ">reduce()</a></li>
             <li><a href="pages/arrays/array-every.html ">every()</a> - check if all array values pass a test</li>
             <li><a href="pages/arrays/array-some.html ">some()</a> - check if any array values pass a test</li>
-            <li><a href="pages/arrays/array-lastindexof.html ">lastIndexOf()</a> - does the same as indexOf(), but searches from the end.</li>
-            <li><a href="pages/arrays/array-find.html ">find()</a> - returns the value of the first array element that passes a test function</li>
-            <li><a href="pages/arrays/array-findindex.html ">findIndex()</a> - returns the index of the first array element that passes a test function</li>
+            <li><a href="pages/arrays/array-lastindexof.html ">lastIndexOf()</a> - does the same as indexOf(), but
+                searches from the end.</li>
+            <li><a href="pages/arrays/array-find.html ">find()</a> - returns the value of the first array element that
+                passes a test function</li>
+            <li><a href="pages/arrays/array-findindex.html ">findIndex()</a> - returns the index of the first array
+                element that passes a test function</li>
         </ul>
     </div>
 
@@ -346,10 +363,13 @@
     <h2>Methods</h2>
     <div class="text-section">
         <ul>
-            <li><a href="pages/arrays/editing-array-content.html ">Editing Array Content</a> - splice(), pop(), shift(), push(), length, unshift(), slice()</li>
-            <li><a href="pages/arrays/searching-an-array.html ">Searching an Array</a> - indexOf(), findIndexOf(), find()
+            <li><a href="pages/arrays/editing-array-content.html ">Editing Array Content</a> - splice(), pop(), shift(),
+                push(), length, unshift(), slice()</li>
+            <li><a href="pages/arrays/searching-an-array.html ">Searching an Array</a> - indexOf(), findIndexOf(),
+                find()
             </li>
-            <li><a href="pages/arrays/arrays-and-strings.html ">Arrays and Strings</a> - join(), toString(), split()</li>
+            <li><a href="pages/arrays/arrays-and-strings.html ">Arrays and Strings</a> - join(), toString(), split()
+            </li>
             <li><a href="pages/arrays/sorting-arrays.html ">Sorting Arrays contents</a> - sort(), Math.max(), Math.min()
             </li>
             <li><a href="pages/arrays/misc-array-methods.html ">Misc Array methods</a> - concat(), reverse()</li>
@@ -461,7 +481,8 @@
         <ul>
             <li><a href="pages/modern-js/modern-js-overview.html ">Modern JS overview</a></li>
             <li><a href="pages/modern-js/modules.html ">Modules</a></li>
-            <li><a href="pages/modern-js/declarative-functional-programming.html ">Declarative and Functional programming</a></li>
+            <li><a href="pages/modern-js/declarative-functional-programming.html ">Declarative and Functional
+                    programming</a></li>
         </ul>
     </div>
 
@@ -513,8 +534,10 @@
         <ul>
             <li><a href="examples/smooth-scrolling/smooth-scrolling.html ">Smooth scrolling</a></li>
             <li><a href="examples/sticky-nav/sticky-nav.html ">Sticky Nav</a></li>
-            <li><a href="examples/revealing-elements-on-scroll/revealing-elements-on-scroll.html ">Revealing elements on scroll</a></li>
-            <li><a href="examples/lazy-load-images-on-scroll/lazy-load-images-on-scroll.html ">Lazy load images on scroll</a></li>
+            <li><a href="examples/revealing-elements-on-scroll/revealing-elements-on-scroll.html ">Revealing elements on
+                    scroll</a></li>
+            <li><a href="examples/lazy-load-images-on-scroll/lazy-load-images-on-scroll.html ">Lazy load images on
+                    scroll</a></li>
         </ul>
     </div>
 
@@ -524,7 +547,8 @@
     <h3>Targeting</h3>
     <div class="text-section">
         <ul>
-            <li><a href="examples/events/change-text-of-button-when-clicked.html ">Target elements by ID or Class</a></li>
+            <li><a href="examples/events/change-text-of-button-when-clicked.html ">Target elements by ID or Class</a>
+            </li>
         </ul>
     </div>
 
@@ -543,7 +567,7 @@
     <div class="text-section">
         <ul>
             <li><a href="examples/events/clear-form-field-when-submit-is-clicked.html ">Clear form field when submit is
-          clicked</a></li>
+                    clicked</a></li>
         </ul>
     </div>
 
@@ -657,7 +681,8 @@
         <ul>
             <li><a href="projects/map-app/index.html " target="_blank ">Map App (final)</a></li>
             <li><a href="projects/map-app/map-app-01.html ">Map App</a></li>
-            <li><a href="projects/map-app/using-the-geolocation-api.html ">Using the Geolocation API</a> - using Leaflet</li>
+            <li><a href="projects/map-app/using-the-geolocation-api.html ">Using the Geolocation API</a> - using Leaflet
+            </li>
         </ul>
     </div>
 

@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" type="text/css" href="_css/styles.css">
+
+  <title>Testing CSS</title>
+</head>
+
+<body>
+
+
+  <nav class="navbar">
+    <a href="../../index.html">Back to homepage</a>
+    <a class="nav-page nav-active">Testing CSS</a>
+  </nav>
+
+
+<h1>All code types</h1>
+  <section class="code-section-container">
+    <div class="code-text-section">
+      <p>This uses the dog.ceo/api and the <span class="text-object">superagent</span> module.</p>
+      <p>The <span class="text-object">dog.txt</span> file is read. <span class="code">The data in</span> it is printed to the terminal.</p>    
+    </div>
+    <div class="code-block-section-w60">
+      <pre class="example">
+        
+<span class="code-html"><span class="code-highlight-html">&lt;div class="ancestor"&gt;</span>
+&lt;div class="parent"&gt;
+    &lt;div class="child"&gt;<span class="white">This is not styled</span>&lt;/div&gt;
+    &lt;div class="descendant"&gt;<span class="white">This IS styled</span>&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+<span class="code-highlight-html">&lt;/div&gt;</span></span>
+
+<span class="code-css">.ancestor .descendant {
+  color: blue;
+  border-bottom: 2px solid #776a6a;
+  font-size: 2.2rem;
+  <span class="code-highlight-css">background: linear-gradient(to bottom, #daf6ff 0%, #0074c9 100%);</span>
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}</span>
+        
+<span class="code-js">const <span class="code-highlight-js">secureBooking</span> = function () {
+let passengerCount = 0;
+
+<span class="code-highlight-js">return function () {</span>
+    passengerCount++
+    console.log(`${passengerCount} passengers`);
+}
+}
+
+const booker = secureBooking();
+
+booker();
+booker();
+booker();</span>    
+
+        
+<span class="code-react">import React from "react";
+import faker from "faker";
+
+const CommentDetail = <span class="code-highlight-react">(props)</span> =&gt; {
+    <span class="code-highlight-react">console.log(props)</span>
+return (
+&lt;div className="comment"&gt;
+    &lt;a href="/" className="avatar"&gt;
+    &lt;img alt="avatar" src={faker.image.image()} /&gt;
+    &lt;/a&gt;
+    &lt;div className="content"&gt;
+    &lt;a href="/" className="author"&gt;
+    <span class="code-highlight-react">{props.author}</span>
+    &lt;/a&gt;
+    &lt;div className="metadata"&gt;
+        &lt;span className="date"&gt;Today at 6:00PM&lt;/span&gt;
+    &lt;/div&gt;
+    &lt;div className="text"&gt;Nice blog post!&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+);
+};
+
+export default CommentDetail;</span>
+       
+               
+<span class="code-nodejs">const fs = require('fs');
+const superagent = require('<span class="code-highlight-nodejs">superagent'</span>);
+
+fs.readFile(`${__dirname}/dog.txt`, (err, data) =&gt; {
+  console.log(`Breed: <span class="code-highlight-nodejs">${data}</span>`);
+</span></pre>
+    </div>
+  </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>
