@@ -5,63 +5,69 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" type="text/css" href="../../_css/bootstrap.css">
-    <link rel="stylesheet" type="text/css" href="../../_css/style.css">
-
+    <link rel="stylesheet" type="text/css" href="../../../_css/styles.css">
     <title>BEM</title>
 </head>
 
 <body>
-    <a href="../../index.html">Home page</a>
-
-    <section class="container">
-        <div class="row">
-            <div class="col">
-                <h1>Block Element Modifier (BEM)</h1>
-                <p>A way to name classes in a consistent way.</p>
-
-                <h3>Block</h3>
-                <p>A standalone component that is meaningful on its own and can be reused anywhere in the project.</p>
-
-<h3>Element</h3>
-<p>Part of a block that has no meaning on its own. You cannot reuse these as they wouldn't make sense outside of the block.</p>
-
-<h3>Modifier</h3>
-<p>Something that modifies a block. Like a different look to a button.</p>
+    <nav class="navbar">
+        <a href="../../index.html">Back to homepage</a>
+        <a class="nav-page nav-active">BEM</a>
+    </nav>
 
 
 
-            </div>
+    <h1>Block Element Modifier (BEM)</h1>
+    <div class="text-section">
+        <p>A way to name classes in a consistent way.</p>
+    </div>
+
+
+    <h3>Block</h3>
+    <div class="text-section">
+        <p>A standalone component that is meaningful on its own and can be reused anywhere in the project.</p>
+    </div>
+
+
+    <h3>Element</h3>
+    <div class="text-section">
+        <p>Part of a block that has no meaning on its own. You cannot reuse these as they wouldn't make sense
+            outside of the block.</p>
+    </div>
+
+
+    <h3>Modifier</h3>
+    <div class="text-section">
+        <p>Something that modifies a block. Like a different look to a button.</p>
+    </div>
+
+
+
+    <h4>Ex</h4>
+    <section class="code-section-container">
+        <div class="code-text-section">
+            <p>BEM examples</p>
         </div>
-
-
-        <div class="row">
-            <div class="col-6">
-                <h4>Ex</h4>
-                <p>BEM examples</p>
-            </div>
-
-
-            <div class="col-6">
-                <pre class="example"><span class="code-css">.block {}
+        <div class="code-block-section">
+            <pre class="example"><span class="code-css">.block {}
 .block__element {}
-.block__element--modifier {}</span>
-
- </pre>
-            </div>
-          </div>
-
-          <div class="row">
-              <div class="col-6">
-                  <h4>Ex</h4>
-                  <p>BEM examples</p>
-              </div>
+.block__element--modifier {}</span>               
+</pre>
+        </div>
+    </section>
 
 
-              <div class="col-6">
-                  <pre class="example"><span class="code-css"><span class="code-comment">/* block__component */</span>
+
+
+
+
+    <h4>Ex</h4>
+    <section class="code-section-container">
+        <div class="code-text-section">
+            <p>BEM examples</p>
+        </div>
+        <div class="code-block-section">
+            <pre class="example"><span class="code-css"><span class="code-comment">/* block__component */</span>
 header__logo-box
 <span class="code-comment">/* block__component--modifier */</span>
 header__logo-box--white
@@ -70,10 +76,15 @@ heading-primary--main
 heading-primary--sub
 btn--white
 btn--animated</span></pre>
-              </div>
-            </div>
-
+        </div>
     </section>
+
+
+
+
+
+
+
 
 
 </body>

@@ -15,37 +15,37 @@
         #normaldiv {
             border: 1px solid yellow;
         }
-        
+
         #relative {
             position: relative;
             left: 50px;
             border: 1px solid red;
         }
-        
+
         #relativediv {
             position: relative;
             height: 100px;
             border: 1px solid red;
         }
-        
+
         #absolute-left {
             position: absolute;
             left: 50px;
             border: 1px solid green;
         }
-        
+
         #absolute-right {
             position: absolute;
             right: 50px;
             border: 1px solid green;
         }
-        
+
         #relative-container {
             width: 75%;
             position: relative;
             border: 1px solid cyan;
         }
-        
+
         #absolute-section {
             position: absolute;
             top: 0;
@@ -84,7 +84,9 @@
                         <li>absolue</li>
                         <li>sticky</li>
                     </ul>
-                    <p>Elements are then positioned using the top, bottom, left, and right properties. However, these properties will not work unless the position property is set first. They also work differently depending on the position value.
+                    <p>Elements are then positioned using the top, bottom, left, and right properties. However, these
+                        properties will not work unless the position property is set first. They also work differently
+                        depending on the position value.
                     </p>
                 </div>
             </div>
@@ -104,7 +106,8 @@
 
                 <p>Static positioned elements are not affected by the top, bottom, left, and right properties.</p>
 
-                <p> An element with position: static; is not positioned in any special way; it is always positioned according to the normal flow of the page:</p>
+                <p> An element with position: static; is not positioned in any special way; it is always positioned
+                    according to the normal flow of the page:</p>
             </div>
         </div>
 
@@ -127,9 +130,12 @@
         <div class="row">
             <div class="col">
                 <h2>position: relative</h2>
-
+                <p><span class="code">relative</span> behaves the same as <span class="code">static</span> unless you
+                    add some extra properties.</p>
                 <p>An element with position: relative; is positioned relative to its normal position.</p>
-                <p>Setting the top, right, bottom, and left properties of a relatively-positioned element will cause it to be adjusted away from its normal position. Other content will not be adjusted to fit into any gap left by the element.
+                <p>Setting the top, right, bottom, and left properties of a relatively-positioned element will cause it
+                    to be adjusted away from its normal position. Other content will not be adjusted to fit into any gap
+                    left by the element.
                 </p>
             </div>
         </div>
@@ -193,8 +199,10 @@
             <div class="col">
                 <h2>position: absolute</h2>
 
-                <p>An element with position: absolute; is positioned relative to the nearest positioned ancestor (instead of positioned relative to the viewport, like fixed).</p>
-                <p> However; if an absolute positioned element has no positioned ancestors, it uses the document body, and moves along with page scrolling.</p>
+                <p>An element with position: absolute; is positioned relative to the nearest positioned ancestor
+                    (instead of positioned relative to the viewport, like fixed).</p>
+                <p> However; if an absolute positioned element has no positioned ancestors, it uses the document body,
+                    and moves along with page scrolling.</p>
             </div>
         </div>
 
@@ -402,7 +410,9 @@
             <div class="col">
                 <h1>position: fixed</h1>
 
-                <p>An element with position: fixed; is positioned relative to the viewport, which means it always stays in the same place even if the page is scrolled. The top, right, bottom, and left properties are used to position the element.</p>
+                <p>An element with position: fixed; is positioned relative to the viewport, which means it always stays
+                    in the same place even if the page is scrolled. The top, right, bottom, and left properties are used
+                    to position the element.</p>
 
                 <p>A fixed element does not leave a gap in the page where it would normally have been located.</p>
             </div>
@@ -415,7 +425,8 @@
                 <h3>Example </h3>
                 <ul>
                     <li>
-                        <a href="example-fixed.html" target="_blank">Fixed example</a></li>
+                        <a href="example-fixed.html" target="_blank">Fixed example</a>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -470,7 +481,9 @@
                 <h1>position: sticky</h1>
 
                 <p>An element with position: sticky; is positioned based on the user's scroll position.</p>
-                <p>A sticky element toggles between relative and fixed, depending on the scroll position. It is positioned relative until a given offset position is met in the viewport - then it "sticks" in place (like position:fixed).</p>
+                <p>A sticky element toggles between relative and fixed, depending on the scroll position. It is
+                    positioned relative until a given offset position is met in the viewport - then it "sticks" in place
+                    (like position:fixed).</p>
             </div>
         </div>
 

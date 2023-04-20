@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" type="text/css" href="../../../_css/styles.css">
+
+    <title>Box Model</title>
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <a href="../../index.html">Back to homepage</a>
+        <a class="nav-page nav-active">Box Model</a>
+    </nav>
+
+
+
+
+    <h2>Overview</h2>
+
+    <div class="text-section">
+        <p>The CSS <span class="code">box-sizing</span> property allows us to include the padding and border in an
+            element's total width and height.</p>
+        <p>This prevents us from having to do math to calculate the actual size of a box (as done with the old box
+            model).</p>
+    </div>
+
+
+    <h2>border-box</h2>
+    <section class="code-section-container">
+        <div class="code-text-section">
+            <p>Setting <span class="code">box-sizing: border-box;</span> on an element sets the padding and border in
+                the width and height.</p>
+        </div>
+        <div class="code-block-section-w60">
+            <pre class="example"><span class="code-css">.div1 {
+    width: 300px;
+    height: 100px;
+    border: 1px solid blue;
+    <span class="code-highlight-css">box-sizing: border-box;</span>
+}</span></pre>
+        </div>
+    </section>
+
+    <h3>Global setting</h3>
+    <section class="code-section-container">
+        <div class="code-text-section">
+            <p>Most developers set the entire document to use <span class="code">box-sizing: border-box;</span>.</p>
+        </div>
+        <div class="code-block-section-w60">
+            <pre class="example"><span class="code-css">* {
+  box-sizing: border-box;
+}</span></pre>
+        </div>
+    </section>
+
+
+</body>
+
+</html>

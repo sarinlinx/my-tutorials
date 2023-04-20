@@ -134,7 +134,7 @@ h1 {
 h2 {
     /* margin-top: 20px; */
     /* border-bottom: 2px solid #776a6a; */
-    font-size: 2rem;
+    font-size: 1.5rem;
     background: linear-gradient(to bottom, #daf6ff 0%, #0074c9 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -142,8 +142,8 @@ h2 {
 
 h3 {
     margin-bottom: 0;
-    font-size: 1.7rem;
-    background: linear-gradient(to bottom, #869fff 0%, #b446ff 100%);
+    font-size: 1.3rem;
+    background: linear-gradient(to bottom, #6fb861 0%, #5ec835 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -151,7 +151,7 @@ h3 {
 h4 {
     margin-top: 2rem;
     font-size: 1.4rem;
-    background: linear-gradient(to bottom, #ffffff 0%, #ff0000 100%);
+    background: linear-gradient(to bottom, #2de0b9 0%, #629a55 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -257,14 +257,14 @@ ___________________________________________________*/
 .text-section {
     padding: 1rem;
     margin-bottom: 2rem;
-    background-color: rgba(25, 25, 25, .5);
+    background-color: rgba(25, 25, 25, .7);
     color: #b0cad4;
 }
 
 .code-section-container {
     display: flex;
     padding: 1rem;
-    background-color: rgba(25, 25, 25, .5);
+    background-color: rgba(25, 25, 25, .7);
     color: #b0cad4;
     justify-content: space-between;
 }
@@ -273,6 +273,28 @@ ___________________________________________________*/
     line-height: 22px;
     margin-right: 10px;
 }
+
+.code-block-section {
+    min-width: 500px;
+    flex-shrink: 0;
+    line-height: 18px;
+    font-size: 16px;
+}
+
+@media (max-width: 1039px) {
+    .code-block-section {
+        flex-basis: 40%
+    }
+}
+
+@media (min-width: 1040px) {
+    .code-block-section {
+        flex-basis: 50%
+    }
+}
+
+
+
 
 .code-block-section-w60 {
     min-width: 500px;
